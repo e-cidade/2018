@@ -1,0 +1,47 @@
+
+     +--+                                    FICHA DE ATENDIMENTO AMBULATORIAL
+     |  | 
+  +--+  +--+  SISTEMA DE SAUDE                   Numero do Atendimento: ${NRO_FAA}
+  |   --   |                                     Data: ${DATA_FAA} 
+  +--+  +--+  PREFEITURA MUNICIPAL 
+     |  |     DE ${MUNICIPIO} 
+     +--+
+-------------------------------------------------------------------------------
+1. UNIDADE PRESTADORA DE ATENDIMENTO
+Unidade : ${COD_UPS} - ${NOME_UPS}{60}
+Endereco: ${RUA_UPS}{42}+ No: ${NRO_END_UPS}{8} ${COMPLEMENTO_END_UPS}{11}
+Bairro  : ${BAIRRO_UPS}{26}+ CEP: ${CEP_UPS}{10}+ Login: ${LOGIN}{19}
+SIA/SUS : ${SIA_SUS}{40}
+-------------------------------------------------------------------------------
+2. IDENTIFICACAO DO PACIENTE
+No CGS   : ${NRO_CGS} - ${NOME_CGS}{60}
+Endereco : ${RUA_PAC}{41}+ No: ${NRO_END_PAC}{8} ${COMPLEMENTO_END_PAC}{11}
+Bairro   : ${BAIRRO_PAC}{25}+ Cidade: ${CIDADE_PAC}{32}
+CEP      : ${CEP_PAC} 
+Data Nasc: ${DATA_NASC_PAC}{10}+  Idade: ${IDADE_PAC}  Sexo: ${SEXO_PAC}
+-------------------------------------------------------------------------------
+IDENTIFICACAO DO MEDICO
+Medico : ${COD_MEDICO} - ${NOME_MEDICO}{60}
+CRM/CRO: ${CRM}{40}
++-----------------------------------------------------------------------------+ 
+|3. MOTIVO DO ATENDIMENTO                                                     | 
+| ${MOTIVO_ATEND}{70}+      | 
++-----------------------------------------------------------------------------+ 
+|4.COD.|5.           |6.      |7.                                   |8. ASSIN.| 
+|ES|   |CODIGO       |PROFIS. |    TRATAMENTO/DESCRICAO             |CARIMBO  | 
+|PE|TIP|PROCEDIMENTO |SETOR   |    DOS PROCEDIMENTO                 |DO PROF. | 
++------+-------------+--------+-------------------------------------+---------+
+<1 limite=10 preencher>|  |   |${COD_PROC}{13}+|${NOME_PROF}{8}+|${NOME_PROC}{37}+|         | 
+|------|-------------|--------|-------------------------------------|---------|
+</1>|9.TIPO        |10.DIAGNOSTICO |------------------------------------|11.POLEG.| 
+|${TIPO_ATEND}{13}+ |${DIAGNOSTICO}{50}+  |         | 
++--------+----------------------------------------------------------+         | 
+|12.GRUPO      |13.ASSINATURA DO PACIENTE OU RESPONSAVEL |----------|         | 
+|              |                                                    |         | 
++--------+----------------------------------------------------------+         | 
+|14.DATA ATENDIMENTO |15.HORA ATENDIMENTO |                         |         | 
+|${DATA_ATEND}{10}+          |${HORA_ATEND}{5}+               |                         |         |
++--------------------+--------------------+-------------------------+---------+
+
+
+

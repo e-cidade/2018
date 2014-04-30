@@ -1,0 +1,11 @@
+{
+  "sem_pcasp_ativo"                   : "Sem PCASP ativo.",
+  "conta_pcasp_nao_existe"            : "Conta informada não existe no PCASP.",
+  "conta_pcasp_analitica"             : "Conta do PCASP informada é analitica.",
+  "erro_desabilitar_saltes"           : "Erro ao desabilitar dados bancarios na saltes",
+  "contas_anteriores_nao_encontradas" : "Contas do ano anterior não encontradas.",
+  "contas_pcasp_nao_encontradas"      : "Contas do PCASP não encontradas.",
+  "contas_vinculadas"                 : "Contas abertas com sucesso.",
+  "estrutural_invalido"               : "O estrutural informado possui caracteres inválidos.",
+  "conta_plano_anterior_nao_existe"   : "Conta Plano anterior não existe."
+ }

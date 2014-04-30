@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<processamento>
+  <parametros>
+    <parametro nome="codigorequisicao" obrigatorio="true" tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe nome="RequisicaoAidofWebService" parametros="$codigorequisicao" caminho="model/fiscal/webservice/RequisicaoAidofWebService.model.php">
+      <metodos>
+        <metodo nome="cancelar" />
+      </metodos>
+    </classe>
+  </configuracoes>
+</processamento>

@@ -1,0 +1,647 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="sandro">
+	<META NAME="CREATED" CONTENT="20080308;10444600">
+	<META NAME="CHANGEDBY" CONTENT="dbseller">
+	<META NAME="CHANGED" CONTENT="20081117;23444100">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.1cm }
+		P { margin-bottom: 0.21cm; text-align: justify }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "HG Mincho Light J"; font-size: 16pt }
+		H1.ctl { font-family: "Lucidasans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Helvetica"; font-size: 14pt; so-language: pt-BR; font-style: italic }
+		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		TD P { margin-bottom: 0cm }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR">
+		<P ALIGN=LEFT STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.Cadastros|outline">Cadastros	</A><A HREF="#1.Cadastros|outline">2</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.Tipo de Notifica&ccedil;&atilde;o|outline">Tipo
+	de Notifica&ccedil;&atilde;o	</A><A HREF="#1.1.Tipo de Notifica&ccedil;&atilde;o|outline">2</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.Situa&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline">Situa&ccedil;&atilde;o
+	da Notifica&ccedil;&atilde;o	</A><A HREF="#1.2.Situa&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline">3</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.Consultas|outline">Consultas	</A><A HREF="#2.Consultas|outline">3</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.Geral Financeira|outline">Geral
+	Financeira	</A><A HREF="#2.1.Geral Financeira|outline">3</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.Relat&oacute;rios|outline">Relat&oacute;rios	</A><A HREF="#3.Relat&oacute;rios|outline">4</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.Lista|outline">Lista	</A><A HREF="#3.1.Lista|outline">4</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.Posi&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline">Posi&ccedil;&atilde;o
+	da Notifica&ccedil;&atilde;o	</A><A HREF="#3.2.Posi&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline">5</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.Situa&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline">Situa&ccedil;&atilde;o
+	da Notifica&ccedil;&atilde;o	</A><A HREF="#3.3.Situa&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline">6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.4.Emite Notifica&ccedil;&atilde;o|outline">Emite
+	Notifica&ccedil;&atilde;o	</A><A HREF="#3.4.Emite Notifica&ccedil;&atilde;o|outline">7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.5.Emiss&atilde;o de TXT|outline">Emiss&atilde;o
+	de TXT	</A><A HREF="#3.5.Emiss&atilde;o de TXT|outline">10</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.Procedimentos|outline">Procedimentos	</A><A HREF="#4.Procedimentos|outline">11</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.Lista|outline">Lista	</A><A HREF="#4.1.Lista|outline">11</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.Notifica&ccedil;&atilde;o|outline">Notifica&ccedil;&atilde;o	</A><A HREF="#4.2.Notifica&ccedil;&atilde;o|outline">13</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.Documento da Lista|outline">Documento
+	da Lista	</A><A HREF="#4.3.Documento da Lista|outline">13</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.Notifica&ccedil;&atilde;o por Edital|outline">Notifica&ccedil;&atilde;o
+	por Edital	</A><A HREF="#4.4.Notifica&ccedil;&atilde;o por Edital|outline">14</A></FONT></P>
+</DIV>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-before: always; page-break-after: avoid">
+<FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO NOTIFICA&Ccedil;&Otilde;ES</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>	O objetivo deste m&oacute;dulo &eacute;
+gerar notifica&ccedil;&otilde;es aos contribuintes para qualquer tipo
+de d&eacute;bito do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Estas notifica&ccedil;&otilde;es
+s&atilde;o geradas sempre atrav&eacute;s de uma lista de
+contribuintes, onde o usu&aacute;rio poder&aacute; gerar v&aacute;rios
+tipos de notifica&ccedil;&otilde;es como: Aviso de D&eacute;bito,
+Notifica&ccedil;&atilde;o com recibo de pagamento ou Notifica&ccedil;&atilde;o
+sem recibo.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	A lista gerada no M&oacute;dulo
+Notifica&ccedil;&otilde;es poder&aacute; ser usada em outros m&oacute;dulos
+do DBPortal, em  rotinas como: Prescri&ccedil;&atilde;o de D&iacute;vida,
+Gera&ccedil;&atilde;o de Certid&atilde;o de D&iacute;vida Ativa.</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="1.Cadastros|outline"></A><A NAME="1.Cadastros|outline"></A>
+Cadastros</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.1.Tipo de Notifica&ccedil;&atilde;o|outline"></A><A NAME="1.1.Tipo de Notifica&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2206db">Tipo de Notifica&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>	Nesse menu s&atilde;o cadastrados
+os tipos de notifica&ccedil;&otilde;es que a prefeitura vai utilizar
+para controlar suas notifica&ccedil;&otilde;es e se ter&atilde;o a
+confirma&ccedil;&atilde;o de recebimento.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2207db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>	Se o campo <I><SPAN STYLE="text-decoration: none"><B>Recebimento
+</B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">estiver</SPAN></SPAN></SPAN><I><SPAN STYLE="text-decoration: none"><B>
+</B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">marcado
+como SIM, o usu&aacute;rio poder&aacute; clicar na notifica&ccedil;&atilde;o
+na CGF e descrever os dados do recebimento como mostra na Figura 01</SPAN></SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Notificacoes_html_mb8af683.png" NAME="figura2" ALIGN=LEFT WIDTH=592 HEIGHT=249 BORDER=0><BR CLEAR=LEFT>
+ Figura 01</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Devem
+ser preenchidos os campos: </SPAN></SPAN><I><B>Descri&ccedil;&atilde;o
+e Recebimento, </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">conforme
+Figura 02 abaixo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Notificacoes_html_210037b0.png" NAME="figura1" ALIGN=LEFT WIDTH=604 HEIGHT=142 BORDER=0><BR CLEAR=LEFT>Figura
+02</P>
+<P CLASS="western" ALIGN=JUSTIFY>O cadastro de Tipo de Notifica&ccedil;&atilde;o
+n&atilde;o poder&aacute; ser exclu&iacute;do quando ele estiver
+vinculado a uma notifica&ccedil;&atilde;o no sistema. 
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.2.Situa&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline"></A><A NAME="1.2.Situa&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2215db">Situa&ccedil;&atilde;o
+da Notifica&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>	Nesse menu s&atilde;o cadastradas
+as situa&ccedil;&otilde;es em que a notifica&ccedil;&atilde;o pode
+estar no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Este cadastro &eacute; utilizado na
+descri&ccedil;&atilde;o do recebimento da notifica&ccedil;&atilde;o
+na CGF (Consulta Geral Financeira) podendo o usu&aacute;rio escolher
+qual a situa&ccedil;&atilde;o que a notifica&ccedil;&atilde;o
+encontra-se, conforme Figura 01.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2216db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>	Deve ser preenchido o campo
+<I><B>Descri&ccedil;&atilde;o</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">,
+conforme a Figura 03.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Notificacoes_html_47249153.png" NAME="figura3" ALIGN=LEFT WIDTH=598 HEIGHT=128 BORDER=0><BR CLEAR=LEFT>Figura
+03</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="2.Consultas|outline"></A><A NAME="2.Consultas|outline"></A>
+Consultas</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.Geral Financeira|outline"></A><A NAME="2.1.Geral Financeira|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Geral Financeira</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>&Eacute; feita a consulta financeira
+dos d&eacute;bitos dos contribuintes, e a descri&ccedil;&atilde;o
+dessa consulta est&aacute; no M&oacute;dulo Arrecada&ccedil;&atilde;o,
+conforme Figura 04.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Notificacoes_html_2f6f69a1.png" NAME="figura4" ALIGN=LEFT WIDTH=605 HEIGHT=192 BORDER=0><BR CLEAR=LEFT>Figura
+04</P>
+<H1 CLASS="western"><A NAME="3.Relat&oacute;rios|outline"></A><A NAME="3.Relat&oacute;rios|outline"></A>
+Relat&oacute;rios</H1>
+<H2 CLASS="western"><A NAME="3.1.Lista|outline"></A><A NAME="3.1.Lista|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2274db">Lista</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Esse
+relat&oacute;rio emite as listas cadastradas no sistema, e caso a
+lista n&atilde;o tenha sido notificada (utilizada para gerar
+notifica&ccedil;&atilde;o), a coluna notifica&ccedil;&atilde;o
+aparece em branco.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Esse
+relat&oacute;rio &eacute; importante para verifica&ccedil;&atilde;o
+dos dados gerados pela lista cadastrada, seus valores e os filtros
+utilizados na gera&ccedil;&atilde;o da lista.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Descri&ccedil;&atilde;o
+dos filtros para a emiss&atilde;o de uma lista, conforme Figura 05.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Lista</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Colocar o c&oacute;digo da <FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">lista
+ou clicar no link de pesquisa. </SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Ordem</B></SPAN></I>:
+O usu&aacute;rio pode ordenar os dados por: valor, num&eacute;rico ou
+nome.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Agrupa
+Nome</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Os d&eacute;bitos podem ser agrupado por nome.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Emite
+Valor</B></SPAN></I>:  O usu&aacute;rio pode emitir com valores (Sim
+ou N&atilde;o).</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Tipo
+da Gera&ccedil;&atilde;o</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+ PDF - Gera o relat&oacute;rio como padr&atilde;o no Adobe Reader.
+TXT - Gera um arquivo com extens&atilde;o .txt, sem a op&ccedil;&atilde;o
+dos dados adicionais.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Informa&ccedil;&otilde;es
+Adicionais</B></SPAN></I><I><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">:</SPAN></SPAN></I><SPAN STYLE="font-weight: medium">
+Emite os dados no final do relat&oacute;rio com os filtros utilizados
+para criar a lista ao marcar a op&ccedil;&atilde;o Sim. </SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Notificacoes_html_m63f9a489.png" NAME="figura8" ALIGN=LEFT WIDTH=605 HEIGHT=205 BORDER=0><BR CLEAR=LEFT>Figura
+05</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">Na
+Figura 06 mostra um modelo de uma lista emitida no DBPortal. No final
+mostra os filtros.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Notificacoes_html_m2f10cf23.png" NAME="figura9" ALIGN=LEFT WIDTH=605 HEIGHT=269 BORDER=0><IMG SRC="Manual_Notificacoes_html_m4e56ef77.png" NAME="figura10" ALIGN=LEFT WIDTH=600 HEIGHT=293 BORDER=0><BR CLEAR=LEFT>Figura
+06</P>
+<H2 CLASS="western"><A NAME="3.2.Posi&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline"></A><A NAME="3.2.Posi&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2269db">Posi&ccedil;&atilde;o
+da Notifica&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>	Esse relat&oacute;rio emite as posi&ccedil;&otilde;es
+(Pagas, Em d&eacute;bito, Parceladas) das notifica&ccedil;&otilde;es
+ligadas a uma lista de d&eacute;bitos.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>	Este  relat&oacute;rio serve para o acompanhamento do
+andamento da lista notificada pelo sistema, e caso o contribuinte
+pagou, parcelou ou continua devendo o d&eacute;bito por exemplo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>	Descri&ccedil;&atilde;o dos filtros, conforme Figura
+06.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Lista</B></SPAN></I>:
+Adicionar as lista que for referente as notifica&ccedil;&otilde;es
+que se quer emitir. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Tipo</B></SPAN></I><SPAN STYLE="font-weight: medium">:
+Possui apenas a op&ccedil;&atilde;o Todos.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Notificacoes_html_27d0d8b5.png" NAME="figura13" ALIGN=LEFT WIDTH=605 HEIGHT=243 BORDER=0><BR CLEAR=LEFT>Figura
+06</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western">Modelo de emiss&atilde;o conforme a Figura 07</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Notificacoes_html_4ac17430.png" NAME="figura19" ALIGN=LEFT WIDTH=605 HEIGHT=264 BORDER=0><BR CLEAR=LEFT>Figura
+07</P>
+<P CLASS="western"><BR><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.3.Situa&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline"></A><A NAME="3.3.Situa&ccedil;&atilde;o da Notifica&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4717db">Situa&ccedil;&atilde;o
+da Notifica&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Esse
+relat&oacute;rio emite as situa&ccedil;&atilde;o das notifica&ccedil;&otilde;es,
+onde o usu&aacute;rio pode verificar as situa&ccedil;&otilde;es das
+notifica&ccedil;&otilde;es de uma lista de d&eacute;bito com os
+valores dos d&eacute;bitos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>	Descri&ccedil;&atilde;o
+dos filtros, conforme Figura 08.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Notificacoes_html_m1eeb3d3a.png" NAME="figura18" ALIGN=LEFT WIDTH=605 HEIGHT=137 BORDER=0><BR CLEAR=LEFT>Figura
+08</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 09 mostra um modelo de situa&ccedil;&atilde;o da
+notifica&ccedil;&atilde;o no DBPortal. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Notificacoes_html_m12831c59.png" NAME="figura21" ALIGN=LEFT WIDTH=605 HEIGHT=163 BORDER=0><BR CLEAR=LEFT>Figura
+09</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.4.Emite Notifica&ccedil;&atilde;o|outline"></A><A NAME="3.4.Emite Notifica&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2219db">Emite Notifica&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">	Esse
+relat&oacute;rio emite a lista das notifica&ccedil;&otilde;es e a
+segunda via de acordo com as op&ccedil;&otilde;es: sem p&aacute;gina
+de endere&ccedil;o, com p&aacute;gina de endere&ccedil;o, aviso de
+d&eacute;bito, lista, SEED, AR.</P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">	Os 
+modelos de notifica&ccedil;&otilde;es s&atilde;o cadastrados atrav&eacute;s
+dos documentos, e para emitir um recibo na notifica&ccedil;&atilde;o
+o documento vinculado a lista deve ter o par&aacute;grafo com o nome
+TOTALPORANOCOMRECIBO.</P>
+<P CLASS="western" ALIGN=LEFT STYLE="font-weight: medium">	Descri&ccedil;&atilde;o
+dos filtros para a emiss&atilde;o das notifica&ccedil;&otilde;es,
+conforme Figura 10.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Lista:</B></SPAN></I><SPAN STYLE="font-weight: medium">
+Colocar o c&oacute;digo da lista ou clicar no link para pesquisar.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Ordem:
+</B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">O
+usu&aacute;rio pode ordenar os dados por: notifica&ccedil;&atilde;o,
+num&eacute;rico ou nome.</SPAN></SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Tipo
+de Endere&ccedil;o</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:
+</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">Deve
+ser selecionado a regra de endere&ccedil;amento que ser&aacute;
+emitido o endere&ccedil;o de entrega da notifica&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><SPAN STYLE="text-decoration: none">Endere&ccedil;o
+CGM quando estiver nulo: </SPAN></B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Utiliza
+o endere&ccedil;o do cadastro de CGM, quando o endere&ccedil;o de
+entrega est&aacute; nulo/inv&aacute;lido.</SPAN></SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Intervalo</B></SPAN></I>:
+Ao selecionar <I><B>Quantidade</B></I> emite a quantidade colocada no
+intervalo inicial e final,  e ao selecionar <I><B> Notifica&ccedil;&otilde;es
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">emite
+o intervalo dos c&oacute;digos da notifica&ccedil;&otilde;es.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Emiss&atilde;o do Timbre: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo controla a localiza&ccedil;&atilde;o dos timbres na </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">emiss&atilde;o
+da  notifica&ccedil;&atilde;o podendo escolher como: interno,
+externo, ambos ou sem timbre.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Data
+de Vencimento</B></SPAN></I><I><B>:</B></I><SPAN STYLE="font-weight: medium">
+Data do vencimento do recibo que &eacute; emitido na segunda p&aacute;gina.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Tamanho
+da Fonte:</B></SPAN></I><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Colocar a fonte que vai ser emitida a notifica&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&atilde;o:</B></I><I><SPAN STYLE="font-weight: medium">
+Ao marcar </SPAN></I><I><B>Somente Selecionados </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">(padr&atilde;o)</SPAN></SPAN><I><B>
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">busca
+as notifica&ccedil;&otilde;es adicionadas no campo </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">notifica&ccedil;&atilde;o</SPAN></SPAN></SPAN><I><SPAN STYLE="text-decoration: none"><B>,
+</B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">e
+se estiver marcado</SPAN></SPAN></SPAN><I><SPAN STYLE="text-decoration: none"><B>
+Menos Selecionados </B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">busca
+os n&atilde;o adicionados na sele&ccedil;&atilde;o.</SPAN></SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Notifica&ccedil;&atilde;o</B></I><I>:</I>
+Colocar o c&oacute;digo da notifica&ccedil;&atilde;o ou clicar no
+link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Op&ccedil;&otilde;es
+de Impress&atilde;o:</B></SPAN></I></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">sem
+endere&ccedil;o, com endere&ccedil;o, aviso de d&eacute;bito, lista,
+SEED, AR.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"> 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Notificacoes_html_6628fad2.png" NAME="figura11" ALIGN=LEFT WIDTH=605 HEIGHT=319 BORDER=0><BR CLEAR=LEFT>Figura
+10</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Na
+emiss&atilde;o das notifica&ccedil;&otilde;es &eacute; muito
+importante saber quais os modelos de impress&atilde;o das
+notifica&ccedil;&otilde;es.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Descri&ccedil;&atilde;o
+e modelo das op&ccedil;&otilde;es de impress&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Notifica&ccedil;&atilde;o sem
+p&aacute;gina de endere&ccedil;o: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Est&aacute; op&ccedil;&atilde;o emite as notifica&ccedil;&otilde;es
+sem a segunda p&aacute;gina de endere&ccedil;o, quando o usu&aacute;rio
+j&aacute; possui um envelope com o endere&ccedil;o de
+correspond&ecirc;ncia. Modelo na Figura 11.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Notificacoes_html_m7a35fa02.png" NAME="figura12" ALIGN=LEFT WIDTH=599 HEIGHT=340 BORDER=0><BR CLEAR=LEFT>Figura
+11</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Notifica&ccedil;&atilde;o com
+p&aacute;gina de endere&ccedil;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ Est&aacute; op&ccedil;&atilde;o emite as notifica&ccedil;&otilde;es
+com a segunda p&aacute;gina de endere&ccedil;o, quando o usu&aacute;rio
+imprime na parte do verso o endere&ccedil;o. Conforme a Figura 12.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Notificacoes_html_12ebddf1.png" NAME="figura14" ALIGN=LEFT WIDTH=605 HEIGHT=273 BORDER=0><BR CLEAR=LEFT>Figura
+12</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Aviso de D&eacute;bitos: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+um formul&aacute;rio para aviso com os dados do contribuinte na parte
+inferior da p&aacute;gina, conforme Figura 13.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Notificacoes_html_4b62af6f.png" NAME="figura17" ALIGN=LEFT WIDTH=566 HEIGHT=328 BORDER=0><BR CLEAR=LEFT>Figura
+13</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Lista: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+uma lista das notifica&ccedil;&otilde;es gerada pela Lista
+selecionada na emiss&atilde;o do sistema, conforme Figura 14.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Notificacoes_html_m17439129.png" NAME="figura15" ALIGN=LEFT WIDTH=605 HEIGHT=151 BORDER=0><BR CLEAR=LEFT>Figura
+14</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>SEED: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+um comprovante do correio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>AR: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+um comprovante de recebimento.</SPAN></SPAN></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.5.Emiss&atilde;o de TXT|outline"></A><A NAME="3.5.Emiss&atilde;o de TXT|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5475db">Emiss&atilde;o de
+TXT</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Esse
+relat&oacute;rio gera um arquivo .txt com layout e dados, para enviar
+para gr&aacute;fica ou banco fazer a emiss&atilde;o das notifica&ccedil;&otilde;es.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Possui
+os modelos:</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>CBR454</B></I><SPAN STYLE="font-weight: medium">
+	(conv&ecirc;nios Arrecada&ccedil;&atilde;o e Ficha de Compensa&ccedil;&atilde;o)</SPAN></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>IGC702</B></I><SPAN STYLE="font-weight: medium">
+	(conv&ecirc;nio Ficha de Compensa&ccedil;&atilde;o)</SPAN></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Gr&aacute;fica</B></I><SPAN STYLE="font-weight: medium">
+	(conv&ecirc;nios Arrecada&ccedil;&atilde;o e Ficha de Compensa&ccedil;&atilde;o).</SPAN></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Descri&ccedil;&atilde;o
+dos filtros e modelo conforme a Figura 15</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Notificacoes_html_257e0ff1.png" NAME="figura20" ALIGN=LEFT WIDTH=605 HEIGHT=192 BORDER=0><BR CLEAR=LEFT>Figura
+15</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<H1 CLASS="western"><A NAME="4.Procedimentos|outline"></A><A NAME="4.Procedimentos|outline"></A>
+Procedimentos</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.1.Lista|outline"></A><A NAME="4.1.Lista|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2211db">Lista</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>	Nesse procedimento  &eacute; criado
+a lista  de d&eacute;bitos que pode ser <FONT SIZE=3><SPAN STYLE="font-weight: medium">vinculado
+com outros procedimentos do sistemas como: notifica&ccedil;&otilde;es,
+emiss&atilde;o de CDA e prescri&ccedil;&atilde;o de d&iacute;vida.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>	Uma
+lista pode ser usadas em mais de uma aplica&ccedil;&atilde;o, como
+notificar e gerar CDA.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2212db">Inclus&atilde;o</A></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><SPAN STYLE="font-weight: medium">	</SPAN></FONT>Na
+cria&ccedil;&atilde;o de uma lista  devem ser preenchidos os
+seguintes campos, conforme Figura 16 : <I><B> </B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>C&oacute;digo:</B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+O campo &eacute; gerado autom&aacute;tico.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">:
+Preencher o nome da Lista. Obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data D&eacute;bitos:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+O sistema busca a &uacute;ltima data que foi gerada a tabela d&eacute;bitos
+no sistema, que origina os dados da lista. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">OBS:
+Podem haver distor&ccedil;&otilde;es com estes valores e a Consulta
+Geral Financeira, pela refer&ecirc;ncia da d&eacute;bitos por n&atilde;o
+estar com a data atualizada. Campo obrigat&oacute;rio.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Valores:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Busca por padr&atilde;o os intervalos entre (0 &ndash; 999999999),
+podendo o usu&aacute;rio escolher os intervalos de valores dos
+d&eacute;bitos que deve buscar a lista.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Quantidade a Listar:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ Preencher</SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a quantidade de registro que se quer listar de acordo com o campo
+</SPAN></SPAN></FONT><FONT SIZE=3><I><B>Tipo de Lista</B></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Tipo
+de Lista</B></SPAN></I></FONT><FONT SIZE=3><I><B>:</B></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+&ldquo;</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">CGM
+(Geral)</SPAN></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&rdquo;
+- Marcando op&ccedil;&atilde;o traz todos os d&eacute;bitos referente
+ao CGM. (Padr&atilde;o). &ldquo;</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">CGM</SPAN></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&rdquo;
+- Marcando op&ccedil;&atilde;o traz todos os d&eacute;bitos somente
+do CGM. &ldquo;</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Matricula</SPAN></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&rdquo;
+- </SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Marcando
+op&ccedil;&atilde;o traz os d&eacute;bitos referente as Matriculas
+Imobili&aacute;rias. &ldquo;</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Inscri&ccedil;&atilde;o</SPAN></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&rdquo;
+- Marcando op&ccedil;&atilde;o traz os d&eacute;bitos referente as
+Inscri&ccedil;&otilde;es Municipais.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Notifica&ccedil;&atilde;o
+Ap&oacute;s</B></SPAN></I></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">:</SPAN></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+N&atilde;o lista os contribuintes que foram notificados a partir
+dessa data.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Massa
+Falida:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Essa op&ccedil;&atilde;o busca os d&eacute;bitos dos contribuinte que
+s&atilde;o Massa Falidas. Tr&aacute;s marcado </SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>N&atilde;o</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+(padr&atilde;o).</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Loteamento:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+ Essa op&ccedil;&atilde;o busca os d&eacute;bitos dos contribuinte
+que s&atilde;o Loteamentos. Tr&aacute;s </SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">marcado
+</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Sim</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+(padr&atilde;o).</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Data
+de Opera&ccedil;&atilde;o</B></SPAN></I></FONT><FONT SIZE=3><I><B>:
+</B></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Data
+de quando foi gerado o d&eacute;bito no sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Data
+do Vencimento:</B></SPAN></I><SPAN STYLE="font-weight: medium"> Data
+dos vencimentos dos d&eacute;bitos.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Exerc&iacute;cio:</B></SPAN></I><SPAN STYLE="font-weight: medium">
+Per&iacute;odo do exerc&iacute;cio em que os d&eacute;bitos v&atilde;o
+ser listados. </SPAN> 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><B><I><SPAN STYLE="text-decoration: none">Desconsidera
+Exerc&iacute;cio:</SPAN></I><I> </I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Per&iacute;odo
+dos exerc&iacute;cios que v&atilde;o ser desconsiderados.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Per&iacute;odo
+Posterior:</B></SPAN></I> <SPAN STYLE="font-weight: medium">Considera
+os d&eacute;bitos dos per&iacute;odos superiores ao campo </SPAN><I><B>
+Exerc&iacute;cio</B></I><SPAN STYLE="font-weight: medium">.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Quant.
+Parcela em Atraso:</B></SPAN></I><SPAN STYLE="font-weight: medium">
+Considera o n&uacute;mero de parcelas atrasadas, no caso de um tipo
+de d&eacute;bito for de parcelamentos. OBS: Se quiser considerar
+apenas 3 parcelas atrasadas, deve colocar um intervalo (1 &ndash; 3).</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>C&oacute;d.
+Parcela em Atraso:</B></SPAN></I> <SPAN STYLE="font-weight: medium">Considera
+no intervalo quais parcelas que est&atilde;o em atraso.  OBS: Quero
+uma lista onde quero cobrar a parcela 6 do IPTU, colocar um intervalo
+(6 &ndash; 6).</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Op&ccedil;&atilde;o</B></SPAN></I><I><B>:</B></I><SPAN STYLE="font-weight: medium">
+Ao marcar </SPAN><I><B>Somente Selecionados </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">(padr&atilde;o)</SPAN></SPAN><I><B>
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">busca
+os tipos de d&eacute;bitos adicionados no campo </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Tipos
+de D&eacute;bitos</SPAN></SPAN></SPAN><I><SPAN STYLE="text-decoration: none"><B>,
+</B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">se
+estiver marcado</SPAN></SPAN></SPAN><I><SPAN STYLE="text-decoration: none"><B>
+Menos Selecionados </B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">busca
+os n&atilde;o adicionados na sele&ccedil;&atilde;o.</SPAN></SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Tipos
+de D&eacute;bitos:</B></SPAN></I> Adicionar quais os d&eacute;bitos
+que se quer fazer uma lista, est&aacute; op&ccedil;&atilde;o est&aacute;
+ligada ao filtro <I><B>Op&ccedil;&otilde;es. </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Caso
+n&atilde;o escolher nenhum tipo de d&eacute;bito o sistema busca
+todos os.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Notificacoes_html_m7fcc99.png" NAME="figura16" ALIGN=LEFT WIDTH=587 HEIGHT=237 BORDER=0><BR CLEAR=LEFT>Figura
+16</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	Em
+uma lista de d&eacute;bito &eacute; importante saber que ao ser
+criada busca os dados financeiros na </SPAN></SPAN><I><B>Tabela
+D&eacute;bitos </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&eacute;
+uma tabela auxiliar com todos os dados financeiros &ldquo;congelados&rdquo;
+em rela&ccedil;&atilde;o ao valor corrigido/juro/multa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	Caso a data da tabela d&eacute;bitos estiver desatualizada, pode um
+contribuinte n&atilde;o estar devendo na CGF e sair na lista.</P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	Para
+que isso n&atilde;o ocorra, devemos verificar sempre no campo </SPAN></SPAN><I><B>Data
+D&eacute;bitos </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">para
+utilizar dados bem atualizados.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	Para
+excluir uma lista, esta n&atilde;o pode estar vinculada &agrave;
+nenhum processo do sistema </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">como
+ n</SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">otifica&ccedil;&otilde;es,
+emiss&atilde;o de CDA ou prescri&ccedil;&atilde;o de d&iacute;vida.</SPAN></SPAN></FONT></P>
+<P CLASS="western"><BR><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.2.Notifica&ccedil;&atilde;o|outline"></A><A NAME="4.2.Notifica&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2303db">Notifica&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-weight: medium">	Nesse
+procedimento s&atilde;o geradas notifica&ccedil;&otilde;es para os
+contribuintes, com a finalidade de avisar os contribuintes de alguma
+pend&ecirc;ncia de d&eacute;bitos na prefeitura. E o contribuinte
+deve se adequar ao que foi notificado na data prevista na
+notifica&ccedil;&atilde;o</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2255db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>	Para gerar notifica&ccedil;&otilde;es,
+devemos preencher os campos <I><B>Lista</B></I>, <I><B>Tipo de
+Notifica&ccedil;&atilde;o</B></I> e <SPAN STYLE="font-style: normal"><B>Contribuinte
+(</B></SPAN>caso o usu&aacute;rio queria notificar apenas alguns
+contribuintes de uma lista) conforme a Figura 17. Se n&atilde;o
+preencher nada na lista de contribuintes, todos os contribuintes da
+lista ser&atilde;o notificados.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Notificacoes_html_73e91c3e.png" NAME="figura5" ALIGN=LEFT WIDTH=605 HEIGHT=250 BORDER=0><BR CLEAR=LEFT>Figura
+17</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.Documento da Lista|outline"></A><A NAME="4.3.Documento da Lista|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4525db">Documento da Lista</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Quando
+for gerada uma emiss&atilde;o de notifica&ccedil;&atilde;o, deve ser
+anexado um documento do sistema a uma lista de d&eacute;bito, e a
+impress&atilde;o vai se utilizar da configura&ccedil;&atilde;o/layout
+definida neste documento vinculado a lista.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">	Para
+vincular um documento a uma lista de notifica&ccedil;&otilde;es, o
+documento precisa ter o documento padr&atilde;o 1200. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-weight: medium">	Para
+vincular o documento deve ser preenchido os campos </SPAN><I><B>Lista
+e</B></I><SPAN STYLE="font-weight: medium"> </SPAN><I><B>Documento</B></I><SPAN STYLE="font-weight: medium">
+conforme a Figura 18.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Notificacoes_html_7da3f0be.png" NAME="figura6" ALIGN=LEFT WIDTH=605 HEIGHT=130 BORDER=0><BR CLEAR=LEFT>Figura
+18</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.Notifica&ccedil;&atilde;o por Edital|outline"></A><A NAME="4.4.Notifica&ccedil;&atilde;o por Edital|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4716db">Notifica&ccedil;&atilde;o
+por Edital</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse procedimento &eacute;<FONT SIZE=3><SPAN STYLE="font-weight: medium">
+gerado as notifica&ccedil;&otilde;es vinculadas a uma lista de d&eacute;bito
+de um edital, conforme Figura 19.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Notificacoes_html_m1cb8a57a.png" NAME="figura7" ALIGN=LEFT WIDTH=605 HEIGHT=140 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+19</FONT></P>
+<H2 CLASS="western"></H2>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<UL>
+	<P CLASS="western"></P>
+	<P CLASS="western"></P>
+</UL>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<DIV ALIGN=RIGHT>
+		<TABLE WIDTH=605 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=523>
+			<COL WIDTH=66>
+			<TR VALIGN=TOP>
+				<TD WIDTH=523>
+					<P ALIGN=CENTER STYLE="background: transparent"><FONT SIZE=2 STYLE="font-size: 9pt">DBSeller
+					Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+					</FONT><FONT COLOR="#000080"><SPAN STYLE="text-decoration: none"><A HREF="http://www.dbseller.com.br/"><FONT SIZE=2 STYLE="font-size: 9pt">www.dbseller.com.br</FONT></A></SPAN></FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+					             </FONT>                                            
+					                                                       <FONT SIZE=2 STYLE="font-size: 9pt">Rua
+					General C&acirc;mara, 406/301 &ndash; Porto Alegre/RS &ndash;
+					Fone: (51) 3076-5101</FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>10</SDFIELD>
+					/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>14</SDFIELD></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DIV>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

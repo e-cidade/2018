@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="ed260_i_codigo" label="codigo_ibge"/>
+    <campo campo="ed260_c_sigla"  label="sigla"      />
+    <campo campo="ed260_c_nome" 	label="estado"     />
+  </campos>
+  <from tabela="censouf"/>
+  <juncoes>
+  </juncoes>
+  <filtros></filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="" />
+</consulta>

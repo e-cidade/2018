@@ -1,0 +1,5 @@
+{
+  "buscaLancamentos" : "Nenhum lançamento encontrado para os filtros selecionados.",
+  "periodoEncerrado" : "Lançamento dentro do período encerrado da contabilidade.",
+  "processado"       : "Reprocessamento concluído com sucesso.\n\nTotal de registros reprocessado: [total_registro]"
+}

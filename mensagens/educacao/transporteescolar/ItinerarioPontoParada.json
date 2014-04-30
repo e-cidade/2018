@@ -1,0 +1,8 @@
+{
+  "nao_cadastrado"            : "Itinerário Ponto Parada de código [codigo] não encontrado.",
+  "logradouro_nao_informado"  : "Logradouro não informado",
+  "pontoparada_nao_informado" : "Ponto Parada não informado",
+  "erro_persitir_dados"       : "[erro_dao]",
+  "erro_remover_dados"        : "[erro_dao]",
+  "existem_alunos_vinculados" : "Não é possível remover o ponto de parada, pois existem ([numero_alunos]) alunos vinculados a ponto."
+}

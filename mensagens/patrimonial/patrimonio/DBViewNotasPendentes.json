@@ -1,0 +1,8 @@
+{
+  "buscando_notas_pendentes"    : "Aguarde! Buscando notas pendentes...",
+  "buscando_bens_nota"          : "Aguarde! Buscando bens da nota informada...",
+  "notas_pendentes"             : "Notas Pendentes",
+  "existem_bens_notas_pedentes" : "Existem bens com notas pendentes.",
+  "bens_notas_pendentes"        : "Bens com notas pendentes",
+  "bens_nao_localizados"        : "Os bens abaixo não foram localizados no patrimonio. Entre em contato com o setor responsável."
+}

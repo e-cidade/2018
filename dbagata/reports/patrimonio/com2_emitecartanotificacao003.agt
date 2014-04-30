@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout></Layout>
+        <UseTemplates></UseTemplates>
+        <OutputMask></OutputMask>
+    </Properties>
+
+    <Header>
+        <Body></Body>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body></Body>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <iCodigoBloqueio>
+            <mask></mask>
+            <value>309</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </iCodigoBloqueio>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>canela</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>notificabloqueiofornecedor.pc86_sequencial,          notificabloqueiofornecedor.pc86_data,          notificabloqueiofornecedor.pc86_hora,          notificacaonotificafornecedor.pc87_notificacao,          cgm.z01_numcgm,          cgm.z01_nome,          cgm.z01_ender,          cgm.z01_numero,          cgm.z01_compl,          cgm.z01_bairro,          cgm.z01_munic,          cgm.z01_cep,          cgm.z01_cgccpf,        db_config.munic as municipio,          coddepto,          descrdepto,          round(sum(k43_vlrcor), 2) as totalvlrcor,          round(sum(k43_vlrjur), 2) as totalvlrjur,          round(sum(k43_vlrmul), 2) as totalvlrmul,          round(sum(k43_vlrdes), 2) as totalvlrdes</Select>
+            <From>notificabloqueiofornecedor          left  join notificacaonotificafornecedor on notificacaonotificafornecedor.pc87_notificabloqueiofornecedor = notificabloqueiofornecedor.pc86_sequencial          left  join notificacao                   on notificacao.k50_notifica                                      = notificacaonotificafornecedor.pc87_notificacao          inner join notitipo                      on notitipo.k51_procede                                          = notificacao.k50_procede          inner join notidebitos                   on notidebitos.k53_notifica                                      = notificacao.k50_notifica          inner join notidebitosreg                on notidebitosreg.k43_notifica                                   = notidebitos.k53_notifica                                                  and notidebitosreg.k43_numpre                                     = notidebitos.k53_numpre                                                  and notidebitosreg.k43_numpar                                     = notidebitos.k53_numpar          inner join tabrec                        on tabrec.k02_codigo                                             = notidebitosreg.k43_receit          inner join tabrecjm                      on tabrecjm.k02_codjm                                            = tabrec.k02_codjm          inner join cgm                           on cgm.z01_numcgm                                                = notificabloqueiofornecedor.pc86_numcgm          inner join db_usuarios                   on db_usuarios.id_usuario                                        = notificabloqueiofornecedor.pc86_id_usuario          inner join db_depart                     on db_depart.coddepto                                            = notificabloqueiofornecedor.pc86_departamento          inner join db_config                     on db_config.codigo                                              = db_depart.instit</From>
+            <Where>pc86_sequencial =  $iCodigoBloqueio</Where>
+            <GroupBy>notificabloqueiofornecedor.pc86_sequencial,          notificabloqueiofornecedor.pc86_data,          notificabloqueiofornecedor.pc86_hora,          notificacaonotificafornecedor.pc87_notificacao,          cgm.z01_numcgm,          cgm.z01_nome,          cgm.z01_ender,          cgm.z01_numero,          cgm.z01_compl,          cgm.z01_bairro,          cgm.z01_munic,          cgm.z01_cep,          cgm.z01_cgccpf,            municipio,                   coddepto,          descrdepto</GroupBy>
+            <OrderBy></OrderBy>
+            <Config>
+                <Distinct></Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+                <ShowHeader></ShowHeader>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+            <Column9>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column9>
+
+            <Column10>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column10>
+
+            <Column11>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column11>
+
+            <Column12>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column12>
+
+            <Column13>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column13>
+
+            <Column14>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column14>
+
+            <Column15>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column15>
+
+            <Column16>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column16>
+
+            <Column17>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column17>
+
+            <Column18>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column18>
+
+            <Column19>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column19>
+
+            <Column20>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column20>
+
+            <Column21>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column21>
+
+            <Column22>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column22>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup>
+        <Format></Format>
+        <Orientation></Orientation>
+        <LeftMargin></LeftMargin>
+        <RightMargin></RightMargin>
+        <TopMargin></TopMargin>
+        <BottomMargin></BottomMargin>
+        <LineSpace></LineSpace>
+    </PageSetup>
+
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData></ShowData>
+        <ShowValues></ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : notificabloqueiofornecedor.pc86_sequencial</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup></PageSetup>
+        <Config>
+            <RepeatHeader></RepeatHeader>
+            <ShowFooter></ShowFooter>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing></HorizontalSpacing>
+            <VerticalSpacing></VerticalSpacing>
+            <LabelWidth></LabelWidth>
+            <LabelHeight></LabelHeight>
+            <LeftMargin></LeftMargin>
+            <TopMargin></TopMargin>
+            <Columns></Columns>
+            <Rows></Rows>
+            <PageFormat></PageFormat>
+            <LineSpacing></LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source></Source>
+        <Config>
+            <FixedDetails>1</FixedDetails>
+            <ExpandDetails></ExpandDetails>
+            <printEmptyDetail></printEmptyDetail>
+            <SumByTotal></SumByTotal>
+            <RepeatHeader></RepeatHeader>
+            <RepeatFooter></RepeatFooter>
+        </Config>
+
+        <Details>
+        </Details>
+
+    </OpenOffice>
+
+</Report>

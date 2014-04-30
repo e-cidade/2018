@@ -1,0 +1,3 @@
+{
+  "erro_regra_nao_encontrada" : "Não foram encontradas contas crédito/débito para o lançamento.\n\nDocumento: [iDocumento] - [sDescricaoDocumento]\nLançamento: [sDescricaoLancamento]\n\nVerifique o cadastro de transação." 
+}

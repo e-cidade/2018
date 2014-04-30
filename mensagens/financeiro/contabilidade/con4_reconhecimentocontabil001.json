@@ -1,0 +1,7 @@
+{
+  "codigo_reconhecimento_nao_informado" : "Reconhecimento contabil não selecionado.",
+  "cgm_nao_informado"                   : "Credor/Favorecido não informado",
+  "processo_nao_informado"              : "Processo administrativo não informado",
+  "valor_nao_informado"                 : "Valor do lançamento não informado",
+  "texto_complementar_nao_informado"    : "Texto complementar não informado"
+}

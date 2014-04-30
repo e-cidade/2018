@@ -1,0 +1,10 @@
+{
+  "erro_id_mensagem_invalido" : "ID da mensagem inválido.\nUse somente letras(sem acento), números e underscore.",
+  "mensagem_buscando_itens_menu" : "Aguarde... buscando itens de menu...",
+  "mensagem_titulo_janela_editar_mensagem" : "Editar arquivo",
+  "mensagem_descricao_janela_editar_arquivo" : "Mensagens do arquivo.",
+  "mensagem_processando_janela_editar_arquivo" : "Aguarde... processando...",
+  "mensagem_processando_salvar_arquivo" : "Aguarde... processando...",
+  "erro_mensagem_sem_id" : "Mensagem sem id.",
+  "erro_mensagem_sem_conteudo" : "Mensagem sem conteudo."
+}

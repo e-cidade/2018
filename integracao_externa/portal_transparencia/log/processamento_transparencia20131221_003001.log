@@ -1,0 +1,11 @@
+
+[21/12/2013 00:30:01] - BASE PARA IMPORTACAO  Destino: host=localhost 
+	 	                    dbname=portal_transparencia 
+		                    port=5433 
+		                    user=ecidade 
+		                    password=
+[21/12/2013 00:30:01] Erro ao conectar no Destino... (host=localhost 
+	 	                    dbname=portal_transparencia 
+		                    port=5433 
+		                    user=ecidade 
+		                    password=)

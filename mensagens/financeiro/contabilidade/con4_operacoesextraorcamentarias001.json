@@ -1,0 +1,4 @@
+{
+  "mensagem_padrao_filtros_obrigatorios"                : "Nenhum filtro obrigatório preenchido\nPreencha pelo menos um dos filtros:\n - Código Lançamento\n - Slip\n - Período",
+  "data_inicial_maior_data_final"                       : "Periodo inválido.\nData inicial maior que a final."  
+}

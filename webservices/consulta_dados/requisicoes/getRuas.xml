@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="j88_sigla"  label="tipo_logradouro"                           />
+    <campo campo="j14_nome "  label="logradouro"                                />
+    <campo campo="j14_codigo" label="cod_logradouro"                            />
+  </campos>
+  <from tabela="ruas" 								/>
+  <juncoes>
+    <join tipo="inner" tabela="ruastipo"  condicao="j14_tipo = j88_codigo"	/>
+  </juncoes>
+  <filtros></filtros>
+  <agrupamento campos=""                                                        />
+  <ordenacao   campos="j14_nome"                                                />
+</consulta>
+

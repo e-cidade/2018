@@ -1,0 +1,8 @@
+{
+  "arquivo_obrigatorio"       : "Arquivo Importado é obrigatório.",
+  "nenhum_cnae_encontrado"    : "Nenhum código CNAE encontrado para o arquivo selecionado.",
+  "nenhum_arquivo_encontrado" : "Nenhum arquivo encontrado.",
+  "arquivo_nao_encontrado"    : "Arquivo não encontrado",
+  "todos_os_registros_aptos"  : "Nenhum registro de NÃO APTO encontrado.",
+  "preenchimento_obrigatorio" : "Por favor preencha todos os campos de observação das empresas não aptas."
+}

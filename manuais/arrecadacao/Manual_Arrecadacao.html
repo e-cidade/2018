@@ -1,0 +1,2918 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="sandro">
+	<META NAME="CREATED" CONTENT="20080308;10444600">
+	<META NAME="CHANGED" CONTENT="20090122;15143700">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.1cm }
+		P { margin-bottom: 0.21cm }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "HG Mincho Light J"; font-size: 16pt }
+		H1.ctl { font-family: "Lucidasans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Helvetica"; font-size: 14pt; so-language: pt-BR; font-style: italic }
+		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		H3 { margin-bottom: 0.21cm }
+		H3.western { font-family: "Helvetica"; so-language: pt-BR }
+		H3.cjk { font-family: "HG Mincho Light J" }
+		TD P { margin-bottom: 0cm }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR"><A NAME="Sum&aacute;rio1_Head|region"></A>
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.Cadastros|outline">Cadastros	3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.Hist&oacute;rico de D&eacute;bito|outline">Hist&oacute;rico
+	de D&eacute;bito	3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.Regras de Desconto/Parcelamento|outline">Regras
+	de Desconto/Parcelamento	3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.Grupo de Taxa|outline">Grupo
+	de Taxa	8</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.Hist&oacute;rico|outline">Hist&oacute;rico	8</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.5.Grupo de D&eacute;bito|outline">Grupo
+	de D&eacute;bito	9</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.6.Tipo de D&eacute;bito|outline">Tipo
+	de D&eacute;bito	9</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.7.Calend&aacute;rio|outline">Calend&aacute;rio	12</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.8.Tipo de Juro / Multa|outline">Tipo
+	de Juro / Multa	13</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.9.Taxas Espec&iacute;ficas|outline">Taxas
+	Espec&iacute;ficas	14</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.10.Vencimento|outline">Vencimento	15</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.Consultas|outline">Consultas	17</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.Geral Financeira (CGF)|outline">Geral
+	Financeira (CGF)	17</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.1.Emiss&atilde;o de Boleto para Pagamento|outline">Emiss&atilde;o
+	de Boleto para Pagamento	20</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.2.Emiss&atilde;o de Certid&atilde;o|outline">Emiss&atilde;o
+	de Certid&atilde;o	27</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.3.Parcelamento de d&eacute;bito|outline">Parcelamento
+	de d&eacute;bito	27</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.4.Anula&ccedil;&atilde;o de Parcelamento|outline">Anula&ccedil;&atilde;o
+	de Parcelamento	32</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.5.Consultando D&eacute;bitos de Inicial do Foro|outline">Consultando
+	D&eacute;bitos de Inicial do Foro	33</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.6.Gerar CDA (Certid&atilde;o de D&iacute;vida Ativa)|outline">Gerar
+	CDA (Certid&atilde;o de D&iacute;vida Ativa)	35</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.7.Total de D&eacute;bitos|outline">Total
+	de D&eacute;bitos	36</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.8.Consulta D&eacute;bitos Prescritos|outline">Consulta
+	D&eacute;bitos Prescritos	39</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.9.Situa&ccedil;&atilde;o Fiscal|outline">Situa&ccedil;&atilde;o
+	Fiscal	40</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.10.Consulta Pagamentos Efetuados|outline">Consulta
+	Pagamentos Efetuados	41</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.11.Cancelamentos Efetuados|outline">Cancelamentos
+	Efetuados	42</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.12.Cancela D&eacute;bito|outline">Cancela
+	D&eacute;bito	43</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.13.Justifica D&eacute;bito|outline">Justifica
+	D&eacute;bito	45</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.Relat&oacute;rios|outline">Relat&oacute;rios	46</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.Cadastro|outline">Cadastro	46</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.1.Tipo de Juro / Multa|outline">Tipo
+	de Juro / Multa	46</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.2.Tipo de D&eacute;bito|outline">Tipo
+	de D&eacute;bito	47</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.3.Hist&oacute;ricos|outline">Hist&oacute;ricos	48</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.4.Calend&aacute;rio Oficial|outline">Calend&aacute;rio
+	Oficial	49</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.5.Taxas Especificas|outline">Taxas
+	Especificas	49</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.D&eacute;bitos por contribuinte|outline">D&eacute;bitos
+	por contribuinte	50</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.Taxas Espec&iacute;ficas|outline">Taxas
+	Espec&iacute;ficas	51</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.4.Recibo Avulso|outline">Recibo
+	Avulso	52</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.5.Valores Pagos por Banco|outline">Valores
+	Pagos por Banco	53</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.6.D&eacute;bitos (Contribuinte)|outline">D&eacute;bitos
+	(Contribuinte)	53</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.7.Receitas (Contribuinte)|outline">Receitas
+	(Contribuinte)	54</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.8.Parcelamento (Entrada em Aberto)|outline">Parcelamento
+	(Entrada em Aberto)	55</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.9.D&eacute;bitos Cancelados|outline">D&eacute;bitos
+	Cancelados	56</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.10.Desconto por Regra de Desconto|outline">Desconto
+	por Regra de Desconto	57</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.Procedimentos|outline">Procedimentos	58</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.Arrecada&ccedil;&atilde;o de Receita|outline">Arrecada&ccedil;&atilde;o
+	de Receita	58</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.Excess&atilde;o de Agrupamento de D&eacute;bito|outline">Excess&atilde;o
+	de Agrupamento de D&eacute;bito	59</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.Prorroga Vencimento|outline">Prorroga
+	Vencimento	59</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.Configura&ccedil;&atilde;o de Carn&ecirc;|outline">Configura&ccedil;&atilde;o
+	de Carn&ecirc;	61</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.1.Carn&ecirc; Padr&atilde;o|outline">Carn&ecirc;
+	Padr&atilde;o	61</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.2.Excess&atilde;o na Impress&atilde;o de Carn&ecirc;|outline">Excess&atilde;o
+	na Impress&atilde;o de Carn&ecirc;	61</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.Recibo da Receita|outline">Recibo
+	da Receita	62</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.6.Desconto|outline">Desconto	62</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.6.1.Lan&ccedil;a Desconto|outline">Lan&ccedil;a
+	Desconto	62</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.6.2.Cancela Desconto|outline">Cancela
+	Desconto	63</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.Manuten&ccedil;&atilde;o de D&eacute;bitos|outline">Manuten&ccedil;&atilde;o
+	de D&eacute;bitos	64</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.1.Processa Cancelamentos de D&eacute;bitos|outline">Processa
+	Cancelamentos de D&eacute;bitos	64</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.2.Cancela Cancelamento de D&eacute;bitos|outline">Cancela
+	Cancelamento de D&eacute;bitos	65</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.3.Cancela Cancelamento Processado|outline">Cancela
+	Cancelamento Processado	66</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.8.Par&acirc;metros|outline">Par&acirc;metros	67</A></FONT></P>
+</DIV>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-before: always; page-break-after: avoid">
+<FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO ARRECADA&Ccedil;&Atilde;O</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=CENTER><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>	O M&oacute;dulo Arrecada&ccedil;&atilde;o
+tem como principal objetivo gerenciar os d&eacute;bitos tribut&aacute;rios
+e n&atilde;o tribut&aacute;rios lan&ccedil;ados pela Administra&ccedil;&atilde;o
+P&uacute;blica Municipal.</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="1.Cadastros|outline"></A>Cadastros</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.1.Hist&oacute;rico de D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db102db">Hist&oacute;rico de
+D&eacute;bito</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>	Quando &eacute; criado um d&eacute;bito
+no sistema, em algumas rotinas, um hist&oacute;rico automaticamente &eacute;
+criado, assim, essa rotina permite fazer uma altera&ccedil;&atilde;o
+dessa informa&ccedil;&atilde;o manualmente.</P>
+<P CLASS="western"><A HREF="#Sum&aacute;rio1|region" NAME="db103db"><I><B>Inclus&atilde;o</B></I></A></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>	Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 01.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;d. Arrecada&ccedil;&atilde;o:</B></I>
+Campo somente como leitura, n&atilde;o pode ser alterado.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Parcela: </B></I>Campo somente
+como leitura, n&atilde;o pode ser alterado.</P>
+<P CLASS="western" ALIGN=JUSTIFY><B>Hist&oacute;rico de C&aacute;lculo:
+</B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo pode ser alterado pelo sistema, mudando o hist&oacute;rico do
+d&eacute;bito manualmente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Usu&aacute;rio: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Busca
+o usu&aacute;rio que lan&ccedil;ou o d&eacute;bito no sistema, ao
+alterar o registro, o sistema grava o usu&aacute;rio da altera&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Observa&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Preencher
+a observa&ccedil;&atilde;o referente ao d&eacute;bito.</SPAN></SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data Limite: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Data
+limite para a validade do hist&oacute;rico.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m46fd502a.png" NAME="graphics38" ALIGN=LEFT WIDTH=605 HEIGHT=153 BORDER=0><BR CLEAR=LEFT>figura
+01</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.2.Regras de Desconto/Parcelamento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4822db">Regras de
+Desconto/Parcelamento</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu &eacute; feito o
+cadastramento das regras de desconto no sistema. O sistema s&oacute;
+permite fazer parcelamentos ou emitir recibo se possuir uma regra de
+desconto em vigor, independente de ter direito a desconto ou n&atilde;o.</P>
+<P CLASS="western"><A HREF="#Sum&aacute;rio1|region" NAME="db4823db"><I><B>Inclus&atilde;o</B></I></A></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 02.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><B>ABA Parcelamento</B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:
+</B></I>Preencher o nome da regra de desconto.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data de Lan&ccedil;amento:</B></I>
+Preencher a data de cadastramento da regra. O sistema preenche
+automaticamente com a data do dia.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data Inicial:</B></I>
+Preencher a data inicial de validade da regra.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data Final:</B></I> Preencher
+a data final de validade da regra.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Desconto se todas marcadas:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Ao selecionar a op&ccedil;&atilde;o &ldquo;SIM&rdquo;, o sistema s&oacute;
+permite dar o desconto se todas parcelas do mesmo d&eacute;bito
+estiverem marcadas no momento da emiss&atilde;o do recibo na Consulta
+Geral Financeira.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Digitar valor das parcelas:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Ao selecionar para o usu&aacute;rio digitar as parcelas, permite
+colocar valores diferentes para cada parcela no caso de um
+parcelamento. Dessa forma o sistema faz o ajuste da diferen&ccedil;a
+na &uacute;ltima parcela.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Vencimento Padr&atilde;o: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ao
+preencher este campo, devemos informar o dia padr&atilde;o que
+vencer&atilde;o as parcelas, com exce&ccedil;&atilde;o da primeira
+parcela (entrada). O dia informado nesse par&acirc;metro somente
+servir&aacute; de sugest&atilde;o para o usu&aacute;rio no momento de
+parcelar um d&eacute;bito, pois poder&aacute; ser alterado no momento
+do parcelamento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Dia do Vencimento:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher este campo consiste em informar o dia em que ser&aacute;
+considerado como o limite para que o sistema defina o m&ecirc;s em
+que ser&aacute; o vencimento da segunda parcela nos casos de
+parcelamentos, ou seja, na pr&aacute;tica &eacute; como se esse dia
+definido fosse o final do m&ecirc;s.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Forma: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar 3 formas que podem ser configuradas na regra de
+parcelamento:</SPAN></SPAN></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Normal:</B></I> gera o
+	valor a ser parcelado a partir da soma do valor corrigido + a multa
+	+ os juros e subtrai o desconto concedido. Ap&oacute;s formar o
+	montante do d&eacute;bito, divide o valor em partes iguais pela
+	quantidade de vezes selecionada no parcelamento.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Juros e multa (&uacute;ltima):</B></I>
+	gera o valor a ser parcelado a partir da soma do valor corrigido
+	separadamente da soma do valor das multas e dos juros, dividindo o
+	valor corrigido em partes iguais conforme o n&uacute;mero de
+	parcelas selecionadas no parcelamento menos uma, reservando a &uacute;ltima
+	parcela para lan&ccedil;ar apenas o montante das multas e juros.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY>Caso pr&aacute;tico de parcelamento
+em 10x com desconto de 80 % na multa e juros.</P>
+<TABLE WIDTH=430 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=259>
+	<COL WIDTH=153>
+	<TR VALIGN=TOP>
+		<TD WIDTH=259>
+			<UL>
+				<P CLASS="western" ALIGN=JUSTIFY>Valor Corrigido</P>
+			</UL>
+		</TD>
+		<TD WIDTH=153>
+			<P CLASS="western" ALIGN=RIGHT>900,00</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=259>
+			<UL>
+				<P CLASS="western" ALIGN=JUSTIFY>Valor da Multa</P>
+			</UL>
+		</TD>
+		<TD WIDTH=153>
+			<P CLASS="western" ALIGN=RIGHT>50,00</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=259>
+			<UL>
+				<P CLASS="western" ALIGN=JUSTIFY>Valor dos Juros</P>
+			</UL>
+		</TD>
+		<TD WIDTH=153>
+			<P CLASS="western" ALIGN=RIGHT>200,00</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse caso ser&aacute; dividido o
+valor corrigido em 9 parcelas e a &uacute;ltima parcela ficara com o
+montante do valor dos juros e multa considerando o desconto.</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">1&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">2&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">3&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">4&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">5&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">6&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">7&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">8&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">9&ordf;
+	parcela   = 100,00 
+	</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>10&ordf; parcela  = 250,00</P>
+</UL>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Loteamento:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+	quando a regra de parcelamento estiver configurada com essa forma,
+	os descontos lan&ccedil;ados, s&oacute; ser&aacute; aplicados quando
+	for efetuado pagamento ou parcelamento de d&eacute;bito de im&oacute;veis
+	cujo propriet&aacute;rio for um </SPAN></SPAN><I><B>Loteador</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Aplica&ccedil;&atilde;o da
+Regra: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+usu&aacute;rio deve selecionar uma regra de aplica&ccedil;&atilde;o.
+No caso de escolher a op&ccedil;&atilde;o &ldquo;Antes do Lan&ccedil;amento
+do D&eacute;bito&rdquo;, ser&aacute; lan&ccedil;ado o desconto no
+momento da execu&ccedil;&atilde;o do parcelamento do contribuinte. Na
+regra &ldquo;Ap&oacute;s o Lan&ccedil;amento do D&eacute;bito&rdquo;,
+a regra n&atilde;o d&aacute; desconto no ato do parcelamento, mas no
+ato da emiss&atilde;o do recibo/carn&ecirc; para o pagamento do
+d&eacute;bito e tamb&eacute;m no momento do real pagamento ou baixa
+do d&eacute;bito.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<I><B>Documento: </B></I>Deve ser selecionado o documento que cont&eacute;m
+o texto do termo de parcelamento da regra do desconto. Se n&atilde;o
+estiver selecionado nenhum documento, n&atilde;o emite o termo de
+parcelamento ao parcelar com essa regra. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m64826a91.png" NAME="figura2" ALIGN=LEFT WIDTH=605 HEIGHT=186 BORDER=0><BR CLEAR=LEFT>Figura
+02</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Tipo de Parcelamento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	Nesta aba s&atilde;o lan&ccedil;adas as configura&ccedil;&otilde;es
+relativas a forma de pagamento, quantidades de parcelas e percentuais
+de descontos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	Cada regra para parcelamento pode ter uma ou v&aacute;rias faixas de
+intervalos de parcelas, ou seja, pode-se fazer uma configura&ccedil;&atilde;o
+para forma de pagamento ou parcelamento do d&eacute;bito.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:</B></I>
+Preencher o nome do tipo de parcelamento que ser&aacute; cadastrado.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data Inicial:</B></I>
+Preencher a data inicial da data cria&ccedil;&atilde;o do d&eacute;bito
+que a regra ser&aacute; aplicada.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data Final:</B></I> Preencher
+a data final da data cria&ccedil;&atilde;o do d&eacute;bito que a
+regra ser&aacute; aplicada.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>M&aacute;ximo de Parcelas:</B></I>
+Preencher o m&aacute;ximo de parcelas que ser&aacute; aplicado a esta
+regra.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Valor M&iacute;nimo:</B></I>
+Preencher o valor m&iacute;nimo de cada parcela.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data do Valor M&iacute;nimo:</B></I>
+Preencher a data utilizada para a corre&ccedil;&atilde;o do valor
+m&iacute;nimo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Inflator:</B></I> Selecionar o
+inflator utilizado para a corre&ccedil;&atilde;o do valor m&iacute;nimo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Desconto Valor Corrigido (%):</B></I>
+Preencher o percentual de desconto que ser&aacute; concedido sobre
+valor corrigido.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Desconto Multa (%):</B></I>
+Preencher o percentual de desconto que ser&aacute; concedido sobre
+valor da multa.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Desconto Juro (%):</B></I>
+Preencher o percentual de desconto que ser&aacute; concedido sobre
+valor dos juros.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>M&iacute;nimo de Entrada (%):</B></I>
+Preencher o percentual m&iacute;nimo que o contribunte tem que dar de
+entrada.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m637c4fba.png" NAME="figura3" ALIGN=LEFT WIDTH=605 HEIGHT=246 BORDER=0><BR CLEAR=LEFT>Figura
+03</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_346c56a.png" NAME="figura57" ALIGN=LEFT WIDTH=605 HEIGHT=230 BORDER=0><BR CLEAR=LEFT>figura
+03-A</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Tipo de D&eacute;bito</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	Nessa aba devem ser lan&ccedil;ados os tipos de d&eacute;bitos que
+desejamos conceder os benef&iacute;cios concedidos pela regra de
+parcelamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	Por exemplo, caso desejar conceder o benef&iacute;cio de descontos,
+tanto para pagamento a vista como parcelado, para os tipos de d&eacute;bito
+&ldquo;d&iacute;vida ativa&rdquo;, &ldquo;inicial do foro&rdquo;,
+&ldquo;parcelamento&rdquo; e &ldquo;parcelamento do foro , deve mser
+inclu&iacute;dos os tipos 5, 6, 30 e 34.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Tipo
+de D&eacute;bito:</B></SPAN></I> Preencher o tipo de d&eacute;bito
+que se quer conceder desconto. Caso n&atilde;o selecione nenhum tipo
+o sistema ir&aacute; considerar todos os tipos de d&eacute;bito.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Vencimento Inicial:</B></I>
+Preencher com a data final dos vencimentos a serem considerados para
+o tipo de d&eacute;bito em quest&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Vencimento Final:</B></I>
+Preencher com a data final dos vencimentos a serem considerados para
+o tipo de d&eacute;bito em quest&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_3449b2bb.png" NAME="figura4" ALIGN=LEFT WIDTH=605 HEIGHT=212 BORDER=0><BR CLEAR=LEFT>Figura
+04</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.3.Grupo de Taxa|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5009db">Grupo de Taxa</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>	Esse menu &eacute; utilizado
+atualmente para emiss&atilde;o do recibo avulso, para quando algu&eacute;m
+precisar emitir uma taxa relativa a uma emiss&atilde;o de certid&atilde;o
+d&eacute;bito na CGF, e esse recibo seja emitido automaticamente.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Esta op&ccedil;&atilde;o funciona
+quando no par&acirc;metro do M&oacute;dulo Arrecada&ccedil;&atilde;o
+estiver marcado no campo &ldquo;Recibo da Certid&atilde;o&rdquo; como
+&ldquo;SIM&rdquo; e configurado o grupo de taxa no sistema.</P>
+<P CLASS="western"><A HREF="#Sum&aacute;rio1|region" NAME="db5010db"><I><B>Inclus&atilde;o</B></I></A></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>	Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 05.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m788f9420.png" NAME="figura17" ALIGN=LEFT WIDTH=605 HEIGHT=122 BORDER=0><BR CLEAR=LEFT>Figura
+05</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.4.Hist&oacute;rico|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db102db">Hist&oacute;rico</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>	Nesse menu &eacute; feito o
+cadastro dos hist&oacute;ricos de c&aacute;lculo no sistema, sendo
+que o mesmo &eacute; vinculado a um tipo: 1=juro,  2=multa, 3=valor e
+4=desconto.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Temos que ter o cuidado de, quando
+cadastrarmos um hist&oacute;rico e o mesmo ser&aacute; utilizado para
+gera&ccedil;&atilde;o de d&eacute;bitos e disponibiliza&ccedil;&atilde;o
+para emiss&atilde;o de recibos na CGF, obrigatoriamente temos que
+cadastrar outro hist&oacute;rico com 100 a mais no c&oacute;digo,
+sen&atilde;o ao emitir o recibo na CGF ocorrer&aacute; erro. Um
+exemplo desses seria, caso cadastrarmos um hist&oacute;rico com
+c&oacute;digo 150=TAXAS DIVERSAS, devemos criar outro com 250=PGTO
+TAXAS DIVERSAS, justamente porque o sistema considera sempre o
+hist&oacute;rico + 100 como seu respectivo hist&oacute;rico de
+pagamento. Normalmente os hist&oacute;ricos s&atilde;o definidos na
+implanta&ccedil;&atilde;o / convers&atilde;o do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>	Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 06.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db103db">Inclus&atilde;o</A></B></I></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>Descri&ccedil;&atilde;o:</B></I></FONT><FONT SIZE=3><SPAN STYLE="font-weight: medium">
+Preencher o nome do hist&oacute;rico de c&aacute;lculo.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>Tipo de
+Hist&oacute;rico:</B></I></FONT><I><B> </B></I>Selecionar o tipo de
+hist&oacute;rico.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_3351699b.png" NAME="figura11" ALIGN=LEFT WIDTH=605 HEIGHT=112 BORDER=0><BR CLEAR=LEFT>Figura
+06</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.5.Grupo de D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1702db">Grupo de D&eacute;bito</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Este cadastrado &eacute; previamente
+executado/efetuado na implanta&ccedil;&atilde;o do sistema, e s&oacute;
+permite as altera&ccedil;&otilde;es dos par&acirc;metros do sistema.
+Este s&atilde;o os grandes grupos de d&eacute;bitos do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>	Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 07.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1703db">Inclus&atilde;o</A></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Permite Importar
+para D&iacute;vida: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se o tipo de d&eacute;bito pode ser importado para a
+d&iacute;vida ativa no sistema. Caso n&atilde;o permita, n&atilde;o
+v&atilde;o aparecer os d&eacute;bitos na rotina de importa&ccedil;&atilde;o
+de d&iacute;vida ativa.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Tipo de D&eacute;bito
+&eacute; Parcelamento: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se o tipo de d&eacute;bito &eacute; parcelamento,
+significando que o mesmo n&atilde;o poder&aacute; ser reparcelado
+junto com outro c&oacute;digo de arrecada&ccedil;&atilde;o (NUMPRE).
+Se n&atilde;o for parcelamento, no caso de uma d&iacute;vida ativa
+n&atilde;o parcelada ou contribui&ccedil;&atilde;o de melhoria, assim
+poder&atilde;o ser parceladas juntas.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Permite Parcelar:
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se este tipo de d&eacute;bito pode ser parcelado no
+sistema. Esse campo influencia diretamente na habilita&ccedil;&atilde;o
+do bot&atilde;o de parcelamento na CGF.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_2edd3878.png" NAME="figura14" ALIGN=LEFT WIDTH=605 HEIGHT=162 BORDER=0><BR CLEAR=LEFT>Figura
+07</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.6.Tipo de D&eacute;bito|outline"></A><A NAME="1.6.Tipo de D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db106db">Tipo de D&eacute;bito</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu &eacute; feito o cadastro
+dos tipos de d&eacute;bitos no sistema, que controla toda a parte
+financeira dos d&eacute;bitos e configura&ccedil;&otilde;es, e de
+como esse d&eacute;bito vai comportar na CGF.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db107db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>	Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 08.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Situa&ccedil;&atilde;o do
+D&eacute;bito: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o d&eacute;bito vai vir marcado ou desmarcado na tela de emiss&atilde;o
+do relat&oacute;rio do tipo de d&eacute;bito na CGF.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Banco: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo do banco padr&atilde;o, pois o sistema grava quando
+gera um recibo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Ag&ecirc;ncia:  </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo da ag&ecirc;ncia padr&atilde;o, pois o sistema grava
+quando gera um recibo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Emite Recibo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se esse tipo de d&eacute;bito emite recibo ou n&atilde;o na CGF.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Agrupa C&oacute;d. de
+Arrecada&ccedil;&atilde;o: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o d&eacute;bito vai aparecer na CGF com o c&oacute;digo de
+arrecada&ccedil;&atilde;o agrupado ou n&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Agrupa Parcela: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o d&eacute;bito vai aparecer na CGF agrupado por parcela ou n&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Taxa Banc&aacute;ria:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o valor da taxa banc&aacute;ria para os casos em que o munic&iacute;pio
+cobra essa taxa para cada documento emitido/autenticado no banco. Ao
+autenticar na tesouraria da prefeitura, o sistema desconsidera esta
+taxa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Receita da Taxa Bancaria:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Relativo
+ao campo acima (taxa banc&aacute;ria), sendo que o valor &eacute;
+arrecado nessa receita.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Modelo Carn&ecirc;: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Se
+estiver preenchido, o sistema utiliza este modelo, sen&atilde;o
+utiliza o modelo 1 para conv&ecirc;nio arrecada&ccedil;&atilde;o (de
+4 vias/parcelas para cada p&aacute;gina e para o ficha de compensa&ccedil;&atilde;o
+(1 parcela por p&aacute;gina).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Imprime Valor:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ Selecionar a op&ccedil;&atilde;o para emitir os carn&ecirc;s na CGF
+em quantidade de inflator, sen&atilde;o emite em valor.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Emite Recibo DBPref: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+emitir recibo no DBPref.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de Agrupamento: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar a op&ccedil;&atilde;o &ldquo;Parcial&rdquo; e &ldquo;nenhum&rdquo;.
+Ao escolher parcial, emite todos os d&eacute;bitos pertencente a
+aquele m&ecirc;s agrupados </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">no
+recibo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Grupo de D&eacute;bito: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do grupo de d&eacute;bito do sistema.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o nome do tipo de d&eacute;bito.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Terc. D&iacute;gito C&oacute;d.
+Barras Carn&ecirc; &Uacute;nica: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o terceiro d&iacute;gito na montagem da linha digit&aacute;vel do
+c&oacute;digo de barras para o conv&ecirc;nio arrecada&ccedil;&atilde;o.
+Relativo a emiss&atilde;o de carn&ecirc;s de cota &uacute;nica.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Terc. D&iacute;gito C&oacute;d.
+Barras Carn&ecirc; Normal: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o terceiro d&iacute;gito na montagem da linha digit&aacute;vel do
+c&oacute;digo de barras para o conv&ecirc;nio arrecada&ccedil;&atilde;o.
+Relativo a emiss&atilde;o de carn&ecirc;s normais.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Terc. D&iacute;gito C&oacute;d.
+Barras Recibo &Uacute;nica: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o terceiro d&iacute;gito na montagem da linha digit&aacute;vel do
+c&oacute;digo de barras para o conv&ecirc;nio arrecada&ccedil;&atilde;o.
+Relativo a emiss&atilde;o de recibos de cota &uacute;nica.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Terc. D&iacute;gito C&oacute;d.
+Barras Recibo Normal: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o terceiro d&iacute;gito na montagem da linha </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">digit&aacute;vel
+do c&oacute;digo de barras para o conv&ecirc;nio arrecada&ccedil;&atilde;o.
+Relativo a emiss&atilde;o de recibos normais.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Mensagem Quota &Uacute;nica
+(Carn&ecirc;)</B></I></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Guia Caixa: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+	a mensagem que ser&aacute; emitido na guia para o caixa do banco.</SPAN></SPAN></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Guia Contribuinte:
+	</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+	a mensagem que ser&aacute; emitido na guia para o </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">contribuinte.</SPAN></SPAN></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Mensagem Parcelas (Carn&ecirc;)</B></I></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Guia Caixa: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+	a mensagem que ser&aacute; emitido na guia para o caixa do banco.</SPAN></SPAN></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Guia Contribuinte:
+	</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+	a mensagem que ser&aacute; emitido na guia para o caixa do banco.</SPAN></SPAN></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Mensagem Parcela Vencida
+(Carn&ecirc;)</B></I></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Guia Caixa: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+	a mensagem que ser&aacute; emitido na guia para o caixa do banco.</SPAN></SPAN></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Guia Contribuinte:
+	</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+	a mensagem que ser&aacute; emitido na guia para o caixa do banco.</SPAN></SPAN></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Mensagem Recibo</B></I></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><I><B>Mensagem Recibo:
+	</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+	a mensagem que ser&aacute; emitido na guia do recibo.</SPAN></SPAN></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_mfe45ae2.png" NAME="figura13" ALIGN=LEFT WIDTH=605 HEIGHT=232 BORDER=0><IMG SRC="Manual_Arrecadacao_html_7574311c.png" NAME="figura12" ALIGN=LEFT WIDTH=605 HEIGHT=337 BORDER=0><BR CLEAR=LEFT>Figura
+08</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.7.Calend&aacute;rio|outline"></A><A NAME="1.7.Calend&aacute;rio|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db380db">Calend&aacute;rio</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu s&atilde;o cadastradas as
+datas referente aos feriados, s&aacute;bados e domingos do calend&aacute;rio
+do exerc&iacute;cio corrente, c<FONT SIZE=3><SPAN STYLE="font-weight: medium">onforme
+o modelo da Figura 09.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_91cfc17.png" NAME="figura5" ALIGN=LEFT WIDTH=605 HEIGHT=133 BORDER=0><BR CLEAR=LEFT>Figura
+09</P>
+<P CLASS="western" ALIGN=JUSTIFY>O usu&aacute;rio pode emitir o
+calend&aacute;rio, clicando no bot&atilde;o [Emite Calend&aacute;rio]
+para verificar as datas cadastradas para o exerc&iacute;cio corrente,
+conforme a Figura 10 abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m721cb240.png" NAME="figura6" ALIGN=LEFT WIDTH=591 HEIGHT=531 BORDER=0><BR CLEAR=LEFT>Figura
+10</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.8.Tipo de Juro / Multa|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1315db">Tipo de Juro /
+Multa</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu s&atilde;o cadastrados os
+tipo de Juro/Multa do sistema. Esse cadastro possui as regras de
+cobran&ccedil;a de juros e multas do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-decoration: none"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1317db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 11.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><B>Corre&ccedil;&atilde;o</B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>Inflator
+Corre&ccedil;&atilde;o:</B></I></FONT><FONT SIZE=3><SPAN STYLE="font-weight: medium">
+ Selecionar os inflatores referente ao Tipo de Juro/Multa.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><B><FONT SIZE=3><I>Corre&ccedil;&atilde;o
+de Vencimento: </I></FONT></B><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+corrigir para os vencimentos do Juro/Multa.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>Juro</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Juros por m&ecirc;s
+(%): </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o percentual cobrado por m&ecirc;s de juros de mora no sistema</SPAN></SPAN></FONT><B><I><FONT SIZE=3>.</FONT></I></B></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Fra&ccedil;&atilde;o
+Di&aacute;ria: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o juro ser&aacute; fracionado por dia ou n&atilde;o.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Considera
+S&aacute;b/Dom: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o juro &eacute; cobrado no s&aacute;bado ou no </SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">domingo,
+quando vencer um d&eacute;bito nestes dias da semana.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Juro
+Financiamento (%): </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+com o percentual caso o tipo de juro possua cobran&ccedil;a de juros
+de financiamento na regra.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Acumulativo:
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+caso o juro for acumulativo no sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>Multa</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Mensal Dias:
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a quantidade de dias que ser&aacute; cobrado a multa no sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Porcentagem (%):
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a porcentagem que ser&aacute; cobrada na quantidade de dias
+preenchida ao lado.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Fra&ccedil;&atilde;o
+Multa (%): </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a fra&ccedil;&atilde;o da multa, caso o tipo possuir uma multa
+di&aacute;ria.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Limite (%):
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a porcentagem m&aacute;xima que ser&aacute; cobrada para um tipo de
+d&eacute;bito.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>Desconto</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Data: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a data limite que ser&aacute; concedido o desconto no sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Parcela &Uacute;nica
+(%): </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a porcentagem de desconto na parcela &uacute;nica do sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Outras Parcelas
+(%): </FONT><FONT SIZE=3> </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a porcentagem de desconto nas outras parcelas do sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Desconto
+Integral: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o desconto ser&aacute; integral o parcial no sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>Ap&oacute;s o
+Vencimento: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o desconto ser&aacute; ap&oacute;s o vencimento do d&eacute;bito.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY>  
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Arrecadacao_html_m2c047c6b.png" NAME="figura7" ALIGN=LEFT WIDTH=590 HEIGHT=329 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+11</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.9.Taxas Espec&iacute;ficas|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1588db">Taxas Espec&iacute;ficas</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu &eacute; feito o cadastro
+das taxas especificas do sistema, que ser&atilde;o utilizados na
+emiss&atilde;o dos recibos avulsos. Figuras 12 e 12a.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1589db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA TAXAS</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo das Subreceitas:</B></I>
+Gera o c&oacute;digo da taxa automaticamente no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo da Receita:</B></I>
+Preencher com o c&oacute;digo da receita referente a taxa no sistema,
+busca no cadastro da contabilidade.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:</B></I>
+Preencher com o nome da taxa espec&iacute;fica no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Valor Fixo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o Valor Fixo da taxa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Valor Vari&aacute;vel:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o Valor Vari&aacute;vel da taxa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Quantidade M&iacute;nima:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a quantidade m&iacute;nima a ser cobrada na taxa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Percentual de Desconto (%):
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o percentual de desconto a ser cobrado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data de Cria&ccedil;&atilde;o:</B></I>
+Busca a data corrente no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Inflator para corre&ccedil;&atilde;o
+dos valores: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo dos inflatores para esta taxa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data Validade: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a data de termino desta taxa no sistema.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo para Recibo de Processo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Selecione o </SPAN></SPAN><A HREF="#1.6.Tipo de D&eacute;bito|outline" NAME="db106db"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">tipo
+de d&eacute;bito</SPAN></SPAN></A><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+que ser&aacute; gravado o valor deste recibo, ser&atilde;o mostrados
+neste link apenas os tipos de d&eacute;bitos cadastrados no grupo 14
+&ndash; Recibo de Protocolo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_2a2b23d9.jpg" NAME="figura10" ALIGN=LEFT WIDTH=605 HEIGHT=234 BORDER=0>Figura
+12</P>
+<P CLASS="western" ALIGN=JUSTIFY>Ap&oacute;s a inclus&atilde;o deste
+registro o sistema direciona para a ABA DEPARTAMENTOS onde pode ser
+selecionado o departamento no qual ser&aacute; utilizado esta taxa,
+caso n&atilde;o seja selecionado nenhum departamento esta taxa ficar&aacute;
+dispon&iacute;vel para todos os departamentos.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_21740cb9.jpg" NAME="figura72" ALIGN=LEFT WIDTH=605 HEIGHT=304 BORDER=0>Figura
+12a</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.10.Vencimento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1563db">Vencimento</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Nesse menu s&atilde;o cadastrados os vencimentos para os d&eacute;bitos
+que o sistema gera. Nesse cadastro &eacute; que o usu&aacute;rio
+informa quais as datas de vencimento de cada tipo de d&eacute;bito
+calculado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1564db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Vencimentos</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Nessa guia s&atilde;o cadastrados os par&acirc;metros dos d&eacute;bitos
+e banc&aacute;rios.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 13.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado automaticamente. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o nome do vencimento. Campo obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Banco:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do banco ou clicar no link para pesquisar. 
+Quando ocorrer um caso do munic&iacute;pio desejar utilizar um
+conv&ecirc;nio diferente para um vencimento, ao montar a linha
+digit&aacute;vel, o sistema busca desse par&acirc;metro a informa&ccedil;&atilde;o
+do banco, e n&atilde;o dos padr&otilde;es de carn&ecirc; e recibo do
+sistema.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de D&eacute;bito:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+com o c&oacute;digo do tipo de d&eacute;bito ou clicar no link para
+pesquisar, para  vincular o vencimento a um tipo de d&eacute;bito no
+sistema.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Hist&oacute;rico de D&eacute;bito:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher com o c&oacute;digo do hist&oacute;rico de d&eacute;bito ou
+clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Valor Fixado:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Quando preenchido este valor ser&aacute; utilizado para o c&aacute;lculo
+neste cadastro de vencimento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Forma de Calculo da Parcela:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite selecionar a forma para calcular as parcelas no sistema.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ao
+selecionar &ldquo;N&atilde;o calcula parcelas vencidas&rdquo;, o
+sistema busca as datas de vencimento do cadastro, e as parcelas
+vencidas n&atilde;o s&atilde;o calculadas, jogando o valor para as
+parcelas que ainda n&atilde;o est&atilde;o vencidas. e quando todas
+estiverem vencidas o sistema verifica o pr&oacute;ximo campo.(</SPAN></SPAN><I><B>Dias
+para o Vencimento:)</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Ao selecionar &ldquo;Calcula todas parcelas vencidas&rdquo;, o
+sistema calcula com as datas do cadastro de vencimento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Ao selecionar &ldquo;Calcula somente as escolhidas&rdquo;, o sistema
+calcula de acordo com as parcelas escolhidas na aba datas.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Dias para o Vencimento:</B></I>
+Informe 0 (zero) ou a quantidade de <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">dias
+para o sistema gravar o vencimento contando a partir da data do
+c&aacute;lculo. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Quando este campo estiver 0 (zero), o sistema grava o c&aacute;lculo
+com a data de vencimento 31/12 do exerc&iacute;cio corrente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_4b76a8b2.jpg" NAME="figura8" ALIGN=LEFT WIDTH=605 HEIGHT=196 BORDER=0>Figura
+13</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Datas</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nessa
+guia s&atilde;o cadastradas os par&acirc;metros do c&aacute;lculo e
+datas de pagamento e vencimentos. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 14.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+O campo &eacute; gerado automaticamente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Parcela:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado automaticamente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data de Vencimento:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+com a data de vencimento para parcela cadastrada. Campo obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o nome da parcela cadastrada de acordo com o hist&oacute;rico de
+c&aacute;lculo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Percentual: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o percentual de c&aacute;lculo para a parcela.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Hist&oacute;rico de C&aacute;lculo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do hist&oacute;rico de c&aacute;lculo ou
+clicar no link para pesquisar, vinculando para cada parcela que for
+incluir. Essa informa&ccedil;&atilde;o ser&aacute; utilizada na
+gera&ccedil;&atilde;o das parcelas no financeiro.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_2e4de4d5.png" NAME="figura9" ALIGN=LEFT WIDTH=594 HEIGHT=300 BORDER=0><BR CLEAR=LEFT>Figura
+14</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Bot&otilde;es</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Incluir:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+bot&atilde;o inclui um registro no campo abaixo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Soma Exerc&iacute;cio:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Inclui
+01(um) ano a mais nos registros j&aacute; lan&ccedil;ados.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1565db">Altera&ccedil;&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Permite alterar os campos permitidos, que n&atilde;o alteram os
+valores do c&aacute;lculo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1566db">Exclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Permite a exclus&atilde;o, quando o vencimento n&atilde;o estiver
+vinculado a nenhum c&aacute;lculo.</P>
+<H1 CLASS="western"><A NAME="2.Consultas|outline"></A>Consultas</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.Geral Financeira (CGF)|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Geral Financeira
+(CGF)</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>	A Consulta Geral Financeira &eacute;
+o menu do M&oacute;dulo Arrecada&ccedil;&atilde;o que re&uacute;ne
+diversos procedimentos relacionados aos d&eacute;bitos dos
+contribuintes gerados nas outras rotinas do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Para um melhor entendimento e
+facilidade das descri&ccedil;&otilde;es dos procedimentos, quando for
+referenciado o termo &ldquo;Consulta Geral Financeira&rdquo; ser&aacute;
+utilizada a abreviatura &ldquo;CGF&rdquo;.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Alguns exemplos de procedimentos
+realizados na CGF s&atilde;o:</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>consulta dos d&eacute;bitos dos
+	contribuintes, podendo ser acessado pelo CGM (nome), matr&iacute;cula
+	do im&oacute;vel, inscri&ccedil;&atilde;o do alvar&aacute; e n&uacute;mero
+	do parcelamento;</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>consultar os pagamentos j&aacute;
+	efetuados pelo contribuinte;</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>emiss&atilde;o de boletos para
+	pagamento dos d&eacute;bitos;</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>parcelamento de d&eacute;bitos;</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>emiss&atilde;o de certid&atilde;o
+	de d&iacute;vida ativa (CDA);</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>cancelamento de d&eacute;bito;</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>justificativa de d&eacute;bito;</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>emiss&atilde;o de certid&otilde;es
+	(positiva, negativa, regular).</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY>Para acessar a CGF, defina qual a
+chave de pesquisa que ser&aacute; utilizada:</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>CGM: informe o n&uacute;mero do
+	CGM do contribuinte ou clique no link para pesquisar pelo nome.
+	Dessa forma, se o contribuinte possuir v&aacute;rios im&oacute;veis
+	e/ou inscri&ccedil;&otilde;es de alvar&aacute;, ser&atilde;o
+	apresentados todos os d&eacute;bitos e pagamentos efetuados
+	relativos a esses im&oacute;veis e as inscri&ccedil;&otilde;es de
+	alvar&aacute;.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>Matr&iacute;cula: informe o
+	n&uacute;mero da matr&iacute;cula do im&oacute;vel que deseja
+	efetuar a consulta ou clique no link para pesquisar pelo nome do
+	propriet&aacute;rio, setor/quadra/lote e logradouro. Dessa forma,
+	ser&atilde;o apresentados os d&eacute;bitos e pagamento espec&iacute;ficos
+	dessa matr&iacute;cula, mesmo que o contribuintes possua outros
+	im&oacute;veis.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>Inscri&ccedil;&atilde;o
+	Municipal: informe o n&uacute;mero do alvar&aacute; de localiza&ccedil;&atilde;o
+	ou clique no link para pesquisar pelo nome do contribuinte. Dessa
+	forma, ser&atilde;o apresentados os d&eacute;bitos e pagamentos
+	espec&iacute;ficos dessa inscri&ccedil;&atilde;o, mesmo que o CGM
+	desse contribuinte esteja vinculado a outras inscri&ccedil;&otilde;es
+	e/ou a cadastro de matr&iacute;culas de im&oacute;veis.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>Numpre: Cada d&eacute;bito
+	gerado no sistema recebe um c&oacute;digo que no DBPortal &eacute;
+	conhecido como Numpre ou C&oacute;digo de Arrecada&ccedil;&atilde;o.
+	Caso desejar efetuar a consulta espec&iacute;fica de um determinado
+	d&eacute;bito e tiver em m&atilde;os o Numpre, informe esse c&oacute;digo
+	no campo. Dessa forma ser&aacute; apresentado na consulta somente
+	esse d&eacute;bito espec&iacute;fico, mesmo que esse d&eacute;bito
+	por exemplo seja de uma matr&iacute;cula e essa matr&iacute;cula
+	possua outros d&eacute;bitos.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>Parcelamento: Caso desejar
+	efetuar uma consulta espec&iacute;fica informando o c&oacute;digo de
+	uma parcelamento, ser&atilde;o apresentados os d&eacute;bitos e
+	pagamentos relativos &agrave;s parcelas desse parcelamento.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>Notifica&ccedil;&atilde;o:
+	Sempre que &eacute; emitida uma notifica&ccedil;&atilde;o de d&eacute;bito
+	para um contribuinte, esse documento recebe uma codifica&ccedil;&atilde;o
+	espec&iacute;fica. Caso desejar efetuar a consulta por esse c&oacute;digo,
+	ser&atilde;o apresentados todos os d&eacute;bitos que constarem em
+	nome desse contribuinte.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Ap&oacute;s definir a forma que
+deseja efetuar a consulta, informe o c&oacute;digo no seu respectivo
+campo e clique no bot&atilde;o [Pesquisar], conforme figura 15.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_2bdf95a8.png" NAME="figura58" ALIGN=LEFT WIDTH=605 HEIGHT=125 BORDER=0><BR CLEAR=LEFT>figura
+15</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Na consulta ser&atilde;o
+apresentados os d&eacute;bitos espec&iacute;ficos desse contribuinte.
+Caso o contribuinte que est&aacute; sendo consultado n&atilde;o
+possuir d&eacute;bitos pendentes, ser&aacute; exibida a mensagem &ldquo;<B>Sem
+D&eacute;bitos a Pagar</B>&rdquo;.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	No exemplo demonstrado na figura
+16, est&aacute; sendo efetuada a consulta de d&eacute;bitos de uma
+matr&iacute;cula de im&oacute;vel.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m4d18701e.png" NAME="figura59" ALIGN=LEFT WIDTH=605 HEIGHT=335 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_m6424c2f8.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_dac6aca.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m3dd777d3.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m6acd46b9.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m4292180d.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m57af15e9.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_685af56f.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_15493d33.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_2c1d96cf.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m70b1f9.gif" ALIGN=LEFT>figura
+16</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>quadro 1: nesses campos ser&atilde;o
+	apresentadas as notifica&ccedil;&otilde;es que foram emitidas para
+	essa matr&iacute;cula.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>quadro 2: nesse quadro s&atilde;o
+	exibidas as informa&ccedil;&otilde;es cadastrais do propriet&aacute;rio
+	desse im&oacute;vel ou de seu possuidor (promitente). Para
+	visualizar o cadastro completo, clique no link <FONT COLOR="#0000ff"><U>CGM</U></FONT>.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>quadro 3: nesse quadro &eacute;
+	mostrado o c&oacute;digo da matr&iacute;cula que est&aacute; sendo
+	consultada. Para visualizar seus dados cadastrais, clique no link
+	<FONT COLOR="#0000ff"><U>Matr&iacute;cula</U></FONT>.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>quadro 4: nesse quadro s&atilde;o
+	apresentados os tipos de d&eacute;bitos que essa matr&iacute;cula
+	possui em aberto. Para visualizar os d&eacute;bitos clique sobre o
+	link do d&eacute;bito desejado.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>quadro 5: nesse quadro s&atilde;o
+	apresentadas as movimenta&ccedil;&otilde;es dessa matr&iacute;cula,
+	como por exemplo: pagamentos, cancelamentos de d&eacute;bitos,
+	d&eacute;bitos prescritos, parcelamentos anulados, situa&ccedil;&atilde;o
+	fiscal, al&eacute;m de informa&ccedil;&otilde;es de outras
+	matr&iacute;culas ou inscri&ccedil;&otilde;es de alvar&aacute;
+	vinculadas ao CGM do contribuinte em quest&atilde;o. Tamb&eacute;m &eacute;
+	disponibilizado a emiss&atilde;o de certid&otilde;es de d&eacute;bito
+	dos tipos: negativa, positiva ou regular.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY>	A situa&ccedil;&atilde;o relativa a
+certid&atilde;o apresentada no quadro 5, ser&aacute; automaticamente
+definida pelo sistema mediante a averigua&ccedil;&atilde;o da
+situa&ccedil;&atilde;o dos d&eacute;bitos do contribuinte:</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>negativa: sempre que o sistema
+	n&atilde;o identificar nenhum d&eacute;bito cujo prazo para
+	pagamento j&aacute; tenha expirado (vencido);</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>positiva: sempre que o sistema
+	identificar que existe algum d&eacute;bito cujo prazo de vencimento
+	j&aacute; tenha expirado.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>regular: essa situa&ccedil;&atilde;o
+	&eacute; apresentada quando o sistema identificar que existe um
+	parcelamento, por&eacute;m n&atilde;o existe nenhuma parcela
+	vencida.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY>	Em rela&ccedil;&atilde;o a situa&ccedil;&atilde;o
+da certid&atilde;o, existe uma exce&ccedil;&atilde;o relativa ao tipo
+de d&eacute;bito ISSQN Vari&aacute;vel. Dependendo do par&acirc;metro
+&ldquo;libera vari&aacute;vel&rdquo; descrito no procedimento
+Par&acirc;metros.</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>Configura&ccedil;&otilde;es do
+	par&acirc;metro: se estiver configurado como &ldquo;<B>SIM</B>&rdquo;
+	e o usu&aacute;rio estiver consultando um contribuinte que possui
+	ISSQN Vari&aacute;vel com parcela <B>j&aacute; vencida,</B> por&eacute;m
+	com o <B>valor zerado</B>, o sistema considera que esse contribuinte
+	est&aacute; com a <B>situa&ccedil;&atilde;o negativa</B><SPAN STYLE="font-weight: medium">
+	(</SPAN>se possuir somente esse d&eacute;bito). Se o ISSQN Vari&aacute;vel
+	estiver com  a parcela <B>vencida</B>, por&eacute;m com <B>valor do
+	imposto preenchido</B>, o sistema considera esse contribuinte com a
+	<B>situa&ccedil;&atilde;o positiva. </B><SPAN STYLE="font-weight: medium">Se
+	estiver configurado como &ldquo;</SPAN><B>N&Atilde;O&rdquo;</B><SPAN STYLE="font-weight: medium">,
+	</SPAN><B>independente do valor do imposto estar preenchido com
+	valor ou n&atilde;o</B><SPAN STYLE="font-weight: medium">, se a
+	parcela j&aacute; estiver </SPAN><B>vencida</B><SPAN STYLE="font-weight: medium">,
+	o sistema considera esse contribuinte com a </SPAN><B>situa&ccedil;&atilde;o
+	positiva</B><SPAN STYLE="font-weight: medium">.</SPAN></P>
+</UL>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.1.Emiss&atilde;o de Boleto para Pagamento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Emiss&atilde;o de
+Boleto para Pagamento</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Para
+emitir o boleto para pagamento, clique no link do tipo de d&eacute;bito,
+desejado conforme quadro 4 da figura 16 e ser&aacute; apresentada a
+tela conforme figura 17.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m19aee939.png" NAME="figura60" ALIGN=LEFT WIDTH=605 HEIGHT=258 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_7ac40870.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m51f21b22.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_1aef82b5.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m3be5c6e7.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m47d09811.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m24998467.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m58cd16fb.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_655fba03.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_1dcc40e1.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_646c941b.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m389f1c2d.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_a7d331e.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m500becb9.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_14a0c407.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_a853e5d.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m5ea8931a.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_117e88bc.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_342be4dc.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m50de1907.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m75a2167a.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_53a3d25c.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m28079ca.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_4c458e9b.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m4b88ad6e.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_4cbcc786.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_4d32c195.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_8089118.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m38f08668.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_33e7d6ba.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m4adfaac7.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_4ed80ab.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m6247ba1b.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m104b52a0.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_2c85f515.gif" ALIGN=LEFT>figura
+17</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>MI:</B>
+	clique nesse campo para visualizar mais informa&ccedil;&otilde;es
+	relativas ao d&eacute;bito conforme figura 18.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>N:
+	n</B>esse campo &eacute; indicado se esse d&eacute;bito j&aacute;
+	foi inserido em alguma notifica&ccedil;&atilde;o para o
+	contribuinte.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Numpre:</B>
+	esse campo corresponde ao c&oacute;digo do d&eacute;bito no sistema.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>P:
+	</B>Corresponde ao n&uacute;mero da parcela que est&aacute; sendo
+	apresentada. Normalmente os d&eacute;bitos s&atilde;o apresentado
+	inicialmente com todas as parcelas agrupadas, nesse caso o n&uacute;mero
+	da parcela &eacute; 0 (zero), e somente quando clicar no link<FONT COLOR="#000000">
+	&ldquo;AP&rdquo;,</FONT> descrito no item 9, &eacute; que ser&atilde;o
+	apresentados os n&uacute;meros correspondente a cada parcela.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>T:</B>
+	corresponde ao total de parcelas desse d&eacute;bito.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Dt.
+	Oper:</B> Corresponde a data de opera&ccedil;&atilde;o do d&eacute;bito,
+	ou seja, a data que foi constitu&iacute;do/criado.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Dt.
+	Venc:</B> Corresponde a data de vencimento da parcela. Quando as
+	parcelas s&atilde;o apresentadas de forma agrupada, &eacute;
+	mostrada a data de vencimento da menor parcela em aberto desse
+	d&eacute;bito.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Hist&oacute;rico:</B>
+	Corresponde ao hist&oacute;rico de c&aacute;lculo da parcela e da
+	mesma forma do item anterior, quando as parcelas s&atilde;o
+	apresentadas de forma agrupada, &eacute; mostrado o hist&oacute;rico
+	da menor parcela em aberto do d&eacute;bito.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Rec:</B>
+	Ao clicar no link &ldquo;AP&rdquo; dessa coluna, as parcelas ser&atilde;o
+	desagrupadas, mostrando os valores e vencimentos individualmente por
+	parcela. Ap&oacute;s clicar no &ldquo;AP&rdquo; o link passar&aacute;
+	a ser &ldquo;DE&rdquo; e clicando sobre o mesmo, a parcela ser&aacute;
+	desmembrada em receitas, mostrando assim o c&oacute;digo de cada
+	receita do d&eacute;bito que comp&otilde;e a parcela com seus
+	respectivos valores conforme figura 19.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Receita:</B>
+	Nesse campo &eacute; apresentada a descri&ccedil;&atilde;o da
+	receita do d&eacute;bito.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Val:
+	</B>Nesse campo &eacute; apresentado o valor hist&oacute;rico do
+	d&eacute;bito.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Val.
+	Cor: </B>Nesse campo &eacute; apresentado o valor atualizado do
+	d&eacute;bito at&eacute; a data atual.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Jur:</B>
+	Nesse campo &eacute; apresentado o valor do juro de mora e de
+	parcelamento/financiamento incidente sobre as parcelas vencidas e
+	calculado at&eacute; a data atual.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Multa:</B>
+	Nesse campo &eacute; apresentado o valor da multa de mora incidente
+	sobre as parcelas vencidas.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Desconto:</B>
+	Nesse campo &eacute; apresentado o valor correspondente ao desconto
+	concedido para esse d&eacute;bito.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>Tot:</B>
+	Nesse campo &eacute; apresentado o valor total da parcela a ser pago
+	que &eacute; a soma do valor corrigido + juros + multa - desconto.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>M:
+	</B>Esse campo est&aacute; reservado para selecionar os registros
+	que deseja efetuar algum procedimento. Caso as parcelas estejam
+	desmembradas, clicando no &ldquo;<B>M&rdquo;</B><SPAN STYLE="font-weight: medium">,</SPAN>
+	ser&atilde;o selecionadas todas as parcelas e clicando no &ldquo;<B>D&rdquo;</B><SPAN STYLE="font-weight: medium">,</SPAN>
+	todas as parcelas ser&atilde;o desmarcadas.</P>
+</OL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	As
+colunas apresentadas podem variar de acordo com o tipo de d&eacute;bito
+que est&aacute; sendo consultado, por exemplo, se o tipo for &ldquo;d&iacute;vida
+ativa&rdquo;, ser&aacute; apresentado tamb&eacute;m o c&oacute;digo
+do registro e exerc&iacute;cio da d&iacute;vida.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m65ccbc9b.png" NAME="figura61" ALIGN=LEFT WIDTH=605 HEIGHT=266 BORDER=0><BR CLEAR=LEFT>figura
+18</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_c577607.png" NAME="figura62" ALIGN=LEFT WIDTH=605 HEIGHT=275 BORDER=0><BR CLEAR=LEFT>figura
+19</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Para
+emitir o boleto de pagamento, selecione os registros desejados e
+clique no bot&atilde;o [Recibo]. Dessa forma ser&aacute; gerado
+apenas um boleto agrupando com todas as parcelas selecionadas,
+conforme demonstrado na figura 20. Se for optado por emiss&atilde;o
+de carn&ecirc;, ser&aacute; gerado um boleto para cada uma das
+parcelas selecionadas conforme demonstrado na figura 21.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m1e27e38a.png" NAME="figura63" ALIGN=LEFT WIDTH=605 HEIGHT=662 BORDER=0><BR CLEAR=LEFT>figura
+20 &ndash; recibo</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_192914be.png" NAME="figura64" ALIGN=LEFT WIDTH=605 HEIGHT=585 BORDER=0><BR CLEAR=LEFT>figura
+21 &ndash; carn&ecirc;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m43767779.png" NAME="figura65" ALIGN=LEFT WIDTH=605 HEIGHT=216 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_m1bb2d106.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m2c849df.gif" ALIGN=LEFT>figura
+22</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Na tabela
+assinalada na figura 22, os valores listados na primeira linha
+correspondem a soma do valor de todos os d&eacute;bitos que est&atilde;o
+dentro do tipo  de d&eacute;bito que est&aacute; sendo consultado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Os
+valores apresentados na segunda linha correspondem a soma do valor
+das parcelas que est&atilde;o marcadas/selecionados.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Os
+valores apresentados na terceira linha correspondem a soma do valor
+dos d&eacute;bitos que n&atilde;o foram selecionados.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Para
+emitir um recibo para uma data futura, altere a data no campo [Data
+Pagamento], indicado na figura 22, e clique novamente no tipo de
+d&eacute;bito desejado. Dessa forma todos os valores ser&atilde;o
+recalculados, considerando a nova data.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db56db">Processar
+Desconto Recibo</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Se o
+campo &ldquo;Processar desconto recibo&rdquo; estiver selecionado, o
+sistema ir&aacute; considerar o desconto configurado na regra de
+parcelamento para pagamento a vista para esse tipo de d&eacute;bito.
+Caso contr&aacute;rio, o recibo ser&aacute; emitido sem nenhum
+desconto.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db56db">For&ccedil;ar
+Vencimento</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Sempre
+que &eacute; emitido recibo de um d&eacute;bito cuja data de
+vencimento ainda n&atilde;o est&aacute; expirada, a data de
+vencimento do recibo ser&aacute; a data de vencimento do d&eacute;bito.
+Caso a data de vencimento do d&eacute;bito j&aacute; tenha expirado,
+o recibo ser&aacute; emitido com a data do dia ou com a data definida
+no campo &ldquo;Data Pagamento&rdquo;. Para os casos em que na
+configura&ccedil;&atilde;o do tipo de juro e multa que est&aacute;
+vinculada a receita (normalmente em parcelamentos), est&aacute;
+configurado para cobrar juro de financiamento e o contribuinte deseja
+efetuar a antecipa&ccedil;&atilde;o do pagamento de uma parcela, e
+quer um recibo para efetuar esse pagamento, deve ser selecionado esse
+campo, e dessa forma ser&aacute; emitido um recibo da parcela com
+vencimento futura com o juro de financiamento calculado at&eacute; a
+data que est&aacute; sendo emitido o recibo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db56db">Parcelas
+de outros exerc&iacute;cios</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nessa
+op&ccedil;&atilde;o &eacute; poss&iacute;vel escolher a forma de
+tratamento que dever ser dado quando for selecionado para emitir
+carn&ecirc; de parcelas que vencem em exerc&iacute;cios futuros:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Imprimir
+	todas mas com qtd de inflator para exerc&iacute;cios posteriores:
+	nessa op&ccedil;&atilde;o, as parcelas com vencimento em exerc&iacute;cios
+	futuros que foram selecionadas para emitir carn&ecirc;, ser&atilde;o
+	impressas, porem o valor do d&eacute;bito ser&aacute; convertido em
+	quantidade de inflator e essa quantidade &eacute; que ser&aacute;
+	impressa no campo contendo na frente o inflator, utilizado para
+	corrigir a receita.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">N&atilde;o
+	imprimir parcelas de exerc&iacute;cios posteriores: nessa op&ccedil;&atilde;o,
+	mesmo que sejam selecionadas parcelas com vencimento em exerc&iacute;cios
+	posteriores, ao emitir o carn&ecirc;, essa parcelas n&atilde;o ser&atilde;o
+	impressas.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="2.1.2.Emiss&atilde;o de Certid&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Emiss&atilde;o de
+Certid&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Quando
+acessamos a CGF, seja por CGM, Matr&iacute;cula ou Inscri&ccedil;&atilde;o,
+temos a informa&ccedil;&atilde;o, por um link, de que tipo de
+Certid&atilde;o poder&aacute; ser emitida. Este tipo pode ser:
+Certid&atilde;o Negativa, Certid&atilde;o Positiva ou Certid&atilde;o
+Regular dependendo da situa&ccedil;&atilde;o financeira da origem
+acessada. Quando temos um d&eacute;bito j&aacute; vencido a Certid&atilde;o
+ser&aacute; Positiva, para que a Certid&atilde;o seja Negativa o
+d&eacute;bito que est&aacute; lan&ccedil;ado nesta origem n&atilde;o
+pode estar vencido e n&atilde;o pode ser do tipo parcelamento, pois
+se for parcelamento a Certid&atilde;o ser&aacute; sempre Positiva ou
+Regular. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Para
+considerar a situa&ccedil;&atilde;o do d&eacute;bito para a Certid&atilde;o
+o sistema leva em conta neste m&oacute;dulo a rotina <A HREF="#4.8.Par&acirc;metros|outline" NAME="db97db">Procedimentos
+&gt; Par&acirc;metros</A> campo <I>Libera Vari&aacute;vel</I>, quando
+este campo estiver marcado SIM n&atilde;o ser&atilde;o considerados
+os d&eacute;bitos de ISSQN Vari&aacute;vel sem movimento/lan&ccedil;amento
+para a Certid&atilde;o. O sistema verifica tamb&eacute;m o <A HREF="#1.7.Calend&aacute;rio|outline">Calend&aacute;rio
+do Sistema</A> onde temos os registros de s&aacute;bados, domingos e
+feriados. Podendo assim ser emitido uma Certid&atilde;o Negativa para
+um d&eacute;bito j&aacute; vencido, desde que este vencimento seja em
+um fim de semana ou feriado e a emiss&atilde;o no pr&oacute;ximo dia
+&uacute;til.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Abaixo
+relaciono alguns modelos de Certid&atilde;o, este texto &eacute;
+configurado na seguinte rotina <I><B>Configura&ccedil;&atilde;o &gt;
+Procedimentos &gt; Manuten&ccedil;&atilde;o de Documentos /
+Par&aacute;grafos</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a numera&ccedil;&atilde;o da Certid&atilde;o &eacute; configurada na
+rotina </SPAN></SPAN><A HREF="#4.8.Par&acirc;metros|outline"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Procedimentos
+&gt; Par&acirc;metros</SPAN></SPAN></A><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+campo </SPAN></SPAN><STRONG><I><SPAN STYLE="font-weight: medium">Tipo
+de Codifica&ccedil;&atilde;o</SPAN></I></STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+podendo optar por numerar utilizando </SPAN></SPAN><I><SPAN STYLE="font-weight: medium">Sequencial
+Geral, C&oacute;digo do Processo e Exerc&iacute;cio, Sequencial por
+Tipo de Certid&atilde;o ou N&atilde;o Codifica.</SPAN></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m153f2a79.jpg" NAME="figura26" ALIGN=LEFT WIDTH=605 HEIGHT=496 BORDER=0><BR CLEAR=LEFT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+modelo acima &eacute; </SPAN></SPAN><B><I>Certid&atilde;o Negativa de
+D&eacute;bitos por CGM</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+e est&aacute; sendo utilizado a op&ccedil;&atilde;o </SPAN></SPAN><I><SPAN STYLE="font-weight: medium">N&atilde;o
+Codifica</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_5c853db0.jpg" NAME="figura27" ALIGN=LEFT WIDTH=605 HEIGHT=569 BORDER=0><BR CLEAR=LEFT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+modelo acima &eacute; </SPAN></SPAN><I><B>Certid&atilde;o Negativa de
+D&eacute;bitos por Matr&iacute;cula</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+e est&aacute; sendo utilizado a op&ccedil;&atilde;o </SPAN></SPAN><I><SPAN STYLE="font-weight: medium">Sequencial
+Geral</SPAN></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_1f39733d.jpg" NAME="figura53" ALIGN=LEFT WIDTH=605 HEIGHT=460 BORDER=0><BR CLEAR=LEFT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+modelo acima &eacute; </SPAN></SPAN><B><I>Certid&atilde;o Positiva de
+D&eacute;bitos por CGM</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+e est&aacute; sendo utilizado a op&ccedil;&atilde;o </SPAN></SPAN><I><SPAN STYLE="font-weight: medium">Sequencial
+por Tipo de Certid&atilde;o</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_2eb445c6.jpg" NAME="figura54" ALIGN=LEFT WIDTH=605 HEIGHT=567 BORDER=0><BR CLEAR=LEFT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+modelo acima &eacute; </SPAN></SPAN><B><I>Certid&atilde;o Positiva de
+D&eacute;bitos por Matr&iacute;cula</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+e est&aacute; sendo utilizado a op&ccedil;&atilde;o </SPAN></SPAN><I><SPAN STYLE="font-weight: medium">Sequencial
+Geral</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_5ed452ed.jpg" NAME="figura55" ALIGN=LEFT WIDTH=605 HEIGHT=566 BORDER=0><BR CLEAR=LEFT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+modelo acima &eacute; </SPAN></SPAN><B><I>Certid&atilde;o Negativa de
+D&eacute;bitos por Inscri&ccedil;&atilde;o</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+e est&aacute; sendo utilizado a op&ccedil;&atilde;o </SPAN></SPAN><I><SPAN STYLE="font-weight: medium">C&oacute;digo
+do Processo e Exerc&iacute;cio</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.3.Parcelamento de d&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Parcelamento de
+d&eacute;bito</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Para
+parcelar um d&eacute;bito, clique no tipo de d&eacute;bito desejado,
+selecione os registros que deseja parcelar e clique no bot&atilde;o
+[Parcelamento], conforme indicado na figura 23.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ser&aacute;
+apresentada uma nova tela conforme a figura 24, onde deve ser
+selecionada a regra de parcelamento, a quantidade de parcelas e as
+datas de vencimentos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m275cfd68.png" NAME="figura66" ALIGN=LEFT WIDTH=605 HEIGHT=253 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_m59979b6b.gif" ALIGN=LEFT>figura
+23</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Selecionando
+a regra de parcelamento:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nesse
+campo deve ser selecionada uma regra que ser&aacute; utilizada para
+parcelar os d&eacute;bitos selecionados anteriormente. A tabela com
+as op&ccedil;&otilde;es de parcelas ser&aacute; montada a partir da
+quantidade m&aacute;xima de parcelas, definida nas regras de
+parcelamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Quantidade
+de parcelas:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Na tabela
+com as op&ccedil;&otilde;es do n&uacute;mero de parcelas dispon&iacute;veis,
+marque a op&ccedil;&atilde;o desejada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Respons&aacute;vel
+pelo parcelamento:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Selecione
+o contribuinte respons&aacute;vel pelo parcelamento que est&aacute;
+sendo efetuado. O sistema busca automaticamente o pr&oacute;prio nome
+do contribuinte, por&eacute;m quando seu cadastro do CGM est&aacute;
+desatualizado, dever&aacute; ser clicado no link para pesquisar pelo
+nome.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Parcelas:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Esse
+campo ser&aacute; preenchido automaticamente com a quantidade de
+parcelas selecionada na tabela menos a parcela de entrada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ex.: caso
+tenha sido selecionado no quadro a op&ccedil;&atilde;o de 10x, esse
+campo ser&aacute; preenchido com 9 parcelas. Isso corresponde a uma
+entrada mais 9 parcelas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Entrada</B></I>:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Esse
+campo corresponde ao valor da parcela de entrada e ser&aacute;
+definido de acordo com o que estiver selecionado no campo tipo de
+arredondamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Primeiro
+Vencimento:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Informe
+nesse campo a data de vencimento da entrada do parcelamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Segundo
+Vencimento:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Informe
+nesse campo a data de vencimento da segunda parcela.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Dia
+dos Pr&oacute;ximos Vencimentos:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Informe
+nesse campo o dia do vencimento da terceira parcela e diante.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ex.:</P>
+<TABLE WIDTH=417 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=257>
+	<COL WIDTH=142>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="western" ALIGN=JUSTIFY>dia das pr&oacute;ximas parcelas</P>
+		</TD>
+		<TD WIDTH=142>
+			<P CLASS="western" ALIGN=RIGHT>15</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="western" ALIGN=JUSTIFY>entrada</P>
+		</TD>
+		<TD WIDTH=142>
+			<P CLASS="western" ALIGN=RIGHT>10/01/2008</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="western" ALIGN=JUSTIFY>segunda parcela</P>
+		</TD>
+		<TD WIDTH=142>
+			<P CLASS="western" ALIGN=RIGHT>10/02/2008</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="western" ALIGN=JUSTIFY>terceira parcela</P>
+		</TD>
+		<TD WIDTH=142>
+			<P CLASS="western" ALIGN=RIGHT>15/03/2008</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=257>
+			<P CLASS="western" ALIGN=JUSTIFY>quarta parcela</P>
+		</TD>
+		<TD WIDTH=142>
+			<P CLASS="western" ALIGN=RIGHT>15/04/2008</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Tipo
+de arredondamento:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nessa
+op&ccedil;&atilde;o &eacute; poss&iacute;vel definir a forma que
+deseja gerar o valor da entrada.</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">pr&oacute;ximo
+	inteiro: divide o valor do d&eacute;bito pelo n&uacute;mero de
+	parcelas selecionado e arredonda o valor da entrada para o pr&oacute;ximo
+	valor inteiro, ajustando o valor das demais parcelas. Ex.: 102,00,
+	103,00, 104,00.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">pr&oacute;ximo
+	decimal: arredonda o valor da entrada para o pr&oacute;ximo valor
+	decimal imediatamente superior e ajusta o valor das demais parcelas.
+	Ex.: 110,00, 130,00, 140,00.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">n&atilde;o
+	arredonda: nessa op&ccedil;&atilde;o o valor da entrada ser&aacute;
+	o produto da divis&atilde;o do valor do d&eacute;bito pela
+	quantidade de parcelas definida, considerando as casas decimais.
+	Ex.: 102,45, 103,81, 104,96.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+de cada parcela:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nesse
+campo ser&aacute; apresentado o valor das parcelas compreendidas
+entre a segunda e a pen&uacute;ltima.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+da &uacute;ltima parcela:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nesse
+campo ser&aacute; apresentado o valor da &uacute;ltima parcela, que
+em muitos casos pode apresentar diferen&ccedil;a em rela&ccedil;&atilde;o
+ao valor das outra parcelas, em fun&ccedil;&atilde;o do
+arredondamento das casas decimais.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_592159a6.png" NAME="figura67" ALIGN=LEFT WIDTH=605 HEIGHT=258 BORDER=0><BR CLEAR=LEFT>figura
+24</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Caso
+desejar parcelar juntamente d&eacute;bitos que est&atilde;o dentro de
+dois ou mais tipos de d&eacute;bitos diferentes, acesse os d&eacute;bitos
+de um tipo, selecione os registros desejados e clique no bot&atilde;o
+[parcelamento]. N&atilde;o escolha nenhuma regra de parcelamento nem
+op&ccedil;&atilde;o de parcelas. Clique no outro tipo de d&eacute;bito
+desejado e selecione os registros que tamb&eacute;m deseja parcelar e
+clique no bot&atilde;o [parcelamento] novamente. Dessa forma os
+valores de todos os d&eacute;bitos selecionados em todos os tipos
+ser&atilde;o acumulados, permitindo assim efetuar um &uacute;nico
+parcelamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><U><B>Aten&ccedil;&atilde;o:</B></U><SPAN STYLE="text-decoration: none"><B>
+</B></SPAN>Somente &eacute; permitido efetuar parcelamento de d&eacute;bitos
+que est&atilde;o ligados a grupos de d&eacute;bitos cujo campo
+&ldquo;Permite Parcelar&rdquo; est&aacute; configurado como &ldquo;SIM&rdquo;.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Somente
+ser&aacute; permitido unificar em um &uacute;nico parcelamento os
+tipos de d&eacute;bito: d&iacute;vida ativa, parcelamento e d&iacute;vida
+de contribui&ccedil;&atilde;o de melhorias.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ap&oacute;s
+clicar no bot&atilde;o [Parcelar], ser&aacute; apresentada uma tela
+com o n&uacute;mero do termo de  parcelamento gerado, conforme figura
+25. Clique no bot&atilde;o [OK] para realizar a impress&atilde;o do
+termo de parcelamento, conforme modelo da figura 26.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ap&oacute;s
+parcelado o d&eacute;bito passar&aacute; para para o tipo de d&eacute;bito:</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><B>ORIGEM</B></P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><B>DESTINO</B></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>D&iacute;vida Ativa</P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>Parcelamento de D&iacute;vida</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>D&iacute;vida Ativa Melhorias</P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>Parcelamento de D&iacute;vida</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>Inicial do Foro</P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>Parcelamento do Foro</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>Diversos</P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>Parcelamento de Diversos</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>Contribui&ccedil;&atilde;o de
+			melhorias</P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY>Parcelamento de Melhorias</P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m3e09fff.png" NAME="figura68" ALIGN=LEFT WIDTH=605 HEIGHT=156 BORDER=0><BR CLEAR=LEFT>figura
+25</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_5add8aa2.png" NAME="graphics1" ALIGN=LEFT WIDTH=597 HEIGHT=510 BORDER=0><BR CLEAR=LEFT>figura
+26</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Abaixo,
+na figura 27, a demonstra&ccedil;&atilde;o da mudan&ccedil;a do tipo
+de d&eacute;bito &ldquo;d&iacute;vida ativa&rdquo; para &ldquo;parcelamento
+de d&iacute;vida&rdquo;, ap&oacute;s efetuado o parcelamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_1a1f4956.png" NAME="graphics2" ALIGN=LEFT WIDTH=605 HEIGHT=144 BORDER=0><BR CLEAR=LEFT>figura
+27</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Caso
+desejar imprimir novamente o termo de parcelamento, clique no link
+&ldquo;<FONT COLOR="#0000ff"><U>MI&rdquo;</U></FONT><FONT COLOR="#0000ff"><SPAN STYLE="text-decoration: none">
+</SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none">e
+ser&aacute; apresentada uma tela conforme figura 28. Basta clicar no
+bot&atilde;o [Visualizar Termo]. Nessa tela tamb&eacute;m est&atilde;o
+dispon&iacute;veis diversas informa&ccedil;&otilde;es a sobre o
+parcelamento.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m52954077.png" NAME="graphics3" ALIGN=LEFT WIDTH=605 HEIGHT=235 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">figura
+28.</FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.4.Anula&ccedil;&atilde;o de Parcelamento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Anula&ccedil;&atilde;o
+de Parcelamento</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000">Um parcelamento pode ser anulado, para isso
+basta clicar no link &ldquo;MI&rdquo; do registro do parcelamento,
+onde ser&aacute; apresentada a tela conforme figura 28. Clique no
+bot&atilde;o [Anular Parcelamento] e ser&aacute; apresentada uma nova
+tela onde devem ser lan&ccedil;adas algumas informa&ccedil;&otilde;es
+a respeito da anula&ccedil;&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B>Motivo:</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nesse
+campo, digite alguma observa&ccedil;&atilde;o que deseja fazer a
+respeito da anula&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo
+do Processo:</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Informe o
+n&uacute;mero do processo de protocolo que deu origem a essa anula&ccedil;&atilde;o
+ou clique no link para pesquisar pelo nome do requerente. Essa
+informa&ccedil;&atilde;o n&atilde;o &eacute; obrigat&oacute;ria.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ap&oacute;s
+lan&ccedil;ar as informa&ccedil;&otilde;es descritas acima, clique no
+bot&atilde;o [Anular Parcelamento].</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Quando &eacute;
+efetuada a anula&ccedil;&atilde;o de um parcelamento, os d&eacute;bitos
+que faziam parte da sua composi&ccedil;&atilde;o, ou seja, a origem
+do parcelamento, voltam para a situa&ccedil;&atilde;o original,
+deduzidos dos valores das parcelas pagas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ex.: Se
+foi efetuado parcelamento de d&iacute;vidas dos anos de
+2002,2003,2004, quando parcelados eles passam a ser uma &uacute;nica
+composi&ccedil;&atilde;o de d&eacute;bito dividido em parcelas. Ap&oacute;s
+anular esse parcelamento, os d&eacute;bitos voltam a ser novamente do
+tipo &ldquo;D&iacute;vida Ativa&rdquo;, separados por ano, como
+originalmente antes do parcelamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">No caso
+dos contribuintes que possuem parcelamento anulado, &eacute;
+habilitado um link para consulta, conforme demonstrado na figura 29.
+Clique nesse link e ser&aacute; apresentada outra tela com os
+parcelamentos anulados desse contribuinte, conforme figura 30. Para
+visualizar os detalhes de um parcelamento, clique no link &ldquo;MI&rdquo;
+da coluna &ldquo;Detalhes&rdquo; e abrir&aacute; o parcelamento
+anulado. Navegue pelas informa&ccedil;&otilde;es, clicando em cada
+link e visualizar&aacute; os dados conforme figura 31.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_b7fd3f5.png" NAME="graphics4" ALIGN=LEFT WIDTH=605 HEIGHT=90 BORDER=0><BR CLEAR=LEFT>figura
+29</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m1593366e.png" NAME="graphics5" ALIGN=LEFT WIDTH=605 HEIGHT=141 BORDER=0><BR CLEAR=LEFT>figura
+30</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m7dea3221.png" NAME="graphics6" ALIGN=LEFT WIDTH=605 HEIGHT=293 BORDER=0><BR CLEAR=LEFT>figura
+31</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="2.1.5.Consultando D&eacute;bitos de Inicial do Foro|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Consultando D&eacute;bitos
+de Inicial do Foro</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Os
+d&eacute;bitos que est&atilde;o agrupados dentro desse tipo de d&eacute;bito
+s&atilde;o as d&iacute;vidas que est&atilde;o em cobran&ccedil;a
+judicial, e sua consulta &eacute; um pouco diferente dos demais tipos
+de d&eacute;bitos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ap&oacute;s
+clicar no link do tipo de d&eacute;bito em quest&atilde;o, ser&aacute;
+apresentada a tela conforme demonstrado na figura 32. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m6c54e21f.png" NAME="graphics7" ALIGN=LEFT WIDTH=605 HEIGHT=137 BORDER=0><BR CLEAR=LEFT>figura
+32</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nessa
+tela podem ser realizadas as mesmas opera&ccedil;&otilde;es dos
+demais tipos de d&eacute;bitos: emiss&atilde;o de recibo e
+parcelamento por exemplo. Para isso, marque a inicial desejada e
+proceda com a opera&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">O n&uacute;mero
+da inicial corresponde ao c&oacute;digo recebido quando o Setor
+Jur&iacute;dico gerar a &ldquo;Peti&ccedil;&atilde;o Inicial&rdquo;
+no M&oacute;dulo Jur&iacute;dico.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Para
+visualizar as Certid&otilde;es de D&iacute;vida Ativa (CDAs), que
+comp&otilde;e a inicial, clique no link &ldquo;<FONT COLOR="#0000ff"><U><B><SPAN STYLE="background: transparent">MI</SPAN></B></U></FONT><FONT COLOR="#0000ff"><SPAN STYLE="text-decoration: none"><B><SPAN STYLE="background: transparent">&rdquo;</SPAN></B></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium"><SPAN STYLE="background: transparent">.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Na tela
+demonstrada na figura 33, pode ser visualizada a composi&ccedil;&atilde;o
+da inicial que est&aacute; sendo consultada, ou seja, quais s&atilde;o
+as CDAs dessa inicial.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Ao clicar
+no link &ldquo;MI&rdquo; de uma CDA, ser&aacute; apresentada uma nova
+tela com o detalhamento dos d&eacute;bitos conforme figura 34.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_1e5ab3e8.png" NAME="graphics8" ALIGN=LEFT WIDTH=605 HEIGHT=83 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+33</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_2a40b57c.png" NAME="graphics9" ALIGN=LEFT WIDTH=605 HEIGHT=229 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+34</SPAN></FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.6.Gerar CDA (Certid&atilde;o de D&iacute;vida Ativa)|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Gerar CDA (Certid&atilde;o
+de D&iacute;vida Ativa)</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">A
+Certid&atilde;o de D&iacute;vida Ativa (CDA), &eacute; o documento
+obrigat&oacute;rio para a Fazenda P&uacute;blica ingressar com uma
+A&ccedil;&atilde;o Fiscal contra um contribuinte. Para gerar uma CDA,
+o d&eacute;bito precisa obrigatoriamente estar inscrito em d&iacute;vida
+ativa, por&eacute;m h&aacute; a possibilidade tamb&eacute;m de gerar
+CDA para uma d&iacute;vida parcelada, que no sistema chamamos de
+&ldquo;Certid&atilde;o de Parcelamento&rdquo;.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Para
+gerar uma CDA, clique no link do tipo de d&eacute;bito &ldquo;D&iacute;vida
+Ativa&rdquo; ou &ldquo;Parcelamento de D&iacute;vida&rdquo;. Ap&oacute;s
+marque os registros que deseja inserir na CDA e clique no bot&atilde;o
+[CDA], conforme demonstrado na figura 35.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m37f7398.png" NAME="graphics10" ALIGN=LEFT WIDTH=605 HEIGHT=292 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_m22820e52.gif" ALIGN=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+35</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Sempre
+que for gerada uma CDA os d&eacute;bitos ser&atilde;o trocados de
+tipo:</SPAN></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=85*>
+	<COL WIDTH=171*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=33%>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="text-decoration: none"><FONT COLOR="#000000"><B><SPAN STYLE="background: transparent">ORIGEM</SPAN></B></FONT></P>
+		</TD>
+		<TD WIDTH=67%>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="text-decoration: none"><FONT COLOR="#000000"><B><SPAN STYLE="background: transparent">DESTINO</SPAN></B></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=33%>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none">
+			<FONT COLOR="#000000"><SPAN STYLE="background: transparent">D&iacute;vida
+			Ativa</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=67%>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none">
+			<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Certid&atilde;o
+			do Foro</SPAN></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=33%>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none">
+			<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Parcelamento
+			de D&iacute;vida</SPAN></FONT></P>
+		</TD>
+		<TD WIDTH=67%>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium; text-decoration: none">
+			<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Certid&atilde;o
+			do Foro</SPAN></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Ap&oacute;s
+gerar a CDA, ser&aacute; apresentada a tela informando o n&uacute;mero
+da certid&atilde;o. Para imprimir o documento, clique no bot&atilde;o
+[OK]. Modelo de uma CDA apresentado na figura 36.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m3aeb7265.jpg" NAME="graphics11" ALIGN=LEFT WIDTH=605 HEIGHT=533 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+36</SPAN></FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.7.Total de D&eacute;bitos|outline"></A>
+Total de D&eacute;bitos</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Nessa
+op&ccedil;&atilde;o &eacute; poss&iacute;vel emitir um extrato com os
+d&eacute;bitos da consulta que est&aacute; sendo efetuada. Para isso
+clique no link conforme indicado na figura 37.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_6d440202.png" NAME="graphics12" ALIGN=LEFT WIDTH=605 HEIGHT=95 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+37</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Na
+pr&oacute;xima tela, ser&aacute; apresentado um resumo dos valores
+devidos agrupados por tipo de d&eacute;bito, conforme demonstrado na
+figura 38.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">A
+configura&ccedil;&atilde;o de marca&ccedil;&atilde;o autom&aacute;tica
+do tipo de d&eacute;bito &eacute; efetuada no cadastro do tipo de
+d&eacute;bito, ou seja, l&aacute; no cadastro &eacute; que podemos
+definir se o tipo de d&eacute;bito vir&aacute; marcado ou n&atilde;o
+ao acessar essa op&ccedil;&atilde;o. Caso n&atilde;o queira que algum
+tipo de d&eacute;bito seja inserido no relat&oacute;rio, desmarque o
+tipo.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_7aa04991.png" NAME="graphics13" ALIGN=LEFT WIDTH=605 HEIGHT=246 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+38</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Por
+Receita:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Se for
+clicado nesse bot&atilde;o, os d&eacute;bitos ser&atilde;o
+apresentados nessa tela ser&atilde;o agrupados por receita dentro de
+cada tipo de d&eacute;bito, conforme demonstrado na figura 39 e o
+bot&atilde;o assume a descri&ccedil;&atilde;o &ldquo;Por Tipo&rdquo;,
+que serve para agrupar os dados por tipo novamente.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m7675f386.png" NAME="graphics14" ALIGN=LEFT WIDTH=605 HEIGHT=205 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+39</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Relat&oacute;rio
+Sint&eacute;tico:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Nessa
+op&ccedil;&atilde;o &eacute; gerado um relat&oacute;rio com o resumo
+dos valores, ou seja, ser&aacute; impresso um resumo conforme &eacute;
+apresentado na tela 40.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_mec247fe.png" NAME="graphics15" ALIGN=LEFT WIDTH=602 HEIGHT=336 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+40 &ndash; modelo sint&eacute;tico</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Relat&oacute;rio
+Anal&iacute;tico:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Nessa
+op&ccedil;&atilde;o &eacute; gerado um relat&oacute;rio com o
+detalhamento dos d&eacute;bitos que est&atilde;o dentro de cada tipo
+de d&eacute;bito, conforme demonstrado na figura 41.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m1b2a58da.png" NAME="graphics16" ALIGN=LEFT WIDTH=544 HEIGHT=509 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+41 &ndash; modelo anal&iacute;tico</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Per&iacute;odo:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Al&eacute;m
+do filtro por tipo de d&eacute;bito, pode ser gerado o relat&oacute;rio
+considerando a data de opera&ccedil;&atilde;o dos d&eacute;bitos.
+Caso queira considerar no relat&oacute;rio apenas d&eacute;bitos cuja
+data de opera&ccedil;&atilde;o esteja entre uma determinada data de
+opera&ccedil;&atilde;o, informe o intervalo nesse campo.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Exerc&iacute;cio:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Al&eacute;m
+do filtro por tipo de d&eacute;bito, pode ser gerado o relat&oacute;rio
+considerando tamb&eacute;m o exerc&iacute;cio dos d&eacute;bitos.
+Caso queira considerar no relat&oacute;rio apenas d&eacute;bitos de
+determinados exerc&iacute;cios, informe o intervalo nesse campo.</SPAN></FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.8.Consulta D&eacute;bitos Prescritos|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Consulta D&eacute;bitos
+Prescritos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Para
+consultar os d&eacute;bitos prescritos do contribuinte, clique no
+link conforme indicado na figura 42.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m45e543a9.png" NAME="graphics17" ALIGN=LEFT WIDTH=605 HEIGHT=88 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+42</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Na tela
+seguinte, ser&atilde;o apresentados todos os registros prescritos
+desse contribuinte, conforme a figura 43. Para visualizar a data da
+prescri&ccedil;&atilde;o e o usu&aacute;rio que efetuou o lan&ccedil;amento,
+posicione o ponteiro do mouse sobre o numpre de cada registro. Para
+gerar relat&oacute;rio com essas informa&ccedil;&otilde;es, clique no
+bot&atilde;o [Imprimir].</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m1e431e1.png" NAME="graphics18" ALIGN=LEFT WIDTH=605 HEIGHT=246 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_3d82eb66.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m7297470c.gif" ALIGN=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+43</SPAN></FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.9.Situa&ccedil;&atilde;o Fiscal|outline"></A>
+Situa&ccedil;&atilde;o Fiscal</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Esse link
+possibilita efetuar uma consulta sobre algum procedimento do M&oacute;dulo
+Fiscal que tenha sido gerado para o contribuinte que est&aacute;
+sendo consultado, ou seja, Notifica&ccedil;&atilde;o Fiscal, Auto de
+Infra&ccedil;&atilde;o, Vistoria e  Levantamento Fiscal, conforme
+figura 44.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Esse link
+estar&aacute; sempre dispon&iacute;vel, independente do contribuinte
+ter ou n&atilde;o um procedimento fiscal lan&ccedil;ado para ele.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_7051f051.png" NAME="graphics19" ALIGN=LEFT WIDTH=605 HEIGHT=152 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+44</SPAN></FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.10.Consulta Pagamentos Efetuados|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Consulta Pagamentos
+Efetuados</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Para
+verificar os pagamentos efetuados do contribuinte que est&aacute;
+sendo consultado, clique no link conforme indicado na figura 45. Na
+tela seguinte, conforme figura 46, s&atilde;o disponibilizadas as
+op&ccedil;&otilde;es de filtro:</SPAN></FONT></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#000000"><SPAN STYLE="background: transparent">per&iacute;odo
+	(data inicial e data final): correspondente a data que foi efetuado
+	o pagamento pelo contribuinte. Informe o intervalo desejado.</SPAN></FONT></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#000000"><SPAN STYLE="background: transparent">receita:
+	informe o c&oacute;digo da receita e ser&atilde;o apresentados os
+	pagamentos efetuados apenas nessa receita.</SPAN></FONT></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#000000"><SPAN STYLE="background: transparent">conta:
+	informe o n&uacute;mero da conta cont&aacute;bil que est&aacute;
+	vinculado o terminal de caixa n&atilde;o qual foi efetuado o
+	pagamento ou o banco onde foi efetuado o pagamento.</SPAN></FONT></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Caso
+desejar visualizar todos os pagamentos do contribuinte, deixe todos
+esses campos em branco e clique no bot&atilde;o [Procurar]. Ser&aacute;
+apresentada a tela com os valores pagos conforme figura 47. Se
+desejar imprimir essa consulta, clique no bot&atilde;o [Imprimir],
+que est&aacute; localizado no final da tela.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m11f51dfe.png" NAME="graphics20" ALIGN=LEFT WIDTH=605 HEIGHT=140 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_m437a4db4.gif" ALIGN=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+45</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_501d9063.png" NAME="graphics21" ALIGN=LEFT WIDTH=605 HEIGHT=152 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+46</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_39ccba84.png" NAME="graphics22" ALIGN=LEFT WIDTH=605 HEIGHT=205 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+47</SPAN></FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.11.Cancelamentos Efetuados|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Cancelamentos
+Efetuados</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Para
+verificar os d&eacute;bitos desse contribuinte que foram cancelados,
+clique no link conforme indicado na figura 49. Na tela seguinte,
+conforme figura 50, s&atilde;o disponibilizadas as op&ccedil;&otilde;es
+de filtro:</SPAN></FONT></P>
+<UL>
+	<LI VALUE=1><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#000000"><SPAN STYLE="background: transparent">per&iacute;odo
+	(data inicial e data final): correspondente a data que foi efetuado
+	o cancelamento do d&eacute;bito. Informe o intervalo desejado.</SPAN></FONT></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#000000"><SPAN STYLE="background: transparent">receita:
+	informe o c&oacute;digo da receita e ser&atilde;o apresentados os
+	cancelamentos efetuados apenas nessa receita.</SPAN></FONT></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Caso
+desejar visualizar todos os cancelamentos do contribuinte, deixe
+todos esses campos em branco e clique no bot&atilde;o [Procurar]. Em
+seguida ser&aacute; apresentada a tela com os valores pagos conforme
+figura 51. Para visualizar a data, o usu&aacute;rio e o motivo do
+cancelamento, posicione o ponteiro do mouse sobre o numpre de cada
+registro. Se desejar imprimir essa consulta, clique no bot&atilde;o
+[Imprimir] no final da tela.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_639f0359.png" NAME="graphics23" ALIGN=LEFT WIDTH=605 HEIGHT=137 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_m3ebc3efa.gif" ALIGN=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+49</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_63989348.png" NAME="graphics24" ALIGN=LEFT WIDTH=605 HEIGHT=144 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+50</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_12de5906.png" NAME="graphics25" ALIGN=LEFT WIDTH=605 HEIGHT=179 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+51</SPAN></FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.12.Cancela D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Cancela D&eacute;bito</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Para
+efetuar o cancelamento de um ou mais d&eacute;bitos de um
+contribuinte, clique no tipo de d&eacute;bito desejado, selecione os
+registros que deseja cancelar e clique no bot&atilde;o [Cancela
+D&eacute;bito], conforme demonstrado na figura 52.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Na
+pr&oacute;xima tela, preencha as informa&ccedil;&otilde;es relativas
+ao cancelamento que est&aacute; sendo efetuado, conforme figura 53.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Processo:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Informe o
+n&uacute;mero do processo que originou o cancelamento do d&eacute;bito
+que est&aacute; sendo efetuado ou clique no link para pesquisar pelo
+nome do requerente. Essa informa&ccedil;&atilde;o &eacute; opcional.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Tipo
+de cancelamento:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Selecione
+Normal ou Renuncia, quando selecionado Renuncia ser&aacute; mostrado
+mais um campo;</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Caracter&iacute;stica
+Peculiar:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Este
+cadastro &eacute; proveniente da contabilidade, basta clicar no link
+e ser&aacute; mostrado a rela&ccedil;&atilde;o de itens
+disponibilizados pela Contabilidade da Institui&ccedil;&atilde;o, &eacute;
+de acordo com a caracter&iacute;stica selecionada que este d&eacute;bito
+cancelado ser&aacute; registrado na contabilidade.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><I><B>Descri&ccedil;&atilde;o
+resumida do cancelamento:</B></I></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Nesse
+campo, informe a descri&ccedil;&atilde;o resumida do grupo de
+cancelamento de d&eacute;bito que est&aacute; sendo criado, pois
+outros cancelamentos podem ser vinculados a esse mesmo grupo e no
+momento de processar o cancelamento, conforme descrito no
+procedimento &ldquo;<A HREF="#4.7.1.Processa Cancelamentos de D&eacute;bitos|outline" NAME="db4476db">Processa
+Cancelamento</A>&rdquo;.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent"><STRONG><I><B>Observa&ccedil;&otilde;es:</B></I></STRONG></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent"><STRONG><SPAN STYLE="font-weight: medium">Nesse
+campo pode ser digitado texto com explica&ccedil;&atilde;o do motivo
+do cancelamento que est&aacute; sendo lan&ccedil;ado.</SPAN></STRONG></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent"><STRONG><SPAN STYLE="font-weight: medium">Ap&oacute;s
+lan&ccedil;ar as informa&ccedil;&otilde;es descritas anteriormente,
+clique no bot&atilde;o [Confirmar].</SPAN></STRONG></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent"><STRONG><SPAN STYLE="font-weight: medium">O
+d&eacute;bito s&oacute; ser&aacute; efetivamente cancelado, ap&oacute;s
+executar o procedimento &ldquo;</SPAN></STRONG><STRONG><A HREF="#4.7.1.Processa Cancelamentos de D&eacute;bitos|outline"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium"><SPAN STYLE="background: transparent">Processa
+Cancelamento</SPAN></SPAN></SPAN></FONT></A></STRONG><STRONG><SPAN STYLE="font-weight: medium">&rdquo;.
+Enquanto isso, o d&eacute;bito continuar&aacute; aparecendo e
+dispon&iacute;vel na CGF.</SPAN></STRONG></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Na figura
+53, est&aacute; sendo demonstrada a tela do lan&ccedil;amento de um
+cancelamento. J&aacute; na figura 54, est&aacute; sendo demonstrada a
+tela quando se est&aacute; lan&ccedil;ando um d&eacute;bito para
+cancelamento onde j&aacute; existe um grupo que ainda n&atilde;o foi
+processado. Dessa forma, esse novo lan&ccedil;amento pode ser
+vinculado a esse grupo j&aacute; existente, e no momento de processar
+os dois lan&ccedil;amentos, ser&atilde;o processados de uma &uacute;nica
+vez.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m1870e1f1.png" NAME="graphics26" ALIGN=LEFT WIDTH=605 HEIGHT=216 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_30c47ae6.gif" ALIGN=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+52</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m17589e70.jpg" NAME="figura56" ALIGN=LEFT WIDTH=605 HEIGHT=248 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+53</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_m7f6bfadb.gif" ALIGN=LEFT><IMG SRC="Manual_Arrecadacao_html_m14d950c8.jpg" NAME="figura69" ALIGN=LEFT WIDTH=605 HEIGHT=247 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+54</SPAN></FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.13.Justifica D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Justifica D&eacute;bito</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Esse
+procedimento deve ser utilizado quando um contribuinte efetuar o
+pagamento na rede banc&aacute;ria de um d&eacute;bito que est&aacute;
+sendo motivo de impedimento para gerar uma certid&atilde;o negativa,
+e o contribuinte procurar a prefeitura, comprovar o pagamento e
+requerer essa certid&atilde;o.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Como a
+rede banc&aacute;ria pode levar v&aacute;rios dias &uacute;teis, e
+isso depende do conv&ecirc;nio firmado entre a prefeitura e o banco
+(normalmente s&atilde;o 2 dias &uacute;teis) para enviar as
+informa&ccedil;&otilde;es de pagamento para a prefeitura, n&atilde;o
+seria poss&iacute;vel emitir a certid&atilde;o negativa no mesmo dia
+por exemplo.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Para
+justificar os d&eacute;bitos de um contribuinte, selecione o d&eacute;bito
+desejado e clique no bot&atilde;o [Justifica], conforme indicado na
+figura 55.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Na
+pr&oacute;xima tela, preencha as informa&ccedil;&otilde;es relativas
+a justificativa que est&aacute; sendo lan&ccedil;ada, conforme figura
+56.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Observa&ccedil;&otilde;es:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Nesse
+campo digite um texto com o motivo pelo qual est&aacute; sendo
+justificado esse d&eacute;bito.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B><SPAN STYLE="background: transparent">Dias:</SPAN></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Informe
+nesse campo o n&uacute;mero de dias que deseja manter esse d&eacute;bito
+justificado. A situa&ccedil;&atilde;o do contribuinte ficar&aacute;
+como negativa em rela&ccedil;&atilde;o ao d&eacute;bito justificado
+pelo n&uacute;mero de dias informados nesse campo, contando a partir
+da data do lan&ccedil;amento. Se nesse prazo o d&eacute;bito n&atilde;o
+for baixado atrav&eacute;s da rotina da baixa de banco, a situa&ccedil;&atilde;o
+do contribuinte voltar&aacute; a ficar positiva em rela&ccedil;&atilde;o
+aos d&eacute;bitos.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Ap&oacute;s
+lan&ccedil;ar as informa&ccedil;&otilde;es descritas nos campos
+anteriores, clique no bot&atilde;o [Confirmar].</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="background: transparent">Nesse
+momento, a situa&ccedil;&atilde;o do contribuinte passar&aacute; a
+ser negativa ou regular, desde que o d&eacute;bito justificado seja o
+&uacute;nico motivo pelo qual a situa&ccedil;&atilde;o do
+contribuinte estava positivo.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_374019db.png" NAME="graphics29" ALIGN=LEFT WIDTH=605 HEIGHT=281 BORDER=0><BR CLEAR=LEFT><IMG SRC="Manual_Arrecadacao_html_m1e0b87a5.gif" ALIGN=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+55</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_mb8d7a01.png" NAME="graphics30" ALIGN=LEFT WIDTH=605 HEIGHT=181 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><SPAN STYLE="background: transparent">figura
+56</SPAN></FONT></P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="3.Relat&oacute;rios|outline"></A>
+Relat&oacute;rios</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.1.Cadastro|outline"></A>Cadastro</H2>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.1.1.Tipo de Juro / Multa|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1388db">Tipo de Juro /
+Multa</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite os dados
+cadastrais do cadastro de tipo de juro/multa, permitindo gerar o
+relat&oacute;rio em ordem: alfab&eacute;tica e num&eacute;rica),
+conforme a Figura 57 abaixo. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m199d7ce6.png" NAME="figura1" ALIGN=LEFT WIDTH=605 HEIGHT=121 BORDER=0><BR CLEAR=LEFT>Figura
+57</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 58 mostra um modelo do relat&oacute;rio cadastral de tipo de
+juro/multa.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_478420fa.png" NAME="figura15" ALIGN=LEFT WIDTH=605 HEIGHT=323 BORDER=0><BR CLEAR=LEFT>Figura
+58</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.1.2.Tipo de D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1391db">Tipo de D&eacute;bito</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite os dados
+cadastrais do cadastro do tipo de d&eacute;bito, permitindo gerar o
+relat&oacute;rio em ordem: alfab&eacute;tica e num&eacute;rica),
+conforme a Figura 59 abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m5393eb41.png" NAME="figura16" ALIGN=LEFT WIDTH=605 HEIGHT=117 BORDER=0><BR CLEAR=LEFT>Figura
+59</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 60 mostra um modelo do relat&oacute;rio cadastral de tipo
+de d&eacute;bito.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_m104dcc9e.png" NAME="figura19" ALIGN=LEFT WIDTH=605 HEIGHT=380 BORDER=0><BR CLEAR=LEFT>Figura
+60</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.1.3.Hist&oacute;ricos|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1392db">Hist&oacute;ricos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite os dados
+cadastrais do cadastro do hist&oacute;rico de d&eacute;bito,
+permitindo gerar o relat&oacute;rio em ordem: alfab&eacute;tica e
+num&eacute;rica), conforme a Figura 61 abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m5bfda604.png" NAME="figura28" ALIGN=LEFT WIDTH=605 HEIGHT=111 BORDER=0><BR CLEAR=LEFT>Figura
+61</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 62 mostra um modelo do relat&oacute;rio cadastral de
+hist&oacute;rico de d&eacute;bito.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_1daf3c17.png" NAME="figura29" ALIGN=LEFT WIDTH=605 HEIGHT=308 BORDER=0><BR CLEAR=LEFT>Figura
+62</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.1.4.Calend&aacute;rio Oficial|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1584db">Calend&aacute;rio
+Oficial</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite os dados
+do calend&aacute;rio do exerc&iacute;cio selecionado no filtro do
+relat&oacute;rio, conforme a Figura 63 abaixo.  O menu Cadastro &gt;
+Calend&aacute;rio possui o modelo do calend&aacute;rio emitido.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_1a81476e.png" NAME="figura30" ALIGN=LEFT WIDTH=605 HEIGHT=92 BORDER=0><BR CLEAR=LEFT>Figura
+63</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.1.5.Taxas Especificas|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3814db">Taxas Especificas</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite os dados
+cadastrais da taxa espec&iacute;fica, permitindo gerar o relat&oacute;rio
+nas op&ccedil;&otilde;es de ordem: todos, com e sem data). Modelo
+conforme a Figura 64 abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m37b6ed8e.png" NAME="figura41" ALIGN=LEFT WIDTH=605 HEIGHT=149 BORDER=0><BR CLEAR=LEFT>Figura
+64</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 65 mostra um modelo do relat&oacute;rio cadastral da taxa
+espec&iacute;fica.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_1d1f6763.png" NAME="figura42" ALIGN=LEFT WIDTH=605 HEIGHT=188 BORDER=0><BR CLEAR=LEFT>Figura
+65</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.2.D&eacute;bitos por contribuinte|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1592db">D&eacute;bitos por
+contribuinte</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse relat&oacute;rio &eacute;
+emitido uma lista de contribuintes com os valores por tipo de d&eacute;bito,
+podendo repetir o contribuinte quantas vezes os tipos de d&eacute;bito
+escolhido no filtro do relat&oacute;rio. Este relat&oacute;rio
+utiliza a tabela d&eacute;bito do sistema. O campo data do c&aacute;lculo
+&eacute; a &uacute;ltima data da tabela d&eacute;bito no sistema.
+Modelo do formul&aacute;rio de emiss&atilde;o do relat&oacute;rio
+conforme a Figura 66 abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m3eef36bc.png" NAME="figura31" ALIGN=LEFT WIDTH=600 HEIGHT=253 BORDER=0><BR CLEAR=LEFT>Figura
+66</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 67 mostra um modelo do relat&oacute;rio de tipo de d&eacute;bito
+por contribuinte.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m7d622db6.png" NAME="figura32" ALIGN=LEFT WIDTH=605 HEIGHT=334 BORDER=0><BR CLEAR=LEFT>Figura
+67</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.3.Taxas Espec&iacute;ficas|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3814db">Taxas Espec&iacute;ficas</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>S&atilde;o exibidas nesse relat&oacute;rio
+as taxas espec&iacute;ficas do sistema com seus valores calculados e
+a quantidade de vezes que foram utilizadas em um determinado per&iacute;odo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 68.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Taxa
+Espec&iacute;fica:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Preencher com a taxa que se quer emitir ou deixar em branco </SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">para
+emitir todas. </SPAN></SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data: </B></I> Preencher<FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium"><SPAN STYLE="background: transparent">
+com </SPAN></SPAN></SPAN></SPAN></FONT></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">a
+data inicial e final do per&iacute;odo que se quer emitir.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Agrupar:
+</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Permite
+agrupar por taxa espec&iacute;fica.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_7ebf91e2.png" NAME="figura34" ALIGN=LEFT WIDTH=605 HEIGHT=159 BORDER=0><BR CLEAR=LEFT>Figura
+68</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 69 mostra um modelo de relat&oacute;rio das taxas
+espec&iacute;ficas.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_3a291389.png" NAME="figura33" ALIGN=LEFT WIDTH=605 HEIGHT=188 BORDER=0><BR CLEAR=LEFT>Figura
+69</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.4.Recibo Avulso|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5051db">Recibo Avulso</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio exibe os
+recibos avulso, por um per&iacute;odo e podendo selecionar por uma
+receita espec&iacute;fica.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 70.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m2740029e.png" NAME="figura35" ALIGN=LEFT WIDTH=605 HEIGHT=181 BORDER=0><BR CLEAR=LEFT>Figura
+70</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 71 mostra um modelo do relat&oacute;rio de recibo avulso.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_44fa0130.png" NAME="figura36" ALIGN=LEFT WIDTH=605 HEIGHT=240 BORDER=0><BR CLEAR=LEFT>Figura
+71</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.5.Valores Pagos por Banco|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1761db">Valores Pagos por
+Banco</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio permite ao
+usu&aacute;rio que faz a baixa banc&aacute;ria efetuar a conferencia
+dos valores que foram pagos com diferen&ccedil;a em rela&ccedil;&atilde;o
+ao do calculado, permitindo buscar os dados pela data do arquivo ou
+do pagamento do d&eacute;bito. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 72.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_bf52a6b.png" NAME="figura37" ALIGN=LEFT WIDTH=600 HEIGHT=210 BORDER=0><BR CLEAR=LEFT>Figura
+72</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 73 mostra um modelo do relat&oacute;rio de valores pago por
+banco.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_1f804526.png" NAME="figura38" ALIGN=LEFT WIDTH=605 HEIGHT=191 BORDER=0><BR CLEAR=LEFT>Figura
+73</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.6.D&eacute;bitos (Contribuinte)|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1592db">D&eacute;bitos
+(Contribuinte)</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite os
+valores por contribuinte conforme os d&eacute;bitos da consulta geral
+financeira.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 74.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_5ec790a7.png" NAME="figura39" ALIGN=LEFT WIDTH=605 HEIGHT=169 BORDER=0><BR CLEAR=LEFT>Figura
+74</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 75 mostra um modelo do relat&oacute;rio de D&eacute;bitos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_m1a7cad21.png" NAME="figura40" ALIGN=LEFT WIDTH=605 HEIGHT=138 BORDER=0><BR CLEAR=LEFT>Figura
+75</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.7.Receitas (Contribuinte)|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2118db">Receitas
+(Contribuinte)</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite uma
+lista de contribuintes por receita, com os valores para cada
+contribuinte, mostrando o hist&oacute;rico de pagamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 76.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m471a5a6.png" NAME="figura43" ALIGN=LEFT WIDTH=605 HEIGHT=164 BORDER=0><BR CLEAR=LEFT>Figura
+76</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 77 mostra um modelo do relat&oacute;rio das receitas por
+contribuinte.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_11d89519.png" NAME="figura44" ALIGN=LEFT WIDTH=605 HEIGHT=408 BORDER=0><BR CLEAR=LEFT>Figura
+77</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.8.Parcelamento (Entrada em Aberto)|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4887db">Parcelamento
+(Entrada em Aberto)</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite uma
+lista dos parcelamentos cuja entrada do parcelamento n&atilde;o foi
+paga. No caso, est&atilde;o em aberto os pagamentos do parcelamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 78.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_mf3de70b.png" NAME="figura45" ALIGN=LEFT WIDTH=605 HEIGHT=90 BORDER=0><BR CLEAR=LEFT>Figura
+78</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 79 mostra um modelo do relat&oacute;rio de parcelamento
+(Entrada em Aberto).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_m55ed394b.png" NAME="figura46" ALIGN=LEFT WIDTH=605 HEIGHT=332 BORDER=0><BR CLEAR=LEFT>Figura
+79</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.9.D&eacute;bitos Cancelados|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db608589db">D&eacute;bitos
+Cancelados</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite os
+d&eacute;bitos cancelados no sistema, conforme os tipos de d&eacute;bitos
+existentes. Este relat&oacute;rio &eacute; muito utilizado pelo setor
+tribut&aacute;rio, para verificar informa&ccedil;&otilde;es referente
+renuncias de receita, afim de repassar ao setor cont&aacute;bil.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 80.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m796bc7d6.jpg" NAME="figura47" ALIGN=LEFT WIDTH=605 HEIGHT=378 BORDER=0><BR CLEAR=LEFT>Figura
+80</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 81 e 81a mostram o relat&oacute;rio dos d&eacute;bitos
+cancelados agrupado por <I><B>Caracter&iacute;stica Peculiar.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_b748b73.jpg" NAME="figura48" ALIGN=LEFT WIDTH=605 HEIGHT=345 BORDER=0><BR CLEAR=LEFT>Figura
+81</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Arrecadacao_html_m784622a6.jpg" NAME="figura71" ALIGN=LEFT WIDTH=605 HEIGHT=379 BORDER=0><BR CLEAR=LEFT>Figura
+81a</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.10.Desconto por Regra de Desconto|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db608595db">Desconto por
+Regra de Desconto</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse relat&oacute;rio s&atilde;o
+emitidos os descontos efetuados pelas regras de descontos dos
+parcelamento e na emiss&atilde;o dos recibos para pagamento. Este
+relat&oacute;rio tamb&eacute;m &eacute; utilizado para informa&ccedil;&otilde;es
+sobre renuncia de receita no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 82.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m12c561b6.png" NAME="figura49" ALIGN=LEFT WIDTH=605 HEIGHT=164 BORDER=0><BR CLEAR=LEFT>Figura
+82</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+A Figura 83 mostra um modelo de relat&oacute;rio de desconto por
+regra de desconto.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_689d9e0e.png" NAME="figura50" ALIGN=LEFT WIDTH=605 HEIGHT=166 BORDER=0><BR CLEAR=LEFT>Figura
+82</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="4.Procedimentos|outline"></A>
+Procedimentos</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.1.Arrecada&ccedil;&atilde;o de Receita|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db52db">Arrecada&ccedil;&atilde;o
+de Receita</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse procedimento &eacute; efetuada
+a arrecada&ccedil;&atilde;o dos d&eacute;bitos no sistema. Essa
+rotina utiliza o cadastro de autenticadoras, que s&atilde;o ligadas
+ao ip da m&aacute;quina que est&aacute; executando o processo de
+autentica&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 83.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Conta:</B></I> Selecionar a
+conta que ser&aacute; feita a entrada da arrecada&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Autenticar:</B></I>  Pode ser
+feito atrav&eacute;s de uma leitora de c&oacute;digo de barras ou
+digitar o c&oacute;digo de arrecada&ccedil;&atilde;o do recibo/carn&ecirc;
+nesse campo e ap&oacute;s basta clicar no bot&atilde;o [calcular].
+Para finalizar o processo, basta clicar no bot&atilde;o 
+[autenticar]. O sistema exibe uma mensagem perguntando se o usu&aacute;rio
+quer autenticar novamente, para casos em que n&atilde;o tenha
+executado corretamente na primeira vez.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>&Agrave; Pagar:</B></I> Ao
+passar o c&oacute;digo de barras ou digitar o c&oacute;digo de
+arrecada&ccedil;&atilde;o ele busca o valor do recibo para este
+campo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Recebido: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ao
+digitar o valor recebido, o sistema calcula automaticamente o troco a
+ser dado para o contribuinte.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m1148668d.png" NAME="figura18" ALIGN=LEFT WIDTH=605 HEIGHT=306 BORDER=0><BR CLEAR=LEFT>Figura
+83</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.2.Excess&atilde;o de Agrupamento de D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5161db">Excess&atilde;o de
+Agrupamento de D&eacute;bito</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse procedimento s&atilde;o
+cadastrados os c&oacute;digos de arrecada&ccedil;&atilde;o (e o seu
+tipo de d&eacute;bito) que n&atilde;o se quer agrupar na emiss&atilde;o
+do recibo no sistema, caso a institui&ccedil;&atilde;o utilize o tipo
+de d&eacute;bito como campo &ldquo;Agrupar&rdquo; configurado como 
+parcial.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db5179db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 84.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_70b83e85.png" NAME="figura20" ALIGN=LEFT WIDTH=605 HEIGHT=103 BORDER=0><BR CLEAR=LEFT>Figura
+84</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.3.Prorroga Vencimento|outline"></A><A HREF="#Sum&aacute;rio1_Head|region" NAME="db2246db">Prorroga
+Vencimento</A></H2>
+<P CLASS="western" STYLE="text-indent: 1.25cm"><BR><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 1.25cm; font-style: normal; text-decoration: none">
+<FONT SIZE=4>Esta rotina se destina a realizar manuten&ccedil;&atilde;o
+nos vencimentos dos d&eacute;bitos gerados para uma determinada
+matr&iacute;cula, inscri&ccedil;&atilde;o ou CGM, onde o principal
+objetivo e alterar o vencimento do d&eacute;bito para que este n&atilde;o
+seja cobrado juro ou multa por motivos alheios ao fato do atraso
+propriamente dito por parte do contribuinte.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 1.25cm; font-style: normal; text-decoration: none">
+<IMG SRC="Manual_Arrecadacao_html_34b175eb.png" NAME="figura25" ALIGN=LEFT WIDTH=605 HEIGHT=368 BORDER=0><FONT SIZE=4>Os
+campos usu&aacute;rio, data e hora, n&atilde;o ser&atilde;o informado
+pelo usu&aacute;rio, pois estas informa&ccedil;&otilde;es o sistema
+capturar&aacute; da se&ccedil;&atilde;o, o numpre ser&aacute; aquele
+que ir&aacute; ser informado para ser feita a prorroga&ccedil;&atilde;o.
+O campo parcela, poder&aacute; ser escolhido conforme a situa&ccedil;&atilde;o
+do numpre, por exemplo, um numpre cuja origem e de um parcelamento em
+dez vezes, e a primeira ir&aacute; ser prorrogada, aparecer&aacute; a
+op&ccedil;&atilde;o para prorrogar qualquer uma das que constarem
+neste campo.</FONT></P>
+<P CLASS="western"><FONT SIZE=4><I>	</I><SPAN STYLE="font-style: normal">O
+inicio se refere ao per&iacute;odo de inicio que dever&aacute;
+acontecer a prorroga&ccedil;&atilde;o, poder&aacute; vir de encontro
+ao final do d&eacute;bito, j&aacute; a op&ccedil;&atilde;o fim do
+processo, se refere a data de fim do procedimento, ou seja, at&eacute;
+quando ser&aacute; prorrogado o d&eacute;bito. O campo observa&ccedil;&otilde;es
+e um campo livre, onde dever&aacute; ser utilizado para informar o
+que foi feito com rela&ccedil;&atilde;o aos procedimentos de
+prorroga&ccedil;&atilde;o do referido d&eacute;bito.</SPAN></FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.Configura&ccedil;&atilde;o de Carn&ecirc;|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5183db">Configura&ccedil;&atilde;o
+de Carn&ecirc;</A></H2>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.1.Carn&ecirc; Padr&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5183db">Carn&ecirc; Padr&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_499f6cf5.png" NAME="figura21" ALIGN=LEFT WIDTH=605 HEIGHT=170 BORDER=0><BR CLEAR=LEFT>Figura
+85</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_3d95c8cc.png" NAME="figura22" ALIGN=LEFT WIDTH=605 HEIGHT=201 BORDER=0><BR CLEAR=LEFT>Figura
+86</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.2.Excess&atilde;o na Impress&atilde;o de Carn&ecirc;|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5183db">Excess&atilde;o na
+Impress&atilde;o de Carn&ecirc;</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>&Eacute; uma forma de cadastrar a
+m&aacute;quina do usu&aacute;rio como uma excess&atilde;o do sistema.
+Assim as m&aacute;quinas cadastradas nesse procedimento vai emitir o
+modelo selecionado nesse cadastro, e n&atilde;o o padr&atilde;o do
+sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db5166db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 87.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Modelo Padr&atilde;o:</B></I>
+Selecionar o modelo de carn&ecirc; utilizado para est&aacute;
+m&aacute;quina.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>IP:</B></I> Preencher o IP de
+rede da m&aacute;quina.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_76ebd6ae.png" NAME="figura23" ALIGN=LEFT WIDTH=605 HEIGHT=117 BORDER=0><BR CLEAR=LEFT>Figura
+87</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.5.Recibo da Receita|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db111db">Recibo da Receita</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>O objetivo da rotina &eacute; emitir
+recibos de um receita tribut&aacute;ria ou n&atilde;o tribut&aacute;ria.
+Caso emita um recibo avulso e n&atilde;o efetuar o pagamento, o
+registro n&atilde;o ficar&aacute; em d&eacute;bito. Mas se houver
+pagamento, o sistema credita o registro em pagamento efetuados.</P>
+<P CLASS="western" ALIGN=JUSTIFY>Quando for efetuar uma arrecada&ccedil;&atilde;o
+de um valor negativo (normalmente para casos de dedu&ccedil;&otilde;es),
+devemos utilizar a rotina de planilha (Tesouraria &gt; Procedimento &gt;
+Planilha de Lan&ccedil;amento).</P>
+<P CLASS="western" ALIGN=JUSTIFY>Ao lan&ccedil;ar um recibo para o
+protocolo, o sistema vincula o valor ao CGM do titular do processo,
+ficando vinculado tamb&eacute;m ao processo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_101a22bb.png" NAME="figura24" ALIGN=LEFT WIDTH=605 HEIGHT=296 BORDER=0><BR CLEAR=LEFT>Figura
+88</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.6.Desconto|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db1985521db">Desconto</A></H2>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.6.1.Lan&ccedil;a Desconto|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1593db">Lan&ccedil;a
+Desconto</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse procedimento &eacute;
+concedido um desconto para um d&eacute;bito. Este desconto &eacute;
+registrado/vinculado ao valor hist&oacute;rico do c&oacute;digo de
+arrecada&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 89.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Parcela:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Permite selecionar todas as parcelas de um d&eacute;bito ou somente
+uma.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3><SPAN STYLE="text-decoration: none">Receita:
+</SPAN></FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Permite
+selecionar uma receita para os d&eacute;bitos.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3><SPAN STYLE="text-decoration: none">Percentual:
+</SPAN></FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Escolher
+um percentual para conceder de desconto no d&eacute;bito escolhido.
+Caso escolha o percentual, n&atilde;o deve ser escolhido o campo
+valor.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3><SPAN STYLE="text-decoration: none">Valor:
+</SPAN></FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Escolher
+o valor para conceder de desconto no d&eacute;bito escolhido. Caso
+escolha o valor, n&atilde;o deve ser escolhido o campo percentual.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3><SPAN STYLE="text-decoration: none">Hist&oacute;rico:
+</SPAN></FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Este
+campo informa o hist&oacute;rico do desconto para a consulta do
+d&eacute;bito.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Observa&ccedil;&atilde;o:</B></SPAN></I></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite descrever uma observa&ccedil;&atilde;o para o desconto do
+d&eacute;bito.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_630d3f55.png" NAME="figura51" ALIGN=LEFT WIDTH=605 HEIGHT=261 BORDER=0><BR CLEAR=LEFT>Figura
+89</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.6.2.Cancela Desconto|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1725db">Cancela Desconto</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Nessa op&ccedil;&atilde;o &eacute;
+poss&iacute;vel cancelar um desconto concedido para um determinado
+d&eacute;bito, para isso, informe o numpre do d&eacute;bito e clique
+no bot&atilde;o [Enviar].</P>
+<P CLASS="western" ALIGN=JUSTIFY>Na tela seguinte ser&atilde;o
+apresentados os descontos concedidos para o d&eacute;bito vinculado
+ao numpre, conforme demonstrado na figura 90. Selecione qual item de
+desconto deseja cancelar e clique no bot&atilde;o [Cancelar].</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_m702131b7.png" NAME="graphics31" ALIGN=LEFT WIDTH=605 HEIGHT=205 BORDER=0><BR CLEAR=LEFT>figura
+90</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.7.Manuten&ccedil;&atilde;o de D&eacute;bitos|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4477db">Manuten&ccedil;&atilde;o
+de D&eacute;bitos</A></H2>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.7.1.Processa Cancelamentos de D&eacute;bitos|outline"></A><A NAME="4.7.1.Processa Cancelamentos de D&eacute;bitos|outline"></A><A NAME="4.7.1.Processa Cancelamentos de D&eacute;bitos|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4476db">Processa
+Cancelamentos de D&eacute;bitos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Esse
+procedimento consiste em efetivar os cancelamentos de d&eacute;bitos
+que foram lan&ccedil;ados/registrados para cancelar na Consulta Geral
+Financeira, ou seja, &eacute; nesse momento que o d&eacute;bito
+passar&aacute; da situa&ccedil;&atilde;o de d&eacute;bito pendente
+para d&eacute;bito cancelado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ao
+acessar o menu, ser&atilde;o apresentados todos os grupos de
+cancelamentos que foram gerados e que ainda n&atilde;o foram
+processados. Selecione o registro desejado para processar conforme
+demonstrado na figura 91.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Na
+pr&oacute;xima tela, s&atilde;o apresentados os d&eacute;bitos que
+est&atilde;o vinculados ao grupo de cancelamento selecionado e os
+dados de lan&ccedil;amento:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Dados
+do Cancelamento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nesse
+quadro s&atilde;o apresentadas informa&ccedil;&otilde;es sobre o
+lan&ccedil;amento como: usu&aacute;rio, data e hora e a mensagem de
+digitada pelo usu&aacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Dados
+do Processamento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nesse
+quadro o usu&aacute;rio que est&aacute; processando o cancelamento
+pode digitar uma mensagem no campo observa&ccedil;&otilde;es e
+visualizar todos os d&eacute;bitos que ser&atilde;o processados. Pode
+tamb&eacute;m alterar o conte&uacute;do do campo <I><B>Tipo de
+Cancelamento</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">,
+(Normalou Renuncia). Ap&oacute;s</SPAN></SPAN><I><B> </B></I>digitar
+a mensagem, clique no bot&atilde;o [Processar] que fica no final da
+tela, conforme demonstrado na figura 92.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m862658b.png" NAME="graphics32" ALIGN=LEFT WIDTH=605 HEIGHT=199 BORDER=0><BR CLEAR=LEFT>figura
+91</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_93b0753.jpg" NAME="figura70" ALIGN=LEFT WIDTH=605 HEIGHT=425 BORDER=0><BR CLEAR=LEFT>figura
+92</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.7.2.Cancela Cancelamento de D&eacute;bitos|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4771db">Cancela
+Cancelamento de D&eacute;bitos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nessa
+rotina &eacute; poss&iacute;vel excluir da lista dos cancelamentos a
+serem processados um d&eacute;bito espec&iacute;fico de um grupo de
+cancelamento lan&ccedil;ado/registrado ou ent&atilde;o todo o grupo.
+Para isso, selecione o grupo que ainda n&atilde;o foi processado na
+lista conforme figura 93.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Na tela
+seguinte ser&atilde;o apresentados os dados do lan&ccedil;amento do
+cancelamento e os d&eacute;bitos que est&atilde;o nesse grupo.
+Selecione quais os d&eacute;bitos deseja excluir desse grupo ou caso
+desejar todos, clique no link &ldquo;<FONT COLOR="#0000ff"><U><B>M</B></U></FONT><FONT COLOR="#0000ff"><SPAN STYLE="text-decoration: none"><B>&rdquo;</B></SPAN></FONT>
+para marcar todos e clique no bot&atilde;o [Processar], conforme
+figura 94.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m1ee2df02.png" NAME="graphics34" ALIGN=LEFT WIDTH=605 HEIGHT=150 BORDER=0><BR CLEAR=LEFT>figura
+93</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m7eb69737.png" NAME="graphics35" ALIGN=LEFT WIDTH=605 HEIGHT=234 BORDER=0><BR CLEAR=LEFT>figura
+94</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.7.3.Cancela Cancelamento Processado|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5310db">Cancela
+Cancelamento Processado</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nessa
+rotina &eacute; poss&iacute;vel reverter um d&eacute;bito ou todo um
+grupo de d&eacute;bitos que foi lan&ccedil;ado/registrado para
+cancelar e posteriormente processado. Dessa forma, a situa&ccedil;&atilde;o
+do d&eacute;bito passar&aacute; de d&eacute;bito cancelado na
+Consulta Geral Financeira, para d&eacute;bito pendente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Selecione
+o registro desejado na lista conforme demonstrado na figura 95.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Na tela
+seguinte, ser&atilde;o apresentado os dados do lan&ccedil;amento e do
+processamento do cancelamento como: usu&aacute;rio, data, hora e
+observa&ccedil;&otilde;es, al&eacute;m da lista com todos os d&eacute;bitos
+do grupo. Selecione quais registros deseja  que retornem a situa&ccedil;&atilde;o
+de pendente novamente na Consulta Geral Financeira ou clique no link
+&ldquo;<FONT COLOR="#0000ff"><U><B>M</B></U></FONT><FONT COLOR="#0000ff"><SPAN STYLE="text-decoration: none"><B>&rdquo;</B></SPAN></FONT>
+para selecionar todos. Ap&oacute;s, clique no bot&atilde;o
+[Processar], conforme demonstrado na figura 96.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_m6fb769dc.png" NAME="graphics36" ALIGN=LEFT WIDTH=605 HEIGHT=263 BORDER=0><BR CLEAR=LEFT>figura
+95</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Arrecadacao_html_1206c8e6.png" NAME="graphics37" ALIGN=LEFT WIDTH=605 HEIGHT=276 BORDER=0><BR CLEAR=LEFT>figura
+96</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.8.Par&acirc;metros|outline"></A><A NAME="4.8.Par&acirc;metros|outline"></A><A NAME="4.8.Par&acirc;metros|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db97db">Par&acirc;metros</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu s&atilde;o configurados
+os par&acirc;metros do m&oacute;dulo arrecada&ccedil;&atilde;o. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 97.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Exerc&iacute;cio:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Este par&acirc;metro &eacute; valido por exerc&iacute;cio e
+institui&ccedil;&atilde;o no m&oacute;dulo arrecada&ccedil;&atilde;o.
+Campo preenchido automaticamente.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Receita
+Juro:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+&Eacute; a receita padr&atilde;o de juros, que &eacute; utilizada no
+cadastramento de receitas novas.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Receita
+Multa:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+&Eacute; a receita padr&atilde;o de multa, que &eacute; utilizada no
+cadastramento da receita.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Banco: </B></I>&Eacute; o
+banco padr&atilde;o que o sistema busca no cadastramento dos bancos.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Ag&ecirc;ncia: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&Eacute;
+a ag&ecirc;ncia padr&atilde;o que o sistema busca no cadastramento de
+ag&ecirc;ncia.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Mensagem CGF:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Mensagem que &eacute; exibida na Consulta Geral Financeira.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Mensagem Carn&ecirc;:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Mensagem exibida  no carn&ecirc;.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Mensagem no Pagamento Carn&ecirc;:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Mensagem exibida no carn&ecirc; de pagamento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Libera Vari&aacute;vel:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Se o usu&aacute;rio selecionar &ldquo;SIM&rdquo;, o sistema emite a
+certid&atilde;o negativa para os d&eacute;bitos de ISS Vari&aacute;vel
+sem valor, mesmo estanco vencidos.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Dias Justificado: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&Eacute;
+cadastrado a quantidade de dias padr&atilde;o ao justificar um
+d&eacute;bito.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Recibo na Certid&atilde;o de
+D&eacute;bito: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ao
+escolher a op&ccedil;&atilde;o &ldquo;SIM&rdquo;, permite emitir um
+recibo ao gerar uma certid&atilde;o de d&eacute;bito no sistema,
+utilizando as taxas gravadas no campo abaixo &ldquo;</SPAN></SPAN><B><SPAN STYLE="font-style: normal">grupo
+de taxa</SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&rdquo;.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Grupo de Taxa: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo s&oacute; &eacute; valido se escolher no campo acima a op&ccedil;&atilde;o
+&ldquo;SIM&rdquo; para emitir o recibo na certid&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de Codifica&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+usu&aacute;rio seleciona o tipo de codifica&ccedil;&atilde;o usada na
+emiss&atilde;o da certid&atilde;o de d&eacute;bito no sistema:</SPAN></SPAN></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	<B>N&atilde;o codifica:</B> n&atilde;o emite/exibe c&oacute;digo no
+	documento da certid&atilde;o.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	<B>C&oacute;digo seq&uuml;encial geral:</B> Emite um seq&uuml;encial
+	para todas certid&otilde;es (Negativa, Positiva e Regular).</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	<B>C&oacute;digo do processo:</B> Emite o c&oacute;digo de acordo
+	com o processo de protocolo cadastrado.</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	<B>Seq&uuml;encial conforme o tipo:</B>  Emite um seq&uuml;encial
+	para cada tipo de certid&atilde;o.</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Arrecadacao_html_55c8d2b4.png" NAME="figura52" ALIGN=LEFT WIDTH=605 HEIGHT=312 BORDER=0><BR CLEAR=LEFT>Figura
+97</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<DIV ALIGN=RIGHT>
+		<TABLE WIDTH=605 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=523>
+			<COL WIDTH=66>
+			<TR VALIGN=TOP>
+				<TD WIDTH=523>
+					<P ALIGN=CENTER STYLE="background: transparent"><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt">DBSeller
+					Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+					</FONT></FONT><A HREF="http://www.dbseller.com.br/"><FONT COLOR="#000080"><FONT SIZE=2 STYLE="font-size: 9pt">www.dbseller.com.br</FONT></FONT></A><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt">
+					             </FONT></FONT><FONT COLOR="#000000">               
+					                                                                
+					                   </FONT><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt">Rua
+					General C&acirc;mara, 406/301 &ndash; Porto Alegre/RS &ndash;
+					Fone: (51) 3076-</FONT></FONT><A HREF="http://www.dbseller.com.br/"><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="text-decoration: none">5101</SPAN></FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>37</SDFIELD>
+					/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>83</SDFIELD></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="q09_codigo"       label="codigo"       />
+    <campo campo="q09_nota"         label="nota"         />
+    <campo campo="q09_descr"        label="descricao"    />
+    <campo campo="q09_gruponotaiss" label="codigo_grupo" />
+  </campos>
+  <from tabela="notasiss" />
+  <juncoes />
+  <filtros>
+    <filtro label="codigo_grupo_notaiss" condicao="q09_gruponotaiss in ($codigo_grupo_notaiss)" obrigatorio="false" />
+    <filtro label="codigo"               condicao="q09_codigo       in ($codigo)"               obrigatorio="false" />
+  </filtros>
+  <agrupamento />
+  <ordenacao campos="q09_gruponotaiss, q09_descr" />
+</consulta>

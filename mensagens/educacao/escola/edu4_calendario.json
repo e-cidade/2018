@@ -1,0 +1,5 @@
+{
+  "erro_query_turma"    : "Erro ao verificar turmas vinculadas ao calendário:\n [sErro]",
+  "turmas_vinculadas"   : "Exclusão não permitida: Calendário já possui turma(s) vinculada(s).",
+  "calendario_excluido" : "Calendário excluído com sucesso."
+}

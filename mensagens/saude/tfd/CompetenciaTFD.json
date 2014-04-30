@@ -1,0 +1,11 @@
+{
+  "competencia_nao_localizada"           : "Não foi encontrado dados do fechamento.",
+  "sem_pedidos_a_encerrar_para_encerrar" : "Não existem pedidos a serem encerrados para o período informado.",
+  "sem_pedidos_a_encerrar_ou_sem_para_financiamento_selecionado" : "Não existem pedidos a serem encerrados para o período informado ou para o financiamento selecionado.",
+  "erro_ao_salvar_encerrametno"    : "Erro ao salvar o encerramento da competência. \n[sql_erro]",
+  "erro_ao_encerrar_procedimentos" : "Erro ao encerrar procedimentos. \n[sql_erro]",
+  "erro_ao_excluir_procedimentos"  : "Erro ao excluir encerramento dos procedimentos. \n[sql_erro]",
+  "erro_ao_excluir_encerrametno"   : "Erro ao excluir o encerramento da competência. \n[sql_erro]",
+  "erro_ao_excluir_vinculo_bpa"    : "Erro ao excluir vinculo com BPA Magnético. \n[sql_erro]",
+  "nenhum_procedimento_encontrado" : "Nenhum procedimento encontrado"
+}

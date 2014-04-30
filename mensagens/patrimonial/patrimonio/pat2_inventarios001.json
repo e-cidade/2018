@@ -1,0 +1,6 @@
+{
+  "inventario_final_maior_inicial"          : "Inventário final deve ser maior que o inventário inicial.",
+  "nenhum_filtro_selecionado"               : "Nenhum filtro selecionado, o processo poderá ser lento. \nDeseja prosseguir?",
+  "data_inicial_final_diferentes"           : "As datas de períodos inicial e final devem ser diferentes.",
+  "intervalo_inicial_menor_intervalo_final" : "Intervalo inicial deve ser menor que intervalo final."
+}

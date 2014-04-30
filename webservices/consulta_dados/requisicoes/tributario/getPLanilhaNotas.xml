@@ -1,0 +1,34 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="true">
+  <campos>
+    <campo campo="q20_numpre" label="numpre" />
+    <campo campo="q20_planilha" label="codigo_planilha" />
+    <campo campo="q20_ano" label="competencia_ano" />
+    <campo campo="q20_mes" label="comtetencia_mes" />
+    <campo campo="q20_situacao" label="situacao" />
+    <campo campo="q21_nota" label="nota_codigo" />
+    <campo campo="q21_serie" label="nota_serie" />
+    <campo campo="q21_valorser" label="valor_servico" />
+    <campo campo="q21_aliq" label="nota_aliquota" />
+    <campo campo="q21_valor" label="nota_valor" />
+    <campo campo="q21_dataop" label="nota_data_operacao" />
+    <campo campo="q21_tipolanc" label="nota_tipo_lancamento" />
+    <campo campo="q21_situacao" label="nota_situacao" />
+    <campo campo="q21_valordeducao" label="nota_valor_deducao" />
+    <campo campo="q21_valorbase" label="nota_valor_base" />
+    <campo campo="q21_valorimposto" label="nota_valor_imposto" />
+    <campo campo="q21_retido" label="nota_retido" />
+    <campo campo="q21_obs" label="nota_observacao" />
+    <campo campo="q21_datanota" label= "nota_data_nota" />
+    <campo campo="q21_status" label= "nota_status" />
+  </campos>
+  <from tabela="issplan" />
+  <juncoes>
+    <join tipo="inner" tabela="issplanit"  condicao="q20_planilha = q21_planilha" />
+  </juncoes>
+  <filtros>
+    <filtro label="codigoplanilha" condicao="q20_planilha = '$codigo_planilha'" obrigatorio="true" />
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="q21_nota" />
+</consulta>

@@ -1,0 +1,9 @@
+{
+    "erro_buscar_dados_municipio"    : "Erro ao buscar os dados do Município.",
+    "erro_buscar_dados_imoveis"      : "Erro ao buscar os dados dos Imóveis.",
+    "erro_buscar_dados_trasmitentes" : "Erro ao buscar os dados dos Transmitentes.",
+    "erro_buscar_dados_adquirentes"  : "Erro ao buscar os dados dos Adquirentes.",
+    "erro_buscar_dados_logradouro"   : "Erro ao buscar os dados dos Logradouros.",
+    "erro_buscar_dados_terreno" 		 : "Erro ao buscar os dados dos Terrenos.",
+    "erro_buscar_dados_benfeitorias" : "Erro ao buscar os dados das Benfeitorias."
+}

@@ -1,0 +1,5 @@
+{
+  "erro_buscar_paralisacoes" : "Erro ao buscar paralisacões da empresa.\nErro Técnico:\n[sErroBanco]",
+  "erro_buscar_inscricao"    : "Erro ao Buscar os Dados da Empresa pela Inscrição Municipal.",
+  "empresa_paralisada"       : "Não é possivel efetuar calculo.\nEmpresa paralisada."
+}

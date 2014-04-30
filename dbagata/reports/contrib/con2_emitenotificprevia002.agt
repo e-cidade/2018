@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout></Layout>
+        <UseTemplates></UseTemplates>
+        <OutputMask></OutputMask>
+    </Properties>
+
+    <Header>
+        <Body></Body>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body></Body>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <edital>
+            <mask></mask>
+            <value>8</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </edital>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>Osório</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select> j01_matric as "matricula", 
+                     z01_nome as "nome", 
+                     d01_numero as "numero", 
+                     d02_contri as "contribuicao", 
+                     d01_data as "data", 
+                     substr(endereco,001,40) as endereco, 
+                     substr(endereco,042,10) as numender, 
+                     substr(endereco,053,20) as complemento, 
+                     substr(endereco,074,40) as bairro, 
+                     substr(endereco,115,40) as municipio, 
+                     substr(endereco,156,02) as uf, 
+                     substr(endereco,159,08) as cep, 
+                     substr(endereco,168,20) as cxpostal, 
+                     extract( year from  d01_data )  as anoedital, 
+                     extract( day from d01_data ) as diaedital, 
+                     extract( month from  d01_data ) as mesextenso, 
+                     d40_trecho as "trecho", 
+                     j14_nome as "endereco2", 
+                     round(d07_valor, 2) as "valor", 
+                     j34_setor||'-'||j34_quadra||'-'||j34_lote as setorquadralote
+            </Select>
+
+            <From>(                     select *,                  fc_iptuender(j01_matric) as endereco             
+                                          from editalrua inner join ruas                on ruas.j14_codigo   = editalrua.d02_codigo inner join edital              on edital.d01_codedi = editalrua.d02_codedi inner join contrib             on d07_contri        = d02_contri inner join iptubase            on d07_matric        = j01_matric inner join lote                on j34_idbql         = j01_idbql left join iptuant             on j40_matric        = j01_matric inner join cgm                 on j01_numcgm        = z01_numcgm inner join editalruaproj       on d11_contri        = d02_contri inner join projmelhoriasmatric on d41_codigo        = d11_codproj and d41_matric        = j01_matric inner join projmelhorias       on d40_codigo        = d41_codigo where d02_codedi = $edital ) as x</From>
+
+            <Where></Where>
+            <GroupBy></GroupBy>
+            <OrderBy></OrderBy>
+            <Config>
+                <Distinct>1</Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+                <ShowHeader></ShowHeader>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/dbseller/a_formata_data.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+            <Column9>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column9>
+
+            <Column10>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column10>
+
+            <Column11>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column11>
+
+            <Column12>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column12>
+
+            <Column13>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column13>
+
+            <Column14>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column14>
+
+            <Column15>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column15>
+
+            <Column16>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/dbseller/a_mesextenso.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column16>
+
+            <Column17>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column17>
+
+            <Column18>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column18>
+
+            <Column19>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column19>
+
+            <Column20>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column20>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup></PageSetup>
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : "matricula"</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup></PageSetup>
+        <Config>
+            <RepeatHeader></RepeatHeader>
+            <ShowFooter></ShowFooter>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source></Source>
+        <Config>
+            <FixedDetails>1</FixedDetails>
+            <ExpandDetails></ExpandDetails>
+            <printEmptyDetail>1</printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+        <Details>
+            <Detail1>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+            </Detail1>
+
+        </Details>
+
+    </OpenOffice>
+
+</Report>

@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="ed261_i_codigo" label="codigo_municipio"/>
+    <campo campo="ed261_c_nome"   label="municipio"     	/>
+  </campos>
+  <from tabela="censomunic" />
+  <juncoes>
+    <join tipo="inner" tabela="censouf" condicao="ed261_i_censouf = ed260_i_codigo" 	/>
+  </juncoes>
+  <filtros>
+    <filtro label="uf" condicao="ed260_c_sigla = '$uf'" obrigatorio="true"/>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="" />
+</consulta>

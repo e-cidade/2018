@@ -1,0 +1,11 @@
+{
+  "processamento_efetuado_sucesso"     : "Processamento efetuado com sucesso", 
+  "estorno_efetuado_sucesso"           : "Estorno efetuado com sucesso",
+  "nota_item_nao_encontrado"           : "Item da nota do empenho não encontrado",
+  "nota_item_nao_excluindo"            : "Erro ao excluir pendencia da nota",
+  "nota_item_nao_incluido"             : "Erro ao incluir pendencia da nota",
+  "dispensa_tombamento_nao_incluido"   : "Erro ao incluir dispensa de tombamento\n[sErroBanco]",
+  "dispensa_tombamento_nao_encontrado" : "Dispensa de tombamento não encontrado\n[sErroBanco]",
+  "dispensa_tombamento_nao_excluido"   : "Erro ao excluir dispensa de tombamento\n[sErroBanco]",
+  "grupo_material_nao_encontrado"      : "Grupo do material nao encontrado\n[sErroBanco]"
+}

@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="codigo_aluno" obrigatorio="true" tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe   referencia="aluno" nome="AlunoWebservice" parametros="$codigo_aluno" 
+              caminho="model/educacao/AlunoWebservice.model.php" />
+    <exec>
+      <metodo referencia="aluno" nome="getDados" parametros="$codigo_aluno" />
+    </exec>
+  </configuracoes>
+</processamento>

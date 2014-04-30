@@ -1,0 +1,7 @@
+{
+  "erro_arquivo_json_nao_encontradao" : "Arquivo json não encontrado: [sArquivo]",
+  "erro_arquivo_json_invalido"        : "Arquivo json inválido: [sArquivo]",
+  "erro_id_mensagem_invalido"         : "ID da mensagem inválido: [sIdMensagem].\nUse somente letras(sem acento), números e underscore.",
+  "erro_salvar_arquivo"               : "Erro ao salvar arquivo:  [sCaminhoArquivo]",
+  "mensagem_arquivo_editado"          : "Arquivo editado.\n[sCaminhoArquivo]"
+}

@@ -1,0 +1,4 @@
+{
+  "erro_processo_vinculado_mais_um_item_solicitacao" : "Foi gerado processo de compras para um ou mais item desta solicitação.\n\nSolicitação de compras não poderá ser alterada.",
+  "erro_processo_vinculado_mais_um_item_solicitacao_tipo_registro_de_preco" : "Foi gerado processo de compras para um ou mais item desta solicitação.\nNumero do processo de compras: [iCodigoProcesso]\n\nSolicitação de compras não poderá ser alterada."
+}

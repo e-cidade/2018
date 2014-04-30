@@ -1,0 +1,6 @@
+{
+  "titulo_janela_emissao"   : "Nova certidão",
+  "titulo_message_board"    : "Emissão de Certidão [sTipoCertidao] de Débitos",
+  "texto_message_board"     : "O preenchimento dos campos abaixo não é obrigatório para Emissão da Certidão.",
+  "campo_processo_numerico" : "O Campo processo deve ser preenchido somente com números." 
+}

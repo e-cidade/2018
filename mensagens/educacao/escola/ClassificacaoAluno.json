@@ -1,0 +1,9 @@
+{
+   "codigo_nao_encontrado" : "Parâmetro informado não encontrado."
+  ,"tipo_nao_valido" : "Tipo informado não é válido."
+  ,"sem_transacao"   : "Sem transação ativa no sistema."
+  ,"erro_ao_buscar_avaliacoes"     : "Erro ao buscar avaliações."
+  ,"erro_ao_incluir_classificacao" : "Erro ao incluir classificação."
+  ,"erro_ao_buscar_alunos_classificados" : "Erro ao buscar alunos (Re)classificados."
+  ,"nenhum_aluno_classificado" : "Nenhum aluno foi (Re)classificado na escola e no calendário informado."
+}

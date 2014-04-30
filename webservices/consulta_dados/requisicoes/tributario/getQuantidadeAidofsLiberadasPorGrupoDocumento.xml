@@ -1,0 +1,19 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="sum(y08_quantlib)" label="quantidade_notas_liberadas" />
+  </campos>
+  <from tabela="aidof" />
+  <juncoes>
+    <join tipo="left" tabela="issqn.notasiss"     condicao="q09_codigo       = y08_nota"        />
+    <join tipo="left" tabela="issqn.gruponotaiss" condicao="q09_gruponotaiss = q139_sequencial" />
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao_municipal" condicao="y08_inscr       = '$inscricao_municipal'" obrigatorio="true" />
+    <filtro label=""                    condicao="y08_cancel      = false"                  obrigatorio="true" />
+    <filtro label="grupo_nota"          condicao="q139_sequencial in($grupo_nota)"          obrigatorio="true" />    
+  </filtros>
+  <juncoes />
+  <agrupamento />
+  <ordenacao />
+</consulta>

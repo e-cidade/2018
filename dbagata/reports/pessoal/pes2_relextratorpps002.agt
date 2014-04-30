@@ -1,0 +1,995 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout>dbseller2</Layout>
+        <UseTemplates></UseTemplates>
+    </Properties>
+
+    <Header>
+        <Body>#sety010
+#tab010
+#image $db_logo
+#sety010
+#setfaw10
+#setspace012
+#tab100$db_nomeinst
+#setfai10
+#tab100$db_enderinst
+#tab100$db_municinst - $db_ufinst
+#tab100$db_foneinst
+#tab100$db_emailinst
+#tab100$db_siteinst
+#sety90
+#tab20 #lineH500
+#sety012
+#tab375#rect*000*000*200*080*1*#e7e7e7*#000000
+#setfan07
+#sety025
+#tab620$head1
+#sety035
+#tab620$head2
+#sety045
+#tab620$head3
+#sety055
+#tab620$head4
+#sety065
+#tab620$head5
+#sety075
+#tab620$head6
+#sety085
+#tab620$head7
+#sety095
+#tab005</Body>
+
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body>#sety550 
+#tab040
+#lineH770
+#sety560
+#setfan05
+#tab040 Base: $db_base
+#sety560
+#setfan06
+#tab260$db_programa  Emissor: $db_nomeusu  Exercício: $db_anousu  Data: $db_datausu  Hora: $db_horausu  #tab750 Página: $page de {nb}</Body>
+
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <tab_teste>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </tab_teste>
+
+        <db_nomeinst>
+            <mask></mask>
+            <value>Prefeitura DBSELLER</value>
+            <source></source>
+            <label></label>
+        </db_nomeinst>
+
+        <db_enderinst>
+            <mask></mask>
+            <value>Rua General Camara, 1000</value>
+            <source></source>
+            <label></label>
+        </db_enderinst>
+
+        <db_municinst>
+            <mask></mask>
+            <value>Porto Alegre</value>
+            <source></source>
+            <label></label>
+        </db_municinst>
+
+        <db_ufinst>
+            <mask></mask>
+            <value>RS</value>
+            <source></source>
+            <label></label>
+        </db_ufinst>
+
+        <db_foneinst>
+            <mask></mask>
+            <value>3344-5566</value>
+            <source></source>
+            <label></label>
+        </db_foneinst>
+
+        <db_emailinst>
+            <mask></mask>
+            <value>dbseller@dbseller.com.br</value>
+            <source></source>
+            <label></label>
+        </db_emailinst>
+
+        <db_siteinst>
+            <mask></mask>
+            <value>www.dbseller.com.br</value>
+            <source></source>
+            <label></label>
+        </db_siteinst>
+
+        <db_logo>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </db_logo>
+
+        <db_base>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </db_base>
+
+        <db_programa>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </db_programa>
+
+        <db_nomeusu>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </db_nomeusu>
+
+        <db_anousu>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </db_anousu>
+
+        <db_datausu>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </db_datausu>
+
+        <db_horausu>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </db_horausu>
+
+        <head1>
+            <mask></mask>
+            <value>Extrato de Contribuições do RPPS</value>
+            <source></source>
+            <label></label>
+        </head1>
+
+        <head2>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </head2>
+
+        <head3>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </head3>
+
+        <head4>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </head4>
+
+        <head5>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </head5>
+
+        <head6>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </head6>
+
+        <head7>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </head7>
+
+        <anoi>
+            <mask></mask>
+            <value>2006</value>
+            <source></source>
+            <label></label>
+        </anoi>
+
+        <anof>
+            <mask></mask>
+            <value>2007</value>
+            <source></source>
+            <label></label>
+        </anof>
+
+        <mesi>
+            <mask></mask>
+            <value>1</value>
+            <source></source>
+            <label></label>
+        </mesi>
+
+        <mesf>
+            <mask></mask>
+            <value>11</value>
+            <source></source>
+            <label></label>
+        </mesf>
+
+        <prev>
+            <mask></mask>
+            <value>1</value>
+            <source></source>
+            <label></label>
+        </prev>
+
+        <and_filtro>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </and_filtro>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>Alegrete</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>r14_regist, rh01_admiss, z01_nome, z01_ender, z01_compl, z01_numero, z01_cep, z01_uf, z01_munic, rh37_descr, r70_estrut, r70_descr, sum(base) as base, min(r14_anousu) as "anoinicial", max(r14_anousu) as "anofinal", extract( month  from min((r14_anousu||'-'||r14_mesusu||'-'||'01')::date)  )  as "mesinicial", extract( month  from max((r14_anousu||'-'||r14_mesusu||'-'||'01')::date)  )  as "mesfinal", sum(desconto) as totalserv, case
+      when rh55_estrut is null
+        then 'is null'
+      else ' = \''||rh55_estrut||'\''
+    end as rh55_estrut, rh55_descr</Select>
+
+            <From></From>
+            <Where></Where>
+            <GroupBy>r14_regist, rh01_admiss, z01_nome, z01_ender, z01_compl, z01_numero, z01_cep, z01_uf, z01_munic, rh37_descr, r70_estrut, r70_descr, rh55_estrut, rh55_descr</GroupBy>
+            <OrderBy></OrderBy>
+            <Config>
+                <Distinct>1</Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber></ShowNumber>
+                <ShowIndent></ShowIndent>
+                <ShowHeader></ShowHeader>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/time/yyyymmdd2ddmmaaaa.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+            <Column9>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column9>
+
+            <Column10>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column10>
+
+            <Column11>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column11>
+
+            <Column12>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column12>
+
+            <Column13>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column13>
+
+            <Column14>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column14>
+
+            <Column15>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column15>
+
+            <Column16>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/dbseller/a_format_mes.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column16>
+
+            <Column17>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/dbseller/a_format_mes.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column17>
+
+            <Column18>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column18>
+
+            <Column19>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column19>
+
+            <Column20>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column20>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup>
+        <Format>A4</Format>
+        <Orientation>landscape</Orientation>
+        <LeftMargin>40</LeftMargin>
+        <RightMargin>40</RightMargin>
+        <TopMargin>2</TopMargin>
+        <BottomMargin>2</BottomMargin>
+        <LineSpace>3</LineSpace>
+    </PageSetup>
+
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend></Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader>#sety010
+#tab020
+#image $db_logo
+#sety010
+#setfaw08
+#setspace012
+#tab100$db_nomeinst
+#setfai08
+#tab100$db_enderinst
+#tab100$db_municinst - $db_ufinst
+#tab100$db_foneinst
+#tab100$db_emailinst
+#tab100$db_siteinst
+#sety90
+#tab20 #lineH500
+#sety010
+#tab375#rect*000*000*200*080*1*#e7e7e7*#000000
+#setfan08
+#sety015
+#tab380$head1
+#sety025
+#tab380$head2
+#sety035
+#tab380$head3
+#sety045
+#tab380$head4
+#sety055
+#tab380$head5
+#sety065
+#tab380$head6
+#sety075
+#tab380$head7
+#sety085
+#tab005</ReportHeader>
+
+        <Details>
+            <Detail1>
+                <GroupHeader>#sety100
+#tab20 #rect*000*000*555*080*1*#ffffff*#000000
+#sety100
+#setspace012
+#tab40 #setfab08 Contribuinte  : 
+#tab40 #setfab08 Endereço  :     
+#tab40 #setfab08 Cidade  :         
+#tab40 #setfab08 CEP  :             
+#tab40 #setfab08 Função  :             
+#tab40 #setfab08 Setor  :  #tab300Local de Trabalho  :            	
+
+#sety100
+#setspace012
+#tab100 #setfan08   $var1  $var3    
+#tab100 #setfan08   $var4, $var6   $var5
+#tab100 #setfan08   $var9 - $var8 
+#tab100 #setfan08   $var7  	          
+#tab100 #setfan08   $var10
+#tab100 #setfan08   $var12  #tab380 $var20 
+
+#sety115
+#setspace014
+#tab440 #setfab08 Ano / Mês Inicio :   
+#tab447 #setfab08 Ano / Mês Fim :      
+#tab432 #setfab08 Data de Admissão : 
+
+#sety115
+#setspace014
+#tab515 #setfan08  $var14 / $var16    
+#tab515 #setfan08  $var15 / $var17
+#tab510 #setfan08  $var2 
+
+
+#sety190
+#tab20 #rect*000*000*555*015*1*#FFFFFF*#000000
+#sety188
+#setfab06
+#tab65 COMPETÊNCIA        #tab150 SAL.CONTRIB.		#tab250 SERVIDOR			#tab325 % PATRONAL		#tab400 PATRONAL		#tab490 TOTAL	
+</GroupHeader>
+
+                <Body>#setfan08#tab65   $subfield1 /$subfield2 	#tab150 $subfield16 	#tab245 $subfield17 	#tab335  $subfield5    #tab390 $subfield18 		#tab480 $subfield19 
+
+
+
+
+</Body>
+
+                <DataSet>
+                    <Query>
+                        <Select>r14_anousu, r14_mesusu, r14_regist, rh01_admiss, r33_ppatro as ppatronal, z01_nome, z01_ender, z01_compl, z01_numero, z01_cep, z01_uf, z01_munic, rh37_descr, r70_estrut, r70_descr, sum(base) as base, sum(desconto) as desconto, round((sum(base))/100*r33_ppatro,2) as patronal, round((sum(desconto)) + (sum(base)/100*r33_ppatro),2) as total, rh55_estrut, rh55_descr</Select>
+                        <From></From>
+                        <Where>r14_regist = $var1 and r70_estrut = '$var11' and rh55_estrut $var19</Where>
+                        <GroupBy>r14_anousu, r14_mesusu, r14_regist, rh01_admiss, r33_ppatro, z01_nome, z01_ender, z01_compl, z01_numero, z01_cep, z01_uf, z01_munic, rh37_descr, r70_estrut, r70_descr, rh55_estrut, rh55_descr</GroupBy>
+                        <OrderBy>r14_anousu, r14_mesusu;</OrderBy>
+                        <Config>
+                            <Distinct>1</Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields>
+                        <Column1>
+                            <Chars>15</Chars>
+                            <Points>30</Points>
+                            <Align>right</Align>
+                            <HeadAlign>right</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column1>
+
+                        <Column2>
+                            <Chars>10</Chars>
+                            <Points>20</Points>
+                            <Align>center</Align>
+                            <HeadAlign>center</HeadAlign>
+                            <Mask></Mask>
+                            <Function>/dbseller/a_format_mes.fun</Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column2>
+
+                        <Column3>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>center</Align>
+                            <HeadAlign>center</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column3>
+
+                        <Column4>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>center</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column4>
+
+                        <Column5>
+                            <Chars>20</Chars>
+                            <Points>40</Points>
+                            <Align>center</Align>
+                            <HeadAlign>center</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column5>
+
+                        <Column6>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column6>
+
+                        <Column7>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column7>
+
+                        <Column8>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column8>
+
+                        <Column9>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column9>
+
+                        <Column10>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column10>
+
+                        <Column11>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column11>
+
+                        <Column12>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column12>
+
+                        <Column13>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column13>
+
+                        <Column14>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column14>
+
+                        <Column15>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column15>
+
+                        <Column16>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>center</Align>
+                            <HeadAlign>center</HeadAlign>
+                            <Mask>#R$-9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column16>
+
+                        <Column17>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>center</Align>
+                            <HeadAlign>center</HeadAlign>
+                            <Mask>#R$-9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column17>
+
+                        <Column18>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>center</Align>
+                            <HeadAlign>center</HeadAlign>
+                            <Mask>#R$-9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column18>
+
+                        <Column19>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#R$-9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column19>
+
+                        <Column20>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column20>
+
+                        <Column21>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column21>
+
+                    </Fields>
+
+                </DataSet>
+
+                <GroupFooter>
+#tab20 #rect*000*000*555*015*1*#ffffff*#000000
+#tab50 Total Contribuição do Servidor :  $subfield17_sum  #tab250Total Contribuição do Patronal :    $subfield18_sum        #tab450 Total Geral :  $subfield19_sum  </GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter>#sety790 
+#tab020
+#lineH550
+#sety800
+#setfan05
+#tab020 Base: $db_base
+#sety800
+#setfan06
+#tab140$db_programa  Emissor: $db_nomeusu  Exercício: $db_anousu  Data: $db_datausu  Hora: $db_horausu  #tab520 Página: $page de {nb}</ReportFooter>
+
+        <PageSetup>
+            <Format>A4</Format>
+            <Orientation>portrait</Orientation>
+            <LeftMargin>0</LeftMargin>
+            <RightMargin>0</RightMargin>
+            <TopMargin>0</TopMargin>
+            <BottomMargin>0</BottomMargin>
+            <LineSpace>14</LineSpace>
+        </PageSetup>
+
+        <Config>
+            <RepeatHeader>1</RepeatHeader>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source></Source>
+        <Config>
+            <FixedDetails>1</FixedDetails>
+            <ExpandDetails></ExpandDetails>
+            <printEmptyDetail>1</printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+    </OpenOffice>
+
+</Report>

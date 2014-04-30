@@ -1,0 +1,4 @@
+{
+ "sem_niveis_abaixo": "Último nível permitido alçancado. Não será possível criar contas abaixo da estrutura [estrutural].",
+ "quantidade_contas_excedida_nivel": "Total de Contas para o nível [nivel_conta] da conta [estrutural] excedido."
+ }

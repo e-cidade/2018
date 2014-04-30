@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report>
+    <main>
+        <properties>
+            <title></title>
+            <author></author>
+            <date>2013-05-21</date>
+            <type>document</type>
+            <publishtime/>
+        </properties>
+        <parameters>
+            <parameter1>
+                <name>$acordo</name>
+                <label>acordo</label>
+                <component>TEntry</component>
+                <expander>0</expander>
+                <required>0</required>
+                <multiple>0</multiple>
+            </parameter1>
+        </parameters>
+    </main>
+    <data>
+        <master>
+            <datasource>dev06</datasource>
+            <query>select fc_startsession();
+select distinct codigo   as codigo_instituicao, 
+       nomeinst as instituicao, 
+       (select pref from db_config where prefeitura is true) as nome_prefeito,
+       (select sum(ac20_valortotal) 
+          from acordoitem 
+         inner join acordoposicao     on acordoposicao.ac26_sequencial = acordoitem.ac20_acordoposicao
+         inner join acordo  contrato  on contrato.ac16_sequencial  = acordoposicao.ac26_acordo
+         where contrato.ac16_sequencial = acordo.ac16_sequencial) as valor_total, 
+       ac16_contratado     as codigo_contratado,
+       z01_nome            as contratado,
+       ac16_sequencial     as acordo,
+       ac16_lei            as lei,
+       ac16_numeroprocesso as processo_administrativo_acordo,
+       ac16_qtdrenovacao   as quantidade_renovacao,
+       case 
+         when ac16_tipounidtempo = 1
+         then 'Mês'
+         else 'Dia' 
+       end                       as renovacao_unidade_tempo,
+       ac16_dataassinatura       as data_assinatura_acordo,
+       ac16_qtdperiodo           as vigencia,
+       case 
+         when ac16_tipounidtempoperiodo = 1
+         then 'Mês'
+         else 'Dia' 
+       end  as vigencia_unidade_tempo,
+       ac16_datainicio           as vigencia_inicio,
+       ac16_datafim              as vigencia_fim,
+       ac16_objeto               as objeto_acordo,
+       ac16_resumoobjeto         as resumo_objeto_acordo,
+       ac16_numero               as numero_acordo
+  from acordo
+ inner join cgm           on cgm.z01_numcgm            = acordo.ac16_contratado
+ inner join db_depart     on db_depart.coddepto        = acordo.ac16_coddepto
+ inner join db_config     on db_config.codigo          = db_depart.instit
+ /**
+  * Para buscar as informacoes do orcamento precisamos ir pelos itens. 
+  * Por esse motivo usamos o limit 1
+  */
+ inner join acordoposicao    on acordoposicao.ac26_acordo        = acordo.ac16_sequencial
+ inner join acordoitem       on acordoitem.ac20_acordoposicao    = acordoposicao.ac26_sequencial
+ inner join acordoempempitem on acordoempempitem.ac44_acordoitem = acordoitem.ac20_sequencial
+ inner join empempitem       on empempitem.e62_sequencial        = acordoempempitem.ac44_empempitem
+ inner join empempenho       on empempenho.e60_numemp            = empempitem.e62_numemp
+ where acordo.ac16_sequencial = $acordo
+ limit 1;</query>
+            <fields>
+                <field1>
+                    <name>fc_startsession(); select codigo   as codigo_instituicao</name>
+                    <alias>codigo_instituicao</alias>
+                    <format></format>
+                    <function></function>
+                </field1>
+                <field2>
+                    <name>nomeinst as instituicao</name>
+                    <alias>instituicao</alias>
+                    <format></format>
+                    <function></function>
+                </field2>
+                <field3>
+                    <name>(select pref from db_config where prefeitura is true) as nome_prefeito</name>
+                    <alias>nome_prefeito</alias>
+                    <format></format>
+                    <function></function>
+                </field3>
+                <field4>
+                    <name>(select sum(ac20_valortotal)            from acordoitem           inner join acordoposicao     on acordoposicao.ac26_sequencial = acordoitem.ac20_acordoposicao          inner join acordo  contrato  on contrato.ac16_sequencial  = acordoposicao.ac26_acordo          where contrato.ac16_sequencial = acordo.ac16_sequencial) as valor_total</name>
+                    <alias>valor_total</alias>
+                    <format>#R$-9.999,99s</format>
+                    <function></function>
+                </field4>
+                <field5>
+                    <name>ac16_contratado     as codigo_contratado</name>
+                    <alias>codigo_contratado</alias>
+                    <format></format>
+                    <function></function>
+                </field5>
+                <field6>
+                    <name>z01_nome            as contratado</name>
+                    <alias>contratado</alias>
+                    <format></format>
+                    <function></function>
+                </field6>
+                <field7>
+                    <name>ac16_sequencial     as acordo</name>
+                    <alias>acordo</alias>
+                    <format></format>
+                    <function></function>
+                </field7>
+                <field8>
+                    <name>ac16_lei            as lei</name>
+                    <alias>lei</alias>
+                    <format></format>
+                    <function></function>
+                </field8>
+                <field9>
+                    <name>ac16_numeroprocesso as processo_administrativo_acordo</name>
+                    <alias>processo_administrativo_acordo</alias>
+                    <format></format>
+                    <function></function>
+                </field9>
+                <field10>
+                    <name>ac16_qtdrenovacao   as quantidade_renovacao</name>
+                    <alias>quantidade_renovacao</alias>
+                    <format></format>
+                    <function></function>
+                </field10>
+                <field11>
+                    <name>case           when ac16_tipounidtempo = 1          then 'Mês'          else 'Dia'         end                       as renovacao_unidade_tempo</name>
+                    <alias>renovacao_unidade_tempo</alias>
+                    <format></format>
+                    <function></function>
+                </field11>
+                <field12>
+                    <name>ac16_dataassinatura       as data_assinatura_acordo</name>
+                    <alias>data_assinatura_acordo</alias>
+                    <format></format>
+                    <function>/time/a_date_to_br.fun</function>
+                </field12>
+                <field13>
+                    <name>ac16_qtdperiodo           as vigencia</name>
+                    <alias>vigencia</alias>
+                    <format></format>
+                    <function></function>
+                </field13>
+                <field14>
+                    <name>case           when ac16_tipounidtempoperiodo = 1          then 'Mês'          else 'Dia'         end  as vigencia_unidade_tempo</name>
+                    <alias>vigencia_unidade_tempo</alias>
+                    <format></format>
+                    <function></function>
+                </field14>
+                <field15>
+                    <name>ac16_datainicio           as vigencia_inicio</name>
+                    <alias>vigencia_inicio</alias>
+                    <format></format>
+                    <function>/time/a_date_to_br.fun</function>
+                </field15>
+                <field16>
+                    <name>ac16_datafim              as vigencia_fim</name>
+                    <alias>vigencia_fim</alias>
+                    <format></format>
+                    <function>/time/a_date_to_br.fun</function>
+                </field16>
+                <field17>
+                    <name>ac16_objeto               as objeto_acordo</name>
+                    <alias>objeto_acordo</alias>
+                    <format></format>
+                    <function></function>
+                </field17>
+                <field18>
+                    <name>ac16_resumoobjeto         as resumo_objeto_acordo</name>
+                    <alias>resumo_objeto_acordo</alias>
+                    <format></format>
+                    <function></function>
+                </field18>
+                <field19>
+                    <name>ac16_numero               as numero_acordo</name>
+                    <alias>numero_acordo</alias>
+                    <format></format>
+                    <function></function>
+                </field19>
+            </fields>
+        </master>
+    </data>
+    <view>
+        <tabular>
+            <header>
+                <row1>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row1>
+                <row2>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row2>
+            </header>
+            <footer>
+                <row1>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row1>
+                <row2>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row2>
+            </footer>
+            <fields>
+                <field1>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field1>
+                <field2>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field2>
+                <field3>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field3>
+                <field4>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field4>
+                <field5>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field5>
+                <field6>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field6>
+                <field7>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field7>
+                <field8>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field8>
+                <field9>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field9>
+                <field10>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field10>
+                <field11>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field11>
+                <field12>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field12>
+                <field13>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field13>
+                <field14>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field14>
+                <field15>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field15>
+                <field16>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field16>
+                <field17>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field17>
+                <field18>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field18>
+                <field19>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field19>
+            </fields>
+            <preferences>
+                <showgroupcolum>0</showgroupcolum>
+                <showdetails>1</showdetails>
+                <showtotalabels>0</showtotalabels>
+                <showidentation>1</showidentation>
+                <shownumbering>0</shownumbering>
+                <showgrouplabel>0</showgrouplabel>
+            </preferences>
+            <pageconfig>
+                <format></format>
+                <orientation>portrait</orientation>
+                <leftmargin>40</leftmargin>
+                <rightmargin>40</rightmargin>
+                <topmargin>40</topmargin>
+                <bottommargin>40</bottommargin>
+            </pageconfig>
+        </tabular>
+        <chart>
+            <properties>
+                <title></title>
+                <titley></titley>
+                <width>400</width>
+                <height>300</height>
+                <orientation>c</orientation>
+                <charttype>line</charttype>
+            </properties>
+        </chart>
+        <office>
+            <properties>
+                <detailtype>d</detailtype>
+                <showemptydetail>1</showemptydetail>
+                <showgrandtotal>1</showgrandtotal>
+                <repeatheader>1</repeatheader>
+                <repeatfooter>1</repeatfooter>
+            </properties>
+            <details>
+                <detail1>
+                    <query>select e60_codemp as codigo_empenho,
+       e60_anousu as ano_empenho,
+       e60_coddot as dotacao
+  from acordo
+ inner join acordoposicao    on acordoposicao.ac26_acordo        = acordo.ac16_sequencial
+ inner join acordoitem       on acordoitem.ac20_acordoposicao    = acordoposicao.ac26_sequencial
+ inner join acordoempempitem on acordoempempitem.ac44_acordoitem = acordoitem.ac20_sequencial
+ inner join empempitem       on empempitem.e62_sequencial        = acordoempempitem.ac44_empempitem
+ inner join empempenho       on empempenho.e60_numemp            = empempitem.e62_numemp
+ where acordo.ac16_sequencial = $acordo;
+</query>
+                    <fields>
+                        <field1>
+                            <name>e60_codemp as codigo_empenho</name>
+                            <alias>codigo_empenho</alias>
+                            <format></format>
+                            <function></function>
+                        </field1>
+                        <field2>
+                            <name>e60_anousu as ano_empenho</name>
+                            <alias>ano_empenho</alias>
+                            <format></format>
+                            <function></function>
+                        </field2>
+                        <field3>
+                            <name>e60_coddot as dotacao</name>
+                            <alias>dotacao</alias>
+                            <format></format>
+                            <function></function>
+                        </field3>
+                    </fields>
+                    <name>detail1</name>
+                </detail1>
+                <detail2>
+                    <query>select ac20_sequencial    as codigo_item, 
+        pc01_codmater      as codigo_material,
+        pc01_descrmater    as descricao_item, 
+        e62_descr          as resumo_item, 
+        ''::text           as observacao,
+        ac20_valorunitario as valor_unitario, 
+        ac20_quantidade    as quantidade, 
+        m61_descr          as unidade,
+        ac20_valortotal    as valor_total_item
+   from acordoitem
+  inner join acordoposicao    on acordoposicao.ac26_sequencial    = acordoitem.ac20_acordoposicao
+  inner join acordoempempitem on acordoempempitem.ac44_acordoitem = acordoitem.ac20_sequencial
+  inner join empempitem       on empempitem.e62_sequencial        = acordoempempitem.ac44_empempitem
+  inner join acordo           on acordo.ac16_sequencial           = acordoposicao.ac26_acordo
+  inner join pcmater          on pcmater.pc01_codmater            = acordoitem.ac20_pcmater
+  inner join matunid          on matunid.m61_codmatunid           = acordoitem.ac20_matunid
+  where acordo.ac16_sequencial = $acordo;</query>
+                    <fields>
+                        <field1>
+                            <name>ac20_sequencial    as codigo_item</name>
+                            <alias>codigo_item</alias>
+                            <format></format>
+                            <function></function>
+                        </field1>
+                        <field2>
+                            <name>pc01_codmater      as codigo_material</name>
+                            <alias>codigo_material</alias>
+                            <format></format>
+                            <function></function>
+                        </field2>
+                        <field3>
+                            <name>pc01_descrmater    as descricao_item</name>
+                            <alias>descricao_item</alias>
+                            <format></format>
+                            <function></function>
+                        </field3>
+                        <field4>
+                            <name>e62_descr          as resumo_item</name>
+                            <alias>resumo_item</alias>
+                            <format></format>
+                            <function></function>
+                        </field4>
+                        <field5>
+                            <name>''::text           as observacao</name>
+                            <alias>observacao</alias>
+                            <format></format>
+                            <function></function>
+                        </field5>
+                        <field6>
+                            <name>ac20_valorunitario as valor_unitario</name>
+                            <alias>valor_unitario</alias>
+                            <format>#R$-9.999,99s</format>
+                            <function></function>
+                        </field6>
+                        <field7>
+                            <name>ac20_quantidade    as quantidade</name>
+                            <alias>quantidade</alias>
+                            <format></format>
+                            <function></function>
+                        </field7>
+                        <field8>
+                            <name>m61_descr          as unidade</name>
+                            <alias>unidade</alias>
+                            <format></format>
+                            <function></function>
+                        </field8>
+                        <field9>
+                            <name>ac20_valortotal    as valor_total_item</name>
+                            <alias>valor_total_item</alias>
+                            <format>#R$-9.999,99s</format>
+                            <function></function>
+                        </field9>
+                    </fields>
+                    <name>detail2</name>
+                </detail2>
+                <detail3>
+                    <query>select ac11_sequencial  as garantia_codigo,
+       ac11_descricao   as garantia_descricao,
+       ac11_obs         as garantia_observacao,
+       ac11_textopadrao as garantia_texto_padrao,
+       ac11_validade    as garantia_validade
+  from acordo
+ inner join acordoacordogarantia on acordoacordogarantia.ac12_acordo = acordo.ac16_sequencial
+ inner join acordogarantia       on acordogarantia.ac11_sequencial = acordoacordogarantia.ac12_acordogarantia
+ where acordo.ac16_sequencial = $acordo;</query>
+                    <fields>
+                        <field1>
+                            <name>ac11_sequencial  as garantia_codigo</name>
+                            <alias>garantia_codigo</alias>
+                            <format></format>
+                            <function></function>
+                        </field1>
+                        <field2>
+                            <name>ac11_descricao   as garantia_descricao</name>
+                            <alias>garantia_descricao</alias>
+                            <format></format>
+                            <function></function>
+                        </field2>
+                        <field3>
+                            <name>ac11_obs         as garantia_observacao</name>
+                            <alias>garantia_observacao</alias>
+                            <format></format>
+                            <function></function>
+                        </field3>
+                        <field4>
+                            <name>ac11_textopadrao as garantia_texto_padrao</name>
+                            <alias>garantia_texto_padrao</alias>
+                            <format></format>
+                            <function></function>
+                        </field4>
+                        <field5>
+                            <name>ac11_validade    as garantia_validade</name>
+                            <alias>garantia_validade</alias>
+                            <format></format>
+                            <function>/time/a_date_to_br.fun</function>
+                        </field5>
+                    </fields>
+                    <name>detail3</name>
+                </detail3>
+                <detail4>
+                    <query>select ac13_sequencial  as penalidade_codigo,
+       ac13_descricao   as penalidade_descricao,
+       ac13_obs         as penalidade_observacao,
+       ac13_textopadrao as penalidade_texto_padrao,
+       ac13_validade    as penalidade_validade
+  from acordo
+ inner join acordoacordopenalidade on acordoacordopenalidade.ac15_acordo = acordo.ac16_sequencial
+ inner join acordopenalidade       on acordopenalidade.ac13_sequencial   = acordoacordopenalidade.ac15_acordopenalidade
+where acordo.ac16_sequencial = $acordo;</query>
+                    <fields>
+                        <field1>
+                            <name>ac13_sequencial  as penalidade_codigo</name>
+                            <alias>penalidade_codigo</alias>
+                            <format></format>
+                            <function></function>
+                        </field1>
+                        <field2>
+                            <name>ac13_descricao   as penalidade_descricao</name>
+                            <alias>penalidade_descricao</alias>
+                            <format></format>
+                            <function></function>
+                        </field2>
+                        <field3>
+                            <name>ac13_obs         as penalidade_observacao</name>
+                            <alias>penalidade_observacao</alias>
+                            <format></format>
+                            <function></function>
+                        </field3>
+                        <field4>
+                            <name>ac13_textopadrao as penalidade_texto_padrao</name>
+                            <alias>penalidade_texto_padrao</alias>
+                            <format></format>
+                            <function></function>
+                        </field4>
+                        <field5>
+                            <name>ac13_validade    as penalidade_validade</name>
+                            <alias>penalidade_validade</alias>
+                            <format></format>
+                            <function>/time/a_date_to_br.fun</function>
+                        </field5>
+                    </fields>
+                    <name>detail4</name>
+                </detail4>
+            </details>
+            <template>UEsDBBQAAAgAAIxitULhpTE5HgAAAB4AAAAIAAAAbWltZXR5cGVhcHBsaWNhdGlvbi92bmQuc3VuLnhtbC53cml0ZXJQSwMEFAAACAAAjGK1QjArPRD1AwAA9QMAAAgAAABtZXRhLnhtbDw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+CjxvZmZpY2U6ZG9jdW1lbnQtbWV0YSB4bWxuczpvZmZpY2U9Imh0dHA6Ly9vcGVub2ZmaWNlLm9yZy8yMDAwL29mZmljZSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6bWV0YT0iaHR0cDovL29wZW5vZmZpY2Uub3JnLzIwMDAvbWV0YSIgeG1sbnM6b29vPSJodHRwOi8vb3Blbm9mZmljZS5vcmcvMjAwNC9vZmZpY2UiIHhtbG5zOmdyZGRsPSJodHRwOi8vd3d3LnczLm9yZy8yMDAzL2cvZGF0YS12aWV3IyIgb2ZmaWNlOnZlcnNpb249IjEuMiI+PG9mZmljZTptZXRhPjxtZXRhOmdlbmVyYXRvcj5MaWJyZU9mZmljZS8zLjUkTGludXhfeDg2IExpYnJlT2ZmaWNlX3Byb2plY3QvMzUwbTEkQnVpbGQtMjwvbWV0YTpnZW5lcmF0b3I+PG1ldGE6aW5pdGlhbC1jcmVhdG9yPmRic2VsbGVyIDwvbWV0YTppbml0aWFsLWNyZWF0b3I+PG1ldGE6Y3JlYXRpb24tZGF0ZT4yMDEzLTA1LTA5VDE2OjE3OjU5PC9tZXRhOmNyZWF0aW9uLWRhdGU+PGRjOmNyZWF0b3I+ZGJzZWxsZXIgPC9kYzpjcmVhdG9yPjxkYzpkYXRlPjIwMTMtMDUtMjFUMDk6MjA6MjU8L2RjOmRhdGU+PG1ldGE6ZWRpdGluZy1jeWNsZXM+OTwvbWV0YTplZGl0aW5nLWN5Y2xlcz48bWV0YTplZGl0aW5nLWR1cmF0aW9uPlBUOU0zNFM8L21ldGE6ZWRpdGluZy1kdXJhdGlvbj48bWV0YTpkb2N1bWVudC1zdGF0aXN0aWMgbWV0YTp0YWJsZS1jb3VudD0iNCIg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</template>
+            <filename>acordo_empenho.sxw</filename>
+        </office>
+    </view>
+</report>

@@ -1,0 +1,79 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* Hint Window, displays information in a popup win
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class HintWindow extends GtkWindow
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+    function HintWindow($bgcolor = '#FFFFFF')
+    {
+        GtkWindow::GtkWindow(GTK_WINDOW_POPUP);
+        $style = new GtkStyle;
+        $style->bg[GTK_STATE_NORMAL] = new GdkColor($bgcolor);
+        GtkWindow::set_style($style);
+
+        $this->content = new GtkVBox;
+
+        $styleb = new GtkStyle;
+        $styleb->bg[GTK_STATE_NORMAL] = new GdkColor('#000000');
+        $sep1 = new GtkVSeparator;
+        $sep2 = new GtkVSeparator;
+        $sep1->set_style($styleb);
+        $sep2->set_style($styleb);
+
+        $vbox = new GtkVBox;
+        $hbox = new GtkHBox;
+        $hbox->pack_start($sep1, false, false);
+        $hbox->pack_start($vbox, true, true);
+        $hbox->pack_start($sep2, false, false);
+        
+        $sep1 = new GtkHSeparator;
+        $sep2 = new GtkHSeparator;
+        $sep1->set_style($styleb);
+        $sep2->set_style($styleb);
+        $vbox->pack_start($sep1);
+        $vbox->pack_start($this->content);
+        $vbox->pack_start($sep2);
+        GtkWindow::add($hbox);
+        GtkWindow::show_all();
+    }
+
+    /***********************************************************/
+    /* Add's content
+    /***********************************************************/
+    function Adiciona($widget, $expand = true, $fill = true, $padding = 0)
+    {
+        $content = $this->content;
+        $content->pack_start($widget, $expand, $fill, $padding);
+    }
+}
+?>

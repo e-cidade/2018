@@ -1,0 +1,5 @@
+{
+  "parametros_nao_localizado"        : "Não foi possível localizar os parâmetros de impressão do relatório.",
+  "erro_query_ultimo_ano_cursado"    : "Erro ao buscar último ano cursado.",
+  "aluno_nao_possui_curso_concluido" : "O(A) aluno(a) [sNome] não possui nenhum curso concluído ou a data de conclusão do curso não foi informada."
+}

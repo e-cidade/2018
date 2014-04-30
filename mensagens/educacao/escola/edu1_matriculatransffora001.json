@@ -1,0 +1,9 @@
+{
+  "informe_data_matricular"                      : "Informe a data para matricular o aluno!",
+  "informe_etapa"                                : "Informe a etapa para matricular o aluno!",
+  "data_matricula_fora_periodo"                  : "Data da matrícula fora do periodo do calendario ( [iDataInicial] a [iDataFinal] ).",
+  "data_matricula_menor_data_matricula_anterior" : "Data da Matrícula menor que a data da matrícula anterior do aluno ([iMatricula])!",
+  "data_matricula_menor_data_saida"              : "Data da Matrícula menor que a data de saída da matrícula anterior do aluno ([iDataMatricula])!",
+  "turma_sem_vagas"                              : "Turma sem vagas disponíveis!",
+  "ano_calendario"                               : "Informe o ano do calendário da matrícula!"
+}
