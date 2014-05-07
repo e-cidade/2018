@@ -338,11 +338,11 @@ function db_verifica_ip_banco() {
   //#99#//                  testa o tamanho do IP até o asterisco e desconsidera a partir dele.
   //#99#//db_acessa[1][2] = Campo Lógico, quando verdadeiro, poderá acessar, o IP ou máscara do IP e quando
   //#99#//                  falso nao poderá acessar o db_portal
-  global $SERVER, $HTTP_SERVER_VARS, $db48_ip, $db47_id_usuario;
+  global $SERVER, $_SERVER, $db48_ip, $db47_id_usuario;
   if (isset ($_SERVER["HTTP_X_FORWARDED_FOR"])) {
     $db_ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
   } else {
-    $db_ip = $HTTP_SERVER_VARS['REMOTE_ADDR'];
+    $db_ip = $_SERVER['REMOTE_ADDR'];
   }
 
   $usuario_liberado = '0';
@@ -429,11 +429,11 @@ function db_verifica_ip() {
   //#99#//                  testa o tamanho do IP até o asterisco e desconsidera a partir dele.
   //#99#//db_acessa[1][2] = Campo Lógico, quando verdadeiro, poderá acessar, o IP ou máscara do IP e quando
   //#99#//                  falso nao poderá acessar o db_portal
-  global $SERVER, $HTTP_SERVER_VARS;
+  global $SERVER, $_SERVER;
   if (isset ($_SERVER["HTTP_X_FORWARDED_FOR"])) {
     $db_ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
   } else {
-    $db_ip = $HTTP_SERVER_VARS['REMOTE_ADDR'];
+    $db_ip = $_SERVER['REMOTE_ADDR'];
   }
 
   include ("db_acessa.php");
@@ -478,10 +478,10 @@ class cl_abre_arquivo {
     //#20#//Nome do Arquivo : Nome do arquivo a ser gerado, quando em branco, o sistema gera um arquivo aleatório
     //#20#//                  com a função tempnam()
     //#40#//true se o arquivo foi gerado ou false se nao foi gerado
-    global $HTTP_SERVER_VARS;
+    global $_SERVER;
     $Dirroot = "";
     if ($nomearq == "") {
-      $Dirroot = substr($HTTP_SERVER_VARS['DOCUMENT_ROOT'], 0, strrpos($HTTP_SERVER_VARS['DOCUMENT_ROOT'], "/"))."/";
+      $Dirroot = substr($_SERVER['DOCUMENT_ROOT'], 0, strrpos($_SERVER['DOCUMENT_ROOT'], "/"))."/";
       $nomearq = tempnam("tmp", "");
     }
     $this->arquivo = fopen($Dirroot.$nomearq, "w");
@@ -948,35 +948,35 @@ class rotulolov {
 //header('P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"');
 
 //Variavel com a URL absoluta, menos o arquivo
-$DB_URL_ABS = "http://".$HTTP_SERVER_VARS['HTTP_HOST'].substr($HTTP_SERVER_VARS['PHP_SELF'], 0, strrpos($HTTP_SERVER_VARS['PHP_SELF'], "/") + 1);
+$DB_URL_ABS = "http://".$ConfigConexaoDestino["host"].substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1);
 //Variavel com a URL absoluta da pagina que abriu a atual, menos o arquivo
-if (isset ($HTTP_SERVER_VARS["HTTP_REFERER"]))
-$DB_URL_REF = substr($HTTP_SERVER_VARS["HTTP_REFERER"], 0, strrpos($HTTP_SERVER_VARS["HTTP_REFERER"], "/") + 1);
+if (isset ($_SERVER["HTTP_REFERER"]))
+$DB_URL_REF = substr($_SERVER["HTTP_REFERER"], 0, strrpos($_SERVER["HTTP_REFERER"], "/") + 1);
 
 //troca os caracteres especiais em tags html
 
-//if(basename($HTTP_SERVER_VARS['PHP_SELF']) != "/~dbjoao/dbportal2/pre4_mensagens001.php") {
-if (basename($HTTP_SERVER_VARS['PHP_SELF']) != "pre4_mensagens001.php") {
-  $tam_vetor = sizeof($HTTP_POST_VARS);
-  reset($HTTP_POST_VARS);
+//if(basename($_SERVER['PHP_SELF']) != "/~dbjoao/dbportal2/pre4_mensagens001.php") {
+if (basename($_SERVER['PHP_SELF']) != "pre4_mensagens001.php") {
+  $tam_vetor = sizeof($_POST);
+  reset($_POST);
   for ($i = 0; $i < $tam_vetor; $i ++) {
-    if (gettype($HTTP_POST_VARS[key($HTTP_POST_VARS)]) != "array")
-    $HTTP_POST_VARS[key($HTTP_POST_VARS)] = ($HTTP_POST_VARS[key($HTTP_POST_VARS)]);
-    next($HTTP_POST_VARS);
+    if (gettype($_POST[key($_POST)]) != "array")
+    $_POST[key($_POST)] = ($_POST[key($_POST)]);
+    next($_POST);
   }
-  $tam_vetor = sizeof($HTTP_GET_VARS);
-  reset($HTTP_GET_VARS);
+  $tam_vetor = sizeof($_GET);
+  reset($_GET);
   for ($i = 0; $i < $tam_vetor; $i ++) {
-    if (gettype($HTTP_GET_VARS[key($HTTP_GET_VARS)]) != "array")
-    $HTTP_GET_VARS[key($HTTP_GET_VARS)] = ($HTTP_GET_VARS[key($HTTP_GET_VARS)]);
-    next($HTTP_GET_VARS);
+    if (gettype($_GET[key($_GET)]) != "array")
+    $_GET[key($_GET)] = ($_GET[key($_GET)]);
+    next($_GET);
   }
 }
 
 // Verifica se esta sendo passado algum comando SQL
 function db_verfPostGet($post) {
 
-  //db_postmemory($GLOBALS["HTTP_POST_VARS"],2);
+  //db_postmemory($GLOBALS["_POST"],2);
 
   $tam_vetor = sizeof($post);
   reset($post);
@@ -997,8 +997,8 @@ function db_verfPostGet($post) {
     next($post);
   }
 }
-db_verfPostGet($HTTP_POST_VARS);
-db_verfPostGet($HTTP_GET_VARS);
+db_verfPostGet($_POST);
+db_verfPostGet($_GET);
 
 function db_criatabela($result, $columns=array()) {
   //#00#//db_criatabela
@@ -1065,7 +1065,7 @@ function db_getMaxSizeField($recordset, $campo = 0) {
 //atualiza a classe dos arquivos
 function db_postmemory($vetor, $verNomeIndices = 0) {
                 //#00#//db_postmemory
-                //#10#//Esta funcao cria as veriáveis que são passadas por POST no array $HTTP_POST_VARS do apache
+                //#10#//Esta funcao cria as veriáveis que são passadas por POST no array $_POST do apache
                 //#15#//db_postmemory($vetor,$verNomeIndices = 0);
                 //#20#//vetor         : Array que será pesquisado
                 //#20#//verNomeIndice : 1 - para gerar as variáveis
@@ -1882,23 +1882,23 @@ function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_
   $mensagem = "Clique Aqui";
   $cor1 = $cor1 == "" ? "#97B5E6" : $cor1;
   $cor2 = $cor2 == "" ? "#E796A4" : $cor2;
-  global $HTTP_POST_VARS;
+  global $_POST;
   $tot_registros = "tot_registros".$NomeForm;
   $offset = "offset".$NomeForm;
   //recebe os valores do campo hidden
 
-  if (isset ($HTTP_POST_VARS["totreg".$NomeForm])) {
-    $$tot_registros = $HTTP_POST_VARS["totreg".$NomeForm];
+  if (isset ($_POST["totreg".$NomeForm])) {
+    $$tot_registros = $_POST["totreg".$NomeForm];
   } else {
     $$tot_registros = 0;
   }
-  if (isset ($HTTP_POST_VARS["offset".$NomeForm])) {
-    $$offset = $HTTP_POST_VARS["offset".$NomeForm];
+  if (isset ($_POST["offset".$NomeForm])) {
+    $$offset = $_POST["offset".$NomeForm];
   } else {
     $$offset = 0;
   }
-  if(isset($HTTP_POST_VARS["recomecar"])){
-    $recomecar = $HTTP_POST_VARS["recomecar"];
+  if(isset($_POST["recomecar"])){
+    $recomecar = $_POST["recomecar"];
   }
   // se for a primeira vez que é rodado, pega o total de registros e guarda no campo hidden
   if ( ( empty ($$tot_registros) && !empty ($query) ) || isset($recomecar)) {
@@ -1934,28 +1934,28 @@ function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_
   }
 
 
-  if(isset($HTTP_POST_VARS["nova_quantidade_linhas"]) && $HTTP_POST_VARS["nova_quantidade_linhas"]!=''){
-    $HTTP_POST_VARS["nova_quantidade_linhas"] = $HTTP_POST_VARS["nova_quantidade_linhas"] + 0;
-    $numlinhas = $HTTP_POST_VARS["nova_quantidade_linhas"];
+  if(isset($_POST["nova_quantidade_linhas"]) && $_POST["nova_quantidade_linhas"]!=''){
+    $_POST["nova_quantidade_linhas"] = $_POST["nova_quantidade_linhas"] + 0;
+    $numlinhas = $_POST["nova_quantidade_linhas"];
   }
 
   // testa qual botao foi pressionado
-  if (isset ($HTTP_POST_VARS["pri".$NomeForm])) {
+  if (isset ($_POST["pri".$NomeForm])) {
     $$offset = 0;
     $Dd1 = "disabled";
-    $query = str_replace("\\", "", $HTTP_POST_VARS["filtroquery"]);
+    $query = str_replace("\\", "", $_POST["filtroquery"]);
   } else
-                if (isset ($HTTP_POST_VARS["ant".$NomeForm])) {
+                if (isset ($_POST["ant".$NomeForm])) {
                   // if(isset("filtroquery"]);
-                  $query = str_replace("\\", "", @ $HTTP_POST_VARS["filtroquery"]);
+                  $query = str_replace("\\", "", @ $_POST["filtroquery"]);
                   if ($$offset <= $numlinhas) {
                     $$offset = 0;
                     $Dd1 = "disabled";
                   } else
                                 $$offset = $$offset - $numlinhas;
                 } else
-                if (isset ($HTTP_POST_VARS["prox".$NomeForm])) {
-                                $query = str_replace("\\", "", $HTTP_POST_VARS["filtroquery"]);
+                if (isset ($_POST["prox".$NomeForm])) {
+                                $query = str_replace("\\", "", $_POST["filtroquery"]);
                                 //    if($numlinhas >= ($$tot_registros - $$offset - $numlinhas)) {
 
                                 if (($$offset + ($numlinhas * 2)) >= $$tot_registros) {
@@ -1975,35 +1975,35 @@ function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_
                                 } else
                                 $$offset = $$offset + $numlinhas;
                 } else
-                if (isset ($HTTP_POST_VARS["ult".$NomeForm])) {
-                  $query = str_replace("\\", "", $HTTP_POST_VARS["filtroquery"]);
+                if (isset ($_POST["ult".$NomeForm])) {
+                  $query = str_replace("\\", "", $_POST["filtroquery"]);
                   $$offset = $$tot_registros - $numlinhas;
                   if ($$offset < 0) {
                                                 $$offset = 0;
                   }
                   $Dd2 = "disabled";
                 } else {
-                  reset($HTTP_POST_VARS);
-                  for ($i = 0; $i < sizeof($HTTP_POST_VARS); $i ++) {
-                                                $ordem_lov = substr(key($HTTP_POST_VARS), 0, 11);
+                  reset($_POST);
+                  for ($i = 0; $i < sizeof($_POST); $i ++) {
+                                                $ordem_lov = substr(key($_POST), 0, 11);
                                                 if ($ordem_lov == 'ordem_dblov') {
-                                                  $query = str_replace("\\", "", $HTTP_POST_VARS["filtroquery"]);
-                                                  $campo = substr(key($HTTP_POST_VARS), 11);
+                                                  $query = str_replace("\\", "", $_POST["filtroquery"]);
+                                                  $campo = substr(key($_POST), 11);
 
                                                   $ordem_ordenacao = '';
 
-                                                  if(isset($HTTP_POST_VARS['ordem_lov_anterior'])){
-                                                    if($HTTP_POST_VARS['ordem_lov_anterior'] == $HTTP_POST_VARS[key($HTTP_POST_VARS)] ){
+                                                  if(isset($_POST['ordem_lov_anterior'])){
+                                                    if($_POST['ordem_lov_anterior'] == $_POST[key($_POST)] ){
                                                       $ordem_ordenacao = 'desc';
                                                     }
                                                   }
 
-                                                  if ($HTTP_POST_VARS["codigo_pesquisa"] != '') {
+                                                  if ($_POST["codigo_pesquisa"] != '') {
                                                     $query_anterior = $query;
-                                                    $query_novo_filtro = "select * from (".$query.") as x where ".$campo."::text ILIKE '".$HTTP_POST_VARS["codigo_pesquisa"]."%' order by ".$campo.' '.$ordem_ordenacao;
+                                                    $query_novo_filtro = "select * from (".$query.") as x where ".$campo."::text ILIKE '".$_POST["codigo_pesquisa"]."%' order by ".$campo.' '.$ordem_ordenacao;
                                                     $query = $query_novo_filtro;
                                                   } else {
-                                                    if ($HTTP_POST_VARS["distinct_pesquisa"] == '1') {
+                                                    if ($_POST["distinct_pesquisa"] == '1') {
                                                       $query_anterior = $query;
                                                       $query = "select distinct on (".$campo.") * from (".$query.") as x order by ".$campo." ".$ordem_ordenacao;
                                                       $query_novo_filtro = $query;
@@ -2014,7 +2014,7 @@ function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_
                                                   $$offset = 0;
                                                   break;
                                                 }
-                                                next($HTTP_POST_VARS);
+                                                next($_POST);
                   }
                 }
 
@@ -2163,10 +2163,10 @@ function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_
                 }
 
                 if (isset($ordem_lov) && (isset($ordem_ordenacao) && $ordem_ordenacao == '' ) ) {
-                  echo "<input type=\"hidden\" name=\"ordem_lov_anterior\" value=\"".$HTTP_POST_VARS[key($HTTP_POST_VARS)]."\">\n";
+                  echo "<input type=\"hidden\" name=\"ordem_lov_anterior\" value=\"".$_POST[key($_POST)]."\">\n";
                 }
-                if(isset($HTTP_POST_VARS['nova_quantidade_linhas']) && $HTTP_POST_VARS['nova_quantidade_linhas'] == ''){
-                  $numlinhas = $HTTP_POST_VARS['nova_quantidade_linhas'];
+                if(isset($_POST['nova_quantidade_linhas']) && $_POST['nova_quantidade_linhas'] == ''){
+                  $numlinhas = $_POST['nova_quantidade_linhas'];
                 }
 
                 echo "<input type=\"hidden\" name=\"nova_quantidade_linhas\" value=\"$numlinhas\" >\n";
@@ -2188,16 +2188,16 @@ function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_
                     reset($totalizacao);
                     echo "<input type=\"hidden\" name=\"totalizacao_repas\" value=\"".$totrepreg."\">";
                   }
-                }else if(isset( $HTTP_POST_VARS["totalizacao_repas"]) ){
-                  $totalizacao_split = split("\|",$HTTP_POST_VARS["totalizacao_repas"]);
+                }else if(isset( $_POST["totalizacao_repas"]) ){
+                  $totalizacao_split = split("\|",$_POST["totalizacao_repas"]);
                   for($totrep=0;$totrep<count($totalizacao_split);$totrep++){
                     $totalizacao_sep = split("\=",$totalizacao_split[$totrep]);
              $totalizacao[$totalizacao_sep[0]] = $totalizacao_sep[1];
-             if(isset($HTTP_POST_VARS["totrep_".$totalizacao_sep[0]])){
-               echo "<input type=\"hidden\" name=\"totrep_".$totalizacao_sep[0]."\" value=\"".$HTTP_POST_VARS["totrep_".$totalizacao_sep[0]]."\">";
+             if(isset($_POST["totrep_".$totalizacao_sep[0]])){
+               echo "<input type=\"hidden\" name=\"totrep_".$totalizacao_sep[0]."\" value=\"".$_POST["totrep_".$totalizacao_sep[0]]."\">";
              }
                   }
-                  echo "<input type=\"hidden\" name=\"totalizacao_repas\" value=\"".$HTTP_POST_VARS["totalizacao_repas"]."\">";
+                  echo "<input type=\"hidden\" name=\"totalizacao_repas\" value=\"".$_POST["totalizacao_repas"]."\">";
                 }
 
                 echo "<input type=\"hidden\" name=\"filtroquery\" value=\"".str_replace("\n", "", @ $filtroquery)."\">
@@ -2396,7 +2396,7 @@ function db_lovrot($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_
 
                     if( $key_elemento == true && pg_fieldname($result, $j) == $key_elemento && strlen(strstr(pg_fieldname($result, $j), "db_")) == 0 ){
 
-                      @$vertotrep = $HTTP_POST_VARS['totrep_'.$key_elemento];
+                      @$vertotrep = $_POST['totrep_'.$key_elemento];
 
                       if(@$vertotrep!="" && !isset($tot)){
                         echo "<td style=\"text-decoration:none;color:#000000\" bgcolor=\"white\" align=right nowrap> ".$vertotrep."&nbsp;</td>\n";
@@ -2465,12 +2465,12 @@ function db_lov($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_sel
   global $cor2;
   $cor1 = $cor1 == "" ? "#97B5E6" : $cor1;
   $cor2 = $cor2 == "" ? "#E796A4" : $cor2;
-  global $HTTP_POST_VARS;
+  global $_POST;
   $tot_registros = "tot_registros".$NomeForm;
   $offset = "offset".$NomeForm;
   //recebe os valores do campo hidden
-  $$tot_registros = @ $HTTP_POST_VARS["totreg".$NomeForm];
-  $$offset = @ $HTTP_POST_VARS["offset".$NomeForm];
+  $$tot_registros = @ $_POST["totreg".$NomeForm];
+  $$offset = @ $_POST["offset".$NomeForm];
   // se for a primeira vez que é rodado, pega o total de registros e guarda no campo hidden
   if (empty ($$tot_registros)) {
     $Dd1 = "disabled";
@@ -2478,29 +2478,29 @@ function db_lov($query, $numlinhas, $arquivo = "", $filtro = "%", $aonde = "_sel
     $$tot_registros = pg_result($tot, 0, 0);
   }
   // testa qual botao foi pressionado
-  if (isset ($HTTP_POST_VARS["pri".$NomeForm])) {
+  if (isset ($_POST["pri".$NomeForm])) {
     $$offset = 0;
     $Dd1 = "disabled";
   } else
-                if (isset ($HTTP_POST_VARS["ant".$NomeForm])) {
+                if (isset ($_POST["ant".$NomeForm])) {
                   if ($$offset <= $numlinhas) {
                     $$offset = 0;
                     $Dd1 = "disabled";
                   } else
                                 $$offset = $$offset - $numlinhas;
                 } else
-                if (isset ($HTTP_POST_VARS["prox".$NomeForm])) {
+                if (isset ($_POST["prox".$NomeForm])) {
                                 if ($numlinhas >= ($$tot_registros - $$offset - $numlinhas)) {
                                   $$offset = $$tot_registros - $numlinhas;
                                   $Dd2 = "disabled";
                                 } else
                                 $$offset = $$offset + $numlinhas;
                 } else
-                if (isset ($HTTP_POST_VARS["ult".$NomeForm])) {
+                if (isset ($_POST["ult".$NomeForm])) {
                   $$offset = $$tot_registros - $numlinhas;
                   $Dd2 = "disabled";
                 } else {
-                  $$offset = @ $HTTP_POST_VARS["offset".$NomeForm] == "" ? 0 : @ $HTTP_POST_VARS["offset".$NomeForm];
+                  $$offset = @ $_POST["offset".$NomeForm] == "" ? 0 : @ $_POST["offset".$NomeForm];
                 }
                 // executa a query e cria a tabela
                 $query .= " limit $numlinhas offset ".$$offset;
@@ -2621,11 +2621,11 @@ function db_logsmanual($string = '', $modulo = 0, $item = 0, $codcam = 0, $chave
 function db_logsmanual_demais($string = '', $id_usuario=0, $modulo = 0, $item = 0, $coddepto = 0, $instit = 0) {
   db_query("BEGIN");
 
-  global $SERVER, $HTTP_SERVER_VARS;
+  global $SERVER, $_SERVER;
   if (isset ($_SERVER["HTTP_X_FORWARDED_FOR"])) {
      $db_ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
   } else {
-     $db_ip = $HTTP_SERVER_VARS['REMOTE_ADDR'];
+     $db_ip = $_SERVER['REMOTE_ADDR'];
   }
 
   $sql = "select nextval('db_logsacessa_codsequen_seq')";
@@ -2651,7 +2651,7 @@ function db_menu($usuario, $modulo, $anousu, $instit) {
   //#20#//Anousu   : Exercício de Acesso
   //#20#//Instit   : Número da instituição
 
-  global $HTTP_SERVER_VARS, $HTTP_SESSION_VARS;
+  global $_SERVER, $HTTP_SESSION_VARS;
   global $conn, $DB_SELLER;
 
   /**
@@ -2723,15 +2723,15 @@ function db_menu($usuario, $modulo, $anousu, $instit) {
     echo "<div class=\"menuBar\" id='dbmenu' style=\"width:100%;position:absolute;left:0px;top:0px\">\n";
     $gera_helps = "";
     for ($i = 0; $i < $NumMenu; $i ++) {
-      //$URI = pg_result($menu,$i,5) == ""?"":"http://".$HTTP_SERVER_VARS["HTTP_HOST"].substr($HTTP_SERVER_VARS["PHP_SELF"],0,strrpos($HTTP_SERVER_VARS["PHP_SELF"],"/"))."/".pg_result($menu,$i,5);
+      //$URI = pg_result($menu,$i,5) == ""?"":"http://".$_SERVER["HTTP_HOST"].substr($_SERVER["PHP_SELF"],0,strrpos($_SERVER["PHP_SELF"],"/"))."/".pg_result($menu,$i,5);
       if (pg_result($menu, $i, 0) == $modulo) {
         echo "<a class=\"menuButton\" href=\"\" onclick=\"return buttonClick(event, 'Ijoao".pg_result($menu, $i, 1)."');\" onmouseover=\"buttonMouseover(event, 'Ijoao".pg_result($menu, $i, "id_item_filho")."');\">".pg_result($menu, $i, "descricao")."</a>\n";
       }
-      if (strtolower(basename($HTTP_SERVER_VARS["PHP_SELF"])) == strtolower(pg_result($menu, $i, 5))) {
+      if (strtolower(basename($_SERVER["PHP_SELF"])) == strtolower(pg_result($menu, $i, 5))) {
         $rotinadb = pg_result($menu, $i, 4);
       }
       $db_funcao = trim(pg_result($menu, $i, 'funcao'));
-      if ($gera_helps == "" && $db_funcao == basename($HTTP_SERVER_VARS["PHP_SELF"])) {
+      if ($gera_helps == "" && $db_funcao == basename($_SERVER["PHP_SELF"])) {
         $gera_helps = pg_result($menu, $i, 'id_item_filho');
         $help_descricao = pg_result($menu, $i, 'desctec');
       }
@@ -2897,11 +2897,11 @@ function db_menu($usuario, $modulo, $anousu, $instit) {
     // Menu do Help
 
     echo "<div id=\"IMostraHelpMenu\" class=\"menu\" onmouseover=\"menuMouseover(event)\">\n";
-    echo "<a class=\"menuItem\" onMouseover=\"js_cria_objeto_div('help','$help_descricao')\" onMouseout=\"js_remove_objeto_div('help')\" id=\"menuhelp\" href=\"\" onclick=\"buttonHelp('".basename($HTTP_SERVER_VARS["PHP_SELF"])."','".$gera_helps."','".$modulo."',true);return false\">Help</a>\n";
-    echo "<a class=\"menuItem\" onMouseover=\"js_cria_objeto_div('versao','$help_descricao')\" onMouseout=\"js_remove_objeto_div('versao')\" id=\"menuMostraVersao\" href=\"\" onclick=\"buttonHelp('".basename($HTTP_SERVER_VARS["PHP_SELF"])."','".$gera_helps."','".$modulo."',false);return false\">Versões</a>\n";
+    echo "<a class=\"menuItem\" onMouseover=\"js_cria_objeto_div('help','$help_descricao')\" onMouseout=\"js_remove_objeto_div('help')\" id=\"menuhelp\" href=\"\" onclick=\"buttonHelp('".basename($_SERVER["PHP_SELF"])."','".$gera_helps."','".$modulo."',true);return false\">Help</a>\n";
+    echo "<a class=\"menuItem\" onMouseover=\"js_cria_objeto_div('versao','$help_descricao')\" onMouseout=\"js_remove_objeto_div('versao')\" id=\"menuMostraVersao\" href=\"\" onclick=\"buttonHelp('".basename($_SERVER["PHP_SELF"])."','".$gera_helps."','".$modulo."',false);return false\">Versões</a>\n";
     echo "</div>\n";
 
-    //$msg = ucfirst(db_getsession("DB_nome_modulo"))." -> ".ucfirst($rotinadb)." -> ".basename($HTTP_SERVER_VARS["PHP_SELF"]);
+    //$msg = ucfirst(db_getsession("DB_nome_modulo"))." -> ".ucfirst($rotinadb)." -> ".basename($_SERVER["PHP_SELF"]);
 
     if (isset ($HTTP_SESSION_VARS["DB_coddepto"])) {
       $result = @ db_query("select descrdepto from db_depart where coddepto = ".db_getsession("DB_coddepto"));
