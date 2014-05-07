@@ -30,7 +30,8 @@
  * Alterado memória do PHP on the fly, para não estourar a carga dos dados do servidor
  */
 ini_set("memory_limit", '-1');
-
+global $HTTP_SERVER_VARS;
+$HTTP_SERVER_VARS = $_SERVER;
 
 $HTTP_SESSION_VARS['DB_acessado']   = 1;
 $HTTP_SESSION_VARS['DB_datausu']    = time();
@@ -45,7 +46,7 @@ $HTTP_SESSION_VARS['DB_login']      = '';
  * ATENÇÃO: 
  * Será executado o script normalmente, se não ocorrer erro: COMMIT!
  */
-if ($argv[1] == "debug") {
+if ($argc > 1 && $argv[1] == "debug") {
   $HTTP_SESSION_VARS['DB_traceLogAcount'] = true;
 }
 
@@ -85,6 +86,7 @@ require_once(DB_LIBS ."libs/db_stdlib.php");
 require_once(DB_LIBS ."libs/db_utils.php");
 require_once(DB_LIBS ."libs/db_sql.php");
 require_once(DB_MODEL."model/dataManager.php");
+require_once('util.php');
 
 /**
  *  Exercício que será utilizado como base para migração, ou seja serão consultados apenas
@@ -98,7 +100,7 @@ $iExercicioBase = EXERCICIO_BASE;
 $lUsarPcasp         = false;
 $sSqlConParametro   = " select c90_usapcasp ";
 $sSqlConParametro  .= "   from contabilidade.conparametro ";
-$rsConParametro     = db_query($sSqlConParametro);
+$rsConParametro     = consultaBD($sSqlConParametro);
 $lParametroUsaPCASP = pg_result($rsConParametro, 0, 0);
 $iAnoServidor       = date("Y");
 
@@ -109,8 +111,8 @@ if ($lParametroUsaPCASP == 't') {
   $sSqlTipoInstituicao  = "select db21_tipoinstit ";
   $sSqlTipoInstituicao .= "  from configuracoes.db_config ";
   $sSqlTipoInstituicao .= " where codigo = (select db_config.codigo from configuracoes.db_config where db_config.prefeitura is true)";
-  $rsTipoInstituicao    = db_query($connOrigem, $sSqlTipoInstituicao);
-  if (pg_num_rows($rsTipoInstituicao) == 1 && isset($iAnoServidor)) {
+  $rsTipoInstituicao    = consultaBD($connOrigem, $sSqlTipoInstituicao);
+  if (!is_bool($rsTipoInstituicao) && pg_num_rows($rsTipoInstituicao) == 1 && isset($iAnoServidor)) {
 
     $iTipoInstituicao = pg_result($rsTipoInstituicao, 0, "db21_tipoinstit");
     if ($iTipoInstituicao == 101) {
@@ -184,7 +186,7 @@ try {
   $sSqlConsultaSchemasAtual = "select distinct schema_name
                                    from information_schema.schemata
                                   where schema_name = '{$sSchema}' ";
-  $rsSchemasAtual      = db_query($connDestino,$sSqlConsultaSchemasAtual);
+  $rsSchemasAtual      = consultaBD($connDestino,$sSqlConsultaSchemasAtual);
   $iLinhasSchemasAtual = pg_num_rows($rsSchemasAtual);
 
   if ( $iLinhasSchemasAtual > 0 ) {
@@ -241,7 +243,7 @@ try {
                                                where c60_codcon = o58_codele
                                                  and c60_anousu = o58_anousu ) ";
 
-  $rsCorrigeConplano      = db_query($connOrigem,$sSqlCorrigeConplano);
+  $rsCorrigeConplano      = consultaBD($connOrigem,$sSqlCorrigeConplano);
   $iLinhasCorrigeConplano = pg_num_rows($rsCorrigeConplano);
 
 
@@ -255,7 +257,7 @@ try {
                             and o56_anousu >= {$oConplano->o58_anousu}
                        order by o56_anousu asc ";
 
-    $rsOrcElemento      = db_query($connOrigem,$sSqlOrcElemento);
+    $rsOrcElemento      = consultaBD($connOrigem,$sSqlOrcElemento);
     $iLinhasOrcElemento = pg_num_rows($rsOrcElemento);
 
 
@@ -303,7 +305,7 @@ try {
                          from conplano
                         where c60_codcon = {$oConplano->o58_codele}";
 
-      $rsConplano      = db_query($connOrigem,$sSqlConplano);
+      $rsConplano      = consultaBD($connOrigem,$sSqlConplano);
       $iLinhasConplano = pg_num_rows($rsConplano);
 
       if ($iLinhasConplano > 0) {
@@ -358,7 +360,7 @@ try {
                                                where c60_codcon = o70_codfon
                                                  and c60_anousu = o70_anousu ) ";
 
-  $rsCorrigeConplano      = db_query($connOrigem,$sSqlCorrigeConplano);
+  $rsCorrigeConplano      = consultaBD($connOrigem,$sSqlCorrigeConplano);
   $iLinhasCorrigeConplano = pg_num_rows($rsCorrigeConplano);
 
 
@@ -374,7 +376,7 @@ try {
                             and o57_anousu >= {$oConplano->o70_anousu}
                        order by o57_anousu asc ";
 
-    $rsOrcFontes      = db_query($connOrigem,$sSqlOrcFontes);
+    $rsOrcFontes      = consultaBD($connOrigem,$sSqlOrcFontes);
     $iLinhasOrcFontes = pg_num_rows($rsOrcFontes);
 
 
@@ -422,7 +424,7 @@ try {
                          from conplano
                         where c60_codcon = {$oConplano->o70_codfon}";
 
-      $rsConplano      = db_query($connOrigem,$sSqlConplano);
+      $rsConplano      = consultaBD($connOrigem,$sSqlConplano);
       $iLinhasConplano = pg_num_rows($rsConplano);
 
       if ($iLinhasConplano > 0 ) {
@@ -517,7 +519,7 @@ try {
                                               VALUES ('{$dtDataHoje}',
                                                       '$sHoraHoje') ";
 
-  $rsInsereImportacoes   = db_query($connDestino,$sSqlInsereImportacoes);
+  $rsInsereImportacoes   = consultaBD($connDestino,$sSqlInsereImportacoes);
 
   if ( !$rsInsereImportacoes ) {
     throw new Exception("ERRO-0: Erro ao inserir tabela de importações!");
@@ -536,7 +538,7 @@ try {
   $sSqlInstit .= "        db_config.nomeinst as descricao  ";
   $sSqlInstit .= "   from db_config                        ";
 
-  $rsInstit     = db_query($connOrigem,$sSqlInstit);
+  $rsInstit     = consultaBD($connOrigem,$sSqlInstit);
   $iRowsInstit = pg_num_rows($rsInstit);
 
   if ( $iRowsInstit ==  0 ) {
@@ -585,7 +587,7 @@ try {
   $sSqlListaInstitDestino  = " select *           ";
   $sSqlListaInstitDestino .= "  from instituicoes ";
 
-  $rsListaInstitDestino    = db_query($connDestino,$sSqlListaInstitDestino);
+  $rsListaInstitDestino    = consultaBD($connDestino,$sSqlListaInstitDestino);
   $iRowsListaInstitDestino = pg_num_rows($rsListaInstitDestino);
 
   if ( $iRowsListaInstitDestino == 0 ) {
@@ -616,7 +618,7 @@ try {
   $sSqlOrgao .= "        o40_anousu as exercicio         ";
   $sSqlOrgao .= "   from orcorgao                        ";
 
-  $rsOrgao    = db_query($connOrigem,$sSqlOrgao);
+  $rsOrgao    = consultaBD($connOrigem,$sSqlOrgao);
   $iRowsOrgao = pg_num_rows($rsOrgao);
 
   if ( $iRowsOrgao ==  0 ) {
@@ -667,7 +669,7 @@ try {
   $sSqlListaOrgaoDestino  = " select *      ";
   $sSqlListaOrgaoDestino .= "   from orgaos ";
 
-  $rsListaOrgaoDestino    = db_query($connDestino,$sSqlListaOrgaoDestino);
+  $rsListaOrgaoDestino    = consultaBD($connDestino,$sSqlListaOrgaoDestino);
   $iRowsListaOrgaoDestino = pg_num_rows($rsListaOrgaoDestino);
 
   if ( $iRowsListaOrgaoDestino == 0 ) {
@@ -699,7 +701,7 @@ try {
   $sSqlUnidade .= "        o41_anousu  as exercicio        ";
   $sSqlUnidade .= "   from orcunidade                      ";
 
-  $rsUnidade    = db_query($connOrigem,$sSqlUnidade);
+  $rsUnidade    = consultaBD($connOrigem,$sSqlUnidade);
   $iRowsUnidade = pg_num_rows($rsUnidade);
 
   if ( $iRowsUnidade ==  0 ) {
@@ -751,7 +753,7 @@ try {
   $sSqlListaUnidadeDestino  = " select *        ";
   $sSqlListaUnidadeDestino .= "   from unidades ";
 
-  $rsListaUnidadeDestino    = db_query($connDestino,$sSqlListaUnidadeDestino);
+  $rsListaUnidadeDestino    = consultaBD($connDestino,$sSqlListaUnidadeDestino);
   $iRowsListaUnidadeDestino = pg_num_rows($rsListaUnidadeDestino);
 
   if ( $iRowsListaUnidadeDestino == 0 ) {
@@ -783,7 +785,7 @@ try {
   $sSqlProjeto .= "        o55_anousu   as exercicio       ";
   $sSqlProjeto .= "   from orcprojativ                     ";
 
-  $rsProjeto    = db_query($connOrigem,$sSqlProjeto);
+  $rsProjeto    = consultaBD($connOrigem,$sSqlProjeto);
   $iRowsProjeto = pg_num_rows($rsProjeto);
 
   if ( $iRowsProjeto ==  0 ) {
@@ -833,7 +835,7 @@ try {
   $sSqlListaProjetoDestino  = " select *        ";
   $sSqlListaProjetoDestino .= "   from projetos ";
 
-  $rsListaProjetoDestino    = db_query($connDestino,$sSqlListaProjetoDestino);
+  $rsListaProjetoDestino    = consultaBD($connDestino,$sSqlListaProjetoDestino);
   $iRowsListaProjetoDestino = pg_num_rows($rsListaProjetoDestino);
 
   if ( $iRowsListaProjetoDestino == 0 ) {
@@ -861,7 +863,7 @@ try {
   $sSqlFuncao .= "        o52_descr  as descricao  ";
   $sSqlFuncao .= "   from orcfuncao                ";
 
-  $rsFuncao    = db_query($connOrigem,$sSqlFuncao);
+  $rsFuncao    = consultaBD($connOrigem,$sSqlFuncao);
   $iRowsFuncao = pg_num_rows($rsFuncao);
 
   if ( $iRowsFuncao ==  0 ) {
@@ -910,7 +912,7 @@ try {
   $sSqlListaFuncaoDestino  = " select *        ";
   $sSqlListaFuncaoDestino .= "   from funcoes  ";
 
-  $rsListaFuncaoDestino    = db_query($connDestino,$sSqlListaFuncaoDestino);
+  $rsListaFuncaoDestino    = consultaBD($connDestino,$sSqlListaFuncaoDestino);
   $iRowsListaFuncaoDestino = pg_num_rows($rsListaFuncaoDestino);
 
   if ( $iRowsListaFuncaoDestino == 0 ) {
@@ -939,7 +941,7 @@ try {
   $sSqlSubFuncao .= "        o53_descr     as descricao     ";
   $sSqlSubFuncao .= "   from orcsubfuncao                   ";
 
-  $rsSubFuncao    = db_query($connOrigem,$sSqlSubFuncao);
+  $rsSubFuncao    = consultaBD($connOrigem,$sSqlSubFuncao);
   $iRowsSubFuncao = pg_num_rows($rsSubFuncao);
 
   if ( $iRowsSubFuncao ==  0 ) {
@@ -988,7 +990,7 @@ try {
   $sSqlListaSubFuncaoDestino  = " select *           ";
   $sSqlListaSubFuncaoDestino .= "   from subfuncoes  ";
 
-  $rsListaSubFuncaoDestino    = db_query($connDestino,$sSqlListaSubFuncaoDestino);
+  $rsListaSubFuncaoDestino    = consultaBD($connDestino,$sSqlListaSubFuncaoDestino);
   $iRowsListaSubFuncaoDestino = pg_num_rows($rsListaSubFuncaoDestino);
 
   if ( $iRowsListaSubFuncaoDestino == 0 ) {
@@ -1019,7 +1021,7 @@ try {
   $sSqlPrograma .= "        o54_anousu    as exercicio      ";
   $sSqlPrograma .= "   from orcprograma                     ";
 
-  $rsPrograma    = db_query($connOrigem,$sSqlPrograma);
+  $rsPrograma    = consultaBD($connOrigem,$sSqlPrograma);
   $iRowsPrograma = pg_num_rows($rsPrograma);
 
   if ( $iRowsPrograma ==  0 ) {
@@ -1068,7 +1070,7 @@ try {
   $sSqlListaProgramaDestino  = " select *         ";
   $sSqlListaProgramaDestino .= "   from programas ";
 
-  $rsListaProgramaDestino    = db_query($connDestino,$sSqlListaProgramaDestino);
+  $rsListaProgramaDestino    = consultaBD($connDestino,$sSqlListaProgramaDestino);
   $iRowsListaProgramaDestino = pg_num_rows($rsListaProgramaDestino);
 
   if ( $iRowsListaProgramaDestino == 0 ) {
@@ -1096,7 +1098,7 @@ try {
   $sSqlRecurso .= "        o15_descr  as descricao   ";
   $sSqlRecurso .= "   from orctiporec                ";
 
-  $rsRecurso    = db_query($connOrigem,$sSqlRecurso);
+  $rsRecurso    = consultaBD($connOrigem,$sSqlRecurso);
   $iRowsRecurso = pg_num_rows($rsRecurso);
 
   if ( $iRowsRecurso ==  0 ) {
@@ -1145,7 +1147,7 @@ try {
   $sSqlListaRecursoDestino  = " select *         ";
   $sSqlListaRecursoDestino .= "   from recursos ";
 
-  $rsListaRecursoDestino    = db_query($connDestino,$sSqlListaRecursoDestino);
+  $rsListaRecursoDestino    = consultaBD($connDestino,$sSqlListaRecursoDestino);
   $iRowsListaRecursoDestino = pg_num_rows($rsListaRecursoDestino);
 
   if ( $iRowsListaRecursoDestino == 0 ) {
@@ -1193,7 +1195,7 @@ try {
 
   }
 
-  $rsPlanoConta    = db_query($connOrigem,$sSqlPlanoConta);
+  $rsPlanoConta    = consultaBD($connOrigem,$sSqlPlanoConta);
   $iRowsPlanoConta = pg_num_rows($rsPlanoConta);
 
   if ( $iRowsPlanoConta ==  0 ) {
@@ -1230,7 +1232,7 @@ try {
   try {
     $oTBPlanoContas->persist();
   } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
+#    throw new Exception("ERRO-0: {$eException->getMessage()}");
   }
 
 
@@ -1242,7 +1244,7 @@ try {
   $sSqlListaPlanoContaDestino  = " select *           ";
   $sSqlListaPlanoContaDestino .= "   from planocontas ";
 
-  $rsListaPlanoContaDestino    = db_query($connDestino,$sSqlListaPlanoContaDestino);
+  $rsListaPlanoContaDestino    = consultaBD($connDestino,$sSqlListaPlanoContaDestino);
   $iRowsListaPlanoContaDestino = pg_num_rows($rsListaPlanoContaDestino);
 
   if ( $iRowsListaPlanoContaDestino == 0 ) {
@@ -1273,7 +1275,7 @@ try {
   $sSqlReceita .= "        o70_valor  as previsaoinicial   ";
   $sSqlReceita .= "   from orcreceita                      ";
 
-  $rsReceita    = db_query($connOrigem,$sSqlReceita);
+  $rsReceita    = consultaBD($connOrigem,$sSqlReceita);
   $iRowsReceita = pg_num_rows($rsReceita);
 
   if ( $iRowsReceita ==  0 ) {
@@ -1294,9 +1296,10 @@ try {
     logProcessamento($iInd,$iRowsReceita,$iParamLog);
 
     if ( !isset($aListaPlanoConta[$oReceita->codcon][$oReceita->exercicio]) ) {
+      echo(print_r($oReceita)); echo "\n";
       throw new Exception("ERRO-0: Plano de Contas não encontrado CODCON: $oReceita->codcon  EXERCICIO: $oReceita->exercicio RECEITA: $oReceita->codreceita");
     }
-
+    else {
     $oReceita->recurso_id     = $aListaRecurso[$oReceita->codrecurso];
     $oReceita->planoconta_id  = $aListaPlanoConta[$oReceita->codcon][$oReceita->exercicio];
     $oReceita->instituicao_id = $aListaInstit[$oReceita->codinstit];
@@ -1308,7 +1311,7 @@ try {
     } catch ( Exception $eException ) {
       throw new Exception("ERRO-0: {$eException->getMessage()}");
     }
-
+}
   }
 
   /**
@@ -1330,7 +1333,7 @@ try {
   $sSqlListaReceitaDestino  = " select *        ";
   $sSqlListaReceitaDestino .= "   from receitas ";
 
-  $rsListaReceitaDestino    = db_query($connDestino,$sSqlListaReceitaDestino);
+  $rsListaReceitaDestino    = consultaBD($connDestino,$sSqlListaReceitaDestino);
   $iRowsListaReceitaDestino = pg_num_rows($rsListaReceitaDestino);
 
   if ( $iRowsListaReceitaDestino == 0 ) {
@@ -1397,7 +1400,7 @@ try {
   $sSqlReceitaMovimentacao .= "       inner join conhistdoctipo on conhistdoc.c53_tipo     = conhistdoctipo.c57_sequencial ";
   $sSqlReceitaMovimentacao .= " group by o70_codrec,o70_anousu,c70_data                                                    ";
 
-  $rsReceitaMovimentacao    = db_query($connOrigem,$sSqlReceitaMovimentacao);
+  $rsReceitaMovimentacao    = consultaBD($connOrigem,$sSqlReceitaMovimentacao);
   $iRowsReceitaMovimentacao = pg_num_rows($rsReceitaMovimentacao);
 
   if ( $iRowsReceitaMovimentacao ==  0 ) {
@@ -1419,7 +1422,7 @@ try {
 
 
     $sSqlReceitaSaldo = "EXECUTE stmt_receitasaldo({$oReceitaMovimentacao->exercicio}, {$oReceitaMovimentacao->codreceita})";
-    $rsReceitaSaldo = db_query($connOrigem, $sSqlReceitaSaldo);
+    $rsReceitaSaldo = consultaBD($connOrigem, $sSqlReceitaSaldo);
     $iRowsReceitaSaldo = pg_num_rows($rsReceitaSaldo);
 
     if ( $iRowsReceitaSaldo ==  0 ) {
@@ -1461,7 +1464,7 @@ try {
                                                   where planocontas.estrutural like '9%'
                                                      or planocontas.estrutural like '49%')";
 
-    $rsAcertaRecMov = db_query($connDestino,$sSqlAcertaRecMov);
+    $rsAcertaRecMov = consultaBD($connDestino,$sSqlAcertaRecMov);
 
     if ( !$rsAcertaRecMov ) {
       throw new Exception("ERRO-0: Erro ao acertar tabela receitas_movimentacoes !");
@@ -1494,7 +1497,7 @@ try {
   $sSqlDotacao .= "        o58_codele    as codcon         ";
   $sSqlDotacao .= "   from orcdotacao                      ";
 
-  $rsDotacao    = db_query($connOrigem,$sSqlDotacao);
+  $rsDotacao    = consultaBD($connOrigem,$sSqlDotacao);
   $iRowsDotacao = pg_num_rows($rsDotacao);
 
   if ( $iRowsDotacao ==  0 ) {
@@ -1565,7 +1568,7 @@ try {
   $sSqlListaDotacaoDestino  = " select *        ";
   $sSqlListaDotacaoDestino .= "   from dotacoes ";
 
-  $rsListaDotacaoDestino    = db_query($connDestino,$sSqlListaDotacaoDestino);
+  $rsListaDotacaoDestino    = consultaBD($connDestino,$sSqlListaDotacaoDestino);
   $iRowsListaDotacaoDestino = pg_num_rows($rsListaDotacaoDestino);
 
   if ( $iRowsListaDotacaoDestino == 0 ) {
@@ -1641,7 +1644,7 @@ try {
   $sSqlEmpenho .= "                    from empempitem                                                             ";
   $sSqlEmpenho .= "                   where empempitem.e62_numemp = empempenho.e60_numemp )                        ";
 
-  $rsEmpenho    = db_query($connOrigem,$sSqlEmpenho);
+  $rsEmpenho    = consultaBD($connOrigem,$sSqlEmpenho);
   $iRowsEmpenho = pg_num_rows($rsEmpenho);
 
   if ( $iRowsEmpenho ==  0 ) {
@@ -1665,7 +1668,7 @@ try {
                        from pessoas
                       where codpessoa = {$oEmpenho->numcgm} ";
 
-    $rsPessoas   = db_query($connDestino,$sSqlPessoas);
+    $rsPessoas   = consultaBD($connDestino,$sSqlPessoas);
 
     if ( pg_num_rows($rsPessoas) > 0 ) {
 
@@ -1713,7 +1716,7 @@ try {
       $sSqlTipoCompra .= "        inner join empautoriza          on empautoriza.e54_autori          = empautitem.e55_autori          ";
       $sSqlTipoCompra .= "  where empautitem.e55_autori = {$oEmpenho->codautoriza} ";
 
-      $rsLicita = db_query($connOrigem,$sSqlTipoCompra);
+      $rsLicita = consultaBD($connOrigem,$sSqlTipoCompra);
 
       if ( pg_num_rows($rsLicita) > 0 ) {
 
@@ -1779,7 +1782,7 @@ try {
   $sSqlEmpenhosDestino  = " select *        ";
   $sSqlEmpenhosDestino .= "   from empenhos ";
 
-  $rsDadosEmpenhosDestino = db_query($connDestino,$sSqlEmpenhosDestino);
+  $rsDadosEmpenhosDestino = consultaBD($connDestino,$sSqlEmpenhosDestino);
   $iLinhasEmpenhosDestino = pg_num_rows($rsDadosEmpenhosDestino);
 
   db_logNumReg($iLinhasEmpenhosDestino,$sArquivoLog,$iParamLog);
@@ -1798,7 +1801,7 @@ try {
     $sSqlItensEmpenho   .= "        inner join pcmater on pc01_codmater = e62_item                ";
     $sSqlItensEmpenho   .= "  where e62_numemp = {$oEmpenhoDestino->codempenho}                   ";
 
-    $rsDadosItensEmpenho = db_query($connOrigem,$sSqlItensEmpenho);
+    $rsDadosItensEmpenho = consultaBD($connOrigem,$sSqlItensEmpenho);
     $iLinhasItensEmpenho = pg_num_rows($rsDadosItensEmpenho);
 
     if ( $iLinhasItensEmpenho > 0 ) {
@@ -1838,7 +1841,7 @@ try {
                                        inner join pcprocitem           on pc81_codprocitem = e73_pcprocitem
                                  where e61_numemp = {$oEmpenho->codempenho} ";
 
-    $rsDadosProcessoEmpenho  = db_query($connOrigem,$sSqlProcessoEmpenho);
+    $rsDadosProcessoEmpenho  = consultaBD($connOrigem,$sSqlProcessoEmpenho);
     $iLinhasProcessoEmpenho = pg_num_rows($rsDadosProcessoEmpenho);
 
     if ( $iLinhasProcessoEmpenho > 0 ) {
@@ -1891,7 +1894,7 @@ try {
   $sSqlEmpenhoMovimentacao .= "  where c70_data >= '{$iExercicioBase}-01-01'::date                                       ";
   $sSqlEmpenhoMovimentacao .= "    and exists ( select * from empempitem where empempitem.e62_numemp = conlancamemp.c75_numemp )";
 
-  $rsEmpenhoMovimentacao    = db_query($connOrigem,$sSqlEmpenhoMovimentacao);
+  $rsEmpenhoMovimentacao    = consultaBD($connOrigem,$sSqlEmpenhoMovimentacao);
   $iRowsEmpenhoMovimentacao = pg_num_rows($rsEmpenhoMovimentacao);
 
   if ( $iRowsEmpenhoMovimentacao ==  0 ) {
@@ -1934,7 +1937,7 @@ try {
                               from empenhos
                              where codempenho = {$oEmpenhoMovimentacao->codempenho} ";
 
-    $rsEmpenhoDestino    = db_query($connDestino,$sSqlEmpenhosDestino);
+    $rsEmpenhoDestino    = consultaBD($connDestino,$sSqlEmpenhosDestino);
 
     if ( pg_num_rows($rsEmpenhoDestino) > 0 ) {
       $iIdEmpenho = db_utils::fieldsMemory($rsEmpenhoDestino,0)->id ;
@@ -2019,7 +2022,7 @@ try {
   $sSqlDadosCadastraisServidor .= "   from dados_servidor                           ";
   $sSqlDadosCadastraisServidor .= "   group by id, nome, cpf, instit_servidor, admissao ";
 
-  $rsServidores                 = db_query($connOrigem, $sSqlDadosCadastraisServidor);
+  $rsServidores                 = consultaBD($connOrigem, $sSqlDadosCadastraisServidor);
 
   if ( !$rsServidores ) {
     throw new Exception("ERRO-1: Erro ao criar tabela temporaria dos servidores.!");
@@ -2091,7 +2094,7 @@ try {
   $sSqlMatrizServidorMovimentacao  = " select id, servidor_id, mes, ano         ";
   $sSqlMatrizServidorMovimentacao .= "   from {$sSchema}.servidor_movimentacoes ";
 
-  $rsListaServidorMovimentacao     = db_query($connDestino, $sSqlMatrizServidorMovimentacao);
+  $rsListaServidorMovimentacao     = consultaBD($connDestino, $sSqlMatrizServidorMovimentacao);
   $iRowsListaServidorMovimentacao  = pg_num_rows($rsListaServidorMovimentacao);
 
   for ( $iInd=0; $iInd < $iRowsListaServidorMovimentacao; $iInd++ ) {
@@ -2260,7 +2263,7 @@ try {
   }
 
   $sSqlDadosServidores = "select distinct ano, mes from dados_servidor";
-  $rsDadosServidores   = db_query($connOrigem, $sSqlDadosServidores);
+  $rsDadosServidores   = consultaBD($connOrigem, $sSqlDadosServidores);
   $iDadosServidores    = pg_num_rows($rsDadosServidores);
 
   for ($iServidor = 0; $iServidor < $iDadosServidores; $iServidor++) {
@@ -2431,7 +2434,7 @@ try {
                                   order by schema_name desc
                                  offset {$iNroBasesAntigas} ";
 
-  $rsSchemasAntigos      = db_query($connDestino,$sSqlConsultaSchemasAntigos);
+  $rsSchemasAntigos      = consultaBD($connDestino,$sSqlConsultaSchemasAntigos);
   $iLinhasSchemasAntigos = pg_num_rows($rsSchemasAntigos);
 
   for ($iInd=0; $iInd < $iLinhasSchemasAntigos; $iInd++ ) {
