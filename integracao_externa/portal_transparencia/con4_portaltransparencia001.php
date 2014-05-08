@@ -136,11 +136,12 @@ if ($lParametroUsaPCASP == 't') {
   }
 }
 
-$iAnoAnteriorImplantacaoPCASP = $iAnoImplantacaoPCASP - 1;
-
 define("USE_PCASP", $lUsarPcasp);
 define("ANO_IMPLANTACAO_PCASP", $iAnoImplantacaoPCASP); 
-define("ANO_ANTERIOR_IMPLANTACAO_PCASP", $iAnoAnteriorImplantacaoPCASP); 
+define("ANO_ANTERIOR_IMPLANTACAO_PCASP", ANO_IMPLANTACAO_PCASP - 1); 
+
+unset($lUsarPcasp);
+unset($iAnoImplantacaoPCASP);
 
 if ( isset($argv[1])) {
 
