@@ -30,24 +30,18 @@
  * Alterado memória do PHP on the fly, para não estourar a carga dos dados do servidor
  */
 ini_set("memory_limit", '-1');
-global $HTTP_SERVER_VARS;
-$HTTP_SERVER_VARS = $_SERVER;
 
-$HTTP_SESSION_VARS['DB_acessado']   = 1;
-$HTTP_SESSION_VARS['DB_datausu']    = time();
-$HTTP_SESSION_VARS['DB_anousu']     = date('Y',time());
-$HTTP_SESSION_VARS['DB_id_usuario'] = 1;
-$HTTP_SESSION_VARS['DB_login']      = '';
+$_SERVER['DB_acessado']   = 1;
+$_SERVER['DB_datausu']    = time();
+$_SERVER['DB_anousu']     = date('Y',time());
+$_SERVER['DB_id_usuario'] = 1;
+$_SERVER['DB_login']      = '';
 
-/*
- * Adicioando debug no script pelo tracelog, basta informar o parametro debug no momento de executar o script
- * php con4_portaltransparencia001.php debug
- * 
- * ATENÇÃO: 
- * Será executado o script normalmente, se não ocorrer erro: COMMIT!
- */
+
+
+
 if ($argc > 1 && $argv[1] == "debug") {
-  $HTTP_SESSION_VARS['DB_traceLogAcount'] = true;
+  $_SERVER['DB_traceLogAcount'] = true;
 }
 
 /**
