@@ -38,8 +38,6 @@ $_SERVER['DB_id_usuario'] = 1;
 $_SERVER['DB_login']      = '';
 
 
-
-
 if ($argc > 1 && $argv[1] == "debug") {
   $_SERVER['DB_traceLogAcount'] = true;
 }
@@ -47,7 +45,7 @@ if ($argc > 1 && $argv[1] == "debug") {
 /**
  *  Número de bases antigas que o script irá manter automáticamente
  */
-$iNroBasesAntigas = 3;
+define('NUMERO_BASES_ANTIGAS', 3);
 
 /**
  *  Nome do Schema gerado pelo script
@@ -179,7 +177,7 @@ try {
 
   $sSqlConsultaSchemasAtual = "select distinct schema_name
                                    from information_schema.schemata
-                                  where schema_name = '". SSCHEMA ."'"; // AQUI
+                                  where schema_name = '". SSCHEMA ."'";
   $rsSchemasAtual      = consultaBD($connDestino,$sSqlConsultaSchemasAtual);
   $iLinhasSchemasAtual = pg_num_rows($rsSchemasAtual);
 
@@ -2426,7 +2424,7 @@ try {
                                    from information_schema.schemata
                                   where schema_name like 'bkp_transparencia_%'
                                   order by schema_name desc
-                                 offset {$iNroBasesAntigas} ";
+                                 offset ". NUMERO_BASES_ANTIGAS . " ";
 
   $rsSchemasAntigos      = consultaBD($connDestino,$sSqlConsultaSchemasAntigos);
   $iLinhasSchemasAntigos = pg_num_rows($rsSchemasAntigos);
