@@ -52,7 +52,7 @@ $iNroBasesAntigas = 3;
 /**
  *  Nome do Schema gerado pelo script
  */
-$sSchema    = "transparencia";
+define('SSCHEMA', 'transparencia');
 $sBkpSchema = "bkp_transparencia_".date("Ymd_His");
 
 /**
@@ -179,13 +179,13 @@ try {
 
   $sSqlConsultaSchemasAtual = "select distinct schema_name
                                    from information_schema.schemata
-                                  where schema_name = '{$sSchema}' ";
+                                  where schema_name = '". SSCHEMA ."'"; // AQUI
   $rsSchemasAtual      = consultaBD($connDestino,$sSqlConsultaSchemasAtual);
   $iLinhasSchemasAtual = pg_num_rows($rsSchemasAtual);
 
   if ( $iLinhasSchemasAtual > 0 ) {
 
-    $sSqlRenomeiaSchema = " ALTER SCHEMA {$sSchema} RENAME TO {$sBkpSchema} ";
+    $sSqlRenomeiaSchema = " ALTER SCHEMA " . SSCHEMA . " RENAME TO {$sBkpSchema} ";
 
     if ( !db_query($connDestino,$sSqlRenomeiaSchema)) {
       throw new Exception("ERRO-0: Erro ao renomear schema !".$sSqlRenomeiaSchema);
@@ -195,29 +195,29 @@ try {
   // CRIA NOVO SCHEMA ***********************************************************************************************//
 
 
-  $sSqlCriaSchema = "CREATE SCHEMA {$sSchema} ";
+  $sSqlCriaSchema = "CREATE SCHEMA " .  SSCHEMA . " ";
 
   if ( !db_query($connDestino,$sSqlCriaSchema) ) {
-    throw new Exception("Falha ao criar schema {$sSchema} !");
+    throw new Exception("Falha ao criar schema ". SSCHEMA . "!");
   }
 
 
   // ****************************************************************************************************************//
 
-  $sSqlAlteraSchemaAtual = "ALTER DATABASE \"".$ConfigConexaoDestino["dbname"]."\" SET search_path TO {$sSchema} ";
+  $sSqlAlteraSchemaAtual = "ALTER DATABASE \"".$ConfigConexaoDestino["dbname"]."\" SET search_path TO ". SSCHEMA ." ";
 
   if ( !db_query($connDestino,$sSqlAlteraSchemaAtual)) {
-    throw new Exception("Falha ao alterar schema atual para {$sSchema} !");
+    throw new Exception("Falha ao alterar schema atual para ". SSCHEMA . "!");
   }
 
-  $sSqlDefineSchemaAtual = "SET search_path TO {$sSchema} ";
+  $sSqlDefineSchemaAtual = "SET search_path TO ". SSCHEMA . " ";
 
   if ( !db_query($connDestino,$sSqlDefineSchemaAtual) ) {
-    throw new Exception("Falha ao definir schema atual para {$sSchema} !");
+    throw new Exception("Falha ao definir schema atual para ". SSCHEMA . " !");
   }
 
 
-  $rsUpgradeDatabase = upgradeDatabase($connDestino,'.',$sSchema);
+  $rsUpgradeDatabase = upgradeDatabase($connDestino,'.', SSCHEMA);
 
   if (!$rsUpgradeDatabase) {
     throw new Exception("Falha ao atualizar base de dados!");
@@ -2086,7 +2086,7 @@ try {
    * a competência. a matriz $aMatrizMovimentacaoServidor será usada ao inserir os dados financeiros.
    */
   $sSqlMatrizServidorMovimentacao  = " select id, servidor_id, mes, ano         ";
-  $sSqlMatrizServidorMovimentacao .= "   from {$sSchema}.servidor_movimentacoes ";
+  $sSqlMatrizServidorMovimentacao .= "   from ". SSCHEMA . ".servidor_movimentacoes ";
 
   $rsListaServidorMovimentacao     = consultaBD($connDestino, $sSqlMatrizServidorMovimentacao);
   $iRowsListaServidorMovimentacao  = pg_num_rows($rsListaServidorMovimentacao);
