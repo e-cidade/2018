@@ -261,10 +261,9 @@ try {
 
       $oOrcElemento = db_utils::fieldsMemory($rsOrcElemento,0);
 
-      $sTabelaPlano = "conplano";
-      if (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP) {
-        $sTabelaPlano = "conplanoorcamento";
-      }
+      $sTabelaPlano = (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP ?
+                      "conplanoorcamento": "conplano");
+
       $sSqlInsereConplano = " insert into {$sTabelaPlano} ( c60_codcon,
                                                      c60_anousu,
                                                      c60_estrut,
@@ -282,15 +281,6 @@ try {
                                                      1
                                                    )";
 
-      /**
-        * Condicao comentada pois caso a tabela de destino contenha os dados, a rotina eh abortada
-        */
-      /*
-      if (!db_query($connOrigem,$sSqlInsereConplano)) {
-        throw new Exception("ERRO-0: 1 - Falha ao inserir na conplano $sSqlInsereConplano");
-      }
-      */
-
     } else {
 
       $sSqlConplano = "select *
@@ -303,10 +293,9 @@ try {
       if ($iLinhasConplano > 0) {
 
         $oConplanoOrigem    = db_utils::fieldsMemory($rsConplano,0);
-        $sTabelaPlano = "conplano";
-        if (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP) {
-          $sTabelaPlano = "conplanoorcamento";
-        }
+        
+        $sTabelaPlano = (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP ?
+                        "conplanoorcamento": "conplano");
         $sSqlInsereConplano = " insert into {$sTabelaPlano} ( c60_codcon,
                                                        c60_anousu,
                                                        c60_estrut,
@@ -323,15 +312,6 @@ try {
                                                        {$oConplanoOrigem->c60_codsis},
                                                        {$oConplanoOrigem->c60_codcla}
                                                      )";
-
-        /**
-         * Condicao comentada pois caso a tabela de destino contenha os dados, a rotina eh abortada
-         */
-        /*
-        if (!db_query($connOrigem,$sSqlInsereConplano)) {
-          throw new Exception("ERRO-0: 2 - Falha ao inserir na conplano $sSqlInsereConplano");
-        }
-        */
 
       } else {
         throw new Exception("ERRO-0: Erro na correção da tabela conplano ");
@@ -380,10 +360,9 @@ try {
     if ( $iLinhasOrcFontes > 0 ) {
 
       $oOrcFontes = db_utils::fieldsMemory($rsOrcFontes,0);
-      $sTabelaPlano = "conplano";
-      if (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP) {
-        $sTabelaPlano = "conplanoorcamento";
-      }
+
+      $sTabelaPlano = (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP ?
+                      "conplanoorcamento": "conplano");
       $sSqlInsereConplano = " insert into {$sTabelaPlano} ( c60_codcon,
                                                      c60_anousu,
                                                      c60_estrut,
@@ -401,15 +380,6 @@ try {
                                                      1
                                                    )";
 
-      /**
-       * Condicao comentada pois caso a tabela de destino contenha os dados, a rotina eh abortada
-       */
-      /*
-      if (!db_query($connOrigem,$sSqlInsereConplano)) {
-        throw new Exception("ERRO-0: 3 - Falha ao inserir na conplano $sSqlInsereConplano");
-      }
-      */
-
     } else {
 
       $sSqlConplano = "select *
@@ -421,10 +391,8 @@ try {
 
       if ($iLinhasConplano > 0 ) {
 
-        $sTabelaPlano = "conplano";
-        if (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP) {
-          $sTabelaPlano = "conplanoorcamento";
-        }
+        $sTabelaPlano = (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP ?
+                        "conplanoorcamento": "conplano");
         $oConplanoOrigem    = db_utils::fieldsMemory($rsConplano,0);
 
         $sSqlInsereConplano = " insert into {$sTabelaPlano} ( c60_codcon,
@@ -444,14 +412,6 @@ try {
                                                        {$oConplanoOrigem->c60_codcla}
                                                      )";
 
-        /**
-         * Condicao comentada pois caso a tabela de destino contenha os dados, a rotina eh abortada
-         */
-        /*
-        if (!db_query($connOrigem,$sSqlInsereConplano)) {
-          throw new Exception("ERRO-0: 4 - Falha ao inserir na conplano $sSqlInsereConplano");
-        }
-        */
       } else {
         throw new Exception("ERRO-0: 1 - Erro na correção da tabela conplano ");
       }
