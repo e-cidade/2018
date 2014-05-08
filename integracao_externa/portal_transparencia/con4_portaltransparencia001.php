@@ -53,8 +53,7 @@ $iNroBasesAntigas = 3;
  *  Nome do Schema gerado pelo script
  */
 define('SSCHEMA', 'transparencia');
-$sBkpSchema = "bkp_transparencia_".date("Ymd_His");
-
+define('SBKPSCHEMA', "bpk_transparencia_".date("Ymd_His"));
 /**
  *  A variável iParamLog define o tipo de log que deve ser gerado :
  *  0 - Imprime log na tela e no arquivo
@@ -185,7 +184,7 @@ try {
 
   if ( $iLinhasSchemasAtual > 0 ) {
 
-    $sSqlRenomeiaSchema = " ALTER SCHEMA " . SSCHEMA . " RENAME TO {$sBkpSchema} ";
+    $sSqlRenomeiaSchema = " ALTER SCHEMA " . SSCHEMA . " RENAME TO ". SBKPSCHEMA . " ";
 
     if ( !db_query($connDestino,$sSqlRenomeiaSchema)) {
       throw new Exception("ERRO-0: Erro ao renomear schema !".$sSqlRenomeiaSchema);
@@ -2469,7 +2468,7 @@ try {
 
 
     $sSqlGlossariosTipos    = " select *
-                                  from {$sBkpSchema}.glossarios_tipos ";
+                                  from ". SBKPSCHEMA . ".glossarios_tipos ";
 
     $rsDadosGlossariosTipos = db_query($connDestino,$sSqlGlossariosTipos);
 
@@ -2504,7 +2503,7 @@ try {
   // ACERTA GLOSSARIOS **********************************************************************************************//
 
     $sSqlGlossarios    = " select *
-                                  from {$sBkpSchema}.glossarios ";
+                                  from ". SBKPSCHEMA . ".glossarios ";
 
     $rsDadosGlossarios = db_query($connDestino,$sSqlGlossarios);
 
