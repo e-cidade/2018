@@ -1768,23 +1768,14 @@ function db_getsession($var = "0", $alertarExistencia = true) {
                 }
 }
 
-//atualiza uma variável de sessao
+/**
+ * Função que atualiza ou adiciona uma variável de sessão.
+ * @param string $var Variável para ser modificada em $_SERVER.
+ * @param mixed $valor Valor para a nova atribuição.
+ */
 function db_putsession($var, $valor) {
-  //#00#//db_putsession
-  //#10#//Esta funcao inclui na sessão do php uma determinada variável
-  //#15#//db_putsession($var,$valor)
-  //#20#//Var   : Nome da variável que será incluida na sessão
-  //#20#//valor : Valor da variável incluída
-  global $HTTP_SESSION_VARS;
-  /*
-   if(!class_exists("crypt_hcemd5"))
-          include("db_calcula.php");
-          $rand = 195728462;
-          $key = "alapuchatche";
-          $md = new Crypt_HCEMD5($key, $rand);
-          $HTTP_SESSION_VARS[$var] = $md->encrypt($valor);
-          */
-  $HTTP_SESSION_VARS[$var] = $valor;
+    global $_SERVER;
+    $_SERVER[$var] = $valor;
 }
 
 function db_destroysession($var){
