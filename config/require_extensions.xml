@@ -65,6 +65,7 @@
     <browser name='firefox' versao='22.0.*'></browser>
     <browser name='firefox' versao='26.0.*'></browser>
     <browser name='firefox' versao='28.0'></browser>
+    <browser name='firefox' versao='29.0'></browser>
   </browsers>
 
   <diretorio name='dbportal2' valorpadrao='e-cidade' label='Diretorio padrao para o e-cidade'></diretorio>
