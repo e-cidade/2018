@@ -1322,8 +1322,7 @@ try {
     if(!$rsAnalizeSomatorio) throw new Exception("ERRO-1: Erro ao executar analyze!");
     
 
-    $sSqlDadosServidores = "select distinct ano, mes from dados_servidor";
-    $rsDadosServidores   = consultaBD($connOrigem, $sSqlDadosServidores);
+    $rsDadosServidores   = consultaBD($connOrigem, "select distinct ano, mes from dados_servidor");
     $iDadosServidores    = pg_num_rows($rsDadosServidores);
 
     for ($iServidor = 0; $iServidor < $iDadosServidores; $iServidor++) {
@@ -1331,80 +1330,9 @@ try {
         $oDadosServidores = db_utils::fieldsMemory($rsDadosServidores, $iServidor);
         $mes = $oDadosServidores->mes;
         $ano = $oDadosServidores->ano;  
+        $rsFolhaPagamento    = db_query($connOrigem, sql_folha_pagamento($ano, $mes));
 
-        $sSqlFolhaPagamento  = "   select ano,                                                                                                                                    ";
-        $sSqlFolhaPagamento .= "          mes,                                                                                                                                    ";
-        $sSqlFolhaPagamento .= "          matricula,                                                                                                                              ";
-        $sSqlFolhaPagamento .= "          rubrica,                                                                                                                                ";
-        $sSqlFolhaPagamento .= "          case when rh27_descr is not null then rh27_descr                                                                                        ";
-        $sSqlFolhaPagamento .= "               when rubrica = 'Z999' then 'Total Bruto'                                                                                           ";
-        $sSqlFolhaPagamento .= "               when rubrica = 'Z888' then 'Total Descontos'                                                                                       ";
-        $sSqlFolhaPagamento .= "               when rubrica = 'Z777' then 'Descontos Obrigatórios'                                                                                ";
-        $sSqlFolhaPagamento .= "          end as descr_rubrica,                                                                                                                   ";
-        $sSqlFolhaPagamento .= "          valor,                                                                                                                                  ";
-        $sSqlFolhaPagamento .= "          quantidade,                                                                                                                             ";
-        $sSqlFolhaPagamento .= "          tiporubrica,                                                                                                                            ";
-        $sSqlFolhaPagamento .= "          tipofolha,                                                                                                                              ";
-        $sSqlFolhaPagamento .= "          instit                                                                                                                                  ";
-        $sSqlFolhaPagamento .= "     from (                                                                                                                                       ";
-        $sSqlFolhaPagamento .= "      select r14_anousu as ano,r14_mesusu as mes,r14_regist as matricula,r14_rubric as rubrica, r14_valor as valor, r14_quant as quantidade,      ";
-        $sSqlFolhaPagamento .= "        case r14_pd when 1 then 'provento' when 2 then 'desconto' else 'base' end as tiporubrica, 'salario' as tipofolha, r14_instit as instit    ";
-        $sSqlFolhaPagamento .= "        from gerfsal                                                                                                                              ";
-        $sSqlFolhaPagamento .= "             inner join dados_servidor on matricula = r14_regist                                                                                  ";
-        $sSqlFolhaPagamento .= "                                      and ano       = r14_anousu                                                                                  ";
-        $sSqlFolhaPagamento .= "                                      and mes       = r14_mesusu                                                                                  "; 
-        $sSqlFolhaPagamento .= "      where r14_mesusu = {$mes}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "        and r14_anousu = {$ano}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "      union all                                                                                                                                   ";
-        $sSqlFolhaPagamento .= "       select r48_anousu,r48_mesusu,r48_regist,r48_rubric, r48_valor, r48_quant,                                                                  ";
-        $sSqlFolhaPagamento .= "         case r48_pd when 1 then 'provento' when 2 then 'desconto' else 'base' end, 'complementar', r48_instit                                    ";
-        $sSqlFolhaPagamento .= "         from gerfcom                                                                                                                             ";
-        $sSqlFolhaPagamento .= "              inner join dados_servidor on matricula = r48_regist                                                                                 ";
-        $sSqlFolhaPagamento .= "                                       and ano       = r48_anousu                                                                                 ";
-        $sSqlFolhaPagamento .= "                                       and mes       = r48_mesusu                                                                                 "; 
-        $sSqlFolhaPagamento .= "      where r48_mesusu = {$mes}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "        and r48_anousu = {$ano}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "      union all                                                                                                                                   ";
-        $sSqlFolhaPagamento .= "       select r35_anousu,r35_mesusu,r35_regist,r35_rubric, r35_valor, r35_quant,                                                                  ";
-        $sSqlFolhaPagamento .= "         case r35_pd when 1 then 'provento' when 2 then 'desconto' else 'base' end, '13salario', r35_instit                                       ";
-        $sSqlFolhaPagamento .= "         from gerfs13                                                                                                                             ";
-        $sSqlFolhaPagamento .= "              inner join dados_servidor on matricula = r35_regist                                                                                 ";
-        $sSqlFolhaPagamento .= "                                       and ano       = r35_anousu                                                                                 ";
-        $sSqlFolhaPagamento .= "                                       and mes       = r35_mesusu                                                                                 "; 
-        $sSqlFolhaPagamento .= "      where r35_mesusu = {$mes}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "        and r35_anousu = {$ano}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "      union all                                                                                                                                   ";
-        $sSqlFolhaPagamento .= "       select r20_anousu,r20_mesusu,r20_regist,r20_rubric, r20_valor, r20_quant,                                                                  ";
-        $sSqlFolhaPagamento .= "         case r20_pd when 1 then 'provento' when 2 then 'desconto' else 'base' end, 'rescisao', r20_instit                                        ";
-        $sSqlFolhaPagamento .= "         from gerfres                                                                                                                             ";
-        $sSqlFolhaPagamento .= "              inner join dados_servidor on matricula = r20_regist                                                                                 ";
-        $sSqlFolhaPagamento .= "                                       and ano       = r20_anousu                                                                                 ";
-        $sSqlFolhaPagamento .= "                                       and mes       = r20_mesusu                                                                                 "; 
-        $sSqlFolhaPagamento .= "      where r20_mesusu = {$mes}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "        and r20_anousu = {$ano}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "      union all                                                                                                                                   ";
-        $sSqlFolhaPagamento .= "        select r22_anousu,r22_mesusu,r22_regist,r22_rubric, r22_valor, r22_quant,                                                                 ";
-        $sSqlFolhaPagamento .= "         case r22_pd when 1 then 'provento' when 2 then 'desconto' else 'base' end, 'adiantamento', r22_instit                                    ";
-        $sSqlFolhaPagamento .= "         from gerfadi                                                                                                                             ";
-        $sSqlFolhaPagamento .= "              inner join dados_servidor on matricula = r22_regist                                                                                 ";
-        $sSqlFolhaPagamento .= "                                       and ano       = r22_anousu                                                                                 ";
-        $sSqlFolhaPagamento .= "                                       and mes       = r22_mesusu                                                                                 "; 
-        $sSqlFolhaPagamento .= "      where r22_mesusu = {$mes}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "        and r22_anousu = {$ano}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "      union all                                                                                                                                   ";
-        $sSqlFolhaPagamento .= "       select anousu, mesusu, regist, rubrica, valor, quantidade, tiporubrica, tipofolha, instit                                                  ";
-        $sSqlFolhaPagamento .= "         from somatorio                                                                                                                           ";
-        $sSqlFolhaPagamento .= "      where mesusu = {$mes}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "        and anousu = {$ano}                                                                                                                   ";
-        $sSqlFolhaPagamento .= "     ) as x                                                                                                                                       ";
-        $sSqlFolhaPagamento .= "  left join rhrubricas on rubrica = rh27_rubric and instit = rh27_instit                                                                          ";
-        $sSqlFolhaPagamento .= "  order by ano,mes,matricula,tipofolha, tiporubrica desc, rubrica;                                                                                ";
-
-        $rsFolhaPagamento    = db_query($connOrigem, $sSqlFolhaPagamento);
-
-        if ( !$rsFolhaPagamento ) {
-            throw new Exception("ERRO-1: Erro ao buscar dados de rubricas.!");
-        }
+        if ( !$rsFolhaPagamento ) throw new Exception("ERRO-1: Erro ao buscar dados de rubricas.!");
 
         $iRowsFolhaPagamento = pg_num_rows($rsFolhaPagamento);
 
@@ -1444,27 +1372,10 @@ try {
 
     db_logTitulo(" IMPORTA DADOS RECURSOS HUMANOS SERVIDOR", $sArquivoLog, $iParamLog);
 
-    $sSqlRecursosHumanos  = " select h16_regist as servidor_id,                         ";
-    $sSqlRecursosHumanos .= "        h12_assent,                                        ";
-    $sSqlRecursosHumanos .= "        h12_descr as descricao,                            ";
-    $sSqlRecursosHumanos .= "        h16_nrport as numero_portaria,                     ";
-    $sSqlRecursosHumanos .= "        h16_atofic as ato_oficial,                         ";
-    $sSqlRecursosHumanos .= "        h16_dtconc data_concessao,                         ";
-    $sSqlRecursosHumanos .= "        h16_dtterm as data_termino,                        ";
-    $sSqlRecursosHumanos .= "        h16_quant as quantidade_dias,                      ";
-    $sSqlRecursosHumanos .= "        h16_histor as historico                            ";
-    $sSqlRecursosHumanos .= "   from assenta                                            ";
-    $sSqlRecursosHumanos .= "      inner join tipoasse       on h12_codigo = h16_assent ";
-    $sSqlRecursosHumanos .= "  where exists (select 1                                   ";
-    $sSqlRecursosHumanos .= "                  from dados_servidor                      ";
-    $sSqlRecursosHumanos .= "                 where matricula = h16_regist              ";
-    $sSqlRecursosHumanos .= "               )                                           ";
+    $rsRecursosHumanos    = db_query($connOrigem, sql_recursos_humanos());
 
-    $rsRecursosHumanos    = db_query($connOrigem, $sSqlRecursosHumanos);
-
-    if ( !$rsRecursosHumanos ) {
-        throw new Exception("ERRO-1: Erro ao buscar dados recursos humanos.!");
-    }
+    if ( !$rsRecursosHumanos ) throw new Exception("ERRO-1: Erro ao buscar dados recursos humanos.!");
+    
 
     $iRowsRecursosHumanos = pg_num_rows($rsRecursosHumanos);
 
@@ -1488,13 +1399,7 @@ try {
 
     // EXCLUSÃO DE SCHEMAS ANTIGOS ************************************************************************************//
 
-    $sSqlConsultaSchemasAntigos = "select distinct schema_name
-        from information_schema.schemata
-        where schema_name like 'bkp_transparencia_%'
-        order by schema_name desc
-        offset ". NUMERO_BASES_ANTIGAS . " ";
-
-    $rsSchemasAntigos      = consultaBD($connDestino,$sSqlConsultaSchemasAntigos);
+    $rsSchemasAntigos      = consultaBD($connDestino,consulta_Schemas_antigos(constant('NUMERO_BASES_ANTIGAS')));
     $iLinhasSchemasAntigos = pg_num_rows($rsSchemasAntigos);
 
     for ($iInd=0; $iInd < $iLinhasSchemasAntigos; $iInd++ ) {
@@ -1503,10 +1408,7 @@ try {
 
         $sSqlExcluiSchemaAntigo = " DROP SCHEMA {$oSchemaAntigo->schema_name} CASCADE ";
 
-        if ( !db_query($connDestino,$sSqlExcluiSchemaAntigo) ) {
-            throw new Exception("ERRO-0: Erro ao excluir schema {$oSchemaAntigo->schema_name} !");
-        }
-
+        if ( !db_query($connDestino,$sSqlExcluiSchemaAntigo) ) throw new Exception("ERRO-0: Erro ao excluir schema {$oSchemaAntigo->schema_name} !");
     }
 
     // FIM DA EXCLUSÃO DE SCHEMAS ANTIGOS *****************************************************************************//
@@ -1517,16 +1419,10 @@ try {
         // ACERTA TABELA empenhos_movimentacoes_exercicios ****************************************************************//
 
 
-        $sSqlAcertaEmpMovExerc = " INSERT INTO empenhos_movimentacoes_exercicios (empenho_id,exercicio)
-            select distinct empenho_id,
-                   extract( year from data) as exercicio
-                       from empenhos_movimentacoes ";
+        $rsAcertaEmpMovExerc = db_query($connDestino,acerta_emp_mov_exer());
 
-        $rsAcertaEmpMovExerc = db_query($connDestino,$sSqlAcertaEmpMovExerc);
-
-        if ( !$rsAcertaEmpMovExerc ) {
-            throw new Exception("ERRO-0: Erro ao acertar tabela empenhos_movimentacoes_exercicios !");
-        }
+        if ( !$rsAcertaEmpMovExerc ) throw new Exception("ERRO-0: Erro ao acertar tabela empenhos_movimentacoes_exercicios !");
+        
 
         // ****************************************************************************************************************//
 
@@ -1539,9 +1435,7 @@ try {
 
         $rsDadosGlossariosTipos = db_query($connDestino,$sSqlGlossariosTipos);
 
-        if ( !$rsDadosGlossariosTipos ) {
-            throw new Exception("ERRO-0: Erro ao consultar tabela glossarios_tipos !");
-        }
+        if ( !$rsDadosGlossariosTipos )  throw new Exception("ERRO-0: Erro ao consultar tabela glossarios_tipos !");        
 
         $iLinhasGlossariosTipos = pg_num_rows($rsDadosGlossariosTipos);
 
@@ -1574,9 +1468,8 @@ try {
 
         $rsDadosGlossarios = db_query($connDestino,$sSqlGlossarios);
 
-        if ( !$rsDadosGlossarios ) {
-            throw new Exception("ERRO-0: Erro ao consultar tabela glossarios !");
-        }
+        if ( !$rsDadosGlossarios ) throw new Exception("ERRO-0: Erro ao consultar tabela glossarios !");
+        
 
         $iLinhasGlossarios = pg_num_rows($rsDadosGlossarios);
 
