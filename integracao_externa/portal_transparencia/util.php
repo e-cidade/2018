@@ -17,7 +17,7 @@ function consultaBD($origem, $sql=null){
 *  O script abaixo corrige possíveis erros de base na tabela conplano, sendo elas podendo ser originárias
 *  da tabela orcdotacao ou orcreceita
 */
-function corrigeConplano($connOrigem, $tabelaOrigem){
+function corrigeConplano($connOrigem, $tabelaOrigem, $iExercicio){
     
     $sSqlCorrigeConplano = consultaCorrecaoConplano($tabelaOrigem);
     $rsCorrigeConplano      = consultaBD($connOrigem,$sSqlCorrigeConplano);

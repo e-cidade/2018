@@ -230,12 +230,12 @@ try {
   /**
    *  Consulta os registros da orcdotacao com possíveis erros de base
    */
-  corrigeConplano($connOrigem, "orcdotacao");
+  corrigeConplano($connOrigem, "orcdotacao", $iExercicio);
 
   /**
    *  Consulta os registros da orcreceita com possíveis erros de base
    */
-  corrigeConplano($connOrigem, "orcreceita");
+  corrigeConplano($connOrigem, "orcreceita", $iExercicio);
   
 
   $oTBInstituicoes               = new tableDataManager($connDestino, 'instituicoes'                , 'id', true, 500);
