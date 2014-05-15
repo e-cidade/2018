@@ -78,57 +78,73 @@
         }
     }
     
+    /**
+     * Consulta um conplano a partir da tabela de origem
+     * @param string $tabelaOrigem Nome da tabela de origem
+     * @param $oConplano
+     * @return 
+     */
     function consultaConplano($tabelaOrigem, $oConplano){
-        switch ($tabelaOrigem){
-            case "orcreceita":
-                return "select *
-                         from conplano
-                        where c60_codcon = {$oConplano->o70_codfon}";
-            case "orcdotacao":
-                return "select *
-                         from conplano
-                        where c60_codcon = {$oConplano->o58_codele}";
-        }
-        
+        $codigo = 0;
+        if ($tabelaOrigem == "orcreceita")
+            $codigo = o70_codfon;
+        elseif($tabelaOrigem == "orcdotacao")
+            $codigo = o58_codele;
+        return "select *
+                from conplano
+                where c60_codcon = {$oConplano->$codigo}";
     }
     
+    /**
+     * Insere um complano na tabela plano
+     * @param $tabelaOrigem
+     * @param $sTabelaPlano 
+     * @param $oConplano 
+     * @param $oConplanoOrigem 
+     * @return object  Description
+     */
     function insereConplanoPorChaveConplano($tabelaOrigem, $sTabelaPlano, $oConplano, $oConplanoOrigem){
-        switch($tabelaOrigem){
-            case "orcreceita":
-                return " insert into {$sTabelaPlano} ( c60_codcon,
-                                                       c60_anousu,
-                                                       c60_estrut,
-                                                       c60_descr,
-                                                       c60_finali,
-                                                       c60_codsis,
-                                                       c60_codcla
-                                                     ) values (
-                                                       {$oConplanoOrigem->c60_codcon},
-                                                       {$oConplano->o70_anousu},
-                                                       '{$oConplanoOrigem->c60_estrut}',
-                                                       '{$oConplanoOrigem->c60_descr}',
-                                                       '{$oConplanoOrigem->c60_finali}',
-                                                       {$oConplanoOrigem->c60_codsis},
-                                                       {$oConplanoOrigem->c60_codcla}
-                                                     )";
-            case "orcdotacao":
-                return " insert into {$sTabelaPlano} ( c60_codcon,
-                                                       c60_anousu,
-                                                       c60_estrut,
-                                                       c60_descr,
-                                                       c60_finali,
-                                                       c60_codsis,
-                                                       c60_codcla
-                                                     ) values (
-                                                       {$oConplanoOrigem->c60_codcon},
-                                                       {$oConplano->o58_anousu},
-                                                       '{$oConplanoOrigem->c60_estrut}',
-                                                       '{$oConplanoOrigem->c60_descr}',
-                                                       '{$oConplanoOrigem->c60_finali}',
-                                                       {$oConplanoOrigem->c60_codsis},
-                                                       {$oConplanoOrigem->c60_codcla}
-                                                     )";
-        }
+        $campoCodigo = 0;
+        if($tabelaOrigem == "orcreceita") $campoCodigo = "o70_anousu";
+        elseif($tabelaOrigem == "orcdotacao") $campoCodigo = "o58_anousu";
+        return " insert into {$sTabelaPlano} ( c60_codcon,
+                                               c60_anousu,
+                                               c60_estrut,
+                                               c60_descr,
+                                               c60_finali,
+                                               c60_codsis,
+                                               c60_codcla
+                                             ) values (
+                                               {$oConplanoOrigem->c60_codcon},
+                                               {$oConplano->$campoCodigo},
+                                               '{$oConplanoOrigem->c60_estrut}',
+                                               '{$oConplanoOrigem->c60_descr}',
+                                               '{$oConplanoOrigem->c60_finali}',
+                                               {$oConplanoOrigem->c60_codsis},
+                                               {$oConplanoOrigem->c60_codcla}
+                                             )";
     }
 
+    /**
+     * Consulta todos os objetos existentes em uma tabela
+     * @param string $tabela Nome da tabela
+     * @return 
+     */
+    function buscaTodosOsObjetosDaTabela($tabela){
+        try{
+            return " select * from $tabela ";    
+        }catch ( Exception $eException ) {
+            throw new Exception("ERRO: {$eException->getMessage()}");
+        }    
+    }
+    
+    /**
+     * Consulta instituições na base de origem
+     * @return 
+     */
+    function consultaInstituicoes(){
+        return " select db_config.codigo   as codinstit,
+                        db_config.nomeinst as descricao
+                        from db_config";
+    }
 ?>
