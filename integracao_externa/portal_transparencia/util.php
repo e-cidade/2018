@@ -19,7 +19,7 @@ function consultaBD($origem, $sql=null){
 *  @param $connOrigem - conexão com o BD
 *  @param $tabelaOrigem - tabela de origem (orcdotação ou orcreceita)
 */
-function corrigeConplano($connOrigem, $tabelaOrigem){
+function corrigeConplano($connOrigem, $tabelaOrigem, $iExercicio){
     
     if($tabelaOrigem != "orcdotacao" && $tabelaOrigem != "orcreceita") throw new Exception('A tabela de origem deve ser orcdotacao ou orcreceita');
     
