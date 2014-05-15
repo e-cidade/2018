@@ -78,6 +78,7 @@ require_once(DB_LIBS ."libs/db_utils.php");
 require_once(DB_LIBS ."libs/db_sql.php");
 require_once(DB_MODEL."model/dataManager.php");
 require_once('util.php');
+require_once('sql_queries.php');
 
 /**
  *  Exercício que será utilizado como base para migração, ou seja serão consultados apenas
@@ -281,62 +282,34 @@ try {
   $aListaEmpenhoMovimentacaoTipo = array();
   $aMatrizMovimentacaoServidor   = array();
 
-
-  // TABELA DE IMPORTÇOES *******************************************************************************************//
-
-  db_logTitulo(" CONFIGURA TABELA DE IMPORTAÇÃO",$sArquivoLog,$iParamLog);
-
-  $sSqlInsereImportacoes = " INSERT INTO importacoes (data,hora)
-                                              VALUES ('{$dtDataHoje}',
-                                                      '$sHoraHoje') ";
-
-  $rsInsereImportacoes   = consultaBD($connDestino,$sSqlInsereImportacoes);
-
-  if ( !$rsInsereImportacoes ) {
-    throw new Exception("ERRO-0: Erro ao inserir tabela de importações!");
-  }
-
-  // FIM TABELA DE IMPORTÇOES ***************************************************************************************//
+  //Tabela de Importacoes
+  configuraTabelaImportacao($sArquivoLog, $iParamLog, $dtDataHoje, $sHoraHoje, $connDestino);
 
   // INSTITUIÇÕES **************************************************************************************************//
 
   db_logTitulo(" IMPORTA INSTITUIÇÕES",$sArquivoLog,$iParamLog);
-
-  /**
-   * Consulta Instituições na base de origem
-   */
-  $sSqlInstit  = " select db_config.codigo   as codinstit, ";
-  $sSqlInstit .= "        db_config.nomeinst as descricao  ";
-  $sSqlInstit .= "   from db_config                        ";
-
+  $sSqlInstit  = consultaInstituicoes();
   $rsInstit     = consultaBD($connOrigem,$sSqlInstit);
   $iRowsInstit = pg_num_rows($rsInstit);
 
-  if ( $iRowsInstit ==  0 ) {
-    throw new Exception('Nenhuma instituição encontrada!');
-  }
+  if ( $iRowsInstit ==  0 ) throw new Exception('Nenhuma instituição encontrada!');
 
   db_logNumReg($iRowsInstit,$sArquivoLog,$iParamLog);
-
   /**
    *  Insere os registros na base de destino através do método insertValue da classe TableDataManager que quando
    *  atinge o número determinado de registros ( informado na assinatura da classe ) é executado automáticamente
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsInstit; $iInd++ ) {
-
     $oInstit = db_utils::fieldsMemory($rsInstit,$iInd);
-
     logProcessamento($iInd,$iRowsInstit,$iParamLog);
-
     $oTBInstituicoes->setByLineOfDBUtils($oInstit);
 
     try {
-      $oTBInstituicoes->insertValue();
+        $oTBInstituicoes->insertValue();
     } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
+        throw new Exception("ERRO-0: {$eException->getMessage()}");
     }
-
   }
 
   /**
@@ -355,9 +328,7 @@ try {
    *  com as instituições cadastradas sendo a variável indexada pelo código da instituição da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código da instituição de origem.
    */
-  $sSqlListaInstitDestino  = " select *           ";
-  $sSqlListaInstitDestino .= "  from instituicoes ";
-
+  $sSqlListaInstitDestino  = buscaTodosOsObjetosDaTabela("instituicoes");
   $rsListaInstitDestino    = consultaBD($connDestino,$sSqlListaInstitDestino);
   $iRowsListaInstitDestino = pg_num_rows($rsListaInstitDestino);
 
@@ -375,6 +346,8 @@ try {
 
   // FIM INSTITUIÇÕES ***********************************************************************************************//
 
+  
+  
   // ORGÃOS *********************************************************************************************************//
 
 
@@ -392,9 +365,7 @@ try {
   $rsOrgao    = consultaBD($connOrigem,$sSqlOrgao);
   $iRowsOrgao = pg_num_rows($rsOrgao);
 
-  if ( $iRowsOrgao ==  0 ) {
-    throw new Exception('Nenhum orgão encontrado!');
-  }
+  if ( $iRowsOrgao ==  0 ) throw new Exception('Nenhum orgão encontrado!');
 
   db_logNumReg($iRowsOrgao,$sArquivoLog,$iParamLog);
 
