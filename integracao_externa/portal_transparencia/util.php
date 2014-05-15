@@ -14,10 +14,14 @@ function consultaBD($origem, $sql=null){
 }
 
 /**
-*  O script abaixo corrige possíveis erros de base na tabela conplano, sendo elas podendo ser originárias
+*  A função corrigePlano corrige possíveis erros de base na tabela conplano, sendo elas podendo ser originárias
 *  da tabela orcdotacao ou orcreceita
+*  @param $connOrigem - conexão com o BD
+*  @param $tabelaOrigem - tabela de origem (orcdotação ou orcreceita)
 */
 function corrigeConplano($connOrigem, $tabelaOrigem){
+    
+    if($tabelaOrigem != "orcdotacao" && $tabelaOrigem != "orcreceita") throw new Exception('A tabela de origem deve ser orcdotacao ou orcreceita');
     
     $sSqlCorrigeConplano = consultaCorrecaoConplano($tabelaOrigem);
     $rsCorrigeConplano      = consultaBD($connOrigem,$sSqlCorrigeConplano);
@@ -40,7 +44,6 @@ function corrigeConplano($connOrigem, $tabelaOrigem){
         }
         $sSqlInsereConplano = insereConplanoPorFontesOuElemento($tabelaOrigem, $sTabelaPlano, $oOrc, $oConplano);
     } else {
-
         $sSqlConplano = consultaConplano($tabelaOrigem, $oConplano);
         $rsConplano      = consultaBD($connOrigem,$sSqlConplano);
         $iLinhasConplano = pg_num_rows($rsConplano);
@@ -51,13 +54,27 @@ function corrigeConplano($connOrigem, $tabelaOrigem){
                $sTabelaPlano = "conplanoorcamento";
             }    
         $oConplanoOrigem    = db_utils::fieldsMemory($rsConplano,0);
-        $sSqlInsereConplano = insereConplanoPorChaveConplano($tabelaOrigem, $sTabelaPlano, $oConplano, $oConplanoOrigem);
-        
+        $sSqlInsereConplano = insereConplanoPorChaveConplano($tabelaOrigem, $sTabelaPlano, $oConplano, $oConplanoOrigem);        
       } else {
         throw new Exception("ERRO-0: 1 - Erro na correção da tabela conplano ");
       }
     }
   }
-    
+}
+
+/**
+ * Configura a tabela de importação
+ * @param $sArquivoLog 
+ * @param $iParamLog 
+ * @param $dtDataHoje 
+ * @param $sHoraHoje 
+ */
+function configuraTabelaImportacao($sArquivoLog, $iParamLog, $dtDataHoje, $sHoraHoje, $connDestino){
+    db_logTitulo(" CONFIGURA TABELA DE IMPORTAÇÃO",$sArquivoLog,$iParamLog);
+    $sSqlInsereImportacoes = " INSERT INTO importacoes (data,hora)
+                                              VALUES ('{$dtDataHoje}',
+                                                      '$sHoraHoje') ";
+    $rsInsereImportacoes   = consultaBD($connDestino,$sSqlInsereImportacoes);
+    if ( !$rsInsereImportacoes ) throw new Exception("ERRO-0: Erro ao inserir tabela de importações!");
 }
 ?>
