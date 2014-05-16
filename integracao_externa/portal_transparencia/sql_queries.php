@@ -147,4 +147,135 @@
                         db_config.nomeinst as descricao
                         from db_config";
     }
+    
+    
+    /**
+     * Consulta Orgãos na base de origem
+     * @return
+     */
+    function consultaOrgaos(){
+        return " select o40_instit as codinstit,        
+                o40_orgao  as codorgao,        
+                o40_descr  as descricao,        
+                o40_anousu as exercicio         
+                from orcorgao                        ";
+    }
+    
+    function consultaUnidades(){
+        return " select o41_instit  as codinstit,       
+                        o41_orgao   as codorgao,
+                        o41_unidade as codunidade,
+                        o41_descr   as descricao,
+                        o41_anousu  as exercicio
+                        from orcunidade                      ";
+    }
+    
+    function consultaProjetos(){
+        return " select o55_instit   as codinstit,
+                o55_tipo     as tipo,           
+                o55_projativ as codprojeto,     
+                o55_descr    as descricao,      
+                o55_anousu   as exercicio       
+                from orcprojativ                     ";
+    }
+    
+    function consultaFuncoes(){
+        return " select o52_funcao as codfuncao, 
+                o52_descr  as descricao  
+                from orcfuncao                ";
+    }
+    
+    function consultaSubFuncoes(){
+        return " select o53_subfuncao as codsubfuncao,
+                o53_descr     as descricao     
+                from orcsubfuncao                   ";
+    }
+    
+    function consultaProgramas(){
+        return " select o54_programa as codprograma,    
+                o54_descr    as descricao,      
+                o54_anousu    as exercicio      
+                from orcprograma                     ";
+    }
+    
+    function consultaRecursos(){
+        return " select o15_codigo as codrecurso, 
+                o15_descr  as descricao   
+                from orctiporec                ";
+    }
+    
+    function consultaPlanoContas(){
+        return " select conplano.c60_codcon as codcon,     
+                conplano.c60_estrut as estrutural, 
+                conplano.c60_descr  as descricao,  
+                conplano.c60_anousu as exercicio   
+                from conplano                           ";
+    }
+    
+    function consultaPlanoContasPCASP($ano_anterior_implantacao_pcasp){
+        return "select distinct codcon, estrutural, descricao, exercicio
+                from (select conplano.c60_codcon as codcon,                                                    
+                        conplano.c60_estrut as estrutural,                                                
+                        conplano.c60_descr  as descricao,                                                 
+                        conplano.c60_anousu as exercicio                                                  
+                        from conplano where c60_anousu <= " . $ano_anterior_implantacao_pcasp . " union         
+                        select conplanoorcamento.c60_codcon as codcon,                                           
+                        conplanoorcamento.c60_estrut as estrutural,                                       
+                        conplanoorcamento.c60_descr  as descricao,                                        
+                        conplanoorcamento.c60_anousu as exercicio                                         
+                        from conplanoorcamento where c60_anousu > " . $ano_anterior_implantacao_pcasp . ") as x ";
+    }
+    
+    function consultaReceitas(){
+        return "select o70_codrec as codreceita,
+               o70_codfon as codcon,
+               o70_anousu as exercicio,
+               o70_codigo as codrecurso,       
+               o70_instit as codinstit,        
+               o70_valor  as previsaoinicial   
+               from orcreceita";
+    }
+    
+    function consultaMovimentacoesReceitas(){
+        return "select o70_codrec as codreceita,                                                           
+                o70_anousu as exercicio,                                                            
+                c70_data   as data,                                                                 
+                sum( case                                                                           
+                    when c57_sequencial = 100 then c70_valor                                    
+                    when c57_sequencial = 101 then (c70_valor * -1)                             
+                    else 0                                                                      
+                    end ) as valor,                                                                
+                sum(case                                                                            
+                    when c57_sequencial = 110  then c70_valor                                       
+                    when c57_sequencial = 111 then (c70_valor * -1)                                 
+                    else 0                                                                          
+                    end ) as previsaoadicional,                                                     
+                sum(case                                                                            
+                    when c57_sequencial = 58   then c70_valor                                       
+                    when c57_sequencial = 104 then (c70_valor * -1)                                 
+                    else 0                                                                          
+                    end ) as previsao_atualizada                                                    
+                from orcreceita                                                                           
+                    inner join conlancamrec   on conlancamrec.c74_codrec = orcreceita.o70_codrec         
+                    and conlancamrec.c74_anousu = orcreceita.o70_anousu         
+                    inner join conlancam      on conlancam.c70_codlan    = conlancamrec.c74_codlan       
+                    inner join conlancamdoc   on conlancamdoc.c71_codlan = conlancam.c70_codlan          
+                    inner join conhistdoc     on conlancamdoc.c71_coddoc = conhistdoc.c53_coddoc         
+                    inner join conhistdoctipo on conhistdoc.c53_tipo     = conhistdoctipo.c57_sequencial 
+                    group by o70_codrec,o70_anousu,c70_data                                                    ";
+    }
+    
+    /**
+    * Consulta Preparada para execução da função fc_receitasaldo na base de origem
+    */
+    function movimentacoesReceitas(){
+        return " prepare stmt_receitasaldo(integer, integer) as 
+                                    select cast(                                                                            
+                                    substr(                                                                          
+                                    fc_receitasaldo($1,                                                              
+                                                    $2,                                                              
+                                                    3,                                                               
+                                                    current_date,                                                    
+                                                    current_date),41,13) as numeric(15,2));                          ";
+    }
 ?>
