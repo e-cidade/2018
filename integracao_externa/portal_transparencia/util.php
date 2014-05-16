@@ -19,7 +19,7 @@ function consultaBD($origem, $sql=null){
 *  @param $connOrigem - conexão com o BD
 *  @param $tabelaOrigem - tabela de origem (orcdotação ou orcreceita)
 */
-function corrigeConplano($connOrigem, $tabelaOrigem, $iExercicio){
+function corrigeConplano($connOrigem, $tabelaOrigem, $iExercicio, $ano_implantacao_pcasp){
     
     if($tabelaOrigem != "orcdotacao" && $tabelaOrigem != "orcreceita") throw new Exception('A tabela de origem deve ser orcdotacao ou orcreceita');
     
@@ -39,7 +39,7 @@ function corrigeConplano($connOrigem, $tabelaOrigem, $iExercicio){
     if ( $iLinhasOrc > 0 ) {
         $oOrc = db_utils::fieldsMemory($rsOrc,0);
         $sTabelaPlano = "conplano";
-        if (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP) {
+        if (USE_PCASP && $iExercicio >= $ano_implantacao_pcasp) {
             $sTabelaPlano = "conplanoorcamento";
         }
         $sSqlInsereConplano = insereConplanoPorFontesOuElemento($tabelaOrigem, $sTabelaPlano, $oOrc, $oConplano);
@@ -50,7 +50,7 @@ function corrigeConplano($connOrigem, $tabelaOrigem, $iExercicio){
 
         if ($iLinhasConplano > 0 ) {
             $sTabelaPlano = "conplano";
-            if (USE_PCASP && $iExercicio >= ANO_IMPLANTACAO_PCASP) {
+            if (USE_PCASP && $iExercicio >= $ano_implantacao_pcasp) {
                $sTabelaPlano = "conplanoorcamento";
             }    
         $oConplanoOrigem    = db_utils::fieldsMemory($rsConplano,0);
@@ -77,4 +77,21 @@ function configuraTabelaImportacao($sArquivoLog, $iParamLog, $dtDataHoje, $sHora
     $rsInsereImportacoes   = consultaBD($connDestino,$sSqlInsereImportacoes);
     if ( !$rsInsereImportacoes ) throw new Exception("ERRO-0: Erro ao inserir tabela de importações!");
 }
+
+function insereRegistros($oTBEntidade){
+    try {
+        $oTBEntidade->insertValue();
+    }catch ( Exception $eException ) {
+        throw new Exception("ERRO-0: {$eException->getMessage()}");
+    }
+}
+
+function insereRegistrosRestantes($oTBEntidade){
+    try {
+        $oTBEntidade->persist();
+    }catch ( Exception $eException ){
+        throw new Exception("ERRO-0: {$eException->getMessage()}");
+    }
+}
+
 ?>
