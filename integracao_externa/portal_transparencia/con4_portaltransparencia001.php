@@ -231,12 +231,12 @@ try {
   /**
    *  Consulta os registros da orcdotacao com possíveis erros de base
    */
-  corrigeConplano($connOrigem, "orcdotacao", $iExercicio);
+  corrigeConplano($connOrigem, "orcdotacao", $iExercicio, ANO_IMPLANTACAO_PCASP);
 
   /**
    *  Consulta os registros da orcreceita com possíveis erros de base
    */
-  corrigeConplano($connOrigem, "orcreceita", $iExercicio);
+  corrigeConplano($connOrigem, "orcreceita", $iExercicio, ANO_IMPLANTACAO_PCASP);
   
 
   $oTBInstituicoes               = new tableDataManager($connDestino, 'instituicoes'                , 'id', true, 500);
@@ -304,24 +304,14 @@ try {
     $oInstit = db_utils::fieldsMemory($rsInstit,$iInd);
     logProcessamento($iInd,$iRowsInstit,$iParamLog);
     $oTBInstituicoes->setByLineOfDBUtils($oInstit);
-
-    try {
-        $oTBInstituicoes->insertValue();
-    } catch ( Exception $eException ) {
-        throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
+    insereRegistros($oTBInstituicoes);
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBInstituicoes->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+  insereRegistrosRestantes($oTBInstituicoes);
 
   /**
    *  É consultado as instituições cadastradas na base de destino para que seja populado o array $aListaInstit
@@ -332,36 +322,18 @@ try {
   $rsListaInstitDestino    = consultaBD($connDestino,$sSqlListaInstitDestino);
   $iRowsListaInstitDestino = pg_num_rows($rsListaInstitDestino);
 
-  if ( $iRowsListaInstitDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaInstitDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
-
-  for ( $iInd=0; $iInd < $iRowsListaInstitDestino; $iInd++ ) {
-
+  for($iInd=0; $iInd < $iRowsListaInstitDestino; $iInd++ ) {
     $oInstitDestino = db_utils::fieldsMemory($rsListaInstitDestino,$iInd);
     $aListaInstit[$oInstitDestino->codinstit] = $oInstitDestino->id;
-
   }
-
   // FIM INSTITUIÇÕES ***********************************************************************************************//
 
-  
-  
   // ORGÃOS *********************************************************************************************************//
-
-
   db_logTitulo(" IMPORTA ORGÃOS",$sArquivoLog,$iParamLog);
 
-  /**
-   * Consulta Orgãos na base de origem
-   */
-  $sSqlOrgao  = " select o40_instit as codinstit,        ";
-  $sSqlOrgao .= "        o40_orgao  as codorgao,         ";
-  $sSqlOrgao .= "        o40_descr  as descricao,        ";
-  $sSqlOrgao .= "        o40_anousu as exercicio         ";
-  $sSqlOrgao .= "   from orcorgao                        ";
-
+  $sSqlOrgao  = consultaOrgaos();
   $rsOrgao    = consultaBD($connOrigem,$sSqlOrgao);
   $iRowsOrgao = pg_num_rows($rsOrgao);
 
@@ -375,19 +347,11 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsOrgao; $iInd++ ) {
-
     $oOrgao = db_utils::fieldsMemory($rsOrgao,$iInd);
-
     logProcessamento($iInd,$iRowsOrgao,$iParamLog);
-
     $oOrgao->instituicao_id = $aListaInstit[$oOrgao->codinstit];
     $oTBOrgaos->setByLineOfDBUtils($oOrgao);
-
-    try {
-      $oTBOrgaos->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
+    insereRegistros($oTBOrgaos);
 
   }
 
@@ -395,60 +359,35 @@ try {
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBOrgaos->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
-
+  insereRegistrosRestantes($oTBOrgaos);
 
   /**
    *  É consultado os orgãos cadastrados na base de destino para que seja populado o array $aListaOrgao
    *  com os orgãos cadastrados sendo a variável indexada pelo código do orgão da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código do orgão de origem.
    */
-  $sSqlListaOrgaoDestino  = " select *      ";
-  $sSqlListaOrgaoDestino .= "   from orgaos ";
-
+  $sSqlListaOrgaoDestino = buscaTodosOsObjetosDaTabela("orgaos");
   $rsListaOrgaoDestino    = consultaBD($connDestino,$sSqlListaOrgaoDestino);
   $iRowsListaOrgaoDestino = pg_num_rows($rsListaOrgaoDestino);
 
-  if ( $iRowsListaOrgaoDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaOrgaoDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
   for ( $iInd=0; $iInd < $iRowsListaOrgaoDestino; $iInd++ ) {
-
     $oOrgaoDestino = db_utils::fieldsMemory($rsListaOrgaoDestino,$iInd);
     $aListaOrgao[$oOrgaoDestino->codorgao][$oOrgaoDestino->exercicio] = $oOrgaoDestino->id;
-
   }
-
   // FIM ORGÃOS *****************************************************************************************************//
-
 
   // UNIDADES *******************************************************************************************************//
 
 
   db_logTitulo(" IMPORTA UNIDADES",$sArquivoLog,$iParamLog);
 
-  /**
-   * Consulta Unidades na base de origem
-   */
-  $sSqlUnidade  = " select o41_instit  as codinstit,       ";
-  $sSqlUnidade .= "        o41_orgao   as codorgao,        ";
-  $sSqlUnidade .= "        o41_unidade as codunidade,      ";
-  $sSqlUnidade .= "        o41_descr   as descricao,       ";
-  $sSqlUnidade .= "        o41_anousu  as exercicio        ";
-  $sSqlUnidade .= "   from orcunidade                      ";
-
+  $sSqlUnidade  = consultaUnidades();
   $rsUnidade    = consultaBD($connOrigem,$sSqlUnidade);
   $iRowsUnidade = pg_num_rows($rsUnidade);
 
-  if ( $iRowsUnidade ==  0 ) {
-    throw new Exception('Nenhuma unidade encontrada!');
-  }
+  if ( $iRowsUnidade ==  0 ) throw new Exception('Nenhuma unidade encontrada!');
 
   db_logNumReg($iRowsUnidade,$sArquivoLog,$iParamLog);
 
@@ -458,81 +397,47 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsUnidade; $iInd++ ) {
-
     $oUnidade = db_utils::fieldsMemory($rsUnidade,$iInd);
-
     logProcessamento($iInd,$iRowsUnidade,$iParamLog);
-
     $oUnidade->instituicao_id = $aListaInstit[$oUnidade->codinstit];
     $oUnidade->orgao_id       = $aListaOrgao[$oUnidade->codorgao][$oUnidade->exercicio];
-
     $oTBUnidades->setByLineOfDBUtils($oUnidade);
-
-    try {
-      $oTBUnidades->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
-
+    insereRegistros($oTBUnidades);
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBUnidades->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+  insereRegistrosRestantes($oTBUnidades);
 
   /**
    *  É consultado as unidades cadastradas na base de destino para que seja populado o array $aListaUnidade
    *  com as unidades cadastradas sendo a variável indexada pelo código da unidade da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código da unidade de origem.
    */
-  $sSqlListaUnidadeDestino  = " select *        ";
-  $sSqlListaUnidadeDestino .= "   from unidades ";
-
+  $sSqlListaUnidadeDestino  = buscaTodosOsObjetosDaTabela("unidades");
   $rsListaUnidadeDestino    = consultaBD($connDestino,$sSqlListaUnidadeDestino);
   $iRowsListaUnidadeDestino = pg_num_rows($rsListaUnidadeDestino);
 
-  if ( $iRowsListaUnidadeDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaUnidadeDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
-  for ( $iInd=0; $iInd < $iRowsListaUnidadeDestino; $iInd++ ) {
-
+  for ( $iInd=0; $iInd < $iRowsListaUnidadeDestino; $iInd++ ){
     $oUnidadeDestino = db_utils::fieldsMemory($rsListaUnidadeDestino,$iInd);
     $aListaUnidade[$oUnidadeDestino->codunidade][$oUnidadeDestino->exercicio] = $oUnidadeDestino->id;
-
   }
 
   // FIM UNIDADES ***************************************************************************************************//
-
-
 
   // PROJETOS *******************************************************************************************************//
 
   db_logTitulo(" IMPORTA PROJETOS",$sArquivoLog,$iParamLog);
 
-  /**
-   * Consulta Projetos na base de origem
-   */
-  $sSqlProjeto  = " select o55_instit   as codinstit,      ";
-  $sSqlProjeto .= "        o55_tipo     as tipo,           ";
-  $sSqlProjeto .= "        o55_projativ as codprojeto,     ";
-  $sSqlProjeto .= "        o55_descr    as descricao,      ";
-  $sSqlProjeto .= "        o55_anousu   as exercicio       ";
-  $sSqlProjeto .= "   from orcprojativ                     ";
-
+  $sSqlProjeto  = consultaProjetos();
   $rsProjeto    = consultaBD($connOrigem,$sSqlProjeto);
   $iRowsProjeto = pg_num_rows($rsProjeto);
 
-  if ( $iRowsProjeto ==  0 ) {
-    throw new Exception('Nenhum projeto encontrado!');
-  }
+  if ( $iRowsProjeto ==  0 ) throw new Exception('Nenhum projeto encontrado!');
 
   db_logNumReg($iRowsProjeto,$sArquivoLog,$iParamLog);
 
@@ -542,53 +447,33 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsProjeto; $iInd++ ) {
-
     $oProjeto = db_utils::fieldsMemory($rsProjeto,$iInd);
-
     logProcessamento($iInd,$iRowsProjeto,$iParamLog);
-
     $oProjeto->instituicao_id = $aListaInstit[$oProjeto->codinstit];
     $oTBProjetos->setByLineOfDBUtils($oProjeto);
-
-    try {
-      $oTBProjetos->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
-
+    insereRegistros($oTBProjetos);
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBProjetos->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+  insereRegistrosRestantes($oTBProjetos);
 
   /**
    *  É consultado os projetos cadastrados na base de destino para que seja populado o array $aListaProjeto
    *  com os projetos cadastrados sendo a variável indexada pelo código do projeto da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código do projeto de origem.
    */
-  $sSqlListaProjetoDestino  = " select *        ";
-  $sSqlListaProjetoDestino .= "   from projetos ";
-
+  $sSqlListaProjetoDestino  = buscaTodosOsObjetosDaTabela("projetos");
   $rsListaProjetoDestino    = consultaBD($connDestino,$sSqlListaProjetoDestino);
   $iRowsListaProjetoDestino = pg_num_rows($rsListaProjetoDestino);
 
-  if ( $iRowsListaProjetoDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaProjetoDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
   for ( $iInd=0; $iInd < $iRowsListaProjetoDestino; $iInd++ ) {
-
     $oProjetoDestino = db_utils::fieldsMemory($rsListaProjetoDestino,$iInd);
     $aListaProjeto[$oProjetoDestino->codprojeto][$oProjetoDestino->exercicio] = $oProjetoDestino->id;
-
   }
 
   // FIM PROJETOS ***************************************************************************************************//
@@ -598,19 +483,11 @@ try {
 
   db_logTitulo(" IMPORTA FUNÇÕES",$sArquivoLog,$iParamLog);
 
-  /**
-   * Consulta Funções na base de origem
-   */
-  $sSqlFuncao  = " select o52_funcao as codfuncao, ";
-  $sSqlFuncao .= "        o52_descr  as descricao  ";
-  $sSqlFuncao .= "   from orcfuncao                ";
-
+  $sSqlFuncao  = consultaFuncoes();
   $rsFuncao    = consultaBD($connOrigem,$sSqlFuncao);
   $iRowsFuncao = pg_num_rows($rsFuncao);
 
-  if ( $iRowsFuncao ==  0 ) {
-    throw new Exception('Nenhuma função encontrada!');
-  }
+  if ( $iRowsFuncao ==  0 ) throw new Exception('Nenhuma função encontrada!');
 
   db_logNumReg($iRowsFuncao,$sArquivoLog,$iParamLog);
 
@@ -620,75 +497,43 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsFuncao; $iInd++ ) {
-
     $oFuncao = db_utils::fieldsMemory($rsFuncao,$iInd);
-
     logProcessamento($iInd,$iRowsFuncao,$iParamLog);
-
     $oTBFuncoes->setByLineOfDBUtils($oFuncao);
-
-    try {
-      $oTBFuncoes->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
-
+    insereRegistros($oTBFuncoes);
   }
-
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBFuncoes->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+  insereRegistrosRestantes($oTBFuncoes);
 
   /**
    *  É consultado as funções cadastradas na base de destino para que seja populado o array $aListaFuncao
    *  com as funções cadastradas sendo a variável indexada pelo código da função da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código da função de origem.
    */
-  $sSqlListaFuncaoDestino  = " select *        ";
-  $sSqlListaFuncaoDestino .= "   from funcoes  ";
-
+  $sSqlListaFuncaoDestino  = buscaTodosOsObjetosDaTabela("funcoes");
   $rsListaFuncaoDestino    = consultaBD($connDestino,$sSqlListaFuncaoDestino);
   $iRowsListaFuncaoDestino = pg_num_rows($rsListaFuncaoDestino);
 
-  if ( $iRowsListaFuncaoDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaFuncaoDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
   for ( $iInd=0; $iInd < $iRowsListaFuncaoDestino; $iInd++ ) {
-
     $oFuncaoDestino = db_utils::fieldsMemory($rsListaFuncaoDestino,$iInd);
     $aListaFuncao[$oFuncaoDestino->codfuncao] = $oFuncaoDestino->id;
-
   }
-
   // FIM FUNÇÕES ****************************************************************************************************//
-
-
 
   // SUBFUNÇÕES *****************************************************************************************************//
 
   db_logTitulo(" IMPORTA SUBFUNÇÕES",$sArquivoLog,$iParamLog);
 
-  /**
-   * Consulta Funções na base de origem
-   */
-  $sSqlSubFuncao  = " select o53_subfuncao as codsubfuncao, ";
-  $sSqlSubFuncao .= "        o53_descr     as descricao     ";
-  $sSqlSubFuncao .= "   from orcsubfuncao                   ";
-
+  $sSqlSubFuncao  = consultaSubFuncoes();
   $rsSubFuncao    = consultaBD($connOrigem,$sSqlSubFuncao);
   $iRowsSubFuncao = pg_num_rows($rsSubFuncao);
 
-  if ( $iRowsSubFuncao ==  0 ) {
-    throw new Exception('Nenhuma SubFunção encontrada!');
-  }
+  if ( $iRowsSubFuncao ==  0 ) throw new Exception('Nenhuma SubFunção encontrada!');
 
   db_logNumReg($iRowsSubFuncao,$sArquivoLog,$iParamLog);
 
@@ -698,77 +543,45 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsSubFuncao; $iInd++ ) {
-
     $oSubFuncao = db_utils::fieldsMemory($rsSubFuncao,$iInd);
-
     logProcessamento($iInd,$iRowsSubFuncao,$iParamLog);
-
     $oTBSubFuncoes->setByLineOfDBUtils($oSubFuncao);
-
-    try {
-      $oTBSubFuncoes->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
-
+    insereRegistros($oTBSubFuncoes);
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBSubFuncoes->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+  insereRegistrosRestantes($oTBSubFuncoes);
 
   /**
    *  É consultado as subfunções cadastradas na base de destino para que seja populado o array $aListaSubFuncao
    *  com as subfunções cadastradas sendo a variável indexada pelo código da subfunção da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código da subfunção de origem.
    */
-  $sSqlListaSubFuncaoDestino  = " select *           ";
-  $sSqlListaSubFuncaoDestino .= "   from subfuncoes  ";
-
+  $sSqlListaSubFuncaoDestino  = buscaTodosOsObjetosDaTabela("subfuncoes");
   $rsListaSubFuncaoDestino    = consultaBD($connDestino,$sSqlListaSubFuncaoDestino);
   $iRowsListaSubFuncaoDestino = pg_num_rows($rsListaSubFuncaoDestino);
 
-  if ( $iRowsListaSubFuncaoDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaSubFuncaoDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
   for ( $iInd=0; $iInd < $iRowsListaSubFuncaoDestino; $iInd++ ) {
-
     $oSubFuncaoDestino = db_utils::fieldsMemory($rsListaSubFuncaoDestino,$iInd);
     $aListaSubFuncao[$oSubFuncaoDestino->codsubfuncao] = $oSubFuncaoDestino->id;
-
   }
 
   // FIM SUBFUNÇÕES *************************************************************************************************//
-
-
-
-
+  
   // PROGRAMAS ******************************************************************************************************//
 
   db_logTitulo(" IMPORTA PROGRAMAS",$sArquivoLog,$iParamLog);
-
-  /**
-   * Consulta Programas na base de origem
-   */
-  $sSqlPrograma  = " select o54_programa as codprograma,    ";
-  $sSqlPrograma .= "        o54_descr    as descricao,      ";
-  $sSqlPrograma .= "        o54_anousu    as exercicio      ";
-  $sSqlPrograma .= "   from orcprograma                     ";
-
+  
+  $sSqlPrograma  = consultaProgramas();
   $rsPrograma    = consultaBD($connOrigem,$sSqlPrograma);
   $iRowsPrograma = pg_num_rows($rsPrograma);
 
-  if ( $iRowsPrograma ==  0 ) {
-    throw new Exception('Nenhum programa encontrado!');
-  }
+  if ( $iRowsPrograma ==  0 ) throw new Exception('Nenhum programa encontrado!');
 
   db_logNumReg($iRowsPrograma,$sArquivoLog,$iParamLog);
 
@@ -778,74 +591,47 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsPrograma; $iInd++ ) {
-
     $oPrograma = db_utils::fieldsMemory($rsPrograma,$iInd);
-
     logProcessamento($iInd,$iRowsPrograma,$iParamLog);
-
     $oTBProgramas->setByLineOfDBUtils($oPrograma);
-
-    try {
-      $oTBProgramas->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
-
+    insereRegistros($oTBProgramas);
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBProgramas->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+  insereRegistrosRestantes($oTBProgramas);
 
   /**
    *  É consultado os programas cadastrados na base de destino para que seja populado o array $aListaPrograma
    *  com os programas cadastrados sendo a variável indexada pelo código do programa da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código do programa de origem.
    */
-  $sSqlListaProgramaDestino  = " select *         ";
-  $sSqlListaProgramaDestino .= "   from programas ";
-
+  $sSqlListaProgramaDestino  = buscaTodosOsObjetosDaTabela("programas");
   $rsListaProgramaDestino    = consultaBD($connDestino,$sSqlListaProgramaDestino);
   $iRowsListaProgramaDestino = pg_num_rows($rsListaProgramaDestino);
 
-  if ( $iRowsListaProgramaDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaProgramaDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
   for ( $iInd=0; $iInd < $iRowsListaProgramaDestino; $iInd++ ) {
-
     $oProgramaDestino = db_utils::fieldsMemory($rsListaProgramaDestino,$iInd);
     $aListaPrograma[$oProgramaDestino->codprograma][$oProgramaDestino->exercicio] = $oProgramaDestino->id;
-
   }
 
   // FIM PROGRAMAS **************************************************************************************************//
 
-
   // RECURSOS *******************************************************************************************************//
-
   db_logTitulo(" IMPORTA RECURSOS",$sArquivoLog,$iParamLog);
 
   /**
    * Consulta Recursos na base de origem
    */
-  $sSqlRecurso  = " select o15_codigo as codrecurso, ";
-  $sSqlRecurso .= "        o15_descr  as descricao   ";
-  $sSqlRecurso .= "   from orctiporec                ";
-
+  $sSqlRecurso  = consultaRecursos();
   $rsRecurso    = consultaBD($connOrigem,$sSqlRecurso);
   $iRowsRecurso = pg_num_rows($rsRecurso);
 
-  if ( $iRowsRecurso ==  0 ) {
-    throw new Exception('Nenhum recurso encontrado!');
-  }
+  if ( $iRowsRecurso ==  0 ) throw new Exception('Nenhum recurso encontrado!');
 
   db_logNumReg($iRowsRecurso,$sArquivoLog,$iParamLog);
 
@@ -855,95 +641,49 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsRecurso; $iInd++ ) {
-
     $oRecurso = db_utils::fieldsMemory($rsRecurso,$iInd);
-
     logProcessamento($iInd,$iRowsRecurso,$iParamLog);
-
     $oTBRecursos->setByLineOfDBUtils($oRecurso);
-
-    try {
-      $oTBRecursos->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
-
+    insereRegistros($oTBRecursos);
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBRecursos->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+  insereRegistrosRestantes($oTBRecursos);
 
   /**
    *  É consultado os recursos cadastrados na base de destino para que seja populado o array $aListaRecurso
    *  com os recursos cadastrados sendo a variável indexada pelo código do recurso da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código do recurso de origem.
    */
-  $sSqlListaRecursoDestino  = " select *         ";
-  $sSqlListaRecursoDestino .= "   from recursos ";
-
+  $sSqlListaRecursoDestino  = buscaTodosOsObjetosDaTabela("recursos");
   $rsListaRecursoDestino    = consultaBD($connDestino,$sSqlListaRecursoDestino);
   $iRowsListaRecursoDestino = pg_num_rows($rsListaRecursoDestino);
 
-  if ( $iRowsListaRecursoDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaRecursoDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
   for ( $iInd=0; $iInd < $iRowsListaRecursoDestino; $iInd++ ) {
-
     $oRecursoDestino = db_utils::fieldsMemory($rsListaRecursoDestino,$iInd);
     $aListaRecurso[$oRecursoDestino->codrecurso] = $oRecursoDestino->id;
   }
 
   // FIM RECURSOS ***************************************************************************************************//
 
-
-
   // PLANOCONTAS ****************************************************************************************************//
 
   db_logTitulo(" IMPORTA PLANOCONTAS",$sArquivoLog,$iParamLog);
 
-  $sSqlPlanoConta  = " select conplano.c60_codcon as codcon,     ";
-  $sSqlPlanoConta .= "        conplano.c60_estrut as estrutural, ";
-  $sSqlPlanoConta .= "        conplano.c60_descr  as descricao,  ";
-  $sSqlPlanoConta .= "        conplano.c60_anousu as exercicio   ";
-  $sSqlPlanoConta .= "   from conplano                           ";
-
   if (USE_PCASP || file_exists(DB_LIBS . 'config/pcasp.txt')) {
-
-    $sSqlPlanoConta  = "   select distinct codcon,                                                                ";
-    $sSqlPlanoConta .= "        estrutural,                                                                       ";
-    $sSqlPlanoConta .= "        descricao,                                                                        ";
-    $sSqlPlanoConta .= "        exercicio                                                                         ";
-    $sSqlPlanoConta .= "   from (                                                                                 ";
-    $sSqlPlanoConta .= "                                                                                          ";
-    $sSqlPlanoConta .= " select conplano.c60_codcon as codcon,                                                    ";
-    $sSqlPlanoConta .= "        conplano.c60_estrut as estrutural,                                                ";
-    $sSqlPlanoConta .= "        conplano.c60_descr  as descricao,                                                 ";
-    $sSqlPlanoConta .= "        conplano.c60_anousu as exercicio                                                  ";
-    $sSqlPlanoConta .= "   from conplano where c60_anousu <= " . ANO_ANTERIOR_IMPLANTACAO_PCASP . " union         ";
-    $sSqlPlanoConta .= " select conplanoorcamento.c60_codcon as codcon,                                           ";
-    $sSqlPlanoConta .= "        conplanoorcamento.c60_estrut as estrutural,                                       ";
-    $sSqlPlanoConta .= "        conplanoorcamento.c60_descr  as descricao,                                        ";
-    $sSqlPlanoConta .= "        conplanoorcamento.c60_anousu as exercicio                                         ";
-    $sSqlPlanoConta .= "   from conplanoorcamento where c60_anousu > " . ANO_ANTERIOR_IMPLANTACAO_PCASP . ") as x ";
-
+    $sSqlPlanoConta  = consultaPlanoContasPCASP(ANO_ANTERIOR_IMPLANTACAO_PCASP);
+  }else{
+    $sSqlPlanoConta  = consultaPlanoContas();  
   }
-
+  
   $rsPlanoConta    = consultaBD($connOrigem,$sSqlPlanoConta);
   $iRowsPlanoConta = pg_num_rows($rsPlanoConta);
-
-  if ( $iRowsPlanoConta ==  0 ) {
-    throw new Exception('Nenhum recurso encontrado!');
-  }
-
+  if ( $iRowsPlanoConta ==  0) throw new Exception('Nenhum recurso encontrado!');
   db_logNumReg($iRowsPlanoConta,$sArquivoLog,$iParamLog);
 
   /**
@@ -952,49 +692,30 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsPlanoConta; $iInd++ ) {
-
     $oPlanoConta = db_utils::fieldsMemory($rsPlanoConta,$iInd);
-
     logProcessamento($iInd,$iRowsPlanoConta,$iParamLog);
-
     $oTBPlanoContas->setByLineOfDBUtils($oPlanoConta);
-
-    try {
-      $oTBPlanoContas->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
-
+    insereRegistros($oTBPlanoContas);
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBPlanoContas->persist();
-  } catch ( Exception $eException ) {
-#    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+  insereRegistrosRestantes($oTBPlanoContas);
 
   /**
    *  É consultado os planocontas cadastrados na base de destino para que seja populado o array $aListaPlanoConta
    *  com os planocontas cadastrados sendo a variável indexada pelo código do planoconta da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código do planoconta de origem.
    */
-  $sSqlListaPlanoContaDestino  = " select *           ";
-  $sSqlListaPlanoContaDestino .= "   from planocontas ";
-
+  $sSqlListaPlanoContaDestino  = buscaTodosOsObjetosDaTabela("planocontas");
   $rsListaPlanoContaDestino    = consultaBD($connDestino,$sSqlListaPlanoContaDestino);
   $iRowsListaPlanoContaDestino = pg_num_rows($rsListaPlanoContaDestino);
 
-  if ( $iRowsListaPlanoContaDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaPlanoContaDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
   for ( $iInd=0; $iInd < $iRowsListaPlanoContaDestino; $iInd++ ) {
-
     $oPlanoContaDestino = db_utils::fieldsMemory($rsListaPlanoContaDestino,$iInd);
     $aListaPlanoConta[$oPlanoContaDestino->codcon][$oPlanoContaDestino->exercicio] = $oPlanoContaDestino->id;
   }
@@ -1006,23 +727,11 @@ try {
 
   db_logTitulo(" IMPORTA RECEITAS",$sArquivoLog,$iParamLog);
 
-  /**
-   * Consulta Receitas na base de origem
-   */
-  $sSqlReceita  = " select o70_codrec as codreceita,       ";
-  $sSqlReceita .= "        o70_codfon as codcon,           ";
-  $sSqlReceita .= "        o70_anousu as exercicio,        ";
-  $sSqlReceita .= "        o70_codigo as codrecurso,       ";
-  $sSqlReceita .= "        o70_instit as codinstit,        ";
-  $sSqlReceita .= "        o70_valor  as previsaoinicial   ";
-  $sSqlReceita .= "   from orcreceita                      ";
-
+  $sSqlReceita  = consultaReceitas();
   $rsReceita    = consultaBD($connOrigem,$sSqlReceita);
   $iRowsReceita = pg_num_rows($rsReceita);
 
-  if ( $iRowsReceita ==  0 ) {
-    throw new Exception('Nenhum recurso encontrado!');
-  }
+  if ( $iRowsReceita ==  0 ) throw new Exception('Nenhum recurso encontrado!');
 
   db_logNumReg($iRowsReceita,$sArquivoLog,$iParamLog);
 
@@ -1034,9 +743,7 @@ try {
   for ( $iInd=0; $iInd < $iRowsReceita; $iInd++ ) {
 
     $oReceita = db_utils::fieldsMemory($rsReceita,$iInd);
-
     logProcessamento($iInd,$iRowsReceita,$iParamLog);
-
     if ( !isset($aListaPlanoConta[$oReceita->codcon][$oReceita->exercicio]) ) {
       echo(print_r($oReceita)); echo "\n";
       throw new Exception("ERRO-0: Plano de Contas não encontrado CODCON: $oReceita->codcon  EXERCICIO: $oReceita->exercicio RECEITA: $oReceita->codreceita");
@@ -1045,110 +752,49 @@ try {
     $oReceita->recurso_id     = $aListaRecurso[$oReceita->codrecurso];
     $oReceita->planoconta_id  = $aListaPlanoConta[$oReceita->codcon][$oReceita->exercicio];
     $oReceita->instituicao_id = $aListaInstit[$oReceita->codinstit];
-
     $oTBReceitas->setByLineOfDBUtils($oReceita);
-
-    try {
-      $oTBReceitas->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
+    insereRegistros($oTBReceitas);
     }
-}
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBReceitas->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
-
+    insereRegistrosRestantes($oTBReceitas);
 
   /**
    *  É consultado as receitas cadastradas na base de destino para que seja populado o array $aListaReceita
    *  com as receitas cadastradas sendo a variável indexada pelo código do receita da base de origem.
    *  Essa variável será utilizada por todo o fonte para identificar o código da receita de origem.
    */
-  $sSqlListaReceitaDestino  = " select *        ";
-  $sSqlListaReceitaDestino .= "   from receitas ";
-
+  $sSqlListaReceitaDestino  = buscaTodosOsObjetosDaTabela("receitas");
   $rsListaReceitaDestino    = consultaBD($connDestino,$sSqlListaReceitaDestino);
   $iRowsListaReceitaDestino = pg_num_rows($rsListaReceitaDestino);
 
-  if ( $iRowsListaReceitaDestino == 0 ) {
-    throw new Exception('Nenhum registro encontrado');
-  }
+  if ( $iRowsListaReceitaDestino == 0 ) throw new Exception('Nenhum registro encontrado');
 
   for ( $iInd=0; $iInd < $iRowsListaReceitaDestino; $iInd++ ) {
-
     $oReceitaDestino = db_utils::fieldsMemory($rsListaReceitaDestino,$iInd);
     $aListaReceita[$oReceitaDestino->codreceita][$oReceitaDestino->exercicio] = $oReceitaDestino->id;
   }
 
   // FIM RECEITAS ***************************************************************************************************//
 
-
   // MOVIMENTAÇÕES RECEITAS *****************************************************************************************//
 
   db_logTitulo(" IMPORTA MOVIMENTAÇÕES DAS RECEITAS",$sArquivoLog,$iParamLog);
-
-  /**
-   * Consulta Preparada para execução da função fc_receitasaldo na base de origem
-   */
-
-  $sSqlReceitaMovimentacao  = " prepare stmt_receitasaldo(integer, integer) as ";
-  $sSqlReceitaMovimentacao .= " select cast(                                                                            ";
-  $sSqlReceitaMovimentacao .= "           substr(                                                                          ";
-  $sSqlReceitaMovimentacao .= "           fc_receitasaldo($1,                                                              ";
-  $sSqlReceitaMovimentacao .= "                           $2,                                                              ";
-  $sSqlReceitaMovimentacao .= "                           3,                                                               ";
-  $sSqlReceitaMovimentacao .= "                           current_date,                                                    ";
-  $sSqlReceitaMovimentacao .= "                           current_date),41,13) as numeric(15,2));                          ";
+  $sSqlReceitaMovimentacao  = movimentacoesReceitas();
 
   /**
    * Consulta ReceitasMovimentacoes na base de origem
    */
 
-  $sSqlReceitaMovimentacao .= " select o70_codrec as codreceita,                                                           ";
-  $sSqlReceitaMovimentacao .= "        o70_anousu as exercicio,                                                            ";
-  $sSqlReceitaMovimentacao .= "        c70_data   as data,                                                                 ";
-  $sSqlReceitaMovimentacao .= "        sum( case                                                                           ";
-  $sSqlReceitaMovimentacao .= "                when c57_sequencial = 100 then c70_valor                                    ";
-  $sSqlReceitaMovimentacao .= "                when c57_sequencial = 101 then (c70_valor * -1)                             ";
-  $sSqlReceitaMovimentacao .= "                else 0                                                                      ";
-  $sSqlReceitaMovimentacao .= "             end ) as valor,                                                                ";
-
-  $sSqlReceitaMovimentacao .= "        sum(case                                                                            ";
-  $sSqlReceitaMovimentacao .= "            when c57_sequencial = 110  then c70_valor                                       ";
-  $sSqlReceitaMovimentacao .= "            when c57_sequencial = 111 then (c70_valor * -1)                                 ";
-  $sSqlReceitaMovimentacao .= "            else 0                                                                          ";
-  $sSqlReceitaMovimentacao .= "            end ) as previsaoadicional,                                                     ";
-
-  $sSqlReceitaMovimentacao .= "        sum(case                                                                            ";
-  $sSqlReceitaMovimentacao .= "            when c57_sequencial = 58   then c70_valor                                       ";
-  $sSqlReceitaMovimentacao .= "            when c57_sequencial = 104 then (c70_valor * -1)                                 ";
-  $sSqlReceitaMovimentacao .= "            else 0                                                                          ";
-  $sSqlReceitaMovimentacao .= "            end ) as previsao_atualizada                                                    ";
-
-  $sSqlReceitaMovimentacao .= "  from orcreceita                                                                           ";
-  $sSqlReceitaMovimentacao .= "       inner join conlancamrec   on conlancamrec.c74_codrec = orcreceita.o70_codrec         ";
-  $sSqlReceitaMovimentacao .= "                                and conlancamrec.c74_anousu = orcreceita.o70_anousu         ";
-  $sSqlReceitaMovimentacao .= "       inner join conlancam      on conlancam.c70_codlan    = conlancamrec.c74_codlan       ";
-  $sSqlReceitaMovimentacao .= "       inner join conlancamdoc   on conlancamdoc.c71_codlan = conlancam.c70_codlan          ";
-  $sSqlReceitaMovimentacao .= "       inner join conhistdoc     on conlancamdoc.c71_coddoc = conhistdoc.c53_coddoc         ";
-  $sSqlReceitaMovimentacao .= "       inner join conhistdoctipo on conhistdoc.c53_tipo     = conhistdoctipo.c57_sequencial ";
-  $sSqlReceitaMovimentacao .= " group by o70_codrec,o70_anousu,c70_data                                                    ";
-
+  $sSqlReceitaMovimentacao .= consultaMovimentacoesReceitas();
   $rsReceitaMovimentacao    = consultaBD($connOrigem,$sSqlReceitaMovimentacao);
   $iRowsReceitaMovimentacao = pg_num_rows($rsReceitaMovimentacao);
 
-  if ( $iRowsReceitaMovimentacao ==  0 ) {
-    throw new Exception('Nenhum recurso encontrado!');
-  }
-
+  if ( $iRowsReceitaMovimentacao ==  0 ) throw new Exception('Nenhum recurso encontrado!');
   db_logNumReg($iRowsReceitaMovimentacao,$sArquivoLog,$iParamLog);
 
   /**
@@ -1157,12 +803,8 @@ try {
    *  o método persist que insere fisicamente os registros na base de dados através do COPY.
    */
   for ( $iInd=0; $iInd < $iRowsReceitaMovimentacao; $iInd++ ) {
-
     $oReceitaMovimentacao = db_utils::fieldsMemory($rsReceitaMovimentacao,$iInd);
-
     logProcessamento($iInd,$iRowsReceitaMovimentacao,$iParamLog);
-
-
     $sSqlReceitaSaldo = "EXECUTE stmt_receitasaldo({$oReceitaMovimentacao->exercicio}, {$oReceitaMovimentacao->codreceita})";
     $rsReceitaSaldo = consultaBD($connOrigem, $sSqlReceitaSaldo);
     $iRowsReceitaSaldo = pg_num_rows($rsReceitaSaldo);
@@ -1174,30 +816,18 @@ try {
     }
 
     $oReceitaMovimentacao->receita_id = $aListaReceita[$oReceitaMovimentacao->codreceita][$oReceitaMovimentacao->exercicio];
-
     $oTBReceitasMovimentacoes->setByLineOfDBUtils($oReceitaMovimentacao);
-
-    try {
-      $oTBReceitasMovimentacoes->insertValue();
-    } catch ( Exception $eException ) {
-      throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
-
+    insereRegistros($oTBReceitasMovimentacoes);
   }
 
   /**
    *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
    *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
    */
-  try {
-    $oTBReceitasMovimentacoes->persist();
-  } catch ( Exception $eException ) {
-    throw new Exception("ERRO-0: {$eException->getMessage()}");
-  }
+  insereRegistrosRestantes($oTBReceitasMovimentacoes);
 
 
   // ACERTA TABELA receitas_movimentacoes ***************************************************************************//
-
 
     $sSqlAcertaRecMov = " UPDATE receitas_movimentacoes SET valor = ( valor * -1 )
                            WHERE receita_id in ( select distinct receitas.id
