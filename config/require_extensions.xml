@@ -24,7 +24,7 @@
     <parametro name='max_execution_time'             bool='false'  valorpadrao='60000' operacao='>=' label_valorpadrao='60000' label='Max Execution Time'></parametro>
     <parametro name='memory_limit'                   bool='false'  valorpadrao='512M'  operacao='>=' label_valorpadrao='512M'  label='Memory Limit'></parametro>
     <parametro name='allow_call_time_pass_reference' bool='true'   valorpadrao='1'     operacao='==' label_valorpadrao='On'    label='Allow Call Time Pass Reference'></parametro>
-    <parametro name='display_errors'                 bool='false'  valorpadrao='0'     operacao='==' label_valorpadrao='Off'   label='Display Errors'></parametro>
+    <parametro name='display_errors'                 bool='true'  valorpadrao='1'     operacao='==' label_valorpadrao='On'   label='Display Errors'></parametro>
     <parametro name='session.gc_maxlifetime'         bool='false'  valorpadrao='7200'  operacao='>=' label_valorpadrao='7200'  label='Session.gc Maxlifetime'></parametro>
   </parametros>
 
@@ -63,6 +63,7 @@
     <browser name='firefox' versao='20.0.*'></browser>
     <browser name='firefox' versao='21.0.*'></browser>
     <browser name='firefox' versao='22.0.*'></browser>
+    <browser name='firefox' versao='26.0.*'></browser>
     <browser name='firefox' versao='28.0'></browser>
   </browsers>
 
