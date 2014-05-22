@@ -903,12 +903,8 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    try {
-        $oTBDotacoes->persist();
-    } catch ( Exception $eException ) {
-        throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
 
+    insereRegistrosRestantes($oTBDotacoes);
 
     /**
      *  É consultado as dotacoes cadastradas na base de destino para que seja populado o array $aListaDotacao
@@ -1050,11 +1046,8 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    try {
-        $oTBEmpenhos->persist();
-    } catch ( Exception $eException ) {
-        throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
+
+    insereRegistrosRestantes($oTBEmpenhos);
 
     // FIM EMPENHOS ***************************************************************************************************//
 
@@ -1102,11 +1095,7 @@ try {
                 }
             }
 
-            try {
-                $oTBEmpenhosItens->persist();
-            } catch ( Exception $eException ) {
-                throw new Exception("ERRO-0: {$eException->getMessage()}");
-            }
+            insereRegistrosRestantes($oTBEmpenhosItens);
 
         }
 
@@ -1130,11 +1119,7 @@ try {
                 }
             }
 
-            try {
-                $oTBEmpenhosProcessos->persist();
-            } catch ( Exception $eException ) {
-                throw new Exception("ERRO-0: {$eException->getMessage()}");
-            }
+            insereRegistrosRestantes($oTBEmpenhosProcessos);
         }
 
     }
@@ -1212,11 +1197,8 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    try {
-        $oTBEmpenhosMovimentacoes->persist();
-    } catch ( Exception $eException ) {
-        throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
+
+    insereRegistrosRestantes($oTBEmpenhosMovimentacoes);
 
     // FIM MOVIMENTAÇÕES EMPENHOS *************************************************************************************//
 
@@ -1247,11 +1229,7 @@ try {
         logProcessamento($iInd, $iRowsServidores, $iParamLog);
     }
 
-    try {
-        $oTBServidores->persist();
-    } catch ( Exception $eException ) {
-        throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
+    insereRegistrosRestantes($oTBServidores);
 
     // FIM SERVIDORES ***************************** //
 
@@ -1276,11 +1254,7 @@ try {
         logProcessamento($iInd, $iRowsServidores, $iParamLog);
     }
 
-    try {
-        $oTBMovimentacoesServidores->persist();
-    } catch (Exception $e) {
-        throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
+    insereRegistrosRestantes($oTBMovimentacoesServidores);
 
     /**
      * Pega todas as movimentacoes dos servidores e monta uma matriz para pegar a movimentação correspondente
@@ -1358,11 +1332,7 @@ try {
 
         }
 
-        try {
-            $oTBFolhaPagamento->persist();
-        } catch (Exception $e) {
-            throw new Exception("ERRO-0: {$eException->getMessage()}");
-        }
+        insereRegistrosRestantes($oTBFolhaPagamento);
 
         // FIM IMPORTACAO DADOS FINANCEIROS SERVIDOR ** //
 
@@ -1389,11 +1359,7 @@ try {
         logProcessamento($iInd, $iRowsRecursosHumanos, $iParamLog);
     }
 
-    try {
-        $oTBAssentamentos->persist();
-    } catch (Exception $e) {
-        throw new Exception("ERRO-0: {$eException->getMessage()}");
-    }
+    insereRegistrosRestantes($oTBAssentamentos);
 
     // FIM IMPORTACAO RECURSOS HUMANOS ASSENTAMENTOS //
 
@@ -1452,12 +1418,7 @@ try {
             }
 
         }
-
-        try {
-            $oTBGlossariosTipos->persist();
-        } catch ( Exception $eException ) {
-            throw new Exception("ERRO-0: {$eException->getMessage()}");
-        }
+        insereRegistrosRestantes($oTBGlossariosTipos);
 
         // ****************************************************************************************************************//
 
@@ -1487,11 +1448,7 @@ try {
 
         }
 
-        try {
-            $oTBGlossarios->persist();
-        } catch ( Exception $eException ) {
-            throw new Exception("ERRO-0: {$eException->getMessage()}");
-        }
+        insereRegistrosRestantes($oTBGlossarios);
 
         // ****************************************************************************************************************//
 
