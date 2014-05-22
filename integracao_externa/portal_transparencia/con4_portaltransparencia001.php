@@ -311,7 +311,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBInstituicoes);
+    insereRegistros($oTBInstituicoes, PERSISTE);
 
     /**
      *  É consultado as instituições cadastradas na base de destino para que seja populado o array $aListaInstit
@@ -359,7 +359,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBOrgaos);
+    insereRegistros($oTBOrgaos, PERSISTE);
 
     /**
      *  É consultado os orgãos cadastrados na base de destino para que seja populado o array $aListaOrgao
@@ -409,7 +409,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBUnidades);
+    insereRegistros($oTBUnidades, PERSISTE);
 
     /**
      *  É consultado as unidades cadastradas na base de destino para que seja populado o array $aListaUnidade
@@ -458,7 +458,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBProjetos);
+    insereRegistros($oTBProjetos, PERSISTE);
 
     /**
      *  É consultado os projetos cadastrados na base de destino para que seja populado o array $aListaProjeto
@@ -506,7 +506,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBFuncoes);
+    insereRegistros($oTBFuncoes, PERSISTE);
 
     /**
      *  É consultado as funções cadastradas na base de destino para que seja populado o array $aListaFuncao
@@ -553,7 +553,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBSubFuncoes);
+    insereRegistros($oTBSubFuncoes, PERSISTE);
 
     /**
      *  É consultado as subfunções cadastradas na base de destino para que seja populado o array $aListaSubFuncao
@@ -601,7 +601,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBProgramas);
+    insereRegistros($oTBProgramas, PERSISTE);
 
     /**
      *  É consultado os programas cadastrados na base de destino para que seja populado o array $aListaPrograma
@@ -651,7 +651,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBRecursos);
+    insereRegistros($oTBRecursos, PERSISTE);
 
     /**
      *  É consultado os recursos cadastrados na base de destino para que seja populado o array $aListaRecurso
@@ -702,7 +702,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBPlanoContas);
+    insereRegistros($oTBPlanoContas, PERSISTE);
 
     /**
      *  É consultado os planocontas cadastrados na base de destino para que seja populado o array $aListaPlanoConta
@@ -761,7 +761,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBReceitas);
+    insereRegistros($oTBReceitas, PERSISTE);
 
     /**
      *  É consultado as receitas cadastradas na base de destino para que seja populado o array $aListaReceita
@@ -824,7 +824,7 @@ try {
      *  Após o loop é executado manualmente o método persist para que sejam inserido os registros restantes
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
-    insereRegistrosRestantes($oTBReceitasMovimentacoes);
+    insereRegistros($oTBReceitasMovimentacoes, PERSISTE);
 
 
     // ACERTA TABELA receitas_movimentacoes ***************************************************************************//
@@ -891,11 +891,7 @@ try {
 
         $oTBDotacoes->setByLineOfDBUtils($oDotacao);
 
-        try {
-            $oTBDotacoes->insertValue();
-        } catch ( Exception $eException ) {
-            throw new Exception("ERRO-0: {$eException->getMessage()}");
-        }
+        insereRegistros($oTBDotacoes);
 
     }
 
@@ -904,7 +900,7 @@ try {
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
 
-    insereRegistrosRestantes($oTBDotacoes);
+    insereRegistros($oTBDotacoes, PERSISTE);
 
     /**
      *  É consultado as dotacoes cadastradas na base de destino para que seja populado o array $aListaDotacao
@@ -975,12 +971,7 @@ try {
             $oTBPessoas->nome      = $oEmpenho->nome;
             $oTBPessoas->cpfcnpj   = $oEmpenho->cgccpf;
 
-            try {
-                $oTBPessoas->insertValue();
-                $oTBPessoas->persist();
-            } catch ( Exception $eException ) {
-                throw new Exception("ERRO-0: {$eException->getMessage()}");
-            }
+            insereRegistros($oTBPessoas, INSERE | PERSISTE);
 
             $iIdPessoa = $oTBPessoas->getLastPk();
         }
@@ -1034,11 +1025,7 @@ try {
 
         $oTBEmpenhos->setByLineOfDBUtils($oEmpenho);
 
-        try {
-            $oTBEmpenhos->insertValue();
-        } catch ( Exception $eException ) {
-            throw new Exception("ERRO-0: {$eException->getMessage()}");
-        }
+        insereRegistros($oTBEmpenhos);
 
     }
 
@@ -1047,7 +1034,7 @@ try {
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
 
-    insereRegistrosRestantes($oTBEmpenhos);
+    insereRegistros($oTBEmpenhos, PERSISTE);
 
     // FIM EMPENHOS ***************************************************************************************************//
 
@@ -1088,14 +1075,10 @@ try {
                 $oItemEmpenho->empenho_id = $oEmpenhoDestino->id;
                 $oTBEmpenhosItens->setByLineOfDBUtils($oItemEmpenho);
 
-                try {
-                    $oTBEmpenhosItens->insertValue();
-                } catch ( Exception $eException ) {
-                    throw new Exception("ERRO-0: {$eException->getMessage()}");
-                }
+                insereRegistros($oTBEmpenhosItens);
             }
 
-            insereRegistrosRestantes($oTBEmpenhosItens);
+            insereRegistros($oTBEmpenhosItens, PERSISTE);
 
         }
 
@@ -1112,14 +1095,10 @@ try {
                 $oProcessoEmpenho->empenho_id = $oEmpenhoDestino->id;
                 $oTBEmpenhosProcessos->setByLineOfDBUtils($oProcessoEmpenho);
 
-                try {
-                    $oTBEmpenhosProcessos->insertValue();
-                } catch ( Exception $eException ) {
-                    throw new Exception("ERRO-0: {$eException->getMessage()}");
-                }
+                insereRegistros($oTBEmpenhosProcessos);
             }
 
-            insereRegistrosRestantes($oTBEmpenhosProcessos);
+            insereRegistros($oTBEmpenhosProcessos, PERSISTE);
         }
 
     }
@@ -1161,12 +1140,7 @@ try {
             $oTBEmpenhosMovimentacoesTipos->codgrupo  = $oEmpenhoMovimentacao->codgrupo;
             $oTBEmpenhosMovimentacoesTipos->descricao = $oEmpenhoMovimentacao->descrtipo;
 
-            try {
-                $oTBEmpenhosMovimentacoesTipos->insertValue();
-                $oTBEmpenhosMovimentacoesTipos->persist();
-            } catch ( Exception $eException ) {
-                throw new Exception("ERRO-0: {$eException->getMessage()}");
-            }
+            insereRegistros($oTBEmpenhosMovimentacoesTipos, INSERE | PERSISTE);
 
             $aListaEmpenhoMovimentacaoTipo[$oEmpenhoMovimentacao->codtipo] = $oTBEmpenhosMovimentacoesTipos->getLastPk();
 
@@ -1185,11 +1159,7 @@ try {
 
         $oTBEmpenhosMovimentacoes->setByLineOfDBUtils($oEmpenhoMovimentacao);
 
-        try {
-            $oTBEmpenhosMovimentacoes->insertValue();
-        } catch ( Exception $eException ) {
-            throw new Exception("ERRO-0: {$eException->getMessage()}");
-        }
+        insereRegistros($oTBEmpenhosMovimentacoes);
 
     }
 
@@ -1198,7 +1168,7 @@ try {
      *  ( mesmo que não tenha atingido o número máximo do bloco de registros )
      */
 
-    insereRegistrosRestantes($oTBEmpenhosMovimentacoes);
+    insereRegistros($oTBEmpenhosMovimentacoes, PERSISTE);
 
     // FIM MOVIMENTAÇÕES EMPENHOS *************************************************************************************//
 
@@ -1229,7 +1199,7 @@ try {
         logProcessamento($iInd, $iRowsServidores, $iParamLog);
     }
 
-    insereRegistrosRestantes($oTBServidores);
+    insereRegistros($oTBServidores, PERSISTE);
 
     // FIM SERVIDORES ***************************** //
 
@@ -1254,7 +1224,7 @@ try {
         logProcessamento($iInd, $iRowsServidores, $iParamLog);
     }
 
-    insereRegistrosRestantes($oTBMovimentacoesServidores);
+    insereRegistros($oTBMovimentacoesServidores, PERSISTE);
 
     /**
      * Pega todas as movimentacoes dos servidores e monta uma matriz para pegar a movimentação correspondente
@@ -1332,7 +1302,7 @@ try {
 
         }
 
-        insereRegistrosRestantes($oTBFolhaPagamento);
+        insereRegistros($oTBFolhaPagamento, PERSISTE);
 
         // FIM IMPORTACAO DADOS FINANCEIROS SERVIDOR ** //
 
@@ -1359,7 +1329,7 @@ try {
         logProcessamento($iInd, $iRowsRecursosHumanos, $iParamLog);
     }
 
-    insereRegistrosRestantes($oTBAssentamentos);
+    insereRegistros($oTBAssentamentos, PERSISTE);
 
     // FIM IMPORTACAO RECURSOS HUMANOS ASSENTAMENTOS //
 
@@ -1411,14 +1381,10 @@ try {
 
             $oTBGlossariosTipos->setByLineOfDBUtils($oGloassariosTipos);
 
-            try {
-                $oTBGlossariosTipos->insertValue();
-            } catch ( Exception $eException ) {
-                throw new Exception("ERRO-0: {$eException->getMessage()}");
-            }
+            insereRegistros($oTBGlossariosTipos);
 
         }
-        insereRegistrosRestantes($oTBGlossariosTipos);
+        insereRegistros($oTBGlossariosTipos, PERSISTE);
 
         // ****************************************************************************************************************//
 
@@ -1440,15 +1406,11 @@ try {
 
             $oTBGlossarios->setByLineOfDBUtils($oGloassarios);
 
-            try {
-                $oTBGlossarios->insertValue();
-            } catch ( Exception $eException ) {
-                throw new Exception("ERRO-0: {$eException->getMessage()}");
-            }
+            insereRegistros($oTBGlossarios);
 
         }
 
-        insereRegistrosRestantes($oTBGlossarios);
+        insereRegistros($oTBGlossarios, PERSISTE);
 
         // ****************************************************************************************************************//
 
