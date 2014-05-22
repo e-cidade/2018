@@ -761,5 +761,11 @@
 
     }
 
+    function sql_tipo_instituicao() {
+        return "select db21_tipoinstit from configuracoes.db_config where codigo = (select db_config.codigo
+                                                                                    from configuracoes.db_config
+                                                                                    where db_config.prefeitura is true)";
+    }
+
 
 ?>
