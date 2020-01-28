@@ -1,6 +1,6 @@
 e-Cidade e e-CidadeOnline
 ======
-Sobre o REPO
+Sobre o REPO _(2018/2)_
 ------
 O e-cidade é um projeto baseado em um fork de 2014, atualizado para a última versão disponível no portal [Software Público](https://softwarepublico.gov.br/social/e-cidade/).
 
