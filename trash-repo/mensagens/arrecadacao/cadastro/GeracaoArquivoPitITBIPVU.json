@@ -1,0 +1,7 @@
+{
+    "erro_buscar_dados_faixanumero"  : "Erro ao buscar os dados das Faixas de Números.",
+    "erro_buscar_dados_municipio"    : "Erro ao buscar os dados do Município.",
+    "nenhum_municipio_encontrado"    : "Nenhum Município encontrado.",
+    "erro_buscar_dados_localidade"   : "Erro ao buscar os dados das Localidades.",
+    "nenhuma_localidade_encontrada"  : "Nenhuma Localidade encontrada."
+}

@@ -1,0 +1,9 @@
+{
+  "informe_inicial"              : "Informe a Inicial.",
+  "impossivel_excluir_inicial"   : "Não é possível excluir pois existe um parcelamento para esta inicial. Utilize a rotina de anulação de inicial.",
+  "impossivel_excluir_iniciais"  : "Não é possível excluir pois existe um parcelamento para as iniciais [sInicial]. Utilize a rotina de anulação de inicial.",
+  "existe_processo_para_inicial" : "Existe um processo no forum para esta inicial.",
+  "configure_parametro"          : "Configure o parametro para o típo de débito de certidão do foro.",
+  "procedimento_nao_permitido"   : "Existe Processo do Foro para esta inicial. Procedimento não permitido.",
+  "processo_realizado_sucesso"   : "Processo realizado com sucesso!"
+}

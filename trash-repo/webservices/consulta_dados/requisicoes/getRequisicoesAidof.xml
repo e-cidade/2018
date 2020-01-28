@@ -1,0 +1,35 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="y116_id"                   label="codigo_requisicaoaidof"              />
+    <campo campo="y116_inscricaomunicipal"   label="inscricao_municipal"                 />
+    <campo campo="y116_datalancamento"       label="data_lancamento"                     />
+    <campo campo="y116_quantidadesolicitada" label="quantidade_solicitada"               />
+    <campo campo="y116_quantidadeliberada"   label="quantidade_liberada"                 />
+    <campo campo="y116_status"               label="status"                              />
+    <campo campo="y116_observacao"           label="observacao"                          />
+    <campo campo="y116_tipodocumento"        label="tipo_nota"                           />
+    <campo campo="q09_descr"                 label="descricao_nota"                      />
+    <campo campo="q09_gruponotaiss"          label="codigo_grupo"                        />
+    <campo campo="y116_codigografica"        label="cgm_grafica"                         />
+    <campo campo="COALESCE(cgmgrafica.z01_nomefanta, cgmgrafica.z01_nomefanta, cgmgrafica.z01_nome)" label="nome_grafica" />
+    <campo campo="y116_idusuario"            label="codigo_usuario"                      />
+    <campo campo="cgmusuario.z01_nome"       label="nome_usuario"                        />
+    <campo campo="q09_codigo"                label="codigo_nota"                        />
+  </campos>
+  <from tabela="requisicaoaidof" />
+  <juncoes>
+    <join tipo="left" tabela="graficas"          condicao="y116_codigografica = y20_grafica"     />
+    <join tipo="left" tabela="notasiss as nota"  condicao="y116_tipodocumento = q09_codigo"      />
+    <join tipo="left" tabela="cgm as cgmgrafica" condicao="y116_codigografica = cgmgrafica.z01_numcgm"      />
+    <join tipo="left" tabela="cgm as cgmusuario" condicao="y116_idusuario     = cgmusuario.z01_numcgm"      />
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao_municipal"  condicao="y116_inscricaomunicipal = '$inscricao_municipal'" obrigatorio="true"  />
+    <filtro label="tipo_nota"            condicao="y116_tipodocumento = '$tipo_nota'"                obrigatorio="false" />
+    <filtro label="codigo_grupo_notaiss" condicao="q09_gruponotaiss in ($codigo_grupo_notaiss)"      obrigatorio="false" />
+    <filtro label=""                     condicao="y20_datalimiteimpressao is null"                  obrigatorio="true"  />
+  </filtros>
+  <agrupamento />
+  <ordenacao campos="y116_id DESC" />
+</consulta>

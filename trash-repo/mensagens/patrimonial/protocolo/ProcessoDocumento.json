@@ -1,0 +1,17 @@
+{
+  "erro_buscar_documento_pelo_codigo" : "Erro ao buscar documento pelo código: [iDocumento]",
+  "erro_extensao_invalida"            : "Extensão não permitida para documento: [sExtensao]",
+  "erro_arquivo_invalido"             : "Arquivo inválido: [sCaminhoArquivo]",
+  "erro_tamanho_limite"               : "Arquivo maior que o limite de 30mb",
+  "erro_incluir_documento"            : "Erro ao incluir documento do processo.",
+  "erro_alterar_documento"            : "Erro ao alterar documento do processo.",
+  "erro_nenhuma_transacao_banco"      : "Nenhuma transação com o banco ativa.",
+  "erro_processo_nao_informado"       : "Processo não informado.",
+  "erro_escrever_arquivo_banco"       : "Erro ao escrever arquivo no banco.",
+  "erro_escrever_arquivo_diretorio"   : "Não foi possivel efetuar leitura do arquivo.",
+  "erro_excluir_documento"            : "Erro ao excluir documento.",
+  "erro_documento_nao_especificado"   : "Código do documento não especificado.",
+  "erro_excluir_documento_banco"      : "Erro ao excluir documento do banco de dados.",
+  "documento_alterado"                : "Documento alterado com sucesso.",
+  "documento_salvo"                   : "Documento salvo com sucesso."
+}

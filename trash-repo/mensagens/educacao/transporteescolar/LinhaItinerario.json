@@ -1,0 +1,5 @@
+{
+  "linha_itinerario_nao_cadastrado" : "Linha Itinerário de código [codigo] não encontrado.",
+  "linha_itinerario_erro_salvar"    : "[sMensagem]",
+  "linha_itinerario_erro_excluir"   : "Não foi possível remover registro. \nErro Técnico:[erro_dao]"
+}

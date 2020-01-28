@@ -1,0 +1,884 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="sandro">
+	<META NAME="CREATED" CONTENT="20080308;10444600">
+	<META NAME="CHANGEDBY" CONTENT="dbseller">
+	<META NAME="CHANGED" CONTENT="20081104;22374800">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.1cm }
+		P { margin-bottom: 0.21cm }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "HG Mincho Light J"; font-size: 16pt }
+		H1.ctl { font-family: "Lucidasans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Helvetica"; font-size: 14pt; so-language: pt-BR; font-style: italic }
+		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		H3 { margin-bottom: 0.21cm }
+		H3.western { font-family: "Helvetica"; so-language: pt-BR }
+		H3.cjk { font-family: "HG Mincho Light J" }
+		TD P { margin-bottom: 0cm }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR">
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.Cadastros|outline">Cadastros	</A><A HREF="#1.Cadastros|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.Obra|outline">Obra	</A><A HREF="#1.1.Obra|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.T&eacute;cnico|outline">T&eacute;cnico	</A><A HREF="#1.2.T&eacute;cnico|outline">4</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.Tipo de Respons&aacute;vel|outline">Tipo
+	de Respons&aacute;vel	</A><A HREF="#1.3.Tipo de Respons&aacute;vel|outline">5</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.Consultas|outline">Consultas	</A><A HREF="#2.Consultas|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.Obra|outline">Obra	</A><A HREF="#2.1.Obra|outline">6</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.Relat&oacute;rios|outline">Relat&oacute;rios	</A><A HREF="#3.Relat&oacute;rios|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.Carta de Alvar&aacute;|outline">Carta
+	de Alvar&aacute;	</A><A HREF="#3.1.Carta de Alvar&aacute;|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.Carta de Habite-se|outline">Carta
+	de Habite-se	</A><A HREF="#3.2.Carta de Habite-se|outline">7</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.Obras|outline">Obras	</A><A HREF="#3.3.Obras|outline">8</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.4.Obras com Alvar&aacute;|outline">Obras
+	com Alvar&aacute;	</A><A HREF="#3.4.Obras com Alvar&aacute;|outline">10</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.5.Obras e Constru&ccedil;&otilde;es|outline">Obras
+	e Constru&ccedil;&otilde;es	</A><A HREF="#3.5.Obras e Constru&ccedil;&otilde;es|outline">11</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.6.Constru&ccedil;&otilde;es e Habite-se|outline">Constru&ccedil;&otilde;es
+	e Habite-se	</A><A HREF="#3.6.Constru&ccedil;&otilde;es e Habite-se|outline">14</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.Procedimentos|outline">Procedimentos	</A><A HREF="#4.Procedimentos|outline">15</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.Libera&ccedil;&atilde;o de Alvar&aacute;|outline">Libera&ccedil;&atilde;o
+	de Alvar&aacute;	</A><A HREF="#4.1.Libera&ccedil;&atilde;o de Alvar&aacute;|outline">15</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.Libera&ccedil;&atilde;o de Habite-se|outline">Libera&ccedil;&atilde;o
+	de Habite-se	</A><A HREF="#4.2.Libera&ccedil;&atilde;o de Habite-se|outline">15</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.Arquivo do INSS|outline">Arquivo
+	do INSS	</A><A HREF="#4.3.Arquivo do INSS|outline">16</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.1.Gera Arquivo|outline">Gera
+	Arquivo	</A><A HREF="#4.3.1.Gera Arquivo|outline">16</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.2.Exclus&atilde;o do Arquivo|outline">Exclus&atilde;o
+	do Arquivo	</A><A HREF="#4.3.2.Exclus&atilde;o do Arquivo|outline">17</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.Texto|outline">Texto	</A><A HREF="#4.4.Texto|outline">17</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.1.Alvar&aacute;|outline">Alvar&aacute;	</A><A HREF="#4.4.1.Alvar&aacute;|outline">17</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.2.Habite-se|outline">Habite-se	</A><A HREF="#4.4.2.Habite-se|outline">18</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.Par&acirc;metros|outline">Par&acirc;metros	</A><A HREF="#4.5.Par&acirc;metros|outline">18</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.1.Grupo de Ocupa&ccedil;&atilde;o|outline">Grupo
+	de Ocupa&ccedil;&atilde;o	</A><A HREF="#4.5.1.Grupo de Ocupa&ccedil;&atilde;o|outline">18</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.2.Grupo Tipo de Constru&ccedil;&atilde;o|outline">Grupo
+	Tipo de Constru&ccedil;&atilde;o	</A><A HREF="#4.5.2.Grupo Tipo de Constru&ccedil;&atilde;o|outline">18</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.3.Grupo Tipo de Lan&ccedil;amento|outline">Grupo
+	Tipo de Lan&ccedil;amento	</A><A HREF="#4.5.3.Grupo Tipo de Lan&ccedil;amento|outline">18</A></FONT></P>
+</DIV>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-before: always; page-break-after: avoid">
+<FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO PROJETOS</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 3cm; font-weight: medium">
+O objetivo deste m&oacute;dulo &eacute; cadastrar as obras e
+constru&ccedil;&otilde;es executadas no munic&iacute;pio, permitindo
+gerar as informa&ccedil;&otilde;es conforme o cumprimento da
+determina&ccedil;&atilde;o legal contida no <FONT COLOR="#000000">art.</FONT><FONT COLOR="#000000">
+</FONT><FONT COLOR="#000000">50 da Lei n&ordm; 8.212/91</FONT><FONT COLOR="#000000">,
+regulamentado pelo Decreto n&ordm;</FONT><FONT COLOR="#000000"><B>
+</B></FONT><FONT COLOR="#000000">3.048/99, de enviar, at&eacute; o
+dia 10 do</FONT> m&ecirc;s subseq&uuml;ente, do Relat&oacute;rio
+Mensal de Alvar&aacute; e Habite-se, expedidos no m&ecirc;s, para o
+INSS atrav&eacute;s do programa <I>SISOBRANET</I>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 3cm; font-weight: medium">
+Para a instala&ccedil;&atilde;o do programa SISOBRANET, a prefeitura
+deve entrar em contato com a ag&ecirc;ncia do INSS no munic&iacute;pio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 3cm; font-weight: medium">
+O m&oacute;dulo permite o cadastramento de obras de constru&ccedil;&atilde;o
+civil, emiss&atilde;o de alvar&aacute;, de habite-se e do relat&oacute;rio
+mensal desses documentos.</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="1.Cadastros|outline"></A><A NAME="1.Cadastros|outline"></A>
+Cadastros</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.1.Obra|outline"></A><A NAME="1.1.Obra|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3677db">Obra</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu s&atilde;o cadastradas <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">as
+obras do sistema para controle das obras no munic&iacute;pio,
+permitindo controlar as obras regulares e irregulares.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">No
+cadastro de obra</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">s,</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+o usu&aacute;rio preenche os dados do respons&aacute;vel e da
+constru&ccedil;&atilde;o de acordo com o layout do INSS para o
+arquivo de envio das informa&ccedil;&otilde;es.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do
+formul&aacute;rio conforme figura abaixo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3678db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Obra Regular:</B></I>
+Verificar<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+no cadastro de matricula se est&aacute; regular e escolher </SPAN></SPAN><I><B>Sim</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">,
+depois clicar no bot&atilde;o incluir conforme a Figura 01.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m4900f53.png" NAME="figura1" ALIGN=LEFT WIDTH=605 HEIGHT=111 BORDER=0><BR CLEAR=LEFT>Figura
+01</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA OBRAS</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo conforme de tela a Figura
+02 abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado autom&aacute;tico. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:</B></I>
+Preencher <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">o
+nome da obra, obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de Respons&aacute;vel:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo da </SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">op&ccedil;&atilde;o
+conforme padr&atilde;o do INSS. </SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Propriet&aacute;rio da Obra:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo de CGM do propriet&aacute;rio da Obra</SPAN></SPAN>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ou
+clicar no link para pesquisar. O </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">propriet&aacute;rio
+do im&oacute;vel &eacute; muito importante </SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">por
+ele ser  o  respons&aacute;vel legal   pela obra de constru&ccedil;&atilde;o
+civil, em rela&ccedil;&atilde;o aos impostos e taxas municipais e 
+das contribui&ccedil;&otilde;es </SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">previdenci&aacute;rias
+dos seus trabalhadores.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Lote:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo reduzido do Lote para buscar (setor - quadra - lote)</SPAN></SPAN>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ou
+clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Respons&aacute;vel da Obra:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do CGM do respons&aacute;vel pela execu&ccedil;&atilde;o
+e andamento da obra ou clicar no link para pesquisar. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m3006bca5.png" NAME="figura2" ALIGN=LEFT WIDTH=605 HEIGHT=173 BORDER=0><BR CLEAR=LEFT>Figura
+02</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA CONSTRU&Ccedil;&Otilde;ES</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo de tela conforme a Figura
+03 abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo Obra:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado autom&aacute;tico. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo c&oacute;digo da constru&ccedil;&atilde;o &eacute; gerado
+autom&aacute;tico. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>&Aacute;rea:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a &aacute;rea da constru&ccedil;&atilde;o conforme informada no
+projeto. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &Aacute;rea &eacute; obrigat&oacute;rio quando a obra for:
+Demoli&ccedil;&atilde;o, Acr&eacute;scimo ou Reforma. A Constru&ccedil;&atilde;o
+Nova &eacute; compat&iacute;vel com Demoli&ccedil;&atilde;o desde que
+a &aacute;rea demolida seja igual a &aacute;rea existente.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Ocupa&ccedil;&atilde;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Escolher uma ocupa&ccedil;&atilde;o para obra (Comercial, Residencial
+ou Mista). Essa op&ccedil;&atilde;o &eacute; fixa no sistema padr&atilde;o
+do INSS.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de Constru&ccedil;&atilde;o:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Escolher
+um Tipo de Constru&ccedil;&atilde;o (Alvenaria, Madeira e Mista).
+Essa op&ccedil;&atilde;o &eacute; fixa no sistema padr&atilde;o do
+INSS.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de Lan&ccedil;amento:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Escolher
+um Tipo de Lan&ccedil;amento (Nova, Demoli&ccedil;&atilde;o,
+Amplia&ccedil;&atilde;o ou Reforma). Essa op&ccedil;&atilde;o &eacute;
+fixa no sistema padr&atilde;o do INSS.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Logradouro:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do Logradouro ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>N&uacute;mero:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o n&uacute;mero da matricula.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Complemento:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o complemento (casa, sala, apartamento, pr&eacute;dio).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Bairro:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do bairro ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>&Aacute;rea Atual:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+campo se a obra estiver regular, o sistema busca a &aacute;rea
+cadastrada no lote.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Unidades:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o n&uacute;mero de unidades (constru&ccedil;&otilde;es) referente a
+obra.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Pavimentos:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a quantidade de pavimentos da obra (1&ordm;, 2&ordm;, 3&ordm;
+andares). </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data Inicial: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a data inicial da obra. </SPAN></SPAN><I><B>Data Final:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data final da obra.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_d591927.png" NAME="figura3" ALIGN=LEFT WIDTH=605 HEIGHT=303 BORDER=0><BR CLEAR=LEFT>Figura
+03</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA T&Eacute;CNICO</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo de tela conforme a Figura
+04.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo Obra:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado autom&aacute;tico. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>T&eacute;cnico: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo do CGM do t&eacute;cnico respons&aacute;vel pela obra
+(Engenheiro, Arquiteto) ou clicar no link para pesquisar. O sistema
+busca autom&aacute;tico o CGM do respons&aacute;vel pela obra.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m4d36050d.png" NAME="figura4" ALIGN=LEFT WIDTH=605 HEIGHT=112 BORDER=0><BR CLEAR=LEFT>Figura
+04</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3679db">Altera&ccedil;&atilde;o</A>
+</B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Permite altera&ccedil;&otilde;es nos campos que n&atilde;o est&atilde;o
+bloqueados pelo sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3680db">Exclus&atilde;o</A>
+</B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>N&atilde;o permitir a exclus&atilde;o de uma obra que
+tem Alvar&aacute; e habite-se vinculada.</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.2.T&eacute;cnico|outline"></A><A NAME="1.2.T&eacute;cnico|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3857db">T&eacute;cnico</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+&Eacute; cadastrado o t&eacute;cnico que &eacute; o respons&aacute;vel
+t&eacute;cnico pelo obra. Deve ser um profissional da &aacute;rea com
+registro no CREA (Engenheiro e Arquiteto). Descri&ccedil;&atilde;o
+dos campos e modelo de tela conforme Figura 05.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3858db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>CGM:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do CGM do t&eacute;cnico respons&aacute;vel
+pela obra (Engenheiro, Arquiteto) ou clicar no link para pesquisar. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>CREA:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do t&eacute;cnico no CREA (Conselho Regional de
+Engenharia e Arquitetura).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_76c3d42a.png" NAME="figura6" ALIGN=LEFT WIDTH=605 HEIGHT=102 BORDER=0><BR CLEAR=LEFT>Figura
+05</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3859db">Altera&ccedil;&atilde;o</A>
+</B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Permite altera&ccedil;&atilde;o no campo CREA e clicar em alterar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3860db">Exclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Permite a exclus&atilde;o, quando o t&eacute;cnico n&atilde;o estiver
+vinculado a nenhuma obra do sistema. 
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.3.Tipo de Respons&aacute;vel|outline"></A><A NAME="1.3.Tipo de Respons&aacute;vel|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3681db">Tipo de Respons&aacute;vel</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Nesse menu &eacute; cadastrado de acordo com os tipos referentes ao
+INSS, deve ser padr&atilde;o por que ser&aacute; gerado um arquivo
+para o INSS com esses dados, n&atilde;o permitindo altera&ccedil;&atilde;o
+e exclus&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Os  tipos padr&atilde;o</FONT><FONT SIZE=3>
+s&atilde;o</FONT><FONT SIZE=3>:</FONT><FONT SIZE=3><I><B>
+Propriet&aacute;rio</B></I></FONT><FONT SIZE=3> (titular do im&oacute;vel
+e da obra), </FONT><I><B>Incorporadora</B></I> (abrangida pela Lei n&ordm;
+4.591/64), <FONT SIZE=3><I><B>Dono</B></I></FONT><FONT SIZE=3> (da
+obra - </FONT><FONT SIZE=3><B>n&atilde;o</B></FONT><FONT SIZE=3>
+titular do im&oacute;vel). Ex: Um locat&aacute;rio que est&aacute;
+executando uma obra no terreno de outra e a</FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN><I><B>Construtora</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+(Com registro no CREA). </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo de tela conforme Figura
+06.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado autom&aacute;tico. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o nome do Tipo de Respons&aacute;vel. Obs: Deve ser cadastrado s&oacute;
+quando o INSS criar tipos novos. Essa op&ccedil;&atilde;o &eacute;
+fixa no sistema como padr&atilde;o do INSS.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m115a3670.png" NAME="figura5" ALIGN=LEFT WIDTH=605 HEIGHT=101 BORDER=0><BR CLEAR=LEFT>Figura
+06</P>
+<H1 CLASS="western" ALIGN=JUSTIFY STYLE="page-break-before: always"><A NAME="2.Consultas|outline"></A><A NAME="2.Consultas|outline"></A>
+Consultas</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.Obra|outline"></A><A NAME="2.1.Obra|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3894db">Obra</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Esse menu gera uma consulta com
+todos os dados da obra no sistema e mostra se possui constru&ccedil;&atilde;o
+e alvar&aacute; para essa obra.</P>
+<P CLASS="western" ALIGN=JUSTIFY>Na consulta busca uma tela de
+pesquisa com as obras do sistema. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo conforme Figura 07 e
+Figura 08.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Projetos_html_m77a9ea9b.png" NAME="figura8" ALIGN=LEFT WIDTH=605 HEIGHT=209 BORDER=0><BR CLEAR=LEFT>Figura
+07</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Projetos_html_57749754.png" NAME="figura7" ALIGN=LEFT WIDTH=605 HEIGHT=220 BORDER=0><BR CLEAR=LEFT>Figura
+08</P>
+<H1 CLASS="western"><A NAME="3.Relat&oacute;rios|outline"></A><A NAME="3.Relat&oacute;rios|outline"></A>
+Relat&oacute;rios</H1>
+<H2 CLASS="western"><A NAME="3.1.Carta de Alvar&aacute;|outline"></A><A NAME="3.1.Carta de Alvar&aacute;|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3875db">Carta de Alvar&aacute;</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Emite a carta de Alvar&aacute; para anexar a documenta&ccedil;&atilde;o
+da Obra. Para emitir a carta de Alvar&aacute; deve ser configurado
+nos textos alvar&aacute;.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo conforme Figura 09.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Obra:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da Obra ou clicar no link para pesquisar. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_44ccb5f2.png" NAME="figura9" ALIGN=LEFT WIDTH=605 HEIGHT=101 BORDER=0><BR CLEAR=LEFT>Figura
+09</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 10 mostra um modelo da Carta de Alvar&aacute; no DBPortal. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_fb285b3.png" NAME="figura32" ALIGN=LEFT WIDTH=605 HEIGHT=321 BORDER=0><BR CLEAR=LEFT>Figura
+10</P>
+<H2 CLASS="western"><A NAME="3.2.Carta de Habite-se|outline"></A><A NAME="3.2.Carta de Habite-se|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3882db">Carta de Habite-se</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Emite a carta de Habite-se para anexar a documenta&ccedil;&atilde;o
+da Obra. Para emiss&atilde;o da carta  precisa ser vinculado ao
+documento padr&atilde;o 1021.  Descri&ccedil;&atilde;o dos campos e
+modelo conforme Figura 11.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<I><B>Habite-se:</B></I> Preencher o c&oacute;digo da Obra ou clicar
+no link para pesquisar. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_397a735d.png" NAME="figura31" ALIGN=LEFT WIDTH=605 HEIGHT=121 BORDER=0><BR CLEAR=LEFT>Figura
+11</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 12 mostra um modelo da Carta de Habite-se no DBPortal. 
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Projetos_html_m3222253f.png" NAME="figura30" ALIGN=LEFT WIDTH=598 HEIGHT=404 BORDER=0><BR CLEAR=LEFT>Figura
+12</P>
+<H2 CLASS="western"><A NAME="3.3.Obras|outline"></A><A NAME="3.3.Obras|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4043db">Obra</A><A HREF="#Sum&aacute;rio1|region" NAME="db4043db">s</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Emite um relat&oacute;rio com os dados gerais do cadastro de obras do
+sistema, um dos mais importantes desse m&oacute;dulo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo das Figuras 12 &ndash; 13
+&ndash; 14 &ndash; 15  abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Propriet&aacute;rio</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se quer emitir os dados selecionados no campo
+</SPAN></SPAN><I><B>Propriet&aacute;rios.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Propriet&aacute;rios:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do propriet&aacute;rio ou clicar no link
+para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Per&iacute;odo da Constru&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a data inicial e final da constru&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Obra: </B></I>Permite
+selecionar o tipo da obra como (<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Todas,
+Regulares ou Irregulares).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Alvar&aacute;: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar as obras com alvar&aacute; como (Todas, com Alvar&aacute;
+ou sem Alvar&aacute;).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_69eb35ce.png" NAME="figura19" ALIGN=LEFT WIDTH=604 HEIGHT=294 BORDER=0><BR CLEAR=LEFT>Figura
+12</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Respons&aacute;vel</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite selecionar se quer emitir os dados selecionados no campo
+</SPAN></SPAN><I><B>Respons&aacute;veis.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Respons&aacute;veis:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do respons&aacute;vel ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_796f7138.png" NAME="figura20" ALIGN=LEFT WIDTH=605 HEIGHT=256 BORDER=0><BR CLEAR=LEFT>Figura
+13</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA T&eacute;cnico</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite selecionar se quer emitir os dados selecionados no campo</SPAN></SPAN><I><B>
+T&eacute;cnico.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>T&eacute;cnico:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do t&eacute;cnico ou clicar no link para pesquisar. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_503c90b0.png" NAME="figura21" ALIGN=LEFT WIDTH=605 HEIGHT=260 BORDER=0><BR CLEAR=LEFT>Figura
+14</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Tipo de Respons&aacute;vel</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite selecionar se quer emitir os dados selecionados no campo</SPAN></SPAN><I><B>
+Tipo de Respons&aacute;vel.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Respons&aacute;vel:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo do tipo de respons&aacute;vel ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m5f8bb545.png" NAME="figura33" ALIGN=LEFT WIDTH=605 HEIGHT=252 BORDER=0><BR CLEAR=LEFT>Figura
+15</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.4.Obras com Alvar&aacute;|outline"></A><A NAME="3.4.Obras com Alvar&aacute;|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3895db">Obra</A><A HREF="#Sum&aacute;rio1|region" NAME="db3895db">s
+com</A><A HREF="#Sum&aacute;rio1|region" NAME="db3895db"> </A><A HREF="#Sum&aacute;rio1|region" NAME="db3895db">Alvar&aacute;</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Emite um relat&oacute;rio com os dados referente as obras e o alvar&aacute;
+vinculado aquela obra. Gera um relat&oacute;rio anal&iacute;tico das
+obras com alvar&aacute;, por data de emiss&atilde;o ou c&oacute;digo
+de obra.  Descri&ccedil;&atilde;o dos campos e modelo de tela
+conforme Figura 16.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Intervalo de Obras:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da obra nos campos dos intervalos. Ex ( 1 - 10). </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data de Emiss&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data inicial e final da emiss&atilde;o do alvar&aacute;.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo da Obra:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Lan&ccedil;ar
+a obra se o campo </SPAN></SPAN><I><B>Op&ccedil;&atilde;o </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+estiver  com (Selecionados). </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Sele&ccedil;&atilde;o:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Obra
+ou Data de Emiss&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&atilde;o:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionados
+ou n&atilde;o selecionados.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_1350f7ee.png" NAME="figura17" ALIGN=LEFT WIDTH=605 HEIGHT=306 BORDER=0><BR CLEAR=LEFT>Figura
+16</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 17 mostra um modelo de um relat&oacute;rio Obra e Alvar&aacute;
+no DBPortal.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_55a73a11.png" NAME="figura18" ALIGN=LEFT WIDTH=605 HEIGHT=141 BORDER=0><BR CLEAR=LEFT>Figura
+17</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.5.Obras e Constru&ccedil;&otilde;es|outline"></A><A NAME="3.5.Obras e Constru&ccedil;&otilde;es|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4047db">Obra</A><A HREF="#Sum&aacute;rio1|region" NAME="db4047db">s</A><A HREF="#Sum&aacute;rio1|region" NAME="db4047db">
+e Constru</A><A HREF="#Sum&aacute;rio1|region" NAME="db4047db">&ccedil;&otilde;es</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Emite um relat&oacute;rio anal&iacute;tico das obras e constru&ccedil;&otilde;es
+ permitindo o usu&aacute;rio gerenciar por per&iacute;odo todas as
+obras com constru&ccedil;&otilde;es do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos, </SPAN></SPAN><I><SPAN STYLE="font-weight: medium">ABA</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+e modelo de tela conforme Figuras 18 &ndash; 19 &ndash; 20 &ndash; 21
+&ndash; 22 .</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Ocupa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite selecionar se quer emitir os dados selecionados no campo</SPAN></SPAN><I><B>
+Ocupa&ccedil;&atilde;o.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Ocupa&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da ocupa&ccedil;&atilde;o ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Intervalo Unidade:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo inicial e final da unidade.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Intervalo Pavimento:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo inicial e final do Pavimento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Intervalo &Aacute;rea:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo inicial e final da &Aacute;rea.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data da Obra:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data inicial e final da obra.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Habite-se:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar as obras com habite-se como </SPAN></SPAN>(<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Todo,
+com Habite-se ou sem Habite-se).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m3949cb4e.png" NAME="figura22" ALIGN=LEFT WIDTH=605 HEIGHT=305 BORDER=0><BR CLEAR=LEFT>Figura
+18</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Tipo de Constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ Permite selecionar se quer emitir os dados selecionados no campo
+</SPAN></SPAN><I><B>Caracter&iacute;stica.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Caracter&iacute;stica:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do tipo de constru&ccedil;&atilde;o ou clicar no link
+para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_39221708.png" NAME="figura23" ALIGN=LEFT WIDTH=600 HEIGHT=214 BORDER=0><BR CLEAR=LEFT>Figura
+19</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Tipo de Lan&ccedil;amento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se quer emitir os dados selecionados no campo
+</SPAN></SPAN><B><I>Caracter&iacute;stica.</I></B></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Caracter&iacute;sticas:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do tipo de lan&ccedil;amento ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m5a4262f0.png" NAME="figura24" ALIGN=LEFT WIDTH=605 HEIGHT=236 BORDER=0><BR CLEAR=LEFT>Figura
+20</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Rua</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite selecionar se quer emitir os dados selecionados no campo </SPAN></SPAN><I><B>Rua.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Rua: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo do rua ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Projetos_html_251938e9.png" NAME="figura25" ALIGN=LEFT WIDTH=605 HEIGHT=218 BORDER=0><BR CLEAR=LEFT>Figura
+21</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>ABA Bairro</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Op&ccedil;&otilde;es:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ Permite selecionar se quer emitir os dados selecionados no campo
+</SPAN></SPAN><I><B>Bairro.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Bairro:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do bairro ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m56a4ce3a.png" NAME="figura26" ALIGN=LEFT WIDTH=604 HEIGHT=228 BORDER=0><BR CLEAR=LEFT>Figura
+22</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 23 mostra um modelo de um relat&oacute;rio Obra e
+Constru&ccedil;&atilde;o no DBPortal.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_18e99a07.png" NAME="figura27" ALIGN=LEFT WIDTH=605 HEIGHT=199 BORDER=0><BR CLEAR=LEFT>Figura
+23</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.6.Constru&ccedil;&otilde;es e Habite-se|outline"></A><A NAME="3.6.Constru&ccedil;&otilde;es e Habite-se|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4050db">Constru&ccedil;</A><A HREF="#Sum&aacute;rio1|region" NAME="db4050db">&otilde;es</A><A HREF="#Sum&aacute;rio1|region" NAME="db4050db">
+e Habite-se</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Emite um relat&oacute;rio das
+constru&ccedil;&otilde;es que possuem habite-se mo sistema buscando
+pela data de cadastro da constru&ccedil;&atilde;o no sistema.
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo de tela conforme Figura 24.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Per&iacute;odo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher a data inicial e final do Habite-se.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Intervalo de &Aacute;rea:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo inicial e final da &Aacute;rea.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Habite-se: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar as constru&ccedil;&otilde;es que possuem habite-se com</SPAN></SPAN><I><B>
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">(Todos,
+Parcial e Total).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m4a20c677.png" NAME="figura29" ALIGN=LEFT WIDTH=605 HEIGHT=134 BORDER=0><BR CLEAR=LEFT>Figura
+24</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 25 mostra um modelo de um relat&oacute;rio Constru&ccedil;&atilde;o
+e Habite-se no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Projetos_html_ef36e6f.png" NAME="figura28" ALIGN=LEFT WIDTH=605 HEIGHT=208 BORDER=0><BR CLEAR=LEFT>Figura
+25</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="4.Procedimentos|outline"></A><A NAME="4.Procedimentos|outline"></A>
+Procedimentos</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.1.Libera&ccedil;&atilde;o de Alvar&aacute;|outline"></A><A NAME="4.1.Libera&ccedil;&atilde;o de Alvar&aacute;|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3685db">Libera&ccedil;&atilde;o
+de </A><A HREF="#Sum&aacute;rio1|region" NAME="db3685db">Alvar&aacute;</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse procedimento &eacute;
+cadastrado o alvar&aacute; para uma obra, <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">gerando
+a libera&ccedil;&atilde;o da obra no sistema podendo emitir a carta
+de alvar&aacute; para execu&ccedil;&atilde;o da obra.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo de tela
+conforme Figura 26.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Obras: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo da obra ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Alvar&aacute;:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo com o c&oacute;digo do Alvar&aacute; &eacute; gerado
+autom&aacute;tico. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data de expedi&ccedil;&atilde;o do alvar&aacute; para obra.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>N&uacute;mero
+da Constru&ccedil;&atilde;o:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Pesquisar as constru&ccedil;&otilde;es da obra que vai expedir o
+alvar&aacute;.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Projetos_html_1e75996a.png" NAME="figura10" ALIGN=LEFT WIDTH=605 HEIGHT=123 BORDER=0><BR CLEAR=LEFT>Figura
+26</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3687db">Altera&ccedil;&atilde;o</A>
+</B></I></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Permite a altera&ccedil;&atilde;o no campo: Data. Mas
+deve ser reemitido o Alvar&aacute; novamente. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3688db">Exclus&atilde;o</A></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>N&atilde;o pode ser exclu&iacute;do o cadastro de alvar&aacute;
+quando for emitido a carta de alvar&aacute; ou quando houver
+habite-se cadastrado para a constru&ccedil;&atilde;o.</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.2.Libera&ccedil;&atilde;o de Habite-se|outline"></A><A NAME="4.2.Libera&ccedil;&atilde;o de Habite-se|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3689db">Libera&ccedil;&atilde;o
+de </A><A HREF="#Sum&aacute;rio1|region" NAME="db3689db">Habite-se</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+procedimento &eacute; cadastro o habite-se para as constru&ccedil;&otilde;es,
+mas pode ser cadastrada</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">apenas
+para aqueles que tiverem alvar&aacute; cadastrados. O habite-se &eacute;
+um documento de libera&ccedil;&atilde;o para a constru&ccedil;&atilde;o.
+ </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo conforme Figura 27.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo com o c&oacute;digo de habite-se &eacute; gerado autom&aacute;tico.
+</SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Constru&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da constru&ccedil;&atilde;o ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Processo:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do processo ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o nome do habite-se.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Parcial:</B></I> Permite<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+liberar um habite-se com &aacute;rea parcial  ou  com &aacute;rea
+total.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data da inclus&atilde;o do habite-se.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>&Aacute;rea:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a &aacute;rea de acordo com o campo parcial ou </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">t</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">otal.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Observa&ccedil;&otilde;es:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+observa&ccedil;&otilde;es sobre o habite-se que foi cadastrado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_668cc41d.png" NAME="figura11" ALIGN=LEFT WIDTH=605 HEIGHT=204 BORDER=0><BR CLEAR=LEFT>Figura
+27</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3691db">Altera&ccedil;&atilde;o</A>
+</B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Pode ser alterado o (s) campo(s): Processo, Descri&ccedil;&atilde;o,
+Parcial, Data, &Aacute;rea e Observa&ccedil;&otilde;es. Mas deve ser
+reemitido o Habite-se depois da altera&ccedil;&atilde;o do cadastro.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db3692db">Exclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+N&atilde;o pode ser exclu&iacute;do o habite-se que foi emitido uma
+carta de habites-se.</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.Arquivo do INSS|outline"></A><A NAME="4.3.Arquivo do INSS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1985515db">Arquivo do INSS</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu &eacute; executado os
+procedimentos sobre o arquivo de remessa das informa&ccedil;&otilde;es
+do INSS atrav&eacute;s do programa <I><B>SisobraNet. </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+munic&iacute;pio que possuir sistema pr&oacute;prio de cadastramento
+de obras e emiss&atilde;o de alvar&aacute; e habite-se, n&atilde;o
+precisar&aacute; adotar o sistema </SPAN></SPAN><I><B>SisobraPref</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">,
+mas ter&aacute;, obrigatoriamente que adequar-se &agrave;s
+especifica&ccedil;&otilde;es m&iacute;nimas exigidas pelo INSS, na
+gera&ccedil;&atilde;o do arquivo com o relat&oacute;rio de alvar&aacute;
+e habite-se, para tornar poss&iacute;vel o envio desse relat&oacute;rio,
+pela internet, utilizando o </SPAN></SPAN><I><B>SisobraNet</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.1.Gera Arquivo|outline"></A><A NAME="4.3.1.Gera Arquivo|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3723db">Gera Arquivo</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+menu gera os arquivos para o INSS sobre as obras referente ao
+munic&iacute;pio. Permite regerar os arquivos j&aacute; gerados e
+enviados. Para gerar um novo deve ser informado os per&iacute;odo que
+ser&aacute; gerado o arquivo clicar no bot&atilde;o verificar para
+criar um arquivo </SPAN></SPAN><I><B>.txt</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">,
+para depois fazer a verifica&ccedil;&atilde;o dos dados. No bot&atilde;o
+gerar ele cria um arquivo </SPAN></SPAN><I><B>.txt</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+para envio n&atilde;o permitindo gerar ele novamente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo de tela 
+conforme Figura 28.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Arquivos Gerados e Enviados:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo mostra todos os arquivos que foram gerados e enviados para o
+INSS. Possui um bot&atilde;o que reenvia o arquivo selecionando
+novamente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Per&iacute;odo:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Colocar a data inicial e final das obras para gera&ccedil;&atilde;o
+de um arquivo dentro desse per&iacute;odo.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Projetos_html_2d6c6fc1.png" NAME="figura12" ALIGN=LEFT WIDTH=605 HEIGHT=203 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+28</FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.2.Exclus&atilde;o do Arquivo|outline"></A><A NAME="4.3.2.Exclus&atilde;o do Arquivo|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4190db">Exclus&atilde;o do
+Arquivo</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+menu faz a exclus&atilde;o do arquivo .txt na pasta que ele est&aacute;
+gravado, habilitando o menu </SPAN></SPAN><I><B><FONT COLOR="#000000">Gera
+Arquivo</FONT></B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+para gerar o arquivo novamente. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo de tela conforme Figura 29.</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B><FONT SIZE=3><SPAN STYLE="text-decoration: none">C&oacute;digo:</SPAN></FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do arquivo ou clicar no link para
+pesquisar.</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Projetos_html_m6057e9d5.png" NAME="figura13" ALIGN=LEFT WIDTH=605 HEIGHT=217 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+29</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.Texto|outline"></A><A NAME="4.4.Texto|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1985514db">Texto</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu &eacute; cadastrado os
+par&aacute;grafos dos documentos de Alvar&aacute; e Habite-se do
+sistema para emiss&atilde;o da Carta de Habite-se e Alvar&aacute;.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.1.Alvar&aacute;|outline"></A><A NAME="4.4.1.Alvar&aacute;|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3873db">Alvar&aacute;</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Nesse menu s&atilde;o cadastrados os textos que ser&atilde;o
+impresso no Alvar&aacute; como: Cabe&ccedil;alho, Termo  Par&aacute;grafo
+1, Assinatura 1, Assinatura 2, Rodap&eacute;.</FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.2.Habite-se|outline"></A><A NAME="4.4.2.Habite-se|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3864db">Habite-se</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Nesse menu s&atilde;o cadastrados os textos que ser&atilde;o
+impresso no Habite-se como: Cabe&ccedil;alho, Termo  Par&aacute;grafo
+1, Termo &ndash; Par&aacute;grafo 2, Assinatura.</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.5.Par&acirc;metros|outline"></A><A NAME="4.5.Par&acirc;metros|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2558db">Par&acirc;metro</A><A HREF="#Sum&aacute;rio1|region" NAME="db2558db">s</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu &eacute; configurado os
+par&acirc;metros  do m&oacute;dulo Projetos para o preenchimento das
+obras no sistema.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.5.1.Grupo de Ocupa&ccedil;&atilde;o|outline"></A><A NAME="4.5.1.Grupo de Ocupa&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3699db">Grupo de Ocupa&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Esse
+menu define quais os itens que ser&atilde;o mostrados no cadastro de
+constru&ccedil;&otilde;es no campo </SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Ocupa&ccedil;&atilde;o</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">.
+Deve ser cadastrado as caracter&iacute;sticas desejadas para os tipos
+de ocupa&ccedil;&atilde;o e estas serem ligadas a um grupo padr&atilde;o
+do INSS. Descri&ccedil;&atilde;o dos campos e modelo de tela conforme
+Figura 30.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Grupo Ocupa&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do grupo de ocupa&ccedil;&atilde;o ou clicar no link
+para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_m6e2ecdc1.png" NAME="figura14" ALIGN=LEFT WIDTH=605 HEIGHT=87 BORDER=0><BR CLEAR=LEFT>Figura
+30</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.5.2.Grupo Tipo de Constru&ccedil;&atilde;o|outline"></A><A NAME="4.5.2.Grupo Tipo de Constru&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3700db">Grupo Tipo de
+Constru&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Este
+meu define quais os itens que ser&atilde;o mostrados no cadastro de
+constru&ccedil;&otilde;es no campo</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>
+Tipo de Constru&ccedil;&atilde;o</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>
+</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Deve
+ser cadastrado as caracter&iacute;sticas desejadas para os tipos de
+constru&ccedil;&atilde;o e estas serem ligadas a um grupo padr&atilde;o
+do INSS. Descri&ccedil;&atilde;o dos campos e modelo de tela conforme
+Figura 31.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Grupo Tipo de Constru&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do </SPAN></SPAN><FONT COLOR="#000000"><I><B>Grupo
+Tipo de Constru&ccedil;&atilde;o</B></I></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_44002499.png" NAME="figura15" ALIGN=LEFT WIDTH=605 HEIGHT=86 BORDER=0><BR CLEAR=LEFT>Figura
+31</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.5.3.Grupo Tipo de Lan&ccedil;amento|outline"></A><A NAME="4.5.3.Grupo Tipo de Lan&ccedil;amento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3701db">Grupo Tipo de
+Lan&ccedil;amento</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Esse
+meu define quais os itens que ser&atilde;o mostrados no cadastro de
+constru&ccedil;&otilde;es no campo &ldquo;Tipo de Lan&ccedil;amento&rdquo;.</SPAN></SPAN>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Deve
+ser cadastrado as caracter&iacute;sticas desejadas para os Tipos de
+Lan&ccedil;amento e estas serem ligadas a um grupo, que ser&aacute;
+aqui indicado como padr&atilde;o do Tipo de Lan&ccedil;amento.
+</SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo de tela conforme Figura 32.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Grupo Tipo de Lan&ccedil;amento:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da </SPAN></SPAN><FONT COLOR="#000000"><I><B>Grupo
+Tipo de Lan&ccedil;amento</B></I></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Projetos_html_5ea2c8be.png" NAME="figura16" ALIGN=LEFT WIDTH=605 HEIGHT=89 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+32</FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="page-break-before: always"><FONT SIZE=4 STYLE="font-size: 16pt"><B>ANOTA&Ccedil;&Otilde;ES</B></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="font-style: normal; page-break-before: always">
+<FONT SIZE=4 STYLE="font-size: 16pt"><B>ANOTA&Ccedil;&Otilde;ES</B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<DIV ALIGN=RIGHT>
+		<TABLE WIDTH=605 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=523>
+			<COL WIDTH=66>
+			<TR VALIGN=TOP>
+				<TD WIDTH=523>
+					<P ALIGN=CENTER STYLE="background: transparent"><FONT SIZE=2 STYLE="font-size: 9pt">DBSeller
+					Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+					</FONT><A HREF="http://www.dbseller.com.br/"><FONT SIZE=2 STYLE="font-size: 9pt">www.dbseller.com.br</FONT></A><FONT SIZE=2 STYLE="font-size: 9pt">
+					             </FONT>                                            
+					                                                       <FONT SIZE=2 STYLE="font-size: 9pt">Rua
+					General C&acirc;mara, 406/301 </FONT><FONT SIZE=2 STYLE="font-size: 9pt">-</FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+					Porto Alegre</FONT><FONT SIZE=2 STYLE="font-size: 9pt">/RS</FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+					</FONT><FONT SIZE=2 STYLE="font-size: 9pt">-</FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+					Fone: (51) </FONT><FONT SIZE=2 STYLE="font-size: 9pt">3076-5101</FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>21</SDFIELD>
+					/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>21</SDFIELD></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

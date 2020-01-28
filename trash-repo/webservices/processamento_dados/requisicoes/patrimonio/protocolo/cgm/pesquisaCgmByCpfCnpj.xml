@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="cpfcnpj" obrigatorio="true" tipo="string" />
+  </parametros>
+  <configuracoes>
+    <classe nome="CadastroCgmWebService" parametros="" caminho="model/protocolo/cgm/CadastroCgmWebService.model.php" />
+    <exec>
+      <metodo nome="getDadosCgmByCnpjCpf" parametros="$cpfcnpj" />
+    </exec>
+  </configuracoes>
+</processamento>

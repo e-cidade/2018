@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project>
+    <host>localhost:5432</host>
+    <name>dbseller</name>
+    <user>postgres</user>
+    <pass></pass>
+    <type>native-pgsql</type>
+    <dict></dict>
+</project>

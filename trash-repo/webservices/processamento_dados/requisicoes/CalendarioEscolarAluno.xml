@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="codigo_matricula" obrigatorio="true" tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe   referencia="calendario" nome="CalendarioEscolarAlunoWebservice" parametros="$codigo_matricula" 
+              caminho="model/educacao/CalendarioEscolarAlunoWebservice.model.php" />
+    <exec>
+      <metodo referencia="calendario" nome="getDados" parametros="$codigo_matricula" />
+    </exec>
+  </configuracoes>
+</processamento>

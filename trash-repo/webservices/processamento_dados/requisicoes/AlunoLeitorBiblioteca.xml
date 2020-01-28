@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="codigo_aluno" obrigatorio="true" tipo="integer" />
+    <parametro nome="data_inicial" obrigatorio="false" tipo="date" />
+    <parametro nome="data_final"   obrigatorio="false" tipo="date" />
+  </parametros>
+  <configuracoes>
+    <classe   referencia="aluno" nome="AlunoLeitorBibliotecaWebservice" parametros="$codigo_aluno" 
+              caminho="model/educacao/AlunoLeitorBibliotecaWebservice.model.php" />
+    <exec>
+      <metodo referencia="aluno" nome="getDados" parametros="$data_inicial, $data_final" />
+    </exec>
+  </configuracoes>
+</processamento>

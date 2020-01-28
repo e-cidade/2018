@@ -1,0 +1,10 @@
+{
+  "receitaNull"         : "Selecione uma receita."       ,
+  "caracteristicaNull"  : "Selecione uma característica.",
+  "valorNull"           : "Digite o valor da receita."   ,
+  "receitaJaAdicionada" : "Receita já adicionada" ,
+  "gerandoRecibo"       : "Gerando recibo..." ,
+  "dtVencimentoNull"    : "Selecione um vencimento para as receitas.",
+  "sHistoricoNull"      : "Digite o histórico para o recibo.",
+  "tudoPago"            : "O valor total da prestação de contas é superior ao valor pago no movimento."
+ }

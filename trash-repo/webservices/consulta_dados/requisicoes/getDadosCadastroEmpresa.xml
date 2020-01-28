@@ -1,0 +1,48 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="case when length(z01_cgccpf) = 11 then 'Fisica' when length(z01_cgccpf) = 14 then 'Juridico' else 'Indefinido' end " label="tipo"               />
+    <campo campo="z01_cgccpf"                                                                                                          label="cgccpf"             /> 
+    <campo campo="case when z01_nomecomple is not null then z01_nomecomple else z01_nome end "                                         label="nome"               />
+    <campo campo="z01_nomefanta"                                                                                                       label="nome_fanta"         />
+    <campo campo="z01_ident"                                                                                                           label="identidade"         />
+    <campo campo="z01_incest"                                                                                                          label="inscr_est"          />
+    <campo campo="j88_descricao"                                                                                                       label="tipo_lograd"        />
+    <campo campo="ruas.j14_nome"                                                                                                       label="lograd"             />
+    <campo campo="issruas.q02_numero"                                                                                                  label="numero"             />
+    <campo campo="issruas.q02_compl"                                                                                                   label="complemento"        />
+    <campo campo="bairro.j13_descr"                                                                                                    label="bairro"             />
+    <campo campo="4300406"                                                                                                             label="cod_ibge"           />
+    <campo campo="'ALEGRETE'"                                                                                                          label="munic"              />
+    <campo campo="'RS'"                                                                                                                label="uf"                 />
+    <campo campo="01058"                                                                                                               label="cod_pais"           />
+    <campo campo="'Brasil'"                                                                                                            label="pais"               />
+    <campo campo="97540000"                                                                                                            label="cep"                />
+    <campo campo="cgm.z01_telef"                                                                                                       label="telefone"           />
+    <campo campo="cgm.z01_fax"                                                                                                         label="fax"                />
+    <campo campo="cgm.z01_telcel"                                                                                                      label="celular"            />
+    <campo campo="cgm.z01_email"                                                                                                       label="email"              />
+    <campo campo="issbase.q02_inscr"                                                                                                   label="inscricao"          />
+    <campo campo="issbase.q02_dtinic"                                                                                                  label="data_inscricao"     />
+    <campo campo="'Normal'"                                                                                                            label="tipo_classificacao" />
+    <campo campo="'2 - Nao'"                                                                                                           label="optante_simples"    />
+    <campo campo="'1 - Sim'"                                                                                                           label="sub_tributario"     />
+    <campo campo="'1 - Exigivel'"                                                                                                      label="exigibilidade"      />
+    <campo campo="'6 - Microempresario e Empresa de Pequeno Porte (ME EPP)'"                                                           label="regime"             />
+    <campo campo="'2 - Nao'"                                                                                                           label="incentivo_fiscal"   />
+  </campos>
+  <from tabela="issbase" />
+  <juncoes> 
+    <join tipo="inner" tabela="cgm"           condicao="z01_numcgm = q02_numcgm"                /> 
+    <join tipo="left"  tabela="issruas"       condicao="issbase.q02_inscr = issruas.q02_inscr"  />  
+    <join tipo="left"  tabela="ruas"          condicao="issruas.j14_codigo = ruas.j14_codigo"   /> 
+    <join tipo="left"  tabela="ruastipo"      condicao="j14_tipo = j88_codigo"                  /> 
+    <join tipo="left"  tabela="issbairro"     condicao="issbase.q02_inscr = q13_inscr"          /> 
+    <join tipo="left"  tabela="bairro"        condicao="issbairro.q13_bairro = bairro.j13_codi" /> 
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao" condicao="issbase.q02_inscr = '$inscricao'" obrigatorio="true"/>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="issbase.q02_inscr" />
+</consulta>

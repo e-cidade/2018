@@ -1,0 +1,6 @@
+{
+	"documento_nao_encontrado"            : "O documento [codigo_documento] - [descricao_documento] não está cadastrado ou não possui conta a crédito ou débito configurada.\n\nFinanceiro > Contabilidade > Cadastro > Cadastro de Transações",
+	"conta_credito_debito_nao_encontrada" : "Não foram encontradas contas crédito/débito.\n\nDocumento: [codigo_documento] - [descricao_documento]\nLançamento: [codigo_lancamento] - [descricao_lancamento]\nConta Contábil: [codigo_conta] - [descricao_conta]",
+	"erro_excluir_regras_vincular"        : "Não foi possivel vincular regras entre documentos inversos.\nErro ao excluir regra de lançamento.",
+	"erro_incluir_regras_vincular"        : "Não foi possivel vincular regras entre documentos inversos.\nErro ao incluir regra de lançamento."
+}

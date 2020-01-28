@@ -1,0 +1,7 @@
+{
+  "aluno_nao_informado"        : "Aluno não informado para vínculo da progressão.",
+  "progressoes_nao_informadas" : "Progressões a serem realizadas pelo aluno não informadas.",
+  "ano_nao_informado"          : "Ano da progressão não informado.",
+  "progressao_salva"           : "Progressão salva com sucesso.",
+  "erro_ao_buscar_progressoes" : "Erro ao buscar progressões parcial do aluno."
+}

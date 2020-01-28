@@ -1,0 +1,4 @@
+{
+  "erro_buscar_periodo_aquisitivo"            : "Erro ao buscar período aquisitivo.\\nErro técnico: \\n[sErroBanco]",
+  "busca_periodo_aquisitivo_pela_competencia" : "Nenhum período aquisitivo encontrado para a competência [iCodigo]."
+}

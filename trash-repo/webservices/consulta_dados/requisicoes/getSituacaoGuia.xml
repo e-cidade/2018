@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="(select rtstatus from fc_statusdebitos(k00_numpre) limit 1)" label="status" />
+  </campos>
+  <from tabela="arrenumcgm"                                                         />
+  <juncoes>
+  </juncoes>
+  <filtros>
+     <filtro label="numpre"   condicao = "k00_numpre = '$numpre'" obrigatorio="true"  />
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="" />
+</consulta>

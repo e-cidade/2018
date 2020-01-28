@@ -1,0 +1,7 @@
+{
+   "departamento_diferente_vinculo_documento" : "Só o departamento [sDepartamento] em que o processo se encontra atualmente pode vincular documento."
+  ,"documento_salvo" : "Documento salvo com sucesso."
+  ,"documento_excluido" : "Documento excluído com sucesso."
+  ,"carregando_documentos" : "Aguarde, carregando documentos..."
+  ,"salvando_em_disco" : "Aguarde, executando download do arquivo..."
+}

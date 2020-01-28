@@ -1,0 +1,6 @@
+{
+  "informe_descricao"                          : "Informe a descrição.",
+  "valor_maximo_menor_valor_minimo"            : "Valor máximo menor que o valor mínimo.",
+  "problema_indices_debitos"                   : "Problema nos índices da tabela débitos. Entre em contato com CPD.",
+  "filtro_utilizados_caso_diferente_matricula" : "Os filtros da aba filtro/imóveis não serão utilizados caso o tipo de lista NÃO seja por matrícula."
+}

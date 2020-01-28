@@ -1,0 +1,9 @@
+{
+  "sem_obras"                        : "Sem obras na competência informada.",
+  "erro_gerar_linha_header"          : "Erro ao gerar linha HEADER do arquivo.",
+  "erro_gerar_linha_responsavel"     : "Erro ao gerar linha RESPONSÁVEL do arquivo.",
+  "erro_gerar_linha_habitese"        : "Erro ao gerar linha HABITE-SE do arquivo.",
+  "erro_gerar_linha_fechamento_lote" : "Erro ao gerar linha FECHAMENTO LOTE do arquivo.",
+  "definia_opcao"                    : "Nenhuma opção definida.",
+  "erro_processar_arquivo"           : "Erro ao Processar arquivo. [sErro]"
+}

@@ -1,0 +1,6 @@
+{
+  "erro_busca_posicaoestoque": "Não foi possível encontrar a posição no estoque.",
+  "erro_salvar_posicaoestoque": "Não foi possível salvar uma nova posição no estoque.",
+  "erro_vincular_movimentacao": "Não foi possível vincular a posição à movimentação.",
+  "erro_buscar_ultima_posicao": "Não foi possível encontrar a última posição no estoque."
+}

@@ -1,0 +1,13 @@
+{
+  "informe_campo"                                      : "Informe um campo para pesquisa.",
+  "preenchimento_importacoes_obrigatorio"			         : "Nenhuma importação geral selecionada para cancelamento.",
+  "nenhum_debito_para_cancelamento"                    : "Nenhum débito selecionado para o cancelamento da importação.",
+  "nenhum_registro_encontrado"                         : "Nenhum registro encontrado.",
+  "processando_cancelamento_importacao_debitos"        : "Processando cancelamento da importação de débitos, aguarde...",
+  "deseja_cancelar_importacao"                         : "Deseja cancelar a importação dos débitos selecionados?",
+  "pesquisando_debitos"                                : "Pesquisando débitos, aguarde...",
+  "deseja_efetuar_cancelamento_importacao_geral"       : "Deseja cancelar a importação geral dos débitos selecionados?",
+  "processando_cancelamento_importacao_geral_debitos"  : "Processando cancelamento da importação geral de débitos, aguarde...",
+  "sucesso_cancelamento_debitos"                       : "Cancelamento de importação de débitos realizado com sucesso!",
+  "sucesso_cancelamento_geral_debitos"                 : "Cancelamento de importação geral de débitos realizado com sucesso!"
+}

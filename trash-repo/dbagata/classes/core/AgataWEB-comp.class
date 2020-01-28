@@ -1,0 +1,263 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/*******************************************************************************/
+/* AgataWEB
+/* WEB for report generation
+/* by Pablo Dall'Oglio - 2001 - 2006
+/*******************************************************************************/
+class AgataWEB
+{
+    function AgataWEB()
+    {
+        
+    }
+    
+    function readReports($V803, $V823)
+    {
+        $V910ermissions = C101::F264('C64');
+        $V566 = getSimpleDirArray($V823, true);
+        
+        foreach($V566 as $V775)
+        {
+            $V684 = $V823 . bar . $V775;
+            $V684 = str_replace('/', bar, $V684);
+            $V684 = str_replace('\\', bar, $V684);
+            $V639->login  = array('=', $V803);
+            $V639->report = array('=', $V684);
+            if ($V910ermissions->F215($V639) or $V803 == 'admin')
+            {
+                $V643[] = $V684;
+            }
+        }
+        
+        return $V643;
+    }
+
+    function canAdjust($V803)
+    {
+        $V756 = C101::F264('C119');
+        $V803  = $V756->F239($V803);
+        return $V803->canadjust;
+    }
+
+    function canSchedule($V803)
+    {
+        $V756 = C101::F264('C119');
+        $V803  = $V756->F239($V803);
+        return $V803->canschedule;
+    }
+    
+    
+    function DirList($BrowseDir, $V639, $V641, $V490)
+    {
+        if ($V641 == 'browse.php?goal=2')
+        {
+            $V674Dir = $V490['general']['OutputDir'];
+            $V823_len = strlen($V674Dir);
+            if (substr($BrowseDir,0,$V823_len) != $V674Dir)
+            {
+                $BrowseDir = $V674Dir;
+            }
+        }
+        else
+        {
+            $RptDir = $V490['general']['RptDir'];
+            $V823_len = strlen($RptDir);
+            if (substr($BrowseDir,0,$V823_len) != $RptDir)
+            {
+                $BrowseDir = $RptDir;
+            }    
+        }
+    
+        $V538        = 'imagens/folder.png';
+        $V646['sql']    = 'imagens/ico_sql.png';
+        $V646['agt']    = 'imagens/ico_agt.png';
+        $V646['html']   = 'imagens/ico_html.png';
+        $V646['sxw']    = 'imagens/ico_sxw.png';
+        $V646['txt']    = 'imagens/ico_txt.png';
+        $V646['pdf']    = 'imagens/ico_pdf.png';
+        $V646['ps']     = 'imagens/ico_ps.png';
+        $V646['csv']    = 'imagens/ico_csv.png';
+        $V646['xml']    = 'imagens/ico_xml.png';
+        $V646['dia']    = 'imagens/ico_dia.png';
+        $V646['generic']= 'imagens/generic.png';
+    
+        # Opens the Sql's Dir
+        
+        $V566 = getSimpleDirArray($BrowseDir, false);
+        if ($V566)
+        {
+            echo '<link href="site.css" rel="stylesheet" type="text/css">';
+            echo '<table width=700 cellspacing=0 class=table border=0>';
+            echo '<tr height=30 class=tabletitle>';
+            echo '<td colspan=6>';
+            if ($V641 == 'browse.php?goal=1')
+            {
+                echo '<b>&nbsp; Agata Report:: ' . _a('Query Explorer') .'</b>';
+                echo '</td>';
+                echo '</tr>';
+                echo '<tr class=line1>';
+                echo '<td colspan=6 align=right>';
+                echo '<a href=browse.php?goal=2>' . _a('Repository Explorer') . '</a>';
+            }
+            else
+            {
+                echo '<b>&nbsp; Agata Report:: ' . _a('Repository Explorer') . '</b>';
+                echo '</td>';
+                echo '</tr>';
+                echo '<tr class=line1>';
+                echo '<td colspan=6 align=right>';
+                echo '<a href=browse.php?goal=1>' . _a('Query Explorer') . '</a>';
+            }
+            echo '</td>';
+            echo '</tr>';
+    
+            echo '<tr class=tablepath>';
+            echo '<td colspan=6>';
+            echo '&nbsp;' . $BrowseDir;
+            echo '</td>';
+            echo '</tr>';
+    
+            
+            $V778 = dir_back($BrowseDir);
+            if ($V778 != $V490['general']['AgataDir'])
+            {
+                echo '<tr>';
+                echo '<td width=10% align=center>';
+                echo "<a href=$V641&BrowseDir=$V778><img src=$V538 border=0></a>";
+                echo '</td>';
+                echo '<td width=40% colspan=5 align=left>';
+                echo "<a href=$V641&BrowseDir=$V778>..</a>";
+                echo '</td>';
+                echo '</tr>';
+            }
+            $V899 = 0;
+            foreach ($V566 as $V604)
+            {
+                $V604 = trim($V604);
+                $V766 = $BrowseDir . bar . $V604;
+                $V899++;
+                
+                if (($V899 % 2) == 0)
+                {
+                    $class = 'line1';
+                }
+                else
+                {
+                    $class = 'line2';
+                }
+                
+                if (is_dir($V766))
+                {
+                    $V773 = "$V641&BrowseDir=$V766";
+                    echo "<tr class=$class>";
+                    echo '<td width=5% align=center>';
+                    echo "<a href=$V773><img src=$V538 border=0></a>";
+                    echo '</td>';
+                    echo '<td width=95% colspan=5 align=left valign=center>';
+                    echo "<a class=report href=$V773>$V604</a>";
+                    echo '</td>';
+                    echo '</tr>';
+                }
+                else
+                {
+                    if (count($V639) == 1)
+                    {
+                        $V863 = ($V639) ? (in_array(substr($V766,-strlen($V639[0])), $V639)) : true;
+                    }
+                    else
+                    {
+                        $V828 = ($V639) ? (in_array(substr($V766,-2), $V639)) : true;
+                        $V829 = ($V639) ? (in_array(substr($V766,-3), $V639)) : true;
+                        $V830 = ($V639) ? (in_array(substr($V766,-4), $V639)) : true;
+                        $V863 = ($V828 or $V829 or $V830);
+                    }
+                    if ($V863)
+                    {
+                        $V607 = strpos($V604, '.');
+                        $V831 = substr($V604, $V607+1);
+                        $V832 = $V646[$V831];
+        
+                        if (!$V832)
+                        {
+                            $V832 = $V646['generic'];
+                        }
+        
+                        echo "<tr class=$class>";
+                        echo '<td class=report width=5% align=center>';
+    
+                        if ($V641 == 'browse.php?goal=2')
+                        {
+                            $V773 = "download.php?file=$V766&download=$V604&type=$V831";
+                            echo "<a href=$V773><img src=$V832 border=0></a>";
+                            echo '</td>';
+                            echo '<td width=30% align=left valign=center>';
+                            echo "<a href=$V773>$V604</a>";
+                        }
+                        else
+                        {
+                            $V791 = Trans::F196();
+                            $V773 = "agataweb.php?file=$V766&lang=$V791&AgataDir=" . AgataDir;
+                            echo "<a href=$V773><img src=$V832 border=0></a>";
+                            echo '</td>';
+                            echo '<td width=30% align=left valign=center>';
+                            
+                            echo "<a class=report href=$V773>$V604</a>";
+                        }
+                        if (substr($V766,-3)=='agt')
+                        {
+                            $V673 = Report::OpenReport($V766);
+                        }
+                        echo '</td>';
+                        echo '<td width=5% align=right>';
+                        if ($V673['Report']['Properties']['Layout'] and $V673['Report']['Properties']['Format'])
+                        {
+                            echo "<a href='fastgenerate.php?file=$V766'><img border=0 src=imagens/generate.png></a>";
+                        }
+                        echo '</td>';
+                        
+                        echo '<td class=texto width=10% align=right>';
+                        echo file_size($V766);
+                        echo '</td>';
+                        
+                        echo '<td class=texto width=30% align=center>';
+                        echo file_date($V766);
+                        echo '</td>';
+                        
+                        echo '<td class=texto width=20%>';
+                        echo '<font size=2><i>'. $V673['Report']['Properties']['Description'].'</i></font>';
+                        echo '</td>';
+                        echo '</tr>';
+                    }
+                }
+            }
+            echo "</table>";
+        }
+    }
+}
+?>

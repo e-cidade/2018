@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="codigo_instituicao" obrigatorio="false" tipo="integer" />
+    <parametro nome="lprefeitura"        obrigatorio="true"    tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe nome="InstituicaoWebservice" parametros="" caminho="model/configuracao/InstituicaoWebService.model.php" />
+    <exec>
+      <metodo nome="setCodigo" parametros="$codigo_instituicao" />
+      <metodo nome="setPrefeitura" parametros="$lprefeitura" />
+      <metodo nome="getDadosInstituicao" parametros="" />
+    </exec>
+  </configuracoes>
+</processamento>

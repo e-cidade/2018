@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout>dbseller</Layout>
+        <UseTemplates></UseTemplates>
+    </Properties>
+
+    <Header>
+        <Body></Body>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body></Body>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <sWhere>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+        </sWhere>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>irga</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>orgao, unidade, '' as depto, '' as divisao, sum(vlrmovelproprio)   as vlrmovelproprio, sum(vlrmovelconvenio)  as vlrmovelconvenio, sum(vlrimovelproprio)  as vlrimovelproprio, sum(vlrimovelconvenio) as vlrimovelconvenio, sum(vlrimovelconvenio+vlrmovelproprio+vlrmovelconvenio+vlrimovelproprio) as vlrtotal</Select>
+            <From>(  select t52_bem,                   t52_valaqu,                   t64_bemtipos,                   case                      when t09_bem is null then 'P'                      else 'C'                    end as convenio,                   case                     when t64_bemtipos = 1 then                         case                          when t09_bem is null then t52_valaqu                          else 0                        end                     else 0                   end as vlrmovelproprio,                   case                     when t64_bemtipos = 1 then                         case                          when t09_bem is null then 0                          else t52_valaqu                       end                     else 0                   end as vlrmovelconvenio,                   case                     when t64_bemtipos = 2 then                         case                          when t09_bem is null then t52_valaqu                          else 0                        end                     else 0                   end as vlrimovelproprio,                   case                     when t64_bemtipos = 2 then                         case                          when t09_bem is null then 0                          else t52_valaqu                       end                     else 0                   end as vlrimovelconvenio,                   o40_descr  as orgao,                   o41_descr  as unidade,                   descrdepto as depto,                    t30_descr  as divisao              from bens                    inner join clabens on t64_codcla = t52_codcla                     left  join benscedente  on t09_bem = t52_bem                    inner join db_depart    on  db_depart.coddepto    = bens.t52_depart                   left  join bensdiv    on bensdiv.t33_bem        = bens.t52_bem                   left  join departdiv  on departdiv.t30_codigo   = bensdiv.t33_divisao                                          and departdiv.t30_depto    = bens.t52_depart                   inner join db_departorg on db_departorg.db01_coddepto = bens.t52_depart                                          and db_departorg.db01_anousu   = 2010                   inner join orcorgao   on orcorgao.o40_orgao     = db_departorg.db01_orgao                         and orcorgao.o40_anousu    = db_departorg.db01_anousu                    inner join orcunidade   on orcunidade.o41_unidade = db_departorg.db01_unidade                                           and orcunidade.o41_orgao = db_departorg.db01_orgao                                          and orcunidade.o41_anousu = db_departorg.db01_anousu                where $swhere  ) as x</From>
+            <Where></Where>
+            <GroupBy>orgao,               unidade;</GroupBy>
+            <OrderBy></OrderBy>
+            <Config>
+                <Distinct></Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+            <Column9>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column9>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup></PageSetup>
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : orgao</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup></PageSetup>
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source></Source>
+        <Config>
+            <FixedDetails>1</FixedDetails>
+            <ExpandDetails></ExpandDetails>
+            <printEmptyDetail>1</printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+    </OpenOffice>
+
+</Report>

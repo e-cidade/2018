@@ -1,0 +1,89 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="codigo_requisicaoaidof" label="codigo_requisicaoaidof"  />
+    <campo campo="inscricao_municipal"    label="inscricao_municipal"     />
+    <campo campo="data_lancamento"        label="data_lancamento"         />
+    <campo campo="quantidade_solicitada"  label="quantidade_solicitada"   />
+    <campo campo="quantidade_liberada"    label="quantidade_liberada"     />
+    <campo campo="status"                 label="status"                  />
+    <campo campo="observacao"             label="observacao"              />
+    <campo campo="tipo_nota"              label="tipo_nota"               />
+    <campo campo="descricao_nota"         label="descricao_nota"          />
+    <campo campo="codigo_grupo"           label="codigo_grupo"            />
+    <campo campo="cgm_grafica"            label="cgm_grafica"             />
+    <campo campo="nome_grafica"           label="nome_grafica"            />
+    <campo campo="codigo_usuario"         label="codigo_usuario"          />
+    <campo campo="nome_usuario"           label="nome_usuario"            />
+    <campo campo="codigo_nota"            label="codigo_nota"             />
+    <campo campo="nota_inicial"           label="nota_inicial"            />
+    <campo campo="nota_final"             label="nota_final"              />
+  </campos>
+  <from tabela="(select y08_codigo                         as codigo_requisicaoaidof,
+                        y08_inscr                          as inscricao_municipal,
+                        y08_dtlanc                         as data_lancamento,
+                        y08_quantsol                       as quantidade_solicitada,
+                        y08_quantlib                       as quantidade_liberada,
+                        case when (y08_cancel is false) 
+                             then 'L' else 'C' end         as status,
+                        y08_obs                            as observacao,
+                        y08_nota                           as tipo_nota,
+                        q09_descr                          as descricao_nota,
+                        q09_gruponotaiss                   as codigo_grupo,
+                        y08_numcgm                         as cgm_grafica,
+                        COALESCE(cgmgrafica.z01_nomefanta,
+                                 cgmgrafica.z01_nomefanta,
+                                 cgmgrafica.z01_nome)      as nome_grafica,
+                        y08_login                          as codigo_usuario,
+                        cgmusuario.z01_nome                as nome_usuario,
+                        q09_codigo                         as codigo_nota,
+                        y08_notain                         as nota_inicial,
+                        y08_notafi                         as nota_final
+                   from aidof
+                        left  join fiscal.graficas                        on y08_numcgm  = y20_grafica
+                        left  join issqn.notasiss          as nota        on y08_nota    = q09_codigo
+                        left  join protocolo.cgm           as cgmgrafica  on y20_grafica = cgmgrafica.z01_numcgm
+                        left  join protocolo.cgm           as cgmusuario  on y08_login   = cgmusuario.z01_numcgm
+                  where y08_inscr                          = '$inscricao_municipal'
+                    and q09_gruponotaiss                   in ( $codigo_grupo )
+                    and y20_datalimiteimpressao            is null
+                    
+                 union
+                  
+                 select y116_id                            as codigo_requisicaoaidof,
+                        y116_inscricaomunicipal            as inscricao_municipal,
+                        y116_datalancamento                as data_lancamento,
+                        y116_quantidadesolicitada          as quantidade_solicitada,
+                        y116_quantidadeliberada            as quantidade_liberada,
+                        y116_status                        as status,
+                        y116_observacao                    as observacao,
+                        y116_tipodocumento                 as tipo_nota,
+                        q09_descr                          as descricao_nota,
+                        q09_gruponotaiss                   as codigo_grupo,
+                        y116_codigografica                 as cgm_grafica,
+                        COALESCE(cgmgrafica.z01_nomefanta,
+                                 cgmgrafica.z01_nomefanta,
+                                 cgmgrafica.z01_nome)      as nome_grafica,
+                        y116_idusuario                     as codigo_usuario,
+                        cgmusuario.z01_nome                as nome_usuario,
+                        q09_codigo                         as codigo_nota,
+                        0                                  as nota_inicial,
+                        0                                  as nota_final
+                   from requisicaoaidof
+                        left join fiscal.graficas                         on y116_codigografica = y20_grafica
+                        left join issqn.notasiss           as nota        on y116_tipodocumento = q09_codigo
+                        left join protocolo.cgm            as cgmgrafica  on y116_codigografica = cgmgrafica.z01_numcgm
+                        left join protocolo.cgm            as cgmusuario  on y116_idusuario     = cgmusuario.z01_numcgm
+                  where y116_inscricaomunicipal            = '$inscricao_municipal'
+                    and q09_gruponotaiss                   in ( $codigo_grupo )
+                    and y20_datalimiteimpressao            is null
+                    and y116_codigoaidof                   = 0) as requisicoes_aidof" />
+  <juncoes>
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao_municipal" condicao="'$inscricao_municipal' = '$inscricao_municipal'" obrigatorio="true"/>
+    <filtro label="codigo_grupo" condicao="($codigo_grupo) = ($codigo_grupo)" obrigatorio="true"/>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="data_lancamento DESC, codigo_requisicaoaidof DESC" />
+</consulta>

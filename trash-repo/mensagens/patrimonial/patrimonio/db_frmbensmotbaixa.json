@@ -1,0 +1,5 @@
+{
+  "bens_vinculados"      : "Existe bens vinculados a este tipo de baixa, operação não permitida.",
+  "baixa_vinculada_bens" : "Este tipo de baixa está vinculado a bens. \nTem certeza de que quer alterar a descrição deste tipo de baixa?"
+  
+}

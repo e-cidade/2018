@@ -1,0 +1,954 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="sandro">
+	<META NAME="CREATED" CONTENT="20080308;10444600">
+	<META NAME="CHANGEDBY" CONTENT="dbseller">
+	<META NAME="CHANGED" CONTENT="20081117;23420000">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.1cm }
+		P { margin-bottom: 0.21cm }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm; page-break-before: auto }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "HG Mincho Light J"; font-size: 16pt }
+		H1.ctl { font-family: "Lucidasans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Helvetica"; font-size: 14pt; so-language: pt-BR; font-style: italic }
+		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		H3 { margin-bottom: 0.21cm }
+		H3.western { font-family: "Helvetica"; so-language: pt-BR }
+		H3.cjk { font-family: "HG Mincho Light J" }
+		TD P { margin-bottom: 0cm }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR">
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.Cadastros|outline">Cadastros	</A><A HREF="#1.Cadastros|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.Advogados|outline">Advogados	</A><A HREF="#1.1.Advogados|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.Vara|outline">Vara	</A><A HREF="#1.2.Vara|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.Localiza&ccedil;&atilde;o|outline">Localiza&ccedil;&atilde;o	</A><A HREF="#1.3.Localiza&ccedil;&atilde;o|outline">3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.Tipo de Peti&ccedil;&atilde;o|outline">Tipo
+	de Peti&ccedil;&atilde;o	</A><A HREF="#1.4.Tipo de Peti&ccedil;&atilde;o|outline">3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.5.Situa&ccedil;&atilde;o|outline">Situa&ccedil;&atilde;o	</A><A HREF="#1.5.Situa&ccedil;&atilde;o|outline">4</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.Consultas|outline">Consultas	</A><A HREF="#2.Consultas|outline">4</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.Geral Financeira|outline">Geral
+	Financeira	</A><A HREF="#2.1.Geral Financeira|outline">4</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.2.Certid&atilde;o|outline">Certid&atilde;o	</A><A HREF="#2.2.Certid&atilde;o|outline">5</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.3.Inicial|outline">Inicial	</A><A HREF="#2.3.Inicial|outline">5</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.Relat&oacute;rios|outline">Relat&oacute;rios	</A><A HREF="#3.Relat&oacute;rios|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.Reemiss&atilde;o de Inicial|outline">Reemiss&atilde;o
+	de Inicial	</A><A HREF="#3.1.Reemiss&atilde;o de Inicial|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.Inicial|outline">Inicial	</A><A HREF="#3.2.Inicial|outline">7</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.1.Inicial / Data|outline">Inicial
+	/ Data	</A><A HREF="#3.2.1.Inicial / Data|outline">7</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.2.Usu&aacute;rio|outline">Usu&aacute;rio	</A><A HREF="#3.2.2.Usu&aacute;rio|outline">8</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.3.Advogado|outline">Advogado	</A><A HREF="#3.2.3.Advogado|outline">9</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.4.Vara|outline">Vara	</A><A HREF="#3.2.4.Vara|outline">10</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.5.Movimento|outline">Movimento	</A><A HREF="#3.2.5.Movimento|outline">11</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.Emite Peti&ccedil;&atilde;o|outline">Emite
+	Peti&ccedil;&atilde;o	</A><A HREF="#3.3.Emite Peti&ccedil;&atilde;o|outline">12</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.1.Parcelada|outline">Parcelada	</A><A HREF="#3.3.1.Parcelada|outline">12</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.2.Quitada|outline">Quitada	</A><A HREF="#3.3.2.Quitada|outline">13</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.4.Lista de Inicial|outline">Lista
+	de Inicial	</A><A HREF="#3.4.Lista de Inicial|outline">14</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.Procedimentos|outline">Procedimentos	</A><A HREF="#4.Procedimentos|outline">15</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.Situa&ccedil;&atilde;o da Inicial|outline">Situa&ccedil;&atilde;o
+	da Inicial	</A><A HREF="#4.1.Situa&ccedil;&atilde;o da Inicial|outline">15</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.Inicial|outline">Inicial	</A><A HREF="#4.2.Inicial|outline">16</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.Processo do Foro|outline">Processo
+	do Foro	</A><A HREF="#4.3.Processo do Foro|outline">18</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.Gera Peti&ccedil;&atilde;o|outline">Gera
+	Peti&ccedil;&atilde;o	</A><A HREF="#4.4.Gera Peti&ccedil;&atilde;o|outline">19</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.1.Parcelamento|outline">Parcelamento	</A><A HREF="#4.4.1.Parcelamento|outline">19</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.2.Inicial Quitada|outline">Inicial
+	Quitada	</A><A HREF="#4.4.2.Inicial Quitada|outline">20</A></FONT></P>
+</DIV>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-before: always; page-break-after: avoid">
+<FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO JUR&Iacute;DICO</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+O objetivo deste m&oacute;dulo &eacute; controlar as peti&ccedil;&otilde;es
+geradas/emitidas, permitindo o setor jur&iacute;dico da institui&ccedil;&atilde;o
+saber se a inicial foi parcelada ou quitada no sistema, ou consultar
+uma inicial e verificar seu hist&oacute;rico dentro da institui&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Sempre que no manual for mencionado a express&atilde;o &ldquo;Inicial
+do Foro &ldquo;, devemos considerar como uma peti&ccedil;&atilde;o
+emitida. A peti&ccedil;&atilde;o que d&aacute; origem a todo o
+controle deste m&oacute;dulo &eacute; chamada de peti&ccedil;&atilde;o
+inicial.</P>
+<H1 CLASS="western"><A NAME="1.Cadastros|outline"></A><A NAME="1.Cadastros|outline"></A>
+Cadastros</H1>
+<H2 CLASS="western"><A NAME="1.1.Advogados|outline"></A><A NAME="1.1.Advogados|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1775db">Advogados</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">Nesse
+menu s&atilde;o cadastrados os advogados respons&aacute;veis pelos
+processos da institui&ccedil;&atilde;o, pois ao gerar uma peti&ccedil;&atilde;o
+no sistema, esta precisa estar vinculada a um advogado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">No caso
+de necessidade de altera&ccedil;&atilde;o de nome no cadastro de
+advogados, isso deve ser efetuado no <FONT COLOR="#000000"><I><SPAN STYLE="text-decoration: none"><B>CGM</B></SPAN></I></FONT>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">&Eacute;
+p<FONT SIZE=3><SPAN STYLE="font-weight: medium">ermitida a exclus&atilde;o
+do advogado, quando este n&atilde;o estiver vinculado a nenhuma
+peti&ccedil;&atilde;o.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1763db">Inclus&atilde;o</A></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 01.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo</B></SPAN></I><I><B>:</B></I>
+Colocar o c&oacute;digo do CGM do Advogado. Obrigat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	OAB:</B></SPAN></I><FONT SIZE=3><SPAN STYLE="font-weight: medium">
+Colocar o registro do Advogado na OAB. Obrigat&oacute;rio.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m3e2a1fb2.png" NAME="figura1" ALIGN=LEFT WIDTH=604 HEIGHT=126 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+01</FONT></P>
+<H2 CLASS="western"><A NAME="1.2.Vara|outline"></A><A NAME="1.2.Vara|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1776db">Vara</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Nesse
+menu &eacute; cadastrado um setor do foro aonde o processo ser&aacute;
+distribu&iacute;do, para o melhor controle dos advogados dos
+processos no foro.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">&Eacute;
+utilizado no cadastro do processo em uma peti&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-weight: medium">
+<FONT SIZE=3>O sistema permite a exclus&atilde;o da vara, quando esta
+n&atilde;o estiver vinculada a nenhuma Inicial do Foro.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1769db"><FONT SIZE=3>Inclus&atilde;o</FONT></A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 02</FONT></P>
+<P CLASS="western"><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo:</B></SPAN></I>
+O campo  &eacute; gerado autom&aacute;tico.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Descri&ccedil;&atilde;o:</B></SPAN></I><FONT SIZE=3><SPAN STYLE="font-weight: medium">
+Preencher o nome da Vara do Foro. Obrigat&oacute;rio.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_377d8b12.png" NAME="figura2" ALIGN=LEFT WIDTH=605 HEIGHT=122 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+02</FONT></P>
+<H2 CLASS="western"><A NAME="1.3.Localiza&ccedil;&atilde;o|outline"></A><A NAME="1.3.Localiza&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1777db">Localiza&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-weight: medium">
+Nesse menu &eacute; cadastrado a localiza&ccedil;&atilde;o da Comarca
+do Foro na qual a cidade pertence.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-weight: medium">
+A localiza&ccedil;&atilde;o &eacute; utilizada quando &eacute; feita
+a inclus&atilde;o da Inicial do Foro.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-weight: medium">
+<FONT SIZE=3>O sistema permite a exclus&atilde;o da localiza&ccedil;&atilde;o,
+quando esta n&atilde;o estiver vinculada a nenhuma inicial.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm"><FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1779db">Inclus&atilde;o</A></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 03.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo:</B></SPAN></I><B>
+</B>O campo &eacute; gerado autom&aacute;tico. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Descri&ccedil;&atilde;o:</B></SPAN></I><B>
+</B><SPAN STYLE="font-weight: medium">Preencher</SPAN><FONT SIZE=3><SPAN STYLE="font-weight: medium">
+o nome do local da comarca do Foro, obrigat&oacute;rio.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m290276e6.png" NAME="figura3" ALIGN=LEFT WIDTH=604 HEIGHT=123 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+03</FONT></P>
+<H2 CLASS="western"><A NAME="1.4.Tipo de Peti&ccedil;&atilde;o|outline"></A><A NAME="1.4.Tipo de Peti&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4221db">Tipo de Peti&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+menu &eacute; cadastrado o tipo de peti&ccedil;&atilde;o para o
+controle dos processos </SPAN></FONT>referente <FONT SIZE=3><SPAN STYLE="font-weight: medium">ao
+seu andamento no foro.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><FONT SIZE=3><SPAN STYLE="font-weight: medium">O
+sistema tr&aacute;s como padr&atilde;o dois tipos de peti&ccedil;&otilde;es:
+parcelamento e </SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-weight: medium">quita&ccedil;&atilde;o.
+</SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>O sistema n&atilde;o permite a exclus&atilde;o dos tipos
+de peti&ccedil;&atilde;o no sistema.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db4222db">Inclus&atilde;o</A></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 04</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+ O campo  &eacute; gerado autom&aacute;tico.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Descri&ccedil;&atilde;o</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o nome do tipo de peti&ccedil;&atilde;o, obrigat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m4face76c.png" NAME="figura4" ALIGN=LEFT WIDTH=604 HEIGHT=118 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+04</FONT></P>
+<H2 CLASS="western"><A NAME="1.5.Situa&ccedil;&atilde;o|outline"></A><A NAME="1.5.Situa&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1778db">Situa&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">Nesse
+menu s&atilde;o cadastradas as fases que a Inicial do Foro percorre
+dentro da institui&ccedil;&atilde;o, para melhor acompanhamento do
+setor jur&iacute;dico, permitindo ao usu&aacute;rio acompanhar o
+andamento da inicial atrav&eacute;s da consulta de inicial.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">N&atilde;o
+permite a exclus&atilde;o das situa&ccedil;&otilde;es que s&atilde;o
+padr&atilde;o do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1772db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 05</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I><SPAN STYLE="font-weight: medium">
+O campo  &eacute; gerado autom&aacute;tico. </SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Descri&ccedil;&atilde;o</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I><SPAN STYLE="font-weight: medium">
+Preencher o nome da situa&ccedil;&atilde;o, obrigat&oacute;rio.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<IMG SRC="Manual_Juridico_html_76644142.png" NAME="figura5" ALIGN=LEFT WIDTH=601 HEIGHT=120 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+05</FONT></P>
+<H1 CLASS="western"><A NAME="2.Consultas|outline"></A><A NAME="2.Consultas|outline"></A>
+Consultas</H1>
+<H2 CLASS="western"><A NAME="2.1.Geral Financeira|outline"></A><A NAME="2.1.Geral Financeira|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Geral Financeira</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">&Eacute;
+feita a consulta financeira dos d&eacute;bitos dos contribuintes, a
+descri&ccedil;&atilde;o dessa consulta est&aacute; no M&oacute;dulo
+Arrecada&ccedil;&atilde;o, conforme Figura 06 .</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_2f6f69a1.png" NAME="figura6" ALIGN=LEFT WIDTH=605 HEIGHT=192 BORDER=0><BR CLEAR=LEFT>Figura
+06</P>
+<H2 CLASS="western"><A NAME="2.2.Certid&atilde;o|outline"></A><A NAME="2.2.Certid&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1821db">Certid&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-weight: medium">
+Gera uma consulta da(s) certid&atilde;o(s) selecionadas nos filtros.
+Na consulta mostra todos os dados da certid&atilde;o.</P>
+<P CLASS="western" STYLE="text-indent: 1.94cm; font-weight: medium">Descri&ccedil;&atilde;o
+dos campos abaixo e modelo da consulta na Figura 07.</P>
+<P CLASS="western"><I><SPAN STYLE="text-decoration: none"><B>	Matr&iacute;cula:</B></SPAN></I>
+Preencher o c&oacute;digo da Matr&iacute;cula ou clicar no link para
+pesquisar.</P>
+<P CLASS="western"><I><SPAN STYLE="text-decoration: none"><B>	Inscri&ccedil;&atilde;o:</B></SPAN></I>
+Preencher o c&oacute;digo da Inscri&ccedil;&atilde;o Municipal ou
+clicar no link para pesquisar.</P>
+<P CLASS="western"><I><SPAN STYLE="text-decoration: none"><B>	CGM:</B></SPAN></I>
+Preencher o c&oacute;digo do CGM ou clicar no link para pesquisar.</P>
+<P CLASS="western"><I><SPAN STYLE="text-decoration: none"><B>	Certid&atilde;o:</B></SPAN></I>
+Preencher o c&oacute;digo da Certid&atilde;o ou clicar no link para
+pesquisar.</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m3a0a0659.png" NAME="figura9" ALIGN=LEFT WIDTH=605 HEIGHT=147 BORDER=0><BR CLEAR=LEFT>Figura
+07</P>
+<H2 CLASS="western"><A NAME="2.3.Inicial|outline"></A><A NAME="2.3.Inicial|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1823db">Inicial</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Gera uma consulta da(s) Inicial(s), selecionadas nos filtros da
+consulta. Essa consulta mostra um hist&oacute;rico da situa&ccedil;&atilde;o
+dessa Inicial no sistema, com a data que foi emitida, registrada no
+foro, parcelada ou quitada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Podemos consultar as peti&ccedil;&otilde;es ativas no sistemas ou as
+que foram anuladas. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos abaixo e modelo da consulta na
+Figura 08.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo
+da Inicial</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo da inicial ou clicar no link para
+pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Processo</B></SPAN></I>:
+Preencher o c&oacute;digo de<I> </I><SPAN STYLE="font-style: normal">processo</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">
+</SPAN></SPAN>ou clicar no link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Situa&ccedil;&atilde;o</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo da situa&ccedil;&atilde;o ou clicar no link
+para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Advogado</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo do advogado respons&aacute;vel pelo(s)
+processo(s) ou clicar no link para pesquisar.</P>
+<P CLASS="western"><I><SPAN STYLE="text-decoration: none"><B>	Localiza&ccedil;&atilde;o</B></SPAN></I>:
+Preencher o c&oacute;digo de localiza&ccedil;&atilde;o do foro  ou
+clicar no link para pesquisar.</P>
+<P CLASS="western"><I><B>	Tipo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Selecionar as iniciais ativas no sistemas ou as iniciais que j&aacute;
+foram anuladas. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Data
+Inicial</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher a data inicial do per&iacute;odo da consulta da Inicial.
+Quando preencher esse campo &eacute; obrigat&oacute;rio o campo <I><B>Data
+Final</B></I>.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Data
+Final</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher data final do per&iacute;odo da consulta da Inicial. Ao
+preencher esse campo &eacute; obrigat&oacute;rio o campo <I><B>Data
+Inicial</B></I>.</P>
+<P CLASS="western"><IMG SRC="Manual_Juridico_html_m1a9c19c2.png" NAME="figura8" ALIGN=LEFT WIDTH=605 HEIGHT=207 BORDER=0><BR CLEAR=LEFT>Figura
+08</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 1.94cm">Ao consultar uma
+inicial, o sistema busca os dados como as suas certid&otilde;es e seu
+hist&oacute;rico de situa&ccedil;&atilde;o, conforme a Figura 09.</P>
+<H1 CLASS="western"><A NAME="3.Relat&oacute;rios|outline"></A><A NAME="3.Relat&oacute;rios|outline"></A>
+Relat&oacute;rios</H1>
+<H2 CLASS="western"><A NAME="3.1.Reemiss&atilde;o de Inicial|outline"></A><A NAME="3.1.Reemiss&atilde;o de Inicial|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1583db">Reemiss&atilde;o de
+Inicial</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-weight: medium">
+Emite a Inicial novamente com valores atualizados, para os casos de
+cancelamento de alguma CDA da inicial. Tamb&eacute;m reemite uma
+segunda via com os valores originais.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-weight: medium">
+A fun&ccedil;&atilde;o de pesquisa da inicial busca somente as
+iniciais ativas no sistemas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 10.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Inicial</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo de um intervalo de inicial<FONT COLOR="#0000ff"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">
+</SPAN></SPAN></FONT>ou clicar no link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Valor
+Atualizado</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:
+</SPAN></I>Atualiza os valores da inicial com a data atual do sistema
+e considera as CDAs que foram canceladas ao marcar <I><B>Sim</B></I>.
+Reemite a inicial com o valor original que foi gerada no sistema ao
+marcar <I><B>N&atilde;o</B></I>.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tamanho do Fonte:</B></I>
+Preencher o tamanho do fonte que se quer emitir uma Inicial.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Imprimir P&aacute;gina:</B></I><SPAN STYLE="font-weight: medium">
+</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+o n&uacute;mero de p&aacute;ginas na Inicial.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Juridico_html_1789269a.png" NAME="figura7" ALIGN=LEFT WIDTH=605 HEIGHT=136 BORDER=0>Figura
+10</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Na Figura 11 mostra um modelo de uma Inicial emitida no DBPortal. 
+</P>
+<H2 CLASS="western"><A NAME="3.2.Inicial|outline"></A><A NAME="3.2.Inicial|outline"></A>
+Inicial</H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Esse
+menu emite relat&oacute;rios referente ao procedimentos vinculados a
+peti&ccedil;&otilde;es no sistema, permitindo ao usu&aacute;rio
+buscar todos os dados das iniciais.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.2.1.Inicial / Data|outline"></A><A NAME="3.2.1.Inicial / Data|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3816db">Inicial / Data</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse
+relat&oacute;rio emite os dados da inicial ordenando pelo c&oacute;digo
+da inicial / data. Permite saber quantas e quais iniciais foram
+geradas dentro de um determinado per&iacute;odo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 12.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Inicial:
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o campo com o intervalo das iniciais para emiss&atilde;o. </SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Per&iacute;odo:
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o intervalo da data da inicial e final.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Tipo: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar as iniciais que possuem processo no foro ou as sem
+processo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Ativa / Anulada:
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar as iniciais ativas e anuladas no sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_m30975c4b.png" NAME="figura10" ALIGN=LEFT WIDTH=605 HEIGHT=150 BORDER=0><BR CLEAR=LEFT>Figura
+12</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">Na
+Figura 13 mostra um modelo de um relat&oacute;rio de Inicial / Data 
+emitido no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m12897b9c.png" NAME="figura11" ALIGN=LEFT WIDTH=600 HEIGHT=302 BORDER=0><BR CLEAR=LEFT>Figura
+13</P>
+<P CLASS="western" ALIGN=JUSTIFY> 
+</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.2.2.Usu&aacute;rio|outline"></A><A NAME="3.2.2.Usu&aacute;rio|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3817db">Usu&aacute;rio</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Esse
+relat&oacute;rio lista as iniciais quebrando por usu&aacute;rio e
+totalizando a quantidade de inicial por quebra.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Permite
+ter uma estat&iacute;stica dos usu&aacute;rios quanto a cria&ccedil;&atilde;o
+de iniciais no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 14.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Op&ccedil;&atilde;o:
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite</SPAN></SPAN></FONT><B><I><FONT SIZE=3>
+</FONT></I></B><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">selecionar
+se quer emitir com os dados selecionados no campo </SPAN></SPAN></FONT><I><B><FONT SIZE=3>Usu&aacute;rios.</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Tipo: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se quer emitir as iniciais com processo no foro ou sem
+processo. </SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Ativa / Anulada:
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar as iniciais ativas e anuladas no sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Ordem: </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+ordenar por Inicial, Data, Foro e Situa&ccedil;&atilde;o as iniciais.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Per&iacute;odo: </FONT><FONT SIZE=3>
+</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o intervalo da data da inicial e final.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Usu&aacute;rios:
+</FONT><FONT SIZE=3> </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar os usu&aacute;rios que se quer emitir no relat&oacute;rio.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_390a33ba.png" NAME="figura12" ALIGN=LEFT WIDTH=605 HEIGHT=296 BORDER=0><BR CLEAR=LEFT>Figura
+14   
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium">Na
+Figura 15 mostra um modelo de relat&oacute;rio de Usu&aacute;rio
+emitido no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_m69d092a.png" NAME="figura13" ALIGN=LEFT WIDTH=599 HEIGHT=340 BORDER=0><BR CLEAR=LEFT>Figura
+15</P>
+<H3 CLASS="western"><A NAME="3.2.3.Advogado|outline"></A><A NAME="3.2.3.Advogado|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3818db">Advogado</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Lista as
+iniciais quebrando por advogado e totalizando a quantidade de inicial
+por quebra.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Permite
+saber quais as iniciais est&atilde;o com os advogados no sistema,
+podendo utilizar o filtro por um per&iacute;odo especificado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm"><FONT SIZE=3><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos abaixo e modelo de cadastro conforme Figura 16</SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Op&ccedil;&atilde;o: </B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite</SPAN></SPAN></FONT><B><I><FONT SIZE=3>
+</FONT></I></B><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">selecionar
+se quer emitir com os dados selecionados o campo </SPAN></SPAN></FONT><I><B><FONT SIZE=3>Advogados.</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Quebra: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+fazer quebra no relat&oacute;rio por advogado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo: <FONT SIZE=3> </FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se quer emitir as iniciais com processo no foro ou sem
+processo. </SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Ativa / Anulada: </B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar as iniciais ativas e anuladas no sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Ordem:  </B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+ordenar por inicial, data, foro e situa&ccedil;&atilde;o das
+iniciais.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Per&iacute;odo: </B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o intervalo da data da inicial e final.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Advogados: </B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar os advogados que se quer emitir no relat&oacute;rio.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT SIZE=3>.</FONT></P>
+<P CLASS="western"><IMG SRC="Manual_Juridico_html_66cee302.png" NAME="figura14" ALIGN=LEFT WIDTH=605 HEIGHT=322 BORDER=0><BR CLEAR=LEFT>Figura
+16</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Na Figura 17 mostra um modelo de um relat&oacute;rio de Advogado
+emitido no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_127adc02.png" NAME="figura15" ALIGN=LEFT WIDTH=605 HEIGHT=368 BORDER=0><BR CLEAR=LEFT>Figura
+17</P>
+<H3 CLASS="western"><A NAME="3.2.4.Vara|outline"></A><A NAME="3.2.4.Vara|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3820db">Vara</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Esse
+relat&oacute;rio permite controlar os processos no foro, verificando
+em quais varas do foro foi distribu&iacute;do o processo. Permite
+controlar os processos no foro por per&iacute;odo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 18.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Op&ccedil;&atilde;o: </B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite</SPAN></SPAN></FONT><B><I><FONT SIZE=3>
+</FONT></I></B><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">selecionar
+se quer emitir com os dados selecionados o campo </SPAN></SPAN></FONT><I><B><FONT SIZE=3>Vara.</FONT></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Vara: </B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar os advogados que se quer emitir no relat&oacute;rio.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><FONT SIZE=3>	Per&iacute;odo:</FONT></B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o intervalo da data da inicial e final.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Juridico_html_660c971d.png" NAME="figura17" ALIGN=LEFT WIDTH=605 HEIGHT=190 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+18</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>Na Figura 19 mostra um modelo de um relat&oacute;rio de
+Vara emitido no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m7de9cc98.png" NAME="figura26" ALIGN=LEFT WIDTH=600 HEIGHT=314 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+19</FONT></P>
+<H3 CLASS="western"><A NAME="3.2.5.Movimento|outline"></A><A NAME="3.2.5.Movimento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3821db">Movimento</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse
+relat&oacute;rio o usu&aacute;rio controla o hist&oacute;rico da
+inicial no sistema, emitindo todo o movimento da inicial no sistema
+quebrando por situa&ccedil;&atilde;o. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 20.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Op&ccedil;&atilde;o: </B></I><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite</SPAN></SPAN></FONT><B><I><FONT SIZE=3>
+</FONT></I></B><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">selecionar
+se quer emitir com os dados selecionados o campo </SPAN></SPAN></FONT><I><B><FONT SIZE=3>Vara.</FONT></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Situa&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar os situa&ccedil;&atilde;o que se quer emitir no </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">relat&oacute;rio.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Sele&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar a situa&ccedil;&atilde;o atual ou qualquer situa&ccedil;&atilde;o
+da inicial.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Per&iacute;odo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o intervalo da data da inicial e final.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Tipo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se quer emitir as iniciais com processo no foro ou sem
+processo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m1630fc6.png" NAME="figura19" ALIGN=LEFT WIDTH=605 HEIGHT=191 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+20</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-weight: medium">
+A Figura 21 demostra um modelo de um relat&oacute;rio de Movimento
+emitido no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m47227d5c.png" NAME="figura20" ALIGN=LEFT WIDTH=605 HEIGHT=339 BORDER=0><BR CLEAR=LEFT>Figura
+21</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.3.Emite Peti&ccedil;&atilde;o|outline"></A><A NAME="3.3.Emite Peti&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4226db">Emite Peti&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Nesse
+menu reemite as peti&ccedil;&otilde;es enviadas ao foro referentes
+aos parcelamentos e quita&ccedil;&otilde;es das iniciais no sistema.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.3.1.Parcelada|outline"></A><A NAME="3.3.1.Parcelada|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4537db">Parcelada</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">Esse
+relat&oacute;rio permite reemitir da peti&ccedil;&atilde;o de
+parcelamento de uma  inicial do sistema,  nesse caso, quando foi
+perdida ou o juiz pede a segunda via da peti&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 22.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Peti&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo da peti&ccedil;&atilde;o ou clicar no link para
+pesquisar. </SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Juridico_html_74959eb5.png" NAME="figura21" ALIGN=LEFT WIDTH=605 HEIGHT=97 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+22</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Na Figura 23 mostra um modelo de um relat&oacute;rio de Peti&ccedil;&atilde;o
+Parcelada emitida no DBPortal.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m4e8b378c.png" NAME="figura22" ALIGN=LEFT WIDTH=605 HEIGHT=364 BORDER=0><BR CLEAR=LEFT>Figura
+23</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.3.2.Quitada|outline"></A><A NAME="3.3.2.Quitada|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4538db">Quitada</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm">Nesse
+relat&oacute;rio permite reemitir da peti&ccedil;&atilde;o de
+quita&ccedil;&atilde;o de uma  inicial do sistema,  nesse caso,
+quando foi perdida ou o juiz pede a segunda via da peti&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 24.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Peti&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo da peti&ccedil;&atilde;o ou clicar no link para
+pesquisar. </SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Juridico_html_74959eb5.png" NAME="figura23" ALIGN=LEFT WIDTH=605 HEIGHT=97 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+24</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-weight: medium">
+<FONT SIZE=3>A Figura 25 mostra um modelo de um relat&oacute;rio de
+Peti&ccedil;&atilde;o Quitada emitida no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><IMG SRC="Manual_Juridico_html_m35f2986f.png" NAME="figura24" ALIGN=LEFT WIDTH=600 HEIGHT=393 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+25</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.4.Lista de Inicial|outline"></A><A NAME="3.4.Lista de Inicial|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5089db">Lista de Inicial</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Permite
+emitir uma lista de inicial com seus dados financeiros e sua situa&ccedil;&atilde;o
+no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">&Eacute; o
+principal relat&oacute;rio do m&oacute;dulo Jur&iacute;dico, podendo
+filtrar por todas op&ccedil;&otilde;es do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 26.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	CGM: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o campo </SPAN></SPAN><B><I>CGM</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link  para pesquisar.</SPAN></SPAN><I><B> </B></I></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Situa&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o campo </SPAN></SPAN><B><I>Situa&ccedil;&atilde;o</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Per&iacute;odo:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o intervalo da data da inicial e final.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Advogado:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o campo </SPAN></SPAN><B><I>Advogado</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Vara: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o campo </SPAN></SPAN><B><I>Vara</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Ordem:  </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+ordenar por Inicial, Data, Foro e Situa&ccedil;&atilde;o as iniciais.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Tipo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se quer emitir as iniciais com processo no foro ou sem
+processo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>	Valor Corrigido:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+as iniciais da lista com os valores corrigidos at&eacute; a data
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">preenchida.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Juridico_html_m1a93be36.png" NAME="figura25" ALIGN=LEFT WIDTH=605 HEIGHT=177 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+26</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-style: normal; font-weight: medium">
+<FONT SIZE=3>A Figura 27 mostra um modelo de um relat&oacute;rio de
+Movimento emitido no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Juridico_html_m46862e91.png" NAME="figura18" ALIGN=LEFT WIDTH=599 HEIGHT=315 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+27</FONT></P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="4.Procedimentos|outline"></A><A NAME="4.Procedimentos|outline"></A>
+Procedimentos</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.1.Situa&ccedil;&atilde;o da Inicial|outline"></A><A NAME="4.1.Situa&ccedil;&atilde;o da Inicial|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1819db">Situa&ccedil;&atilde;o
+da Inicial</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Nesse procedimento s&atilde;o cadastradas as situa&ccedil;&otilde;es
+da inicial manualmente, pois algumas situa&ccedil;&otilde;es de
+iniciais s&atilde;o lan&ccedil;adas automaticamente conforme o
+procedimento executado no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+Portanto, caso alguma situa&ccedil;&atilde;o n&atilde;o vinculada a
+nenhum procedimento pode ser lan&ccedil;ada manualmente na inicial.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 28.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Inicial</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo da inicial que ser&aacute; inclu&iacute;da
+ou clicar no link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Situa&ccedil;&atilde;o</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo da <FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">situa&ccedil;&atilde;o</SPAN></SPAN></SPAN></FONT>
+ou clicar no link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Observa&ccedil;&atilde;o</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+O usu&aacute;rio pode descrever alguma observa&ccedil;&atilde;o da
+situa&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_4b188964.png" NAME="figura16" ALIGN=LEFT WIDTH=605 HEIGHT=134 BORDER=0><BR CLEAR=LEFT>Figura
+28.</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.2.Inicial|outline"></A><A NAME="4.2.Inicial|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1789db">Inicial</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse
+procedimento &eacute; cadastrado uma Inicial do Foro no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">O usu&aacute;rio
+pode cadastrar pelo menu Inclus&atilde;o ou Inclus&atilde;o
+(Intervalo).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">A Inicial &eacute;
+cadastrada atrav&eacute;s de uma CDA (certid&atilde;o de d&iacute;vida
+ativa) e ap&oacute;s &eacute; enviada ao foro, onde &eacute; gerado o
+processo de execu&ccedil;&atilde;o contra o contribuinte.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">A inicial
+para ser gerada no sistema, deve ser vinculada a um advogado e uma
+comarca (localiza&ccedil;&atilde;o do foro).</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1796db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-style: normal; font-weight: medium">
+Nesse menu o usu&aacute;rio gera um inicial para cada CDA do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-style: normal; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 29.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Matr&iacute;cula:</B></SPAN></I>
+Preencher o c&oacute;digo da Matr&iacute;cula do Im&oacute;vel ou
+clicar no link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Inscri&ccedil;&atilde;o:</B></SPAN></I>
+Preencher o c&oacute;digo da Inscri&ccedil;&atilde;o Municipal ou
+clicar no link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	CGM:</B></SPAN></I>
+Preencher o c&oacute;digo do <I><B>CGM</B></I> ou clicar no link para
+pesquisar, buscando todas as CDA referente a esse CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Certid&atilde;o
+Inicial / Final</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo inicial e final da certid&atilde;o de um
+determinado intervalo para gerar as iniciais.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Gera uma
+nova tela com as CDA(s) que foram selecionadas nos campos acima.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Todas CDA
+j&aacute; vem marcadas, e caso n&atilde;o queira incluir alguma
+CDA(s), basta desmarcar.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">No final,
+emite uma comprovante de Inicial do processo para ser enviado ao Foro
+conforme Figura 30.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_m5e4b94bb.png" NAME="figura27" ALIGN=LEFT WIDTH=605 HEIGHT=111 BORDER=0><BR CLEAR=LEFT>Figura
+29</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-decoration: none"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Advogado:</B></SPAN></I><B>
+</B><SPAN STYLE="font-weight: medium">Preencher</SPAN> o c&oacute;digo
+do advogado respons&aacute;vel pelo(s) processos ou clicar no link
+para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Localiza&ccedil;&atilde;o:</B></SPAN></I>
+Preencher o c&oacute;digo da localiza&ccedil;&atilde;o do Foro ou
+clicar no link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_48789885.png" NAME="figura28" ALIGN=LEFT WIDTH=605 HEIGHT=136 BORDER=0><BR CLEAR=LEFT>Figura
+30</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db5586db">Inclus&atilde;o
+(Intervalo)</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-style: normal; font-weight: medium">
+Nesse menu permite o usu&aacute;rio gerar uma  inicial por <I><B>CDA</B></I>
+ou uma Inicial para v&aacute;rias CDAs, caso o campo <I><B>Agrupar</B></I>
+estiver selecionado por (Matricula / Inscri&ccedil;&atilde;o) ou
+(CGM). 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 31.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Certid&atilde;o
+Inicial / Final</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo inicial e final da certid&atilde;o de um
+determinado intervalo para gerar as iniciais.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Advogado</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo do advogado respons&aacute;vel pelo
+processo ou clicar no link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	Localiza&ccedil;&atilde;o</B></SPAN></I><I><SPAN STYLE="text-decoration: none">:</SPAN></I>
+Preencher o c&oacute;digo da localiza&ccedil;&atilde;o ou clicar no
+link para pesquisar.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><SPAN STYLE="text-decoration: none">	Agrupar</SPAN>:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite</SPAN></SPAN><B><I> </I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">selecionar
+a maneira que se quer gerar as iniciais no sistema.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	Ao
+selecionar </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Matricula/Inscri&ccedil;&atilde;o</SPAN></SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ele gera uma inicial para cada matr&iacute;cula ou inscri&ccedil;&atilde;o,
+agrupando as CDAs.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	Por
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">CGM
+</SPAN></SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ele
+agrupa todas as CDAs de um CGM por inicial.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	A
+op&ccedil;&atilde;o </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nenhum
+n</SPAN></SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&atilde;o
+agrupa e gera uma inicial para cada CDA.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	Normalmente
+a op&ccedil;&atilde;o escolhida &eacute; a por  </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Matricula/Inscri&ccedil;&atilde;o,
+principalmente pelo fato do ocorrer freq&uuml;entemente casos dos
+contribuintes venderem algumas matr&iacute;culas e durante o processo
+de ajuizamente querem pagar os d&eacute;bitos referente a uma
+determinada matr&iacute;cula em separado, e, nesse caso, quando as
+peti&ccedil;&otilde;es s&atilde;o geradas por CGM, geram um
+transtorno, pois a prefeitura tem que anular/alterar uma inicial
+inteira, apenas por causa de uma parte relativa a uma matr&iacute;cula
+por exemplo.</SPAN></SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_m1ca2c013.png" NAME="figura29" ALIGN=LEFT WIDTH=605 HEIGHT=127 BORDER=0><BR CLEAR=LEFT>Figura
+31</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1793db">Altera&ccedil;&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm">Nesse
+menu permite altera&ccedil;&atilde;o  da Inicial, no(s) campo(s):
+Advogados e Localiza&ccedil;&atilde;o do Foro.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1794db">Exclus&atilde;o</A>
+</B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse menu
+permite a exclus&atilde;o da Inicial, mas apenas quando a inicial n&atilde;o
+foi cadastrada/vinculada ao c&oacute;digo do processo e/ou n&atilde;o
+foi parcelada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Essa op&ccedil;&atilde;o
+serve quando o usu&aacute;rio gera uma inicial errada e precisa
+excluir do sistema, conforme mostra a Figura 32 abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_2864ca09.png" NAME="figura33" ALIGN=LEFT WIDTH=605 HEIGHT=139 BORDER=0><BR CLEAR=LEFT>Figura
+32</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db673573db">Anula&ccedil;&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Nesse menu permite anular uma inicial.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Caso a inicial foi vinculada a um processo no foro e a um 
+parcelamento, deve ser anulada para n&atilde;o perder as informa&ccedil;&otilde;es
+referentes a essa inicial no sistema. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Ao anular uma Inicial, ela volta para CGF como uma CDA, e registra
+automaticamente uma situa&ccedil;&atilde;o com &ldquo;Inicial
+Anulada&rdquo;.</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.Processo do Foro|outline"></A><A NAME="4.3.Processo do Foro|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1798db">Processo do Foro</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>Nesse menu &eacute; cadastrado o procedimento que &eacute;
+ feito a inclus&atilde;o do n&uacute;mero dos processos no foro. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3><B>Obs:</B> Na distribui&ccedil;&atilde;o das iniciais
+no Foro &eacute; gerado o c&oacute;digo do processo e a vara no qual
+foi distribu&iacute;da.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>&Eacute; a forma de &ldquo;avisar&rdquo; ao sistema de
+que a peti&ccedil;&atilde;o foi recebida pelo Foro, e a partir desse
+momento, o sistema libera o d&eacute;bito para ser movimentado:
+pago/parcelado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos abaixo e modelo de
+cadastro conforme Figura 33.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo
+da Inicial:</B></SPAN></I> Preencher<SPAN STYLE="font-weight: medium">
+o c&oacute;digo da Inicial ou clicar no link para pesquisar.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo
+do Processo:</B></SPAN></I><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do processo distribu&iacute;do no Foro.
+Normalmente &eacute; um c&oacute;digo semelhante a:
+005/3.06.0007822-7.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo
+da Vara:</B></SPAN></I><I><SPAN STYLE="text-decoration: none">
+</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">Preencher</SPAN></SPAN><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da Vara onde foi distribu&iacute;do ou clicar no link
+para pesquisar.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_4211b4da.png" NAME="figura30" ALIGN=LEFT WIDTH=605 HEIGHT=98 BORDER=0><BR CLEAR=LEFT>Figura
+33</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1800db">Altera&ccedil;&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm">
+<FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">No
+cadastro p</SPAN></SPAN><SPAN STYLE="font-weight: medium">ermite
+alterar os campos: c&oacute;digo do processo e vara.</SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><B><A HREF="#Sum&aacute;rio1|region" NAME="db1801db"><I>Exclus&atilde;o</I></A>
+</B></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>N&atilde;o permite excluir os processos de uma Inicial
+quando ela estiver parcelada no sistema.</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.Gera Peti&ccedil;&atilde;o|outline"></A><A NAME="4.4.Gera Peti&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2018db">Gera Peti&ccedil;&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Nesse
+menu o sistema busca todas as peti&ccedil;&otilde;es parceladas e
+quitadas no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Quando o
+usu&aacute;rio marca a inicial e clica em emitir, o sistema gera um
+c&oacute;digo de peti&ccedil;&atilde;o para essa inicial e emite um
+documento para o advogado enviar para o foro.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.1.Parcelamento|outline"></A><A NAME="4.4.1.Parcelamento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2106db">Parcelamento</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">Nesse
+menu &eacute; cadastrado uma peti&ccedil;&atilde;o de parcelamento no
+sistema ao marcar uma inicial e clicar em emitir.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">Assim o
+sistema emite um peti&ccedil;&atilde;o de parcelamento e retira da
+lista, podendo ser reemitida no menu Relat&oacute;rios &gt; Emite
+Peti&ccedil;&atilde;o &gt; Parcelamento. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o do procedimento conforme Figura
+34 abaixo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Juridico_html_18d7a737.png" NAME="figura31" ALIGN=LEFT WIDTH=605 HEIGHT=258 BORDER=0><BR CLEAR=LEFT>Figura
+34</P>
+<H3 CLASS="western"><A NAME="4.4.2.Inicial Quitada|outline"></A><A NAME="4.4.2.Inicial Quitada|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4532db">Inicial Quitada</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Nesse
+menu &eacute; cadastrado uma peti&ccedil;&atilde;o de quita&ccedil;&atilde;o
+no sistema ao marcar uma inicial e clicar em emitir.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">Assim o
+sistema emite um peti&ccedil;&atilde;o de quita&ccedil;&atilde;o e
+retira da lista, podendo ser reemitida no menu Relat&oacute;rios &gt;
+Emite Peti&ccedil;&atilde;o &gt; Quitado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-weight: medium">
+<FONT SIZE=3>Descri&ccedil;&atilde;o do procedimento conforme Figura
+35 abaixo.</FONT></P>
+<P CLASS="western"><IMG SRC="Manual_Juridico_html_cbf7a31.png" NAME="figura32" ALIGN=LEFT WIDTH=605 HEIGHT=253 BORDER=0><BR CLEAR=LEFT>Figura
+35</P>
+<UL>
+	<P CLASS="western"></P>
+</UL>
+<DIV TYPE=FOOTER>
+	<DIV ALIGN=RIGHT>
+		<TABLE WIDTH=605 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=523>
+			<COL WIDTH=66>
+			<TR VALIGN=TOP>
+				<TD WIDTH=523>
+					<P ALIGN=CENTER STYLE="background: transparent"><FONT SIZE=2 STYLE="font-size: 9pt">DBSeller
+					Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+					</FONT><FONT COLOR="#000080"><SPAN STYLE="text-decoration: none"><A HREF="http://www.dbseller.com.br/"><FONT SIZE=2 STYLE="font-size: 9pt">www.dbseller.com.br</FONT></A></SPAN></FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+					             </FONT>                                            
+					                                                       <FONT SIZE=2 STYLE="font-size: 9pt">Rua
+					General C&acirc;mara, 406/301 &ndash; Porto Alegre/RS &ndash;
+					Fone: (51) 3076-5101</FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>21</SDFIELD>
+					/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>21</SDFIELD></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

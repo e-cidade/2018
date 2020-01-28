@@ -1,0 +1,17 @@
+{
+  "erro_saldo_bancohoras"              : "Você não pode registrar mais de 24 horas para o mesmo dia.",
+  "erro_verificar_bancohoras"          : "Erro ao verificar quantidade de horas restante no dia de cadastro.",
+  "erro_cadastrar_bancohoras"          : "Erro ao incluir registro de Banco de Horas.",
+  "erro_excluir_bancohoras"            : "Erro ao excluir registro de Banco de Horas.",
+  "sucesso_excluir_bancohoras"         : "Exclusão do registro de Banco de Horas realizado com sucesso!",
+  "sucesso_cadastrar_bancohoras"       : "Inclusão do registro de Banco de Horas realizado com sucesso!",
+  "sucesso_alterar_bancohoras"         : "Alteração do registro de Banco de Horas realizado com sucesso!",
+  "preenchimento_servidor_obrigatorio" : "Deve ser selecionado um Servidor.",
+  "banco_horas_obrigatorio"            : "Deve ser selecionado pelo menos um registro de Banco de Horas.",
+  "informe_servidor"                   : "Servidor é obrigatório",
+  "informe_data"                       : "Data é obrigatório",
+  "informe_hora"                       : "Hora é obrigatório",
+  "buscando_registro_historico"        : "Buscando Histórico do Servidor. Por favor, aguarde...",
+  "confirma_exclusao"                  : "Deseja excluir o registro de Banco de Horas ?",
+  "minutos_invalidos"                  : "Número de minutos não pode ser superior a 59"
+}

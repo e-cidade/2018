@@ -1,0 +1,20 @@
+{
+  "verifique_parametros"                   : "Verificar parametros de notificação.",
+  "lista_nao_encontrada"                   : "Lista não encontrada.",
+  "erro_procurar_documento"                : "Erro ao procurar documento desta lista.",
+  "documento_nao_encontrado"               : "Não encontrou documento desta lista.",
+  "nenhum_notificacao_gerada"              : "Nenhuma notificação gerada para a lista [sLista]",
+  "problema_verificar_notificacao"         : "Problemas ao verificar notificação [$notifica]. Verifique a situação do débito.",
+  "existe_mais_de_um_tipo_debito"          : "Existe mais de um tipo de débito cadastrado para a notificação [sNotifica].",
+  "nao_existe_documento_padrao_cadastrado" : "Não existe documento padrão cadastrado.",
+  "problema_gerar_totais_anos"             : "Problemas ao gerar totais por anos. SQL: [sSqlAnos]",
+  "problema_ferar_select_recibo"           : "Problemas ao gerar select do recibo. SQL: [sSqlTipoDebito]",
+  "tipos_debitos_layout_diferentes"        : "Tipos de debitos com layout diferentes.",
+  "recibo_valor_zerado"                    : "Recibo com valor zerado.",
+  "configure_terceiro_digito"              : "Configure o terceiro digito do código de barras no cadastro do tipo de débito para este tipo de débito.",
+  "problema_gerar_totais_anos_tipos"       : "Problemas ao gerar totais por anos dos tipos selecionados! SQL: [sSqlAnosTipos]",
+  "problema_gerar_parcelas"                : "Problemas ao gerar parcelas. SQL: [sSqlAnosTipos]",
+  "problema_gerar_totais_ano_tipo_debito"  : "Problemas ao gerar totais por anos dos tipos selecionados. SQL: [sSqlAnosTiposDeb]",
+  "problema_gerar_totais_anos_historicos"  : "Problemas ao gerar totais por anos dos historicos. SQL: [sSqlAnosHistoricoDebitos]",
+  "sem_documento_cadastrado"               : "Sem documento cadastrado para endereço de entrega de notificação. Erro: [sErro]"
+}

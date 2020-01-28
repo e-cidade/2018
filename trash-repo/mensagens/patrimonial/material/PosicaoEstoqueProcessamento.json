@@ -1,0 +1,11 @@
+{
+  "erro_busca_processamento": "Não foi possível encontrar o processamento.",
+  "erro_salvar_processamento": "Não foi possível salvar o processamento.",
+  "erro_carregar_posicaoestoque": "Não foi possível carregar as posições do estoque vinculadas ao processamento.",
+  "erro_verificar_movimentacaonegativa" : "Não foi possível incluir no log de movimentação negativa.",
+  "busca_materiais" : "Não foi possível buscar os materiais cadastrados no sistema.",
+  "movimentacao_nao_permitida" : "Tipo de movimentação não permitida para fechamento do material. Contate o suporte.",
+  "erro_buscar_posicoes": "Não foi possível localizar as posições vinculadas ao processamento.",
+  "erro_excluir_vinculo_posicao": "Não foi possível excluir o vínculo da posição com as movimentações.",
+  "erro_excluir_posicoes": "Não foi possível excluir as posições vinculadas ao processamento."
+}

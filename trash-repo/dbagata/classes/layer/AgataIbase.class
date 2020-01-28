@@ -1,0 +1,145 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+
+/** AgataIbase
+ *  Agata Driver for Interbase/Firebird
+ */
+class AgataIbase
+{
+
+    /** Function Connect
+     *  Connects to a Database
+     */
+    function Connect($host, $database, $user, $pass)
+    {
+        $dbhost = $host ?
+                  ($host . ':/' . $database) :
+                  $database;
+
+        $conn = ibase_connect($dbhost, $user, $pass);
+        if (!$conn)
+        {
+            return $this->RaiseError();
+        }
+        $this->connection = $conn;
+        return true;
+    }
+
+    /** Function Disconnect
+     *  Disconnects a Database
+     */
+    function Disconnect()
+    {
+        $ret = ibase_close($this->connection);
+        $this->connection = null;
+        return $ret;
+    }
+
+    /** Function Query
+     *  Run a Query
+     */
+    function Query($query)
+    {
+        $result = ibase_query($this->connection, $query);
+        if (!$result)
+        {
+            return $this->RaiseError();
+        }
+        return $result;
+    }
+
+    /** Function FetchRow
+     *  Fetch a Row and returns as an array.
+     */
+    function FetchRow($result)
+    {
+        $ar = ibase_fetch_row($result);
+        return $ar;
+    }
+
+    /** Function FreeResult
+     *  Free the Database result
+     */
+    function FreeResult()
+    {
+        if (is_resource($result)) {
+            return ibase_free_result($result);
+        }
+        return true;
+    }
+
+    function FreeQuery($query)
+    {
+        ibase_free_query($query);
+        return true;
+    }
+
+    /** Function NumCols
+     *  Returns the number of columns of a query
+     */
+    function NumCols($result)
+    {
+        $cols = ibase_num_fields($result);
+        if (!$cols) {
+            return $this->RaiseError();
+        }
+        return $cols;
+    }
+
+    /** Function RaiseError
+     *  Returns an AgataError Object
+     */
+    function RaiseError()
+    {
+        return new AgataError(ibase_errmsg());
+    }
+
+    /** Function Properties
+     *  Returns the Query Information
+     */
+    function Properties($result)
+    {
+        $id = $result;
+        if (empty($id))
+        {
+            return $this->RaiseError();
+        }
+
+        $count = ibase_num_fields($id);
+
+        for ($i=0; $i<$count; $i++)
+        {
+            $info = ibase_field_info($id, $i);
+            $res[$i]['name']  = $info['name'];
+            $res[$i]['type']  = $info['type'];
+            $res[$i]['len']   = $info['length'];
+        }
+        return $res;
+    }
+}
+?>

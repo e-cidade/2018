@@ -1,0 +1,1791 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="sandro">
+	<META NAME="CREATED" CONTENT="20080308;10444600">
+	<META NAME="CHANGED" CONTENT="20090126;17254500">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 1.99cm; margin-top: 2cm; margin-bottom: 1.1cm }
+		P { margin-bottom: 0.21cm; text-align: justify }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "HG Mincho Light J"; font-size: 16pt }
+		H1.ctl { font-family: "Lucidasans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Helvetica"; font-size: 14pt; so-language: pt-BR; font-style: italic }
+		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		H3 { margin-bottom: 0.21cm }
+		H3.western { font-family: "Helvetica"; so-language: pt-BR }
+		H3.cjk { font-family: "HG Mincho Light J" }
+		H4 { margin-bottom: 0.21cm }
+		H4.western { font-family: "Helvetica"; font-size: 11pt; so-language: pt-BR; font-style: italic }
+		H4.cjk { font-family: "HG Mincho Light J"; font-size: 11pt; font-style: italic }
+		H4.ctl { font-size: 11pt; font-style: italic }
+		TD P { margin-bottom: 0cm }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR">
+		<P ALIGN=LEFT STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.Cadastro|outline">Cadastro	4</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.Geral do munic&iacute;pio - CGM|outline">Geral
+	do munic&iacute;pio - CGM	4</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.1.Inclus&atilde;o|outline">Inclus&atilde;o	4</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.3.Exclus&atilde;o |outline">Exclus&atilde;o
+		6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.Logradouro|outline">Logradouro	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.1.inclus&atilde;o|outline">inclus&atilde;o	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.3.Exclus&atilde;o|outline">Exclus&atilde;o	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.Localidade|outline">Localidade	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.1.Inclus&atilde;o|outline">Inclus&atilde;o	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.3.Exclus&atilde;o|outline">Exclus&atilde;o	6</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.Estados|outline">Estados	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.1.Inclus&atilde;o|outline">Inclus&atilde;o	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.3.exclus&atilde;o|outline">exclus&atilde;o	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.5.CEP|outline">CEP	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.5.1.Inclus&atilde;o|outline">Inclus&atilde;o	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.5.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.5.3.Exclus&atilde;o|outline">Exclus&atilde;o	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.6.Tipo de Processo|outline">Tipo
+	de Processo	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.6.1.Inclus&atilde;o|outline">Inclus&atilde;o	7</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.6.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	8</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.6.3.Exclus&atilde;o|outline">Exclus&atilde;o	8</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.7.Tipo de receita/Processo|outline">Tipo
+	de receita/Processo	8</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.7.1.Inclus&atilde;o|outline">Inclus&atilde;o	8</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.7.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	9</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.7.3.Exclus&atilde;o|outline">Exclus&atilde;o	9</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.8.Documento|outline">Documento	9</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.8.1.Inclus&atilde;o|outline">Inclus&atilde;o	9</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.8.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	9</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.8.3.Exclus&atilde;o|outline">Exclus&atilde;o	9</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.9.Documento / Tipo|outline">Documento
+	/ Tipo	9</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.10.Vari&aacute;veis|outline">Vari&aacute;veis	10</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.10.1.Inclus&atilde;o|outline">Inclus&atilde;o	10</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.10.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	10</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.10.3.Exclus&atilde;o|outline">Exclus&atilde;o	11</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.Consultas|outline">Consultas	11</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.Geral Financeira|outline">Geral
+	Financeira	11</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.2.Processo|outline">Processo	11</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.3.CGM|outline">CGM	12</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.Relat&oacute;rios|outline">Relat&oacute;rios	13</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.1.Vari&aacute;veis|outline">Vari&aacute;veis	13</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.2.Documentos|outline">Documentos	14</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.3.Tipos de Processos|outline">Tipos
+	de Processos	14</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.4.Documentos / Tipos de Processos|outline">Documentos
+	/ Tipos de Processos	15</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.5.Tipos de Processos com Receita|outline">Tipos
+	de Processos com Receita	16</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.6.Relat&oacute;rio de Andamento Padr&atilde;o|outline">Relat&oacute;rio
+	de Andamento Padr&atilde;o	17</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.7.Relat&oacute;rio de Processos / Departamentos|outline">Relat&oacute;rio
+	de Processos / Departamentos	17</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.7.1.Inclus&atilde;o|outline">Inclus&atilde;o	17</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.8.CGMs Corretos|outline">CGMs
+	Corretos	18</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.9.Relat&oacute;rio de Processos / CGM|outline">Relat&oacute;rio
+	de Processos / CGM	19</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.9.1.Inclus&atilde;o|outline">Inclus&atilde;o	19</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.10.Figura 31|outline">Figura
+	31	20</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><A HREF="#3.1.11. Duplos no CGM|outline">
+	<FONT FACE="Times">Duplos no CGM	20</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.11.1.Inclus&atilde;o|outline">Inclus&atilde;o	20</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.12.Reimpress&atilde;o da Capa de Processo|outline">Reimpress&atilde;o
+	da Capa de Processo	21</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.13.Reimpress&atilde;o do Termo de Transfer&ecirc;ncia|outline">Reimpress&atilde;o
+	do Termo de Transfer&ecirc;ncia	22</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.14.Processos|outline">Processos	23</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.15.Consist&ecirc;ncia de CPF/CNPJ|outline">Consist&ecirc;ncia
+	de CPF/CNPJ	26</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.16.Etiquetas para Processos|outline">Etiquetas
+	para Processos	26</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><A HREF="#3.1.17. Processos por Departamento|outline">
+	<FONT FACE="Times">Processos por Departamento	27</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.18.CGMs Inclu&iacute;dos / Alterados|outline">CGMs
+	Inclu&iacute;dos / Alterados	28</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.Procedimentos|outline">Procedimentos	29</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.CGM Duplos|outline">CGM
+	Duplos	29</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.1.Inclus&atilde;o|outline">Inclus&atilde;o	29</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.2.Exclus&atilde;o|outline">Exclus&atilde;o	29</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.Processo|outline">Processo	30</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.1.Inclus&atilde;o|outline">Inclus&atilde;o	30</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	32</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.Tr&acirc;mite Inicial|outline">Tr&acirc;mite
+	Inicial	32</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.Despacho|outline">Despacho	33</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.1.inclus&atilde;o|outline">inclus&atilde;o	33</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.2.Alterar|outline">Alterar	34</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.Transfer&ecirc;ncias|outline">Transfer&ecirc;ncias	35</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.1.Inclus&atilde;o|outline">Inclus&atilde;o	35</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	36</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.3.Exclus&atilde;o|outline">Exclus&atilde;o	36</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.4.Cancelamento Parcial|outline">Cancelamento
+	Parcial	36</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.6.Recebimento|outline">Recebimento	37</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.Arquivamento|outline">Arquivamento	38</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.2.Inclus&atilde;o|outline">Inclus&atilde;o	38</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.3.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	39</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.4.Lote|outline">Lote	39</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.8.Desarquivamento|outline">Desarquivamento	40</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.9.Andamento Padr&atilde;o|outline">Andamento
+	Padr&atilde;o	40</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.10.Recibo de Receita|outline">Recibo
+	de Receita	41</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.11.Cancela Recibo|outline">Cancela
+	Recibo	42</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.12.Tr&acirc;mite Interno|outline">Tr&acirc;mite
+	Interno	42</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.13.Despacho|outline">Despacho	42</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.14.Transfer&ecirc;ncia|outline">Transfer&ecirc;ncia	43</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.15.Cancela Transfer&ecirc;ncia|outline">Cancela
+	Transfer&ecirc;ncia	44</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.16.Recebimento|outline">Recebimento	44</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.17.1.Libera CNPJ &ndash; Jur&iacute;dica (menu utilizado apenas para permiss&atilde;o)|outline">Libera
+	CNPJ &ndash; Jur&iacute;dica (menu utilizado apenas para
+	permiss&atilde;o)	45</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.17.2.Libera CPF - F&iacute;sica (menu utilizado apenas para permiss&atilde;o)|outline">Libera
+	CPF - F&iacute;sica (menu utilizado apenas para permiss&atilde;o)	45</A></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.18.Par&acirc;metros|outline">Par&acirc;metros	45</A></FONT></P>
+</DIV>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; text-decoration: none; page-break-after: avoid">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-decoration: none"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-before: always; page-break-after: avoid">
+<FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO PROTOCOLO</B></FONT></FONT></P>
+<H1 CLASS="western"><A NAME="1.Cadastro|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db29db">Cadastro</A></H1>
+<H2 CLASS="western" STYLE="text-decoration: none"><A NAME="1.1.Geral do munic&iacute;pio - CGM|outline"></A>
+<FONT SIZE=3><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1387db">Geral
+do munic&iacute;pio - CGM</A></B></I></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Neste
+item ser&aacute; cadastrado o</SPAN></SPAN></SPAN></FONT> CGM
+(Cadastro Geral do Munic&iacute;pio), que tem como finalidade
+principal gerar um cadastro &uacute;nico de pessoas f&iacute;sicas e
+jur&iacute;dicas, possibilitando a total integra&ccedil;&atilde;o das
+informa&ccedil;&otilde;es em todos os m&oacute;dulos do sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo de cadastro conforme
+Figura 01.</P>
+<H3 CLASS="western"><A NAME="1.1.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db1305db">Inclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Para incluir um novo CGM deve-se
+colocar o CPF/CNPJ da pessoa e informar se este CGM &eacute; do
+munic&iacute;pio ou n&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Protocolo_html_16bde671.png" NAME="graphics1" ALIGN=LEFT WIDTH=603 HEIGHT=70 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+01</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>Ap&oacute;s confirmar, o sistema
+abrir&aacute; a p&aacute;gina de cadastros da Figura 02.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Se o CGM n&atilde;o pertencer ao munic&iacute;pio, o
+sistema abrir&aacute; uma p&aacute;gina diferente, conforme mostra a
+Figura 03.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Protocolo_html_m51a027f9.png" NAME="graphics2" ALIGN=LEFT WIDTH=602 HEIGHT=230 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+02</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Protocolo_html_m64b04db5.png" NAME="graphics3" ALIGN=LEFT WIDTH=595 HEIGHT=223 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+03</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se o CGM &eacute; de Pessoa F&iacute;sica ou Jur&iacute;dica.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>CPF / CNPJ:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o n&uacute;mero do documento referente ao tipo informado. Existe um
+par&acirc;metro que controla se o sistema deve permitir incluir o CGM
+com CPF/CNPJ zerado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>CI:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o n&uacute;mero da carteira de identidade, n&atilde;o &eacute;
+obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>CGM</B></I> <I><B>(Munic&iacute;pio):
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Deve
+ser selecionado se a pessoa &eacute; do munic&iacute;pio ou n&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>CGM: </B></I><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado automaticamente.</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Nome / Raz&atilde;o Social:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o nome completo da pessoa f&iacute;sica ou jur&iacute;dica.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Nome do Pai:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o nome completo do pai.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Nome da M&atilde;e:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o nome completo da m&atilde;e.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data de Nascimento:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data de nascimento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Estado Civil: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Deve
+ser selecionado as op&ccedil;&otilde;es: solteiro, casado, vi&uacute;vo
+ou divorciado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Sexo:</B></I> Deve ser
+selecionado a op&ccedil;&atilde;o m<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">asculino
+ou feminino.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Profiss&atilde;o: </B></I>Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o nome da profiss&atilde;o, n&atilde;o vinculada ao CNAE.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Nacionalidade: </B></I>Selecionar
+a nacionalidade <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Brasileira
+ou Estrangeira.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>CNH:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o n&uacute;mero da Carteira Nacional de Habilita&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Categoria: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+a categoria: A, B, C, D, E, AB, AC, AD ou AE.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Emiss&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+a data de emiss&atilde;o da carteira.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Primeira:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+a data da primeira habilita&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Validade:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+a data de validade da carteira.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Endere&ccedil;o Principal:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+os dados do endere&ccedil;o prim&aacute;rio. Obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western"><I><B>Endere&ccedil;o Secund&aacute;rio:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+os dados do endere&ccedil;o secund&aacute;rio. N&atilde;o
+Obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western"><I><B>Data de Cadastramento:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Gera
+autom&aacute;tico a data do cadastramento.</SPAN></SPAN></P>
+<P CLASS="western"><I><B>Data de Altera&ccedil;&atilde;o:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Gera
+autom&aacute;tico a data de altera&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western"><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.1.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1306db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+alterar todos os </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">campos
+do </SPAN></SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">cadastro.
+</SPAN></SPAN>Obs: N&atilde;o &eacute; permitido a altera&ccedil;&atilde;o
+de pessoa f&iacute;sica para jur&iacute;dica.</P>
+<P CLASS="western"><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.1.3.Exclus&atilde;o |outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db1307db">Exclus&atilde;o
+</A>
+</H3>
+<P CLASS="western">Permite a exclus&atilde;o de um CGM quando n&atilde;o
+possuir nenhuma matricula, inscri&ccedil;&atilde;o,  d&iacute;vida ou
+processo referente a esse CGM. 
+</P>
+<H2 CLASS="western"><A NAME="1.2.Logradouro|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db5717db">Logradouro</A></H2>
+<H3 CLASS="western"><A NAME="1.2.1.inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db5718db">inclus&atilde;o</A></H3>
+<P CLASS="western">Permite incluir um logradouro para utilizar no
+cadastro de CGM.</P>
+<H3 CLASS="western"><A NAME="1.2.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5719db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western">A altera&ccedil;&atilde;o de logradouro poder&aacute;
+ser feita clicando-se no bot&atilde;o &ldquo;alterar&rdquo;.</P>
+<H3 CLASS="western"><A NAME="1.2.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db5720db">Exclus&atilde;o</A></H3>
+<P CLASS="western">A exclus&atilde;o de logradouro poder&aacute; ser
+feita clicando-se no bot&atilde;o &rdquo;excluir&rdquo;.</P>
+<H2 CLASS="western"><A NAME="1.3.Localidade|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db5713db">Localidade</A></H2>
+<H3 CLASS="western"><A NAME="1.3.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db5714db">Inclus&atilde;o</A></H3>
+<P CLASS="western">Permite incluir uma cidade para ser utilizado no
+cadastro de logradouro.</P>
+<H3 CLASS="western"><A NAME="1.3.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5715db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western">A altera&ccedil;&atilde;o de uma localidade poder&aacute;
+ser feita clicando-se no sub menu &ldquo;Altera&ccedil;&atilde;o&rdquo;.</P>
+<H3 CLASS="western"><A NAME="1.3.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db5716db">Exclus&atilde;o</A></H3>
+<P CLASS="western">A exclus&atilde;o de uma localidade poder&aacute;
+ser feita clicando-se no sub menu &ldquo;Excluir&rdquo;.</P>
+<H2 CLASS="western"><A NAME="1.4.Estados|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2290db">Estados</A></H2>
+<H3 CLASS="western"><A NAME="1.4.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2291db">Inclus&atilde;o</A></H3>
+<P CLASS="western">Permite incluir um Estado para ser utilizado no
+cadastro de localidade.</P>
+<H3 CLASS="western"><A NAME="1.4.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2292db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western">A altera&ccedil;&atilde;o de um Estado poder&aacute;
+ser feita clicando-se no sub menu &ldquo;altera&ccedil;&atilde;o&rdquo;.</P>
+<H3 CLASS="western"><A NAME="1.4.3.exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2293db">exclus&atilde;o</A></H3>
+<P CLASS="western">A exclus&atilde;o de um Estado poder&aacute; ser
+feita clicando-se no sub menu &ldquo;exclus&atilde;o&rdquo;.</P>
+<H2 CLASS="western"><A NAME="1.5.CEP|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2283db">CEP</A></H2>
+<H3 CLASS="western"><A NAME="1.5.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2284db">Inclus&atilde;o</A></H3>
+<P CLASS="western">Permite criar um CEP ( c&oacute;digo de
+endera&ccedil;amento postal ) para um novo logradouro que por ventura
+n&atilde;o conste no cadastro de logradouro.</P>
+<H3 CLASS="western"><A NAME="1.5.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2285db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western">A altera&ccedil;&atilde;o do CEP poder&aacute; ser
+poss&iacute;vel clicando-se no sub menu &ldquo;altera&ccedil;&atilde;o&rdquo;.</P>
+<H3 CLASS="western"><A NAME="1.5.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2286db">Exclus&atilde;o</A></H3>
+<P CLASS="western">A exclus&atilde;o do CEP poder&aacute; ser
+poss&iacute;vel clicando-se no sub menu &ldquo; exclus&atilde;o&rdquo;.</P>
+<H2 CLASS="western"><A NAME="1.6.Tipo de Processo|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db1697db">Tipo
+de Processo</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Nesse menu s&atilde;o cadastrados os tipos de processos
+para o controle dos processos de protocolo. N&atilde;o pode ser
+criado um processo no sistema sem um tipo de processo e o mesmo deve
+estar vinculado a um andamento padr&atilde;o. &Eacute; no tipo que
+s&atilde;o vinculados os documentos a as taxas do protocolo. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo de cadastro
+conforme Figura 04.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<H3 CLASS="western"><A NAME="1.6.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db1698db">Inclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado automaticamente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o nome do Tipo de Processo, como por exemplo: Abertura de Rua, Abaixo
+Assinado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Data Final:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+a data de validade para esse Tipo de Processo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m48116ded.png" NAME="graphics4" ALIGN=LEFT WIDTH=605 HEIGHT=90 BORDER=0><BR CLEAR=LEFT>Figura
+04</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.6.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1699db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Permite alterar no cadastro no nome do tipo, e pode ser
+alterado/retirado a data limite.</P>
+<H3 CLASS="western"><A NAME="1.6.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db1700db">Exclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Permite a exclus&atilde;o do tipo,
+quando n&atilde;o estiver vinculado a nenhum processo, documento ou
+taxa.</P>
+<H2 CLASS="western"><A NAME="1.7.Tipo de receita/Processo|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1706db">Tipo de
+receita/Processo</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu s&atilde;o cadastradas
+todas as receitas vinculadas a um tipo de processo, com o valor da
+taxa a ser cobrada na cria&ccedil;&atilde;o de um novo processo,
+conforme mostra a Figura 05.</P>
+<H3 CLASS="western"><A NAME="1.7.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db1707db"><FONT SIZE=3><SPAN STYLE="text-decoration: none">Inclus&atilde;</SPAN></FONT></A><A HREF="#Sum&aacute;rio1|region" NAME="db1707db">o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de Processo:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do t</SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ipo
+de processo</SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para abrir a fun&ccedil;&atilde;o de pesquisa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><SPAN STYLE="text-decoration: none"><B>Receita:
+</B></SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Preencher</SPAN></SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da r</SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">eceita</SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para abrir a fun&ccedil;&atilde;o de pesquisa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Valor da Taxa: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o valor da taxa cobrada por tipo de processo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Protocolo_html_m4b995623.png" NAME="graphics5" ALIGN=LEFT WIDTH=605 HEIGHT=86 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+05</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H3 CLASS="western"><A NAME="1.7.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1708db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium">Permite
+altera&ccedil;&atilde;o dos campos Receita e Valor da Taxa.</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.7.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db1709db">Exclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium">Permite
+a exclus&atilde;o, quando n&atilde;o estiver vinculado a nenhum
+processo.</P>
+<P CLASS="western" STYLE="text-decoration: none"><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="1.8.Documento|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2148db">Documento</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu s&atilde;o cadastrados os
+documentos que ser&atilde;o solicitados na inclus&atilde;o de um
+processo, vinculado ao tipo do processo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos do cadastro abaixo,
+conforme Figura 06.</FONT></P>
+<H3 CLASS="western"><A NAME="1.8.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2149db">Inclus&atilde;o</A></H3>
+<P CLASS="western"><I><B>C&oacute;digo:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado automaticamente.</SPAN></SPAN></P>
+<P CLASS="western"><I><B>Descri&ccedil;&atilde;o:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o nome do documento.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><IMG SRC="Manual_Protocolo_html_m7dd0ba83.png" NAME="graphics6" ALIGN=LEFT WIDTH=596 HEIGHT=66 BORDER=0><BR CLEAR=LEFT>Figura
+06</P>
+<P CLASS="western"><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.8.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2150db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium">Permite
+altera&ccedil;&atilde;o dos campo Descri&ccedil;&atilde;o.</P>
+<H3 CLASS="western"><A NAME="1.8.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2151db">Exclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium">Permite
+a exclus&atilde;o, quando o registro n&atilde;o estiver vinculado a
+nenhum processo.</P>
+<H2 CLASS="western"><A NAME="1.9.Documento / Tipo|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2152db">Documento
+/ Tipo</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu s&atilde;o cadastrados
+v&aacute;rios documentos referentes a um tipo de processo. S&atilde;o
+a rela&ccedil;&atilde;o dos documentos solicitados para abertura de
+um processo na prefeitura.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos do cadastro abaixo,
+conforme Figura 07.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de Processo:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do t</SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ipo
+de processo</SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link &ldquo;Tipo de Processo</SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&rdquo;,
+para abrir/acessar a fun&ccedil;&atilde;o de pesquisa.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Documento:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do documento ou clicar no link &ldquo;Documento&rdquo;,
+para abrir/acessar a fun&ccedil;&atilde;o de pesquisa. Se este tipo
+de processo solicitar mais de um documento, basta clicar no link e
+selecionar o mesmo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Protocolo_html_209c01bb.png" NAME="graphics7" ALIGN=LEFT WIDTH=600 HEIGHT=112 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+07</FONT></P>
+<H2 CLASS="western"><A NAME="1.10.Vari&aacute;veis|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2144db">Vari&aacute;veis</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu s&atilde;o cadastrados os
+campos das tabelas do sistema como vari&aacute;veis para o tipo de
+processo. Ao escolher um tipo de processo na inclus&atilde;o de um
+processo, o sistema busca os campos cadastrados nesta rotina na tela
+principal do processo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos do cadastro abaixo,
+conforme Figura 08.</FONT></P>
+<H3 CLASS="western"><A NAME="1.10.1.Inclus&atilde;o|outline"></A><FONT SIZE=3><A HREF="#Sum&aacute;rio1|region" NAME="db2145db">Inclus&atilde;o</A></FONT></H3>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Tipo de Processo:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do t</SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ipo
+de processo</SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Campos:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo dos c</SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ampos</SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar. S&atilde;o os campos das </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">tabelas
+do sistema que podem ser inseridos no processo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_73d018c4.png" NAME="figura5" ALIGN=LEFT WIDTH=605 HEIGHT=109 BORDER=0><BR CLEAR=LEFT>Figura
+08</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.10.2.Altera&ccedil;&atilde;o|outline"></A>
+<FONT SIZE=3><A HREF="#Sum&aacute;rio1|region" NAME="db2146db">Altera&ccedil;&atilde;o</A></FONT></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Permite altera&ccedil;&atilde;o dos
+dados nos campos.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.10.3.Exclus&atilde;o|outline"></A><FONT SIZE=3><A HREF="#Sum&aacute;rio1|region" NAME="db2147db">Exclus&atilde;o</A></FONT></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Permite a exclus&atilde;o, quando
+n&atilde;o estiver vinculado a nenhum processo.</P>
+<H1 CLASS="western"><A NAME="2.Consultas|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db31db">Consultas</A></H1>
+<H2 CLASS="western"><A NAME="2.1.Geral Financeira|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db56db">Geral
+Financeira</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>&Eacute; feita a consulta
+financeira dos d&eacute;bitos dos contribuintes. A descri&ccedil;&atilde;o
+dessa consulta est&aacute; no M&oacute;dulo Arrecada&ccedil;&atilde;o,
+conforme Figura 09.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Protocolo_html_2f6f69a1.png" NAME="figura38" ALIGN=LEFT WIDTH=605 HEIGHT=192 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT SIZE=3>Figura
+09</FONT></FONT></P>
+<H2 CLASS="western"><A NAME="2.2.Processo|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4114db">Processo</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse menu a consulta do processo &eacute;
+feita pelo c&oacute;digo do processo e o titular.</P>
+<P CLASS="western" ALIGN=JUSTIFY>O sistema ir&aacute; gerar/mostrar
+todos dados do processo e seus andamentos dentro da institui&ccedil;&atilde;o,
+onde o usu&aacute;rio possui uma vis&atilde;o completa do andamento
+do processo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos do cadastro abaixo,
+conforme Figura 10. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-decoration: none"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Protocolo_html_m584d545c.png" NAME="figura36" ALIGN=LEFT WIDTH=605 HEIGHT=112 BORDER=0><BR CLEAR=LEFT>Figura
+10</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western">Ao clicar no bot&atilde;o [consultar]. o sistema
+exibe a tela com a Figura 11 abaixo, podendo ser emitido um relat&oacute;rio
+da consulta para demonstra&ccedil;&atilde;o dos andamentos.</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Protocolo_html_5ff015c.png" NAME="figura37" ALIGN=LEFT WIDTH=594 HEIGHT=225 BORDER=0><BR CLEAR=LEFT>Figura
+11</P>
+<H2 CLASS="western"><A NAME="2.3.CGM|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4249db">CGM</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+menu &eacute; consultado o Cadastro </SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Geral
+Municipal (CGM), onde o sistema exibe uma tela de consulta, onde
+ser&atilde;o informados os dados do contribuinte a ser pesquisado.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ele</SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+gera a ficha cadastral do contribuinte com a op&ccedil;&atilde;o de
+imprimir.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos do cadastro abaixo,
+conforme Figura 12 e 13.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m320b1082.png" NAME="figura39" ALIGN=LEFT WIDTH=605 HEIGHT=100 BORDER=0><BR CLEAR=LEFT>Figura
+12</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m3d793fb5.png" NAME="figura40" ALIGN=LEFT WIDTH=598 HEIGHT=262 BORDER=0><BR CLEAR=LEFT>Figura
+13</P>
+<H1 CLASS="western"><A NAME="3.Relat&oacute;rios|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db30db">Relat&oacute;rios</A></H1>
+<H2 CLASS="western"></H2>
+<H3 CLASS="western"><A NAME="3.1.1.Vari&aacute;veis|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db3806db">Vari&aacute;veis</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Emite um
+relat&oacute;rio cadastral das vari&aacute;veis do m&oacute;dulo
+protocolo, ao clicar no bot&atilde;o processar.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 14.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_18bcb3f6.png" NAME="figura42" ALIGN=LEFT WIDTH=605 HEIGHT=106 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+14</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Na Figura 15 mostra um modelo do relat&oacute;rio
+cadastrais das Vari&aacute;veis.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m361120c0.png" NAME="figura43" ALIGN=LEFT WIDTH=605 HEIGHT=183 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+15</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.2.Documentos|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db3807db">Documentos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse relat&oacute;rio
+emite um relat&oacute;rio cadastral dos documentos, permitindo
+ordenar por ordem alfab&eacute;tica e num&eacute;rica.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 16.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m4ca0b261.png" NAME="figura44" ALIGN=LEFT WIDTH=605 HEIGHT=103 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Figura 16</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 17 mostra um modelo do relat&oacute;rio
+cadastrais dos documentos.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_148d909.png" NAME="figura45" ALIGN=LEFT WIDTH=605 HEIGHT=187 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+17</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.3.Tipos de Processos|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db3812db">Tipos
+de Processos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Esse relat&oacute;rio emite os
+cadastros dos tipos de processos do sistema, permitindo ordenar por
+descri&ccedil;&atilde;o ou c&oacute;digo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 18.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY>  
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_34546d2d.png" NAME="figura46" ALIGN=LEFT WIDTH=605 HEIGHT=95 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+18</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 19 mostra um modelo do relat&oacute;rio
+cadastrais de tipos de processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m344ce513.png" NAME="figura47" ALIGN=LEFT WIDTH=599 HEIGHT=266 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+19</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.4.Documentos / Tipos de Processos|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3883db">Documentos / Tipos
+de Processos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse menu
+emite o relat&oacute;rio cadastral dos documentos / tipos de
+processo. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 20.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Tipo de
+processo:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do processo ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Op&ccedil;&otilde;es:</B></I>
+Permite selecionar as op&ccedil;&otilde;es [c<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">om]
+ou [sem] os tipos de processo selecionados.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Ordem:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+podemos escolher entre duas op&ccedil;&otilde;es: por c&oacute;digo
+ou descri&ccedil;&atilde;o do tipo de processo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m32564093.png" NAME="figura48" ALIGN=LEFT WIDTH=600 HEIGHT=236 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+20</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 21 mostra um modelo do relat&oacute;rio
+cadastral de documentos / tipos de processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m26d898ae.png" NAME="figura49" ALIGN=LEFT WIDTH=595 HEIGHT=325 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+21</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.5.Tipos de Processos com Receita|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db437508db">Tipos de
+Processos com Receita</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse menu
+emite o relat&oacute;rio cadastral do tipo de processo / receita. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 22.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_7c5b0b41.png" NAME="figura50" ALIGN=LEFT WIDTH=605 HEIGHT=109 BORDER=0><BR CLEAR=LEFT>Figura
+22</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 23 mostra um modelo do relat&oacute;rio
+cadastrais de tipo de processo / receita.</FONT></P>
+<P CLASS="western"><IMG SRC="Manual_Protocolo_html_4c291e89.png" NAME="figura51" ALIGN=LEFT WIDTH=605 HEIGHT=214 BORDER=0><BR CLEAR=LEFT>Figura
+23</P>
+<H3 CLASS="western"><A NAME="3.1.6.Relat&oacute;rio de Andamento Padr&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2160db">Relat&oacute;rio de
+Andamento Padr&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Esse
+relat&oacute;rio gera um lista de todos os t</SPAN></SPAN><SPAN STYLE="font-weight: medium"><SPAN STYLE="background: transparent">ipos
+de processo</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+que possuem andamento padr&atilde;o no sistema, com os dias de
+perman&ecirc;ncia em cada departamento para despacho.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Devemos clicar no bot&atilde;o [visualizar]
+para emitir o relat&oacute;rio.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 24.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m1e572020.png" NAME="figura3" ALIGN=LEFT WIDTH=605 HEIGHT=80 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+24</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 25 mostra um modelo do relat&oacute;rio
+de Andamento Padr&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_8321b98.png" NAME="figura11" ALIGN=LEFT WIDTH=595 HEIGHT=296 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+25</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.7.Relat&oacute;rio de Processos / Departamentos|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3781db">Relat&oacute;rio de
+Processos / Departamentos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse relat&oacute;rio
+gera os processos por departamentos, ordenando por processo ou CGM,
+com os iniciados no departamento ou &uacute;ltimo andamento no
+departamento.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 26.</FONT></FONT></P>
+<H4 CLASS="western"><A NAME="3.1.7.1.Inclus&atilde;o|outline"></A>Inclus&atilde;o</H4>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Departamentos:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do d</SPAN></SPAN><SPAN STYLE="font-weight: medium">epartamento</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Per&iacute;odo:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+as datas iniciais e finais do per&iacute;odo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Ordem:</B></I>
+Permite ordenar por p<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">rocesso
+ou CGM.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Sele&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar o processo com a op&ccedil;&atilde;o [Iniciados no
+departamento] que busca apenas os processos criados no departamento
+ou a op&ccedil;&atilde;o [Ultimo Andamento no Departamento], que
+busca apenas os processos que est&atilde;o com o ultimo andamento
+(despacho) nesse departamento.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_245eacbd.png" NAME="figura15" ALIGN=LEFT WIDTH=595 HEIGHT=175 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+26</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 27 mostra um modelo do relat&oacute;rio
+dos Processos / Departamento.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m3f03b1be.png" NAME="figura23" ALIGN=LEFT WIDTH=605 HEIGHT=245 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+27</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.8.CGMs Corretos|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db3786db">CGMs
+Corretos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse relat&oacute;rio
+emite um relat&oacute;rio dos CGMs cujos duplos foram processados e
+est&atilde;o corretos e os que foram identificados e n&atilde;o
+&ldquo;juntados&rdquo;.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 28.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Ordem:</B></I>
+Permite ordenar por <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">CGM
+ou nomes.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Processados:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar os  Todos, Sim ou N&atilde;o.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Logs:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Marcar
+para emitir os logs do sistema.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m2f22cbd7.png" NAME="figura27" ALIGN=LEFT WIDTH=605 HEIGHT=124 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+28</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 29 mostra um modelo do relat&oacute;rio
+de CGM Correto.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_50018342.png" NAME="figura29" ALIGN=LEFT WIDTH=605 HEIGHT=248 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+29</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.9.Relat&oacute;rio de Processos / CGM|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3791db">Relat&oacute;rio de
+Processos / CGM</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse menu gera
+um relat&oacute;rio sint&eacute;tico ou anal&iacute;tico dos
+processos / CGM.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">No sint&eacute;tico
+emite um resumo por CGM dos processos.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">No anal&iacute;tico
+emite um resumo completo com todos campos.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 30.</FONT></FONT></P>
+<H4 CLASS="western"><A NAME="3.1.9.1.Inclus&atilde;o|outline"></A>Inclus&atilde;o</H4>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>CGM:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do </SPAN></SPAN><SPAN STYLE="font-weight: medium">
+CGM</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Per&iacute;odo:
+</B></I>Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+as datas iniciais e finais do per&iacute;odo de inclus&atilde;o dos
+registros.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Tipo:</B></I>
+Permite selecionar o relat&oacute;rio sint&eacute;tico<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou anal&iacute;tico.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_1f0c73a8.png" NAME="figura35" ALIGN=LEFT WIDTH=598 HEIGHT=200 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+30</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 31 mostra um modelo do relat&oacute;rio
+de Processo / CGM.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<H3 CLASS="western" STYLE="font-style: normal; font-weight: medium"><A NAME="3.1.10.Figura 31|outline"></A>
+<IMG SRC="Manual_Protocolo_html_6d7834b3.png" NAME="figura41" ALIGN=LEFT WIDTH=605 HEIGHT=255 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+31</FONT></H3>
+<H3 CLASS="western"><A NAME="3.1.11. Duplos no CGM|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db3909db">
+Duplos no CGM</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Esse menu emite um relat&oacute;rio que compara
+os CGMs.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">O relat&oacute;rio faz uma compara&ccedil;&atilde;o
+dos filtros identificados em todo o CGM que possue os mesmos dados
+informados nos campos de filtros.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 32.</FONT></FONT></P>
+<H4 CLASS="western"><A NAME="3.1.11.1.Inclus&atilde;o|outline"></A>Inclus&atilde;o</H4>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Filtro
+do Duplos:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nome,
+Endere&ccedil;o, N&uacute;mero, Complemento, Bairro, Munic&iacute;pio
+e CPF/CNPJ.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Sele&ccedil;&atilde;o:</B></I>
+Permite selecionar os zerados/brancos ou n&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m7b0d3615.png" NAME="figura52" ALIGN=LEFT WIDTH=589 HEIGHT=209 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+32</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.12.Reimpress&atilde;o da Capa de Processo|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3475db">Reimpress&atilde;o
+da Capa de Processo</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Emite as capas
+dos processos de um determinado intervalo, emitindo todos os
+processos em seq&uuml;encia independentemente dos departamentos que
+est&atilde;o em tr&acirc;mite atualmente.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 33.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Processo
+Inicial:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do processo inicial do per&iacute;odo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Processo
+Final:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do processo final do per&iacute;odo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m3c2cc748.png" NAME="figura53" ALIGN=LEFT WIDTH=605 HEIGHT=154 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+33</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 34 mostra um modelo da Capa do
+Processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_24928ee3.png" NAME="figura54" ALIGN=LEFT WIDTH=483 HEIGHT=560 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+34</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.13.Reimpress&atilde;o do Termo de Transfer&ecirc;ncia|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2541db">Reimpress&atilde;o
+do Termo de Transfer&ecirc;ncia</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse relat&oacute;rio
+emite um termo de recebimento na transfer&ecirc;ncia de processo
+entre os departamentos.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 35.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Transfer&ecirc;ncia:
+</B></I>Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo da </SPAN></SPAN><SPAN STYLE="font-weight: medium">Transfer&ecirc;ncia
+</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ou
+clicar no menu pesquisa para selecionar uma transfer&ecirc;ncia.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m1b6927b0.png" NAME="figura55" ALIGN=LEFT WIDTH=595 HEIGHT=164 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+35</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Na Figura 36 mostra um modelo da guia de
+transfer&ecirc;ncia.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_116b6c72.png" NAME="figura56" ALIGN=LEFT WIDTH=605 HEIGHT=433 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+36</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.14.Processos|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4073db">Processos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Emite um
+relat&oacute;rio geral dos andamentos e hist&oacute;ricos dos
+processos. O relat&oacute;rio utiliza todos os filtros das guias
+abaixo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 37.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>ABA
+Processo</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Per&iacute;odo:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+as datas Iniciais e Finais do per&iacute;odo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Ordenar:</B></I>
+Permite selecionar por: <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Processo,
+Tipo de Processo, Data/Hora, Usu&aacute;rio, Requerente, Departamento
+Inicial ou Departamento Atual.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Tipo:</B></I>
+Permite selecionar os a<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">rquivados,
+andamentos ou todos.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m4f61fbff.png" NAME="figura57" ALIGN=LEFT WIDTH=605 HEIGHT=141 BORDER=0><FONT COLOR="#000000">Figura
+37</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western">ABA CGM</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>CGM:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do </SPAN></SPAN><SPAN STYLE="font-weight: medium">
+CGM</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar e lan&ccedil;ar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_5a229f2c.png" NAME="figura58" ALIGN=LEFT WIDTH=605 HEIGHT=219 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+38</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>ABA
+Departamento Inicial</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Departamentos:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do </SPAN></SPAN><SPAN STYLE="font-weight: medium">
+Departamento</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_c7262f0.png" NAME="figura59" ALIGN=LEFT WIDTH=598 HEIGHT=187 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+39</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>ABA Tipo
+de Processo</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Tipo de
+Processo:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do </SPAN></SPAN><SPAN STYLE="font-weight: medium">Tipo
+de Processo</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_794980bc.png" NAME="figura60" ALIGN=LEFT WIDTH=594 HEIGHT=199 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+40</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>ABA
+Departamento Atual</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Departamentos:
+</B></I>Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do </SPAN></SPAN><SPAN STYLE="font-weight: medium">Departamento</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_79d8e2ad.png" NAME="figura61" ALIGN=LEFT WIDTH=599 HEIGHT=196 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+41</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Na Figura 42 mostra um modelo do relat&oacute;rio
+de processo.</FONT></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Protocolo_html_39819f02.png" NAME="figura63" ALIGN=LEFT WIDTH=597 HEIGHT=121 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western">Figura 42</P>
+<H3 CLASS="western"><A NAME="3.1.15.Consist&ecirc;ncia de CPF/CNPJ|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4155db">Consist&ecirc;ncia
+de CPF/CNPJ</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse relat&oacute;rio
+emite uma lista dos CGMs que est&atilde;o com o campo CPF/CNPJ em
+branco, zerado e/ou inv&aacute;lido o cadastro.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 43.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Considerar
+Brancos:</B></I> Permite selecionar os em brancos <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ou
+n&atilde;o.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Considerar
+Zerados:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar os zerados ou n&atilde;o.</SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m2d5c33c8.png" NAME="figura62" ALIGN=LEFT WIDTH=605 HEIGHT=117 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+43</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.16.Etiquetas para Processos|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4250db">Etiquetas para
+Processos</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse relat&oacute;rio
+emite etiquetas de protocolo por per&iacute;odo de c&oacute;digo do
+processo, com o c&oacute;digo do processo e campo para por a data e
+assinatura. <FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos do cadastro abaixo, conforme Figura 44.</SPAN></SPAN></SPAN></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Processo
+Inicial:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do processo inicial.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Processo
+Final: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo do processo final.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_59108eac.png" NAME="figura64" ALIGN=LEFT WIDTH=605 HEIGHT=121 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+44</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Na Figura 45 mostra um modelo do relat&oacute;rio
+de etiqueta.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m63961d19.png" NAME="figura65" ALIGN=LEFT WIDTH=605 HEIGHT=112 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+45</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.17. Processos por Departamento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4384db"> Processos por
+Departamento</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY>Esse menu emite o relat&oacute;rio
+referente a quantos processos existem em cada
+departamento/institui&ccedil;&atilde;o no sistema.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 46.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Protocolo_html_bcc1839.png" NAME="figura66" ALIGN=LEFT WIDTH=605 HEIGHT=120 BORDER=0><BR CLEAR=LEFT>Figura
+46</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 47 mostra um modelo do relat&oacute;rio
+de etiqueta.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m48210924.png" NAME="figura67" ALIGN=LEFT WIDTH=598 HEIGHT=262 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+47</FONT></P>
+<H3 CLASS="western"><A NAME="3.1.18.CGMs Inclu&iacute;dos / Alterados|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db29323db">CGMs Inclu&iacute;dos
+/ Alterados</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Gera uma
+relat&oacute;rio dos CGMs que foram inclu&iacute;dos ou alterados no
+sistema, mostrando os dados do registro atual e do anterior com os
+campos: Tipo da Opera&ccedil;&atilde;o, Data, Usu&aacute;rio, CGM,
+CPF / CNPJ, Nome, Endere&ccedil;o, N&uacute;mero, Complemento,
+Munic&iacute;pio, UF e CEP. O relat&oacute;rio identifica as
+altera&ccedil;&otilde;es do Cadastro Geral do Munic&iacute;pio.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 48.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Per&iacute;odos:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+as datas Iniciais e Finais do per&iacute;odo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Tipos:</B></I>
+Permite selecionar as op&ccedil;&otilde;es: t<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">odos,
+inclus&atilde;o ou altera&ccedil;&atilde;o.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_51eb903d.png" NAME="figura69" ALIGN=LEFT WIDTH=605 HEIGHT=131 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+48</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 49 mostra um modelo do relat&oacute;rio
+de CGM Inclu&iacute;dos / Alterados.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m3d0a908.png" NAME="figura70" ALIGN=LEFT WIDTH=605 HEIGHT=388 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+49</FONT></P>
+<H1 CLASS="western"><A NAME="4.Procedimentos|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db32db">Procedimentos</A></H1>
+<H2 CLASS="western"><A NAME="4.1.CGM Duplos|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2522db">CGM
+Duplos</A></H2>
+<H3 CLASS="western"><A NAME="4.1.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2523db">Inclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Nesse
+procedimento deve ser informado o Nome / Raz&atilde;o Social dos
+CGMs, paa que o sistema processe e mostre todos os registros com o
+mesmo nome, marque um como principal e os outros como secund&aacute;rios.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Ap&oacute;s
+gravar, em um hor&aacute;rio agendado no servidor, o sistema ir&aacute;
+processar e gerar um &uacute;nico CGM com o c&oacute;digo do
+principal marcado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Est&aacute;
+rotina &eacute; apenas uma forma de marca&ccedil;&atilde;o do que vai
+processado em uma rotina fora do sistema, pois &eacute; preciso
+executar o programa duplos.php, na base para fazer a uni&atilde;o/jun&ccedil;&atilde;o.
+Esse agendamento fica sob responsabilidade da prefeitura, normalmente
+a cargo do CPD.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 50.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m7a4f2e33.png" NAME="figura1" ALIGN=LEFT WIDTH=599 HEIGHT=284 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+50</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="4.1.2.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2525db">Exclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Permite a
+exclus&atilde;o, quando n&atilde;o estiver vinculado a nenhum
+cadastro do sistema. Abrir&aacute; uma fun&ccedil;&atilde;o de
+pesquisa (figura ), selecione o CGM a ser exclu&iacute;do, o sistema
+lan&ccedil;ara as informa&ccedil;&otilde;es na aba CGM Correto
+(figura), clique em excluir. Na aba CGM Errado, o sistema mostra a
+rela&ccedil;&atilde;o dos CGMs marcados como errado, permitindo
+altera&ccedil;&atilde;o ou exclus&atilde;o, conforme mostra nas
+Figuras 51 e 52.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_350552e9.png" NAME="figura2" ALIGN=LEFT WIDTH=596 HEIGHT=169 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+51</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_32126b68.png" NAME="figura4" ALIGN=LEFT WIDTH=598 HEIGHT=178 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+52</FONT></P>
+<H2 CLASS="western"><A NAME="4.2.Processo|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2162db">Processo</A></H2>
+<P CLASS="western"><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="4.2.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2163db">Inclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Nesse
+procedimento s&atilde;o cadastrados os processos referentes a
+servi&ccedil;os, rotinas ou informa&ccedil;&otilde;es da Prefeitura.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Para um
+controle geral dos processos internos da institui&ccedil;&atilde;o, o
+titular do processo deve possuir um CGM cadastrado no sistema.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ao
+acessar este procedimento, o sistema abrir&aacute; uma tela de
+pesquisa dos tipos de processos,</SPAN></SPAN><SPAN STYLE="font-weight: medium">
+</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">em
+seguida, outra tela para selecionar o titular do processo. Ap&oacute;s,
+o sistema listar&aacute; todos os documentos necess&aacute;rios para
+o tr&acirc;mite. Marque os documentos que ser&atilde;o solicitados e
+clique em incluir, conforme mostra a Figura 53.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">O sistema emitir&aacute; o protocolo para
+impress&atilde;o da capa do processo e retornar&aacute; para a fun&ccedil;&atilde;o
+de pesquisa do tipo de processo para inclus&atilde;o de um novo
+processo de protocolo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_252e68df.png" NAME="figura7" ALIGN=LEFT WIDTH=597 HEIGHT=238 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+53</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 54 mostra um modelo da capa do
+processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m118d1ec5.png" NAME="figura8" ALIGN=LEFT WIDTH=595 HEIGHT=520 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Figura 54</FONT></P>
+<H3 CLASS="western"><A NAME="4.2.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2164db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Permite
+altera&ccedil;&atilde;o de um processo somente antes de ser
+registrado um tramite inicial (primeira transfer&ecirc;ncia), sen&atilde;o
+s&oacute; arquivando o processo conforme Figura 55.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_5924b7cf.png" NAME="figura6" ALIGN=LEFT WIDTH=595 HEIGHT=232 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+55</FONT></P>
+<H2 CLASS="western"><A NAME="4.3.Tr&acirc;mite Inicial|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2181db">Tr&acirc;mite
+Inicial</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Neste
+procedimento &eacute; feito a primeira transfer&ecirc;ncia do
+processo no sistema. Automaticamente o sistema informa o departamento
+padr&atilde;o do processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Se marcar
+processos de diferentes departamentos padr&atilde;o, o sistema
+verifica um par&acirc;metro do m&oacute;dulo protocolo, que indica
+se:</FONT></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">permite
+	ou n&atilde;o marcar processos com departamento padr&atilde;o
+	diferente;</FONT></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">permite
+	diferente mas emite uma mensagem de aviso;</FONT></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">permite e
+	n&atilde;o avisa o usu&aacute;rio.</FONT></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Ao selecionar,
+o usu&aacute;rio que receber&aacute; o processo, devemos verificar
+que somente aquele usu&aacute;rio poder&aacute; receber o processo,
+caso selecionar [nenhum], todos os usu&aacute;rios daquele
+departamento que possuam permiss&atilde;o poder&atilde;o receber.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">O sistema
+emite um termo de recebimento do processo para impress&atilde;o
+conforme a Figura 56 e retorna para a p&aacute;gina de tr&acirc;mite
+inicial.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_4fb9c133.png" NAME="figura10" ALIGN=LEFT WIDTH=598 HEIGHT=318 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+56</FONT></P>
+<H2 CLASS="western"><A NAME="4.4.Despacho|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2170db">Despacho</A></H2>
+<H3 CLASS="western"><A NAME="4.4.1.inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db608572db">inclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Nesse
+procedimento s&atilde;o cadastrados o pareceres dos processos.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">O usu&aacute;rio
+poder&aacute; incluir um despacho se estiver no mesmo departamento e
+se j&aacute; tiver efetuado o recebimento do processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">O despacho
+pode ser p&uacute;blico, onde este poder&aacute; ser consultado pela
+internet ou internamente na consulta de processos, apenas pelos
+usu&aacute;rios do sistema. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Coloque o
+c&oacute;digo do processo ou pesquise no link pelo c&oacute;digo,
+para acessar   a fun&ccedil;&atilde;o de pesquisa com todos os
+processos que foram recebidos pelo usu&aacute;rio. Ap&oacute;s,
+selecione o processo e  clique no bot&atilde;o [processar], <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">conforme
+mostra na Figura 57.</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_52bdcac6.png" NAME="figura12" ALIGN=LEFT WIDTH=593 HEIGHT=121 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+57</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>ABA
+Despacho Atual</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Nesta ABA &eacute; gerado uma consulta dos
+campos, para o usu&aacute;rio saber sobre o assunto e origem.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">O sistema libera o campo [Despacho Interno]
+para o usu&aacute;rio dar seu parecer. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">No
+campo [Despacho P&uacute;blico], permite selecionar a op&ccedil;&atilde;o</SPAN></SPAN>
+SIM<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou N&Atilde;O, conforme mostra a Figura 58.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_74c01812.png" NAME="figura13" ALIGN=LEFT WIDTH=592 HEIGHT=305 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+58</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>ABA
+Despacho Anterior</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Mostra apenas
+os despachos do processo efetuados pelo departamento atual, conforme
+a Figura 59.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m61e1dda6.png" NAME="figura14" ALIGN=LEFT WIDTH=595 HEIGHT=140 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+59</FONT></P>
+<H3 CLASS="western"><A NAME="4.4.2.Alterar|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4196db">Alterar</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Para alterar
+basta clicar no sub menu &ldquo;altera&ccedil;&atilde;o&rdquo;.</FONT></P>
+<H3 CLASS="western"></H3>
+<P CLASS="western" STYLE="text-decoration: none"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.5.Transfer&ecirc;ncias|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2174db">Transfer&ecirc;ncias</A></H2>
+<H3 CLASS="western"><A NAME="4.5.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2175db">Inclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Neste
+procedimento &eacute; feito a transfer&ecirc;ncia do processo no
+sistema, automaticamente o sistema informa o departamento padr&atilde;o
+do processo, se marcar processos de diferentes departamentos padr&atilde;o,
+o sistema verifica um par&acirc;metro do m&oacute;dulo protocolo, com
+a mesma l&oacute;gica da rotina de tramite inicial.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Ao selecionar
+o usu&aacute;rio que receber&aacute; o processo, devemos verificar
+que somente aquele usu&aacute;rio poder&aacute; receber o processo,
+caso selecionar [nenhum], todos os usu&aacute;rios daquele
+departamento que possuam permiss&atilde;o poder&atilde;o receber.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">O sistema
+emite um termo de transfer&ecirc;ncia do processo para impress&atilde;o,
+conforme a Figura 60.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m7a351c22.png" NAME="figura16" ALIGN=LEFT WIDTH=589 HEIGHT=298 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+60</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">A Figura 61 mostra um modelo da transfer&ecirc;ncia.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m63cf5933.png" NAME="figura17" ALIGN=LEFT WIDTH=593 HEIGHT=328 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+61</FONT></P>
+<H3 CLASS="western"><A NAME="4.5.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2176db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Para alterar
+basta clicar no sub menu &ldquo;altera&ccedil;&atilde;o&rdquo;.</FONT></P>
+<H3 CLASS="western"><A NAME="4.5.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2177db">Exclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Para Excluir
+basta clicar no sub menu &ldquo;excluir&rdquo;.</FONT></P>
+<H3 CLASS="western"><A NAME="4.5.4.Cancelamento Parcial|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4124db">Cancelamento
+Parcial</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Permite
+excluir parte dos processos vinculados h&aacute; um c&oacute;digo de
+transfer&ecirc;ncia, bastando marcar o processo a ser cancelado e
+clicar no bot&atilde;o [cancelar os processos], conforme mostra na
+Figura 62.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_d55c760.png" NAME="figura18" ALIGN=LEFT WIDTH=591 HEIGHT=198 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+62</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Obs: Os
+processos s&oacute; poder&atilde;o ser cancelados antes de serem
+recebidos ppelo departamento de destino.</FONT></P>
+<P CLASS="western"><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.6.Recebimento|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2182db">Recebimento</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Nesse procedimento o sistema mostra a rela&ccedil;&atilde;o
+de todos os processos que o departamento tem para receber, ou os
+processos referentes diretamente ao seu usu&aacute;rio.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Digite o c&oacute;digo de transfer&ecirc;ncia,
+ou basta no registro e o sistema abrir&aacute; uma tela com os dados
+da transfer&ecirc;ncia e com a rela&ccedil;&atilde;o aos processos
+transferidos, conforme a Figura 63. Nesse momento, o sistema preenche
+o c&oacute;digo do campo [Transfer&ecirc;ncia] e ap&oacute;s basta
+clicar no bot&atilde;o [Receber].</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_45c7b815.png" NAME="figura19" ALIGN=LEFT WIDTH=598 HEIGHT=149 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+63</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Tela da
+consulta dos dados da transfer&ecirc;ncia dos processos.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_6fdfff45.png" NAME="figura20" ALIGN=LEFT WIDTH=599 HEIGHT=117 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+64</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Conforme
+mostra a Figura 65, se clicar no campo [</SPAN></SPAN><I><SPAN STYLE="font-weight: medium">Inf],
+</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">o
+sistema abre outra tela com</SPAN></SPAN><SPAN STYLE="font-weight: medium">
+</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">os
+dados do processo com op&ccedil;&atilde;o de impress&atilde;o.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_5c5b0895.png" NAME="figura21" ALIGN=LEFT WIDTH=598 HEIGHT=197 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+65</FONT></P>
+<H2 CLASS="western"><A NAME="4.7.Arquivamento|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2183db">Arquivamento</A></H2>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Nesse
+procedimento &eacute; feito o arquivamento dos processos, assim
+encerrando o processo no protocolo.</FONT></P>
+<H3 CLASS="western"></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">O arquivamento
+pode ser feito individualmente ou por lote.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 66.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="4.7.2.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db2184db">Inclus&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">No
+arquivamento individual, voc&ecirc; dever&aacute; informar um
+processo de cada vez para o arquivamento.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Processo:
+</B></I>Preencher o c&oacute;digo do processo ou clicar no link para
+pesquisar.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Data do
+Arquivamento:</B></I> Preencher a data que foi arquivado o processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Hist&oacute;rico
+de Arquivamento:</B></I> Preencher o hist&oacute;rico de arquivamento
+do sistema.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_7570277d.png" NAME="figura22" ALIGN=LEFT WIDTH=591 HEIGHT=207 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+66</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="4.7.3.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2185db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000">Permite alterar os campos Data e Hist&oacute;rico
+do Arquivamento.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT SIZE=3>Somente
+podem ser alterados processos arquivados pelo pr&oacute;prio usu&aacute;rio.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="4.7.4.Lote|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4257db">Lote</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Para realizar
+um arquivamento em lote, informe o per&iacute;odo da inclus&atilde;o
+dos processos e clique em processar, conforme a Figura 01. Ap&oacute;s,
+descreva o hist&oacute;rico do arquivamento e confirme a data, marque
+os processos que ter&atilde;o a baixa realizada e clique em [Arquivar
+Processos], conforme mostra a Figura 67.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">O arquivamento
+gera o termino do processo no sistema.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_20a2c718.png" NAME="figura24" ALIGN=LEFT WIDTH=605 HEIGHT=119 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+67</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">A segunda tela
+do arquivamento por lote, busca apenas os processos que foram criados
+dentro do intervalo selecionado, conforme a Figura 68.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_7696b4f4.png" NAME="figura25" ALIGN=LEFT WIDTH=595 HEIGHT=195 BORDER=0><FONT COLOR="#000000">Figura
+68</FONT></P>
+<H2 CLASS="western"><A NAME="4.8.Desarquivamento|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db3435db">Desarquivamento</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Nesse
+procedimento o sistema abrir&aacute; uma fun&ccedil;&atilde;o com
+todos os processos que est&atilde;o arquivados conforme Figura 69.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Para realizar
+o desarquivamento do processo, pesquise o processo e clique sobre o
+registro. Ap&oacute;s o sistema ir&aacute; pedir a confirma&ccedil;&atilde;o
+do desarquivamento do processo selecionado. Confirmado, o sistema
+informar&aacute; que o processo foi desarquivado com sucesso.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_234c1693.png" NAME="figura26" ALIGN=LEFT WIDTH=589 HEIGHT=208 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+69</FONT></P>
+<H2 CLASS="western"><A NAME="4.9.Andamento Padr&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2136db">Andamento Padr&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Nesse
+procedimento &eacute; efetuada a liga&ccedil;&atilde;o de um tipo de
+processo a um departamento.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">O sistema s&oacute;
+permite a cria&ccedil;&atilde;o de um novo processo se o seu tipo
+possuir no m&iacute;nomo um andamento padr&atilde;o, ou seja, dever&aacute;
+ser informado para quais departamentos o tipo de processo dever&aacute;
+ser transferido. Seria como informar ao sistema o &ldquo;caminho&rdquo;
+padr&atilde;o que aquele tipo de processo segue dentro da
+institui&ccedil;&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 70.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><FONT COLOR="#000000"><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Tipo:</B></SPAN></I></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Preencher o tipo de processo ou clicar no link para pesquisar. </SPAN></SPAN></SPAN></FONT></FONT></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Departamento:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o departamento ou clicar no link para pesquisar. </SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Quantidade
+de Dias: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+quantos dias por padr&atilde;o que o processo normalmente permanece
+no departamento informado.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Ordem:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+a ordem de cada departamento.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_f5a60d4.png" NAME="figura28" ALIGN=LEFT WIDTH=605 HEIGHT=171 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+70</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.10.Recibo de Receita|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db111db">Recibo
+de Receita</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY>Esse procedimento serve para emitir
+recibo de uma receita tribut&aacute;ria e n&atilde;o tribut&aacute;ria.</P>
+<P CLASS="western" ALIGN=JUSTIFY>Caso seja emitido um recibo avulso e
+o mesmo n&atilde;o for pago, o contribuinte n&atilde;o ficar&aacute;
+devendo, mas se houver pagamento, o sistema credita um d&eacute;bito.
+Podemos visualizar isso atrav&eacute;s da consulta pagamento
+efetuados, na Consulta Geral Financeira.</P>
+<P CLASS="western" ALIGN=JUSTIFY>Quando for fazer uma arrecada&ccedil;&atilde;o
+de um valor negativo, normalmente para casos de dedu&ccedil;&otilde;es,
+devemos utilizar a rotina de planilha, acessando Tesouraria &gt;
+Procedimento &gt; Planilha de Lan&ccedil;amento.</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ao
+lan&ccedil;ar um recibo vinculado ao processo de protocolo, o sistema
+lan&ccedil;a o valor ao CGM do titular do processo, ficando vinculado
+ao processo. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos do cadastro conforme a Figura 71.</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Receita:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo da r</SPAN></SPAN><SPAN STYLE="font-weight: medium">eceita</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Taxa:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o valor da t</SPAN></SPAN><SPAN STYLE="font-weight: medium">axa</SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link para pesquisar as taxas referente a receita
+escolhida.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Hist&oacute;rico:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+uma descri&ccedil;&atilde;o referente ao recibo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Data
+Vencimento:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+a data de vencimento do recibo de pagamento.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_101a22bb.png" NAME="figura9" ALIGN=LEFT WIDTH=605 HEIGHT=312 BORDER=0><FONT COLOR="#000000">Figura
+71</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.11.Cancela Recibo|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db3809db">Cancela
+Recibo</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Para cancelar
+o recibo gerado, selecione o recibo e clique no bot&atilde;o excluir,
+conforme mostra a Figura 72.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_40094d85.png" NAME="figura30" ALIGN=LEFT WIDTH=599 HEIGHT=109 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+72</FONT></P>
+<H2 CLASS="western"><A NAME="4.12.Tr&acirc;mite Interno|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4137db">Tr&acirc;mite
+Interno</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Nesse
+procedimento o tr&acirc;mite interno permite ao usu&aacute;rio
+despachar, transferir e receber  processos de outro usu&aacute;rio
+dentro do mesmo departamento, gerando todas informa&ccedil;&otilde;es
+necess&aacute;rias para tramitar o processo internamente.</FONT></P>
+<H2 CLASS="western"><A NAME="4.13.Despacho|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4079db">Despacho</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Esse processo
+gera um registro de despacho interno no departamento, quando for
+necess&aacute;rio o parecer de mais de uma pessoa do departamento. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>ABA
+Despacho Atual</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Nesta ABA &eacute; gerado uma consulta dos
+campos, para o usu&aacute;rio saber sobre o assunto e origem.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Libera o campo [Despacho Interno] para o
+usu&aacute;rio digitar seu parecer.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">No
+campo [Despacho P&uacute;blico], permite selecionar a op&ccedil;&atilde;o</SPAN></SPAN>
+SIM<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou N&Atilde;O, conforme mostra a Figura 73.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Protocolo_html_m23a3c478.png" NAME="figura68" ALIGN=LEFT WIDTH=600 HEIGHT=299 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000"><FONT SIZE=3>Figura
+73</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>ABA
+Despacho Anterior<FONT SIZE=3><SPAN STYLE="text-decoration: none">	</SPAN></FONT></B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Mostra apenas
+os despachos do processo efetuados pelo departamento atual.</FONT></P>
+<H2 CLASS="western"><A NAME="4.14.Transfer&ecirc;ncia|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4083db">Transfer&ecirc;ncia</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Na
+transfer&ecirc;ncia de processos entre os usu&aacute;rios do mesmo
+departamento, digite o parecer para transfer&ecirc;ncia do processo
+no campo [<I><SPAN STYLE="font-weight: medium">Despacho Interno]</SPAN></I><SPAN STYLE="font-weight: medium">,</SPAN>
+selecione o usu&aacute;rio que receber&aacute; o processo
+internamente, marque SIM ou N&Atilde;O no campo [<I><SPAN STYLE="font-weight: medium">Despacho
+P&uacute;blico]</SPAN></I>, marque os processos a serem transferidos
+e clique em transferir, conforme mostra a Figura 74.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_m1394873d.png" NAME="figura31" ALIGN=LEFT WIDTH=590 HEIGHT=262 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+74</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.15.Cancela Transfer&ecirc;ncia|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4131db">Cancela
+Transfer&ecirc;ncia</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Ao selecionar
+o c&oacute;digo da transfer&ecirc;ncia interna a ser cancelada, o
+sistema ir&aacute; mostrar todos os dados da transfer&ecirc;ncia.
+Marque o processo e clique no bot&atilde;o [Cancelar o Processo],
+conforme mostra a Figura 75.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_mbfeafa9.png" NAME="figura32" ALIGN=LEFT WIDTH=596 HEIGHT=186 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+75</FONT></P>
+<H2 CLASS="western"><A NAME="4.16.Recebimento|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4098db">Recebimento</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">Marque os processos referente ao usu&aacute;rio
+e clique no bot&atilde;o [Receber], conforme a Figura 76.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<FONT COLOR="#000000">No registro da transfer&ecirc;ncia, o usu&aacute;rio
+pode clicar no campo [Ver], para acessar uma fun&ccedil;&atilde;o com
+mais informa&ccedil;&otilde;es do processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Protocolo_html_5bb8afd6.png" NAME="figura33" ALIGN=LEFT WIDTH=597 HEIGHT=124 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+76</FONT></P>
+<H2 CLASS="western"></H2>
+<H3 CLASS="western"><A NAME="4.17.1.Libera CNPJ &ndash; Jur&iacute;dica (menu utilizado apenas para permiss&atilde;o)|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4459db">Libera CNPJ </A>&ndash;
+Jur&iacute;dica (menu utilizado apenas para permiss&atilde;o)</H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Permiss&atilde;o
+liberada para o usu&aacute;rio incluir um CGM com CNPJ zerado no
+cadastro geral do munic&iacute;pio.</FONT></P>
+<H3 CLASS="western"><A NAME="4.17.2.Libera CPF - F&iacute;sica (menu utilizado apenas para permiss&atilde;o)|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3775db">Libera CPF </A>-
+F&iacute;sica (menu utilizado apenas para permiss&atilde;o)</H3>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">Permiss&atilde;o
+liberada para o usu&aacute;rio incluir um CGM com CPF zerado no
+cadastro geral do munic&iacute;pio.</FONT></P>
+<H2 CLASS="western"><A NAME="4.18.Par&acirc;metros|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db4422db">Par&acirc;metros</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000">S&atilde;o
+informados os par&acirc;metros para a configura&ccedil;&atilde;o dos
+processos do M&oacute;dulo Protocolo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#000000"><FONT SIZE=3>Descri&ccedil;&atilde;o dos campos
+do cadastro abaixo, conforme Figura 77.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Emite
+Recibo: </B></I>Selecionar se o sistema emite recibo na inclus&atilde;o
+do processo.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Atualizar
+CGM (Inclus&atilde;o de Processo): </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o usu&aacute;rio deve atualizar </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">os
+dados do CGM na hora da inclus&atilde;o do processo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Valida
+CPF / CNPJ: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o programa deve validar o CPF/CNPJ do CGM durante a inclus&atilde;o
+dos processos de protocolo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Emite
+usu&aacute;rio na capa: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se quer emitir/imprimir o nome do usu&aacute;rio que criou o processo
+na capa do processo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Verifica
+se o CGM possui d&eacute;bitos:</B><SPAN STYLE="font-weight: medium">
+</SPAN></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Em
+algumas rotinas como: solicita&ccedil;&atilde;o de </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">compras
+e autoriza&ccedil;&atilde;o de empenho, verificar se o CGM do titular
+possui d&eacute;bitos.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Despacho
+obrigat&oacute;rio: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o despacho no processo ser&aacute; obrigat&oacute;rio.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Caracteres
+m&iacute;nimos no Despacho:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o n&uacute;mero m&iacute;nimo de caracteres para o despacho.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Tr&acirc;mites
+/ Transfer&ecirc;ncia: </B></I><I><SPAN STYLE="font-weight: medium">s&atilde;o
+3 (tr&ecirc;s op&ccedil;&otilde;es) em rela&ccedil;&atilde;o a
+escolher os departamentos nas rotinas de tramite inicial e
+transfer&ecirc;ncia de processos nos casos de haver mais de um
+processo envolvido:</SPAN></I></FONT></P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT COLOR="#000000"><I>permitir
+	escolher departamentos diferentes;</I></FONT></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT COLOR="#000000"><I>n&atilde;o
+	permitir escolher departamentos diferentes;</I></FONT></P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"><FONT COLOR="#000000"><I>permitir
+	escolher departamentos diferentes, mas avisar o usu&aacute;rio.</I></FONT></P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Mostra
+Andamento Atual: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se deseja visualizar o andamento atual do processo na consulta dos
+processos.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Modelo
+Capa:</B></I> Permite selecionar as op&ccedil;&otilde;es: <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Modelo
+Padr&atilde;o, Modelo 1 e Modelo 2.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Emite
+Vari&aacute;veis: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+se o sistema vai emitir as vari&aacute;veis na capa do processo.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT COLOR="#000000"><I><B>Texto
+padr&atilde;o na certid&atilde;o:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Descrever
+um texto padr&atilde;o na emiss&atilde;o da Certid&atilde;o de
+D&eacute;bitos.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Protocolo_html_m534a56e5.png" NAME="figura34" ALIGN=LEFT WIDTH=601 HEIGHT=249 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">Figura
+77</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<DIV ALIGN=RIGHT>
+		<TABLE WIDTH=605 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=523>
+			<COL WIDTH=66>
+			<TR VALIGN=TOP>
+				<TD WIDTH=523>
+					<P ALIGN=CENTER STYLE="background: transparent"><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="text-decoration: none"><SPAN STYLE="background: transparent">DBSeller
+					Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+					</SPAN></SPAN></FONT></FONT><FONT COLOR="#000080"><SPAN STYLE="text-decoration: none"><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="background: transparent">www.dbseller.com.br</SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="text-decoration: none"><SPAN STYLE="background: transparent">
+					                                                                
+					                                                Rua General
+					C&acirc;mara, 406/301 &ndash; Porto Alegre/RS &ndash; Fone: (51)
+					3076-5101</SPAN></SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>45</SDFIELD>
+					/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>45</SDFIELD></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DIV>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

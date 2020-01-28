@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>Dynamic form with JavaScript</TITLE>
+<STYLE>
+BODY {font-family:"Times New Roman",serif}
+H2 {color:#4000A0}
+.st {font-weight:bold; color:#900000}
+</STYLE>
+</HEAD>
+<BODY>
+<H2>Dynamic form with JavaScript</H2>
+<H4 CLASS="st">Informations</H4>Author: <A HREF="mailto:denisvannuffelen@hotmail.com?subject=Dynamic%20form%20with%20JavaScript">Denis Van Nuffelen</A><BR>License: Freeware
+<H4 CLASS="st">Description</H4>This script allows to generate forms dynamically when the document opens by the means of some
+JavaScript code (it requires the <A HREF="http://www.fpdf.org/?go=script&id=36" TARGET="_blank">JavaScript support</A> extension).<BR>
+<BR>
+<B>Caution</B>: the generated PDF works only with Acrobat Reader 5.1.<BR>
+<BR>
+It is possible to create text fields, combo boxes, check boxes and buttons. Fields are
+created at the current position and are given a name. This name allows to manipulate them
+via JavaScript in order to perform some validation for instance.<BR>
+Upon field creation, an associative array can be passed to set a number of properties, among
+which:<BR>
+<BR>
+<TT>TextColor</TT> (black by default)<BR>
+<TT>FillColor</TT> (transparent by default)<BR>
+<TT>BorderColor</TT> (transparent by default)<BR>
+<TT>BorderStyle</TT> (<TT>solid</TT>, <TT>dashed</TT>, <TT>beveled</TT>, <TT>inset</TT> or <TT>underline</TT>; <TT>solid</TT> by default)<BR>
+<BR>
+Colors can be chosen in the following list (case sensitive):<BR>
+<BR>
+<TT>black</TT> <TT>white</TT> <TT>red</TT> <TT>green</TT> <TT>blue</TT> <TT>cyan</TT> <TT>magenta</TT> <TT>yellow</TT> <TT>dkGray</TT> <TT>gray</TT> <TT>ltGray</TT><BR>
+<BR>
+or be in the form <TT>#RRGGBB</TT>.<BR>
+<BR>
+Methods to create fields are the following:<BR>
+<BR>
+<TT>TextField(<B>string</B> name, <B>float</B> w, <B>float</B> h [, <B>array</B> prop])</TT><BR>
+<BR>
+<TT><U>name</U></TT>: field name.<BR>
+<TT><U>w</U></TT>: width.<BR>
+<TT><U>h</U></TT>: height.<BR>
+<TT><U>prop</U></TT>: properties. The <TT>value</TT> property allows to set the initial value.
+The <TT>multiline</TT> property allows to define the field as multiline.<BR>
+<BR>
+<TT>ComboBox(<B>string</B> name, <B>float</B> w, <B>float</B> h, <B>array</B> values [, <B>array</B> prop])</TT><BR>
+<BR>
+<TT><U>name</U></TT>: combobox name.<BR>
+<TT><U>w</U></TT>: width.<BR>
+<TT><U>h</U></TT>: height.<BR>
+<TT><U>values</U></TT>: array containing the list of values.<BR>
+<TT><U>prop</U></TT>: properties.<BR>
+<BR>
+<TT>CheckBox(<B>string</B> name, <B>float</B> w [, <B>boolean</B> checked [, <B>array</B> prop]])</TT><BR>
+<BR>
+<TT><U>name</U></TT>: checkbox name.<BR>
+<TT><U>w</U></TT>: width.<BR>
+<TT><U>checked</U></TT>: boolean defining the initial state (<TT>false</TT> by default).<BR>
+<TT><U>prop</U></TT>: properties.<BR>
+<BR>
+<TT>Button(<B>string</B> name, <B>float</B> w, <B>float</B> h, <B>string</B> caption, <B>string</B> action [, <B>array</B> prop])</TT><BR>
+<BR>
+<TT><U>name</U></TT>: button name.<BR>
+<TT><U>w</U></TT>: width.<BR>
+<TT><U>h</U></TT>: height.<BR>
+<TT><U>caption</U></TT>: caption.<BR>
+<TT><U>action</U></TT>: action triggered by the button (JavaScript code).<BR>
+<TT><U>prop</U></TT>: properties.<BR>
+<BR>
+The JavaScript is being generated and added to the <TT>script</TT> property of the objet each
+time you call one of these methods.
+</BODY>
+</HTML>

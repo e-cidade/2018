@@ -1,0 +1,13 @@
+{
+  "erro_buscar_conteudo"       : "Erro ao uscar conteúdo do arquivo.",
+  "erro_abrir_arquivo"         : "Erro ao abrir arquivo.",
+  "erro_escrever_arquivo"      : "Erro ao escrever arquivo.",
+  "erro_fechar_arquivo"        : "Erro ao fechar arquivo.",
+  "erro_buscar_dados"          : "Erro ao buscar os dados do arquivo.",
+  "erro_buscar_dados_habitese" : "Erro ao buscar dados do habite-se dos registros do arquivo.",
+  "erro_excluir_habitesse"     : "Erro ao excluir registros de habite-se do TXT.",
+  "erro_excluir_registros"     : "Erro ao excluir registros do TXT.",
+  "exclusao_arquivo_efetuada"  : "Exclusão do arquivo TXT efetuada com sucesso!",
+  "defina_opcao"               : "Nenhuma opção definida.",
+  "erro_excluir_txt"           : "Erro ao excluir TXT."
+}

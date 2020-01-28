@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="codigo_matricula" obrigatorio="true" tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe   referencia="matricula" nome="MatriculaAlunoWebservice" parametros="$codigo_matricula" 
+              caminho="model/educacao/MatriculaAlunoWebservice.model.php" />
+    <exec>
+      <metodo referencia="matricula" nome="getDados" parametros="$codigo_matricula" />
+    </exec>
+  </configuracoes>
+</processamento>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<layout>
+    <data>
+        <font>Arial--8</font>
+        <color>#010101</color>
+        <bgcolor>#ebebeb</bgcolor>
+    </data>
+
+    <total>
+        <font>Arial-B-8</font>
+        <color>#010101</color>
+        <bgcolor>#ffffff</bgcolor>
+    </total>
+
+    <group>
+        <font>Arial--8</font>
+        <color>#010101</color>
+        <bgcolor>#ffffff</bgcolor>
+    </group>
+
+    <column>
+        <font>Arial-B-8</font>
+        <color>#010101</color>
+        <bgcolor>#d8d8d8</bgcolor>
+    </column>
+
+    <header>
+        <font>Arial-B-8</font>
+        <color>#010101</color>
+        <bgcolor>#e0e0e0</bgcolor>
+    </header>
+
+    <footer>
+        <font>Arial-B-8</font>
+        <color>#010101</color>
+        <bgcolor>#ffffff</bgcolor>
+    </footer>
+
+    <config>
+        <color_lines>1</color_lines>
+        <border>0</border>
+        <cell_spacing>0</cell_spacing>
+    </config>
+
+</layout>

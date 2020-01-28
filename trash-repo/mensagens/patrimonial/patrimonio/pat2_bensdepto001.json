@@ -1,0 +1,9 @@
+{
+  "selecione_departamento"        : "Selecione um departamento.",
+  "intervalo_inicial_maior_final" : "Intervalo inicial maior que final",
+  "intervalo_final_menor_inicial" : "Intervalo final menor que inicial",
+  "preencha_campos"               : "Preencha um dos campos para gerar o relatório!",
+  "nenhum_documento_emissao_ata"  : "Nenhum Modelo de Documento cadastrado para Emissão da Ata!\n\nCadastre um documento para prosseguir.",
+  "selecione_intervalo_valido"    : "Selecione um intervalo válido!",
+  "selecione_bens"                : "Selecione um ou mais bens!"
+}

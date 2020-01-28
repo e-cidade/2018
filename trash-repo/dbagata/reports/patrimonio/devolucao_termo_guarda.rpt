@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report>
+    <main>
+        <properties>
+            <title></title>
+            <author></author>
+            <date>2012-10-22</date>
+            <type>document</type>
+            <publishtime/>
+        </properties>
+        <parameters>
+            <parameter1>
+                <name>$iInstituicao</name>
+                <label>instituicao</label>
+                <component>TEntry</component>
+                <expander>0</expander>
+                <required>0</required>
+                <multiple>0</multiple>
+            </parameter1>
+            <parameter2>
+                <name>$sFuncao</name>
+                <label>nome_funcao</label>
+                <component>TEntry</component>
+                <expander>0</expander>
+                <required>0</required>
+                <multiple>0</multiple>
+            </parameter2>
+            <parameter3>
+                <name>$iCodigoTermo</name>
+                <label>codigo_termo</label>
+                <component>TEntry</component>
+                <expander>0</expander>
+                <required>0</required>
+                <multiple>0</multiple>
+            </parameter3>
+        </parameters>
+    </main>
+    <data>
+        <master>
+            <datasource>canela_henrrique</datasource>
+            <query>select t21_codigo as numero_termo, 
+       t21_obs    as observacao,
+       t21_numcgm as codigo_responsavel,
+       z01_nome   as nome_responsavel,
+       $sFuncao   as nome_funcao, 
+      (select nomeinst from configuracoes.db_config where codigo = 1) as instituicao,
+      (select munic    from configuracoes.db_config where codigo = 1) as municipio
+ from bensguarda
+ inner join cgm      on cgm.z01_numcgm = bensguarda.t21_numcgm
+ where t21_codigo = $iCodigoTermo
+   and t21_instit = $iInstituicao</query>
+            <fields>
+                <field1>
+                    <name>t21_codigo as numero_termo</name>
+                    <alias>numero_termo</alias>
+                    <format></format>
+                    <function></function>
+                </field1>
+                <field2>
+                    <name>t21_obs    as observacao</name>
+                    <alias>observacao</alias>
+                    <format></format>
+                    <function></function>
+                </field2>
+                <field3>
+                    <name>t21_numcgm as codigo_responsavel</name>
+                    <alias>codigo_responsavel</alias>
+                    <format></format>
+                    <function></function>
+                </field3>
+                <field4>
+                    <name>z01_nome   as nome_responsavel</name>
+                    <alias>nome_responsavel</alias>
+                    <format></format>
+                    <function></function>
+                </field4>
+                <field5>
+                    <name>$sFuncao   as nome_funcao</name>
+                    <alias>nome_funcao</alias>
+                    <format></format>
+                    <function></function>
+                </field5>
+                <field6>
+                    <name>(select nomeinst from configuracoes.db_config where codigo = 1) as instituicao</name>
+                    <alias>instituicao</alias>
+                    <format></format>
+                    <function></function>
+                </field6>
+                <field7>
+                    <name>(select munic    from configuracoes.db_config where codigo = 1) as municipio</name>
+                    <alias>municipio</alias>
+                    <format></format>
+                    <function></function>
+                </field7>
+            </fields>
+        </master>
+    </data>
+    <view>
+        <tabular>
+            <header>
+                <row1>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row1>
+                <row2>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row2>
+            </header>
+            <footer>
+                <row1>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row1>
+                <row2>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row2>
+            </footer>
+            <fields>
+                <field1>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field1>
+                <field2>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field2>
+                <field3>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field3>
+                <field4>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field4>
+                <field5>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field5>
+                <field6>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field6>
+                <field7>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field7>
+            </fields>
+            <preferences>
+                <showgroupcolum>0</showgroupcolum>
+                <showdetails>1</showdetails>
+                <showtotalabels>0</showtotalabels>
+                <showidentation>1</showidentation>
+                <shownumbering>0</shownumbering>
+                <showgrouplabel>0</showgrouplabel>
+            </preferences>
+            <pageconfig>
+                <format></format>
+                <orientation>portrait</orientation>
+                <leftmargin>40</leftmargin>
+                <rightmargin>40</rightmargin>
+                <topmargin>40</topmargin>
+                <bottommargin>40</bottommargin>
+            </pageconfig>
+        </tabular>
+        <chart>
+            <properties>
+                <title></title>
+                <titley></titley>
+                <width>400</width>
+                <height>300</height>
+                <orientation>c</orientation>
+                <charttype>line</charttype>
+            </properties>
+        </chart>
+        <office>
+            <properties>
+                <detailtype>d</detailtype>
+                <showemptydetail>1</showemptydetail>
+                <showgrandtotal>1</showgrandtotal>
+                <repeatheader>1</repeatheader>
+                <repeatfooter>1</repeatfooter>
+            </properties>
+            <details>
+                <detail1>
+                    <query>select t52_bem                   as codigo_bem,
+       t41_placa || t41_placaseq as placa,
+       t52_descr                 as descricao_bem,
+       t23_data                  as data_devolucao
+  from bensguarda
+ inner join bensguardaitem    on bensguardaitem.t22_bensguarda    = bensguarda.t21_codigo
+ inner join bensguardaitemdev on bensguardaitemdev.t23_guardaitem = bensguardaitem.t22_codigo
+ inner join bens              on bens.t52_bem                     = bensguardaitem.t22_bem
+ inner join bensplaca         on bensplaca.t41_bem                = bens.t52_bem
+ where t21_codigo = $iCodigoTermo
+   and t21_instit = $iInstituicao</query>
+                    <fields>
+                        <field1>
+                            <name>t52_bem                   as codigo_bem</name>
+                            <alias>codigo_bem</alias>
+                            <format></format>
+                            <function></function>
+                        </field1>
+                        <field2>
+                            <name>t41_placa || t41_placaseq as placa</name>
+                            <alias>placa</alias>
+                            <format></format>
+                            <function></function>
+                        </field2>
+                        <field3>
+                            <name>t52_descr                 as descricao_bem</name>
+                            <alias>descricao_bem</alias>
+                            <format></format>
+                            <function></function>
+                        </field3>
+                        <field4>
+                            <name>t23_data                  as data_devolucao</name>
+                            <alias>data_devolucao</alias>
+                            <format></format>
+                            <function>/time/a_date_to_br.fun</function>
+                        </field4>
+                    </fields>
+                    <name>detail1</name>
+                </detail1>
+            </details>
+            <template>UEsDBBQAAAgAABtgVkHhpTE5HgAAAB4AAAAIAAAAbWltZXR5cGVhcHBsaWNhdGlvbi92bmQuc3VuLnhtbC53cml0ZXJQSwMEFAAACAAAG2BWQVoyTmT1AwAA9QMAAAgAAABtZXRhLnhtbDw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+CjxvZmZpY2U6ZG9jdW1lbnQtbWV0YSB4bWxuczpvZmZpY2U9Imh0dHA6Ly9vcGVub2ZmaWNlLm9yZy8yMDAwL29mZmljZSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6bWV0YT0iaHR0cDovL29wZW5vZmZpY2Uub3JnLzIwMDAvbWV0YSIgeG1sbnM6b29vPSJodHRwOi8vb3Blbm9mZmljZS5vcmcvMjAwNC9vZmZpY2UiIHhtbG5zOmdyZGRsPSJodHRwOi8vd3d3LnczLm9yZy8yMDAzL2cvZGF0YS12aWV3IyIgb2ZmaWNlOnZlcnNpb249IjEuMiI+PG9mZmljZTptZXRhPjxtZXRhOmdlbmVyYXRvcj5MaWJyZU9mZmljZS8zLjUkTGludXhfeDg2IExpYnJlT2ZmaWNlX3Byb2plY3QvMzUwbTEkQnVpbGQtMjwvbWV0YTpnZW5lcmF0b3I+PG1ldGE6aW5pdGlhbC1jcmVhdG9yPmRic2VsbGVyIDwvbWV0YTppbml0aWFsLWNyZWF0b3I+PG1ldGE6Y3JlYXRpb24tZGF0ZT4yMDEyLTEwLTE5VDExOjUyOjQ4PC9tZXRhOmNyZWF0aW9uLWRhdGU+PGRjOmNyZWF0b3I+ZGJzZWxsZXIgPC9kYzpjcmVhdG9yPjxkYzpkYXRlPjIwMTItMTAtMjJUMTA6MDA6NTU8L2RjOmRhdGU+PG1ldGE6ZWRpdGluZy1jeWNsZXM+NzwvbWV0YTplZGl0aW5nLWN5Y2xlcz48bWV0YTplZGl0aW5nLWR1cmF0aW9uPlBUNUg0Mk01UzwvbWV0YTplZGl0aW5nLWR1cmF0aW9uPjxtZXRhOmRvY3VtZW50LXN0YXRpc3RpYyBtZXRhOnRhYmxlLWNvdW50PSIy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</template>
+            <filename>devolucao_termo_guarda.sxw</filename>
+        </office>
+    </view>
+</report>

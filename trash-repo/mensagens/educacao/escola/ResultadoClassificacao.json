@@ -1,0 +1,5 @@
+{
+   "codigo_nao_encontrado" : "Parâmetro informado não encontrado."
+  ,"sem_transacao_ativa"   : "Sem transação ativa."
+  ,"erro_incluir" : "Erro ao salvar avaliacao para disciplina:[disciplina]. \n[erro_banco]"
+}

@@ -1,0 +1,8 @@
+{
+  "taxas_nao_configuradas"     : "Não foram encontradas taxas configuradas para a regra de emissão do convênio. \nConfigure taxas.",
+  "selecione_tipo_lancamento"  : "Selecione o Tipo de Lançamento.",
+  "preencha_observacao"        : "Campo observação obrigatório quando tipo lançamento for igual a isento.",
+  "informe_data_pagamento"     : "Campo Data do Pagamento obrigatório quando tipo lançamento for igual a manual.",
+  "cadastro_efetuado_sucesso"  : "Cadastro Efetuado com Sucesso!",
+  "alteracao_efetuada_sucesso" : "Alteração Efetuada com Sucesso!"
+}

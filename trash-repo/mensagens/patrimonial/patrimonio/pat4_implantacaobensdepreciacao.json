@@ -1,0 +1,8 @@
+{
+  "nao_ha_itens"            : "Não há itens a serem depreciados nos filtros informados.",
+  "parametro_nao_setado"    : "Parâmetro que ativa a depreciação ainda não está setado.",
+  "erro_inesperado"         : "Erro inesperado ao iniciar a depreciação dos bens.",
+  "processamento_executado" : "Processamento executado com sucesso!",
+  "erro_tecnico"            : "Erro técnico: erro ao incluir na tabela bensdepreciacaolancamento.",
+  "ja_existem_calculos"     : "Já existem calculos de depreciação para os bens.\n Os Bens/Classificações deverão ser alteradas individualmente."
+}

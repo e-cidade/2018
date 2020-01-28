@@ -1,0 +1,15 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="sum(y08_quantlib)" label="quantidade_notas_liberadas" />
+  </campos>
+  <from tabela="aidof" />
+  <filtros>
+    <filtro label="inscricao_municipal" condicao="y08_inscr  = '$inscricao_municipal'" obrigatorio="true" />
+    <filtro label="tipo_nota"           condicao="y08_nota   = '$tipo_nota'"           obrigatorio="true" />
+    <filtro label=""                    condicao="y08_cancel = false"                  obrigatorio="true" />
+  </filtros>
+  <juncoes />
+  <agrupamento />
+  <ordenacao />
+</consulta>

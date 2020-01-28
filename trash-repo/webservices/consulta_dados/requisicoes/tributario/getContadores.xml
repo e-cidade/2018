@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="z01_numcgm"   label="cgm"   />
+    <campo campo="z01_nome"     label="nome" />
+    <campo campo="z01_cgccpf"   label="cnpj"           />
+  </campos>
+  <from tabela="cadescrito" />
+  <juncoes>
+    <join tipo="inner" tabela="cgm"     condicao="q86_numcgm = z01_numcgm" />
+  </juncoes>
+  <filtros>
+    <!--    <filtro label=""     condicao="q86_datalimite is null"  obrigatorio="true" /> -->
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="z01_nome" />
+</consulta>

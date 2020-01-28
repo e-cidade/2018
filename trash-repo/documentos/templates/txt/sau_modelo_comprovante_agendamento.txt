@@ -1,0 +1,32 @@
+     +--+                                    FICHA DE AGENDAMENTO
+     |  |      
+  +--+  +--+  SISTEMA DE SAUDE               Numero do Agendamento: ${NRO_AGENDAMENTO}
+  |   --   |                                 Data: ${DATA_AGENDAMENTO}
+  +--+  +--+  PREFEITURA MUNICIPAL 
+     |  |     DE ${MUNICIPIO}
+     +--+         Data para Atendimento: ${DATA_ATENDIMENTO}{40} ${DIA_SEMANA} ${HORA} ${TURNO}     
+-------------------------------------------------------------------------------
+1. UNIDADE PRESTADORA DE ATENDIMENTO
+Unidade : ${COD_UPS}{10} - ${NOME_UPS}{50}
+Endereco: ${RUA_UPS}{40} No: ${NRO_END_UPS}{5}
+Bairro  : ${BAIRRO_UPS}{20} CEP: ${CEP_UPS}{10}  Login: ${LOGIN}{20}
+SIA/SUS : ${SIA_SUS}{30}
+------------------------------------------------------------------------------- 
+2. IDENTIFICACAO DO PACIENTE
+No CGS   : ${NRO_CGS}{10} - ${NOME_CGS}{50}
+Endereco : ${RUA_PAC}{40} No: ${NRO_PAC}{5} ${COMPLEMENTO_END_PAC}{20}
+Bairro   : ${BAIRRO_PAC}{20}   Cidade: ${CIDADE_PAC}{40}                       
+CEP      : ${CEP_PAC}{10}
+Data Nasc: ${DATA_NASC_PAC}{10}  Idade: ${IDADE_PAC}{7} Sexo: ${SEXO_PAC}{10}
+-------------------------------------------------------------------------------
+3. IDENTIFICACAO DO MEDICO
+Medico : ${COD_MEDICO}{10} - ${NOME_MEDICO}{60}
+CRM/CRO: ${CRM}{40}
+------------------------------------------------------------------------------- 
+4. MENSAGEM
+            PARA MARCAR CONSULTA TRAZER DOCUMENTO DE IDENTIFICACAO
+-------------------------------------------------------------------------------
+
+
+
+

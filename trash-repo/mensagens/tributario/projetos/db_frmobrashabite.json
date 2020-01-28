@@ -1,0 +1,6 @@
+{
+  "area_habitese_maior_total"  : "À soma das àreas do habite-se desta construção é maior que o total da mesma.",
+  "area_habitese_maior_zero"   : "À àrea do habite-se deve ser maior que zero.",
+  "processando"                : "Aguarde processando...",
+  "paramentro_nao_configurado" : "Não está configurado os parametros do módulo projetos para o exercício: [iAnoUsu]."
+}

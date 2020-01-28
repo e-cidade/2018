@@ -1,0 +1,13 @@
+{
+  "erro_buscar_dados_receitas"                    : "Erro ao buscar as Receitas.",
+  "erro_buscar_importacoes"            			      : "Erro ao buscar as Importações Gerais.",
+  "erro_buscar_dados_procedencia"                 : "Erro ao buscar as Procedências.",
+  "nenhuma_receita_encontrada"                    : "Nenhuma Receita encontrada.",
+  "nenhuma_importacao_geral_encontrada"           : "Nenhuma Importação Geral encontrada.",
+  "nenhuma_procedencia_encontrada"                : "Nenhuma Procedência encontrada.",
+  "preenchimento_quantidade_parcelas_obrigatorio" : "O preenchimento da Quantidade de Parcelas é obrigatório.",
+  "preenchimento_procedencias_obrigatorio"        : "Deve ser selecionado pelo menos uma Procedência.",
+  "deseja_efetuar_importacao_geral"				        : "Deseja efetuar a importação geral das receitas selecionadas?",
+  "processando_importacao_geral"				          : "Processando importação geral de receitas, aguarde...",
+  "sucesso_importacao_geral"             		      : "Importação geral de receitas realizada com sucesso!" 
+}

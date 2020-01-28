@@ -1,0 +1,7 @@
+{
+  "mensagem_padrao_filtros_obrigatorios"                : "Nenhum filtro obrigatório preenchido\nPreencha pelo menos um dos filtros:\n - Código Lançamento\n - Período",
+  "mensagem_filstros_obrigatorios_acordo"               : "\n - Código Empenho\n - Código Acordo",
+  "mensagem_filstros_obrigatorios_suprimento_fundos"    : "\n - Código Empenho",
+  "mensagem_filstros_obrigatorios_passivo_sem_suporte"  : "\n - Código Passivo",
+  "data_inicial_maior_data_final"                       : "Periodo inválido.\nData inicial maior que a final."  
+}

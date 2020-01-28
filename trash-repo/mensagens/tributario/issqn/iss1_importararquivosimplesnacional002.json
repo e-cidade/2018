@@ -1,0 +1,11 @@
+{
+  "erro_importacao"            : "Ocorreu um erro na importação do arquivo.",
+  "erro_arquivo"               : "Ocorreu um erro ao Inserir o arquivo na tabela arquivosimplesimportacao",
+  "erro_arquivo_detalhe"       : "Ocorreu um erro ao Inserir o arquivo na tabela arquivosimplesimportacaodetalhe.",
+  "arquivo_conteudo_vazio"     : "Arquivo com conteúdo inválido! Não é possível importar arquivo vazio.",
+  "arquivo_layout_invalido"    : "Arquivo com conteúdo inválido na linha [iLinha]! Ajustar conteúdo para o padrão do arquivo.",
+  "nome_arquivo_invalido"      : "Arquivo com nome inválido! Nome do arquivo deve possuir formato: 02-XXXX-AAAAMMDD.txt",
+  "nome_arquivo_invalido_data" : "Arquivo com nome inválido! Nome do arquivo deve possuir formato: 02-XXXX-AAAAMMDD.txt",
+  "sucesso"                    : "Importação realizada com sucesso!",
+  "nome_igual"                 : "Arquivo já importado! Nome do arquivo já possui cadastro de importação."
+}

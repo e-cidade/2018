@@ -1,0 +1,7 @@
+{
+  "vincular_empenho"      : "Aguarde, salvando configuração..."              ,
+  "erro_vincular_empenho" : "ERRO - Não foi Possivel vincular os Empenhos."  ,
+  "empenhos_vinculados"   : "Pesquisando Empenhos vinculados<br>Aguarde ..." ,
+  "pesquisando_empenhos"  : "Pesquisando Empenhos<br>Aguarde ..."            ,
+  "mostrar_empenhos"      : "Selecione o Cgm do Contratado."
+}

@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="inscricao_municipal" obrigatorio="true" tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe nome="DadosEmpresaWebService" parametros="$inscricao_municipal" caminho="model/protocolo/cgm/DadosEmpresaWebService.model.php" />
+    <exec>
+      <metodo nome="getFotoPrincipal" parametros="" />
+    </exec>
+  </configuracoes>
+</processamento>

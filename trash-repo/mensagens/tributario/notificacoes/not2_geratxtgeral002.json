@@ -1,0 +1,11 @@
+{
+  "lista_nao_encontrada"                       : "Lista não encontrada.",
+  "nenhum_documento_configurado"               : "Nenhum documento configurado.",
+  "emissao_preparada_lista_por_matricula"      : "Emissão preparada somente para lista por matrícula.",
+  "nenhuma_notificacao_gerada"                 : "Nenhuma notificação gerada para a [sLista].",
+  "modelo_nao_configurado"                     : "Modelo não configurado.",
+  "nenhum_desconto_configurado"                : "Nenhum desconto configurado.",
+  "opcao_valida_somente_convenios_arrecadacao" : "Opção válida somente para Convênio Arrecadação. Contate Suporte.",
+  "convenio_arrecadacao_nao_cadastrado"        : "Convenio arrecadação não cadastrado.",
+  "configure_terceiro_digito"                  : "Configure o terceiro dígito do código de barras no cadastro do tipo de débito para este tipo de débito."
+}

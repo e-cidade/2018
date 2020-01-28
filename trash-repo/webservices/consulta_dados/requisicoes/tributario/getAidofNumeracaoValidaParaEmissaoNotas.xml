@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="coalesce(min(y08_notain), 0)" label="nota_inicial" />
+    <campo campo="coalesce(max(y08_notafi), 0)" label="nota_final"   />
+  </campos>
+  <from tabela="aidof" />
+  <juncoes>
+    <join tipo="inner" tabela="graficas"  condicao="y08_numcgm  = y20_grafica" />
+    <join tipo="inner" tabela="notasiss"  condicao="y08_nota    = q09_codigo"  />
+    <join tipo="inner" tabela="cgm"       condicao="y08_numcgm  = z01_numcgm"  />
+    <join tipo="left"  tabela="aidofcanc" condicao="y08_codigo  = y03_aidof"   />
+  </juncoes>
+  <filtros>
+    <filtro label=""                      condicao="y20_datalimiteimpressao is null"            obrigatorio="true"  />
+    <filtro label="inscricao"             condicao="y08_inscr               = '$inscricao'"     obrigatorio="true"  />
+    <filtro label=""                      condicao="y08_cancel              = false"            obrigatorio="true"  />
+    <filtro label="tipo_nota"             condicao="y08_nota                = $tipo_nota"       obrigatorio="false" />    
+    <filtro label="codigo_grupo"          condicao="q09_gruponotaiss        in ($codigo_grupo)" obrigatorio="false" />
+  </filtros>
+  <agrupamento />
+  <ordenacao   />
+</consulta>

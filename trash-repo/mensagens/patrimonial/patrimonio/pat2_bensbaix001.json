@@ -1,0 +1,6 @@
+{
+  "preencha_datas_placas"                   : "Preencha as datas ou as placas para pesquisar a baixa de bens.",
+  "placa_inicial_menor_placa_final"         : "A placa inicial deve ser menor que a placa final.",
+  "data_inicial_menor_data_final"           : "A data inicial deve ser menor que a data final.",
+  "informe_placa_final_maior_placa_inicial" : "Informe uma placa final maior que a placa inicial [placaInicialCompara]"
+}

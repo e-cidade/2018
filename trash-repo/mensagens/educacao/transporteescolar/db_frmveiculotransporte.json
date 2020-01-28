@@ -1,0 +1,12 @@
+{
+  "codigo_veiculo_vazio"            : "É necessário informar o código do veículo.",
+  "tipo_transporte_municipal_vazio" : "É necessário selecionar o tipo de transporte.",
+  "identificacao_vazio"             : "É necessário preencher o campo da identificação.",
+  "numero_passageiros_vazio"        : "É necessário informar o número de passageiros do veículo.",
+  "numero_passageiros_zero"         : "Não é possível cadastrar um veículo com número de passageiros igual a zero.",
+  "confirmacao_exclusao"            : "Confirma a exclusão do veículo selecionado?",
+  "buscando_dados_veiculo"          : "Aguarde, buscando os dados do veículo.",
+  "salvando_veiculo"                : "Aguarde, salvando as informações do veículo.",
+  "excluindo_veiculo"               : "Aguarde, excluindo o veículo.",
+  "codigo_empresa_vazio"            : "É necessário informar o código da empresa."
+}

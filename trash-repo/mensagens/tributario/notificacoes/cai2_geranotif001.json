@@ -1,0 +1,7 @@
+{
+  "selecione_lista"                           : "A lista tem que ser selecionada.",
+  "selecione_procedencia"                     : "A procedência da lista tem que ser selecionada.",
+  "nao_existem_contribuintes_nao_notificados" : "Não existem contribuintes não notificados.",
+  "processamento_concluido"                   : "Processamento concluído com sucesso!",
+  "problema_indices_debitos"                  : "Problema nos índices da tabela débitos. Entre em contato com CPD."
+}

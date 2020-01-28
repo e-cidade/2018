@@ -1,0 +1,3 @@
+<?
+$campos = "db_layoutcampos.db52_codigo,db_layoutcampos.db52_layoutlinha,db_layoutcampos.db52_nome,db_layoutcampos.db52_descr,db_layoutcampos.db52_layoutformat,db_layoutcampos.db52_posicao,db_layoutcampos.db52_default,db_layoutcampos.db52_tamanho,db_layoutcampos.db52_ident,db_layoutcampos.db52_imprimir,db_layoutcampos.db52_alinha,db_layoutcampos.db52_obs,db_layoutcampos.db52_quebraapos";
+?>

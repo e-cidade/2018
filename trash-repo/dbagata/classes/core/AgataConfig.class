@@ -1,0 +1,144 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+class AgataConfig
+{
+    /***********************************************************/
+    /* Read Config File
+    /***********************************************************/
+    function ReadConfig()
+    {
+        $config = @file(AGATA_PATH . '/agata.ini');
+        if (!$config)
+        {
+            new Dialog(_a('Permission Denied'), true, true, _a('File') . ': ' . AGATA_PATH . bar . 'agata.ini');
+            return false;
+        }
+        
+        foreach ($config as $line)
+        {
+            $line = trim($line);
+            if (substr($line,0,1)=='[')
+            {
+                $key = substr($line,1,-1);
+            }
+            else
+            {
+                if (strlen($line) > 3)
+                {
+                    $pieces = explode('=', $line, 2);
+                    $agataConfig[$key][trim($pieces[0])] = trim($pieces[1]);
+                }
+            }
+        }
+        return $agataConfig;
+    }
+    
+    /***********************************************************/
+    /* Write Config File
+    /***********************************************************/
+    function WriteConfig($agataConfig)
+    {
+        $fd = @fopen (AGATA_PATH . '/agata.ini', "w");
+        if (!$fd)
+        {
+            new Dialog(_a('Permission Denied'), true, true, _a('File') . ': ' . AGATA_PATH . bar . 'agata.ini');
+            return false;
+        }
+        
+        if ($fd)
+        {
+            foreach($agataConfig as $key => $Content)
+            {
+                if ($Content)
+                {
+                    fwrite($fd, "\n[$key]\n");
+                    
+                    foreach ($Content as $Config => $Value)
+                    {
+                        fwrite($fd, str_pad($Config,20, ' ', STR_PAD_RIGHT) .  "= $Value\n");
+                    }
+                }
+            }
+            fclose($fd);
+        }
+        return true;
+    }
+
+    /***********************************************************/
+    /* Write Setup File
+    /***********************************************************/
+    function WriteSetup($Theme, $Language)
+    {
+        $fd = @fopen(AGATA_PATH . '/include/setup.inc', "w");
+        if (!$fd)
+        {
+            new Dialog(_a('Permission Denied'), true, true, _a('File') . ': ' . AGATA_PATH . bar . 'include' . bar . 'setup.inc');
+            return false;
+        }
+        
+        if ($fd)
+        {
+            fwrite ($fd, "<?\n");
+            fwrite ($fd, "  \$Theme='$Theme';\n");
+            fwrite ($fd, "  \$Language='$Language';\n");
+            fwrite ($fd, "?>\n");
+        }
+        fclose($fd);
+        return true;
+    }
+
+    /***********************************************************/
+    /* Fix Config File
+    /***********************************************************/
+    function FixConfig($agataConfig)
+    {
+        $adir = $agataConfig['general']['AgataDir'] = getcwd();
+        
+        if (!$agataConfig['general']['OutputDir'])
+            $agataConfig['general']['OutputDir'] = $adir . bar . "output";
+        
+        if (!$agataConfig['general']['RptDir'])
+            $agataConfig['general']['RptDir'] = $adir . bar . "reports";
+
+        if (!$agataConfig['general']['SqlDir'])
+            $agataConfig['general']['SqlDir'] = $adir . bar . "sql";
+        
+        if (!$agataConfig['general']['TmpDir'])
+            $agataConfig['general']['TmpDir'] = temp;
+        
+        if (AgataConfig::WriteConfig($agataConfig))
+        {
+            return $agataConfig;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+?>

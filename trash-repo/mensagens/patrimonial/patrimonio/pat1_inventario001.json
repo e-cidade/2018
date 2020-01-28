@@ -1,0 +1,9 @@
+{
+  "selecione_periodo_inicial"         : "Selecione um período inicial.",
+  "selecione_periodo_final"           : "Selecione um período final.",
+  "selecione_comissao"                : "Selecione uma comissão.",
+  "data_inicial_diferente_data_final" : "As datas de períodos inicial e final devem ser diferentes.",
+  "data_inicial_menor_data_final"     : "Data período inicial deve ser menor que a data período final.",
+  "incluindo"                         : "Aguarde, incluindo registros...",
+  "impossivel_incluir"                : "Impossivel incluir um novo inventário com o sequencial [codigo]. \nLimpe os campos para novo registro."
+}

@@ -1,0 +1,79 @@
+.tab {
+	background-color: #EFEFEF;
+	border: 2px outset #cccccc;
+	border-bottom-width: 0px;
+	padding: 2px 1em 2px 1em;
+	position: relative;
+	text-decoration: none;
+	font-weight: bold;
+	top: -3px;
+	z-index: 100;
+}
+
+.tabSelecionada {
+	background-color: #cccccc;
+	border: 1px outset #cccccc;
+	border-bottom-width: 0px;
+	padding: 2px 1em 2px 1em;
+	position: relative;
+	font-weight: bold;
+	top: -1px;
+	z-index: 104;
+}
+
+/**
+ * Estilos referente ao componente DBABas
+ */
+.containerPrincipal {
+	width: 99.5%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.containerConteudo {
+	border-top: 1px outset #3c3c3c;
+	width: 99%;
+	height: -moz-calc(100% -   40px);
+	padding: 3px;
+}
+
+.aba {
+	text-align: center;
+	border: 1px outset #cccccc;
+	border-bottom-color: #000000;
+	display: inline-block;
+	padding: 7px;
+	min-width: 70px;
+	position: relative;
+	top: 1px;
+	z-index: 0;
+	background-color: #cccccc;
+  cursor:pointer;
+}
+
+.abaAtiva {
+	border: 1px outset #999999;
+	border-top: 2px outset #3c3c3c;
+	border-bottom: 0px;
+	border-bottom-color: #3c3c3c;
+	border-left-color: #000000;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-right-style: inset;
+	text-align: center;
+	display: inline-block;
+	padding: 7px;
+	color: black;
+	font-weight: bold;
+	min-width: 70px;
+	position: relative;
+	top: 3px;
+	z-index: 0;
+	background-color: #cccccc;
+	border-top-right-radius: 7.5px;
+  cursor: default;
+}
+
+.abaInativaConteudo {
+  display: none;
+}

@@ -1,0 +1,16 @@
+{
+  "informe_classificacao_inicial"     : "Informe a classificação inicial.",
+  "informe_classificacao_final"       : "Informe a classificação final.",
+  "classificacao_inicial_menor_final" : "A classificação inicial deve ser menor que a classificação final.",
+  "pesquisando_bens"                  : "Aguarde, pesquisando bens...",
+  "informe_depreciacao"               : "Informe o tipo de depreciação.",
+  "informe_vida_util"                 : "Informe a vida útil.",
+  "informe_aquisicao"                 : "Informe o tipo de aquisição.",
+  "informe_percentual"                : "Informe o percentual do valor residual dos bens.",
+  "deseja_implementar_depreciacao"    : "Deseja implementar a depreciação para os bens listados?",
+  "sem_itens"                         : "Sem itens para a implantação de depreciação.",
+  "bens_implementados"                : "Bens implementados com sucesso!",
+  "processando_grupo"                 : "Aguarde, processando Grupo [grupo] e Grupos de Itens [totalGrupo].",
+  "bens_em_conflito"                  : "Os bens/classificações abaixo estão em conflito com a configuração de depreciação informada. \nMarque as que deseja alterar o tipo de depreciação.",
+  "informe_depreciacao_e_vida_util"   : "Informe o tipo de depreciação e a vida útil dos bens. \nA informação será replicada para as classificações/Bens listados abaixo."
+}

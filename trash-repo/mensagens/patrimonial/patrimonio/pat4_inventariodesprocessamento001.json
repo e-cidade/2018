@@ -1,0 +1,6 @@
+{
+  "selecione_inventario"        : "Selecione um inventário.",
+  "deseja_efetuar_procedimento" : "Esta rotina desprocessará os bens deste inventário, retornando os valores anteriores.\nDeseja efetuar este procedimento?",
+  "desprocessando_intervalo"    : "Aguarde, desprocessando Inventário...",
+  "cancelando_inventario"       : "Aguarde, cancelando Inventário..."
+}

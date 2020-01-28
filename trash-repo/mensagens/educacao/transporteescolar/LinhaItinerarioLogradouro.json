@@ -1,0 +1,14 @@
+{
+  "itinerariologradouro_não_cadastrado" : "Linha Itinerário Logradouro de código [codigo] não encontrado.",
+  "linhaitinerarionaoinformado"         : "Linha Itinerário não informado",
+  "bairrologradouronaoinformado"        : "Código do Bairro-Logradouro não informado",
+  "erro_persistir_dados"                : "[erro_dao]",
+  "erro_remover_dados"                  : "[erro_dao]",
+  "sem_vinculos"                        : "[sMsg]",
+  "erro_adicionarpontoparada"           : "[erro_dao]",
+  "erro_removerpontoparada"             : "[erro_dao]",
+  "erro_vincularpontoparada"            : "Ponto de parada já cadastrado para o logradouro do itinerário selecionado.",
+  "vinculo_logradouro_existente"        : "Logradouro já vinculado ao itinerário e tipo informados.",
+  "ponto_parada_vinculado"              : "Exclusão não permitida. Há pontos de parada do logradouro, \nvinculadas a um itinerário da linha [sLinhaTransporte]",
+  "ordem_existente"                     : "Já há um logradouro vinculado ao itinerário na ordem informada. Informe a ordem seguinte, \nou deixe o campo em branco para buscar a próxima ordem."
+}
