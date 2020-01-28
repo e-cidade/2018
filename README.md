@@ -8,3 +8,10 @@ Do arquivo disponível para download, disponibilizado pelo atual mantenedor [DB 
 
 1. [Schema](https://www.dropbox.com/sh/k05kmu07zulddk8/AAA_KY-dAxB3boQeZxvtXgE5a/e-cidade-2018-2-schema.sql?dl=0)
 2. [Demo Data](https://www.dropbox.com/sh/k05kmu07zulddk8/AABP7ztrLifetWaHnlyOfgvza/e-cidade-2018-2-demo.sql?dl=0)
+
+Já na pasta raiz do projeto, para salvar os arquivos SQL diretamente, use os comandos abaixo:
+
+1. Schema
+    - wget -O legacy/sql/e-cidade-2018-2-schema.sql https://www.dropbox.com/sh/k05kmu07zulddk8/AAA_KY-dAxB3boQeZxvtXgE5a/e-cidade-2018-2-schema.sql?dl=0
+2. Demo Data
+    - wget -O legacy/sql/e-cidade-2018-2-schema.sql https://www.dropbox.com/sh/k05kmu07zulddk8/AABP7ztrLifetWaHnlyOfgvza/e-cidade-2018-2-demo.sql?dl=0
