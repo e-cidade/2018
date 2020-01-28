@@ -6,5 +6,5 @@ O e-cidade é um projeto baseado em um fork de 2014, atualizado para a última v
 
 Do arquivo disponível para download, disponibilizado pelo atual mantenedor [DB Seller](https://dbseller.com), contém arquivos SQL muito grandes para serem versionados pelo GITHUB. Sendo assim, para executar o container PostgreSQL com os dados iniciais, é necessário o download adicional dos arquivos abaixo para serem incluídos no diretório _/legacy/sql_.
 
-.. [Schema](https://www.dropbox.com/sh/k05kmu07zulddk8/AAA_KY-dAxB3boQeZxvtXgE5a/e-cidade-2018-2-schema.sql?dl=0)
-.. [Demo Data](https://www.dropbox.com/sh/k05kmu07zulddk8/AABP7ztrLifetWaHnlyOfgvza/e-cidade-2018-2-demo.sql?dl=0)
+1. [Schema](https://www.dropbox.com/sh/k05kmu07zulddk8/AAA_KY-dAxB3boQeZxvtXgE5a/e-cidade-2018-2-schema.sql?dl=0)
+2. [Demo Data](https://www.dropbox.com/sh/k05kmu07zulddk8/AABP7ztrLifetWaHnlyOfgvza/e-cidade-2018-2-demo.sql?dl=0)
