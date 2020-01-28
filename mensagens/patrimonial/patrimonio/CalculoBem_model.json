@@ -1,4 +1,0 @@
-{
-  sem_transcao_banco_de_dados:"Sem transação com o banco de dados. \nProcessamento cancelado.",
-  erro_salvar_calculo:"Erro ao salvar calculo do bem [sDescricao]. \n[sErro]."
-}

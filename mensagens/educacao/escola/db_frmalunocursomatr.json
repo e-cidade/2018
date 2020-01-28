@@ -1,7 +1,0 @@
-{
-  "informe_etapa_origem_aluno"              : "Informe a etapa de origem para este aluno!",
-  "informe_data_matricular"                 : "Informe a data para matricular o aluno!",
-  "turma_sem_vagas2"                        : "Turma sem vagas disponíveis!",
-  "turma_sem_vagas1"                        : "Turma sem vagas disponíveis!",
-  "data_matricula_fora_periodo_calendario"  : "Data da matrícula fora do periodo do calendário ( [iDataInicial] a [IDataFinal] )."
-}
