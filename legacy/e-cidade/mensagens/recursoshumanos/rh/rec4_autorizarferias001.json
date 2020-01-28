@@ -1,0 +1,5 @@
+{
+  "matricula_vazia"             : "O Campo matrícula não pode estar vazio.",
+  "nenhum_registro_encontrado"  : "Nenhuma escala foi encontrada para este filtro.",
+  "informe_pelo_menos_um_filtro": "Informe pelo menos um dos filtros para pesquisa."
+}

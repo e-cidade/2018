@@ -1,0 +1,21 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <versao>1.2</versao>
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="numpre" obrigatorio="true" tipo="integer" />
+    <parametro nome="parcela" obrigatorio="true" tipo="integer" />
+  </parametros>
+
+  <configuracoes>
+    <classe referencia="oGerarDebitoIss" nome="ZerarParcelaISSQNVariavel" parametros="" caminho="model/issqn/webservice/ZerarParcelaISSQNVariavel.model.php"/>
+    <exec>
+      <metodo referencia="oGerarDebitoIss" nome="setNumpre" parametros="$numpre" />
+      <metodo referencia="oGerarDebitoIss" nome="setParcela" parametros="$parcela" />
+      <metodo referencia="oGerarDebitoIss" nome="zerarParcela" parametros="" />
+    </exec>
+  </configuracoes>
+
+</processamento>

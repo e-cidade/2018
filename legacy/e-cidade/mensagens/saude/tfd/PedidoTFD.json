@@ -1,0 +1,5 @@
+{
+  "pedido_nao_encontrado"   : "Pedido do TFD não encontrado",
+  "erro_buscar_prestadora"  : "Erro ao buscar a Prestadora do Pedido TFD:\n[sErro]",
+  "erro_buscar_dados_saida" : "Erro ao buscar as informações da saída do Pedido TFD:\n[sErro]"
+}

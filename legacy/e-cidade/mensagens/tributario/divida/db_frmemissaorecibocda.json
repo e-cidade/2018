@@ -1,0 +1,10 @@
+{
+  "erro_certidao_inicial_maior"      : "A Certidão inicial não deve ser maior que Certidão final.",
+  "erro_certidao_obrigatorio"        : "Intervalo de Certidão é de preenchimento obrigatório.",
+  "erro_cartorio_obrigatorio"        : "Campo Cartório é de preenchimento obrigatório.",
+  "erro_data_vencimento_obrigatorio" : "Campo Data de Vencimento é de preenchimento obrigatório.",
+  "erro_data_vencimento_invalida"    : "Campo Data de Vencimento não pode ser menor ou igual a data de hoje.",
+  "validando_emissao"                : "Validando Registro(s)...\n Aguarde.",
+  "carregando_emissao"               : "Emitindo recibo(s)...\n Aguarde.",
+  "nenhuma_inconsistencia"           : "Não há nenhuma inconsistência no intervalo de Certdões informado."
+}

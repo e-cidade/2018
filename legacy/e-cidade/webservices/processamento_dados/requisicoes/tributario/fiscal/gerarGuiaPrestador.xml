@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+     <parametro nome="inscricao"       obrigatorio="false" tipo="integer" />
+     <parametro nome="numcgm"          obrigatorio="false" tipo="integer" />
+     <parametro nome="competencia_mes" obrigatorio="true" tipo="integer" />
+     <parametro nome="competencia_ano" obrigatorio="true" tipo="integer" />
+     <parametro nome="data_pagamento"  obrigatorio="true" tipo="date"/>
+     <parametro nome="planilhas_notas"  obrigatorio="false" tipo="string"/>
+  </parametros>
+
+  <configuracoes>
+    <classe nome="GeracaoGuiaPrestadorWebService"  parametros="" caminho="model/issqn/GeracaoGuiaPrestadorWebService.model.php">
+      <metodos>
+        <metodo nome="setInscricao"       parametros="$inscricao"                        />
+        <metodo nome="setCgm"             parametros="$numcgm"                        />
+        <metodo nome="setCompetencia"     parametros="$competencia_mes,$competencia_ano" />
+        <metodo nome="setDataPagamento"   parametros="$data_pagamento"                   />
+        <metodo nome="adicionarPlanilhasNotas" parametros="$planilhas_notas"   />
+        <metodo nome="gerarGuia" />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

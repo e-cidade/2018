@@ -1,0 +1,7 @@
+{
+  "codigo_receita_obrigatorio" : "Campo Código da receita é de preenchimento obrigatório.",
+  "valor_obrigatorio"          : "Campo Valor padrão para a receita é de preenchimento obrigatório quando a Forma de Cálculo é Fixa.",
+  "descricao_obrigatorio"      : "Campo Descrição padrão da receita é de preenchimento obrigatório.",
+  "erro_receita_existente"     : "Esta Procedência já contém uma Receita vinculada.",
+  "erro_percentual_invalido"   : "Valor percentual inserido no Campo Valor Padrão deve ser maior que 0 e menor ou igual a 100."
+}

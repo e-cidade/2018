@@ -1,0 +1,6 @@
+{
+  "confirma_recursos_especiais"      : "Aluno não necessita de recursos especiais?",
+  "informe_apenas_1_recurso"         : "É permitido informar apenas 1 recurso entre Prova Ampliada (Fonte Tamanho 16), Prova Ampliada (Fonte Tamanho 20) e Prova Ampliada (Fonte Tamanho 24).",
+  "dados_salvos"                     : "Dados salvos com sucesso!",
+  "necessidade_especial_maior_aluno" : "ATENÇÃO! A necessidade especial [pgResultado] ficou definida como necessidade Maior deste aluno!"
+}

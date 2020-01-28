@@ -1,0 +1,42 @@
+# servidor dbportal2
+
+# criar o esquema com os dados para gerar arquivo para o dbportal2
+# php5 -q geraBaseDBpref.php schema xml/schema.dbpref.xml dbpref_off
+
+sArqXML='xml/schema.dbpref.xml'
+sDbHost='192.168.0.52'
+sBaseName='auto_ara_20080528'
+sSchemaName='dbpref'
+sFileDumpName='/tmp/ara_dbpref_off.sql.bz2'
+
+php5 -q geraBaseDBpref.php schema $sArqXML $sSchemaName
+
+# Gerar dump do schema para mandar para o dbpref(datacenter)
+#pg_dump -U postgres -h 192.168.0.52 auto_ara_20080528 -n dbpref_off | bzip2 > /tmp/ara_dbpref_off.sql.bz2
+pg_dump -U postgres -h $sDbHost $sBaseName -n $sSchemaName | bzip2 > $sFileDumpName
+
+
+
+# aguardar a conclusao do arquivo
+# chegou o arquivo? entao baixar na base arapiraca
+
+-- bunzip2 -c ara_dbportal_retorno.sql.bz2 | psql -U postgres -h 192.168.0.2 auto_ara_20080523
+
+php5 -q geraBaseDBpref.php gerar xml/schema.dbpref.xml dbpref_off
+
+#---------------------------------------------------#
+
+# servidor dbpref
+
+php5 -q geraBaseDBpref.php gerar  xml/schema.dbportal.xml dbportal_retorno
+
+# gerando arquivo com o hash
+md5sum ara_dbportal_retorno.sql.bz2 > ara_dbportal_retorno.sql.bz2.md5
+
+# para checar o arquivo
+md5sum -c ara_dbportal_retorno.sql.bz2.md5
+
+
+bunzip2 -c ara_dbpref_off.sql.bz2       | psql -U postgres -h 192.168.0.2 auto_ara_20080523
+
+

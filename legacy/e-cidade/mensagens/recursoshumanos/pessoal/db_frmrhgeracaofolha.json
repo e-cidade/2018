@@ -1,0 +1,8 @@
+{
+  "campo_obrigatorio" : "Campo [sCampo] é de preenchimento obrigatório.",
+  "somente_numeros"   : "[sCampo] deve ser preenchido somente com números.",
+  "carregando"        : "Gerando Folha de Pagamento...",
+  "mes_invalido"      : "Campo Mês Folha inválido.",
+  "quantia_invalida"  : "[sCampo] não deve ser superior a 100.",
+  "zero_invalido"     : "[sCampo] deve ser preenchido com valores de 1 a 100."
+}

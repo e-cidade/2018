@@ -1,0 +1,10 @@
+{
+  "erro_buscar_atividade"                : "Erro ao buscar Função/Atividade do profissional.\n[sErro]",
+  "erro_salvar"                          : "Erro ao salvar Função/Atividade do Profissional. \n[sErro]",
+  "erro_excluir"                         : "Erro ao excluir Função/Atividade.\n[sErro]",
+  "sem_transacao"                        : "Nenhuma transação no banco.",
+  "erro_validar_conflito"                : "Erro ao validar conflito.\n[sErro]",
+  "conflito_horario_regencia"            : "Horários da Regência conflitam com a atividade.\nPeríodos conflitantes:",
+  "conflito_horario_periodo"             : "[sDiaSemana] - Período: [sPeriodo] horário: [sHoraInicio] à [sHoraFim]",
+  "erro_buscar_vinculo_relacao_trabalho" : "Erro ao buscar vínculo da atividade com a relação de trabalho."
+}

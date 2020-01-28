@@ -1,0 +1,12 @@
+{
+  "preenchimento_faixainicial_obrigatorio"   : "O campo Mínimo de faltas é de preenchimento obrigatório.",
+  "preenchimento_faixafinal_obrigatorio"     : "O campo Máximo de faltas é de preenchimento obrigatório.",
+  "preenchimento_diasdesconto_obrigatorio"   : "O campo Dias descontados é de preenchimento obrigatório.",
+  "diasdesconto_nao_superior_30"             : "O quantidade de dias descontados não pode ser superior a 30.",
+  "faixa_inicial_maior_faixa_final"          : "O número mínimo de faltas não pode ser maior que número Máximo de faltas.",
+  "deseja_prosseguir"                        : "Deseja prosseguir com o processamento?",
+  "sem_transacao_ativa"                      : "Não existe transação ativa.",
+  "erro_buscar_dados_faixas"							   : "Erro ao buscar dados das faixas do período aquisitivo",
+  "faixa_periodo_com_servidores_cadastrados" : "Já existem lançamentos vinculados a essa faixa de faltas.",
+  "processamento_sucesso"                    : "Processado com sucesso."
+}

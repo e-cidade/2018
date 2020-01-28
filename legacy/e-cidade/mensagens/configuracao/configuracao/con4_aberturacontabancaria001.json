@@ -1,0 +1,9 @@
+{
+  "buscando_contas"                    : "Aguarde, buscando contas do ano anterior.",
+  "buscando_contas_pcasp"              : "Aguarde, buscando as contas do PCASP.",
+  "sem_contas_anteriores_selecionadas" : "É necessário selecionar ao menos uma conta do ano anterior.",
+  "sem_conta_pcasp_selecionada"        : "É necessário selecionar uma conta do PCASP.",
+  "vinculando_contas"                  : "Aguarde, vinculando contas.",
+  "confirma_vinculo"                   : "Confirma a abertura das contas selecionadas no PCASP ?",
+  "somente_contas_sinteticas"          : "Vínculo não realizado. Foram selecionadas apenas contas sintéticas."
+}

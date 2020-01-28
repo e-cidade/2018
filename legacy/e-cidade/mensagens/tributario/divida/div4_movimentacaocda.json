@@ -1,0 +1,9 @@
+{
+  "certidao_inexistente"       : "certidão inexistente",
+  "certidao_fechada"           : "Certidão não está em aberto.",
+  "certidao_nao_cobrada"       : "Esta certidão não está em cobrança extrajudicial",
+  "data_movimentacao_invalida" : "Data de Movimentação não pode ser inferior a data da última movimentação ([data_ultima_movimentacao]).",
+  "tipo_movimentacao_invalida" : "Tipo de movimentação não permitido para esta Certidão.",
+  "erro_inclusao_movimentacao" : "Erro ao inclusão",
+  "sucesso_movimentacao"       : "Movimentação realizada com sucesso!"
+}

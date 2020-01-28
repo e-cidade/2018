@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<recursos>
+ <recurso codigo="0" descricao="ORDINÁRIOS"/>
+ <recurso codigo="1" descricao="Contribuição de Intervenção do Domínio Econômico - CIDE"/>
+ <recurso codigo="2" descricao="Contribuição para o Custeio dos Serviços de Iluminação Pública - COSIP"/>
+ <recurso codigo="3" descricao="Royalties - Lei 9478/97"/>
+ <recurso codigo="4" descricao="Royalties 5% - Lei 7990/89"/>
+ <recurso codigo="5" descricao="SALÁRIO EDUCAÇÃO"/>
+ <recurso codigo="8" descricao="Operações de Crédito Internas para Programas de Educação Básica"/>
+ <recurso codigo="9" descricao="Operações de Crédito Internas para Programas de Saúde"/>
+ <recurso codigo="10" descricao="DIRETAM. ARRECADADO"/>
+ <recurso codigo="11" descricao="Operações de Crédito Internas (outros Programas)"/>
+ <recurso codigo="12" descricao="Convênios"/>
+ <recurso codigo="13" descricao="Convênios Saúde"/>
+ <recurso codigo="14" descricao="Convênios Educação"/>
+ <recurso codigo="15" descricao="Transferências do FUNDEB"/>
+ <recurso codigo="16" descricao="Transferência de Recursos do FNDE (Que não salário educação)"/>
+ <recurso codigo="17" descricao="Operações de Crédito Externa"/>
+ <recurso codigo="18" descricao="FNAS"/>
+ <recurso codigo="19" descricao="REGIME PRÓPRIO(RPPS)"/>
+ <recurso codigo="20" descricao="S.U.S."/>
+ <recurso codigo="21" descricao="CONSORCIO SAÚDE"/>
+ <recurso codigo="22" descricao="Outras Transferências Vinculadas a Programas de Saúde (que não SUS)"/>
+ <recurso codigo="28" descricao="Alienação de Bens destinados a Programas de Educação Básica"/>
+ <recurso codigo="29" descricao="Alienação de Bens destinados a Programas de Saúde"/>
+ <recurso codigo="30" descricao="Alienação de Bens destinados a outros Programas"/>
+ <recurso codigo="97" descricao="CONSERV. AMBIENTAL"/>
+ <recurso codigo="98" descricao="Diversas - recursos vinculados"/>
+ <recurso codigo="99" descricao="Diversas - recursos não vinculados"/>
+</recursos>

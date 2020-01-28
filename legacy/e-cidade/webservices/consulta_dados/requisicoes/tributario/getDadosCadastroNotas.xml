@@ -1,0 +1,146 @@
+<?xml version='1.0' ?>
+<consulta distinct="true">
+  <campos>
+    <campo campo="case when length(z01_cgccpf) = 11 then 'Fisica' when length(z01_cgccpf) = 14 then 'Juridico' else 'Indefinido' end " label="tipo"               />
+    <campo campo="z01_cgccpf"                                                                                                          label="cgccpf"             />
+    <campo campo="case when z01_nomecomple is not null then z01_nomecomple else z01_nome end "                                         label="nome"               />
+    <campo campo="z01_nomefanta"                                                                                                       label="nome_fanta"         />
+    <campo campo="z01_ident"                                                                                                           label="identidade"         />
+    <campo campo="z01_incest"                                                                                                          label="inscr_est"          />
+    <campo campo="j88_descricao"                                                                                                       label="tipo_lograd"        />
+    <campo campo="ruas.j14_nome"                                                                                                       label="lograd"             />
+    <campo campo="issruas.q02_numero"                                                                                                  label="numero"             />
+    <campo campo="issruas.q02_compl"                                                                                                   label="complemento"        />
+    <campo campo="bairro.j13_descr"                                                                                                    label="bairro"             />
+    <campo campo="cgm.z01_numcgm"                                                                                                      label="numero_cgm"         />
+    <campo campo="(select db125_codigosistema
+          from db_config
+               inner join cadendermunicipio on munic =  db72_descricao
+               inner join cadendermunicipiosistema on db125_cadendermunicipio = db72_sequencial and db125_db_sistemaexterno = 4
+               inner join cadenderestado           on db72_cadenderestado     = db71_sequencial
+                                                  and db71_sigla              = uf
+               inner join cadenderpais             on db71_cadenderpais       = db70_sequencial
+               inner join cadenderpaissistema      on db70_sequencial         = db135_db_cadenderpais and db135_db_sistemaexterno = 3
+         where prefeitura = 't')"                                                                                                      label="cod_ibge"           />
+    <campo campo="(select db72_descricao
+          from db_config
+               inner join cadendermunicipio on munic =  db72_descricao
+               inner join cadendermunicipiosistema on db125_cadendermunicipio = db72_sequencial and db125_db_sistemaexterno = 4
+               inner join cadenderestado           on db72_cadenderestado     = db71_sequencial
+                                                  and db71_sigla              = uf
+               inner join cadenderpais             on db71_cadenderpais       = db70_sequencial
+               inner join cadenderpaissistema      on db70_sequencial         = db135_db_cadenderpais and db135_db_sistemaexterno = 3
+        where prefeitura = 't')"                                                                                                       label="munic"              />
+    <campo campo="(select db71_sigla
+          from db_config
+               inner join cadendermunicipio on munic =  db72_descricao
+               inner join cadendermunicipiosistema on db125_cadendermunicipio = db72_sequencial and db125_db_sistemaexterno = 4
+               inner join cadenderestado           on db72_cadenderestado     = db71_sequencial
+                                                  and db71_sigla              = uf
+               inner join cadenderpais             on db71_cadenderpais       = db70_sequencial
+               inner join cadenderpaissistema      on db70_sequencial         = db135_db_cadenderpais and db135_db_sistemaexterno = 3
+         where prefeitura = 't')"                                                                                                      label="uf"                 />
+    <campo campo="(select db135_codigo
+          from db_config
+               inner join cadendermunicipio on munic =  db72_descricao
+               inner join cadendermunicipiosistema on db125_cadendermunicipio = db72_sequencial and db125_db_sistemaexterno = 4
+               inner join cadenderestado           on db72_cadenderestado     = db71_sequencial
+                                                  and db71_sigla              = uf
+               inner join cadenderpais             on db71_cadenderpais       = db70_sequencial
+               inner join cadenderpaissistema      on db70_sequencial         = db135_db_cadenderpais and db135_db_sistemaexterno = 3
+        where prefeitura = 't')"                                                                                                       label="cod_pais"           />
+    <campo campo="(select db70_descricao
+                        from db_config
+                           inner join cadendermunicipio on munic =  db72_descricao
+                           inner join cadendermunicipiosistema  on db125_cadendermunicipio = db72_sequencial
+                                                               and db125_db_sistemaexterno = 4
+                           inner join cadenderestado            on db72_cadenderestado     = db71_sequencial
+                                                               and db71_sigla              = uf
+                           inner join cadenderpais              on db71_cadenderpais       = db70_sequencial
+                           inner join cadenderpaissistema       on db70_sequencial         = db135_db_cadenderpais
+                                                               and db135_db_sistemaexterno = 3
+                        where prefeitura = 't')"                                                                                       label="pais"                 />
+    <campo campo="coalesce(cgm.z01_cep, cgm.z01_cep, issqn.issruas.z01_cep)"                                                           label="cep"                  />
+    <campo campo="cgm.z01_telef"                                                                                                       label="telefone"             />
+    <campo campo="cgm.z01_fax"                                                                                                         label="fax"                  />
+    <campo campo="cgm.z01_telcel"                                                                                                      label="celular"              />
+    <campo campo="cgm.z01_email"                                                                                                       label="email"                />
+    <campo campo="issbase.q02_inscr"                                                                                                   label="inscricao"            />
+    <campo campo="issbase.q02_dtinic"                                                                                                  label="data_inscricao"       />
+    <campo campo="issbase.q02_dtbaix"                                                                                                  label="data_inscricao_baixa" />
+    <campo campo="case when (select q39_dtbaixa
+                                  from isscadsimples
+                                     left join isscadsimplesbaixa on q38_sequencial = q39_isscadsimples
+                                 where q38_inscr = q138_inscr
+                                  order by q38_sequencial desc limit 1) is null then 'Não' else 'Sim' end"                         label="optante_simples_baixado"    />
+    <campo campo="case when (select q38_sequencial
+                                  from isscadsimples
+                                     left join isscadsimplesbaixa on q38_sequencial = q39_isscadsimples
+                                 where q38_inscr = q138_inscr
+                                  order by q38_sequencial desc limit 1) is null then 'Não' else 'Sim' end"                         label="optante_simples"    />
+
+    <campo campo="(select db140_sequencial
+                     from issbasecaracteristica
+                          left join caracteristica      on db140_sequencial = q138_caracteristica
+                          left join grupocaracteristica on db139_sequencial = db140_grupocaracteristica
+                    where db139_sequencial  = 1
+                      and issbase.q02_inscr = q138_inscr )"  label="tipo_classificacao" />
+
+    <campo campo="(select db140_sequencial
+                     from issbasecaracteristica
+                          left join caracteristica      on db140_sequencial = q138_caracteristica
+        	          left join grupocaracteristica on db139_sequencial = db140_grupocaracteristica
+                    where db139_sequencial = 2
+                      and issbase.q02_inscr = q138_inscr )"  label="tipo_emissao" />
+
+    <campo campo="(select db140_sequencial
+                     from issbasecaracteristica
+                          left join caracteristica      on db140_sequencial = q138_caracteristica
+                          left join grupocaracteristica on db139_sequencial = db140_grupocaracteristica
+                    where db139_sequencial = 3
+                      and issbase.q02_inscr = q138_inscr )"  label="subst_tributaria" />
+
+    <campo campo="(select db140_sequencial
+                     from issbasecaracteristica
+                          left join caracteristica      on db140_sequencial = q138_caracteristica
+                          left join grupocaracteristica on db139_sequencial = db140_grupocaracteristica
+                    where db139_sequencial = 4
+                      and issbase.q02_inscr = q138_inscr)"   label="regime_tributario" />
+
+    <campo campo="(select db140_sequencial
+                     from issbasecaracteristica
+                          left join caracteristica      on db140_sequencial = q138_caracteristica
+                          left join grupocaracteristica on db139_sequencial = db140_grupocaracteristica
+                    where db139_sequencial = 5
+                      and issbase.q02_inscr = q138_inscr)"   label="exigibilidade" />
+
+    <campo campo="(select db140_sequencial
+                     from issbasecaracteristica
+                          left join caracteristica      on db140_sequencial = q138_caracteristica
+                          left join grupocaracteristica on db139_sequencial = db140_grupocaracteristica
+                    where db139_sequencial = 6
+                      and issbase.q02_inscr = q138_inscr)"   label="incentivo_fiscal" />
+    <campo campo="(select q38_categoria
+                     from isscadsimples
+                          left join isscadsimplesbaixa on q38_sequencial = q39_isscadsimples
+                     where q38_inscr = q138_inscr and q39_isscadsimples is null
+                     order by q38_sequencial desc limit 1)"  label="optante_simples_categoria"    />
+  </campos>
+  <from tabela="issbase" />
+  <juncoes>
+    <join tipo="inner" tabela="cgm"                   condicao="z01_numcgm           = q02_numcgm"                	/>
+    <join tipo="left"  tabela="issruas"       	      condicao="issbase.q02_inscr    = issruas.q02_inscr"  		/>
+    <join tipo="left"  tabela="ruas"          	      condicao="issruas.j14_codigo   = ruas.j14_codigo"   		/>
+    <join tipo="left"  tabela="ruastipo"      	      condicao="j14_tipo             = j88_codigo"                  	/>
+    <join tipo="left"  tabela="issbairro"      	      condicao="issbase.q02_inscr    = q13_inscr"           		/>
+    <join tipo="left"  tabela="bairro"       	        condicao="issbairro.q13_bairro = bairro.j13_codi" 		/>
+    <join tipo="left"  tabela="issbasecaracteristica" condicao="issbase.q02_inscr    = q138_inscr"      		/>
+    <join tipo="left"  tabela="caracteristica"        condicao="db140_sequencial     = q138_caracteristica" 		/>
+    <join tipo="left"  tabela="grupocaracteristica"   condicao="db139_sequencial     = db140_grupocaracteristica"	/>
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao" condicao="issbase.q02_inscr = '$inscricao'" obrigatorio="true"/>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="issbase.q02_inscr" />
+</consulta>

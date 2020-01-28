@@ -1,0 +1,7 @@
+{
+  "aluno_nao_informado"        : "Código do aluno não foi informado.",
+  "progressao_nao_informada"   : "Nenhuma progressão informada.",
+  "progressao_atualizada"      : "Alteração da progressão realizada com sucesso.",
+  "progressao_nao_informada"   : "Código da progressão não informado.",
+  "erro_buscar_progressao"     : "Erro ao buscar progressão."
+}

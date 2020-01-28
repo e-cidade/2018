@@ -1,0 +1,9 @@
+{
+   "selecione_aluno"             : "Selecione um aluno."
+  ,"selecione_forma_avaliacao"   : "Selecione a forma de aprovação."
+  ,"informe_justificativa"       : "Justificativa não informada."
+  ,"selecione_altera_nota_final" : "Selecione como deseja alterar a avaliação final do aluno."
+  ,"informe_avaliacao"           : "Informe a nova avaliação final."
+  ,"avaliacao_abaixo_minimo"     : "Avaliação informada deve ser igual ou maior que o mínimo.\nMinimo: [mMinimo]"
+  ,"avaliacao_fora_intervalo"    : "Avaliação informada deve estar entre [mMinimo] e [mMaximo]!"
+}

@@ -1,0 +1,256 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4024' name='recursoshumanos.pontoeletronicoconfiguracoesgerais' description="Configurações gerais da efetividade" prefix="rh200" label="Configurações gerais da efetividade" type="0">
+  <fields>
+    <field codigo="22327"
+           campo_api=''
+           name="rh200_sequencial"
+           conteudo="int4"
+           description="Código sequencial da tabela"
+           inivalue="0"
+           label="Código"
+           size="19"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='recursoshumanos.pontoeletronicoconfiguracoesgerais_rh200_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22328"
+           campo_api=''
+           name="rh200_instituicao"
+           conteudo="int4"
+           description="Instituição da configuração"
+           inivalue="0"
+           label="Instituição"
+           size="19"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Instituição"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22329"
+           campo_api=''
+           name="rh200_tipoasse_extra50diurna"
+           conteudo="int4"
+           description="Horas extras 50% diurnas"
+           inivalue="0"
+           label="Horas Extras 50% Diurna"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Horas Extras 50% Diurna"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22330"
+           campo_api=''
+           name="rh200_tipoasse_extra75diurna"
+           conteudo="int4"
+           description="Horas extras 75% diurnas"
+           inivalue="0"
+           label="Horas Extras 75% Diurna"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Horas Extras 75% Diurna"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22331"
+           campo_api=''
+           name="rh200_tipoasse_extra100diurna"
+           conteudo="int4"
+           description="Horas extras 100% diurnas"
+           inivalue="0"
+           label="Horas Extras 100% Diurna"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Horas Extras 100% Diurna"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22332"
+           campo_api=''
+           name="rh200_tipoasse_extra50noturna"
+           conteudo="int4"
+           description="Horas extras 50% noturnas"
+           inivalue="0"
+           label="Horas Extras 50% Noturna"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Horas Extras 50% Noturna"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22333"
+           campo_api=''
+           name="rh200_tipoasse_extra75noturna"
+           conteudo="int4"
+           description="Horas extras 75% noturna"
+           inivalue="0"
+           label="Horas Extras 75% Noturna"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Horas Extras 75% Noturna"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22334"
+           campo_api=''
+           name="rh200_tipoasse_extra100noturna"
+           conteudo="int4"
+           description="Horas extras 100% noturnas"
+           inivalue="0"
+           label="Horas Extras 100% Noturna"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Horas Extras 100% Noturna"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22335"
+           campo_api=''
+           name="rh200_tipoasse_adicionalnoturno"
+           conteudo="int4"
+           description="Horas adicional noturno"
+           inivalue="0"
+           label="Horas Adicional Noturno"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Horas Adicional Noturno"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22336"
+           campo_api=''
+           name="rh200_tipoasse_falta"
+           conteudo="int4"
+           description="Horas falta"
+           inivalue="0"
+           label="Horas Falta"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Horas Falta"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+
+    <field codigo="22395"
+           campo_api=''
+           name="rh200_tipoasse_faltas_dsr"
+           conteudo="int4"
+           description="Assentamentos de faltas para desconto do DSR"
+           inivalue="0"
+           label="Faltas desconto DSR"
+           size="19"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Faltas desconto DSR"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+
+    <field codigo="1009360"
+           campo_api=''
+           name="rh200_autorizahoraextra"
+           conteudo="bool"
+           description="Controla a permissão de horas extras para o servidores no ponto eletrônico."
+           inivalue="true"
+           label="Hora Extra Somente Com Autorização"
+           size="1"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="5"
+           tipoobj="text"
+           labelrel="Hora Extra Somente Com Autorização"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="rh200_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_config">
+      <fieldfk name="rh200_instituicao" reference="codigo" inner='t'></fieldfk>
+    </foreignkey>
+    <foreignkey reference="tipoasse">
+      <fieldfk name="rh200_tipoasse_extra50diurna" reference="h12_codigo" inner='f'></fieldfk>
+      <fieldfk name="rh200_tipoasse_extra75diurna" reference="h12_codigo" inner='f'></fieldfk>
+      <fieldfk name="rh200_tipoasse_extra100diurna" reference="h12_codigo" inner='f'></fieldfk>
+      <fieldfk name="rh200_tipoasse_extra50noturna" reference="h12_codigo" inner='f'></fieldfk>
+      <fieldfk name="rh200_tipoasse_extra75noturna" reference="h12_codigo" inner='f'></fieldfk>
+      <fieldfk name="rh200_tipoasse_extra100noturna" reference="h12_codigo" inner='f'></fieldfk>
+      <fieldfk name="rh200_tipoasse_adicionalnoturno" reference="h12_codigo" inner='f'></fieldfk>
+      <fieldfk name="rh200_tipoasse_falta" reference="h12_codigo" inner='f'></fieldfk>
+      <fieldfk name="rh200_tipoasse_faltas_dsr" reference="h12_codigo" inner='f'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

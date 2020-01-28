@@ -1,0 +1,22 @@
+<?xml version='1.0' ?>
+<processamento>
+  <parametros>
+    <parametro nome="tipo"    obrigatorio="true" tipo="texto" />
+    <parametro nome="caminho" obrigatorio="true" tipo="texto" />
+    <parametro nome="cpf"     obrigatorio="true" tipo="cpf" />
+    <parametro nome="cnpj"    obrigatorio="true" tipo="cnpj" />
+    <parametro nome="email"   obrigatorio="true" tipo="email" />
+  </parametros>
+  <configuracoes>
+    <classe nome="DBLog" parametros="$tipo,$caminho" caminho="model/configuracao/DBLog.model.php">
+      <metodos>
+        <metodo nome="escreverLog" parametros="$cpf, 0"   />
+        <metodo nome="escreverLog" parametros="$email, 1" />
+        <metodo nome="escreverLog" parametros="$cnpj, 2"  />
+        <metodo nome="escreverLog" parametros="$email, 1" />
+        <metodo nome="escreverLog" parametros="$cnpj, 2"  />
+        <metodo nome="escreverLog" parametros="$email, 1" />
+      </metodos>
+    </classe>
+  </configuracoes>
+</processamento>

@@ -1,0 +1,10 @@
+{
+  "informe_classificacao"    : "Informe a classificação.",
+  "informe_descricao"        : "Informe a descrição.",
+  "informe_observacao"       : "Informe a observação.",
+  "informe_plano_conta"      : "Informe o plano de contas.",
+  "informe_tipo_bem"         : "Informe o tipo do bem.",
+  "informe_tipo_depreciacao" : "Informe o tipo de depreciação.",
+  "informe_vida_util"        : "Informe a vida útil.",
+  "classificacao_salva"      : "Classificação salva com sucesso."
+}

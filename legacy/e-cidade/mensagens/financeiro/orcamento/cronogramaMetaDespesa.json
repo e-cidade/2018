@@ -1,0 +1,6 @@
+{
+  "erro_meta_arrecadacao_negativo" : "Total da meta de arrecadação do recurso ([recurso]) para o mês de [mes] está negativo.\n Você deverá acessar a rotina de processamento das metas de receita e verificar. Provavelmente o valor previsto para as deduções da receita está superando o previsto para as arrecadações.",
+  "erro_mais_de_uma_projecao"      : "Não foi salvar Meta de gastos para o para a Despesa [despesa] no Mês de [mes] existem mais que uma projeção para o mês.",
+  "erro_inclusao_meta_despesa"     : "Não foi salvar incluir Meta gastos para o para a Despesa [despesa] no Mês de [mes].",
+  "erro_salvar_meses"              : "Erro ao salvar Meses da base de calculo da Despesa [despesa]![msg]"
+}

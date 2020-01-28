@@ -1,0 +1,10 @@
+{
+  "informe_rendimentos_tributaveis" : "Por favor, informe a Base para Rendimentos Tributavéis do RRA",
+  "informe_previdencia"             : "Por favor, informe a Base para Previdência Social do RRA.",
+  "informe_pensao"                  : "Por favor, informe a Base para Pensão Alimentícia do RRA.",
+  "informe_irrf"                    : "Por favor, informe a Base Imposto de Renda Retido na Fonte do RRA.",
+  "informe_parcela_isenta"          : "Por favor, informe a Base para Parcela Isenta.",
+  "erro_salvar"                     : "Ocorreu um erro ao salvar as configurações.",
+  "erro_buscar"                     : "Ocorreu um erro ao buscar as configurações.",
+  "sucesso"                         : "Configurações salvas com sucesso"
+}

@@ -1,0 +1,12 @@
+{
+   "erro_query_turma"                       : "Erro ao verificar turmas vinculadas ao calendário:\n [sErro]"
+  ,"turmas_vinculadas"                      : "Exclusão não permitida: Calendário já possui turma(s) vinculada(s)."
+  ,"calendario_excluido"                    : "Calendário excluído com sucesso."
+  ,"calendario_obrigatorio"                 : "O calendário não foi informado. Parâmetro obrigatório"
+  ,"erro_buscar_calendario"                 : "Não foi possível buscar os dados do calendário."
+  ,"erro_buscar_controle_matricula_inicial" : "Erro ao buscar controle de matrícula inicial.\n[sErro]"
+  ,"sem_controle_matricula_inicial"         : "Não há configuração para o ano do calendário selecionado. Contate a Secretaria de Educação."
+  ,"incluir_parametro_regra_calculo"        : "Erro ao incluir o parâmetro da regra de cálculo da carga horária.\n[sErro]"
+  ,"erro_verificar_parametro"               : "Erro a verificar parâmetro da regra de cálculo da carga horária.\n[sErro]"
+  ,"informe_turma"                          : "Turma não informada."
+}

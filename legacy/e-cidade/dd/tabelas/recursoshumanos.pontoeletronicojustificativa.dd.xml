@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4011' name='recursoshumanos.pontoeletronicojustificativa' description="Tabela de justificativas do ponto eletrônico" prefix="rh194" label="Tabela de justificativas" type="0">
+  <fields>
+    <field codigo="22294" 
+           campo_api='' 
+           name="rh194_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.pontoeletronicojustificativa_rh194_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22295" 
+           campo_api='' 
+           name="rh194_descricao" 
+           conteudo="varchar(50)" 
+           description="Descrição da justificativa" 
+           inivalue="" 
+           label="Descrição" 
+           size="50" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22296" 
+           campo_api='' 
+           name="rh194_sigla" 
+           conteudo="varchar(3)" 
+           description="Sigla para a justificativa, será exibida no espelho ponto" 
+           inivalue="" 
+           label="Sigla" 
+           size="3" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Sigla" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22297" 
+           campo_api='' 
+           name="rh194_instituicao" 
+           conteudo="int4" 
+           description="Vínculo com a instituição" 
+           inivalue="0" 
+           label="Instituição" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Instituição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh194_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

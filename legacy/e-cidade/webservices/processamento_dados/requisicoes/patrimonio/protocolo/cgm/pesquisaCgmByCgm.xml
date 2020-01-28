@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="cgm" obrigatorio="true" tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe nome="CadastroCgmWebService" parametros="" referencia="pesquisa" caminho="model/protocolo/cgm/CadastroCgmWebService.model.php" />
+    <exec>
+      <metodo referencia="pesquisa" nome="getDadosCgmByCgm" parametros="$cgm" />
+    </exec>
+  </configuracoes>
+</processamento>

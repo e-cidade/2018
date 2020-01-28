@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>
+<processamento>
+
+    <versao>1.2</versao>
+    <transacao>true</transacao>
+
+    <parametros>
+        <parametro nome="matricula" obrigatorio="true" tipo="string" />
+        <parametro nome="ano"       obrigatorio="true" tipo="string" />
+        <parametro nome="mes"       obrigatorio="true" tipo="string" />
+        <parametro nome="numero"    obrigatorio="false" tipo="string" />
+        <parametro nome="folha"     obrigatorio="true" tipo="string" />
+
+    </parametros>
+
+    <configuracoes>
+        <classe referencia="oContraCheque" nome="ContraChequeWebService" parametros="" caminho="model/pessoal/webservice/ContraCheque.model.php"/>
+        <exec>
+            <metodo referencia="oContraCheque" nome="emitir"  parametros="$matricula,$ano,$mes,$folha,$numero" />
+        </exec>
+    </configuracoes>
+
+</processamento>

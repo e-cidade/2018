@@ -1,0 +1,3 @@
+<?
+$campos = "classificacaocredores.cc30_codigo,classificacaocredores.cc30_descricao,classificacaocredores.cc30_contagemdias,classificacaocredores.cc30_diasvencimento,classificacaocredores.cc30_valorinicial,classificacaocredores.cc30_valorfinal,classificacaocredores.cc30_dispensa,classificacaocredores.cc30_ordem";
+?>

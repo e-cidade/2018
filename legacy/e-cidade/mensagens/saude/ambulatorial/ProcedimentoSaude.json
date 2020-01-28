@@ -1,0 +1,4 @@
+{
+  "procedimento_nao_encontrado" : "Procedimento não cadastrado",
+  "erro_buscar_proccid"         : "Erro ao buscar o proccid:\n [sErro]"
+}

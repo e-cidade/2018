@@ -1,0 +1,29 @@
+@import url("geral.style.css");
+@import url("buttonColors.css");
+
+/**
+ * Componente Select Multiplo 
+ */
+ .DBSelectMultiplo option:nth-child(odd) {
+   background-color: #D7CC06;
+ }
+ .DBSelectMultiplo option:nth-child(even) {
+   background-color: #F8EC07;
+ }
+
+/**
+ * DB Âncora
+ */
+
+ .DBAncora {
+   text-decoration : underline;
+   font-weight     : bold;
+ 
+ }
+ 
+ legend {
+  font-weight: bold;
+ }
+a {
+  cursor: pointer;
+}

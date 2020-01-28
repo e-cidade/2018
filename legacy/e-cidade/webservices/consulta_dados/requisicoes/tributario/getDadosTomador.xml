@@ -1,0 +1,54 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="z01_cgccpf"                                                                 label="cpf" />
+    <campo campo="case when trim(z01_nomecomple) != '' then z01_nomecomple else z01_nome end"	label="nome" />
+    <campo campo="j88_sigla"                                                                  label="tipo_rua" />
+    <campo campo="z01_ender"                                                                  label="logradouro" />
+    <campo campo="z01_numero"	                                                                label="numero" />
+    <campo campo="z01_compl"                                                                  label="complemento"	/>
+    <campo campo="z01_bairro"	                                                                label="bairro" />
+    <campo campo="db125_codigosistema"                                                        label="cod_ibge"	/>
+    <campo campo="z01_munic"                                                                  label="municipio" />
+    <campo campo="z01_uf"                                                                     label="uf" />
+    <campo campo="db135_codigo"	                                                              label="cod_pais" />
+    <campo campo="db70_descricao"	                                                            label="pais" />
+    <campo campo="z01_cep"                                                                    label="cep" />
+    <campo campo="z01_telef"                                                                  label="telefone" />
+    <campo campo="z01_email"                                                                  label="email" />
+    <campo campo="z01_nomefanta"                                                              label="nome_fanta" />
+    <campo campo="z01_incest"                                                                 label="inscr_est" />
+    <campo campo="issbase.q02_inscr"                                                          label="inscricao" />
+    <campo campo="(select db140_descricao 
+                     from issbasecaracteristica 
+                          left join caracteristica      on db140_sequencial = q138_caracteristica
+                          left join grupocaracteristica on db139_sequencial = db140_grupocaracteristica
+                    where db139_sequencial = 3
+                      and issbase.q02_inscr = q138_inscr )"                                   label="subst_trib" />
+  </campos>
+  <from tabela="cgm" />
+  <juncoes>
+    <join tipo="inner"  tabela="cgmendereco"                condicao="z01_numcgm = z07_numcgm" />
+    <join tipo="inner"  tabela="endereco"                   condicao="z07_endereco = db76_sequencial" />
+    <join tipo="inner"  tabela="cadenderlocal"              condicao="db76_cadenderlocal = db75_sequencial " />
+    <join tipo="inner"  tabela="cadenderbairrocadenderrua"  condicao="db75_cadenderbairrocadenderrua = db87_sequencial" />
+    <join tipo="inner"  tabela="cadenderbairro"             condicao="db87_cadenderbairro = db73_sequencial" />
+    <join tipo="inner"  tabela="cadenderrua"                condicao="db74_sequencial = db87_cadenderrua" />
+    <join tipo="inner"  tabela="cadenderruaruastipo"        condicao="db85_cadenderrua = db74_sequencial" />
+    <join tipo="inner"  tabela="ruastipo"                   condicao="db85_ruastipo = j88_codigo" />
+    <join tipo="inner"  tabela="cadendermunicipio"          condicao="db72_sequencial = db74_cadendermunicipio" />
+    <join tipo="inner"  tabela="cadendermunicipiosistema"   condicao="db72_sequencial = db125_cadendermunicipio and db125_db_sistemaexterno = 4" />
+    <join tipo="inner"  tabela="cadenderestado"             condicao="db71_sequencial = db72_cadenderestado" />
+    <join tipo="inner"  tabela="cadenderpais"               condicao="db70_sequencial = db71_cadenderpais" />
+    <join tipo="inner"  tabela="cadenderpaissistema"        condicao="db70_sequencial = db135_db_cadenderpais and db135_db_sistemaexterno = 3" />
+    <join tipo="left"   tabela="issbase"                    condicao="z01_numcgm = q02_numcgm and q02_dtbaix is null" />
+    <join tipo="left"   tabela="issbasecaracteristica"      condicao="issbase.q02_inscr = q138_inscr" />
+    <join tipo="left"   tabela="caracteristica"             condicao="db140_sequencial = q138_caracteristica" />
+    <join tipo="left"   tabela="grupocaracteristica"        condicao="db139_sequencial = db140_grupocaracteristica and db139_sequencial = 3 " />
+  </juncoes>
+  <filtros>
+    <filtro label="cgccpf" condicao="z01_cgccpf = '$cgccpf'" obrigatorio="true" />
+  </filtros>
+  <agrupamento campos="z01_cgccpf,z01_nomecomple,z01_nome,j88_sigla,z01_ender,z01_numero,z01_compl,z01_bairro,db125_codigosistema,z01_munic,z01_uf,db135_codigo,db70_descricao,z01_cep,z01_telef,z01_email,z01_nomefanta,z01_incest,q02_inscr,db140_descricao" />
+  <ordenacao campos="" />
+</consulta>

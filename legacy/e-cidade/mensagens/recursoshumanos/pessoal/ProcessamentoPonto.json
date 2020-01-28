@@ -1,0 +1,6 @@
+{
+  "erro_preponto"          : "Ocorreu um erro ao buscar os dados para processamento do ponto.",
+  "nenhum_dado_encontrado" : "Nenhum registro encontrado.\nVerifique se o cálculo de salário foi processado.",
+  "ponto_nao_encontrado"   : "Ponto não encontrado",
+  "erro_excluir_preponto"  : "Erro ao exluir dados da tabela rhpreponto"
+}

@@ -1,0 +1,9 @@
+{
+ "confirma_exclusao":"Você deseja realmente excluir estes extratos selecionados?",
+ "excluindo_contas":"Aguarde, excluindo contas...",
+ "exclusao_com_sucesso":"Exclusão realizada com sucesso!",
+ "buscando_contas":"Aguarde, buscando contas...",
+ "sem_linhas_para_exclusao":"Sem linhas para exclusão.",
+ "sem_registros_selecionados":"Não há registros selecionados.",
+ "erro_processar_dados":"[sMessage]"
+}

@@ -1,0 +1,13 @@
+{
+  "codigo_obra_nao_informado"           : "Código da Obra não informado.",
+  "data_inicial_nao_informado"          : "Campo Data Inicial da Renovação é de preenchimento obrigatório.",
+  "data_final_nao_informado"            : "Campo Data Final da Renovação é de preenchimento obrigatório.",
+  "data_inicial_menor_ultima_renovacao" : "Data Inicial da Renovação não pode ser menor que a data inicial do Último Período.",
+  "data_final_menor_data_inicial"       : "A Data Final não pode ser menor que a Data Inicial.",
+  "obra_sem_alvara"                     : "Obra sem alvará cadastrado.",
+  "erro_obrasalvaraistorico"            : "Ocorreu um erro ao salvar os dados na tabela obrasalvarahistorico",
+  "erro_obrasalvara"                    : "Ocorreu um erro ao salvar os dados na tabela obrasalvara",
+  "alvara_renovado"                     : "Renovação efetuada com sucesso!",
+  "erro_busca_historico"                : "Não foi possível buscar o histórico do alvará.",
+  "campo_obrigatorio"                   : "Campo [sCampo] é de preenchimento obrigatório."
+}

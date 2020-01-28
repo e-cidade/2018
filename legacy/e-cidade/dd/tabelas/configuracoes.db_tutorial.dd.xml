@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes" ?>
+<table name="configuracoes.db_tutorial" description="Tutorial" prefix="" label="Tutorial" type="0">
+  
+  <fields>
+
+    <field name="id"
+           conteudo="int4"
+           description="Código"
+           inivalue="0"
+           label="Código"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código"
+           reference=""
+           ispk="t"
+           hassequence="t">
+      <sequence name="configuracoes.db_tutorial_id_seq" ></sequence>
+    </field>
+
+    <field name="descricao"
+           conteudo="varchar"
+           description="Nome do Tutorial"
+           inivalue="f"
+           label="Nome do Tutorial"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Nome do Tutorial"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+
+  </fields>
+
+  <primarykey>
+    <fieldpk  name="id"></fieldpk>
+  </primarykey>
+
+  <foreignkeys></foreignkeys>
+
+</table>

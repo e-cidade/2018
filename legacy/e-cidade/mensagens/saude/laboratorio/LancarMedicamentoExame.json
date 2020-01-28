@@ -1,0 +1,8 @@
+{
+   "titulo_help"            : "Informe o medicamento usado."
+  ,"mensagem_help"          : "Digite a sigla do medicamento, clique em \"Adicionar\" e após em \"Salvar\" para adicionar os medicamentos utilizados."
+  ,"selecione_medicamento"  : "Antes de adicionar, você deve selecionar um medicamento."
+  ,"medicamento_ja_lancado" : "O medicamento selecionado já foi lançado no exame."
+  ,"salvando_medicamentos"  : "Salvando medicamento(s), aguarde..."
+  ,"buscando_medicamentos"  : "Buscando medicamentos, aguarde..."
+}

@@ -1,0 +1,6 @@
+{
+   "erro_executar_query"  : "Erro ao buscar dados ausência.\n[sErro]"
+  ,"erro_salvar_ausencia" : "Erro ao salvar ausência.\n[sErro]"
+  ,"erro_excluir"         : "Erro ao excluir ausência.\n[sErro]"
+  ,"sem_transacao"        : "Nenhuma transação ativa no banco."
+}

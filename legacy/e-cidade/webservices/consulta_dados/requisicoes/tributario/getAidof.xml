@@ -1,0 +1,35 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="y08_codigo"                      label="cod_aidof" 		    />
+    <campo campo="y08_inscr"                       label="inscricao" 		    />
+    <campo campo="y08_nota"                        label="cod_tipo_nota"	    />
+    <campo campo="q09_descr"                       label="desc_tipo_nota"    	    />
+    <campo campo="y08_dtlanc"                      label="dt_lancamento" 	    />
+    <campo campo="y08_notain"                      label="nota_inicial"  	    />
+    <campo campo="y08_quantsol"                    label="quant_solicitada" 	    />
+    <campo campo="y08_quantlib"                    label="quant_liberada"	    />
+    <campo campo="y08_notafi"                      label="nota_final"   	    />
+    <campo campo="y08_numcgm"                      label="cod_grafica"  	    />
+    <campo campo="z01_nome"                        label="desc_grafica" 	    />
+    <campo campo="y03_data"                        label="dt_cancel"    	    />
+    <campo campo="y03_obs"                         label="obs_cancel"   	    />
+    <campo campo="y08_dataliberacaografica"        label="liberacao_grafica"   	    />
+    <campo campo="y08_datarecebimentocontribuinte" label="recebimento_contrib"      />
+    <campo campo="y08_datalimitesolicitada"        label="data_solicitada"          />
+    <campo campo="y08_datalimiteliberada"          label="data_liberada"            />
+  </campos>
+  <from tabela="aidof"                                                              />
+  <juncoes>
+    <join tipo="inner" tabela="graficas"  condicao="y08_numcgm = y20_grafica"	    />
+    <join tipo="inner" tabela="notasiss"  condicao="y08_nota   = q09_codigo"  	    />
+    <join tipo="inner" tabela="cgm"       condicao="y08_numcgm = z01_numcgm"        />
+    <join tipo="left"  tabela="aidofcanc" condicao="y08_codigo = y03_aidof"  	    />
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao" condicao="y08_inscr = '$inscricao'"        obrigatorio="true" />
+    <filtro label=""          condicao="y20_datalimiteimpressao is null" obrigatorio="true" />
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="y08_notain" />
+</consulta>

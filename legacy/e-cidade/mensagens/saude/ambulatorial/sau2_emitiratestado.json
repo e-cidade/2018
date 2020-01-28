@@ -1,0 +1,13 @@
+{
+   "pesquisando_cid"               : "Pesquisando CID, aguarde..."
+  ,"informe_dias_afastamento"      : "Informe os dias de afastamento."
+  ,"informe_paciente"              : "Informe o paciente"
+  ,"informe_data_hora"             : "Informe a data e a hora do atendimento"
+  ,"informe_documento"             : "Selecione uma das opções de Documento"
+  ,"informe_cbo"                   : "Selecione a Especialidade/CBO do médico."
+  ,"erro_buscar_estado"            : "Erro ao buscar estado. \n[sErro]"
+  ,"estado_nao_encontrado"         : "Estado [sErro] não encontrado"
+  ,"erro_buscar_dados_medico"      : "Erro ao buscar os dados do médico \n[sErro]"
+  ,"dados_medicos_nao_encontrados" : "Nenhum registro encontrado."
+  ,"dias_afastamento_maior_zero"   : "O campo Dias de Afastamento deve ser maior que zero."
+}

@@ -1,0 +1,10 @@
+{
+  "campo_assentamento_obrigadorio": "Campo Tipo de Assentamento é obrigatório",
+  "campo_rubrica_obrigadorio"     : "Campo Códido da Rubrica é obrigatório",
+  "campo_formula_obrigadorio"     : "Campo Códido da Formula é obrigatório",
+  "assentamento_ja_cadastrado"    : "Tipo de assentamento já esta configurado.",
+  "sucesso_inclusao"              : "Tipo de assentamento configurado com sucesso.",
+  "assentamento_alterado"         : "Alteração efetuada com sucesso",
+  "assentamento_excluido"         : "Exclusão efetuada com sucesso",
+  "erro_consultar_assentamento"   : "Ocorreu um erro ao consultar assentamentos na base de dados"
+}

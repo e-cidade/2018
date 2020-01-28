@@ -1,0 +1,6 @@
+{
+  "erro_buscar_procedimentos"       : "Não foi possível buscar os procedimentos desta FAA.",
+  "buscando_procedimentos"          : "Aguarde, buscando procedimentos...",
+  "excluindo_procedimento"          : "Aguarde, excluindo procedimento...",
+  "confirma_exclusao_procedimento"  : "Confirma a exclusão do procedimento [sProcedimento] - [sNomeProcedimento]?"
+}

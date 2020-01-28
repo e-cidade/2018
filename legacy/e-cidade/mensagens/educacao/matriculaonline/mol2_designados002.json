@@ -1,0 +1,8 @@
+{
+   "fase_nao_informada"            : "Fase não foi informada."
+  ,"fase_nao_encontrada"           : "Fase não encontrada."
+  ,"fase_sem_inscritos_designados" : "Fase não possui inscritos designados para os filtros selecionados."
+  ,"erro_buscar_designados"        : "Erro ao buscar inscritos designados.\n[sErro]."
+  ,"etapa_nao_encontrada"          : "Etapa não encontrada."
+  ,"escola_nao_encontrada"         : "Escola não encontrada."
+}

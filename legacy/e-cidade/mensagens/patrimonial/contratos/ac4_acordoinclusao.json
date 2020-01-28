@@ -1,0 +1,16 @@
+{
+  "desvincular_empenho_com_lancamento"      : "Não é possível desvincular o(s) empenho(s) pois existem lançamentos contábeis do tipo 900.\n\n Para desvincular, acesse a rotina:\nContabilidade > Procedimentos > Utilitários da Contabilidade > Implantação Contratos > Desprocessar Implantação de Contratos.",
+  "empenho_vinculado_com_sucesso"           : "Empenho(s) vinculado(s) com sucesso.",
+  "acordo_item_previsao_excluir"            : "ERRO - [ 1 ] - [erro_msg]" ,
+  "acordo_empempitem_excluir"               : "ERRO - [ 2 ] - [erro_msg]" , 
+  "acordo_item_periodo_excluir"             : "ERRO - [ 3 ] - [erro_msg]" ,
+  "acordo_item_excluir"                     : "ERRO - [ 4 ] - [erro_msg]" ,
+  "empempenho_contrato_excluir"             : "ERRO - [ 5 ] - [erro_msg]" ,  
+  "erro_vincular_empenho_contrato"          : "ERRO - [ 1 ] - Erro ao vincular empenho com o contrato - [erro_msg]",
+  "verifica_tipo_acordo"                    : "Erro técnico: erro ao pesquisar o acordo." ,
+  "erro_data_inicial"                       : "Data final do material [iCodigoMaterial] do empenho [iEmpenho] é menor que a data inicial do acordo." ,
+  "erro_data_final"                         : "Data final do material [iCodigoMaterial] do empenho [iEmpenho] é maior que a data final do acordo."   ,
+  "erro_data_final_material"                : "Data Final do material [iCodigoMaterial] do empenho [iEmpenho] é menor que a Data inicial." ,
+  "nenhum_empenho_encontrado"               : "Nenhum empenho encontrado para o filtro selecionado.",
+  "valor_total_empenhos_maior_valor_acordo" : "O valor total do(s) empenho(s) vinculado(s) não pode ser maior que o valor do acordo."
+}

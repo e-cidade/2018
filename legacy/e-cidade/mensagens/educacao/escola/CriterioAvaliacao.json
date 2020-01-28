@@ -1,0 +1,12 @@
+{
+  "codigo_nao_informado"    : "Código do Critério de Avaliação informado não foi encontrado.",
+  "erro_excluir_turma"      : "Erro ao excluir vínculos com a turma.\n [sErro]",
+  "erro_incluir_turma"      : "Erro ao incluir vínculos com a turma.\n [sErro]",
+  "erro_incluir_periodo"    : "Erro ao incluir vínculos com o Período de Avaliação.\n [sErro]",
+  "erro_incluir_disciplina" : "Erro ao incluir vínculos com a Disciplina.\n [sErro]",
+  "erro_excluir_periodo"    : "Erro ao excluir vínculos com o Período de Avaliação.\n'[sErro]",
+  "erro_excluir_disciplina" : "Erro ao excluir vínculos com a Disciplina.\n [sErro]",
+  "erro_alterar_criterio"   : "Erro ao alterar o Critério de Avaliação.\n [sErro]",
+  "erro_incluir_criterio"   : "Erro ao incluir o Critério de Avaliação.\n [sErro]",
+  "erro_excluir_criterio"   : "Erro ao excluir Critério de Avaliação.\n [sErro]"
+}

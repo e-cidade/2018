@@ -1,0 +1,23 @@
+{
+  "erro_registro_nao_encontrado"            : "Não há nenhum registro cadastrado para este arquivo.",
+  "erro_validar_arquivo"                    : "Erro ao validar arquivo. Registros não encontrados",
+  "erro_banco_nao_encontrado"               : "Banco não encontrado.",
+  "erro_cgm_unico"                          : "Há mais de um CGM cadastrado para este CNPJ.",
+  "erro_cgm_nao_encontrado"                 : "Não fora encontrado nenhum CGM cadastrado para este CNPJ.",
+  "erro_gerar_planilha"                     : "Erro ao gerar planilha.",
+  "erro_arquivo_nao_informado"              : "Arquivo de Retenção não informado no processamento.",
+  "erro_cgm_nao_encontrado_prestador"       : "CGM do prestador não encontrado.",
+  "erro_inscricao_nao_encontrada_prestador" : "Inscrição válida não encontrada para o CNPJ [sCnpj]",
+  "erro_atividade_nao_encontrada"           : "Não foi encontrada atividade válida para o prestador.",
+  "erro_gerar_registros_planilha"           : "Erro ao gerar registros na planilha.",
+  "erro_gerar_registros_planilha_inscricao" : "Erro ao vincular inscrição ao registro na planilha.",
+  "erro_gerar_issvar"                       : "Erro ao gerar débito(issvar)",
+  "erro_gerar_arrecad"                      : "Erro ao gerar débito(arrecad)",
+  "erro_recibo"                             : "Erro ao gerar Recibo.",
+  "erro_baixa_banco"                        : "Erro ao inserir débito na Baixa de Banco.",
+  "erro_buscar_recibo"                      : "Erro ao buscar dados do Recibo.",
+  "erro_validar_inscricao"                  : "Erro ao buscar inscrições para validar o arquivo.",
+  "erro_baixa"                              : "Erro ao adicionar registro na Baixa de Banco.",
+  "erro_arquivo_processado"                 : "Este arquivo já foi processado anteriormente.",
+  "erro_configuracao_nao_encontrada"        : "Configuração de planilha não encontrada."
+}

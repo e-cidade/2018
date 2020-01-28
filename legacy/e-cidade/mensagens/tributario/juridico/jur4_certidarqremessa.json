@@ -1,0 +1,13 @@
+{
+  "nao_existe_cda"               : "Não existe CDA gerada para esta lista.",
+  "lista_ja_enviada"             : "Lista informada já enviada em outro arquivo.",
+  "cda_sem_inicial"              : "Existem CDAs geradas através da lista [iLista] que não possuem inicial.",
+  "instituicao_sem_configuracao" : "Não foi encontrado configuração para a Instituição.",
+  "erro_um_buscar_dados"         : "1 - Erro ao buscar os dados dos envolvidos.",
+  "erro_dois_buscar_dados"       : "2 - Erro ao buscar os dados dos envolvidos.",
+  "erro_tres_buscar_dados"       : "3 - Erro ao buscar os dados dos envolvidos.",
+  "erro_quatro_buscar_dados"     : "4 - Erro ao buscar os dados dos envolvidos.",
+  "erro_ao_gerar_primeira_linha" : "Erro ao gerar Linha 1 do Arquivo.",
+  "erro_ao_gerar_arquivo"        : "Erro ao gerar Arquivo.",
+  "erro_ao_incluir_arquivo"      : "Erro incluindo arquivo na certidarqremessa."
+}

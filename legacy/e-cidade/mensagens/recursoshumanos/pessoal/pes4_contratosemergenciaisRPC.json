@@ -1,0 +1,20 @@
+{ 
+  "matricula_nao_informada"                 : "Matricula não informada.",
+  "erro_buscar_contratos"                   : "Erro ao buscar os contratos emergenciais.",
+  "sequencial_renovacao_nao_informada"      : "Sequencial da Renovação não informado.",
+  "erro_alterar_contratos"                  : "Erro ao alterar o contrato emergencial.",
+  "data_atual_nao_informada"                : "Data Atual não informada.",   
+  "data_nova_nao_informada"                 : "Data Nova da Renovação não informada",
+  "alteracao_nao_permitida"                 : "Não é possível efetuar alteração, pois a renovação já se encontra vencida.",
+  "alteracao_nao_permitida_nova_data_maior" : "Não é possível renovar um contrato para uma data menor que a competência atual.",
+  "erro_incluir_renovacao"                  : "Erro ao incluir renovação do contrato.",
+  "numero_contrato_nao_informada"           : "Número Contrato emergencial não informado não informada.",                
+  "data_inicio_nao_informada"               : "Data Inicio do contrato não informada.",            
+  "data_fim_nao_informada"                  : "Data Fim do contrato não informada.",         
+  "data_ultima_renovacao_nao_informada"     : "Data da última renovação não informada.",
+  "nova_renovacao_menor_ultima"             : "Data da nova renovação menor que a última renovação, renovação não permitida.",
+  "erro_excluir_renovacao"                  : "Erro ao excluir a renovação do contrato",
+  "alteracao_sucesso"                       : "Alteração efetuada com sucesso.",
+  "inclusao_sucesso"                        : "Renovação efetuada com sucesso",
+  "exclusao_sucesso"                        : "Exclusão efetuada com sucesso"
+}

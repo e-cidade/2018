@@ -1,0 +1,48 @@
+div#db-menu a {
+  display:block;
+  white-space:nowrap;
+  margin:0;
+}
+ 
+
+div#db-menu ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+  float:left;
+}
+
+div#db-menu li {
+  position:relative;
+}
+
+div#db-menu ul ul {
+  position:absolute;
+  z-index:500;
+  top:auto;
+  display:none;
+}
+
+div#db-menu ul ul ul {
+  top:0;
+  left:100%;
+}
+
+div#db-menu ul ul ul.inverse {
+  float: right;
+  left: auto;
+  right: 100%;
+}
+
+div#db-menu li:hover {
+  cursor:pointer;
+  z-index:100;
+}
+
+div#db-menu li.sub-menu > ul{
+  display:none;
+}
+
+div#db-menu li.sub-menu.active > ul{
+  display:block;
+}

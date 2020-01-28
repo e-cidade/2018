@@ -1,0 +1,7 @@
+{
+  "erro_inserir" : "Ocorreu um erro ao inserir o Plugin.",
+  "erro_situacao": "Ocorreu um erro ao alterar a Situação.",
+  "erro_excluir" : "Ocorreu um erro ao exluir o Plugin.",
+  "erro_plugin"  : "Plugin não encontrado."
+}
+

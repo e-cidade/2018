@@ -1,0 +1,6 @@
+{
+  "banco_nao_informado":"Banco deve ser informado",
+  "arquivo_nao_encontrado" : "Não foram encontrados arquivos de consignação na competência informada.",
+  "sem_registros_filtro"   : "Não foram encontrados registros para os filtros informados.",
+  "registro_nao_informado" : "Registro não foi informado"
+}

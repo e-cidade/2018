@@ -1,0 +1,97 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* Class to deal with Layouts
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class Layout
+{
+    function ListLayouts()
+    {
+        $aDict = getSimpleDirArray(AGATA_PATH . '/layout');
+        foreach ($aDict as $dict)
+        {
+            $result[] = substr($dict, 0, -4);
+        }
+        
+        return $result;
+    }
+
+    /***********************************************************/
+    /* Read the Layout Template
+    /***********************************************************/
+    static function ReadLayout($Layout)
+    {
+        if (!$Layout)
+        {
+            return array(null);
+        }
+        $array['layout'] = Xml2Array(AGATA_PATH . "/layout/{$Layout}.lay");
+        $Schema['DataFont']       = $array['layout']['data']['font'];
+        $Schema['TotalFont']      = $array['layout']['total']['font'];
+        $Schema['GroupFont']      = $array['layout']['group']['font'];
+        $Schema['ColumnFont']     = $array['layout']['column']['font'];
+        $Schema['HeaderFont']     = $array['layout']['header']['font'];
+        $Schema['FooterFont']     = $array['layout']['footer']['font'];
+        $Schema['DataColor']      = $array['layout']['data']['color'];
+        $Schema['TotalColor']     = $array['layout']['total']['color'];
+        $Schema['GroupColor']     = $array['layout']['group']['color'];
+        $Schema['ColumnColor']    = $array['layout']['column']['color'];
+        $Schema['HeaderColor']    = $array['layout']['header']['color'];
+        $Schema['FooterColor']    = $array['layout']['footer']['color'];
+        $Schema['DataBgColor']    = $array['layout']['data']['bgcolor'];
+        $Schema['TotalBgColor']   = $array['layout']['total']['bgcolor'];
+        $Schema['GroupBgColor']   = $array['layout']['group']['bgcolor'];
+        $Schema['ColumnBgColor']  = $array['layout']['column']['bgcolor'];
+        $Schema['HeaderBgColor']  = $array['layout']['header']['bgcolor'];
+        $Schema['FooterBgColor']  = $array['layout']['footer']['bgcolor'];
+        $Schema['Orientation']    = $array['layout']['config']['orientation'];
+        $Schema['ColorLines']     = $array['layout']['config']['color_lines'];
+        $Schema['LeftMargin']     = $array['layout']['config']['left_margin'];
+        $Schema['Border']         = $array['layout']['config']['border'];
+        $Schema['CellSpacing']    = $array['layout']['config']['cell_spacing'];
+
+        return $Schema;
+    }
+
+    /***********************************************************/
+    /* Write Layout
+    /***********************************************************/
+    function WriteLayout($file, $array)
+    {
+        if ($array)
+        {
+            $handler = fopen($file, 'w');
+            fwrite($handler, trim( XMLHEADER . Array2Xml($array, null)));
+            fclose($handler);
+            return true;
+        }
+        return false;
+    }
+}
+?>

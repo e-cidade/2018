@@ -1,0 +1,4 @@
+{
+  "configuracao_cotas_cadastrado" : "Já existe configuração de Cotas de Atendimento cadastrada.\nPara utilizar o controle Físico/Financeiro é necessário que seja excluído o controle de Cotas de Atendimento cadastrado anteriormente.\n\nAcesse Procedimentos > Controle de Cotas > Pacientes por Dia",
+  "validando_parametros"          : "Aguarde, validando parâmetros..."
+}

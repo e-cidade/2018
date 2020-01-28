@@ -1,0 +1,8 @@
+{
+  "elementos_duplicados" : "Não é possível vincular o mesmo elemento para o filtro de inclusão e exclusão."
+  ,"exclusao_codigo_vazio" : "Selecione uma lista de classificação de credores para exclusão."
+  ,"confirma_exclusao" : "Confirma a exclusão da lista de classificação de credores?"
+  ,"descricao_obrigatorio" : "Campo Descrição é de preenchimento obrigatório."
+  ,"quantidade_dias_obrigatorio" : "Campo Quantidade de Dias para o Vencimento é de preenchimento obrigatório."
+  ,"vencimento_em_dias_obrigatorio" : "Campo Vencimento em Dias é de preenchimento obrigatório."
+}

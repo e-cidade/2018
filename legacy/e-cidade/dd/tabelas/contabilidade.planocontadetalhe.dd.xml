@@ -1,0 +1,208 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3994' name='contabilidade.planocontadetalhe' description="planocontadetalhe" prefix="c95" label="planocontadetalhe" type="0">
+  <fields>
+    <field codigo="22184" 
+           campo_api='' 
+           name="c95_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='contabilidade.planocontadetalhe_c95_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22186" 
+           campo_api='' 
+           name="c95_estrutural" 
+           conteudo="varchar(25)" 
+           description="Estrutural" 
+           inivalue="" 
+           label="Estrutural" 
+           size="25" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Estrutural" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22187" 
+           campo_api='' 
+           name="c95_titulo" 
+           conteudo="varchar(200)" 
+           description="Título" 
+           inivalue="" 
+           label="Título" 
+           size="200" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Título" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22188" 
+           campo_api='' 
+           name="c95_funcao" 
+           conteudo="text" 
+           description="Função" 
+           inivalue="" 
+           label="Função" 
+           size="1" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Função" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22185" 
+           campo_api='' 
+           name="c95_modeloplanoconta" 
+           conteudo="int4" 
+           description="Modelos do Plano de Contas" 
+           inivalue="0" 
+           label="Modelos do Plano de Contas" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Modelos do Plano de Contas" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22190" 
+           campo_api='' 
+           name="c95_analitica" 
+           conteudo="bool" 
+           description="Conta Analítica" 
+           inivalue="f" 
+           label="Conta Analítica" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Conta Analítica" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22191" 
+           campo_api='' 
+           name="c95_sistema" 
+           conteudo="int4" 
+           description="Sistema" 
+           inivalue="0" 
+           label="Sistema" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sistema" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22192" 
+           campo_api='' 
+           name="c95_indicadorsuperavit" 
+           conteudo="varchar(1)" 
+           description="Indicador de Superavit" 
+           inivalue="N" 
+           label="Indicador de Superavit" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Indicador de Superavit" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22189" 
+           campo_api='' 
+           name="c95_naturezasaldo" 
+           conteudo="int4" 
+           description="Natureza do Saldo" 
+           inivalue="0" 
+           label="Natureza do Saldo" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Natureza do Saldo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22212" 
+           campo_api='' 
+           name="c95_excluir" 
+           conteudo="bool" 
+           description="Indica se é para excluir ou não a conta." 
+           inivalue="f" 
+           label="Excluir" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Excluir" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="c95_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="consistemaconta">
+      <fieldfk name="c95_sistema" reference="c65_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="planocontadetalhe">
+      <fieldfk name="c95_modeloplanoconta" reference="c95_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010223' name='issqn.juntacomercialprotocoloeventos' description="Eventos recebidos pela Junta comercial" prefix="q148" label="Eventos recebidos pela Junta comercial" type="0">
+  <fields>
+    <field codigo="1009418" 
+           campo_api='' 
+           name="q148_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='issqn.juntacomercialprotocoloeventos_q148_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009419" 
+           campo_api='' 
+           name="q148_protocolo" 
+           conteudo="int4" 
+           description="Protocolo" 
+           inivalue="" 
+           label="Protocolo" 
+           size="20" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Protocolo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009420" 
+           campo_api='' 
+           name="q148_codevento" 
+           conteudo="int4" 
+           description="Evento" 
+           inivalue="0" 
+           label="Evento" 
+           size="3" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Evento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009421" 
+           campo_api='' 
+           name="q148_evento" 
+           conteudo="varchar(255)" 
+           description="Descrição" 
+           inivalue="" 
+           label="Descrição" 
+           size="255" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="q148_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="juntacomercialprotocolo" inner='t'>
+      <fieldfk name="q148_protocolo" reference="q147_sequencial" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

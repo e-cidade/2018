@@ -1,0 +1,13 @@
+{
+  "buscando_regencias"           : "Aguarde, buscando as regências da turma...",
+  "buscando_procedimentos"       : "Aguarde, buscando os Procedimentos de Avaliação da escola...",
+  "selecione_calendario"         : "Selecione um Calendário.",
+  "selecione_etapa"              : "Selecione uma Etapa.",
+  "selecione_turma"              : "Selecione uma Turma.",
+  "salvando_procedimentos"       : "Aguarde, salvando o procedimento vinculado a cada disciplina...",
+  "confirma_salvar"              : "ATENÇÃO: A alteração do procedimento de avaliação apagará todos os registros de todos alunos no Diário de Classe, referente a(s) disciplina(s) alterada(s). Confirmar alteração?",
+  "replicar_procedimentos"       : "Deseja replicar as alterações para as demais turmas vinculadas a etapa?",
+  "ajuda_replicar"               : "Selecione as turmas as quais deseja replicar a alteração no procedimento de avaliação para a(s) disciplina(s).",
+  "selecione_turma_replicar"     : "Selecione ao menos uma turma para replicar as alterações.",
+  "nenhuma_disciplina_vinculada" : "Nenhuma disciplina encontrada para a turma selecionada."
+}

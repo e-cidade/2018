@@ -1,0 +1,11 @@
+{
+  "selecione_ensino"             : "É necessário selecionar ao menos 1 ensino.",
+  "pesquisando_ensinos"          : "Aguarde, pesquisando os ensinos...",
+  "confirma_exclusao"            : "Este ciclo possui fases e vagas vinculadas. Deseja excluir?",
+  "verificando_ensino"           : "Aguarde, verificando ensino...",
+  "confirma_exclusao_ensino"     : "Este ensino possui vagas vinculadas. Deseja excluir?",
+  "descricao_nao_informada"      : "Descrição não informada.",
+  "data_corte_nao_informado"     : "Data de Corte não informada.",
+  "data_cadastro_nao_informado"  : "Data de Cadastro não informada.",
+  "verificando_fases_vinculadas" : "Aguarde, verificando se há fases vinculadas ao ciclo..."
+}

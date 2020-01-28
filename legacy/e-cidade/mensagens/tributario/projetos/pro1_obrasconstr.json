@@ -1,0 +1,10 @@
+{
+  "erro_salvar_construcao"                 : "Erro ao Salvar dados da Construção: \n[sErroBanco]",
+  "erro_caracteristicas_grupo_construcoes" : "Erro ao retornar as características do grupo Contruções.",
+  "erro_salvar_endereco"                   : "Erro ao Salvar dados do Endereço: \n[sErroBanco]",
+  "erro_salvar_caracteristica"             : "Erro ao Salvar dados da Caracteristica: \n[sErroBanco]",
+  "erro_excluir_caracteristica"            : "Erro ao Excluir dados da Caracteristica: \n[sErroBanco]",
+  "obra_com_alvara_liberado"               : "Exclusão não permitida.\n\nObra com alvará Liberado.",
+  "construcao_excluida"                    : "Construção excluida com sucesso.",
+  "nenhum_opcao_definida"                  : "Nenhuma Opção Definida."
+}

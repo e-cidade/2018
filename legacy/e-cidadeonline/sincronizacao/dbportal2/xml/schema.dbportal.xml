@@ -1,0 +1,7 @@
+<?xml version='1.0' standalone='yes'?>
+<tabelas>
+  <tabela schema='caixa' name='db_reciboweb'   condicao='' delete='false'></tabela>
+  <tabela schema='caixa' name='recibopaga'     condicao='' delete='false'></tabela>
+  <tabela schema='caixa' name='recibopagahist' condicao='' delete='false'></tabela>
+  <tabela schema='caixa' name='recibocodbar'   condicao='' delete='false'></tabela>
+</tabelas>

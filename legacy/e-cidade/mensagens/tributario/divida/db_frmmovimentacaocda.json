@@ -1,0 +1,8 @@
+{
+  "certidao_obrigatorio"       : "Intervalo de Certidão é de preenchimento obrigatório.",
+  "tipo_obrigatorio"           : "Campo Tipo é de preenchimento obrigatório.",
+  "datavencimento_menor_atual" : "Data de Vencimento não pode ser igual ou inferior ao dia de hoje.",
+  "datavencimento_obrigatorio" : "Campo Data de Vencimento é de preenchimento obrigatório.",
+  "carregando_movimentacao"    : "Carregando movimentação.\n Aguarde...",
+  "nenhuma_inconsistencia"     : "Nenhuma inconsistencia encontrada."
+}

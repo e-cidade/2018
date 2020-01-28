@@ -1,0 +1,118 @@
+#questionario {
+  max-width: 1024px;
+  min-width: 600px;
+  margin: 0 auto;
+}
+
+label.label_avaliacao {
+  width: 120px;
+  display: inline-block;
+}
+
+.container_avaliacao label {
+  text-align: left;
+  font-weight: bold;
+}
+
+.wrapper_resposta label {
+  font-weight: normal;
+}
+
+.wrapper_resposta:first-of-type {
+  margin-top: 5px;
+}
+
+select.combo_avaliacao {
+  width: calc(100% - 120px);
+}
+.myForm {
+  width: 800px;
+}
+
+.myForm label {
+  font-weight: bold;
+}
+
+fieldset.separator {
+  margin-top: 10px;
+}
+
+#questionario label .erro-validacao,
+#questionario label .erro-validacao{
+  margin-left: 05px;
+  font-weight: normal;
+  color: red
+}
+
+fieldset.notseparator {
+  margin: 0px auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 0px;
+  border-top: 2px groove #FFF;
+  padding-bottom: 0px;
+  border:solid 0px ;
+}
+
+fieldset.notseparator textarea:not([rel='ignore-css']) {
+  width: 100%;
+  min-height: 100px;
+}
+
+fieldset * {
+  text-align: left;
+}
+
+.myInputTextArea {
+  border: 0 solid;
+  margin-top: 10px;
+}
+
+input[type="checkbox"] , input[type="radio"] {
+  vertical-align: middle;
+  padding: 0;
+  background-color: white;
+}
+
+input[type="radio"] {
+  margin-top: 0;
+}
+
+input[type="text"] {
+  width: 100%;
+  /*margin-top: 10px;*/
+  /*border: 0 solid;*/
+}
+
+input.elemento-auxiliar[type="text"] {
+  width: inherit;
+}
+
+input.input-erro-validacao, select.input-erro-validacao {
+  border: 1px solid red;
+}
+
+.container_avaliacao .combo_avaliacao {
+  width: calc(100% - 185px);
+}
+
+.container_avaliacao .combo_avaliacao + div:first-of-type {
+  width: 50px;
+  display:inline-block;
+}
+
+.container_avaliacao > label:first-child {
+  float: left;
+  width: 130px;
+}
+
+.container_avaliacao .messageboard {
+  display: block;
+
+}
+
+
+
+
+
+

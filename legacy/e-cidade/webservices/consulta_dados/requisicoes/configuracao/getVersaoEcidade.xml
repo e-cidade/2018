@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="('2.' || db30_codversao || '.' || db30_codrelease)" label="ecidadeVersao" />
+  </campos>
+  <from tabela="db_versao" />
+  <juncoes>
+  </juncoes>
+  <filtros>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao campos="db30_codver desc LIMIT 1" />
+</consulta>

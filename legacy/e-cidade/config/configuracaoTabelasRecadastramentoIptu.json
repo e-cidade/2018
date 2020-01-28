@@ -1,0 +1,1515 @@
+[
+  {
+    "nome": "db_acountkey",
+    "schema": "configuracoes",
+    "incluir_dados": false,
+    "sequence": "",
+    "index":["id_codcam", "id_acount"]
+  },
+  {
+    "nome": "db_acountacesso",
+    "schema": "configuracoes",
+    "incluir_dados": false,
+    "sequence": "",
+    "index":["codsequen", "id_acount"]
+  },
+  {
+    "nome": "db_acount",
+    "schema": "configuracoes",
+    "incluir_dados": false,
+    "sequence": "db_acount_id_acount_seq"
+  },
+  {
+    "nome": "db_plugin",
+    "schema": "configuracoes",
+    "incluir_dados": false,
+    "sequence": "db_plugin_db145_sequencial_seq"
+  },
+  {
+    "nome": "cancdebitosreg",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "cancdebitosreg_k21_sequencia_seq",
+    "index": ["k21_numpre", "k21_numpar", "k21_receit"]
+  },
+  {
+    "nome": "cancdebitos",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "cancdebitos_k20_codigo_seq",
+    "index":["k20_codigo", "k20_instit"]
+  },
+  {
+    "nome": "arreold",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index":["k00_numpre", "k00_numpar", "k00_receit"]
+  },
+  {
+    "nome": "numprebloqpag",
+    "schema": "arrecadacao",
+    "incluir_dados": false,
+    "sequence": "numprebloqpag_ar22_sequencial_seq",
+    "index":["ar22_numpre", "ar22_numpar"]
+  },
+  {
+    "nome": "cancdebitosprocreg",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "cancdebitosprocreg_k24_sequencia_seq",
+    "index":["k24_cancdebitosreg"]
+  },
+  {
+    "nome": "arreprescr",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "arreprescr_k30_sequencial_seq"
+  },
+  {
+    "nome": "infla",
+    "schema": "inflatores",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "cadvenc",
+    "schema": "issqn",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["q82_codigo", "q82_parc"]
+  },
+  {
+    "nome": "cadvencdesc",
+    "schema": "issqn",
+    "incluir_dados": true,
+    "sequence": "cadvencdesc_q92_codigo_seq",
+    "index": ["q92_codigo", "q92_descr"]
+  },
+  {
+    "nome": "db_config",
+    "schema": "configuracoes",
+    "incluir_dados": true,
+    "sequence": "db_config_codigo_seq",
+    "index":["codigo", "numcgm"]
+  },
+  {
+    "nome": "db_sysfuncoesparam",
+    "schema": "configuracoes",
+    "incluir_dados": true,
+    "sequence": "db_sysfuncoesparam_db42_sysfuncoesparam_seq",
+    "index":["db42_sysfuncoesparam"]
+  },
+  {
+    "nome": "arreckey",
+    "schema": "arrecadacao",
+    "incluir_dados": false,
+    "sequence": "arreckey_k00_sequencial_seq",
+    "index":["k00_numpre", "k00_numpar", "k00_receit", "k00_hist"]
+  },
+  {
+    "nome": "abatimentoarreckey",
+    "schema": "arrecadacao",
+    "incluir_dados": false,
+    "sequence": "abatimentoarreckey_k128_sequencial_seq",
+    "index":["k128_abatimento", "k128_arreckey"]
+  },
+  {
+    "nome": "arrecant",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index":["k00_numpre", "k00_numpar", "k00_receit"]
+  },
+  {
+    "nome": "arrepaga",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index":["k00_numpre", "k00_numpar", "k00_receit"]
+  },
+  {
+    "nome": "divold",
+    "schema": "divida",
+    "incluir_dados": false,
+    "sequence": "divold_k10_sequencial_seq",
+    "index":["k10_numpre", "k10_coddiv"]
+  },
+  {
+    "nome": "abatimento",
+    "schema": "arrecadacao",
+    "incluir_dados": false,
+    "sequence": "abatimento_k125_sequencial_seq"
+  },
+  {
+    "nome": "arrebanco",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "arrecad",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index":["k00_numpre", "k00_numpar", "k00_receit"]
+  },
+  {
+    "nome": "arrecontr",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "arreconv",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "arrehist",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "arrehist_k00_idhist_seq",
+    "index": ["k00_numpre", "k00_numpar"]
+  },
+  {
+    "nome": "arrehistip",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "arreinstit",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index": ["k00_numpre", "k00_instit"]
+  },
+  {
+    "nome": "arrejust",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "arrejust_k27_sequencia_seq"
+  },
+  {
+    "nome": "arrejustreg",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "arrejustreg_k28_sequencia_seq"
+  },
+  {
+    "nome": "arrematric",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index": ["k00_numpre", "k00_matric"]
+  },
+  {
+    "nome": "arrenaoagrupa",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "arrenumcgm",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index": ["k00_numpre", "k00_numcgm"]
+  },
+  {
+    "nome": "arreparc",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "arretipo",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "arretipo_k00_tipo_seq",
+    "index": ["k00_tipo"]
+  },
+  {
+    "nome": "arretipodesconto",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "arrevenc",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "arrevenc_k00_sequencial_seq",
+    "index": ["k00_numpre", "k00_numpar"]
+  },
+  {
+    "nome": "arrevenclog",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "arrevenclog_k75_sequencial_seq"
+  },
+  {
+    "nome": "corautent",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "corcheque",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "corcheque_k12_codcorcheque_seq"
+  },
+  {
+    "nome": "corchequecgm",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "corcla",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "corconf",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "coremp",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "corempagemov",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "corempagemov_k12_sequencial_seq"
+  },
+  {
+    "nome": "corest",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "corgrupo",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "corgrupo_k104_sequencial_seq"
+  },
+  {
+    "nome": "corgrupocorrente",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "corgrupocorrente_k105_sequencial_seq"
+  },
+  {
+    "nome": "corgrupotipo",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "corgrupotipo_k106_sequencial_seq"
+  },
+  {
+    "nome": "corhist",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "corlanc",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "cornump",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "corplacaixa",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "corrente",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "correnteid",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "correnteid_k56_sequencial_seq"
+  },
+  {
+    "nome": "correntemov",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "correntemov_k12_idmov_seq"
+  },
+  {
+    "nome": "debitos",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index": ["k22_data", "k22_numpre", "k22_numcgm", "k22_matric", "k22_inscr", "k22_tipo"]
+  },
+  {
+    "nome": "datadebitos",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "datadebitos_k115_sequencial_seq"
+  },
+  {
+    "nome": "histcalc",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "",
+    "index": ["k01_codigo"]
+  },
+  {
+    "nome": "numpref",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "numpref_k03_numpre_seq",
+    "index": ["k03_anousu", "k03_instit"]
+  },
+  {
+    "nome": "recibounica",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "recibounica_k00_sequencial_seq",
+    "index": ["k00_numpre", "k00_dtvenc"]
+  },
+  {
+    "nome": "recibopaga",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "",
+    "index": ["k00_numpre", "k00_numpar", "k00_receit"]
+  },
+  {
+    "nome": "tabdesc",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "tabdesc_codsubrec_seq"
+  },
+  {
+    "nome": "tabdescarretipo",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "tabdescarretipo_k78_sequencial_seq"
+  },
+  {
+    "nome": "tabdescdepto",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "tabdescdepto_k69_sequencial_seq"
+  },
+  {
+    "nome": "taborc",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "",
+    "index" :["k02_codigo", "k02_anousu"]
+  },
+  {
+    "nome": "tabplan",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "",
+    "index" :["k02_codigo", "k02_anousu"]
+  },
+  {
+    "nome": "tabplansaldorecurso",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabplansaldorecurso_k111_sequencial_seq"
+  },
+  {
+    "nome": "tabplansaldorecursomov",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabplansaldorecursomov_k113_sequencial_seq"
+  },
+  {
+    "nome": "tabrec",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabrec_k02_codigo_seq",
+    "index":["k02_codigo", "k02_codjm", "k02_tabrectipo"]
+  },
+  {
+    "nome": "tabrecarretipo",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabrecarretipo_k79_sequencial_seq"
+  },
+  {
+    "nome": "tabrecdepto",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabrecdepto_k98_sequencial_seq"
+  },
+  {
+    "nome": "tabrecjm",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabrecjm_k02_codjm_seq"
+  },
+  {
+    "nome": "tabrecjmmulta",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabrecjmmulta_k140_sequencial_seq"
+  },
+  {
+    "nome": "tabrecregrasjm",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabrecregrasjm_k04_sequencial_seq"
+  },
+  {
+    "nome": "tabrectipo",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tabrectipo_k116_sequencial_seq"
+  },
+  {
+    "nome": "taxagrupo",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "taxagrupo_k06_taxagrupo_seq",
+    "index":["k06_taxagrupo"]
+  },
+  {
+    "nome": "taxagruporeg",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "taxagruporeg_k08_taxagruporeg_seq",
+    "index":["k08_taxagruporeg"]
+  },
+  {
+    "nome": "tiporecolhimento",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tiporecolhimento_k172_sequencial_seq"
+  },
+  {
+    "nome": "tiporecolhimentoatributosdinamicos",
+    "schema": "caixa",
+    "incluir_dados": true,
+    "sequence": "tiporecolhimentoatributosdinamicos_k176_sequencial_seq"
+  },
+  {
+    "nome": "transferenciafinanceira",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "transferenciafinanceira_k150_sequencial_seq"
+  },
+  {
+    "nome": "transferenciafinanceirarecebimento",
+    "schema": "caixa",
+    "incluir_dados": false,
+    "sequence": "transferenciafinanceirarecebimento_k151_sequencial_seq"
+  },
+  {
+    "nome": "cgm",
+    "schema": "protocolo",
+    "incluir_dados": true,
+    "sequence": "cgm_z01_numcgm_seq",
+    "index" : ["z01_numcgm"]
+  },
+  {
+    "nome": "db_sysfuncoes",
+    "schema": "configuracoes",
+    "incluir_dados": true,
+    "sequence": "db_sysfuncoes_codfuncao_seq",
+    "index":["codfuncao", "nomefuncao"]
+  },
+  {
+    "nome": "db_sysfuncoescliente",
+    "schema": "configuracoes",
+    "incluir_dados": true,
+    "sequence": "db_sysfuncoescliente_db41_sysfuncoescliente_seq",
+    "index": ["db41_sysfuncoescliente"]
+  },
+  {
+    "nome": "averba",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averba_j55_codave_seq",
+    "index" : ["j55_codave"]
+  },
+  {
+    "nome": "averbacao",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbacao_j75_codigo_seq"
+  },
+  {
+    "nome": "averbacgm",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbacgm_j76_codigo_seq"
+  },
+  {
+    "nome": "averbacgmold",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbacgmold_j79_codigo_seq"
+  },
+  {
+    "nome": "averbadecisaojudicial",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbadecisaojudicial_j101_sequencial_seq"
+  },
+  {
+    "nome": "averbaescritura",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbaescritura_j94_codigo_seq"
+  },
+  {
+    "nome": "averbaformalpartilha",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbaformalpartilha_j100_sequencial_seq"
+  },
+  {
+    "nome": "averbaformalpartilhacgm",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbaformalpartilhacgm_j102_sequencial_seq"
+  },
+  {
+    "nome": "averbagrupo",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbagrupo_j105_sequencial_seq"
+  },
+  {
+    "nome": "averbaguia",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbaguia_j104_sequencial_seq"
+  },
+  {
+    "nome": "averbaguiaitbi",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbaguiaitbi_j103_sequencial_seq"
+  },
+  {
+    "nome": "averbaprocesso",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "averbaregimovel",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": ""
+  },
+  {
+    "nome": "averbatipo",
+    "schema": "cadastro",
+    "incluir_dados": false,
+    "sequence": "averbatipo_j93_codigo_seq"
+  },
+  {
+    "nome": "bairro",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "bairro_j13_codi_seq",
+    "index": ["j13_codi"]
+  },
+  {
+    "nome": "bairrofator",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "bairrofator_j112_sequencial_seq",
+    "index":["j112_bairro"]
+  },
+  {
+    "nome": "cadimobil",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "caracter",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "caracter_j31_codigo_seq",
+    "index": ["j31_codigo", "j31_grupo"]
+  },
+  {
+    "nome": "caractercaracter",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "caractercaracter_j138_sequencial_seq",
+    "index": ["j138_sequencial"]
+  },
+  {
+    "nome": "caractercaracteristica",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "caractercaracteristica_db143_sequencial_seq",
+    "index":["db143_sequencial", "db143_caracter", "db143_caracteristica"]
+  },
+  {
+    "nome": "caraliq",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j73_anousu", "j73_caract"]
+  },
+  {
+    "nome": "carbairro",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "carbairro_j114_sequencial_seq",
+    "index":["j114_bairro", "j114_caracter"]
+  },
+  {
+    "nome": "carcaractervalor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "carcaractervalor_j119_sequencial_seq",
+    "index": ["j119_anousu", "j119_caracteristica1", "j119_caracteristica2"]
+  },
+  {
+    "nome": "carconstr",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j48_matric", "j48_idcons", "j48_caract"]
+  },
+  {
+    "nome": "carface",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index": ["j38_face", "j38_caract"]
+  },
+  {
+    "nome": "carfator",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index": ["j74_anousu", "j74_caract"]
+  },
+  {
+    "nome": "cargrup",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "cargrup_j32_grupo_seq",
+    "index": ["j32_grupo"]
+  },
+  {
+    "nome": "carlote",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j35_idbql", "j35_caract"]
+  },
+  {
+    "nome": "carpadrao",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index" :["j33_codgrupo"]
+  },
+  {
+    "nome": "carvalor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "carvalor_j71_codigo_seq",
+    "index": ["j71_anousu", "j71_caract", "j71_descr"]
+  },
+  {
+    "nome": "carzonafator",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "carzonafator_j96_sequencial_seq",
+    "index": ["j96_caracter", "j96_zona"]
+  },
+  {
+    "nome": "carzonavalor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "carzonavalor_j72_sequencial_seq"
+  },
+  {
+    "nome": "certidaoexistencia",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "certidaoexistencia_j133_sequencial_seq"
+  },
+  {
+    "nome": "certidaoexistenciaprotprocesso",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "certidaoexistenciaprotprocesso_j134_sequencial_seq"
+  },
+  {
+    "nome": "cfiptu",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j18_anousu"]
+  },
+  {
+    "nome": "cliente",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "cliente_j99_codigo_seq"
+  },
+  {
+    "nome": "clientedebito",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "clientedebito_j98_sequencia_seq"
+  },
+  {
+    "nome": "condominio",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "condominio_j107_sequencial_seq"
+  },
+  {
+    "nome": "condominiocgm",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "condominiocgm_j106_sequencial_seq"
+  },
+  {
+    "nome": "configuracaogrupocaracteristicas",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "configuracaogrupocaracteristicas_db144_sequencial_seq"
+  },
+  {
+    "nome": "constrcar",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index": ["j53_matric", "j53_idcons", "j53_caract"]
+  },
+  {
+    "nome": "constrescr",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "db_imgsitbi",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "face",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "face_j37_face_seq",
+    "index": ["j37_setor", "j37_quadra", "j37_codigo", "j37_face"]
+  },
+  {
+    "nome": "facevalor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "facevalor_j81_codigo_seq",
+    "index":["j81_face", "j81_anousu"]
+  },
+  {
+    "nome": "imobil",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "iptuant",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j40_matric"]
+  },
+  {
+    "nome": "iptubaixa",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j02_matric"]
+  },
+  {
+    "nome": "iptubaixaproc",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "iptubase",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptubase_j01_matric_seq",
+    "index" : ["j01_matric", "j01_numcgm", "j01_idbql"]
+  },
+  {
+    "nome": "iptubasecondominio",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptubasecondominio_j108_sequencial_seq",
+    "index":["j108_condominio", "j108_matric"]
+  },
+  {
+    "nome": "iptubasepredio",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptubasepredio_j109_sequencial_seq"
+  },
+  {
+    "nome": "iptubaseregimovel",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptubaseregimovel_j04_sequencial_seq"
+  },
+  {
+    "nome": "iptucadlogcalc",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucadlogcalc_j62_codigo_seq",
+    "index": ["j62_codigo"]
+  },
+  {
+    "nome": "iptucadtaxa",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucadtaxa_j07_iptucadtaxa_seq",
+    "index":["j07_iptucadtaxa"]
+  },
+  {
+    "nome": "iptucadtaxaexe",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucadtaxaexe_j08_iptucadtaxaexe_seq",
+    "index":["j08_iptucadtaxa"]
+  },
+  {
+    "nome": "iptucadzonaentrega",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucadzonaentrega_j85_codigo_seq"
+  },
+  {
+    "nome": "iptucadzonaentregaend",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucadzonaentregaend_j87_sequencial_seq"
+  },
+  {
+    "nome": "iptucalc",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j23_anousu", "j23_matric"]
+  },
+  {
+    "nome": "iptucalcconfrec",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucalcconfrec_j23_sequencial_seq",
+    "index":["j23_anousu", "j23_matric", "j23_recorg", "j23_recdst"]
+  },
+  {
+    "nome": "iptucalclog",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucalclog_j27_codigo_seq",
+    "index":["j27_codigo"]
+  },
+  {
+    "nome": "iptucalclogmat",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j28_codigo", "j28_matric"]
+  },
+  {
+    "nome": "iptucalcpadrao",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucalcpadrao_j10_sequencial_seq",
+    "index":["j10_matric", "j10_anousu"]
+  },
+  {
+    "nome": "iptucalcpadraoconstr",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucalcpadraoconstr_j11_sequencial_seq",
+    "index":["j11_iptucalcpadrao", "j11_matric", "j11_idcons"]
+  },
+  {
+    "nome": "iptucalcpadraolog",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucalcpadraolog_j19_sequencial_seq"
+  },
+  {
+    "nome": "iptucalcpadraoorigem",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucalcpadraoorigem_j27_sequencial_seq"
+  },
+  {
+    "nome": "iptucale",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index": ["j22_anousu", "j22_matric", "j22_idcons"]
+  },
+  {
+    "nome": "iptucalh",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucalh_j17_codhis_seq"
+
+  },
+  {
+    "nome": "iptucalhconf",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptucalhconf_j89_sequencial_seq"
+  },
+  {
+    "nome": "iptucalv",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index" : ["j21_matric", "j21_anousu", "j21_receit"]
+  },
+  {
+    "nome": "iptuconstr",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j39_matric", "j39_idcons"]
+  },
+  {
+    "nome": "iptuconstrdemo",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j60_matric", "j60_idcons", "j60_seq"]
+  },
+  {
+    "nome": "iptuconstrhabite",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptuconstrhabite_j131_sequencial_seq"
+  },
+  {
+    "nome": "iptuconstrobrasconstr",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptuconstrobrasconstr_j132_sequencial_seq"
+  },
+  {
+    "nome": "iptuconstrpontos",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptuconstrpontos_j83_codigo_seq"
+  },
+  {
+    "nome": "iptudiversos",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "iptuender",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j43_matric"]
+  },
+  {
+    "nome": "iptuerro",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "iptufrac",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j25_anousu", "j25_matric"]
+  },
+  {
+    "nome": "iptuisen",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptuisen_j46_codigo_seq",
+    "index":["j46_matric", "j46_tipo"]
+  },
+  {
+    "nome": "iptumatzonaentrega",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptumatzonaentrega_j86_sequencial_seq"
+  },
+  {
+    "nome": "iptunaogeracarne",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptunaogeracarne_j66_sequencial_seq"
+  },
+  {
+    "nome": "iptunaogeracarnecgm",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptunaogeracarnecgm_j68_sequencial_seq"
+  },
+  {
+    "nome": "iptunaogeracarnematric",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptunaogeracarnematric_j131_sequencial_seq"
+  },
+  {
+    "nome": "iptunaogeracarnesetqua",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptunaogeracarnesetqua_j67_sequencial_seq"
+  },
+  {
+    "nome": "iptunump",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j20_anousu", "j20_matric"]
+  },
+  {
+    "nome": "iptunumpold",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptunumpold_j130_sequencial_seq"
+  },
+  {
+    "nome": "iptupadraoconstr",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptupadraoconstr_j115_sequencial_seq"
+  },
+  {
+    "nome": "iptupadraoconstrarea",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptupadraoconstrarea_j116_sequencial_seq"
+  },
+  {
+    "nome": "iptupadraoconstrfator",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptupadraoconstrfator_j117_sequencial_seq"
+  },
+  {
+    "nome": "iptupadraoconstrpontos",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptupadraoconstrpontos_j118_sequencial_seq"
+  },
+  {
+    "nome": "iptutabelas",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptutabelas_j121_sequencial_seq"
+  },
+  {
+    "nome": "iptutabelasconfig",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptutabelasconfig_j122_sequencial_seq"
+  },
+  {
+    "nome": "iptutabelasconfigcampochave",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptutabelasconfigcampochave_j124_sequencial_seq"
+  },
+  {
+    "nome": "iptutabelasconfigcampocorrecao",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptutabelasconfigcampocorrecao_j123_sequencial_seq"
+  },
+  {
+    "nome": "iptutabelasconfigvirada",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptutabelasconfigvirada_j129_sequencial_seq"
+  },
+  {
+    "nome": "iptutabelasdepend",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptutabelasdepend_j128_sequencial_seq"
+  },
+  {
+    "nome": "iptutaxa",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "iptutaxamatric",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptutaxamatric_j09_iptutaxamatric_seq"
+  },
+  {
+    "nome": "iptutaxamatricexe",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "iptutaxamatricexe_j10_iptutaxamatricexe_seq"
+  },
+  {
+    "nome": "isenexe",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "isenproc",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "isentaxa",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "localidaderural",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "localidaderural_j137_sequencial_seq"
+  },
+  {
+    "nome": "logradcep",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "lote",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "lote_j34_idbql_seq",
+    "index" : ["j34_idbql","j34_lote", "j34_quadra", "j34_setor"]
+  },
+  {
+    "nome": "loteam",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "loteam_j34_loteam_seq",
+    "index":["j34_loteam"]
+  },
+  {
+    "nome": "loteamcgm",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "loteamcgm_j120_sequencial_seq"
+  },
+  {
+    "nome": "lotedist",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "loteloc",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "loteloteam",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "lotenumero",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "lotenumero_j12_codigo_seq"
+  },
+  {
+    "nome": "lotenumero_proc",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "lotesetorfiscal",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "massafalida",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "massafalida_j58_codigo_seq"
+  },
+  {
+    "nome": "massamat",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "matricobs",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "mobimportacao",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "mobimportacao_j95_codimporta_seq"
+  },
+  {
+    "nome": "moblevantamentoedi",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "moblevantamentoedi_j96_sequen_seq"
+  },
+  {
+    "nome": "moblevantamentolog",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "moblevantamentolog_j98_sequen_seq"
+  },
+  {
+    "nome": "moblevatamento",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "moblevatamento_j97_sequen_seq"
+  },
+  {
+    "nome": "orientacao",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "orientacao_j64_sequencial_seq"
+  },
+  {
+    "nome": "predio",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "predio_j111_sequencial_seq",
+    "index":["j111_condominio"]
+  },
+  {
+    "nome": "promitente",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j41_matric", "j41_numcgm"]
+  },
+  {
+    "nome": "propri",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j42_matric", "j42_numcgm"]
+  },
+  {
+    "nome": "ruas",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j14_codigo"]
+  },
+  {
+    "nome": "ruasbairro",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "ruasbairro_j16_codigo_seq",
+    "index":["j16_codigo", "j16_bairro", "j16_lograd"]
+  },
+  {
+    "nome": "ruascep",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "ruashistorico",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "ruashistorico_j136_sequencial_seq"
+  },
+  {
+    "nome": "ruastipo",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "setor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j30_codi"]
+  },
+  {
+    "nome": "setorfiscal",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "setorfiscal_j90_codigo_seq",
+    "index":["j90_codigo"]
+  },
+  {
+    "nome": "setorfiscalvalor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "setorfiscalvalor_j82_codigo_seq",
+    "index":["j82_setorfiscal", "j82_anousu", "j82_codigo"]
+  },
+  {
+    "nome": "setorloc",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j05_codigo"]
+  },
+  {
+    "nome": "setorlocvalor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "setorregimovel",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "setorregimovel_j69_sequencial_seq"
+  },
+  {
+      "nome": "tesinter",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "tesinter_j39_sequencial_seq",
+    "index":["j39_idbql"]
+  },
+  {
+    "nome": "tesinterlote",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j69_idbql"]
+  },
+  {
+    "nome": "tesinteroutros",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "tesintertipo",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "tesintertipo_j92_sequencial_seq"
+  },
+  {
+    "nome": "testada",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j36_idbql", "j36_face"]
+  },
+  {
+    "nome": "testadanumero",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "testadanumero_j15_codigo_seq",
+    "index":["j15_idbql", "j15_face"]
+  },
+  {
+    "nome": "testpri",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "",
+    "index":["j49_idbql", "j49_face"]
+  },
+  {
+    "nome": "tipoisen",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "tipoisen_j45_tipo_seq"
+  },
+  {
+    "nome": "zonafator",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "zonafator_j110_sequencial_seq",
+    "index":["j110_zona"]
+  },
+  {
+    "nome": "zonafatorarea",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "zonafatorarea_j113_sequencial_seq",
+    "index":["j113_zona"]
+  },
+  {
+    "nome": "zonas",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "zonas_j50_zona_seq"
+  },
+  {
+    "nome": "zonasaliq",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "zonassetorvalor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": "zonassetorvalor_j141_sequencial_seq"
+  },
+  {
+    "nome": "zonastaxa",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  },
+  {
+    "nome": "zonasvalor",
+    "schema": "cadastro",
+    "incluir_dados": true,
+    "sequence": ""
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "informe_data"                     : "Informe uma Data.",
+  "informe_exame"                    : "Informe um Exame.",
+  "exame_ja_lancado"                 : "Exame já lançado!",
+  "deseja_apagar_exame"              : "Deseja apagar o exame: [sExame]?",
+  "exame_nao_informado_laboratorios" : "Exame não informado para buscar os laboratórios.",
+  "exame_nao_informado_setor"        : "Exame não informado para buscar os setores.",
+  "quantidade_invalida"              : "Quantidade de exame inválida.",
+  "informe_cgs"                      : "Informe um CGS.",
+  "informe_medico"                   : "Informe um Médico.",
+  "lance_exame"                      : "Lance um exame para o paciente.",
+  "requisicao_sem_codigo"            : "Requisição sem código.",
+  "profissional_fora_rede"           : "Profissional selecionado não é um profissional de fora da rede.",
+  "saldo_excedido"                   : "Saldo excedido! \nDeseja liberar a realização de exames mesmo excedendo o saldo?",
+  "selecione_exame"                  : "Selecione ao menos um exame para autorizá-lo.",
+  "autorizando_exames"               : "Aguarde, autorizando exames...",
+  "verifica_uso_cotas"               : "Verificando se possuí controle de cotas.",
+  "validando_cota"                   : "Validando atendimento diário."
+}

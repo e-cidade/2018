@@ -1,0 +1,6 @@
+{
+  "data_vencimento_invalida"              : "O empenho a ser emitido é classificado como [sClassificacao]. Para empenhos de [sClassificacao] não é possível informar Data de Vencimento superior a [iQuantidadeDias] dias [sContagemDias].",
+  "data_vencimento_invalida_ordem_compra" : "A Ordem de Compra selecionada é de empenho classificado como [sClassificacao]. Para empenhos de [sClassificacao] não é possível informar Data de Vencimento superior a [iQuantidadeDias] dias [sContagemDias].",
+  "data_vencimento_menor"                 : "Data de Vencimento não pode ser menor que a Data de Recebimento.",
+  "data_recebimento_menor"                : "Data de Recebimento não pode ser menor que a Data da Nota."
+}

@@ -1,0 +1,19 @@
+{
+  "selecione_inventario"             : "Selecione um inventário.",
+  "data_inicial_maior_data_final"    : "Data inicial maior que data final.",
+  "nenhum_filtro_selecionado"        : "Não foi selecionado nenhum filtro, por este motivo a exibição dos itens poderá demorar.\n\nConfirma esta operação?",
+  "realizando_consulta"              : "Aguarde, realizando consulta...",
+  "carregando_departamento_divisoes" : "Aguarde, carregando departamento e divisões...",
+  "bens_nao_encontados"              : "Não foi encontrado bens para os filtros selecionados.",
+  "salvando_informacoes"             : "Aguarde, salvando informações...",
+  "nao_foi_possivel_salvar_bem"      : "Não foi possível salvar os dados do bem. Contate o suporte.",
+  "valor_atual_negativo"             : "Valor Atual não pode ser negativo.",
+  "valor_atual_menor_valor_residual" : "Valor atual não deve ser menor que o valor residual.",
+  "valor_residual_negativo"          : "Valor Residual não pode ser negativo.",
+  "valor_residual_maior_valor_atual" : "Valor residual não deve ser maior que o valor atual.",
+  "buscando_divisao_do_departamento" : "Aguarde, buscando divisão do departamento selecionado...",
+  "selecione_orgao"                  : "Selecione um Orgão.",
+  "bem_sem_placa"                    : "O bem selecionado não possui placa cadastrada.",
+  "marque_registros"                 : "Marque os registros para liberar a edição. O registro será feito de forma instantânea. O valor depreciável não é editável.",
+  "bens_inventario"                  : "Bens do inventário [inventario]."
+}

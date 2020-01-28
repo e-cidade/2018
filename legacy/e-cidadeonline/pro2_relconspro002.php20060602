@@ -1,0 +1,544 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBSeller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+include("fpdf151/pdf.php");
+include("libs/db_sql.php");
+include("classes/db_protprocesso_classe.php");
+include("classes/db_procandam_classe.php");
+include("classes/db_proctransfer_classe.php");
+include("classes/db_proctransferproc_classe.php");
+include("classes/db_proctransand_classe.php");
+include("classes/db_proctransferintand_classe.php");
+include("classes/db_proctransferint_classe.php");
+include("classes/db_procandamint_classe.php");
+include("classes/db_procandamintand_classe.php");
+include("classes/db_arqproc_classe.php");
+include("classes/db_arqandam_classe.php");
+include("dbforms/db_funcoes.php");
+
+db_postmemory($HTTP_SERVER_VARS);
+db_postmemory($HTTP_POST_VARS);
+
+$clprotprocesso = new cl_protprocesso;
+$clprocandam = new cl_procandam;
+$clproctransfer = new cl_proctransfer;
+$clproctransferproc = new cl_proctransferproc;
+$clproctransand = new cl_proctransand;
+$clproctransferintand = new cl_proctransferintand;
+$clproctransferint = new cl_proctransferint;
+$clprocandamint = new cl_procandamint;
+$clprocandamintand = new cl_procandamintand;
+$clarqproc = new cl_arqproc;
+$clarqandam = new cl_arqandam;
+
+$cod_procandamint=0;
+$arquiv=false;
+$arqant=false;
+
+
+if (isset($codproc)&&$codproc!=""){
+  
+  $head3 = "Consulta de Processo ";
+  $head4 = "Processo N° $codproc";
+
+
+  $pdf = new PDF(); 
+  $pdf->Open(); 
+  $pdf->AliasNbPages(); 
+  $pdf->addpage('L');
+  $total = 0;
+  $pdf->setfillcolor(235);
+  $pdf->setfont('arial','b',8);
+  $troca = 1;
+  $alt = 4;
+  $total = 0;
+
+
+
+  $result_protprocesso = $clprotprocesso->sql_record($clprotprocesso->sql_query($codproc));
+  if ($clprotprocesso->numrows!=0){
+    db_fieldsmemory($result_protprocesso,0);
+    
+    $pdf->cell(25,$alt,'Processo :',0,0,"R",0);
+    $pdf->cell(75,$alt,$codproc,0,0,"L",0);
+    $pdf->cell(25,$alt,'Titular do Processo :',0,0,"R",0);
+    $pdf->cell(75,$alt,$z01_nome,0,1,"L",0);
+    
+    $pdf->cell(25,$alt,'Data :',0,0,"R",0);
+    $pdf->cell(75,$alt,db_formatar($p58_dtproc,'d'),0,0,"L",0);
+    $pdf->cell(25,$alt,'Hora :',0,0,"R",0);
+    $pdf->cell(75,$alt,$p58_hora,0,1,"L",0);
+    
+    $pdf->cell(25,$alt,'Tipo :',0,0,"R",0);
+    $pdf->cell(75,$alt,$p51_descr,0,0,"L",0);
+    $pdf->cell(25,$alt,'Atendente :',0,0,"R",0);
+    $pdf->cell(75,$alt,$nome,0,1,"L",0);
+    
+    $pdf->cell(25,$alt,'Requerente :',0,0,"R",0);
+    $pdf->cell(75,$alt,$p58_requer,0,1,"L",0);
+    
+    $pdf->cell(25,$alt,'Observação :',0,0,"R",0);
+    $pdf->multicell(175,$alt,$p58_obs,0,"L",0);
+    
+    /*
+    echo "<table width='100%' >
+            <tr>
+              <td nowrap><b>PROCESSO: </b></td>
+              <td nowrap>$codproc </td>
+              <td ><b>NOME:</b></td>
+              <td colspan='2' nowrap>$z01_nome</td>
+            </tr>
+            <tr>  
+              <td ><b>DATA:</b> </td>
+              <td nowrap>".db_formatar($p58_dtproc,'d')."</td>
+              <td ><b>HORA:</b> </td>
+              <td colspan='2' nowrap>$p58_hora&nbsp;</td>
+            </tr>
+            <tr>  
+              <td ><b>TIPO:</b> </td>
+              <td  nowrap>$p51_descr</td>
+              <td ><b>ATENDENTE:</b> </td>
+              <td colspan='2' nowrap>$nome</td>
+            </tr>
+            <tr>  
+              <td ><b>REQUERENTE:</b> </td>
+              <td colspan='4' nowrap>$p58_requer</td>
+            </tr>
+            <tr> 
+              <td  ><b>OBSERVAÇÃO:</b> </td>
+              <td colspan='4' nowrap>".($p58_obs == ""?"&nbsp;":nl2br($p58_obs))."</td>
+            </tr>  
+          </table>";
+    echo "<table bgcolor='#cccccc' width='100%'  border=1>
+            <tr>
+              <td colspan=6 align='center'><b>Andamentos</b></td>
+            </tr>
+            <tr>
+              <td><b>Data</b></td>
+              <td><b>Hora</b></td>
+              <td><b>Depto</b></td>
+              <td><b>Login</b></td>
+              <td><b>Ocorrencia</b></td>
+              <td><b>Despacho</b></td>
+            </tr>";
+    */
+    
+    $result_proctransferproc = $clproctransferproc->sql_record($clproctransferproc->sql_query_file(null,null,"*","p63_codtran","p63_codproc = $codproc"));        
+    if ($clproctransferproc->numrows!=0){
+      /*
+      echo"        <tr>
+                <td>";
+      echo          db_formatar($p58_dtproc,'d');
+      echo"          </td>
+                <td>$p58_hora</td>
+                <td>$p58_coddepto-$descrdepto</td>
+                <td>$nome</td>
+                <td>Processo Criado</td>
+                <td>&nbsp</td>
+              </tr>";
+      */
+      $tramite=0;        
+      for ($y=0;$y<$clproctransferproc->numrows;$y++){
+        
+        if ($pdf->gety() > $pdf->h - 30 || $troca != 0 ){
+          
+          if ($troca==0){ 
+            $pdf->addpage('L');
+          }
+          $pdf->setfont('arial','b',8);
+          $pdf->cell(20,$alt,'Data',1,0,"C",1);
+          $pdf->cell(20,$alt,'Hora',1,0,"C",1);
+          $pdf->cell(90,$alt,'Departamento',1,0,"C",1);
+          //$pdf->cell(40,$alt,'Login',1,0,"C",1);
+          $pdf->cell(80,$alt,'Ocorrência',1,0,"C",1);
+          $pdf->cell(60,$alt,'Despacho',1,1,"C",1); 
+          
+          if ($troca==1){  
+            
+            $pdf->setfont('arial','',8);
+            $pdf->cell(20,$alt,db_formatar($p58_dtproc,'d'),0,0,"C",0);
+            $pdf->cell(20,$alt,$p58_hora,0,0,"C",0);
+            $pdf->cell(90,$alt,$p58_coddepto.'-'.$descrdepto,0,0,"L",0);
+            //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+            $pdf->cell(80,$alt,'Processo Criado',0,0,"L",0);
+            $pdf->cell(60,$alt,'',0,1,"C",0); 
+          }
+                 
+          $troca = 0;
+        
+        }
+
+        $pdf->setfont('arial','',8);
+        db_fieldsmemory($result_proctransferproc,$y);
+        $result_proctransfer = $clproctransfer->sql_record($clproctransfer->sql_query_deps(null,"p62_codtran,p62_dttran,p62_hora,p62_coddepto,p62_coddeptorec,atual.descrdepto as deptoatual,destino.descrdepto as deptodestino,nome",null,"p62_codtran = $p63_codtran"));        
+        if ($clproctransfer->numrows!=0){
+            db_fieldsmemory($result_proctransfer,0);
+            if ($tramite==0){
+              
+              $pdf->cell(20,$alt,db_formatar($p62_dttran,'d'),0,0,"C",0);
+              $pdf->cell(20,$alt,$p62_hora,0,0,"C",0);
+              $pdf->cell(50,$alt,$p62_coddepto.'-'.$deptoatual,0,0,"L",0);
+              //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+              $pdf->cell(80,$alt,'Tramite Inicial',0,0,"L",0);
+              $pdf->cell(60,$alt,'',0,1,"C",0); 
+              /* 
+              echo "<tr>
+                      <td>";
+              echo db_formatar($p62_dttran,'d');
+              echo "  </td>
+                      <td>$p62_hora&nbsp</td>
+                      <td>$p62_coddepto-$deptoatual</td>
+                      <td>$nome</td>
+                      <td>Tramite Inicial</td>
+                      <td>&nbsp</td>
+                    </tr>";
+              */
+              $tramite=1;
+            }else{
+              if ($p62_coddepto == $p62_coddeptorec){
+                $arquiv=true;
+              }else{
+                
+                $pdf->cell(20,$alt,db_formatar($p62_dttran,'d'),0,0,"C",0);
+                $pdf->cell(20,$alt,$p62_hora,0,0,"C",0);
+                $pdf->cell(50,$alt,$p62_coddepto.'-'.$deptoatual,0,0,"L",0);
+                //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+                $pdf->cell(80,$alt,'Tranferência p/ o Departamento:'.$deptodestino,0,0,"L",0);
+                $pdf->cell(60,$alt,'',0,1,"C",0); 
+                /*
+                echo "<tr>
+                        <td>";
+                echo db_formatar($p62_dttran,'d');
+                echo "  </td>
+                        <td>$p62_hora&nbsp</td>
+                        <td>$p62_coddepto-$deptoatual</td>
+                        <td>$nome</td>
+                        <td>Transferência p/ o Departamento:$deptodestino</td>
+                        <td>&nbsp</td>
+                      </tr>";
+                */      
+              }
+            }
+            $result_proctransand = $clproctransand->sql_record($clproctransand->sql_query_file("","*",null,"p64_codtran = $p62_codtran"));
+            if ($clproctransand->numrows!=0){
+              db_fieldsmemory($result_proctransand,0);
+              $result_procandam = $clprocandam->sql_record($clprocandam->sql_query_com(null,"*",null,"p61_codandam = $p64_codandam"));
+              if ($clprocandam->numrows!=0){
+                db_fieldsmemory($result_procandam,0);
+                
+                $pdf->cell(20,$alt,db_formatar($p61_dtandam,'d'),0,0,"C",0);
+                $pdf->cell(20,$alt,$p61_hora,0,0,"C",0);
+                $pdf->cell(90,$alt,$p61_coddepto.'-'.$descrdepto,0,0,"L",0);
+                //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+        
+                /*
+                echo "<tr>
+                        <td>";
+                echo db_formatar($p61_dtandam,'d');
+                echo "  </td>
+                        <td>$p61_hora&nbsp</td>
+                        <td>$p61_coddepto-$descrdepto</td>
+                        <td>$nome</td>";
+                */        
+                if ($arquiv==true){
+                  $result_arqandam = $clarqandam->sql_record($clarqandam->sql_query_file(null,"*",null,"p69_codandam = $p61_codandam"));
+                  if ($clarqandam->numrows!=0){
+                    db_fieldsmemory($result_arqandam,0);
+                    $arqant=true;
+                    if ($p69_arquivado=='t'){
+                      $pdf->cell(80,$alt,'Processo Arquivado',0,0,"L",0);
+                      //echo "<td><b>Processo Arquivado </b></td>";
+                    }else{
+                      $pdf->cell(80,$alt,'Desarquivamento',0,0,"L",0);
+                      //echo "<td><b>Desarquivamento</b></td>";
+                    }
+                  }else{
+                    $pdf->cell(80,$alt,'Desarquivamento',0,0,"L",0);
+                   // echo "<td><b>Desarquivamento</b></td>";
+                  }
+                }else{
+                  $pdf->cell(80,$alt,'Recebeu Tranferência',0,0,"L",0);
+                  //echo "<td>Recebeu Transferência</td>";
+                }            
+                $pdf->multicell(60,$alt,$p61_despacho,0,"L",0);
+                /*echo "  <td>$p61_despacho&nbsp</td>
+                      </tr>";
+                */  
+                  
+                $result_procandamint_des = $clprocandamint->sql_record($clprocandamint->sql_query_sim(null,"*","p78_sequencial","p78_codandam = $p61_codandam and p78_usuario=$p61_id_usuario "));
+                if ($clprocandamint->numrows!=0){
+                  for ($x=0;$x<$clprocandamint->numrows;$x++){
+                    if ($pdf->gety() > $pdf->h - 30 || $troca != 0 ){
+                      
+                      if ($troca==0){ 
+                        $pdf->addpage('L');
+                      }
+                      $pdf->setfont('arial','b',8);
+                      $pdf->cell(20,$alt,'Data',1,0,"C",1);
+                      $pdf->cell(20,$alt,'Hora',1,0,"C",1);
+                      $pdf->cell(50,$alt,'Departamento',1,0,"C",1);
+                      //$pdf->cell(40,$alt,'Login',1,0,"C",1);
+                      $pdf->cell(80,$alt,'Ocorrência',1,0,"C",1);
+                      $pdf->cell(60,$alt,'Despacho',1,1,"C",1); 
+                    
+                      $troca = 0;
+                      $pdf->setfont('arial','',8);
+                    }
+                    db_fieldsmemory($result_procandamint_des,$x);
+                    if ($p78_transint=='t'){
+                      break;
+                    }else{
+                      
+                      $pdf->cell(20,$alt,db_formatar($p78_data,'d'),0,0,"C",0);
+                      $pdf->cell(20,$alt,$p78_hora,0,0,"C",0);
+                      $pdf->cell(90,$alt,$p61_coddepto.'-'.$descrdepto,0,0,"L",0);
+                      //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+                      $pdf->cell(80,$alt,'Despacho Interno',0,0,"L",0);
+                      $pdf->multicell(60,$alt,$p78_despacho,0,"L",0); 
+                      /* 
+                      echo "<tr>
+                              <td>";
+                      echo db_formatar($p78_data,'d');
+                      echo "  </td>
+                              <td>$p78_hora&nbsp</td>
+                              <td>$p61_coddepto-$descrdepto</td>
+                              <td>$nome</td>
+                              <td>Despacho Interno</td>
+                              <td>$p78_despacho</td>
+                            </tr>";
+                      */    
+                      $cod_procandamint = $p78_sequencial;        
+                    }
+                  }
+                }
+                $result_proctransferintand = $clproctransferintand->sql_record($clproctransferintand->sql_query_file(null,"*","p87_codtransferint","p87_codandam = $p61_codandam"));
+                if ($clproctransferintand->numrows!=0){
+                  for ($yy=0;$yy<$clproctransferintand->numrows;$yy++){
+                    if ($pdf->gety() > $pdf->h - 30 || $troca != 0 ){
+                      
+                      if ($troca==0){ 
+                        $pdf->addpage('L');
+                      }
+                      $pdf->setfont('arial','b',8);
+                      $pdf->cell(20,$alt,'Data',1,0,"C",1);
+                      $pdf->cell(20,$alt,'Hora',1,0,"C",1);
+                      $pdf->cell(50,$alt,'Departamento',1,0,"C",1);
+                      //$pdf->cell(40,$alt,'Login',1,0,"C",1);
+                      $pdf->cell(80,$alt,'Ocorrência',1,0,"C",1);
+                      $pdf->cell(60,$alt,'Despacho',1,1,"C",1); 
+                    
+                      $troca = 0;
+                      $pdf->setfont('arial','',8);
+                    }
+                    db_fieldsmemory($result_proctransferintand,$yy);
+                    $result_proctransferint = $clproctransferint->sql_record($clproctransferint->sql_query_andusu(null,"p88_codigo,p88_data,p88_hora,p88_despacho,p88_publico,atual.nome as usuatual,destino.nome as usudestino",null,"p88_codigo=$p87_codtransferint"));                
+                    if ($clproctransferint->numrows!=0){
+                      db_fieldsmemory($result_proctransferint,0);
+                      
+                      $pdf->cell(20,$alt,db_formatar($p88_data,'d'),0,0,"C",0);
+                      $pdf->cell(20,$alt,$p88_hora,0,0,"C",0);
+                      $pdf->cell(90,$alt,$p61_coddepto.'-'.$descrdepto,0,0,"L",0);
+                      //$pdf->cell(40,$alt,$usuatual,0,0,"L",0);
+                      $pdf->cell(80,$alt,'Tranferência Interna para '.$usudestino,0,0,"L",0);
+                      $pdf->multicell(60,$alt,$p88_despacho,0,"L",0); 
+                    
+                      /*
+                      echo "<tr>
+                              <td>";
+                      echo db_formatar($p88_data,'d');
+                      echo "  </td>
+                              <td>$p88_hora&nbsp</td>
+                              <td>$p61_coddepto-$descrdepto</td>
+                              <td>$usuatual</td>
+                              <td>Transferência Interna para $usudestino</td>
+                              <td>$p88_despacho</td>
+                            </tr>";
+                      */
+                      $result_procandamintand = $clprocandamintand->sql_record($clprocandamintand->sql_query_file(null,"*","p86_codtrans","p86_codtrans=$p88_codigo"));        
+                      if ($clprocandamintand->numrows!=0){
+                        db_fieldsmemory($result_procandamintand,0);
+                        $result_procandamint_trans = $clprocandamint->sql_record($clprocandamint->sql_query_sim(null,"*","p78_sequencial","p78_sequencial > $cod_procandamint  and p78_codandam = $p86_codandam "));
+                        if ($clprocandamint->numrows!=0){
+                          for ($xx=0;$xx<$clprocandamint->numrows;$xx++){
+                            if ($pdf->gety() > $pdf->h - 30 || $troca != 0 ){
+                              
+                              if ($troca==0){ 
+                                $pdf->addpage('L');
+                              }
+                              $pdf->setfont('arial','b',8);
+                              $pdf->cell(20,$alt,'Data',1,0,"C",1);
+                              $pdf->cell(20,$alt,'Hora',1,0,"C",1);
+                              $pdf->cell(50,$alt,'Departamento',1,0,"C",1);
+                              //$pdf->cell(40,$alt,'Login',1,0,"C",1);
+                              $pdf->cell(80,$alt,'Ocorrência',1,0,"C",1);
+                              $pdf->cell(60,$alt,'Despacho',1,1,"C",1); 
+                            
+                              $troca = 0;
+                              $pdf->setfont('arial','',8);
+                            }
+                            db_fieldsmemory($result_procandamint_trans,$xx);
+                            if ($xx>0){
+                              if ($cod_usu!=$p78_usuario){
+                                break;
+                              }
+                            }
+                            if ($p78_transint=='t'){
+                              
+                              $pdf->cell(20,$alt,db_formatar($p78_data,'d'),0,0,"C",0);
+                              $pdf->cell(20,$alt,$p78_hora,0,0,"C",0);
+                              $pdf->cell(90,$alt,$p61_coddepto.'-'.$descrdepto,0,0,"L",0);
+                              //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+                              $pdf->cell(80,$alt,'Recebeu Tranferência Interna',0,0,"L",0);
+                              $pdf->multicell(60,$alt,$p78_despacho,0,"L",0); 
+                             
+                             /* 
+                              echo "<tr>
+                                      <td>";
+                              echo db_formatar($p78_data,'d');
+                              echo "  </td>
+                                      <td>$p78_hora&nbsp</td>
+                                      <td>$p61_coddepto-$descrdepto</td>
+                                      <td>$nome</td>
+                                      <td>Recebeu Transferência Interna</td>
+                                      <td>$p78_despacho</td>
+                                    </tr>";
+                            */
+                            }else{
+                              
+                              
+                              $pdf->cell(20,$alt,db_formatar($p78_data,'d'),0,0,"C",0);
+                              $pdf->cell(20,$alt,$p78_hora,0,0,"C",0);
+                              $pdf->cell(90,$alt,$p61_coddepto.'-'.$descrdepto,0,0,"L",0);
+                              //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+                              $pdf->cell(80,$alt,'Despacho Interno',0,0,"L",0);
+                              $pdf->multicell(60,$alt,$p78_despacho,0,"L",0); 
+                              
+                              /*
+                              echo "<tr>
+                                      <td>";
+                              echo db_formatar($p78_data,'d');
+                              echo "  </td>
+                                      <td>$p78_hora&nbsp</td>
+                                      <td>$p61_coddepto-$descrdepto</td>
+                                      <td>$nome</td>
+                                      <td>Despacho Interno</td>
+                                      <td>$p78_despacho</td>
+                                    </tr>";
+                            */            
+                            }
+                            $cod_usu = $p78_usuario;
+                            $cod_procandamint = $p78_sequencial;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }else{
+        $       result_procandam = $clprocandam->sql_record($clprocandam->sql_query_com(null,"*","p61_codandam","p61_codproc = $codproc"));
+        if ($clprocandam->numrows!=0){ 
+          for ($xy=0;$xy<$clprocandam->numrows;$xy++){
+            if ($pdf->gety() > $pdf->h - 30 || $troca != 0 ){
+              
+              if ($troca==0){ 
+                $pdf->addpage('L');
+              }
+              $pdf->setfont('arial','b',8);
+              $pdf->cell(20,$alt,'Data',1,0,"C",1);
+              $pdf->cell(20,$alt,'Hora',1,0,"C",1);
+              $pdf->cell(50,$alt,'Departamento',1,0,"C",1);
+              $pdf->cell(40,$alt,'Login',1,0,"C",1);
+              $pdf->cell(80,$alt,'Ocorrência',1,0,"C",1);
+              $pdf->cell(60,$alt,'Despacho',1,1,"C",1); 
+            
+              $troca = 0;
+              $pdf->setfont('arial','',8);
+            }
+            db_fieldsmemory($result_procandam,$xy);
+            
+            $pdf->cell(20,$alt,db_formatar($p61_dtandam,'d'),0,0,"C",0);
+            $pdf->cell(20,$alt,$p61_hora,0,0,"C",0);
+            $pdf->cell(90,$alt,$p61_coddepto.'-'.$descrdepto,0,0,"L",0);
+            //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+            $pdf->cell(80,$alt,'Recebeu Processo',0,0,"L",0);
+            $pdf->multicell(60,$alt,$p61_despacho,0,"L",0); 
+            
+            /*
+            echo "<tr>
+                    <td>";
+            echo db_formatar($p61_dtandam,'d');
+            echo "  </td>
+                    <td>$p61_hora&nbsp</td>
+                    <td>$p61_coddepto-$descrdepto</td>
+                    <td>$nome</td>
+                    <td>Recebeu Processo &nbsp</td>
+                    <td>$p61_despacho</td>
+                  </tr>";
+          */
+          }
+        }
+      }
+    }
+    if ($arqant==false){
+      $result_arqproc = $clarqproc->sql_record($clarqproc->sql_query_file(null,null,"*",null,"p68_codproc = $codproc"));  
+      if ($clarqproc->numrows!=0){
+        db_fieldsmemory($result_arqproc,0);
+        $result_procandam_arq = $clprocandam->sql_record($clprocandam->sql_query_com(null,"*","p61_codandam desc limit 1","p61_codproc = $codproc"));
+        if ($clprocandam->numrows!=0){
+          db_fieldsmemory($result_procandam_arq,0);
+          
+          $pdf->cell(20,$alt,db_formatar($p61_dtandam,'d'),0,0,"C",0);
+          $pdf->cell(20,$alt,$p61_hora,0,0,"C",0);
+          $pdf->cell(90,$alt,$p61_coddepto.'-'.$descrdepto,0,0,"L",0);
+          //$pdf->cell(40,$alt,$nome,0,0,"L",0);
+          $pdf->cell(80,$alt,'Processo Arquivado',0,0,"L",0);
+          $pdf->multicell(60,$alt,$p61_despacho,0,"L",0); 
+          
+          /*
+          echo "<tr>
+                  <td>";
+          echo db_formatar($p61_dtandam,'d');
+          echo "  </td>
+                  <td>$p61_hora&nbsp</td>
+                  <td>$p61_coddepto-$descrdepto</td>
+                  <td>$nome</td>
+                  <td><b>Processo Arquivado</b></td>
+                  <td>$p61_despacho / Cod. Arquivamento: $p68_codarquiv &nbsp</td>
+                </tr>";
+        */
+        }
+      }
+    }
+  //echo "<table>";
+}
+
+$pdf->Output();
+?>

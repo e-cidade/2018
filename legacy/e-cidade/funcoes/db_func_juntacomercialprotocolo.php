@@ -1,0 +1,3 @@
+<?
+$campos = "juntacomercialprotocolo.q147_sequencial,juntacomercialprotocolo.q147_servico,juntacomercialprotocolo.q147_funcao,juntacomercialprotocolo.q147_protocolo,juntacomercialprotocolo.q147_xml,juntacomercialprotocolo.q147_data,juntacomercialprotocolo.q147_cnpjenvia,juntacomercialprotocolo.q147_cnpjrecebe,juntacomercialprotocolo.q147_cpfcnpjprocesso";
+?>

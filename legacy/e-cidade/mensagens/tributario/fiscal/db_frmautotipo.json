@@ -1,0 +1,5 @@
+{
+  "procedencia_obrigatorio"    : "Campo Código da Procedência é de preenchimento obrigatório.",
+  "valor_invalido"             : "Campo Valor é de preenchimento obrigatório.",
+  "erro_percentual_invalido"   : "Valor percentual inserido no Campo Valor deve ser maior que 0 e menor ou igual a 100."
+}

@@ -1,0 +1,8 @@
+{
+  "data_inicial_vazio" : "Data Inicial é de preenchimento obrigatório.",
+  "data_final_vazio" : "Data Final é de preenchimento obrigatório.",
+  "data_inicial_maior_final" : "Data Inicial deve ser menor que a Data Final.",
+  "banco_invalido" : "Banco é de preenchimento obrigatório.",
+  "erro_busca_tarifas" : "Não foi possível consultar o banco de dados para buscar as tarifas das formas de arrecadação.",
+  "sem_registros" : "Nenhum registro encontrado para o filtro selecionado."
+}

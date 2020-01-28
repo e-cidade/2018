@@ -1,0 +1,26 @@
+{
+  "name": "rafaelnery/phputils",
+  "description": "Pacote com ferramentas 'porretas' para debug e desenvolvimento.",
+  "type": "Utils",
+
+  "require": {
+    "php" : ">= 5.3",
+    "symfony/var-dumper": "^2.8",
+    "jdorn/sql-formatter": "^1.2",
+    "monolog/monolog": "^1.18"
+  },
+
+  "autoload" : { 
+    "files": [ "src/functions/debug.php" ],
+    "psr-4" : { 
+      "PHP\\"  : "src/"
+    } 
+  }, 
+
+  "license": "MIT",
+  "authors": [{"name": "Rafael Nery", "email": "rafael@nery.info"}
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^5.3"
+  }
+}

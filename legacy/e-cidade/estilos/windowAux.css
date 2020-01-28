@@ -1,0 +1,11 @@
+/**
+ * Arquivo de Estilos para o Componente WindowAux
+ */
+.container-window-aux {
+  text-align: center !important;  
+}
+
+.container-window-aux > fieldset {
+  margin-top    : 2px;  
+  margin-bottom : 5px;  
+}

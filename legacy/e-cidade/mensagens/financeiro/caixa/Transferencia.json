@@ -1,0 +1,18 @@
+{
+  "vinculo_conta_finalidadefundeb" : "Não foi possível salvar o vinculo entre o slip e a finalidade de pagamento do FUNDEB.",
+  "slip_autenticado" : "O slip já encontra-se autenticado. Procedimento abortado.",
+  "exclusao_sliptipooperacaovinculo" : "Não foi possível excluir o vínculo entre o slip e o tipo de operação.",
+  "vincular_sliptipooperacaovinculo" : "Não foi possível vincular o slip e o tipo de operação.",
+  "exclusao_transferencia_autenticacao" : "Não é possível excluir a transferência pois esta já teve autenticação realizada.",
+
+  "exclusao_vinculo_cgm" : "Não é possível excluir o vínculo com o CGM.",
+  "exclusao_vinculo_cpca" : "Não é possível excluir a característica peculiar / aplicação.",
+  "exclusao_vinculo_tipotransferencia" : "Não é possível excluir o tipo de transferência.",
+  "exclusao_agenda" : "Não é possível excluir a transferência da agenda de pagamentos.",
+  "exclusao_transferencia" : "Não foi possível excluir a transferência. Contate o suporte.",
+  "exclusao_processo" : "Não foi possível excluir o vínculo do processo com o slip.",
+  "vinculo_processo" : "Não foi possível vincular o processo ao slip.",
+
+  "erro_busca_slip_com_cheque_emitido" : "Ocorreu um erro ao consultar a emissão de cheque do slip.",
+  "slip_com_cheque_emitido" : "O slip encontra-se com cheque emitido. Cancele a emissão do cheque antes de excluir o slip."
+}

@@ -1,0 +1,25 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <versao>1.2</versao>
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="tipodocumento"        obrigatorio="true" tipo="integer" />
+    <parametro nome="inscricaomunicipal"   obrigatorio="true" tipo="integer" />
+    <parametro nome="cgmgrafica"           obrigatorio="true" tipo="integer" />
+    <parametro nome="quantidadesolicitada" obrigatorio="true" tipo="integer" />
+  </parametros>
+
+  <configuracoes>
+    <classe   referencia="rAidof" nome="RequisicaoAidofWebService" parametros="" caminho="model/fiscal/webservice/RequisicaoAidofWebService.model.php" />
+    <exec>
+      <metodo referencia="rAidof" nome="setNota"                   parametros="$tipodocumento"        />
+      <metodo referencia="rAidof" nome="setEmpresa"                parametros="$inscricaomunicipal"   />
+      <metodo referencia="rAidof" nome="setGrafica"                parametros="$cgmgrafica"           />
+      <metodo referencia="rAidof" nome="setQuantidadeSolicitada"   parametros="$quantidadesolicitada" />
+      <metodo referencia="rAidof" nome="salvar"                    parametros="" />
+    </exec>
+  </configuracoes>
+
+</processamento>

@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<consulta>
+
+  <campos>
+
+    <campo campo="c70_data"   label="c70_data"></campo>
+    <campo campo="c70_codlan" label="c70_codlan"></campo>
+    <campo campo="c75_numemp" label="c75_numemp"></campo>
+    <campo campo="c67_codele" label="c67_codele"></campo>
+    <campo campo="c74_codrec" label="c74_codrec"></campo>
+    <campo campo="c79_codsup" label="c79_codsup"></campo>
+    <campo campo="c71_coddoc" label="c71_coddoc"></campo>
+    <campo campo="c53_descr"  label="c53_descr"></campo>
+    <campo campo="c70_valor"  label="c70_valor"></campo>
+    <campo campo="count(c69_sequen)" label="qt_lancamentos"></campo>
+    <campo campo="(select count(c46_seqtranslan)
+            from contrans
+                 inner join contranslan on c45_seqtrans = c46_seqtrans
+           where c45_anousu =  c70_anousu
+             and c45_instit =  e60_instit
+             and c45_coddoc = c71_coddoc)" label="qt_transacoes"></campo>
+
+  </campos>
+
+  <from tabela="conlancam"></from>
+
+  <juncoes>
+
+    <join tipo="inner" tabela="conlancamdoc"  condicao="c70_codlan = c71_codlan" />
+    <join tipo="inner" tabela="conhistdoc"    condicao="c71_coddoc = c53_coddoc" />
+    <join tipo="inner" tabela="conlancamemp"  condicao="c70_codlan = c75_codlan" />
+    <join tipo="inner" tabela="empempenho"    condicao="c75_numemp = e60_numemp" />
+    <join tipo="left"  tabela="conlancamele"  condicao="c70_codlan = c67_codlan" />
+    <join tipo="left"  tabela="conlancamrec"  condicao="c70_codlan = c74_codlan" />
+    <join tipo="left"  tabela="conlancamsup"  condicao="c70_codlan = c79_codlan" />
+    <join tipo="left"  tabela="conlancamval"  condicao="c70_codlan = c69_codlan" />
+
+  </juncoes>
+
+  <filtros>
+
+    <filtro label="datainicial" condicao="c70_data &gt;= '$datainicial'" obrigatorio="true"></filtro>
+    <filtro label="datafinal" condicao="c70_data &lt;= '$datafinal'" obrigatorio="true"></filtro>
+    <filtro label="instit" condicao="e60_instit = $instit" obrigatorio="true"></filtro>
+    <filtro label="ano" condicao="c70_anousu = $ano" obrigatorio="true"></filtro>
+
+  </filtros>
+
+  <agrupamento campos="c70_data, c70_codlan, c75_numemp, c67_codele, c74_codrec, c79_codsup, c71_coddoc, c53_descr, qt_transacoes, c70_valor having count(c69_sequen) &lt;&gt; (select count(c46_seqtranslan)
+        from contrans
+             inner join contranslan on c45_seqtrans = c46_seqtrans
+       where c45_anousu =  c70_anousu
+         and c45_instit =  e60_instit
+         and c45_coddoc = c71_coddoc)"></agrupamento>
+
+  <ordenacao></ordenacao>
+
+</consulta>

@@ -1,0 +1,8 @@
+{
+  "selecione_lista_intervalo"                : "Você tem que escolher uma lista ou um intervalo de notificações a serem excluídas.",
+  "notificacao_inicial_maior_final"          : "A notificação inicial não pode ser maior que a final.",
+  "escolha_uma_opcao"                        : "Você tem que escolher uma lista ou um intervalo de notificações a serem excluídas. \nVocê não deve escolher as duas opções.",
+  "existem_notificacoes"                     : "Existem Notificações com a(s) seguinte(s) Situações:[sSituacao] \nVerifique Relatórios.",
+  "processamento_concluido"                  : "Processamento concluído com sucesso!",
+  "nao_existem_notificacoes_serem_excluidas" : "Não existem notificações a serem excluídas."
+}

@@ -1,0 +1,7 @@
+{
+  "lote_nao_encontrado"  : "Não foi encontrado nenhum lote neste processo de compra.",
+  "erro_salvar_objeto"   : "Ocorreu um erro ao salvar o lote.",
+  "sem_transacao_ativa"  : "Sem transação ativa com banco",
+  "erro_salvar_item_lote": "Erro ao vincular itens ao Lote:\n[erro_msg]",
+  "erro_remover_lote"    : "Erro ao remover vínculo dos itens do Lote:\n[erro_msg]"
+}

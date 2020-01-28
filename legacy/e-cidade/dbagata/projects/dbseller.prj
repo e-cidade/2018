@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project>
+    <host>192.168.0.2:5432</host>
+    <name>auto_oso_20070928</name>
+    <user>postgres</user>
+    <pass></pass>
+    <type>native-pgsql</type>
+    <dict></dict>
+</project>

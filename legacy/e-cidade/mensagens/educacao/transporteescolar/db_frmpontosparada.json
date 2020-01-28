@@ -1,0 +1,15 @@
+{
+  "descricao_ponto_parada_vazio"          : "É necessário informar a descrição do ponto de parada.",
+  "abreviatura_ponto_parada_vazio"        : "É necessário informar a abreviatura do ponto de parada.",
+  "departamento_ponto_parada_vazio"       : "É necessário informar o departamento.",
+  "logradouro_ponto_parada_vazio"         : "É necessário informar um logradouro.",
+  "aguarde_salvar"                        : "Aguarde, salvando o ponto de parada.",
+  "confirma_exclusao"                     : "Confirma a exclusão do ponto de parada?",
+  "aguarde_excluir"                       : "Aguarde, excluindo o ponto de parada.",
+  "confirma_salvar"                       : "Ponto de parada salvo com sucesso.",
+  "confirma_excluir"                      : "Ponto de parada excluído com sucesso.",
+  "buscando_dados_ponto_parada"           : "Aguarde, buscando os dados do ponto de parada.",
+  "formato_latitude_invalido"             : "Formato da Latitude inválido. (Ex. Formato Válido: 3,0123)",
+  "formato_longitude_invalido"            : "Formato da Longitude inválido. (Ex. Formato Válido: 3,0123)",
+  "escola_procedencia_ponto_parada_vazio" : "É necessário informar a Escola de procedência."
+}

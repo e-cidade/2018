@@ -1,0 +1,4 @@
+{
+  "relatorio_recursos_balanco_financeiro" : "Existem recursos com movimentação que não estão configurados no Balanço Financeiro, desta forma os valores estarão inconsistentes. Deseja emitir a lista dos recursos não configurados?",
+  "emitir_balanco" : "Deseja emitir o Balanço Financeiro?"
+}

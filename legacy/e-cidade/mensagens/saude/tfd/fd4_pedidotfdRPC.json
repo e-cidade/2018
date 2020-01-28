@@ -1,0 +1,15 @@
+{
+  "informe_codigo_pedido"      : "Código do Pedido TFD não informado.",
+  "cns_invalido"               : "Número do cartão do SUS inválido.",
+  "erro_validar_cns"           : "Erro ao verificar se o CNS informado já está cadastrado",
+  "cns_ja_cadastrado"          : "Cartão SUS já esta cadastrado no sistema.",
+  "erro_buscar_cns_definitivo" : "Erro ao buscar cartão SUS definitivo.",
+  "informe_cgs"                : "Código CGS não encontrado para ser atualizado.",
+  "informe_endereco"           : "Endereço não informado.",
+  "informe_bairro"             : "Bairro não informado.",
+  "informe_municipio"          : "Município não informado.",
+  "informe_ibge"               : "Código IBGE não informado.",
+  "informe_uf"                 : "UF não informada.",
+  "informe_data_nascimento"    : "Data de nascimento não informada.",
+  "informe_nome_mae"           : "Nome da mãe não informado."
+}

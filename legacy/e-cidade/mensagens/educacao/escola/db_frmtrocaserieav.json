@@ -1,0 +1,8 @@
+{
+  "turma_sem_vagas"          : "Turma sem vagas disponíveis.",
+  "informe_data_avanco"      : "Informe a Data do avanço para prosseguir!",
+  "data_avanco_fora_periodo" : "Data do avanço fora do periodo do calendario ( [sDataInicial] a [sDataFinal] ).",
+  "data_avanco_menor"        : "Data do avanço menor que a data da matrícula do aluno!",
+  "informe_aluno"            : "Informe o Aluno!",
+  "sem_turno_selecionada"    : "É necessário selecionar um turno."
+}

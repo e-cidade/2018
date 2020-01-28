@@ -1,0 +1,5 @@
+{
+  "erro_gerar_arquivo" : "Erro ao gerar arquivo de margens do Consignet.",
+  "erro_bases"         : "Não existem rubricas configuradas para as bases utilizadas no cálculo de margem.",
+  "erro_calculo"       : "Não existem dados financeiros para o período [iMes]/[iAno]."
+}

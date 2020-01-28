@@ -1,0 +1,5 @@
+{
+   "informe_linha"      : "Informe a linha."
+  ,"informe_itinerario" : "Informe o itinerário."
+  ,"sem_itinerario_cadastrado" : "A linha informada não possui itinerário."
+}

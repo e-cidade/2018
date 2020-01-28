@@ -1,0 +1,5 @@
+{
+  "transferencia_invalida" : "Transferência [codigoTransferencia] inválida.",
+  "nenhum_item_cadastrado" : "Nenhum item cadastrado na transferência: [codigoTransferencia].",
+  "destino_nao_informado"  : "Departamento de destino não informado na transferência."
+}

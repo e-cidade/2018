@@ -1,0 +1,9 @@
+{
+   "busca_itens_licitacao"    : "Buscando informações dos itens, por favor aguarde um momento."
+  ,"salvando_itens"           : "Salvando as informações dos itens, por favor aguarde um momento."
+  ,"informe_material"         : "Nenhum material informado. \nSelecione o material clicando em 'Material' ou inserindo o código no campo."
+  ,"informe_unidade"         : "Unidade é de preenchimento obrigatório."
+  ,"informe_quantidade"       : "A Quantidade do material não foi informada, por favor informe a quantidade no campo."
+  ,"removendo_item_licitacao" :"Removendo item da licitação, aguarde."
+  ,"nenhum_item_adicionado" : "Nenhum item adicionado. \nPor favor, adicione um item, clicando em 'Material' ou inserindo o código no campo.\n Em seguida adicione a quantidade do item e pressione 'Adicionar'."
+}

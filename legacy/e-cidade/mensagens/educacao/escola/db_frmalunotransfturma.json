@@ -1,0 +1,7 @@
+{
+  "turma_sem_vagas"                       : "Turma sem vagas disponíveis.",
+  "sem_turno_selecionada"                 : "É necessário selecionar um turno.",
+  "informe_matricula"                     : "Informe a Matrícula!",
+  "comparando_procedimentos_turma"        : "Aguarde, comparando os Procedimentos de Avaliação entre as disciplinas das Turmas...",
+  "procedimentos_diferentes_entre_turmas" : "A turma selecionada possui disciplinas com Procedimentos de Avaliação diferentes da turma de origem. \nSelecione uma turma que possua os mesmos Procedimentos de Avaliação."
+}

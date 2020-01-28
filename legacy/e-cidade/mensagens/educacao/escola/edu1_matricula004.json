@@ -1,0 +1,8 @@
+{
+  "data_matricula_inferior"          : "Data de matrícula inferior a última data de transferência do aluno.",
+  "data_matricula_proporcionalidade" : "Aluno possui proporcionalidade configurada.\n Data da matrícula deve ser maior que a data inicial do primeiro período: [sErro]",
+  "informe_data_matricula"           : "Informe a data para matricular o aluno!",
+  "data_matricula_fora_calendario"   : "Data da matrícula fora do periodo do calendario ([dtInicio] à [dtFim]).",
+  "matricula_encerrada"              : "Matrícula já foi encerrada. Alterações não permitidas!",
+  "data_matricula_menor"             : "Data da Matrícula menor que a\ndata da matrícula anterior do aluno ( [dtMatricula] )!"
+}

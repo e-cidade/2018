@@ -1,0 +1,14 @@
+{
+  "erro_buscar_lotacao"                 : "Ocorreu um erro ao buscar as Lotações.",
+  "nenhuma_lotacao_encontrada"          : "Nenhuma lotação encontrada.",
+  "erro_buscar_lotacoes_por_insituicao" : "Não foi possível buscar as lotações referente a intituição\n[nomeInstituicao].",
+  "erro_buscar_usuario_lotacao"         : "Ocorreu um erro ao buscar os Usuários da Lotação",
+  "erro_buscar_lotacao_usuario"         : "Ocorreu um erro ao buscar as Lotações do Usuário",
+  "erro_buscar_lotacao_estrutural"      : "Ocorreu um erro ao buscar a Lotação do Estrutural",
+  "erro_excluir_usuarios_lotacao"       : "Erro ao excluir os usuários vinculados a Lotação.",
+  "erro_excluir_lotacao"                : "Erro ao excluir a Lotação.",
+  "estrutural_não_informado"            : "Estrutural não informado.",
+  "estrutural_duplicado"                : "Estrutural duplicado.",
+  "erro_salvar_usuarios_lotacao"        : "Erro ao Salvar a relaçao entre usuário e lotação."
+}
+

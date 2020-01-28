@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010196' name='agendamento.grupoexameprestador' description="Grupo de Exames por Prestador" prefix="age03" label="Grupo de Exames por Prestador" type="0">
+  <fields>
+    <field codigo="1009281" 
+           campo_api='' 
+           name="age03_sequencial" 
+           conteudo="int4" 
+           description="Grupo de Exames por Prestador" 
+           inivalue="0" 
+           label="Grupo de Exames por Prestador" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Grupo de Exames por Prestador" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='agendamento.grupoexameprestador_age03_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="1009282" 
+           campo_api='' 
+           name="age03_grupoexame" 
+           conteudo="int4" 
+           description="Código sequencial do Grupo de Exames" 
+           inivalue="0" 
+           label="Grupo de Exames" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Grupo de Exames" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009283" 
+           campo_api='' 
+           name="age03_prestadorvinculos" 
+           conteudo="int4" 
+           description="Exame por Prestador" 
+           inivalue="0" 
+           label="Exame por Prestador" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Exame por Prestador" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="age03_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="sau_prestadorvinculos">
+      <fieldfk name="age03_prestadorvinculos" reference="s111_i_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="grupoexame">
+      <fieldfk name="age03_grupoexame" reference="age02_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

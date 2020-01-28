@@ -1,0 +1,105 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="e60_numemp"          label="e60_numemp"         />
+    <campo campo="e60_codemp"          label="e60_codemp"         />
+    <campo campo="e60_instit"          label="e60_instit"         />
+    <campo campo="empenho_doc_1"       label="empenho_doc_1"      />
+    <campo campo="empenho_doc_410"     label="empenho_doc_410"    />
+    <campo campo="liquidacao_doc_3"    label="liquidacao_doc_3"   />
+    <campo campo="liquidacao_doc_412"  label="liquidacao_doc_412" />
+    <campo campo="pagamento"           label="pagamento"          />
+    <campo campo="suprimento_fundos"   label="suprimento_fundos"  />
+    <campo campo="prestacao_contas"    label="prestacao_contas"   />
+  </campos>
+  <from tabela="(select e60_numemp,
+             e60_codemp,
+             e60_instit,
+      
+             (select coalesce(sum(case when c71_coddoc = 1 then round(coalesce(c70_valor,0),2)
+                              when c71_coddoc = 2 then round(coalesce(c70_valor,0),2)*-1
+                                   else 0 end),0)
+                from conlancam 
+                     inner join conlancamemp on c70_codlan = c75_codlan 
+                     inner join conlancamdoc on c70_codlan = c71_codlan 
+               where c70_data >= '$datainicial'
+                 and c71_coddoc in (1,2)
+                 and c75_numemp = e60_numemp) as empenho_doc_1,
+      
+             (select coalesce(sum(case when c71_coddoc = 410 then round(coalesce(c70_valor,0),2)
+                              when c71_coddoc = 411 then round(coalesce(c70_valor,0),2)*-1
+                                   else 0 end),0)
+                from conlancam 
+                     inner join conlancamemp on c70_codlan = c75_codlan 
+                     inner join conlancamdoc on c70_codlan = c71_codlan 
+               where c70_data >= '$datainicial'
+                 and c71_coddoc in (410,411)
+                 and c75_numemp = e60_numemp) as empenho_doc_410,
+      
+      
+             (select coalesce(sum(case when c71_coddoc in (3,23) then round(coalesce(c70_valor,0),2)
+                              when c71_coddoc in (4,24) then round(coalesce(c70_valor,0),2)*-1
+                                   else 0 end),0)
+                from conlancam 
+                     inner join conlancamemp on c70_codlan = c75_codlan 
+                     inner join conlancamdoc on c70_codlan = c71_codlan 
+               where c70_data >= '$datainicial'
+                 and c71_coddoc in (3,4,23,24)
+                 and c75_numemp = e60_numemp) as liquidacao_doc_3,
+      
+             (select coalesce(sum(case when c71_coddoc = 412 then round(coalesce(c70_valor,0),2)
+                              when c71_coddoc = 413 then round(coalesce(c70_valor,0),2)*-1
+                                   else 0 end),0)
+                from conlancam 
+                     inner join conlancamemp on c70_codlan = c75_codlan 
+                     inner join conlancamdoc on c70_codlan = c71_codlan 
+               where c70_data >= '$datainicial'        
+                 and c71_coddoc in (412,413)
+                 and c75_numemp = e60_numemp) as liquidacao_doc_412,
+      
+      
+             (select coalesce(sum(case when c71_coddoc = 5 then round(coalesce(c70_valor,0),2)
+                              when c71_coddoc = 6 then round(coalesce(c70_valor,0),2)*-1
+                                   else 0 end),0)
+                from conlancam 
+                     inner join conlancamemp on c70_codlan = c75_codlan 
+                     inner join conlancamdoc on c70_codlan = c71_codlan 
+               where c70_data >= '$datainicial'
+                 and c71_coddoc in (5,6)
+                 and c75_numemp = e60_numemp) as pagamento,
+      
+             (select coalesce(sum(case when c71_coddoc = 90 then round(coalesce(c70_valor,0),2)
+                              when c71_coddoc = 91 then round(coalesce(c70_valor,0),2)*-1
+                                   else 0 end),0)
+                from conlancam 
+                     inner join conlancamemp on c70_codlan = c75_codlan 
+                     inner join conlancamdoc on c70_codlan = c71_codlan 
+               where c70_data >= '$datainicial'
+                 and c71_coddoc in (90,91)
+                 and c75_numemp = e60_numemp) as suprimento_fundos,
+      
+             (select coalesce(sum(case when c71_coddoc = 414 then round(coalesce(c70_valor,0),2)
+                              when c71_coddoc = 415 then round(coalesce(c70_valor,0),2)*-1
+                                   else 0 end),0)
+                from conlancam 
+                     inner join conlancamemp on c70_codlan = c75_codlan 
+                     inner join conlancamdoc on c70_codlan = c71_codlan 
+               where c70_data >= '$datainicial'
+                 and c71_coddoc in (414,415)
+                 and c75_numemp = e60_numemp) as prestacao_contas
+      
+        from empempenho
+             inner join emppresta on e45_numemp = e60_numemp
+       where e60_anousu = $ano
+         and e60_instit = $instit) as x" />
+  <juncoes></juncoes>
+  <filtros>
+    <filtro label="instit" condicao="1=1"/>
+    <filtro label="ano" condicao="1=1" />
+    <filtro label="datainicial" condicao="1=1" />
+    <filtro label="datafinal" condicao="1=1" />
+    <filtro condicao="(prestacao_contas &gt; suprimento_fundos) or (empenho_doc_1 &gt; empenho_doc_410) or (liquidacao_doc_3 &gt; liquidacao_doc_412) or (pagamento &lt; suprimento_fundos)" obrigatorio="true" /> 
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao />
+</consulta>

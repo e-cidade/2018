@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="aidof" obrigatorio="true" tipo="integer" />
+    <parametro nome="data"  obrigatorio="true" tipo="date"    />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="AidofWebService" parametros="$aidof" caminho="model/fiscal/webservice/AidofWebService.model.php">
+      <metodos>
+        <metodo nome="setDataLiberacaoGrafica" parametros="$data" />
+        <metodo nome="salvar"                                     />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

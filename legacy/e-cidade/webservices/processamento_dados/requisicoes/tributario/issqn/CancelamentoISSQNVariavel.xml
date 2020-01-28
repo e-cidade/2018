@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <versao>1.2</versao>
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="inscricaomunicipal" obrigatorio="true"  tipo="integer" />
+    <parametro nome="mes"                obrigatorio="true"  tipo="integer" />
+    <parametro nome="ano"                obrigatorio="true"  tipo="integer" />
+    <parametro nome="descricao"          obrigatorio="false" tipo="texto" />
+  </parametros>
+
+  <configuracoes>
+    <classe   referencia="canc" nome="CancelamentoISSQNVariavelWebService" parametros=""
+              caminho="model/issqn/webservice/CancelamentoISSQNVariavelWebService.model.php" />
+    <exec>
+      <metodo referencia="canc" nome="setEmpresa"                          parametros="$inscricaomunicipal" />
+      <metodo referencia="canc" nome="addDebitoPorMesAno"                  parametros="$mes,$ano"           />
+      <metodo referencia="canc" nome="incluirCancelamento"                 parametros="$descricao"          />
+    </exec>
+  </configuracoes>
+
+</processamento>

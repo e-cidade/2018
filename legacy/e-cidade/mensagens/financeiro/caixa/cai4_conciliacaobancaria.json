@@ -1,0 +1,6 @@
+{
+ "sem_linhas_para_exclusao":"Sem linhas para exclusão.",
+ "parametro_linhas_invalido":"Parametro aLinhasExtrato deve ser um array",
+ "linha_nao_encontrada":"Linha ([codigo_linha]) não cadastrada, ou já excluida.",
+ "erro_ao_excluir_linha":"Não Foi possível excluir a linha do Extrato (codigo:[codigo_linha], extrato:[codigo_extrato], valor:[valor_linha])\nErro Retornado:[erro_tecnico]"
+}

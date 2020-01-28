@@ -1,0 +1,11 @@
+{
+"mensagem_ajax_exportando_arquivo":"Aguarde, exportando relatório para arquivo xml.",
+"mensagem_message_board_titulo":"Importação de Arquivos",
+"mensagem_message_board_texto_usuario":"Selecione o arquivo xml que deseja importar.",
+"erro_arquivo_nao_informado":"Arquivo não informado.",
+"erro_codigo_grupo_relatorio":"Código do grupo do relatório não informado.",
+"erro_codigo_tipo_relatorio":"Código do tipo de relatório não informado.",
+"mensagem_ajax_enviando_arquivo_servidor":"Enviando arquivo. Aguarde...",
+"mensagem_ajax_salvando_dados":"Salvando dados do relatório. Aguarde...",
+"mensagem_ajax_salvando_dados_ok":"Operação realizada com sucesso."
+}

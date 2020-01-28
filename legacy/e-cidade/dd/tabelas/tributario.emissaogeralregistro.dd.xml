@@ -1,0 +1,132 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3987' name='tributario.emissaogeralregistro' description="Tabela que salva as informações dos registros gerados nas Emissões Gerais no Sistema" prefix="tr02" label="Emissao Geral Registro" type="0">
+  <fields>
+    <field codigo="22133"
+           campo_api='codigo_sequencial'
+           name="tr02_sequencial"
+           conteudo="int4"
+           description="Código do Registro Emissão Geral"
+           inivalue="0"
+           label="Código do Registro"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código do Registro"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='tributario.emissaogeralregistro_tr02_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22134"
+           campo_api='codigo_emissao'
+           name="tr02_emissaogeral"
+           conteudo="int4"
+           description="Código da Emissão Geral"
+           inivalue="0"
+           label="Código da Emissão Geral"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código da Emissão Geral"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22135"
+           campo_api='cgm'
+           name="tr02_numcgm"
+           conteudo="int4"
+           description="CGM vinculado ao registro da Emissão Geral"
+           inivalue="0"
+           label="CGM"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="CGM"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22136"
+           campo_api='numpre'
+           name="tr02_numpre"
+           conteudo="int4"
+           description="Numpre do registro"
+           inivalue="0"
+           label="Numpre"
+           size="8"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Numpre"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22138"
+           campo_api='parcela'
+           name="tr02_parcela"
+           conteudo="int4"
+           description="Parcela do registro gerado na Emissão Geral"
+           inivalue="0"
+           label="Parcela"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Parcela"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22139"
+           campo_api='situacao'
+           name="tr02_situacao"
+           conteudo="int4"
+           description="Situação do registro em relação a Emissão Geral(vide regra de Negócio da Emissão Geral a que se refere)."
+           inivalue="0"
+           label="Situação"
+           size="2"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Situação"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="tr02_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="cgm">
+      <fieldfk name="tr02_numcgm" reference="z01_numcgm" inner='t'></fieldfk>
+    </foreignkey>
+    <foreignkey reference="emissaogeral">
+      <fieldfk name="tr02_emissaogeral" reference="tr01_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

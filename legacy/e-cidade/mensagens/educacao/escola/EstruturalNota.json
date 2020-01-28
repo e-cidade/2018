@@ -1,0 +1,12 @@
+{
+   "informe_estrutural_nota"               : "Informe o estrutual da nota."
+  ,"informe_ano"                           : "Informe o ano para o qual o estrutural será válido."
+  ,"ja_existe_configuracao_para_ano"       : "Já foi configurado o estrutural da nota para [iAno]. "
+  ,"ja_existe_configuracao_ativa_para_ano" : "Já existe uma configuração da nota ativa para [iAno]. "
+  ,"erro_salvar_configuracao_nota"         : "Erro ao salvar configuração da nota."
+  ,"erro_excluir_configuracao_nota"        : "Erro ao excluir configuração da nota."
+  ,"erro_buscar_configuracao"              : "Erro ao buscar configuração da nota."
+  ,"sem_configuracao_secretaria"           : "Não existe configuração da nota na Secretaria da Educação para o ano de [iAno]."
+  ,"erro_atualizar_regra"                  : "Erro ao atualizar a regra de arredondamento."
+  ,"ja_existe_paramentro_na_escola"        : "Já existe um parâmetro ativo na escola para a configuração da nota.\nAcesse: Procedimento > Parâmetros > Configurações > Nota > Alteração e inative a configuração para poder importar este procedimento.\n\nAVISO: Isso poderá afetar o lançamento de avaliação de todas as turmas já criadas no ano de [iAno]"
+}

@@ -1,0 +1,4 @@
+{
+  "erro_registro_nao_encontrado" : "Não há nenhum registro cadastrado para este arquivo.",
+  "erro_validar_arquivo"         : "Erro ao validar arquivo. Registros não encontrados"
+}

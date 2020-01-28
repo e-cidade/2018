@@ -1,0 +1,225 @@
+body, html, body > section{
+  padding:0;
+  margin:0;
+  width:100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+nav ul, nav li {
+    list-style: none outside none;
+    margin: 0;
+}
+body {
+  background-color:#FFFFFF;
+}
+header{
+   width:100%;
+   color: #606060;
+   margin: 0;
+}
+
+header h1{
+    font-family: arial;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0 !important;
+    padding-top: 5px;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    width: 156px;
+}
+
+/**
+ * Logo Ecidade
+ */
+header #logoEcidade,
+header #logoEcidade h1{
+    height: 55px;
+    width: 84px;
+    display: block;
+}
+
+header #logoEcidade{
+    position: absolute;
+    left: 0;
+    top: 0px;
+    display: block;
+}
+
+header #logoEcidade h1{
+    background: #FFFFFF url("../img/logoEcidade.png") left top no-repeat;
+    left: 14px;
+    text-indent: -9999px;
+}
+
+/**
+ * Logo Ecidade
+ */
+header #logoDBSeller,
+header #logoDBSeller h1 {
+    height: 75px;
+    width: 156px;
+    display: block;
+}
+header #logoDBSeller{
+    top: 0px;
+    right: 12px;
+    position: absolute;
+    display: block;
+}
+
+header #logoDBSeller h1{
+    background: #FFFFFF url("../img/logoDBSeller.png") left top no-repeat;
+    text-indent: -9999px;
+}
+
+/**
+ * Logo Prefeitura
+ */
+header #logoPrefeitura,
+header #logoPrefeitura h1 {
+    height: 75px;
+    width: 202px;
+    display: block;
+}
+header #logoPrefeitura{
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 172px;
+}
+
+header #logoPrefeitura h1{
+    background: transparent url("../img/logoDBPref.png") left top no-repeat;
+    text-indent: -9999px;
+}
+
+/**
+ * Menu Padrão
+ */
+header #menuInfo{
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 666px;
+    height: 20px;
+    background: transparent no-repeat url("../img/bgBordaMenuTopo.png") right top;
+}
+
+header nav{
+    height: 20px;
+    text-decoration: none;
+    display: table;
+}
+
+header nav ul{
+    display: table;
+    margin: 0 auto;
+    padding-left: 0;
+    background: transparent repeat url("../img/bgMenuTopo.png");
+}
+
+header nav ul li a{
+    color: #FFFFFF;
+    display: block;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold !important;
+    padding: 5px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 125px;
+    text-transform: uppercase;
+}
+
+header nav ul li{
+    display:table-cell;
+}
+
+/**
+ * pullOver da divTopo
+ */
+#pullOver{
+    display: block;
+    position: absolute;
+    left: 635px;
+    bottom: 0px;
+    width: 21px;
+    height: 15px;
+    z-index: 20;
+}
+#pullOver a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent no-repeat url("../img/setaUp.png") bottom center;
+}
+#pullOver a span {
+    text-indent: -9999px;
+    display: block;
+}
+.maximizaTopo {
+    background: transparent no-repeat url("../img/setaDown.png") top center !important;
+}
+/**
+ * Tabela de Informações hover Preferencias
+ */
+#tabelaInformacoesUsuario {
+    background-color: #E1DEDE;
+    color: #326094;
+    border: 1px solid #326094;
+    font-family: arial;
+    font-size: 10px;
+    padding:2px;
+}
+
+#tabelaInformacoesUsuario tr td {
+    white-space: nowrap;
+}
+
+/**
+ * Informações da prefeitura
+ */
+#bTopo {
+    color: #326094;
+    display: block;
+    font-family: arial;
+    font-size: 10px;
+    font-weight: bold;
+    height: 15px;
+    left: 120px;
+    padding: 5px 10px 5px 0;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#infoConfig .textoNomeInstituicao {
+    float: left;
+    clear:right;
+    display: block;
+    width:100%;
+    font-size:13px;
+    margin-bottom:3px;
+}
+
+#infoConfig {
+    display: block;
+    width:510px;
+}
+
+#infoConfig .textoDadosInstituicao,
+#infoConfig .textoEnderecoInstituicao {
+    float: left;
+    margin-right: 5px;
+    display: block;
+    width: 22%;
+}
+#infoConfig .textoEnderecoInstituicao {
+    width: 50%;
+}

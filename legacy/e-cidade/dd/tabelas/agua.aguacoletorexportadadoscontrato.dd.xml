@@ -1,0 +1,140 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3992' name='agua.aguacoletorexportadadoscontrato' description="Dados do contrato." prefix="x57" label="Dados do Contrato Exportação Coletores" type="0">
+  <fields>
+    <field codigo="22171" 
+           campo_api='' 
+           name="x57_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t">
+
+      <sequence name='agua.aguacoletorexportadadoscontrato_x57_sequencial_seq' ></sequence>
+    </field> 
+    <field codigo="22173" 
+           campo_api='' 
+           name="x57_aguacontrato" 
+           conteudo="int4" 
+           description="Contrato" 
+           inivalue="" 
+           label="Contrato" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Contrato" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22174" 
+           campo_api='' 
+           name="x57_aguacategoriaconsumo" 
+           conteudo="int4" 
+           description="Categoria de Consumo" 
+           inivalue="" 
+           label="Categoria de Consumo" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Categoria de Consumo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22175" 
+           campo_api='' 
+           name="x57_aguaisencaocgm" 
+           conteudo="int4" 
+           description="Isenção" 
+           inivalue="" 
+           label="Isenção" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Isenção" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22176" 
+           campo_api='' 
+           name="x57_aguacoletorexportadados" 
+           conteudo="int4" 
+           description="Matrícula Exportada" 
+           inivalue="" 
+           label="Matrícula Exportada" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Matrícula Exportada" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22211" 
+           campo_api='' 
+           name="x57_cgm" 
+           conteudo="int4" 
+           description="CGM" 
+           inivalue="" 
+           label="Nome/Razão Social" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Nome/Razão Social" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="x57_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="cgm">
+      <fieldfk name="x57_cgm" reference="z01_numcgm" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="aguacoletorexportadados">
+      <fieldfk name="x57_aguacoletorexportadados" reference="x50_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="aguacontrato">
+      <fieldfk name="x57_aguacontrato" reference="x54_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="aguacategoriaconsumo">
+      <fieldfk name="x57_aguacategoriaconsumo" reference="x13_sequencial" inner='f'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="aguaisencaocgm">
+      <fieldfk name="x57_aguaisencaocgm" reference="x56_sequencial" inner='f'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

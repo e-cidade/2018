@@ -1,0 +1,9 @@
+{
+  "pesquisando_alunos" : "Aguarde ... carregando alunos da turma selecionada.",
+  "pesquisando_emissor" : "Aguarde ... carregando dados do emissor.",
+  "nenhum_aluno_encontrado" : "Nenhum aluno matriculado na turma selecionada.",
+  "nenhum_aluno_selecionado" : "Você deve selecionar um aluno ou mais aluno antes de clicar em \"Imprimir\"",
+  "horario_turma_nao_encontrado" : "Não foi possível encontrar horário de início e fim da turma",
+  "matricula_nao_encontrada" : "Não foi possível encontrar os dados da(s) matrícula(s) selecionada(s).",
+  "grade_horario_nao_encontrada" : "Não foi possível localizar os horários do período."
+}

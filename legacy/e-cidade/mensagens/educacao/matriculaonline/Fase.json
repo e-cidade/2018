@@ -1,0 +1,9 @@
+{
+    "erro_buscar_fase"           : "Erro ao buscar a Fase:\n[sErro]"
+  , "erro_buscar_ensinos"        : "Erro ao buscar os ensinos da fase:\n[sErro]"
+  , "erro_alocar_inscrito"       : "Erro ao alocar inscrito.\n[sErro]"
+  , "erro_salvar"                : "Erro ao salvar a fase.\n[sErro]"
+  , "erro_buscar_inscritos"      : "Erro ao buscar os inscritos.\n[sErro]"
+  , "erro_buscar_nao_designados" : "Erro ao buscar não designados.\n[sErro]"
+  , "fase_nao_encontrada"        : "Fase não encontrada( Código informado: [iCodigo] )"
+}

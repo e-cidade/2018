@@ -1,0 +1,11 @@
+<xml version="1.0" encoding="ISO-8859-1">
+  <tabela nome='aluno'>
+    <dependencia nome='diario'                   classe='ProcessaDuploDiario' />
+    <dependencia nome='alunocurso'               classe='ProcessaDuploAlunoCurso' />
+    <dependencia nome='alunoprimat'              classe='ProcessaDuploAlunoPriMat' />
+    <dependencia nome='leitoraluno'              classe='ProcessaDuploLeitorAluno' />
+    <dependencia nome='matricula'                classe='ProcessaDuploMatricula' />
+    <dependencia nome='progressaoparcial'        classe='ProcessaDuploProgressaoParcial' />
+    <dependencia nome='alunocensotipotransporte' classe='ProcessaDuploCensoTipoTransporte' />
+  </tabela>
+</xml>

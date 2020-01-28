@@ -1,0 +1,10 @@
+{
+ "parametro_ano_invalido":"Parâmetro ano deve ser um inteiro",
+ "arquivo_nao_encontrado":"Arquivo com a definição dos vínculos nao encontrado.",
+ "erro_abrir_arquivo":"Erro ao abrir o arquivo. Arquivo sem permissão de leitura.",
+ "extensao_arquivo_invalida":"Extensão de arquivo inválida.",
+ "arquivo_vinculo_invalido":"Arquivo ([caminho_arquivo]) informado não é um arquivo de vínculo do PCASP válido.",
+ "nao_foi_possivel_verificar_pcasp":"Não foi possível verificar os dados da conta do pcasp.",
+ "nao_foi_possivel_verificar_orcamento":"Não foi possível verificar os dados da conta do orcamento.",
+ "pcasp_nao_ativo":"Pcasp não está ativado no sistema"
+}

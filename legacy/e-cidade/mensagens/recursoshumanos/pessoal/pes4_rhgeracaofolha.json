@@ -1,0 +1,12 @@
+{
+  "sem_registros_encontrados"                : "Não foram encontrados dados para os filtros informados.",
+  "erro_gravardadosgeracao"                  : "Erro ao gravar dados da geração em disco.",
+  "geracao_com_sucesso"                      : "Geração em Disco efetuada com sucesso!",
+  "geracao_com_sucesso_com_inconsistencias"  : "Geração em Disco efetuada com sucesso!\nContudo existem registros que não foram gerados.",
+  "somente_numeros"                          : "[sCampo] deve ser preenchido somente com números.",
+  "sem_registros_com_saldo"                  : "Os servidores encontrados não possuem saldo para geração em disco.",
+  "folha_pagamento_liberado_dbpref"          : "A folha de pagamento da(o) [sTipoFolha] foi liberado no DBPref, deseja prosseguir o cálculo geral.",
+  "nenhum_servidor"                          : "Nenhum servidor encontrado.",
+  "erro_ponto_ferias"                        : "Ocorreu um erro ao buscar as matrículas do ponto de férias.",
+  "falta_calcular_salario"                   : "Processar o cálculo de salário antes de realizar o cálculo de férias."
+}

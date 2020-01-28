@@ -1,0 +1,9 @@
+exercicioBase=2005
+integracoes=IntegracaoLicitacao
+
+#IMPORTACAO MANUAL
+IMPORTAR['EMPENHO']  = true
+IMPORTAR['FOLHA']    = true
+IMPORTAR['RECEITA']  = true
+IMPORTAR['DOTACAO']  = true
+IMPORTAR['PATRIMONIO_VEICULO'] = true

@@ -1,0 +1,129 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4015' name='recursoshumanos.pontoeletronicoarquivodataregistro' description="Tabela que guarda as marcações do arquivo de ponto eletrônico." prefix="rh198" label="Marcações do arquivo de ponto" type="0">
+  <fields>
+    <field codigo="22258" 
+           campo_api='' 
+           name="rh198_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.pontoeletronicoarquivodataregistro_rh198_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22259" 
+           campo_api='' 
+           name="rh198_pontoeletronicoarquivodata" 
+           conteudo="int4" 
+           description="Vínculo com a tabela que guarda das datas dos registros." 
+           inivalue="0" 
+           label="Data Registro" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data Registro" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22260" 
+           campo_api='' 
+           name="rh198_registro" 
+           conteudo="text" 
+           description="Registros de entrada e saída do arquivo ponto" 
+           inivalue="" 
+           label="Registro" 
+           size="5" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Registro" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22261" 
+           campo_api='' 
+           name="rh198_registro_manual" 
+           conteudo="bool" 
+           description="Informa se o registro foi feito manualmente" 
+           inivalue="f" 
+           label="Registro Manual" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Registro Manual" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22262" 
+           campo_api='' 
+           name="rh198_ordem" 
+           conteudo="int4" 
+           description="Ordem dos registros do ponto no dia" 
+           inivalue="0" 
+           label="Ordem" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Ordem" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22356" 
+           campo_api='' 
+           name="rh198_data" 
+           conteudo="date" 
+           description="Data da batida do ponto." 
+           inivalue="null" 
+           label="Data" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh198_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="pontoeletronicoarquivodata">
+      <fieldfk name="rh198_pontoeletronicoarquivodata" reference="rh197_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

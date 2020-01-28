@@ -1,0 +1,7 @@
+{
+"folha_aberta_inexistente"    : "Não existe uma folha de salário aberta.",
+"fechado_com_sucesso"         : "Fechamento da folha de salário efetuado com sucesso.",
+"folha_complementar_aberta"   : "Não é possível fechar a folha de salário, pois existe folha complementar aberta.",
+"folha_sem_evento_financeiro" : "Folha de salário sem evento financeiro.",
+"rotina_desativada"           : "Esta rotina não está ativa. Para ativar, contate um administrador."
+}

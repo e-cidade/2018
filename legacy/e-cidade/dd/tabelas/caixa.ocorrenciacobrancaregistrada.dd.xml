@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3997' name='caixa.ocorrenciacobrancaregistrada' description="Ocorrências do Retorno do Arquivo de Cobrança Registrada" prefix="k149" label="Ocorrência Cobranca Registrada" type="0">
+  <fields>
+    <field codigo="22196" 
+           campo_api='codigo_sequencial'
+           name="k149_sequencial" 
+           conteudo="int4" 
+           description="Sequencial" 
+           inivalue="" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='caixa.ocorrenciacobrancaregistrada_k149_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22197" 
+           campo_api='banco'
+           name="k149_banco" 
+           conteudo="varchar(10)" 
+           description="Código do Banco" 
+           inivalue="" 
+           label="Código do Banco" 
+           size="10" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Código do Banco" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22198" 
+           campo_api='codigo'
+           name="k149_codigo" 
+           conteudo="varchar(2)" 
+           description="Código da Ocorrência" 
+           inivalue="" 
+           label="Código da Ocorrência" 
+           size="2" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Código da Ocorrência" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22199" 
+           campo_api='descricao'
+           name="k149_descricao" 
+           conteudo="text" 
+           description="Descrição" 
+           inivalue="" 
+           label="Descrição da Ocorrência" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição da Ocorrência" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22207" 
+           campo_api='' 
+           name="k149_movimento" 
+           conteudo="int4" 
+           description="Movimento" 
+           inivalue="" 
+           label="Movimento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Movimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="k149_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_bancos">
+      <fieldfk name="k149_banco" reference="db90_codban" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="movimentoocorrenciacobrancaregistrada">
+      <fieldfk name="k149_movimento" reference="k169_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

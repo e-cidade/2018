@@ -1,0 +1,129 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3562' name='orcamento.orciniciativa' description="Iniciativa de um projeto" prefix="o147" label="Iniciativa" type="0">
+  <fields>
+    <field codigo="19890" 
+           campo_api='' 
+           name="o147_sequencial" 
+           conteudo="int4" 
+           description="Sequencial da tabela orciniciativa" 
+           inivalue="0" 
+           label="Código da Iniciativa" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código da Iniciativa" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='orcamento.orciniciativa_o147_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="19892" 
+           campo_api='' 
+           name="o147_descricao" 
+           conteudo="varchar(250)" 
+           description="Descrição sucinta da iniciativa" 
+           inivalue="" 
+           label="Descrição" 
+           size="250" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="19891" 
+           campo_api='' 
+           name="o147_iniciativa" 
+           conteudo="text" 
+           description="Descrição completa da Iniciativa" 
+           inivalue="" 
+           label="Iniciativa" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Iniciativa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="19901" 
+           campo_api='' 
+           name="o147_orcmeta" 
+           conteudo="int4" 
+           description="Meta vinculada a iniciativa" 
+           inivalue="0" 
+           label="Meta" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Meta" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="20324" 
+           campo_api='' 
+           name="o147_ano" 
+           conteudo="int4" 
+           description="Ano da iniciativa de um projeto" 
+           inivalue="0" 
+           label="Ano da iniciativa" 
+           size="4" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Ano da iniciativa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009322" 
+           campo_api='' 
+           name="o147_anofinal" 
+           conteudo="int4" 
+           description="Ano final da iniciativa." 
+           inivalue="0" 
+           label="Ano Final" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Ano Final" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="o147_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="orcmeta">
+      <fieldfk name="o147_orcmeta" reference="o145_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

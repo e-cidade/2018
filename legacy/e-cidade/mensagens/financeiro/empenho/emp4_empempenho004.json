@@ -1,0 +1,3 @@
+{
+  "liquidacao_item_consumo_imediato" : "Você está liquidando um empenho cuja despesa caracteriza-se como \"[sGrupo]\".\nEfetuando a operação, este movimento não será registrado no Almoxarifado e consequentemente será considerado de consumo imediato.\nSe você tem certeza de que esta é a operação desejada continue o procedimento. Caso contrário encaminhe o processo via Ordem de Compra."
+}

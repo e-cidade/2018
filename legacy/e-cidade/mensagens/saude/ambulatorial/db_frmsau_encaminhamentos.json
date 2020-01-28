@@ -1,0 +1,18 @@
+{
+  "preencha_solicitante"                    : "O campo Solicitante deve ser preenchido.",
+  "preencha_cgs"                            : "O campo CGS deve ser preenchido.",
+  "preencha_especialidade"                  : "O campo Especialidade deve ser preenchido.",
+  "preencha_data_encaminhamento"            : "O campo Data do Encaminhamento deve ser preenchido.",
+  "preencha_data_validade"                  : "O campo Data de Validade deve ser preenchido.",
+  "preencha_data_retorno"                   : "O campo Data de Retorno deve ser preenchido.",
+  "preencha_procedimento"                   : "Selecione ao menos um procedimento.",
+  "confirmar_encaminhamento"                : "O encaminhamento ficará sem vinculo com FAA. Tem certeza de que não irá informar uma FAA?",
+  "novo_encaminhamento"                     : "Deseja fazer um novo encaminhamento?",
+  "selecione_encaminhamento"                : "Nenhum encaminhamento selecionado!",
+  "procedimentos_nao_obtidos"               : "Não foi possível obter os procedimentos relacionados a este encaminhamento!",
+  "unidades_nao_encontradas"                : "Não foi possível encontrar unidades para o profissional indicado!",
+  "faa_nao_encontrada"                      : "FAA não encontrada.",
+  "selecione_especialidade"                 : "Selecione uma especialidade primeiro!",
+  "data_validade_menor_data_encaminhamento" : "A data de validade não pode ser menor que a data de encaminhamento.",
+  "data_retorno_menor_data_encaminhamento"  : "A data de retorno não pode ser menor que a data de encaminhamento."
+}

@@ -1,0 +1,15 @@
+{
+  "informe_data_inicio"            : "Informe a Data de Início para a Validade.",
+  "escolha_dia_semana"             : "Escolha ao menos um Dia da Semana.",
+  "entre_com_data_validade"        : "Entre com a data de Validade.",
+  "ups_nao_tem_turno"              : "UPS não tem turno definido.",
+  "horario_nao_corresponde_turno"  : "Horário informado não corresponde com o turno da UPS.",
+  "hora_inicial_nao_informada"     : "Hora inicial não foi informada",
+  "hora_final_nao_informada"       : "Hora Final não foi informada",
+  "informe_vinculo"                : "Informe o vínculo do médico",
+  "informe_numero_fichas"          : "Informe o número de fichas.",
+  "informe_numero_fichas_reservas" : "Informe o número de fichas reservas.",
+  "data_inicio_maior_fim"          : "Data inicial maior que data final. ",
+  "nao_possivel_alterar_excluir"   : "Não é possível [sErro] agenda pois a mesma já possui agendamento e data final.",
+  "data_fim_maior_data_atual"      : "Não é possível [sErro] agenda pois a mesma possui data final inferior a data atual."
+}

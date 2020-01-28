@@ -1,0 +1,14 @@
+{
+  "informe_situacao_disciplina"                 : "Informe a situação para a disciplina.",
+  "informe_resultado_disciplina"                : "Informe o resultado para a disciplina.",
+  "informe_aproveitamento_disciplina"           : "Informe o aproveitamento para a disciplina.",
+  "informe_justificativa_amparo"                : "Informe a justificativa para o amparo.",
+  "situacao_aprovado"                           : "Situação está como aprovado mas a nota informada é menor que o mínimo para aprovação ([iMinimoAprov])",
+  "situacao_reprovado"                          : "Situação está como reprovado mas a nota informada é maior ou igual ao mínimo para aprovação ([iMinimoAprov])",
+  "resultado_final_aprovado"                    : "O aluno tem como resultado final APROVADO. Portanto, nenhuma disciplina deve estar com o situação REPROVADO.",
+  "resultado_final_reprovado"                   : "O resultado final da etapa é reprovado. Verifique o campo resultado das disciplinas, informando no mínimo uma como reprovado, ou altere o resultado final da etapa.",
+  "resultado_final_reprovado_etapa"             : "O resultado final da etapa é reprovado. Somente é possível alterar se o resultado final for aprovado ou reprovado.",
+  "resultado_final_aprovado_etapa"              : "O resultado final da etapa é aprovado. Somente é possível alterar se o resultado final for aprovado .",
+  "resultado_final_parcialmente_aprovado_etapa" : "O resultado final da etapa é aprovado parcialmente. Somente é possível alterar se o resultado final for aprovado parcialmente.",
+  "valor_invalido_carga_horaria"                : "Valor inválido para carga horária."
+}

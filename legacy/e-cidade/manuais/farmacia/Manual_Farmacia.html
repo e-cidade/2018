@@ -1,0 +1,879 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="sandro">
+	<META NAME="CREATED" CONTENT="20080308;10444600">
+	<META NAME="CHANGED" CONTENT="20090213;15511300">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.1cm }
+		P { margin-bottom: 0.21cm; text-align: justify }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm; text-align: justify }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "HG Mincho Light J"; font-size: 16pt }
+		H1.ctl { font-family: "Lucidasans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm; text-align: justify }
+		H2.western { font-family: "Helvetica"; font-size: 14pt; so-language: pt-BR; font-style: italic }
+		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		H3 { margin-bottom: 0.21cm; text-align: justify }
+		H3.western { font-family: "Helvetica"; font-size: 12pt; so-language: pt-BR }
+		H3.cjk { font-family: "HG Mincho Light J" }
+		TD P { text-indent: 2cm; margin-bottom: 0cm; text-align: justify }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR">
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.Cadastros|outline">Cadastros	2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.Medicamentos|outline">Medicamentos	2</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.1.Inclus&atilde;o|outline">Inclus&atilde;o	2</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	3</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.3.Exclus&atilde;o|outline">Exclus&atilde;o	3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.Tipo de Receita|outline">Tipo
+	de Receita	3</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.1.Inclus&atilde;o|outline">Inclus&atilde;o	3</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	4</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.3.Exclus&atilde;o|outline">Exclus&atilde;o	4</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.Classifica&ccedil;&atilde;o |outline">Classifica&ccedil;&atilde;o
+		5</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.1.Inclus&atilde;o|outline">Inclus&atilde;o	5</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	6</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.3.Exclus&atilde;o|outline">Exclus&atilde;o	6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.Programas|outline">Programas	6</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.1.Inclus&atilde;o|outline">Inclus&atilde;o	6</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.2.Altera&ccedil;&atilde;o|outline">Altera&ccedil;&atilde;o	6</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.3.Exclus&atilde;o|outline">Exclus&atilde;o	7</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.Consulta|outline">Consulta	7</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.Paciente|outline">Paciente	7</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.Relat&oacute;rios|outline">Relat&oacute;rios	9</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.Medicamentos|outline">Medicamentos	9</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.1.Medicamento|outline">Medicamento	9</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.2.Estoque|outline">Estoque	10</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.3.Distribui&ccedil;&atilde;o|outline">Distribui&ccedil;&atilde;o	11</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.Procedimentos|outline">Procedimentos	13</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.Entrega de Medicamento|outline">Entrega
+	de Medicamento	13</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.Medicamento Controlados|outline">Medicamento
+	Controlados	16</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.Par&acirc;metros|outline">Par&acirc;metros	18</A></FONT></P>
+</DIV>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-before: always; page-break-after: avoid">
+<FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO </B></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4><B>FARM&Aacute;CIA</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=CENTER><BR><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">O
+objetivo deste m&oacute;dulo &eacute; fazer a entrega dos
+medicamentos nos postos de distribui&ccedil;&atilde;o de
+medicamentos, permitindo o farmac&ecirc;utico fazer a classifica&ccedil;&atilde;o
+dos medicamentos e parametrizar os Tipos de Receita.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H1 CLASS="western"><A NAME="1.Cadastros|outline"></A>Cadastros</H1>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Nesta
+op&ccedil;&atilde;o tem-se acesso a todos os cadastros do Modulo
+Farm&aacute;cia, como o cadastro de Medicamentos, Tipos de Receita e
+Classifica&ccedil;&atilde;o de Medicamentos. &Egrave; importante
+deixa-los sempre bem atualizados.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="1.1.Medicamentos|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6886db">Medicamentos</A></H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Este
+cadastro consiste em vincular os itens do M&oacute;dulo Materiais com
+os Medicamentos do M&oacute;dulo Farm&aacute;cia e fazer a
+classifica&ccedil;&atilde;o dos medicamentos, conforme o seu
+principio ativo, sendo esta somente as classifica&ccedil;&otilde;es
+anal&iacute;ticas do cadastro. 
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.1.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6887db">Inclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Medicamento:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+c&oacute;digo do medicamento ser&aacute; gerado automaticamente e
+corresponde ao c&oacute;digo do item que est&aacute; sendo inclu&iacute;do.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Materiais:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Neste
+campo deve ser digitado o c&oacute;digo do material que ser&aacute;
+vinculado ou clicar no link dos Materiais para pesquisar pelo seu
+nome.  </SPAN></SPAN>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Classifica&ccedil;&atilde;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Neste
+campo deve ser digitado o c&oacute;digo da classifica&ccedil;&atilde;o
+do medicamento ou clicar no link da Classifica&ccedil;&atilde;o para
+pesquisar pelo seu nome, esta pesquisa vai retornar apenas os
+registro Anal&iacute;tico da classifica&ccedil;&atilde;o.  </SPAN></SPAN>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Observa&ccedil;&atilde;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo &eacute; para o usu&aacute;rio digitar alguma observa&ccedil;&atilde;o
+sobre o medicamento. (N&atilde;o obrigat&oacute;rio).</SPAN></SPAN></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Farmacia_html_5dd12b7d.png" NAME="figura4" ALIGN=LEFT WIDTH=605 HEIGHT=212 BORDER=0><I><B>Figura
+1</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.1.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db6888db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Na
+altera&ccedil;&atilde;o do cadastro de medicamento n&atilde;o pode
+ser alterado o item do material,  caso o medicamento possua uma sa&iacute;da
+do estoque. O campo Classifica&ccedil;&atilde;o n&atilde;o possui
+nenhuma restri&ccedil;&atilde;o, igualmente o de Observa&ccedil;&atilde;o.
+ 
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.1.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6889db">Exclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Na
+exclus&atilde;o n&atilde;o poder&aacute; ser exclu&iacute;do nenhum
+medicamento que possuir alguma movimenta&ccedil;&atilde;o no sistema.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="1.2.Tipo de Receita|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6890db">Tipo
+de Receita</A></H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Este
+cadastro consiste em configurar todos os tipos de receita que a
+farm&aacute;cia pode receber na entrega dos medicamentos. O tipo de
+receita permite o farmac&ecirc;utico configurar quais campos ser&atilde;o
+obrigat&oacute;rios na distribui&ccedil;&atilde;o dos medicamentos e
+quantas vias ser&aacute; o recibo de entrega do paciente.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.2.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6891db">Inclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>C&oacute;digo:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+c&oacute;digo do tipo de receita ser&aacute; gerado automaticamente e
+corresponde ao c&oacute;digo do item que est&aacute; sendo inclu&iacute;do.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Descri&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o nome do tipo de receita para sua identifica&ccedil;&atilde;o, campo
+obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Profissional:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo permite selecionar </SPAN></SPAN><B><SPAN STYLE="font-style: normal">SIM
+</SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">para
+tornar o campo Profissional do procedimento Entrega de Medicamento
+obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Posologia:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo permite selecionar </SPAN></SPAN><B><SPAN STYLE="font-style: normal">SIM
+</SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">para
+tornar o campo Posologia do procedimento Entrega de Medicamento
+obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Requisitante:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo permite selecionar </SPAN></SPAN><B><SPAN STYLE="font-style: normal">SIM
+</SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">para
+tornar os campos do requisitante do procedimento Entrega de
+Medicamento obrigat&oacute;rio. Neste caso o CGM do requisitante, que
+deve estar com o endere&ccedil;o e identidade preenchidos.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>N&uacute;mero
+da Receita:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo permite selecionar </SPAN></SPAN><B><SPAN STYLE="font-style: normal">SIM
+</SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">para
+tornar o campo N&uacute;mero da Receita do procedimento Entrega de
+Medicamento obrigat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Vias
+do Recibo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+a quantidade de vias do recibo de entrega. </SPAN></SPAN>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Farmacia_html_m38616084.png" NAME="figura3" ALIGN=LEFT WIDTH=605 HEIGHT=237 BORDER=0><I><B>Figura
+2</B></I></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.2.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db6892db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Na
+altera&ccedil;&atilde;o do cadastro de tipo de receita  pode ser
+alterado qualquer um dos par&acirc;metros que est&atilde;o no
+cadastro.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.2.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6893db">Exclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Na
+exclus&atilde;o n&atilde;o poder&aacute; ser exclu&iacute;do nenhum
+tipo de receita  que possuir alguma sa&iacute;da de medicamento do
+sistema.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="1.3.Classifica&ccedil;&atilde;o |outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db6878db">Classifica&ccedil;&atilde;o
+</A>
+</H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><A HREF="#Sum&aacute;rio1|region" NAME="db1100964db"><FONT COLOR="#000000">Este
+cadastro consiste em montar a estrutura da classifica&ccedil;&atilde;o
+dos medicamentos. Permitindo o farmac&ecirc;utico fazer uma
+classifica&ccedil;&atilde;o especifica para a farm&aacute;cia, tendo
+um melhor controle dos medicamentos.</FONT></A></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.3.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6879db">Inclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx">C&oacute;digo:
+</SPAN></FONT></FONT></B></I><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+c&oacute;digo de classifica&ccedil;&atilde;o ser&aacute; gerado
+automaticamente e corresponde ao c&oacute;digo do item que est&aacute;
+sendo inclu&iacute;do.</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx">M&aacute;scara:
+</SPAN></FONT></FONT></B></I><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo busca autom&aacute;ticamente o estrutural cadastrado nos
+par&acirc;metros do M&oacute;dulo Farm&aacute;cia. </SPAN></SPAN></SPAN></FONT></FONT>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx">Classifica&ccedil;&atilde;o:
+</SPAN></FONT></FONT></B></I><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo estrutural da classifica&ccedil;&atilde;o do
+medicamento. Neste caso, se a m&aacute;scara for (</SPAN></SPAN></SPAN></FONT></FONT><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal">00.00</SPAN></SPAN></FONT></FONT></B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">),
+ent&atilde;o a primeira classifica&ccedil;&atilde;o sint&eacute;tica
+seria (</SPAN></SPAN></SPAN></FONT></FONT><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal">01.00</SPAN></SPAN></FONT></FONT></B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">)
+. O sistema n&atilde;o permite cadastrar um an&aacute;litico que n&atilde;o
+possua uma classifica&ccedil;&atilde;o sint&eacute;tica.</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx">Tipo:
+</SPAN></FONT></FONT></B></I><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo deve ser selecionado o tipo de acordo com o c&oacute;digo da
+classifica&ccedil;&atilde;o acima, caso o c&oacute;digo for </SPAN></SPAN></SPAN></FONT></FONT><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal">01.00
+</SPAN></SPAN></FONT></FONT></B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ser&aacute;
+do tipo sint&eacute;tico, mas se for </SPAN></SPAN></SPAN></FONT></FONT><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal">01.04
+</SPAN></SPAN></FONT></FONT></B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&eacute;
+analitico. </SPAN></SPAN></SPAN></FONT></FONT>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx">Descri&ccedil;&atilde;o:
+</SPAN></FONT></FONT></B></I><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o nome da classifica&ccedil;&atilde;o para sua identifica&ccedil;&atilde;o,
+campo obrigat&oacute;rio.</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx">Observa&ccedil;&atilde;o:
+</SPAN></FONT></FONT></B></I><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo &eacute; para o usu&aacute;rio digitar alguma observa&ccedil;&atilde;o
+sobre a classifica&ccedil;&atilde;o. (N&atilde;o obrigat&oacute;rio).</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P LANG="zxx" CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P LANG="zxx" CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Farmacia_html_m3e826921.png" NAME="figura2" ALIGN=LEFT WIDTH=605 HEIGHT=234 BORDER=0><FONT COLOR="#000000"><FONT SIZE=3><I><B>Figura
+3</B></I></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+ 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.3.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db6880db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Na
+altera&ccedil;&atilde;o do cadastro de classifica&ccedil;&atilde;o
+n&atilde;o pode ser alterado o estrutural se existir um medicamento
+vinculado a essa classifica&ccedil;&atilde;o. Caso n&atilde;o esteja
+vinculado pode ser alterado sua estrutura.  
+</P>
+<H3 CLASS="western"><A NAME="1.3.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6881db">Exclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Na exclus&atilde;o n&atilde;o poder&aacute; ser exclu&iacute;do
+nenhuma classifica&ccedil;&atilde;o que possuir alguma vinculada ao
+cadastro de medicamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H2 CLASS="western"><A NAME="1.4.Programas|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6991db">Programas</A></H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><A HREF="#Sum&aacute;rio1|region" NAME="db6890db"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none">Este
+cadastro consiste em cadastrar os programas de sa&uacute;de em qual
+os pacientes ser&atilde;o vinculado no cadastro de Medicamentos
+Controlados. </SPAN></FONT></A>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.4.1.Inclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6993db">Inclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><A HREF="#Sum&aacute;rio1|region"><FONT COLOR="#000000"><I><B>C&oacute;digo:</B></I></FONT></A><A HREF="#Sum&aacute;rio1|region" NAME="db6890db"><FONT COLOR="#000000">
+</FONT></A><A HREF="#Sum&aacute;rio1|region"><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+c&oacute;digo de programa ser&aacute; gerado automaticamente e
+corresponde ao c&oacute;digo do item que est&aacute; sendo inclu&iacute;do.</SPAN></SPAN></SPAN></FONT></FONT></A></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><A HREF="#Sum&aacute;rio1|region"><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><I><B>Descri&ccedil;&atilde;o:
+</B></I></SPAN></FONT></FONT></A><A HREF="#Sum&aacute;rio1|region" NAME="db6890db"><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o nome do programa para sua identifica&ccedil;&atilde;o, campo
+obrigat&oacute;rio.</SPAN></SPAN></SPAN></FONT></FONT></A></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><A HREF="#Sum&aacute;rio1|region"><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><I><B>Tipo:</B></I></SPAN></FONT></FONT></A><A HREF="#Sum&aacute;rio1|region"><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Este campo identifica a que esfera da administra&ccedil;&atilde;o
+este programa pertence, como: (Federal, Estadual, Municipal,
+Particular e Outros). </SPAN></SPAN></SPAN></FONT></FONT></A>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_6fd359bb.png" NAME="figura13" ALIGN=LEFT WIDTH=605 HEIGHT=186 BORDER=0><I><B>Figura
+4</B></I></P>
+<H3 CLASS="western"><A NAME="1.4.2.Altera&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db6994db">Altera&ccedil;&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><A HREF="#Sum&aacute;rio1|region" NAME="db6890db"><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Na
+altera&ccedil;&atilde;o do cadastro de programas pode ser alterado
+todos os campos. Neste caso altera os dados no cadastro de
+controlados.</SPAN></SPAN></SPAN></FONT></FONT></A></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="1.4.3.Exclus&atilde;o|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6995db">Exclus&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Na
+exclus&atilde;o n&atilde;o poder&aacute; ser exclu&iacute;do nenhum
+programa que possui vinculo com o cadastro de controlados.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H1 CLASS="western"><A NAME="2.Consulta|outline"></A>Consulta</H1>
+<H2 CLASS="western"><A NAME="2.1.Paciente|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6947db">Paciente</A></H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Permite
+consultar por paciente as suas retiradas de medicamento da farm&aacute;cia
+por uma determinado per&iacute;odo. Nesta consulta pode ser tirado
+dois relat&oacute;rios (Sint&eacute;tico e Anal&iacute;tico) de suas
+retiradas, assim fornecendo dados para o controle das retiradas.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Outra
+funcionalidade &eacute; que o usu&aacute;rio pode clicar no registro
+da consulta na tela, assim abre outra tela com os medicamentos
+retirados e um bot&atilde;o para reemitir o recibo de retirada para o
+paciente.   
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><I><B>Campos</B></I></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Consulta:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Neste
+campo &eacute; selecionado o tipo de pesquisa, a &uacute;nica
+dispon&iacute;vel nesta vers&atilde;o &eacute; a de (</SPAN></SPAN><B><SPAN STYLE="font-style: normal">Retirada</SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">)
+.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Per&iacute;odo:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+a data inicial e final do per&iacute;odo que se quer pesquisar, caso
+o usu&aacute;rio n&atilde;o selecione nenhuma data o sistema busca
+todos os registro de retirada para o CGS selecionado.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>CGS:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Colocar o c&oacute;digo do CGS (Paciente)  ou clicar no link para
+pesquisar o nome do paciente.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_m75a167cd.png" NAME="figura9" ALIGN=LEFT WIDTH=598 HEIGHT=273 BORDER=0><I><B>Figura
+5</B></I></P>
+<P CLASS="western"><I><B>Layout do Relat&oacute;rio Sint&eacute;tico</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_m43d66299.png" NAME="figura10" ALIGN=LEFT WIDTH=605 HEIGHT=193 BORDER=0><I><B>Figura
+6</B></I></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western"><I><B>Layout do Relat&oacute;rio Anal&iacute;tico</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_m21f2576.png" NAME="figura11" ALIGN=LEFT WIDTH=605 HEIGHT=255 BORDER=0><I><B>Figura
+7</B></I></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western"><I><B>Tela de Consulta dos Medicamentos</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_2c15f4d6.png" NAME="figura12" ALIGN=LEFT WIDTH=605 HEIGHT=288 BORDER=0><I><B>Figura
+8</B></I></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<H1 CLASS="western"><A NAME="3.Relat&oacute;rios|outline"></A>Relat&oacute;rios</H1>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="3.1.Medicamentos|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db7071db">Medicamentos</A></H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Este
+menu possui relat&oacute;rios referente aos Medicamentos do sistema,
+envolvendo a parte cadastral e de estoque.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"> 
+</P>
+<H3 CLASS="western"><A NAME="3.1.1.Medicamento|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db7069db">Medicamento</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Este
+relat&oacute;rio imprime o cadastro de Medicamentos, e permite os
+filtros de (Quebra e Ordem).</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Quebra:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+O relat&oacute;rio permite quebra  por (Classifica&ccedil;&atilde;o
+ou nenhuma).</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Ordem:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite ordenar por ordem (Alfab&eacute;tica e num&eacute;rica).</SPAN></SPAN></P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_m2a7dfe5b.png" NAME="figura14" ALIGN=LEFT WIDTH=605 HEIGHT=183 BORDER=0><I><B>Figura
+9</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Layout do Relat&oacute;rio sem
+Quebra por Classifica&ccedil;&atilde;o</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_29cb1d02.png" NAME="figura15" ALIGN=LEFT WIDTH=605 HEIGHT=237 BORDER=0><I><B>Figura
+10</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="3.1.2.Estoque|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db7070db">Estoque</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Este
+relat&oacute;rio imprime a posi&ccedil;&atilde;o atual do estoque,
+por dep&oacute;sito ou de todos os medicamentos do sistema,
+permitindo o farmac&ecirc;utico ter uma posi&ccedil;&atilde;o da
+quantidade e do valor em estoque.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Dep&oacute;sito:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Este filtro permite selecionar o relat&oacute;rio por dep&oacute;sito.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Estoque
+Zerado: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+filtro permite selecionar os medicamentos com saldo ou zerado.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Tipo:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+filtro permite tirar um relat&oacute;rio sint&eacute;tico do estoque.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Quebra:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+relat&oacute;rio permite quebra  por (Classifica&ccedil;&atilde;o ou
+nenhuma).</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Ordem:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+ordenar por ordem (Alfab&eacute;tica e num&eacute;rica).</SPAN></SPAN></P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_122383c8.png" NAME="figura18" ALIGN=LEFT WIDTH=605 HEIGHT=298 BORDER=0><I><B>Figura
+11</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Layout do Relat&oacute;rio sem
+Quebra por Classifica&ccedil;&atilde;o</B></I></P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_730740d.png" NAME="figura19" ALIGN=LEFT WIDTH=605 HEIGHT=208 BORDER=0><I><B>Figura
+12</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<H3 CLASS="western"><A NAME="3.1.3.Distribui&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db7068db">Distribui&ccedil;&atilde;o</A></H3>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Este
+relat&oacute;rio imprime a distribui&ccedil;&atilde;o anual de
+medicamento por m&ecirc;s, permitindo ter uma vis&atilde;o global do
+consumo de medicamento na Farm&aacute;cia.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Dep&oacute;sito:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Este filtro permite selecionar o relat&oacute;rio por dep&oacute;sito.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Estoque
+Zerado: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+filtro permite selecionar os medicamentos com saldo ou zerado.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Quebra:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+relat&oacute;rio permite quebra  por (Classifica&ccedil;&atilde;o ou
+nenhuma).</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Ordem:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+ordenar por ordem (Alfab&eacute;tica e num&eacute;rica).</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_m19dc8d01.png" NAME="figura16" ALIGN=LEFT WIDTH=605 HEIGHT=292 BORDER=0><I><B>Figura
+13</B></I></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_m7838334c.png" NAME="figura17" ALIGN=LEFT WIDTH=605 HEIGHT=268 BORDER=0><I><B>Figura
+14</B></I></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<H1 CLASS="western"><A NAME="4.Procedimentos|outline"></A>Procedimentos</H1>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Todas
+as rotinas necess&aacute;rias para o controle e distribui&ccedil;&atilde;o
+de medicamento da Farm&aacute;cia Municipal, &eacute; os
+procedimentos Entrega de Medicamento e Par&acirc;metros.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.1.Entrega de Medicamento|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6898db">Entrega
+de Medicamento</A></H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Nesta
+op&ccedil;&atilde;o &eacute; realizada a entrega de medicamentos para
+os pacientes pela a atendente ou farmac&ecirc;utica do posto. Esta
+rotina consulta o saldo dos medicamentos diretamente no M&oacute;dulo
+Materiais.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal"><B>ABA
+Retirada de Medicamentos</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><B><I>Unidade:</I>
+</B><SPAN STYLE="font-weight: medium">Busca o c&oacute;digo e a
+descri&ccedil;&atilde;o do departamento do usu&aacute;rio logado.</SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><B><I>CGS:
+</I></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo do CGS (Paciente)  ou clicar no link para pesquisar o
+nome do paciente.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Receita
+DBPortal:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Selecionar se a receita foi gerada pelo sistema, neste caso, se n&atilde;o
+foi gerada pelo sistema o usu&aacute;rio deve preencher os dados da
+receita. Se foi gerara pelo sistema, ele busca o c&oacute;digo da
+receita que deve ser atendido pelo atendente (Solicita&ccedil;&atilde;o).</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Tipo
+de Receita:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Selecionar o tipo de receita referente a entrega do medicamento para
+os pacientes. Ao selecionar um tipo que o par&acirc;metro est&aacute;
+com Requisitante obrigat&oacute;rio o sistema abre os campos
+referente ao requisitante.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Receita:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Colocar o n&uacute;mero da receita caso ela seja manual e possuir uma
+numera&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Validade:</B>
+</I><SPAN STYLE="font-style: normal">Colocar a</SPAN><I> </I><SPAN STYLE="font-style: normal">validade
+da receita m&eacute;dica.</SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Profissional:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo do profissional respons&aacute;vel pela receita
+m&eacute;dica ou clicar no link do Profissional para pesquisar pelo
+nome.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Medicamento:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo do medicamento ou clicar no link Medicamento e
+pesquisar pelo nome. Depois de selecionado o sistema mostrar&aacute;
+o saldo do medicamento.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Quantidade:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Lan&ccedil;ar
+a quantidade do item que se quer retirar, neste caso, somente a
+quantidade dispon&iacute;vel no campo saldo.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Ver
+Lote: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo s&oacute; &eacute; visualizado quando o medicamento est&aacute;
+vinculando a um material que controla validade do item.  Caso o
+usu&aacute;rio n&atilde;o olhe o lote, o sistema retira a quantidade
+do lote que vence primeiro. Se clicar em ver lote, o usu&aacute;rio
+pode escolher qual lote quer ser retirado.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Saldo:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Neste
+campo o usu&aacute;rio pode visualizar o saldo do medicamento em
+estoque.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Posologia:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+a posologia prescrita pelo m&eacute;dico na receita.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Farmacia_html_m103bb753.png" NAME="figura5" ALIGN=LEFT WIDTH=605 HEIGHT=365 BORDER=0><I><B>Figura
+15</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Layout do recibo
+de entrega de medicamento.</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Farmacia_html_m39685ad7.png" NAME="figura6" ALIGN=LEFT WIDTH=599 HEIGHT=407 BORDER=0><I><B>Figura
+16</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>ABA Ultimas
+Retiradas</B></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Esta
+ABA somente ser&aacute; habilitada se o paciente que esta retirando o
+medicamento possuir um hist&oacute;rico de retiradas anteriores pelo
+sistema, para a consulta do atendente e melhor controle na
+distribui&ccedil;&atilde;o.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">No
+bot&atilde;o Consultar Medicamento mostra os itens retirados nessa
+retirada, mostrando na ABA Consulta Itens Retirados.  
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Farmacia_html_m1f4c5290.png" NAME="figura7" ALIGN=LEFT WIDTH=605 HEIGHT=266 BORDER=0><I><B>Figura
+17</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>ABA Consulta Itens
+Retirados </B>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Esta
+ABA lista os medicamentos retirados na retirada consultada pelo
+usu&aacute;rio. Para voltar a ABA Ultimas Retiradas o usu&aacute;rio
+deve clicar em OK.  
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Farmacia_html_m3ee633d2.png" NAME="figura8" ALIGN=LEFT WIDTH=605 HEIGHT=197 BORDER=0><I><B>Figura
+18</B></I></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H2 CLASS="western"><A NAME="4.2.Medicamento Controlados|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db6990db">Medicamento
+Controlados</A></H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Este
+procedimento realiza o cadastro dos medicamentos controlados por
+paciente, permitindo ao administrador controlar os ciclos de entrega
+por medicamento, cada um &eacute; controlado separadamente na hora da
+Entrega do Medicamento.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Esta
+rotina faz toda valida&ccedil;&atilde;o na Entrega do Medicamento,
+pois verifica o saldo dos medicamentos dentro de uma freq&uuml;&ecirc;ncia
+de retiradas do paciente e n&atilde;o diretamente no saldo do
+medicamento.</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Campos</B></I></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>CGS:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo do CGS (Paciente)  ou clicar no link para pesquisar o
+nome.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Medicamento:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo do Medicamento ou clicar no link para pesquisar o
+nome.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Quantidade:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Neste
+campo deve ser preenchido com a quantidade de medicamento que o
+paciente retira dentro de uma freq&uuml;&ecirc;ncia.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Freq&uuml;&ecirc;ncia:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Neste
+campo deve ser preenchido o per&iacute;odo de retirada do
+medicamento, neste caso, deve ser em dias.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Margem:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Neste
+campo deve ser preenchido os dias de toler&acirc;ncia de cada
+medicamento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm">
+<I><B>Programa:  </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+ o  programa  em   que o  medicamento  controlado  pertence.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Observa&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+as observa&ccedil;&otilde;es que ser&atilde;o impressas na
+Carteirinha do paciente.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Validade</B></I></P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Inicio: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Data
+	de inicio do controle de retirada do medicamento.</SPAN></SPAN></P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Fim: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Data
+	de fim do controle de retirada do medicamento.</SPAN></SPAN></P>
+</UL>
+<UL>
+	<P CLASS="western" STYLE="margin-bottom: 0cm"></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_m2d06fe98.png" NAME="figura20" ALIGN=LEFT WIDTH=605 HEIGHT=358 BORDER=0><I><B>Figura
+19</B></I></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Imprimir
+Carteirinha:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Este bot&atilde;o permite emitir uma carteirinha por CGS (Paciente),
+Cada carteirinha vale por exerc&iacute;cio, tendo que ser renovada
+por ano.</SPAN></SPAN></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><I><B>Modelo da Carteirinha de Medicamento </B></I>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Farmacia_html_a29e965.png" NAME="figura21" ALIGN=LEFT WIDTH=605 HEIGHT=176 BORDER=0><I><B>Figura
+20</B></I></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H2 CLASS="western"><A NAME="4.3.Par&acirc;metros|outline"></A><A HREF="#Sum&aacute;rio1|region" NAME="db6894db">Par&acirc;metros</A></H2>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm">Nesta
+op&ccedil;&atilde;o &eacute; configurado os par&acirc;metros para o
+m&oacute;dulo de Farm&aacute;cia no sistema. 
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Campos</B></I></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>C&oacute;digo:
+</B></I><FONT COLOR="#000000"><FONT SIZE=3><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+c&oacute;digo de classifica&ccedil;&atilde;o ser&aacute; gerado
+automaticamente e corresponde ao c&oacute;digo do item que est&aacute;
+sendo inclu&iacute;do.</SPAN></SPAN></SPAN></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Estrutura:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Este
+campo busca a estrutura dos n&iacute;veis cadastrados no M&oacute;dulo
+Configura&ccedil;&otilde;es.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Descri&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o nome da estrutura nos par&acirc;metros.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Digita&ccedil;&atilde;o
+Medicamentos: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+a SIM para digita&ccedil;&atilde;o manual dos medicamentos em uma
+receita (solicita&ccedil;&atilde;o) feita pelo DBPortal.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><I><B>Med.
+Controlado:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Este par&acirc;metro controla a distribui&ccedil;&atilde;o dos
+Medicamentos Controlados por paciente. Permite o administrador
+escolher 3 (tr&ecirc;s) op&ccedil;&otilde;es:</SPAN></SPAN></P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>N&atilde;o
+	Notifica:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+	Nesta op&ccedil;&atilde;o o sistema executa uma distribui&ccedil;&atilde;o
+	de medicamento normal, sem olhar o cadastro de Medicamentos
+	Controlados.</SPAN></SPAN></P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Notifica e
+	Bloqueia: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesta
+	op&ccedil;&atilde;o o sistema ao fazer um distribui&ccedil;&atilde;o
+	de um medicamento controlado, ele verifica se o paciente possui
+	saldo dispon&iacute;vel para a retirada em um determinado per&iacute;odo
+	e bloqueia a retirada caso ele n&atilde;o possua.</SPAN></SPAN></P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Notifica e
+	N&atilde;o Bloqueia: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesta
+	op&ccedil;&atilde;o o sistema ao fazer um distribui&ccedil;&atilde;o
+	de um medicamento controlado, ele verifica se o paciente possui
+	saldo dispon&iacute;vel para a retirada em um determinado per&iacute;odo
+	mas n&atilde;o bloqueia a retirada.</SPAN></SPAN></P>
+</UL>
+<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Farmacia_html_40d252ab.png" NAME="figura1" ALIGN=LEFT WIDTH=605 HEIGHT=214 BORDER=0><I><B>Figura
+12</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<TABLE WIDTH=605 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=515>
+		<COL WIDTH=74>
+		<TR VALIGN=TOP>
+			<TD WIDTH=515>
+				<P ALIGN=CENTER STYLE="background: transparent"><FONT SIZE=2 STYLE="font-size: 9pt">DBSeller
+				Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+				</FONT><A HREF="http://www.dbseller.com.br/"><FONT SIZE=2 STYLE="font-size: 9pt">www.dbseller.com.br</FONT></A><FONT SIZE=2 STYLE="font-size: 9pt">
+				                                                                 
+				                                               Rua General
+				C&acirc;mara, 406/301 - Porto Alegre/RS - Fone: (51) 3076-5101</FONT></P>
+			</TD>
+			<TD WIDTH=74>
+				<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0cm"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>17</SDFIELD>
+				/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>17</SDFIELD></P>
+				<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0cm"><FONT SIZE=1>Vers&atilde;o
+				&ndash; 2.1.96</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P CLASS="western" STYLE="text-indent: 2cm; margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,8 @@
+{
+   "configure_turnos_referentes" : "É necessário configurar os turnos de referências dos períodos. \nAcesse: Cadastros > Dados da Escola (Aba Horários da Escola)"
+  ,"erro_turnos_matricula_aluno" : "Erro ao buscar o(s) turno(s) da matrícula do aluno."
+  ,"erro_localizar_regente"      : "Não foi possível localizar o regente."
+  ,"turma_sem_periodos"          : "Turma sem períodos de aula cadastrados."
+  ,"erro_buscar_dias_docente"    : "Erro ao buscar os dias da semana em que o regente leciona."
+  ,"erro_buscar_feriados"        : "Erro ao buscar os feriados cadastrados."
+}

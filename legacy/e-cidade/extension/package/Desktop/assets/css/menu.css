@@ -1,0 +1,367 @@
+@import url('menu-list-icons.css');
+
+#menu {
+  font-family: "DejaVu Sans";
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 0px;
+  max-height: 90%;
+  background-color: #e0dddd;
+  white-space: nowrap;
+  color: #545454;
+  border-top: 1px solid #d1d1d1;
+  padding-bottom: 10px;
+  height: 240px;
+  -webkit-opacity: 0.95;
+     -moz-opacity: 0.95;
+          opacity: 0.95;
+
+  /** Trick to remove space between inline-block elements*/
+  font-size: 0;
+  z-index: 100;
+  -webkit-box-shadow: rgb(0, 0, 0) 0px 5px 10px 2px;
+     -moz-box-shadow: rgb(0, 0, 0) 0px 5px 10px 2px;
+          box-shadow: rgb(0, 0, 0) 0px 5px 10px 2px;
+  -webkit-transition: bottom .4s;
+     -moz-transition: bottom .4s;
+          transition: bottom .4s;
+  bottom: -100%;
+}
+
+#menu.active {
+  bottom: 36px;
+}
+
+.menu-header {
+  width: 100%;
+  border-bottom: 1px solid #d1d1d1;
+  position: relative;
+  height: 40px;
+}
+
+#menu.active .menu-header {
+}
+
+.menu-header > div {
+  height: 100%;
+  float: left;
+}
+
+.menu-actions > div{
+  float: left;
+}
+
+.menu-action-home {
+  height: 100%;
+  width: 40px;
+  position: relative;
+}
+
+.menu-action-home > span{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url('../img/menu/home.png') no-repeat center center;
+  background-size: 20px 20px;
+  cursor: pointer;
+}
+
+.menu-action-search {
+  height: 100%;
+  position: relative;
+}
+
+#menu-search {
+  border: none;
+  background-color: #c0c0c0;
+  height: 20px;
+  margin: 10px 0px;
+  outline: none;
+  padding: 1px 3px;
+  padding-right: 23px;
+  width: 150px;
+
+  -webkit-transition: width .4s;
+    -moz-transition: width .4s;
+         transition: width .4s;
+}
+
+.menu-search-icon {
+  content: "";
+  position: absolute;
+  width: 20px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0px;
+  height: 20px;
+  display: block;
+  background: url('../img/menu/search.png') no-repeat center center;
+  cursor: pointer;
+}
+
+#menu-search:focus,
+#menu-search:hover {
+  width: 250px;
+}
+
+#menu-search {
+  -moz-user-select :-moz-text;
+  -moz-user-select : text;
+  -webkit-user-select : text;
+  user-select : text;
+}
+
+.menu-breadcrumb {
+  height: 100%;
+  position: relative;
+}
+
+.menu-breadcrumb ul {
+  list-style: none;
+  margin: 0px 10px;
+}
+
+.menu-breadcrumb ul li{
+  display: inline-block;
+  height: 20px;
+  color: #545454;
+  padding: 10px 0px;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 0px 10px;
+  position: absolute;
+}
+
+.menu-breadcrumb ul li:first-child::before {
+  content: none;
+}
+
+.menu-breadcrumb ul li::before {
+  content: ">";
+  position: absolute;
+  left: -15px;
+  font-size: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.menu-resizer {
+  width: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  cursor: row-resize;
+  position: absolute;
+  background: url('../img/menu/resize.png') no-repeat top center;
+}
+
+.menu-close {
+  height: 100%;
+  width: 40px;
+  position: absolute;
+  right: 0;
+}
+
+.menu-close span {
+  background-color: #204a6a;
+  color: white;
+  border-radius: 100%;
+  display: block;
+  height: 20px;
+  width: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.menu-content {
+
+  position: relative;
+  padding: 0px 30px;
+  height: 200px;
+}
+
+#menu.active .menu-content {
+}
+
+.menu-list-container {
+  height: 100%;
+  min-width: 200px;
+  max-width: 300px;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0;
+  position: relative;
+  overflow: hidden;
+  left: -20px;
+}
+
+.menu-list-container.divider-left .menu-list::before {
+  content: "";
+  position: absolute;
+  background-color: #404040;
+  height: 100%;
+  width: 1px;
+  left: 0px;
+  bottom: 0;
+  top: 40px;
+}
+
+.menu-list-title {
+  font-size: 14px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  height: -moz-calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding-right: 15px;
+}
+
+.menu-list span{
+  font-size: 12px;
+  min-height: 20px;
+  line-height: 20px;
+  margin: 3px 0px;
+  position: relative;
+  display: block;
+  padding-left: 25px;
+  padding-right: 20px;
+  white-space: normal;
+  border-radius: 3px;
+}
+
+.menu-list span:hover,
+.menu-list span.active {
+  color: #426c8c;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.menu-list-container.divider-left .menu-list span.active::before{
+  content: "";
+  position: absolute;
+  background-color: #e0dddd;
+  border: 1px solid #404040;
+  width: 5px;
+  height: 5px;
+  top: 0;
+  bottom: 0px;
+  left: -23px;
+  margin: auto;
+
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.menu-list-container .menu-list span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 19px;
+  height: 20px;
+  background-image: url('../img/menu/sprite-icons.png');
+  background-repeat: no-repeat;
+}
+
+.menu-list-container.menu-itens .menu-list span::after {
+  background: none  ;
+}
+
+.menu-list-container.menu-itens .menu-list span {
+  padding-left: 5px;
+}
+
+.menu-list-container.menu-itens .menu-list span.action {
+  /*text-decoration: underline;*/
+}
+
+.menu-list span.disabled {
+  color : #999;
+}
+
+.menu-list span > .arrow{
+  background-image: url('../img/menu/list-arrow.png');
+  background-repeat: no-repeat;
+  height: 12px;
+  width: 12px;
+  display: block;
+  position: absolute;
+  right: 2px;
+  top: 3px;
+  bottom: 0;
+  line-height: 20px;
+}
+
+.menu-pager {
+  position: absolute;
+  top: 0;
+  font-size: 0;
+  height: 100%;
+  width: 30px;
+  z-index: 30;
+  background-color: #e0dddd;
+  cursor: pointer;
+}
+
+.menu-pager.menu-pager-left {
+  left: 0;
+}
+
+.menu-pager.menu-pager-right {
+  right: 0;
+}
+
+.menu-pager .icon{
+  width: 100%;
+  height: 100%;
+  background: no-repeat center center;
+}
+
+.menu-pager.menu-pager-right .icon{
+  background-image: url('../img/menu/pager-right.png');
+}
+
+.menu-pager.menu-pager-left .icon{
+  background-image: url('../img/menu/pager-left.png');
+}
+
+.menu-pager.disabled .icon{
+  opacity: .5;
+}
+
+.menu-loading {
+  background: url('../img/menu/loading.gif') no-repeat center center;
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+}

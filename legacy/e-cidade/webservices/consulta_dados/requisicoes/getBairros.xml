@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="j13_descr" label="bairro"                                     />
+    <campo campo="j13_codi"  label="cod_bairro"                                 />
+  </campos>
+  <from tabela="ruas"                                                           />
+  <juncoes>
+    <join tipo="inner" tabela="ruasbairro"  condicao="j14_codigo = j16_lograd"	/>
+    <join tipo="inner" tabela="bairro"      condicao="j16_bairro = j13_codi"  	/>
+  </juncoes>
+  <filtros>
+  </filtros>
+  <agrupamento campos=""                                                        />
+  <ordenacao   campos="j13_descr"                                               />
+</consulta>

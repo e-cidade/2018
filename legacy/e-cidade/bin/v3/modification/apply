@@ -1,0 +1,142 @@
+#!/usr/bin/env php
+<?php
+
+use \ECidade\V3\Extension\ConsoleColor as Color;
+use \ECidade\V3\Modification\Manager;
+use \ECidade\V3\Extension\Logger;
+use \ECidade\V3\Modification\Data\Modification as ModificationDataModification;
+
+require_once( dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php' );
+
+$checkSintax = false;
+$debug = false;
+
+foreach ($argv as $arg) {
+  if ($arg == '--check-syntax') {
+    $checkSintax = true;
+  }
+  if ($arg == '--debug') {
+    $debug = true;
+  }
+}
+
+ini_set('memory_limit', '-1');
+
+try {
+
+  if (!isset($argv[1])) {
+    throw new Exception("Arquivo não informado.");
+  }
+
+  $file = realpath($argv[1]); 
+  $user = 'apply_' . mt_rand();
+  $startTime = microtime(true);
+
+  $manager = new Manager();
+  $logger = $manager->getLogger();
+  $logger->setVerbosity(Logger::DEBUG);
+  $logger->addHandler(function($output, $level) {
+
+    switch($level) {
+
+      case Logger::DEBUG:
+        $output = Color::set($output, 'light_gray');
+      break;
+
+      case Logger::WARNING:
+        $output = Color::set($output, 'brown');
+      break;
+
+      case Logger::ERROR:
+        $output = Color::set($output, 'red');
+      break;
+
+    }
+
+    return $output;
+  }); 
+  $files = array();
+  $filesPath = ECIDADE_MODIFICATION_CACHE_PATH . 'user' . DS . $user . DS;
+  $backupPath = ECIDADE_PATH . 'tmp' . DS . 'bkp_' . $user . DS;
+  $data = $manager->unpack($file, true);
+  if (false === $data->isUserType()) {
+    $data->setType(ModificationDataModification::TYPE_USER);
+    $data->save();
+  }
+  $manager->install($data->getId(), $user, true);
+
+  $iterator = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($filesPath, RecursiveDirectoryIterator::SKIP_DOTS)
+  );
+
+  foreach ($iterator as $path => $fileObj) {
+
+    $from = $path;
+    $to = ECIDADE_PATH . str_replace($filesPath, '', $path);
+
+    if (!is_writeable($to) || !is_writeable(dirname($to))) {
+      throw new Exception("Sem permissão para escrever arquivo/diretorio: $to");
+    }
+
+    $files[$from] = $to;
+  }
+
+  $logger->debug('salvando backup em ' . $backupPath);
+
+  foreach ($files as $from => $to) {
+
+    $backup = str_replace($filesPath, $backupPath, $from);
+
+    if (!is_dir(dirname($backup))) {
+      mkdir(dirname($backup), 0775, true);
+    }
+
+    if (!$debug && !copy($to, $backup) ) {
+      throw new Exception("Erro ao salvar backup do arquivo: '$backup'");
+    } 
+  }
+
+  foreach ($files as $from => $to) {
+
+    // check file syntax
+    if ($checkSintax) {
+
+      $toSyntax = check_syntax($to);
+      if (!$toSyntax) {
+        $logger->error("arquivo com erro de syntax: " . str_replace($filesPath, '', $from));
+        continue;
+      }
+    }
+
+    $logger->debug("copiando arquivo " . str_replace($filesPath, '', $from));
+    if (!$debug && !copy($from, $to)) {
+      throw new Exception("Erro ao copiar arquivo '$from' para '$to'");
+    }
+  }
+
+  $manager->uninstall($data->getId(), $user);
+  $logger->debug('removendo arquivo de cache da modificação: ' . basename($data->getPath()));
+  $data->remove();
+
+} catch (Exception $error) {
+
+  echo "\n message: ". $error->getMessage(). "\n";
+  echo "\n trace: \n". $error->getTraceAsString(). "\n";
+  exit(2);
+}
+
+echo "\n time: " .  round((microtime(true) - $startTime), 2);
+echo "\n memory: " . round((memory_get_peak_usage(true)/1024)/1024, 2) . "mb\n\n";                  
+
+function check_syntax($filepath) {
+
+  if (pathinfo($filepath, PATHINFO_EXTENSION) != 'php') {
+    return true;
+  }
+
+  $code = 0; 
+  $output = null;
+  exec("php -l '$filepath' 2> /dev/null", $output, $code);
+
+  return $code === 0;
+}

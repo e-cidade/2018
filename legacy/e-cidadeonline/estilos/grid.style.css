@@ -1,0 +1,216 @@
+
+
+/*************************************************************
+ ** Define Container que agrupa toda a estrutura de tabelas **
+ *************************************************************/
+div.container{
+  border:2px inset #FFF;
+  background-color:#eeeeee;
+  width:100%;
+}
+
+
+/******************************
+ ** Define Container do Body **
+ ******************************/
+div.header-container div.grid-resize{
+  float:right;
+  z-index:998;
+  cursor:pointer;
+  border: 1px outset #FFF;
+}
+
+/**************************************
+ ** Define estilo da table do header **
+ **************************************/
+div.header-container table.table-header{
+/*  width:975px;*/
+  background-color:#eeeeee;
+  font-weight:bold;
+  text-align:center;
+  width:98%;
+  border-collapse: collapse;
+}
+
+div.header-container table.table-header tr{ 
+  border-bottom:3px outset #FFF;
+  height:20px;
+}
+
+div.header-container table.table-header tr  td{
+  border-right:1px outset #D3D3D3;  
+  padding:0;
+  margin:0;
+  white-space:nowrap;
+  overflow: hidden;
+  /*width:20%;*/
+  
+}
+
+/******************************
+ ** Define Container do Body **
+ ******************************/
+div.body-container{
+  width:100%;
+  height:100px;
+  overflow-y:scroll;
+  background-color:#FFF;
+  
+}
+
+/************************************
+ ** Define estilo da table do body **
+ ************************************/
+div.body-container table.table-body{
+/*  width:975px;*/
+  background-color:#FFF;
+  width:100%;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+div.body-container table.table-body tr{
+  border-bottom:1px outset #D3D3D3;
+  padding:0;
+  margin:0;
+  height: 1em;
+}
+
+
+div.body-container table.table-body tr td{
+  border-right:1px outset #D3D3D3;
+  padding:0;
+  margin:0; 
+  white-space:nowrap;
+  overflow:hidden;
+  /*width:20%;*/
+}
+
+/********************************
+ ** Define Container do footer **
+ ********************************/
+
+div.footer-container{
+  width:100%;
+}
+
+/**************************************
+ ** Define estilo da table do footer **
+ **************************************/
+div.footer-container table.table-footer{
+/*  width:975px;*/
+  width:100%;
+  font-weight:bold;
+  background-color:#eeeeee;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+div.footer-container table.table-footer tr:FIRST-CHILD{
+  border-top:2px outset #8D8D8D;
+  height: 20px; 
+}
+
+/*** Esconde a ultima coluna do foorter. ***/
+div.footer-container table.table-footer tr td:last-child{
+
+}
+
+div.footer-container table.table-footer tr td{
+  border-right:1px outset #D3D3D3;
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+div.footer-container table.table-footer tr td div{
+  border-right:1px outset #FFF;
+  border-bottom:2px outset #000;
+  padding:0;
+  margin:0; 
+  white-space:nowrap;
+  /*width:20%;*/
+  
+}
+
+
+div.draw-select-col{
+  display:block;
+	white-space: nowrap;
+  background-color:#FFF;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+/************************************
+ ** Estilos para marcação da linha **
+ ************************************/
+.marcado{ background-color:#EFEFEF}
+.normal{background-color:#FFFFFF}
+.destacado{background-color:#d1f07c}
+
+
+/*******************************************************************************************************************/
+
+/***************************************************
+ ** Define estilo padrão para as todas as tabelas **
+ ***************************************************/
+
+
+/**************************
+ * ESTILOS DA GRID ANTIGA *
+ **************************/
+ 
+.table_header {
+ font-weight:bold;text-align:center;
+ padding:1px;
+ border-bottom:2px outset white;
+ border-right:1px outset white;           
+ background-color:#EEEFF2;
+ cursor: default;    
+  
+}
+.checkcolumns  {
+	font-weight:bold;text-align:center;
+  padding:0px;
+  display:block; 
+  text-align:left; 
+  cursor: default;    
+  
+}
+.table_footer {
+	font-weight:bold;text-align:center;
+  padding:1px;
+  border-top:2px outset black;
+  border-right:1px outset white;           
+  background-color:#EEEFF2; 
+}
+  
+.gridtotalizador {
+	text-align:right;
+  padding:1px;
+  font-weight:bold;
+  border-top:2px outset black;
+  border-right:1px outset white;           
+  border-bottom:1px outset white;           
+  background-color:#EEEFF2;
+  
+} 
+.linhagrid{
+  border-right:1px inset black;
+  border-bottom:1px inset black;
+  cursor:default;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align:center;
+}
+.disabled{
+  background-color:#F7F5F1;
+  color :#BCB1A2
+}
+.tr_tab{
+  background-color:white;
+  font-size: 8px;
+  height : 8px;
+}

@@ -1,0 +1,11 @@
+{
+  "erro_incluir_servidor"                 : "Erro ao incluir os dados do servidor no arquivo.",
+  "erro_incluir_rubrica"                  : "Erro ao incluir os dados da rubrica no arquivo.",
+  "erro_ao_persistir_dados"               : "Erro ao incluir os dados do arquivo de consignados",
+  "erro_ao_alterar_dados"                 : "Erro ao alterar os dados do arquivo de consignados",
+  "erro_excluir_movimentoservidorrubrica" : "Erro ao excluir os dados da tabela econsigmovimentoservidorrubrica",
+  "erro_excluir_movimentoservidor"        : "Erro ao excluir os dados da tabela econsigmovimentoservidor",
+  "erro_consignadomovimento"              : "Erro ao consultar os dados da tabela econsigmovimento.",
+  "nenhum_registro_consignadomovimento"   : "Nenhum registro foi encontrado.",
+  "erro_arquivo_inexistente"              : "Erro ao buscar arquivo de consignados."
+}

@@ -1,0 +1,6 @@
+{
+   "impossivel_excluir_periodos" : "Não é possível excluir todos períodos de um turno vinculado a um curso da escola."
+  ,"periodos_salvos"   : "Períodos salvos com sucesso."
+  ,"periodos_excluido" : "Período(s) excluído(s) com sucesso."
+  ,"erro_periodo_sem_referencia" : "É necessário selecionar o turno de referência dos períodos."
+}

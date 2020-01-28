@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'DejaVu Sans';
+  src: url('../fonts/DejaVuSans.ttf')  format('truetype');
+}
+
+.topbar {
+  background-image: -webkit-linear-gradient(to bottom, #FFF, #EFEFEF 50%);
+  background-image:    -moz-linear-gradient(to bottom, #FFF, #EFEFEF 50%);
+  background-image:         linear-gradient(to bottom, #FFF, #EFEFEF 50%);
+  width: 100%;
+  box-shadow: 0px 0px 3px -1px #000;
+  font-family: "DejaVu Sans";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.topbar::before,
+.topbar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.topbar .user-nav .user-nav-item {
+  position: relative;
+  float: left;
+  height: 29px;
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+.topbar .user-nav {
+  float: right;
+}
+
+.topbar .user-nav .user .user-name,
+.topbar .user-nav .user .user-picture {
+  float: left;
+  margin: 2px 0;
+}
+
+.topbar .user-nav .user .user-name {
+  line-height: 2;
+  font-size: 14px;
+  color: #426c8c;
+}
+
+/** DROPDOWN CSS **/
+
+.dropdown-toggle {
+  display: block;
+  height: 100%;
+}
+
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  right: 0;
+  list-style: none;
+  background-color: #EFEFEF;
+  border-radius: 3px;
+  border: 1px solid #AAA;
+  padding: 5px 3px;
+  font-size: 14px;
+  z-index: 101;
+  margin-top: 13px;
+  box-shadow: 0px 1px 5px -1px #000;
+}
+
+.dropdown-menu::before{
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 5px;
+  border-bottom: 8px solid #EFEFEF;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.dropdown-menu::after{
+  content: "";
+  position: absolute;
+  top: -9px;
+  right: 4px;
+  border-bottom: 9px solid #AAA;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  z-index: -1;
+}
+
+.dropdown-menu li {
+  min-height: 25px;
+  line-height: 25px;
+  padding: 1px 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #545454;
+}
+
+.dropdown-menu li a {
+  color: #426c8c;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.dropdown-menu li:hover {
+  background-color: #648ead;
+  color: white;
+}
+
+.dropdown-menu li:hover a {
+  color: white;
+}
+
+.dropdown-menu li.dropdown-item-no-fx:hover {
+  background-color: inherit;
+  color: #545454;
+}
+
+.dropdown-menu li.dropdown-item-no-fx:hover a {
+  color: #426c8c;
+}
+
+/** END DROPDOWN CSS */
+
+.topbar .user-nav .settings .icon-config {
+  display: block;
+  cursor: pointer;
+  background: url('../img/topbar/user-settings.png') no-repeat center center;
+  margin-top: 3px;
+  margin-bottom: 1px;
+  height: 25px;
+  width: 25px;
+}
+
+.profile {
+
+}
+
+.profile .user-info,
+.profile .system-info {
+  border-bottom: 1px solid #ccc;
+}
+
+.profile .user-info {
+  height: 90px;
+  padding-bottom: 10px;
+}
+
+.profile .user-info .name,
+.profile .user-info .picture {
+  display: block;
+  height: 100%;
+}
+
+.profile .user-info .name {
+  float: left;
+  width: -moz-calc( 100% - 70px );
+  width: calc( 100% - 70px );
+  position: relative;
+}
+
+.profile .user-info .name span {
+  position: absolute;
+  bottom: 5px;
+  white-space: normal;
+  line-height: 16px;
+  left: 5px;
+}
+
+.profile .user-info .picture {
+  border-radius: 100%;
+  float: left;
+  max-width: 70px;
+}
+
+.profile .user-info .picture img {
+  height: 80px;
+  width: 60px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 10px -5px #000;
+  border: 2px solid #CCC;
+  padding: 3px;
+}

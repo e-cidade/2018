@@ -1,0 +1,10 @@
+{
+  "erro_buscar_tipo_assentamento"                : "Ocorreu um erro ao buscar o tipo de assentamento.",
+  "erro_consultar_tipoassentamentoexterno"       : "Ocorreu um erro ao buscar o vínculo externo do tipo de assentamento.",
+  "nenhum_resultado_encotrado"                   : "Nenhum vínculo externo do tipo de assentamento encontrado.",
+  "vazio_campo_obrigatorio_tipoasse"             : "O campo tipo de assentamento não foi preenchido.",
+  "vazio_campo_obrigatorio_situacaoafastamento"  : "O campo situação de afastamento não foi preenchido.",
+  "vazio_campo_obrigatorio_codmovsefip"          : "O campo do códio da movimentação da SEFIP não foi preenchido.",
+  "tipo_assentamento_ja_configurado"             : "Tipo de Assentamento já esta configurado.",
+  "acao_nao_permitda"                            : "Ação não permitida, tipo de assentamento vinculado a assentamentos nesta competência"
+}

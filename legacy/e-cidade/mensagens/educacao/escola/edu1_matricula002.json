@@ -1,0 +1,8 @@
+{
+  "erro_buscar_matriculas"       : "Erro ao buscar as matrículas do aluno:\n[sErro]",
+  "nenhuma_matricula_encontrada" : "Nenhuma matrícula do aluno foi encontrada.",
+  "erro_buscar_regencias"        : "Erro ao buscar as regências da turma de reativação da matrícula:\n[sErro]",
+  "erro_buscar_turma"            : "Erro ao buscar turma:\n[sErro]",
+  "nenhuma_turma_encontrada"     : "Nenhuma turma encontrada.",
+  "erro_buscar_total_matriculas" : "Erro ao buscar o número de matriculados na turma:\n[sErro]"
+}

@@ -1,0 +1,90 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+#! /bin/sh
+# postgresql	This is the init script for starting up the PostgreSQL
+#		server
+#
+# chkconfig: 345 85 15
+# description: Starts and stops the PostgreSQL backend daemon that handles \
+#	       all database requests.
+# description(pt_BR): Inicializa/pára o servidor PostgreSQL que trata todas as \
+#              requisições ao banco de dados.
+# description(es): Inicializa/detiene el servidor PostgreSQL que trata todas las \
+#               solicitudes del banco de datos.
+# processname: postmaster
+# pidfile: /var/run/postmaster.pid
+# 
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Get config.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+# Pretty much need it for postmaster.
+[ ${NETWORKING} = "no" ] && exit 0
+
+if [ ! -f /usr/bin/servidor ] 
+then
+  echo "/usr/bin/servidor nao existe" 
+  exit 0
+fi
+
+
+case "$1" in
+  start)
+	gprintf "Starting %s server: " "autenticadora"
+	daemon --check servidor --user root "/usr/bin/servidor"
+	sleep 1
+	pid=`pidof servidor`
+	touch /var/lock/subsys/servidor
+	echo $pid > /var/run/servidor.pid
+	echo
+	;;
+  stop)
+	gprintf "Stopping %s server: " "autenticadora"
+	killproc servidor
+	sleep 2
+	rm -f /var/run/servidor.pid
+	rm -f /var/lock/subsys/servidor
+	echo
+	;;
+  status)
+	status servidor
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  *)
+	gprintf "Usage: %s {start|stop|status|restart}\n" "autenticadora"
+	exit 1
+esac
+
+exit 0

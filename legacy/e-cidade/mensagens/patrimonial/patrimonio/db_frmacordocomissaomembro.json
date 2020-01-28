@@ -1,0 +1,8 @@
+{
+  "selecione_cgm"       : "Você deve selecionar um CGM.",
+  "consultando_membros" : "Consultando membros da Comissão...",
+  "incluindo_membro"    : "Incluindo novo membro na Comissão...",
+  "excluindo_membro"    : "Excluindo membro da Comissão...",
+  "carregando_membro"   : "Carregando membro da Comissão...",
+  "alterando_membro"    : "Alterando membro da Comissão..."
+}

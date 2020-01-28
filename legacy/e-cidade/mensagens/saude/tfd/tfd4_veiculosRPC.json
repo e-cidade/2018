@@ -1,0 +1,4 @@
+{
+   "erro_buscar_veiculos_com_agenda" : "Erro ao buscar veículos com agenda.\n[sErro]"
+  ,"erro_buscar_veiculos_sem_agenda" : "Erro ao buscar veículos livres.\n[sErro]"
+}

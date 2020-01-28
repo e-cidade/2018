@@ -1,0 +1,5 @@
+{
+  "certidao_invalida"       : "Numero de Certidão inválida.",
+  "certidao_nao_encontrada" : "Não foi encontrado nenhuma certidão pelos dados fornecidos.",
+  "informe_campo"           : "Informe um campo para pesquisa."
+}

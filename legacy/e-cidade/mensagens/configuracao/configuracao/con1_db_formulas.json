@@ -1,0 +1,4 @@
+{
+  "erro_buscar_formula"           : "Não foi possível recuperar a fórmula do banco.",
+  "variavel_existente"            : "Variável [sNome] já cadastrada, informe um nome diferente."
+}

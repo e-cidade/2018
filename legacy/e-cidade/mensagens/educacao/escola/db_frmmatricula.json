@@ -1,0 +1,18 @@
+{
+  "parametros_nao_informados"             : "Erro! Parâmetros não informados.",
+  "alunos_maior_vagas_disponiveis"        : "Número de alunos selecionados é maior que as vagas disponíveis.",
+  "informe_turma"                         : "Informe a Turma!",
+  "informe_turma_exclusao"                : "Informe a Turma!",
+  "informe_data_para_matricula"           : "Informe a data para matrícular o aluno!",
+  "data_matricula_fora_periodo"           : "Data da matrícula fora do período do calendário ( [iDataInicial] a [iDataFinal] ).",
+  "numero_alunos_maior_vagas"             : "Número de alunos selecionados é maior que as vagas disponíveis!",
+  "selecione_nova_turma_alterar"          : "Selecione uma nova turma para alterar.",
+  "informe_data_modificacao"              : "Informe a Data de Modificação!",
+  "data_modificacao_fora_periodo"         : "Data de modificação fora do período do calendário ( [iDataInicial] a [iDataFinal] ).",
+  "data_modificacao_menor_data_matricula" : "Data de Modificação menor que a Data da Matrícula!",
+  "data_modificacao_menor_data_saida"     : "Data de Modificação menor que a Data da Saída!",
+  "nao_ha_vagas_disponiveis"              : "Não há vagas disponíveis nesta turma!",
+  "confirmar_exclusao"                    : "A classificação da turma terá sua sequência reiniciada caso a numeração já tenha sido gerada, de forma a acomodar as demais matrículas no espaço vago deixado por esta exclusão. Confirmar exclusão?",
+  "selecione_aluno"                       : "Selecione um aluno.",
+  "selecione_turno"                       : "Selecione ao menos um Turno."
+}

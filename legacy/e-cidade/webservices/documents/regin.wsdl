@@ -1,0 +1,48 @@
+<wsdl:definitions name="IntegracaoInstituicaoService"
+                  targetNamespace="http://{URL}/webservices/integracaoJuntaComercial.php"
+                  xmlns:ns1="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://{URL}/webservices/integracaoJuntaComercial.php"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:http="http://schemas.xmlsoap.org/soap/http"
+                  xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:message name="recebeDados">
+    <wsdl:part name="servico" type="xsd:string"/>
+    <wsdl:part name="funcao" type="xsd:string"/>
+    <wsdl:part name="protocolo" type="xsd:string"/>
+    <wsdl:part name="xml" type="xsd:string"/>
+    <wsdl:part name="data" type="xsd:string"/>
+    <wsdl:part name="cnpjInstituicaoEnvia" type="xsd:string"/>
+    <wsdl:part name="cnpjInstituicaoRecebe" type="xsd:string"/>
+    <wsdl:part name="cpfCnpjProcesso" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="recebeDadosResponse">
+    <wsdl:part name="return" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="IntegracaoTrocaDados">
+    <wsdl:operation name="recebeDados">
+      <wsdl:input message="tns:recebeDados" name="recebeDados"/>
+      <wsdl:output message="tns:recebeDadosResponse" name="recebeDadosResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntegracaoInstituicaoServiceSoapBinding" type="tns:IntegracaoTrocaDados">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="recebeDados">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="recebeDados">
+        <soap:body namespace="http://{URL}/webservices/integracaoJuntaComercial.php" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recebeDadosResponse">
+        <soap:body namespace="http://{URL}/webservices/integracaoJuntaComercial.php" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntegracaoInstituicaoService">
+    <wsdl:port binding="tns:IntegracaoInstituicaoServiceSoapBinding" name="IntegracaoTrocaDadosPort">
+      <soap:address location="http://{URL}/webservices/integracaoJuntaComercial.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

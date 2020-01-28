@@ -1,0 +1,55 @@
+
+1- Alterar o nome do form db_frmatend.php para db_frmatendsup.php            
+
+2- Alterar o nome do arquivo ate4_atend002.php para ate4_atendsup001.php     
+
+
+3- Alterar o arquivo ate4_atend001.php para ate4_atendcli001.php
+	- Tirar o form e passar para um arquivo separado forms/db_frmatendcli.php 
+
+4- Criar o arquivo: ate4_atendcli002.php para alteração.                      
+
+
+5- Tem que alterar os itens de menus:
+Atendimento cliente ->inclusão ...  para ate4_atendcli001.php		      
+Atendimento Suporte ->inclusão ...  para ate4_atendcli002.php?opcao=incluir    
+Atendimento Suporte ->alteração ... para ate4_atendcli002.php?opcao=alterar   
+
+6- Criar item de menu alteração para atendimento a cliente.  
+
+7- Criar a opção de alteração de atendimento a cliente.
+
+9- Quando abrir o menu alterar de atendimento cliente:
+ * Mostrar a func, com a tabela mostrando os dados do atendimento.
+ * Após escolher o atendimento, voltar para pag. de atendimento mostrando as informações do atendimento selecionado.
+
+10- Se alterar o cliente decve apagar o usuario 
+
+11- Quando clicar no botão alterar:
+
+alterar as informações nas tabelas:
+ * atendimento
+ * atendimentousu
+ * atendimentosituacao
+
+Excluir e depois incluir nas tabelas:
+ * tecnico
+ * tendimentomod
+
+12- criado nova func_atendcli.php
+* Foi criado uma nova func, func_atendcli.php para mostrar na tabela somente os atendimento que ainda não foram incluidos um andamento de atendimento a suporte.
+* Quando alterar um cliente do atendimento, não deve permitir efetuar uma alteração se o usuário não for informado.
+
+13- 
+
+
+
+
+
+
+
+
+
+
+
+

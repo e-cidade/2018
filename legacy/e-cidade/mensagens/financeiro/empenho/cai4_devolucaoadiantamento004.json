@@ -1,0 +1,4 @@
+{
+  "validacao_tipo_evento_empenho": "Esta ordem de pagamento pertence ao empenho [codigo_empenho], classificado no tipo de evento [tipo_evento].\n\nPara realizar esta operação acesse o menu CAIXA > PROCEDIMENTOS > DEVOLUÇÃO DE ADIANTAMENTOS"
+  ,"receita_grupo_onze": "Você está incluindo uma receita classificada na finalidade de registro de devolução de adiantamento. Se a operação desejada não consiste neste tipo de evento, verifique a configuração do Grupo de Contas do Plano Orçamentário nº 11 ou solicite suporte técnico para esclarecimento de dúvidas. Se a operação realmente for uma devolução de adiantamento,acesse o menu CAIXA > PROCEDIMENTOS > DEVOLUÇÃO DE ADIANTAMENTOS"
+}

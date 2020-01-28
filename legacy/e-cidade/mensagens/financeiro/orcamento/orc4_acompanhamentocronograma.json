@@ -1,0 +1,9 @@
+{
+  "opcao_indefinida"                 : "Opção [exec] indefinida.",
+  "abertura_incluida"                : "Abertura efetuada com sucesso.",
+  "perspectiva_obrigatorio"          : "O campo Perspectiva de Origem é de preenchimento obrigatório.",
+  "descricao_obrigatorio"            : "O campo Descrição é de preenchimento obrigatório.",
+  "mes_obrigatorio"                  : "O campo Mês é de preenchimento obrigatório.",
+  "aguarde_incluindo_acompanhamento" : "Incluindo Abertura do Acompanhamento, aguarde.",
+  "fonte_sem_vinculo_receita"        : "Fonte de receita [codigo_fonte] - [descricao_fonte] sem vínculo com a receita."
+}

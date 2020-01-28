@@ -1,0 +1,57 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+     <parametro nome="codigo_nota_planilha"   obrigatorio="false" tipo="integer"  />
+     <parametro nome="codigo_planilha"        obrigatorio="true"  tipo="integer"  />
+     <parametro nome="cnpj_prestador"         obrigatorio="false" tipo="string"   />
+     <parametro nome="inscricao_prestador"    obrigatorio="false" tipo="integer"  />
+     <parametro nome="nome"                   obrigatorio="false" tipo="string"   />
+     <parametro nome="numero_nf"              obrigatorio="true"  tipo="integer"  />
+     <parametro nome="data_nf"                obrigatorio="true"  tipo="date"     />
+     <parametro nome="servico_prestado"       obrigatorio="true"  tipo="string"   />
+     <parametro nome="valor_servico_prestado" obrigatorio="true"  tipo="float"    />
+     <parametro nome="valor_deducao"          obrigatorio="false" tipo="float"    />
+     <parametro nome="valor_base_calculo"     obrigatorio="true"  tipo="float"    />
+     <parametro nome="aliquota"               obrigatorio="true"  tipo="float"    />
+     <parametro nome="valor_imposto_retido"   obrigatorio="true"  tipo="float"    />
+     <parametro nome="ano_competencia"        obrigatorio="true"  tipo="integer"  />
+     <parametro nome="mes_competencia"        obrigatorio="true"  tipo="integer"  />
+     <parametro nome="data_pagamento"         obrigatorio="true"  tipo="date"     />
+     <parametro nome="retido"                 obrigatorio="false" tipo="string"   />
+     <parametro nome="situacao"               obrigatorio="false" tipo="integer"  />
+     <parametro nome="status"                 obrigatorio="false" tipo="integer"  />
+     <parametro nome="operacao"               obrigatorio="true"  tipo="integer"  />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="NotaPlanilhaRetencaoWebService"  parametros="" caminho="model/issqn/NotaPlanilhaRetencaoWebService.model.php">
+      <metodos>
+        <metodo nome="getNotaPlanilha"         parametros="$codigo_nota_planilha"             />
+        <metodo nome="setCodPlanilha"          parametros="$codigo_planilha"                  />
+        <metodo nome="setCnpjPrestador"        parametros="$cnpj_prestador"                   />
+        <metodo nome="setInscricaoPrestador"   parametros="$inscricao_prestador"              />
+        <metodo nome="setNomePlanilha"         parametros="$nome"                             />
+        <metodo nome="setNumeroNf"             parametros="$numero_nf"                        />
+        <metodo nome="setDataNF"               parametros="$data_nf"                          />
+        <metodo nome="setServicoPrestado"      parametros="$servico_prestado"                 />
+        <metodo nome="setValorServicoPrestado" parametros="$valor_servico_prestado"           />
+        <metodo nome="setValorDeducaoNota"     parametros="$valor_deducao"                    />
+        <metodo nome="setValorBaseCalculoNota" parametros="$valor_base_calculo"               />
+        <metodo nome="setAliquotaNota"         parametros="$aliquota"                         />
+        <metodo nome="setValorImpostoRetido"   parametros="$valor_imposto_retido"             />
+        <metodo nome="setCompetencia"          parametros="$ano_competencia,$mes_competencia" />
+        <metodo nome="setDataPagamento"        parametros="$data_pagamento"                   />
+        <metodo nome="setRetido"               parametros="$retido"                           />
+        <metodo nome="setStatus"               parametros="$status"                           />
+        <metodo nome="setSituacao"             parametros="$situacao"                         />
+        <metodo nome="setTipoLancamento"       parametros="$operacao"                         />
+        <metodo nome="validarDados" />
+        <metodo nome="lancaValorPlanilha" />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

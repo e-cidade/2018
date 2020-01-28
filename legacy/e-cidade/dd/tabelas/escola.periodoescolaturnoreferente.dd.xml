@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010210' name='escola.periodoescolaturnoreferente' description="Vínculo entre os períodos da escola e seu turno referente." prefix="ed143" label="Turno Referente do Período" type="0">
+  <fields>
+    <field codigo="1009354" 
+           campo_api='' 
+           name="ed143_sequencial" 
+           conteudo="int4" 
+           description="Sequencial da tabela." 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='escola.periodoescolaturnoreferente_ed143_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="1009355" 
+           campo_api='' 
+           name="ed143_periodoescola" 
+           conteudo="int4" 
+           description="Vínculo com o período da escola." 
+           inivalue="0" 
+           label="Período da Escola" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Período da Escola" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009356" 
+           campo_api='' 
+           name="ed143_turnoreferente" 
+           conteudo="int4" 
+           description="Vínculo da referência do turno." 
+           inivalue="0" 
+           label="Referência do Turno" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Referência do Turno" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="ed143_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="turnoreferente">
+      <fieldfk name="ed143_turnoreferente" reference="ed231_i_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="periodoescola">
+      <fieldfk name="ed143_periodoescola" reference="ed17_i_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

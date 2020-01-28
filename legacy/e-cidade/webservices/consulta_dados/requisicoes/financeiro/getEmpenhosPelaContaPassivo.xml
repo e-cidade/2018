@@ -1,0 +1,151 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="e60_numemp"         label="e60_numemp"        />
+    <campo campo="em_liquidacao"      label="em_liquidacao"     />
+    <campo campo="est_em_liquidacao"  label="est_em_liquidacao" />
+    <campo campo="liquidacao"         label="liquidacao"        />
+    <campo campo="anu_liquidacao"     label="anu_liquidacao"    />
+    <campo campo="pagamento"          label="pagamento"         />
+    <campo campo="est_pagamento"      label="est_pagamento"     />
+  </campos>
+  <from tabela="(select e60_numemp,
+    
+    ( select array_accum(distinct cre.c60_estrut) 
+	from conlancam 
+       	inner join conlancamemp     on c70_codlan = c75_codlan 
+       	inner join conlancamdoc     on c70_codlan = c71_codlan 
+      	inner join conlancamval     on c70_codlan = c69_codlan 
+       	inner join conhistdoc       on c71_coddoc = c53_coddoc 
+       	inner join conplanoreduz db on db.c61_anousu = $ano 
+                                  and db.c61_reduz = c69_debito 
+       	inner join conplanoreduz cr on cr.c61_anousu = $ano 
+                                  and cr.c61_reduz = c69_credito 
+       	inner join conplano deb     on db.c61_anousu = deb.c60_anousu 
+                                  and db.c61_codcon = deb.c60_codcon 
+       	inner join conplano cre     on cr.c61_anousu = cre.c60_anousu 
+                                  and cr.c61_codcon = cre.c60_codcon 
+
+ 	where c53_tipo in (200)
+   	and (substr(deb.c60_estrut,1,2) = '21' or substr(cre.c60_estrut,1,2) = '21')
+   	and c75_numemp = e60_numemp
+        and c70_data between '$datainicial' and '$datafinal'
+ ) as em_liquidacao,
+
+( select array_accum(distinct deb.c60_estrut) 
+	from conlancam 
+       	inner join conlancamemp     on c70_codlan = c75_codlan 
+       	inner join conlancamdoc     on c70_codlan = c71_codlan 
+      	inner join conlancamval     on c70_codlan = c69_codlan 
+       	inner join conhistdoc       on c71_coddoc = c53_coddoc 
+       	inner join conplanoreduz db on db.c61_anousu = $ano 
+                                  and db.c61_reduz = c69_debito 
+       	inner join conplanoreduz cr on cr.c61_anousu = $ano 
+                                  and cr.c61_reduz = c69_credito 
+       	inner join conplano deb     on db.c61_anousu = deb.c60_anousu 
+                                  and db.c61_codcon = deb.c60_codcon 
+       	inner join conplano cre     on cr.c61_anousu = cre.c60_anousu 
+                                  and cr.c61_codcon = cre.c60_codcon 
+
+ 	where c53_tipo in (201)
+   	and (substr(deb.c60_estrut,1,2) = '21' or substr(cre.c60_estrut,1,2) = '21')
+   	and c75_numemp = e60_numemp
+        and c70_data between '$datainicial' and '$datafinal'
+ ) as est_em_liquidacao,
+   
+    ( select array_accum(distinct cre.c60_estrut) 
+	from conlancam 
+       	inner join conlancamemp     on c70_codlan = c75_codlan 
+       	inner join conlancamdoc     on c70_codlan = c71_codlan 
+      	inner join conlancamval     on c70_codlan = c69_codlan 
+       	inner join conhistdoc       on c71_coddoc = c53_coddoc 
+       	inner join conplanoreduz db on db.c61_anousu = $ano 
+                                  and db.c61_reduz = c69_debito 
+       	inner join conplanoreduz cr on cr.c61_anousu = $ano 
+                                  and cr.c61_reduz = c69_credito 
+       	inner join conplano deb     on db.c61_anousu = deb.c60_anousu 
+                                  and db.c61_codcon = deb.c60_codcon 
+       	inner join conplano cre     on cr.c61_anousu = cre.c60_anousu 
+                                  and cr.c61_codcon = cre.c60_codcon 
+ 	where c53_tipo in (20)
+   	and (substr(deb.c60_estrut,1,2) = '21' or substr(cre.c60_estrut,1,2) = '21')
+   	and c75_numemp = e60_numemp
+        and c70_data between '$datainicial' and '$datafinal'
+ ) as liquidacao,
+       
+    ( select array_accum(distinct deb.c60_estrut) 
+	from conlancam 
+       	inner join conlancamemp     on c70_codlan = c75_codlan 
+       	inner join conlancamdoc     on c70_codlan = c71_codlan 
+      	inner join conlancamval     on c70_codlan = c69_codlan 
+       	inner join conhistdoc       on c71_coddoc = c53_coddoc 
+       	inner join conplanoreduz db on db.c61_anousu = $ano 
+                                  and db.c61_reduz = c69_debito 
+       	inner join conplanoreduz cr on cr.c61_anousu = $ano 
+                                  and cr.c61_reduz = c69_credito 
+       	inner join conplano deb     on db.c61_anousu = deb.c60_anousu 
+                                  and db.c61_codcon = deb.c60_codcon 
+       	inner join conplano cre     on cr.c61_anousu = cre.c60_anousu 
+                                  and cr.c61_codcon = cre.c60_codcon 
+ 	where c53_tipo in (21)
+   	and (substr(deb.c60_estrut,1,2) = '21' or substr(cre.c60_estrut,1,2) = '21')
+   	and c75_numemp = e60_numemp
+        and c70_data between '$datainicial' and '$datafinal'
+ ) as anu_liquidacao,
+    
+    ( select array_accum(distinct deb.c60_estrut) 
+	from conlancam 
+       	inner join conlancamemp     on c70_codlan = c75_codlan 
+       	inner join conlancamdoc     on c70_codlan = c71_codlan 
+      	inner join conlancamval     on c70_codlan = c69_codlan 
+       	inner join conhistdoc       on c71_coddoc = c53_coddoc 
+       	inner join conplanoreduz db on db.c61_anousu = $ano 
+                                  and db.c61_reduz = c69_debito 
+       	inner join conplanoreduz cr on cr.c61_anousu = $ano 
+                                  and cr.c61_reduz = c69_credito 
+       	inner join conplano deb     on db.c61_anousu = deb.c60_anousu 
+                                  and db.c61_codcon = deb.c60_codcon 
+       	inner join conplano cre     on cr.c61_anousu = cre.c60_anousu 
+                                  and cr.c61_codcon = cre.c60_codcon 
+ 	where c53_tipo in (30)
+   	and (substr(deb.c60_estrut,1,2) = '21' or substr(cre.c60_estrut,1,2) = '21')
+   	and c75_numemp = e60_numemp
+        and c70_data between '$datainicial' and '$datafinal'
+ ) as pagamento,
+    
+    ( select array_accum(distinct cre.c60_estrut) 
+	from conlancam 
+       	inner join conlancamemp     on c70_codlan = c75_codlan 
+       	inner join conlancamdoc     on c70_codlan = c71_codlan 
+      	inner join conlancamval     on c70_codlan = c69_codlan 
+       	inner join conhistdoc       on c71_coddoc = c53_coddoc 
+       	inner join conplanoreduz db on db.c61_anousu = $ano 
+                                  and db.c61_reduz = c69_debito 
+       	inner join conplanoreduz cr on cr.c61_anousu = $ano 
+                                  and cr.c61_reduz = c69_credito 
+       	inner join conplano deb     on db.c61_anousu = deb.c60_anousu 
+                                  and db.c61_codcon = deb.c60_codcon 
+       	inner join conplano cre     on cr.c61_anousu = cre.c60_anousu 
+                                  and cr.c61_codcon = cre.c60_codcon 
+ 	where c53_tipo in (31)
+   	and (substr(deb.c60_estrut,1,2) = '21' or substr(cre.c60_estrut,1,2) = '21')
+   	and c75_numemp = e60_numemp
+        and c70_data between '$datainicial' and '$datafinal'
+ ) as est_pagamento
+
+  from empempenho 
+ where e60_anousu = $ano
+       and e60_instit = $instit
+order by e60_numemp
+ ) as x" />
+  <juncoes></juncoes>
+  <filtros>
+    <filtro label="instit" condicao="1=1"/>
+    <filtro label="ano" condicao="1=1" />
+    <filtro label="datainicial" condicao="1=1" />
+    <filtro label="datafinal" condicao="1=1" />
+    <filtro condicao="(liquidacao    &lt;&gt; '{}'and liquidacao &lt;&gt; anu_liquidacao       and anu_liquidacao    &lt;&gt; '{}') or (liquidacao    &lt;&gt; '{}'and liquidacao &lt;&gt; pagamento            and pagamento         &lt;&gt; '{}') or (liquidacao    &lt;&gt; '{}'and liquidacao &lt;&gt; est_pagamento        and est_pagamento     &lt;&gt; '{}') or (em_liquidacao &lt;&gt; '{}'and em_liquidacao &lt;&gt; pagamento         and pagamento         &lt;&gt; '{}') or (em_liquidacao &lt;&gt; '{}'and em_liquidacao &lt;&gt; est_em_liquidacao and est_em_liquidacao &lt;&gt; '{}')" obrigatorio="true" /> 
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao />
+</consulta>

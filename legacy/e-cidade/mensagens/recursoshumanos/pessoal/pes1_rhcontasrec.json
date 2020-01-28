@@ -1,0 +1,5 @@
+{
+  "campo_nao_informado" : "O campo [sCampo] é de preenchimento obrigatório.",
+  "campo_valor_inteiro" : "O campo [sCampo] deve ser preenchido somente com números.",
+  "recurso_duplicado"   : "Recurso já cadastrado no exercicio."
+}

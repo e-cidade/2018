@@ -1,0 +1,161 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2012  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+
+/** AgataSqlite
+ *  Agata Driver for Sqlite
+ */
+class AgataSqlite
+{
+
+    /** Function Connect
+     *  Connects to a Database
+     */
+    function Connect($host, $database, $user, $pass)
+    {
+        if ($database)
+        {
+            if (!file_exists($database))
+            {
+                return new AgataError(_a('File Not Found'));
+            }
+        }
+        else
+        {
+            return new AgataError(_a('File Error'));
+        }
+
+        $connect_function = $persistent ? 'sqlite_popen' : 'sqlite_open';
+        if (!($conn = sqlite_open($database)))
+        {
+            return $this->RaiseError();
+        }
+        $this->connection = $conn;
+
+        return true;
+    }
+
+    /** Function Disconnect
+     *  Disconnects a Database
+     */
+    function Disconnect()
+    {
+        $ret = sqlite_close($this->connection);
+        $this->connection = null;
+        return $ret;
+    }
+
+    /** Function Query
+     *  Run a Query
+     */
+    function Query($query)
+    {
+        $this->row = 0;
+        
+        $result = sqlite_query($query, $this->connection);
+        if (!$result) {
+            return $this->RaiseError();
+        }
+        return $result;
+    }
+    
+    /** Function FetchRow
+     *  Fetch a Row and returns as an array.
+     */
+    function FetchRow($result)
+    {
+        @sqlite_seek($result, $this->row);
+        $this->row ++;
+        $ar = sqlite_fetch_array($result, SQLITE_BOTH);
+        return $ar;
+    }
+
+    /** Function FreeResult
+     *  Free the Database result
+     */
+    function FreeResult(&$result)
+    {
+        if (!is_resource($result)) {
+            return false;
+        }
+        $result = null;
+        return true;
+    }
+
+    /** Function NumCols
+     *  Returns the number of columns of a query
+     */
+    function NumCols($result)
+    {
+        $cols = sqlite_num_fields($result);
+        if (!$cols) {
+            return $this->sqliteRaiseError();
+        }
+        return $cols;
+    }
+
+    /** Function NumRows
+     *  Returns the number of rows of a query
+     */
+    function NumRows($result)
+    {
+        $rows = sqlite_num_rows($result);
+        if (!is_integer($rows)) {
+            return $this->raiseError();
+        }
+        return $rows;
+    }
+
+    /** Function RaiseError
+     *  Returns an AgataError Object
+     */
+    function RaiseError()
+    {
+        return new AgataError(sqlite_last_error($this->connection));
+    }
+
+    /** Function Properties
+     *  Returns the Query Information
+     */
+    function Properties($result)
+    {
+        $id = $result;
+        if (empty($id))
+        {
+            return $this->RaiseError();
+        }
+
+        $count = sqlite_num_fields($id);
+
+        for ($i=0; $i<$count; $i++)
+        {
+            $res[$i]['name']  = sqlite_field_name ($id, $i);
+        }
+        return $res;
+    }
+}
+?>

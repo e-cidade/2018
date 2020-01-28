@@ -1,0 +1,10 @@
+{
+  "buscando_horarios"           : "Aguarde, buscando horários da escola...",
+  "salvando_horarios"           : "Aguarde, salvando os horários da escola...",
+  "informe_turno"               : "Informe um Turno para cadastrar o horário.",
+  "informe_horario_inicial"     : "Informe horário inicial.",
+  "informe_horario_final"       : "Informe horário final.",
+  "horario_final_maior_inicial" : "Horário Final deve ser maior do que o Horário Inicial informado.",
+  "confirma_exclusao"           : "Deseja excluir este horário?",
+  "excluindo_horario"           : "Aguarde, excluindo horário..."
+}

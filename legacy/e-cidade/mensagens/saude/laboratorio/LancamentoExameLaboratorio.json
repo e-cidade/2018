@@ -1,0 +1,8 @@
+{
+  "buscando_atributos"      : "Aguarde, buscando atributos do exame...",
+  "fora_valores_absurdos"   : "Valor informado fora dos valores considerados absurdos: [sValor].",
+  "valor_acima_porcentagem" : "Valor informado ultrapassa a soma do percentual permitido.",
+  "confirma_valores"        : "Confirma os valores informados para o exame?",
+  "salvando_exame"          : "Aguarde, salvando o resultado do exame...",
+  "dados_exame"             : "Dados referentes ao exame selecionado."
+}

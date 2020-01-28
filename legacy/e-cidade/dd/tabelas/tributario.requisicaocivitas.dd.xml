@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010236' name='tributario.requisicaocivitas' description="Tabela de requisições feitas ao Webservice do civitas." prefix="rq01" label="requisicaocivitas" type="0">
+  <fields>
+    <field codigo="1009514" 
+           campo_api='' 
+           name="rq01_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial das requisições." 
+           inivalue="0" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='tributario.requisicaocivitas_rq01_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009515" 
+           campo_api='' 
+           name="rq01_dataenvio" 
+           conteudo="date" 
+           description="Data de envio da requisição" 
+           inivalue="null" 
+           label="Envio" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Envio" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009516" 
+           campo_api='' 
+           name="rq01_situacao" 
+           conteudo="int4" 
+           description="Status da requisição" 
+           inivalue="0" 
+           label="Situação" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Situação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rq01_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="requisicaocivitassituacao" inner='t'>
+      <fieldfk name="rq01_situacao" reference="rq02_sequencial" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

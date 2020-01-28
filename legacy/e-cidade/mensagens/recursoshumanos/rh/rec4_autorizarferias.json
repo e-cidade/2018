@@ -1,0 +1,10 @@
+{
+  "informe_matricula": "Por Favor, informe a matricula.",
+  "erro_escala_ferias":"Não foi possível obter a escala de férias.",
+  "nenhuma_escala": "Selecione ao menus uma escala de férias para autorizar.",
+  "erro_tipo_assentamentos":  "Ocorreu um erro ao buscar os tipos de assentamento para férias.",
+  "tipo_assentamento_nao_configurado": "Tipo de assentamento para férias não configurados.",
+  "tipo_assentamento_abono_nao_configurado": "Tipo de assentamento para abono não configurados.",
+  "erro_vincula_assentamento_aturorizacao": "Ocorreu um erro ao vincular o assentamento à autorização de férias.",
+  "ferias_autorizada_sucesso": "Férias autorizada com sucesso."
+}

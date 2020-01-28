@@ -1,0 +1,125 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010235' name='juridico.inicialpartilhacustas' description="Custas da Partilha da Inicial" prefix="v36" label="Inicial Partilha Custas" type="0">
+  <fields>
+    <field codigo="1009505" 
+           campo_api='' 
+           name="v36_sequencial" 
+           conteudo="int4" 
+           description="Sequencial" 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="t" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t"
+           hassequence="t" >
+
+      <sequence name="juridico.inicialpartilhacustas_v36_sequencial_seq" />
+            
+    </field> 
+    <field codigo="1009506" 
+           campo_api='' 
+           name="v36_taxa" 
+           conteudo="int4" 
+           description="Taxa da Custa" 
+           inivalue="0" 
+           label="Taxa" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Taxa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009507" 
+           campo_api='' 
+           name="v36_inicialpartilha" 
+           conteudo="int4" 
+           description="Vinculo com a Inicial Partilha" 
+           inivalue="0" 
+           label="Inicial Partilha" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Inicial Partilha" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009508" 
+           campo_api='' 
+           name="v36_valor" 
+           conteudo="float8" 
+           description="Valor da Custas" 
+           inivalue="0" 
+           label="Valor da Custa" 
+           size="15" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor da Custa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009509" 
+           campo_api='' 
+           name="v36_numnov" 
+           conteudo="int8" 
+           description="Numnov" 
+           inivalue="0" 
+           label="Numnov" 
+           size="15" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Numnov" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009510" 
+           campo_api='' 
+           name="v36_dispensalancamentorecibo" 
+           conteudo="bool" 
+           description="Dispensa Lançamento da Custas no Recibo" 
+           inivalue="f"
+           label="Dispensa Lançamento Recibo" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Dispensa Lançamento Recibo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

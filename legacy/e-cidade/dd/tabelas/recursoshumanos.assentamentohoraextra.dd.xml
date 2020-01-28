@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010213' name='recursoshumanos.assentamentohoraextra' description="assentamentohoraextra" prefix="h17" label="assentamentohoraextra" type="0">
+  <fields>
+    <field codigo="1009379" 
+           campo_api='' 
+           name="h17_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='recursoshumanos.assentamentohoraextra_h17_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009375" 
+           campo_api='' 
+           name="h17_assenta" 
+           conteudo="int4" 
+           description="Código do Assentamento" 
+           inivalue="0" 
+           label="Código do Assentamento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código do Assentamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009376" 
+           campo_api='' 
+           name="h17_hora" 
+           conteudo="varchar(5)" 
+           description="Hora Extra" 
+           inivalue="0" 
+           label="Hora Extra" 
+           size="5" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Hora Extra" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009377" 
+           campo_api='' 
+           name="h17_tipo" 
+           conteudo="int4" 
+           description="Define o tipo de hora: HE50, HE75, HE100 ..." 
+           inivalue="0" 
+           label="Tipo de Hora" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Hora" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="h17_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="assenta" inner='t'>
+      <fieldfk name="h17_assenta" reference="h16_codigo" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

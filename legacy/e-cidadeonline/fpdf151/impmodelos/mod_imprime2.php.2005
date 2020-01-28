@@ -1,0 +1,142 @@
+<?php
+      //// RECIBO
+	
+	$this->objpdf->AliasNbPages();
+	$this->objpdf->AddPage();
+	$this->objpdf->settopmargin(1);
+        $this->objpdf->line(2,148.5,208,148.5);
+	$xlin = 20;
+	$xcol = 4;
+       	for ($i = 0;$i < 2;$i++){
+		$this->objpdf->setfillcolor(245);
+		$this->objpdf->roundedrect($xcol-2,$xlin-18,206,144.5,2,'DF','1234');
+		$this->objpdf->setfillcolor(255,255,255);
+//		$this->objpdf->roundedrect(10,07,190,183,2,'DF','1234');
+		$this->objpdf->Setfont('Arial','B',11);
+		$this->objpdf->text(150,$xlin-13,'RECIBO VÁLIDO ATÉ: ');
+		$this->objpdf->text(159,$xlin-8,$this->datacalc);
+		$this->objpdf->Image('imagens/files/'.$this->logo,15,$xlin-17,12);
+		$this->objpdf->Setfont('Arial','B',9);
+		$this->objpdf->text(40,$xlin-15,$this->prefeitura);
+		$this->objpdf->Setfont('Arial','',9);
+		$this->objpdf->text(40,$xlin-11,$this->enderpref);
+		$this->objpdf->text(40,$xlin-8,$this->municpref);
+		$this->objpdf->text(40,$xlin-5,$this->telefpref);
+		$this->objpdf->text(40,$xlin-2,$this->emailpref);
+//		$this->objpdf->setfillcolor(245);
+	
+		$this->objpdf->Roundedrect($xcol,$xlin+2,$xcol+119,20,2,'DF','1234');
+		$this->objpdf->Setfont('Arial','',6);
+		$this->objpdf->text($xcol+2,$xlin+4,'Identificação:');
+		$this->objpdf->Setfont('Arial','',8);
+		$this->objpdf->text($xcol+2,$xlin+7,'Nome :');
+		$this->objpdf->text($xcol+17,$xlin+7,$this->nome);
+		$this->objpdf->text($xcol+2,$xlin+11,'Endereço :');
+		$this->objpdf->text($xcol+17,$xlin+11,$this->ender);
+		$this->objpdf->text($xcol+2,$xlin+15,'Município :');
+		$this->objpdf->text($xcol+17,$xlin+15,$this->munic);
+		$this->objpdf->text($xcol+75,$xlin+15,'CEP :');
+		$this->objpdf->text($xcol+82,$xlin+15,$this->cep);
+		$this->objpdf->text($xcol+2,$xlin+19,'Data :');
+
+		
+        $this->objpdf->text($xcol+17,$xlin+19, date("d-m-Y",db_getsession("DB_datausu")));
+
+
+
+		$this->objpdf->text($xcol+40,$xlin+19,'Hora: '.date("H:i:s"));
+
+
+
+
+		$this->objpdf->text($xcol+75,$xlin+19,'CNPJ/CPF:');
+		$this->objpdf->text($xcol+90,$xlin+19,db_formatar($this->cgccpf,(strlen($this->cgccpf)<12?'cpf':'cnpj')));
+		
+		//$this->objpdf->text($xcol+75,$xlin+19,'IP :');
+		//$this->objpdf->text($xcol+82,$xlin+19,$this->ip);
+		$this->objpdf->Setfont('Arial','',6);
+	
+		$this->objpdf->Roundedrect($xcol+126,$xlin+2,76,20,2,'DF','1234');
+		
+		$this->objpdf->text($xcol+128,$xlin+4,$this->identifica_dados);
+		
+		$this->objpdf->text($xcol+128,$xlin+7,$this->tipoinscr);
+		$this->objpdf->text($xcol+145,$xlin+7,$this->nrinscr);
+		
+		//$this->objpdf->text($xcol+128,$xlin+7,$this->tipoinscr1);
+		//$this->objpdf->text($xcol+145,$xlin+7,$this->nrinscr1);
+		$this->objpdf->text($xcol+128,$xlin+11,$this->tipolograd);
+		$this->objpdf->text($xcol+145,$xlin+11,$this->nomepri);
+		$this->objpdf->text($xcol+128,$xlin+15,$this->tipocompl);
+		$this->objpdf->text($xcol+145,$xlin+15,$this->nrpri."      ".$this->complpri);
+		$this->objpdf->text($xcol+128,$xlin+19,$this->tipobairro);
+		$this->objpdf->text($xcol+145,$xlin+19,$this->bairropri);
+
+//		$this->objpdf->setfillcolor(245);
+		$this->objpdf->Roundedrect($xcol,$xlin+24,202,45,2,'DF','1234');
+	   	$this->objpdf->sety($xlin+24);
+                $maiscol = 0;
+                $yy = $this->objpdf->gety();
+		for($ii = 0;$ii < $this->linhasdadospagto ;$ii++) {
+                   if ($ii == 14 ){
+                      $maiscol = 100;
+                      $this->objpdf->sety($yy);
+                   }
+		   if($ii==0 || $ii == 14){
+		     
+	   	     $this->objpdf->setx($xcol+3+$maiscol);
+	   	     $this->objpdf->cell(5,3,"Rec",0,0,"L",0);
+	   	     $this->objpdf->cell(7,3,"Reduz",0,0,"L",0);
+     		     $this->objpdf->cell(63,3,"Descrição",0,0,"L",0);
+ 		     $this->objpdf->cell(15,3,"Valor",0,1,"R",0);
+
+		   }
+	   	   $this->objpdf->setx($xcol+3+$maiscol);
+	   	   $this->objpdf->cell(5,3,trim(pg_result($this->recorddadospagto,$ii,$this->receita)),0,0,"R",0);
+	   	   $this->objpdf->cell(7,3,"(".trim(pg_result($this->recorddadospagto,$ii,$this->receitared)).")",0,0,"R",0);
+           	   if ( trim(pg_result($this->recorddadospagto,$ii,$this->ddreceita) ) == ''){
+     		      $this->objpdf->cell(63,3,trim(pg_result($this->recorddadospagto,$ii,$this->dreceita)),0,0,"L",0);
+           	   }else{ 
+	  	      $this->objpdf->cell(63,3,trim(pg_result($this->recorddadospagto,$ii,$this->ddreceita)),0,0,"L",0);
+        	   }
+ 		   $this->objpdf->cell(15,3,db_formatar(pg_result($this->recorddadospagto,$ii,$this->valor),'f'),0,1,"R",0);
+		}
+		$this->objpdf->Roundedrect($xcol,$xlin+71,202,30,2,'DF','1234');
+		$this->objpdf->SetY($xlin+72);
+		$this->objpdf->SetX($xcol+3);
+		$this->objpdf->multicell(0,4,'HISTÓRICO :   '.$this->historico);
+		$this->objpdf->SetX($xcol+3);
+		$this->objpdf->multicell(0,4,$this->histparcel);
+		$this->objpdf->Setfont('Arial','',6);
+		$this->objpdf->setx(15);
+
+		$this->objpdf->Roundedrect(125,$xlin+103,21,10,2,'DF','1234');
+		$this->objpdf->Roundedrect(173,$xlin+103,32,10,2,'DF','1234');
+		$this->objpdf->Roundedrect(147,$xlin+103,25,10,2,'DF','1234');
+		$this->objpdf->text(129,$xlin+105,'Vencimento');
+		$this->objpdf->text(179,$xlin+105,'Código de Arrecadação');
+		$this->objpdf->text(150,$xlin+105,'Valor a Pagar em R$');
+		$this->objpdf->setfont('Arial','',10);
+		$this->objpdf->text(127,$xlin+110,$this->dtvenc);
+		$this->objpdf->text(175,$xlin+110,$this->numpre);
+		$this->objpdf->text(150,$xlin+110,$this->valtotal);
+
+		$this->objpdf->SetFont('Arial','B',5);
+		$this->objpdf->text(140,$xlin+116,"A   U   T   E   N   T   I   C   A   Ç   Ã   O      M   E   C   Â   N   I   C   A");
+
+		$this->objpdf->setfillcolor(0,0,0);
+		$this->objpdf->SetFont('Arial','',4);
+//	        $this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto,'U'); // texto no canhoto do carne
+		$this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto . ' - ' . ($i == 1?'2ª VIA - CONTRIBUINTE':'1ª VIA - PREFEITURA'),'U'); // texto no canhoto do carne
+		$this->objpdf->setfont('Arial','',11);
+		$this->objpdf->text(10,$xlin+108,$this->linhadigitavel);
+		$this->objpdf->int25(10,$xlin+110,$this->codigobarras,15,0.341);
+	        $xlin = 169;
+
+       }
+
+
+
+
+
+?>

@@ -1,0 +1,7 @@
+{
+   "codigo_exame_nao_informado"     : "Código Exame não foi informado"
+  ,"nao_foi_informado_medicamentos" : "Não foi informado o(s) medicamento(s)"
+  ,"resultados_salvos"              : "Resultado(s) salvo(s) com sucesso."
+  ,"medicamentos_salvos"            : "Medicamento(s) salvo(s) com sucesso"
+  ,"medicamento_removido"           : "Medicamento removido com sucesso."
+}

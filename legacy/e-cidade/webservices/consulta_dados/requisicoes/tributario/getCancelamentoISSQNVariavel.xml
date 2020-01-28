@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="arreinscr.k00_inscr" label="inscricao_municipal" />
+    <campo campo="issvar.q05_numpre"   label="numpre"              />
+    <campo campo="issvar.q05_numpar"   label="numpar"              />
+    <campo campo="issvar.q05_mes"      label="mes"                 />
+    <campo campo="issvar.q05_ano"      label="ano"                 />
+    <campo campo="issvar.q05_histor"   label="historico"           />
+    <campo campo="issvar.q05_aliq"     label="aliquota"            />
+    <campo campo="issvar.q05_bruto"    label="valor_bruto"         />
+    <campo campo="issvar.q05_vlrinf"   label="valor_contribuinte"  />
+  </campos>
+  <from tabela="arreinscr" />
+  <juncoes>
+    <join tipo="inner" tabela="issvar"   condicao="issvar.q05_numpre  = arreinscr.k00_numpre" />
+    <join tipo="inner" tabela="arrecant" condicao="arrecant.k00_numpre = q05_numpre AND
+                                                   arrecant.k00_numpar = issvar.q05_numpar"   />
+    <join tipo="inner" tabela="cancdebitosreg" condicao="arrecant.k00_numpre = cancdebitosreg.k21_numpre
+                                                         and cancdebitosreg.k21_numpar = arrecant.k00_numpar" />
+    <join tipo="inner" tabela="cancdebitosprocreg" condicao="cancdebitosprocreg.k24_cancdebitosreg = cancdebitosreg.k21_sequencia" />
+    <join tipo="inner" tabela="cancdebitosproc" condicao="cancdebitosproc.k23_codigo = cancdebitosprocreg.k24_codigo" />
+  </juncoes>
+  <filtros>
+    <filtro label=""                    condicao="arrecant.k00_valor  = 0"                        obrigatorio="true"  />
+    <filtro label="inscricao_municipal" condicao="arreinscr.k00_inscr in('$inscricao_municipal')" obrigatorio="false" />
+    <filtro label=""                    condicao="issvar.q05_valor    = 0"                        obrigatorio="true"  />
+    <filtro label="mes"                 condicao="issvar.q05_mes      = $mes"                     obrigatorio="false" />
+    <filtro label="ano"                 condicao="issvar.q05_ano      = $ano"                     obrigatorio="false" />
+  </filtros>
+  <agrupamento />
+  <ordenacao campos="issvar.q05_ano desc, issvar.q05_mes desc" />
+</consulta>

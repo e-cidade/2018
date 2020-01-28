@@ -1,0 +1,6 @@
+{
+   "exclusao_vinculo_inscricao" : "Não foi possível desvincular a receita da planilha com a inscrição."
+  ,"exclusao_vinculo_matricula" : "Não foi possível desvincular a receita da planilha com a matrícula."
+  ,"exclusao_receita_planilha"  : "Impossível exluir a receita vinculada à planilha."
+  ,"exclusao_vinculo_folha"  : "Ocorreu um erro ao remover o vínculo entre a receita da planilha com a folha de pagamento."
+}

@@ -1,0 +1,6 @@
+{
+	"codigo_nao_informado"        : "Código o assentamento não informado.",
+  "valor_parcela_nao_informado" : "Valor da parcela não informado.",
+  "folha_nao_informada"         : "Informe o tipo de folha de pagamento corretamente.",
+  "folha_informada_fechada"     : "Folha informada está fechada."
+}

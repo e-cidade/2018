@@ -1,0 +1,14 @@
+{
+   "erro_buscar_dados"      : "Erro ao buscar dados da transferência"
+  ,"erro_buscar_alunos"     : "Erro ao buscar as alunos."
+  ,"nenhum_aluno_informado" : "Não foi informado alunos para efetuar transferência"
+  ,"erro_salvar"            : "Erro ao salvar transferência."
+  ,"erro_salvar_aluno"      : "Erro ao salvar a transferência do(s) aluno(s)."
+  ,"alunos_transferidos"    : "Transferência cancelada.\nO(s) seguinte(s) aluno(s) já foi/foram transferido: [sAluno]."
+  ,"erro_excluir_lote"      : "Erro ao excluir lote de transferência."
+  ,"erro_anular_transferencia"      : "Erro ao anular a transferência do aluno: [sAluno]"
+  ,"erro_ao_validar_matriculas"     : "Erro ao validar se o aluno já foi transferido."
+  ,"aluno_ja_possui_nova_matricula" : "O aluno, [sAluno] não pode ser transferido pois possui matrícula posterior na:\nEscola: [sEscola]\nTurma: [sTurma]"
+  ,"nenhuma_transferencia_encotrada_para_codigo" : "Nenhuma transferência encontrada para o código informado."
+  ,"aluno_nao_encontrado_nesta_transeferencia"   : "O aluno, [sAluno] não foi encontrado nesta transferência."
+}

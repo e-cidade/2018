@@ -1,0 +1,4 @@
+{
+  "erro_buscar_aluno"      : "Erro ao buscar os alunos:\n[sErro]",
+  "alunos_nao_encontrados" : "Não foram encontrados alunos para geração do arquivo."
+}

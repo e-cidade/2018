@@ -1,0 +1,60 @@
+<?php
+namespace ECidade\RecursosHumanos\ESocial\Model\Formulario;
+
+/**
+ * Essa classe é VO para armazenar os dados do preenchimento da resposta de uma pergunta de um formulário
+ *
+ * @package  ECidade\RecursosHumanos\ESocial\Model\Formulario
+ */
+class DadosResposta
+{
+    /**
+     * Nome do objeto que irá agrupar os dados
+     *
+     * @var string
+     */
+    public $grupo;
+
+    /**
+     * Nome do objeto que irá receber os dados da resposta.
+     *
+     * @var string
+     */
+    public $pergunta;
+
+    /**
+     * id da pergunta no formulário
+     *
+     * @var integer
+     */
+    public $idPergunta;
+
+    /**
+     * Valor da opção de uma resposta
+     * Usado quando a pergunta é objetiva ou múltipla escolha
+     *
+     * @var string
+     */
+    public $valorResposta;
+
+    /**
+     * Valor da reposta para perguntas dissertativas
+     *
+     * @var string
+     */
+    public $resposta;
+
+    /**
+     * Tipo da pergunta
+     *
+     * @var integer
+     */
+    public $tipoPergunta;
+
+    /**
+     * Se é obrigatório o preenchimento da pergunta
+     *
+     * @var se é obrigatório a resposta
+     */
+    public $obrigatoria;
+}

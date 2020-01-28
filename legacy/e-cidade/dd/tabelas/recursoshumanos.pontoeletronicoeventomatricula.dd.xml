@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010212' name='recursoshumanos.pontoeletronicoeventomatricula' description="Vinculo entre o evento e a matrícula" prefix="rh208" label="pontoeletronicoeventomatricula" type="0">
+  <fields>
+    <field codigo="1009372" 
+           campo_api='' 
+           name="rh208_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial" 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.pontoeletronicoeventomatricula_rh208_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="1009373" 
+           campo_api='' 
+           name="rh208_pontoeletronicoevento" 
+           conteudo="int4" 
+           description="Código do Evento" 
+           inivalue="0" 
+           label="Código do Evento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código do Evento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009374" 
+           campo_api='' 
+           name="rh208_rhpessoal" 
+           conteudo="int4" 
+           description="Código da Matrícula" 
+           inivalue="0" 
+           label="Código da Matrícula" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código da Matrícula" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh208_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="rhpessoal"  inner='t'>
+      <fieldfk name="rh208_rhpessoal" reference="rh01_regist"></fieldfk>
+    </foreignkey>
+    <foreignkey reference="pontoeletronicoevento" inner='t'>
+      <fieldfk name="rh208_pontoeletronicoevento" reference="rh207_sequencial" ></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

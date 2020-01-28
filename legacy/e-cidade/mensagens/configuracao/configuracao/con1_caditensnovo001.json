@@ -1,0 +1,13 @@
+{
+  "buscando_informacoes_modulo" : "Aguarde, buscando informações do módulo.",
+  "salvando_informacoes"        : "Aguarde, salvando as informações.",
+  "confirma_exclusao"           : "Confirma a exclusão do menu selecionado ?",
+  "excluindo_item"              : "Aguarde, excluindo o item de menu.",
+  "buscando_dados_item"         : "Aguarde, buscando os dados do item de menu.",
+  "informar_descricao"          : "É necessário preencher a descrição do menu.",
+  "informar_ajuda"              : "É necessário preencher o campo Ajuda.",
+  "informar_funcao"             : "É necessário preencher o campo Função.",
+  "informar_descricao_tecnica"  : "É necessário preencher o campo Descrição Técnica.",
+  "informar_nome_modulo"        : "É necessário preencher o nome do módulo.",
+  "informar_descricao_modulo"   : "É necessário preencher a descrição do módulo."
+}

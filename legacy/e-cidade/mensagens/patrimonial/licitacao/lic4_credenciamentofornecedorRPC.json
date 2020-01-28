@@ -1,0 +1,17 @@
+{
+   "licitacao_sem_itens"         : "Impossível incluir fornecedorer. Licitação sem itens cadastrados."
+  ,"erro_incluir_orcamento"      : "Não foi possível incluir o orçamento."
+  ,"erro_incluir_orcamento_item" : "Não foi possível incluir item ao orçamento."
+  ,"erro_vincular_item_orcamento_licitacao" : "Não foi possível víncular o item do orçamento com o item da licitação."
+  ,"erro_incluir_fornecedor" : "Erro ao incluir fornecedor."
+  ,"cgm_nao_informado"       : "Não foi informado o fornecedor."
+  ,"licitacao_nao_informado" : "Não foi informado a licitação."
+  ,"erro_excluir_fornecedor" : "Erro ao excluir fornecedor."
+  ,"excluido_sucesso"        : "Fornecedor excluído com sucesso."
+  ,"fornecedor_nao_informado": "Fornecedor não informado."
+  ,"itens_nao_informado"     : "Itens não informado."
+  ,"atualizar_fornecedor"    : "Erro ao atualizar o vínculo do fornecedor com a licitação."
+  ,"itens_salvo" : "Item(ns) vinculado(s) ao fornecedor com sucesso."
+  ,"valida_exclusao_profissional" : "Fornecedor não pode ser removido pois já possui acordo ou a Licitação possui autorização de empenho."
+  ,"erro_alterar_licitacao"       : "Não foi possível atualizar a licitação."
+}

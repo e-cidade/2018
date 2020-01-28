@@ -1,0 +1,17 @@
+{
+  "codigo_linha_vazio"                : "É necessário informar primeiramente a linha de transporte.",
+  "chave_nao_encontrada"              : "Chave([iAluno]) não encontrada",
+  "codigo_ponto_parada_nao_informado" : "Código do ponto de parada não informado.",
+  "codigo_aluno_nao_informado"        : "Código do aluno não informado.",
+  "nenhum_aluno_selecionado"          : "Nenhum aluno selecionado.",
+  "adicionando_vinculo"               : "Aguarde, adicionando vínculo do aluno com o ponto de parada.",
+  "removendo_vinculos"                : "Aguarde, removendo vínculo(s) do(s) aluno(s).",
+  "confirma_remocao_vinculos"         : "Confirma a remoção dos vínculos selecionados?",
+  "buscando_alunos_vinculados"        : "Aguarde, buscando alunos vinculados.",
+  "codigo_escola_vazio"               : "É necessário informar primeiramente a escola.",
+  "pesquisando_escolas"               : "Aguarde, pesquisando escolas.",
+  "buscando_horarios"                 : "Aguarde, buscando os horários da linha...",
+  "nenhum_horario_selecionado"        : "Nenhum horário da linha foi selecionado.",
+  "linha_nao_informada"               : "Linha de transporte não informada.",
+  "escola_nao_selecionada"            : "Nenhuma escola foi selecionada."
+}

@@ -1,0 +1,6 @@
+{
+  "parecertecnico_obrigatorio" : "Campo Parecer Técnico é de preenchimento obrigatório",
+  "empreendimento_obrigatorio" : "Campo Código do Empreendimento é de preenchimento obrigatório",
+  "carregando_emissao"         : "Emitindo Licença...",
+  "carregando_dados_licenca"   : "Aguarde, carregando Dados da Licença..."
+}

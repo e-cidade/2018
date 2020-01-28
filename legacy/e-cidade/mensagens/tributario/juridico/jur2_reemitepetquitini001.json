@@ -1,0 +1,5 @@
+{
+  "verifique_parametros_juridico" : "Paramêtros do Jurídico não configurados. Verifique.",
+  "inicial_nao_existe"            : "Inicial não existe.",
+  "inicial_sem_codigo_processo"   : "Inicial sem o codigo do processo do foro lançado."
+}

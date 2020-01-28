@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="numcgm"  label="numcgm" />
+  </campos>
+  <from tabela="db_config" />
+  <juncoes></juncoes>
+  <filtros>
+    <filtro label="" condicao="prefeitura is true" obrigatorio="false"/>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao campos="codigo" />
+</consulta>
+

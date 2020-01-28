@@ -1,0 +1,206 @@
+[2017-07-12 18:22:12] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-07-13 10:29:52] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-07-13 10:29:52] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-07-13 10:30:18] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-07-13 10:31:03] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-07-13 17:54:10] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-07-14 09:43:11] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-07-14 10:22:15] ERROR: E_WARNING - pg_query(): Query failed: ERRO:  relação "db_logsacessa" não existe
+LINE 1: INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_cod...
+                    ^ in extension/modification/data/cache/user/dbseller/libs/db_stdlib.php on line 98
+#1 extension/modification/data/cache/user/dbseller/libs/db_stdlib.php:98 - pg_query(INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_codsequen_seq'),'127.0.0.1','2017-07-14','10:22:15','/juliano/pacotes_e-cidade/pacotes_completos/teste_ecidade_pspb_melhorias/e-cidade_demo/abrir.php?sAuth=REJfbG9naW49ZGJzZWxsZXImREJfc2VuaGE9ZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2U%3D&conteudoCaptcha=','Abrindo Acesso ao Sistema - Login: dbseller',0,0,0,0,0))
+#2 extension/modification/data/cache/user/dbseller/libs/db_stdlib.php:2606 - db_query(INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_codsequen_seq'),'127.0.0.1','2017-07-14','10:22:15','/juliano/pacotes_e-cidade/pacotes_completos/teste_ecidade_pspb_melhorias/e-cidade_demo/abrir.php?sAuth=REJfbG9naW49ZGJzZWxsZXImREJfc2VuaGE9ZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2U%3D&conteudoCaptcha=','Abrindo Acesso ao Sistema - Login: dbseller',0,0,0,0,0))
+#3 abrir.php:84 - db_logsmanual_demais(Abrindo Acesso ao Sistema - Login: dbseller)
+#4 app.php:175 - require_once(abrir.php)
+#5 FrontController.php:7 - require(app.php)
+
+[2017-07-14 10:40:49] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-07-14 10:40:50] ERROR: E_ERROR - Call to undefined function imageftbbox() in securimage/securimage.php on line 1666
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2017-10-13 11:20:38] ERROR: E_WARNING - pg_query(): Query failed: ERRO:  relaï¿½ï¿½o &quot;db_usuarios&quot; nï¿½o existe
+LINE 1: select * from db_usuarios  where id_usuario = 1
+                      ^ in extension/modification/data/cache/user/dbseller/libs/db_stdlib.php on line 98
+#1 extension/modification/data/cache/user/dbseller/libs/db_stdlib.php:98 - pg_query(select * from db_usuarios  where id_usuario = 1)
+#2 classes/db_db_usuarios_classe.php:583 - db_query(select * from db_usuarios  where id_usuario = 1)
+#3 model/configuracao/UsuarioSistema.model.php:139 - cl_db_usuarios->sql_record(select * from db_usuarios  where id_usuario = 1)
+#4 extension/package/Desktop/Controller/Desktop.php:148 - UsuarioSistema->__construct(1)
+#5 extension/package/Desktop/Controller/Desktop.php:83 - ECidade\Package\Desktop\Controller\Desktop->getUsuarioSistema()
+#6 : - ECidade\Package\Desktop\Controller\Desktop->index()
+#7 src/V3/Extension/Dispatcher.php:66 - call_user_func_array(Array
+(
+    [0] => ECidade\Package\Desktop\Controller\Desktop
+    [1] => index
+)
+, Array
+(
+)
+)
+#8 app.php:76 - ECidade\V3\Extension\Dispatcher->execute(ECidade\V3\Extension\Request, ECidade\V3\Extension\Response)
+#9 FrontController.php:7 - require(app.php)
+
+[2017-11-21 16:20:45] ERROR: E_WARNING - mkdir(): File exists in src/V3/Extension/Storage.php on line 160
+#1 src/V3/Extension/Storage.php:160 - mkdir(extension/modification/data/cache/parsing-5a146e7da539e/user/dbseller/libs, 509, 1)
+#2 src/V3/Extension/Storage.php:88 - ECidade\V3\Extension\Storage->createDirectory()
+#3 src/V3/Modification/Data/File.php:92 - ECidade\V3\Extension\Storage->save()
+#4 src/V3/Modification/ManagerParseFiles.php:583 - ECidade\V3\Modification\Data\File->save()
+#5 src/V3/Modification/ManagerParseFiles.php:494 - ECidade\V3\Modification\ManagerParseFiles->persistData(ECidade\V3\Modification\Data\File)
+#6 src/V3/Modification/ManagerParseFiles.php:368 - ECidade\V3\Modification\ManagerParseFiles->parseFile(libs/db_stdlib.php, dbportal-v3-desktop, dbseller)
+#7 src/V3/Modification/ManagerParseFiles.php:228 - ECidade\V3\Modification\ManagerParseFiles->parseModification(dbportal-v3-desktop, ArrayObject, dbseller)
+#8 src/V3/Modification/Manager.php:467 - ECidade\V3\Modification\ManagerParseFiles->parse()
+#9 src/V3/Modification/Manager.php:400 - ECidade\V3\Modification\Manager->parseFiles(ArrayObject, dbseller)
+#10 src/V3/Modification/Data/FileSync.php:95 - ECidade\V3\Modification\Manager->updateFile(libs/db_stdlib.php, dbseller)
+#11 definitions.php:91 - ECidade\V3\Modification\Data\FileSync::update(libs/db_stdlib.php, dbseller)
+#12 skins/estilos.php:29 - modification(libs/db_stdlib.php)
+#13 app.php:160 - require_once(skins/estilos.php)
+#14 FrontController.php:7 - require(app.php)
+
+[2017-11-21 16:27:59] ERROR: E_WARNING - pg_query(): Query failed: ERRO:  relaï¿½ï¿½o &quot;db_usuarios&quot; nï¿½o existe
+LINE 1: select * from db_usuarios  where id_usuario = 1
+                      ^ in extension/modification/data/cache/user/dbseller/libs/db_stdlib.php on line 101
+#1 extension/modification/data/cache/user/dbseller/libs/db_stdlib.php:101 - pg_query(select * from db_usuarios  where id_usuario = 1)
+#2 classes/db_db_usuarios_classe.php:583 - db_query(select * from db_usuarios  where id_usuario = 1)
+#3 model/configuracao/UsuarioSistema.model.php:139 - cl_db_usuarios->sql_record(select * from db_usuarios  where id_usuario = 1)
+#4 extension/package/Desktop/Controller/Desktop.php:149 - UsuarioSistema->__construct(1)
+#5 extension/package/Desktop/Controller/Desktop.php:84 - ECidade\Package\Desktop\Controller\Desktop->getUsuarioSistema()
+#6 : - ECidade\Package\Desktop\Controller\Desktop->index()
+#7 src/V3/Extension/Dispatcher.php:66 - call_user_func_array(Array
+(
+    [0] => ECidade\Package\Desktop\Controller\Desktop
+    [1] => index
+)
+, Array
+(
+)
+)
+#8 app.php:68 - ECidade\V3\Extension\Dispatcher->execute(ECidade\V3\Extension\Request, ECidade\V3\Extension\Response)
+#9 FrontController.php:7 - require(app.php)
+
+[2018-01-16 15:53:49] ERROR: E_WARNING - pg_query(): Query failed: ERRO:  permissï¿½o negada para relaï¿½ï¿½o db_logsacessa in libs/db_stdlib.php on line 101
+#1 libs/db_stdlib.php:101 - pg_query(INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_codsequen_seq'),'127.0.0.1','2018-01-16','15:53:49','/ecidade_pspb/teste/e-cidade-2018-1-linux-completo/e-cidade/abrir.php?sAuth=REJfbG9naW49ZGJzZWxsZXImREJfc2VuaGE9ZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2U%3D&conteudoCaptcha=','Abrindo Acesso ao Sistema - Login: dbseller',0,0,0,0,0))
+#2 libs/db_stdlib.php:2590 - db_query(INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_codsequen_seq'),'127.0.0.1','2018-01-16','15:53:49','/ecidade_pspb/teste/e-cidade-2018-1-linux-completo/e-cidade/abrir.php?sAuth=REJfbG9naW49ZGJzZWxsZXImREJfc2VuaGE9ZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2U%3D&conteudoCaptcha=','Abrindo Acesso ao Sistema - Login: dbseller',0,0,0,0,0))
+#3 abrir.php:84 - db_logsmanual_demais(Abrindo Acesso ao Sistema - Login: dbseller)
+#4 app.php:160 - require_once(abrir.php)
+#5 FrontController.php:7 - require(app.php)
+
+[2018-01-16 15:54:49] ERROR: E_WARNING - pg_query(): Query failed: ERRO:  permissï¿½o negada para relaï¿½ï¿½o db_logsacessa in libs/db_stdlib.php on line 101
+#1 libs/db_stdlib.php:101 - pg_query(INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_codsequen_seq'),'127.0.0.1','2018-01-16','15:54:49','/ecidade_pspb/teste/e-cidade-2018-1-linux-completo/e-cidade/abrir.php?sAuth=REJfbG9naW49ZGJzZWxsZXImREJfc2VuaGE9ZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2U%3D&conteudoCaptcha=','Abrindo Acesso ao Sistema - Login: dbseller',0,0,0,0,0))
+#2 libs/db_stdlib.php:2590 - db_query(INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_codsequen_seq'),'127.0.0.1','2018-01-16','15:54:49','/ecidade_pspb/teste/e-cidade-2018-1-linux-completo/e-cidade/abrir.php?sAuth=REJfbG9naW49ZGJzZWxsZXImREJfc2VuaGE9ZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2U%3D&conteudoCaptcha=','Abrindo Acesso ao Sistema - Login: dbseller',0,0,0,0,0))
+#3 abrir.php:84 - db_logsmanual_demais(Abrindo Acesso ao Sistema - Login: dbseller)
+#4 app.php:160 - require_once(abrir.php)
+#5 FrontController.php:7 - require(app.php)
+
+[2018-01-16 15:55:16] ERROR: E_WARNING - pg_query(): Query failed: ERRO:  permissï¿½o negada para relaï¿½ï¿½o db_logsacessa in libs/db_stdlib.php on line 101
+#1 libs/db_stdlib.php:101 - pg_query(INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_codsequen_seq'),'127.0.0.1','2018-01-16','15:55:16','/ecidade_pspb/teste/e-cidade-2018-1-linux-completo/e-cidade/abrir.php?sAuth=REJfbG9naW49ZGJzZWxsZXImREJfc2VuaGE9ZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2U%3D&conteudoCaptcha=','Abrindo Acesso ao Sistema - Login: dbseller',0,0,0,0,0))
+#2 libs/db_stdlib.php:2590 - db_query(INSERT INTO db_logsacessa VALUES (nextval('db_logsacessa_codsequen_seq'),'127.0.0.1','2018-01-16','15:55:16','/ecidade_pspb/teste/e-cidade-2018-1-linux-completo/e-cidade/abrir.php?sAuth=REJfbG9naW49ZGJzZWxsZXImREJfc2VuaGE9ZDQxZDhjZDk4ZjAwYjIwNGU5ODAwOTk4ZWNmODQyN2U%3D&conteudoCaptcha=','Abrindo Acesso ao Sistema - Login: dbseller',0,0,0,0,0))
+#3 abrir.php:84 - db_logsmanual_demais(Abrindo Acesso ao Sistema - Login: dbseller)
+#4 app.php:160 - require_once(abrir.php)
+#5 FrontController.php:7 - require(app.php)
+
+[2018-01-17 13:26:52] ERROR: E_WARNING - pg_query(): Query failed: ERRO:  relaï¿½ï¿½o &quot;db_usuarios&quot; nï¿½o existe
+LINE 1: select * from db_usuarios  where id_usuario = 1
+                      ^ in extension/modification/data/cache/user/dbseller/libs/db_stdlib.php on line 101
+#1 extension/modification/data/cache/user/dbseller/libs/db_stdlib.php:101 - pg_query(select * from db_usuarios  where id_usuario = 1)
+#2 classes/db_db_usuarios_classe.php:583 - db_query(select * from db_usuarios  where id_usuario = 1)
+#3 model/configuracao/UsuarioSistema.model.php:139 - cl_db_usuarios->sql_record(select * from db_usuarios  where id_usuario = 1)
+#4 extension/package/Desktop/Controller/Desktop.php:149 - UsuarioSistema->__construct(1)
+#5 extension/package/Desktop/Controller/Desktop.php:84 - ECidade\Package\Desktop\Controller\Desktop->getUsuarioSistema()
+#6 : - ECidade\Package\Desktop\Controller\Desktop->index()
+#7 src/V3/Extension/Dispatcher.php:66 - call_user_func_array(Array
+(
+    [0] => ECidade\Package\Desktop\Controller\Desktop
+    [1] => index
+)
+, Array
+(
+)
+)
+#8 app.php:68 - ECidade\V3\Extension\Dispatcher->execute(ECidade\V3\Extension\Request, ECidade\V3\Extension\Response)
+#9 FrontController.php:7 - require(app.php)
+
+[2018-01-18 10:05:04] ERROR: E_WARNING - pg_query(): Query failed: ERRO:  relaï¿½ï¿½o &quot;db_usuarios&quot; nï¿½o existe
+LINE 1: select * from db_usuarios  where id_usuario = 1
+                      ^ in extension/modification/data/cache/user/dbseller/libs/db_stdlib.php on line 101
+#1 extension/modification/data/cache/user/dbseller/libs/db_stdlib.php:101 - pg_query(select * from db_usuarios  where id_usuario = 1)
+#2 classes/db_db_usuarios_classe.php:583 - db_query(select * from db_usuarios  where id_usuario = 1)
+#3 model/configuracao/UsuarioSistema.model.php:139 - cl_db_usuarios->sql_record(select * from db_usuarios  where id_usuario = 1)
+#4 extension/package/Desktop/Controller/Desktop.php:149 - UsuarioSistema->__construct(1)
+#5 extension/package/Desktop/Controller/Desktop.php:84 - ECidade\Package\Desktop\Controller\Desktop->getUsuarioSistema()
+#6 : - ECidade\Package\Desktop\Controller\Desktop->index()
+#7 src/V3/Extension/Dispatcher.php:66 - call_user_func_array(Array
+(
+    [0] => ECidade\Package\Desktop\Controller\Desktop
+    [1] => index
+)
+, Array
+(
+)
+)
+#8 app.php:68 - ECidade\V3\Extension\Dispatcher->execute(ECidade\V3\Extension\Request, ECidade\V3\Extension\Response)
+#9 FrontController.php:7 - require(app.php)
+
+[2018-02-22 11:24:15] ERROR: E_NOTICE - Undefined offset: 0 in extension/modification/data/cache/user/dbseller/libs/db_conecta.php on line 140
+#1 con4_dbplugin001.php:29 - require_once(extension/modification/data/cache/user/dbseller/libs/db_conecta.php)
+#2 app.php:160 - require_once(con4_dbplugin001.php)
+#3 FrontController.php:7 - require(app.php)
+
+[2018-02-22 11:24:16] ERROR: E_NOTICE - Undefined offset: 0 in extension/modification/data/cache/user/dbseller/libs/db_conecta.php on line 140
+#1 con4_dbhelp.RPC.php:8 - require_once(extension/modification/data/cache/user/dbseller/libs/db_conecta.php)
+#2 app.php:160 - require_once(con4_dbhelp.RPC.php)
+#3 FrontController.php:7 - require(app.php)
+
+[2018-02-22 11:24:16] ERROR: E_NOTICE - Undefined offset: 0 in extension/modification/data/cache/user/dbseller/libs/db_conecta.php on line 140
+#1 con4_dbtutorial.RPC.php:29 - require_once(extension/modification/data/cache/user/dbseller/libs/db_conecta.php)
+#2 app.php:160 - require_once(con4_dbtutorial.RPC.php)
+#3 FrontController.php:7 - require(app.php)
+
+[2018-02-22 11:24:16] ERROR: E_NOTICE - Undefined offset: 0 in libs/db_conecta.php on line 140
+#1 skins/img.php:31 - require_once(libs/db_conecta.php)
+#2 app.php:160 - require_once(skins/img.php)
+#3 FrontController.php:7 - require(app.php)
+
+[2018-02-22 11:24:16] ERROR: E_NOTICE - Undefined offset: 0 in extension/modification/data/cache/user/dbseller/libs/db_conecta.php on line 140
+#1 con4_dbplugin.RPC.php:34 - require_once(extension/modification/data/cache/user/dbseller/libs/db_conecta.php)
+#2 app.php:160 - require_once(con4_dbplugin.RPC.php)
+#3 FrontController.php:7 - require(app.php)
+
+[2018-02-22 15:23:44] ERROR: E_WARNING - require_once(/var/www/ecidade_pspb/teste/e-cidade-2018-1-linux-completo/e-cidade/libs/db_conn.php): failed to open stream: No such file or directory in abrir.php on line 29
+#1 abrir.php:29 - require_once()
+#2 app.php:160 - require_once(abrir.php)
+#3 FrontController.php:7 - require(app.php)
+
+[2018-02-22 15:23:44] ERROR: E_COMPILE_ERROR - require_once(): Failed opening required '/var/www/ecidade_pspb/teste/e-cidade-2018-1-linux-completo/e-cidade/libs/db_conn.php' (include_path='.:/usr/share/php') in abrir.php on line 29
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2018-02-22 15:23:50] ERROR: E_WARNING - require_once(libs/db_conn.php): failed to open stream: No such file or directory in abrir.php on line 29
+#1 abrir.php:29 - require_once()
+#2 app.php:160 - require_once(abrir.php)
+#3 FrontController.php:7 - require(app.php)
+
+[2018-02-22 15:23:50] ERROR: E_COMPILE_ERROR - require_once(): Failed opening required 'libs/db_conn.php' (include_path='.:/usr/share/php') in abrir.php on line 29
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+
+[2018-02-22 15:24:01] ERROR: E_WARNING - require_once(libs/db_conn.php): failed to open stream: No such file or directory in login.php on line 84
+#1 login.php:84 - require_once()
+#2 app.php:160 - require_once(login.php)
+#3 FrontController.php:7 - require(app.php)
+
+[2018-02-22 15:24:01] ERROR: E_COMPILE_ERROR - require_once(): Failed opening required 'libs/db_conn.php' (include_path='.:/usr/share/php') in login.php on line 84
+#1 : - ECidade\V3\Error\Handler\Shutdown::handle()
+

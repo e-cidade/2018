@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<processamento>
+<parametros>
+  <parametro nome="aDadosSituacao" obrigatorio="true" tipo="array" />
+</parametros>
+<configuracoes>
+  <classe nome="PesquisaSituacaoGuias" parametros="" caminho="model/arrecadacao/webservice/PesquisaSituacaoGuias.model.php">
+    <metodos>
+      <metodo nome="statusDebitos" parametros="$aDadosSituacao" />
+    </metodos>
+  </classe>
+</configuracoes>
+</processamento>

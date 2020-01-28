@@ -1,0 +1,13 @@
+{
+  "informe_descricao"               : "Informe a descrição.",
+  "informe_data_corte"              : "Informe a data de corte.",
+  "informe_data_inicio"             : "Informe a data de início.",
+  "informe_data_fim"                : "Informe a data de fim.",
+  "selecione_ciclo"                 : "Selecione um Ciclo.",
+  "ciclo_sem_ensino"                : "Ciclo selecionado não possui Ensino vinculado.",
+  "data_fim_maior_data_inicio"      : "Início do período não pode ser maior que o final do período!",
+  "confirma_exclusao"               : "Esta fase possui vagas vinculadas. Deseja excluir?",
+  "confirma_exclusao_ciclo"         : "O ciclo vinculado a esta fase possui vagas vinculadas a ele. Deseja alterá-lo?",
+  "verificando_vagas"               : "Aguarde, verificando as vagas vinculadas a fase...",
+  "ano_data_inicio_fim_maior_corte" : "Ano da Data Início e Data Fim deve ser inferior ou igual ao ano da Data de Corte."
+}

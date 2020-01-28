@@ -1,0 +1,3 @@
+<?
+$campos = "pontoeletronicoconfiguracoeslotacao.rh195_sequencial,pontoeletronicoconfiguracoeslotacao.rh195_tolerancia,pontoeletronicoconfiguracoeslotacao.rh195_hora_extra_50,pontoeletronicoconfiguracoeslotacao.rh195_hora_extra_75,pontoeletronicoconfiguracoeslotacao.rh195_hora_extra_100,pontoeletronicoconfiguracoeslotacao.rh195_lotacao,pontoeletronicoconfiguracoeslotacao.rh195_supervisor";
+?>

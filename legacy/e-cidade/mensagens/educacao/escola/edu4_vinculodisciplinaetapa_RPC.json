@@ -1,0 +1,17 @@
+{
+   "erro_buscar_series_base"   : "Não foi possivel buscar as etapas da base.\nErro: [sErroSql]."
+  ,"erro_buscar_series"        : "Não foi possível localizar as series informadas na base;\nErro: [sErroSql]."
+  ,"nenhuma_serie_encontrada"  : "Nenhuma série encontrada para base selecionada."
+  ,"erro_buscar_disciplinas"   : "Não foi possivel buscar as disciplinas vinculadas a base.\nErro: [sErroSql]."
+  ,"erro_excluir_vinculo_base" : "Não foi possível remover disciplina.\nErro: [sErroSql]"
+  ,"disciplina_removida"       : "Disciplina removida."
+  ,"erro_codigo_vinculo"       : "Não foi informado código do vínculo."
+  ,"erro_salvar_disciplina"    : "Erro ao salvar disciplina.\nErro: [sErroSql]"
+  ,"disciplina_salvar"         : "Disciplina salva com sucesso."
+  ,"erro_disciplina_encerrada" : "Náo é possível atualizar as disciplinas da turma. Esta turma possui disciplinas encerradas.\nCancele o encerramento."
+  ,"disciplina_atualizadas_base" : "Disciplinas atualizadas pela base."
+  ,"sem_transacao_ativa"         : "Não há transação ativa"
+  ,"erro_alterar_ordem"          : "Não foi possível reordenar as disciplinas."
+  ,"disciplinas_reordenadas"     : "Disciplinas reordenadas com sucesso."
+
+}

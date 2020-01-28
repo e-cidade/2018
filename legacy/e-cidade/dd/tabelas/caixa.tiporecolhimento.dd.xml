@@ -1,0 +1,281 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4031' name='caixa.tiporecolhimento' description="Tipo de Recolhimento" prefix="k172" label="Tipo de Recolhimento" type="0">
+  <fields>
+    <field codigo="22365" 
+           campo_api='' 
+           name="k172_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='caixa.tiporecolhimento_k172_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22366" 
+           campo_api='' 
+           name="k172_nome" 
+           conteudo="varchar(100)" 
+           description="Nome do Recolhimento" 
+           inivalue="" 
+           label="Nome do Recolhimento" 
+           size="100" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Nome do Recolhimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22385" 
+           campo_api='' 
+           name="k172_tipopessoa" 
+           conteudo="int4" 
+           description="Tipo de Pessoa" 
+           inivalue="3" 
+           label="Tipo de Pessoa" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Pessoa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22386" 
+           campo_api='' 
+           name="k172_obriganumeroreferencia" 
+           conteudo="bool" 
+           description="Obriga Número de Refêrencia" 
+           inivalue="false" 
+           label="Obriga Número de Refêrencia" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Obriga Número de Refêrencia" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22387" 
+           campo_api='' 
+           name="k172_codigorecolhimento" 
+           conteudo="varchar(40)" 
+           description="Código Recolhimento" 
+           inivalue="false" 
+           label="Código Recolhimento" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Código Recolhimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22388" 
+           campo_api='' 
+           name="k172_especieingresso" 
+           conteudo="int4" 
+           description="Espécie de Ingresso" 
+           inivalue="" 
+           label="Espécie de Ingresso" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Espécie de Ingresso" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22389" 
+           campo_api='' 
+           name="k172_desconto" 
+           conteudo="bool" 
+           description="Informar Desconto/Abatimento" 
+           inivalue="false" 
+           label="Informar Desconto/Abatimento" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Informar Desconto/Abatimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22390" 
+           campo_api='' 
+           name="k172_multa" 
+           conteudo="bool" 
+           description="Informar Mora/Multa" 
+           inivalue="false" 
+           label="Informar Mora/Multa" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Informar Mora/Multa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22391" 
+           campo_api='' 
+           name="k172_juros" 
+           conteudo="bool" 
+           description="Informar Juros/Encargos" 
+           inivalue="false" 
+           label="Informar Juros/Encargos" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Informar Juros/Encargos" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22392" 
+           campo_api='' 
+           name="k172_outrosacrescimos" 
+           conteudo="bool" 
+           description="Informar Outros Acréscimos" 
+           inivalue="false" 
+           label="Informar Outros Acréscimos" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Informar Outros Acréscimos" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22393" 
+           campo_api='' 
+           name="k172_tituloreduzido" 
+           conteudo="varchar(40)" 
+           description="Titulo Reduzido do recolhimento" 
+           inivalue="" 
+           label="Titulo Reduzido" 
+           size="40" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Titulo Reduzido" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22405" 
+           campo_api='' 
+           name="k172_instrucoes" 
+           conteudo="text" 
+           description="Instruções para a guia de recolhimento" 
+           inivalue="" 
+           label="Instruções" 
+           size="1" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Instruções" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22406" 
+           campo_api='' 
+           name="k172_workflow" 
+           conteudo="int4" 
+           description="processo de Workflow para o tipo de recolhimento" 
+           inivalue="null" 
+           label="Workflow" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Workflow" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22409" 
+           campo_api='' 
+           name="k172_outrasdeducoes" 
+           conteudo="bool" 
+           description="Informa Outras Deduções" 
+           inivalue="false" 
+           label="Informa Outras Deduções" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Informa Outras Deduções" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="k172_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="workflow">
+      <fieldfk name="k172_workflow" reference="db112_sequencial" inner='f'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

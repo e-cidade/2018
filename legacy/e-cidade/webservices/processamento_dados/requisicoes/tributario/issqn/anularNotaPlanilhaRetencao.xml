@@ -1,0 +1,19 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+     <parametro nome="codigo_nota_planilha"   obrigatorio="true" tipo="integer"  />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="NotaPlanilhaRetencaoWebService"  parametros="" caminho="model/issqn/NotaPlanilhaRetencaoWebService.model.php">
+      <metodos>
+        <metodo nome="getNotaPlanilha"         parametros="$codigo_nota_planilha" />
+        <metodo nome="anularValorPlanilha" />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

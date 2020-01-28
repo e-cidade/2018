@@ -1,0 +1,8 @@
+{
+    "sem_transacao_ativa"             : "Não existe transação ativa.",
+    "codigo_certidao_nao_informada"   : "Código da Certidão não foi informado.",
+    "arquivo_certidao_nao_encontrado" : "Arquivo da Certidão não encontrado.",
+    "erro_buscar_dados_certidao"      : "Erro ao buscar Certidão.",
+    "erro_buscar_arquivo_certidao"		: "Erro ao buscar o arquivo da Certidão.",
+    "origem_nao_informada"						: "Origem não informada"
+}

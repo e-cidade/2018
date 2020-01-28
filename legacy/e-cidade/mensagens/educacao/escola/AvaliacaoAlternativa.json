@@ -1,0 +1,5 @@
+{
+   "erro_executar_query" : "Erro ao buscar Avaliações Alternativas.\n[sErro]."
+  ,"sem_registro_para_codigo" : "Não existe uma  Avaliações Alternativa para o código '[iCodigo]' informado."
+  ,"erro_buscar_configuracao" : "Erro ao buscar configuração da Avaliação Alternativa.\n[sErro]."
+}

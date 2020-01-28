@@ -1,0 +1,284 @@
+* {
+  font-family: "DejaVu Sans";
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding-top: 15px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+div.input {
+  margin-bottom: 15px;
+  width: 100%;
+  position: relative;
+}
+
+div.input:last-child {
+  margin-bottom: 0px;
+}
+
+div.input label{
+  font-weight: bold;
+  font-size: 14px;
+  color: #4a789c;
+}
+
+div.input input,
+div.input textarea,
+div.input select {
+  width: 100%;
+  height: 36px;
+  padding: 2px 3px;
+  display: block;
+  outline: none;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div.input input[readonly] {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+div.input textarea {
+  height: 100px;
+}
+
+div.input .select2-container {
+  width: 100% !important;
+}
+
+div.input .select2-selection {
+  width: 100%;
+  height: 36px;
+  padding: 2px 3px;
+  display: block;
+  outline: none;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div.input .select2-selection .select2-selection__arrow {
+  top: 5px;
+}
+
+div.input input,
+div.input textarea {
+  border: 1px solid #aaa;
+}
+
+div.input textarea:hover,
+div.input textarea:focus,
+div.input input:hover,
+div.input input:focus,
+div.input .select2-selection:hover {
+  border: 1px solid #222;
+}
+
+div.input.input-group {
+  display: flex;
+  align-items: center;
+}
+
+p.success {
+  color: #38920b;
+  font-size: 14px;
+  margin: 5px 0px;
+}
+
+p.error {
+  color: #D14F4F;
+  font-size: 14px;
+  margin: 5px 0px;
+}
+
+fieldset {
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+fieldset legend {
+  font-size: 14px;
+  color: #222;
+}
+
+div.input::first-child {
+  /*margin-top: 0px;*/
+}
+
+/**
+ * BUTTONS
+ */
+
+.buttons {
+  text-align: center;
+}
+
+.buttons button {
+  display: inline;
+  width: auto;
+}
+
+.btn {
+  border: none;
+  text-transform: uppercase;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 15px;
+  outline: none;
+  background-color: #bbb;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.btn-stretch {
+  width: 100%;
+}
+
+.btn:focus {
+  outline: 2px solid #aaa;
+}
+
+.btn-small {
+  padding: 5px 10px;
+  font-size: 10px;
+}
+
+.btn-primary {
+  border: none;
+  background: #4a789c;
+  color: #fff;
+}
+
+.btn-primary:active {
+  box-shadow: inset 0px 0px 10px -3px #000;
+}
+
+.btn-link {
+  color: #4a789c;
+  background-color: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+  width: auto;
+  padding: 5px 10px;
+}
+
+.btn-link:active {
+  color: #6c9abe;
+}
+
+.btn[disabled] {
+  background-color: #6597BE;
+  color: #eee;
+}
+
+.btn-link[disabled] {
+  background-color: transparent;
+  color: #a1a1a1;
+  cursor: default;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/**
+ * TABLE
+ */
+
+table.table {
+  border-spacing: 0;
+  margin: 0;
+  margin-top: 15px;
+  width: 100%;
+}
+
+table.uppercased td {
+  text-transform: uppercase;
+}
+
+table.table th {
+  font-size: 14px;
+}
+
+table.table tr td {
+  border-bottom: 1px solid #CCC;
+  font-size: 14px;
+}
+
+table.table tr th {
+  border-bottom: none;
+}
+
+table.table tr:nth-child(2n) {
+  background-color: #eee;
+}
+
+table.table tr:first-child td,
+table.table tr:first-child th{
+  border-top: 1px solid #CCC;
+}
+
+table.table td,
+table.table th{
+  border-right: 1px solid #CCC;
+  padding: 3px;
+}
+
+table.table td:first-child,
+table.table th:first-child{
+  border-left: 1px solid #CCC;
+}
+
+table.table td em {
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+  display: block;
+}
+
+table.table tr > td.actions {
+  text-align: center;
+}
+
+table.table tr > td.actions a {
+  color: #6c9abe;
+  cursor: pointer;
+}
+
+table tr > td.min-content {
+  width: 1%;
+  white-space: nowrap;
+}

@@ -1,0 +1,12 @@
+{
+  "informe_nome_medicamento"         : "Informe o nome do medicamento.",
+  "erro_salvar_medicamento"          : "Falha ao salvar o medicamento.",
+  "erro_verificar_abreviatura"       : "Falha ao verificar a abreviatura do medicamento.",
+  "abreviatura_ja_existe"            : "A abreviatura informada já está sendo usada no medicamento [nomeMedicamento]. \nPor favor, informe outra abreviatura.",
+  "medicamento_salvo"                : "Medicamento salvo com sucesso!",
+  "erro_buscar_medicamentos"         : "Falha ao buscar os medicamentos.",
+  "erro_verificar_medicamento_exame" : "Falha ao verificar os exames vinculados ao medicamento.",
+  "informe_codigo_medicamento"       : "Informe o código do medicamento.",
+  "falha_excluir_medicamento"        : "Falha ao excluir o medicamento.",
+  "medicamento_excluido"             : "Medicamento excluído com sucesso!"
+}

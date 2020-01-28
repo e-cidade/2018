@@ -1,0 +1,11 @@
+{
+  "campo_assentamento_obrigadorio"         : "Campo Tipo de Assentamento deve ser informado.",
+  "campo_selecao_obrigadorio"              : "Campo Seleção deve ser informado.",
+  "campo_formulacondicao_obrigadorio"      : "Campo Fórmula de Condição deve ser informado.",
+  "campo_formulainicio_obrigadorio"        : "Campo Fórmula de Início deve ser informado.",
+  "campo_formulafim_obrigadorio"           : "Campo Fórmula de Fim deve ser informado.",
+  "campo_formulafaltasperiodo_obrigadorio" : "Campo Fórmula de Faltas Período deve ser informado.",
+  "erro_duplicidade_agenda"                : "Inclusão cancelada.\nA combinação do tipo de assentamento e seleção já existe.",
+  "erro_buscar_tipoassentamento"           : "Não foi possível consultar dados do tipo de assentamento.",
+  "tipoassentamento_nao_encontrado"        : "O tipo de assentamento informado não foi localizado."
+}

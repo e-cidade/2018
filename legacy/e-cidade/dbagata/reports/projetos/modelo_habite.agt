@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout></Layout>
+        <UseTemplates></UseTemplates>
+        <OutputMask></OutputMask>
+    </Properties>
+
+    <Header>
+        <Body></Body>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body></Body>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <codigo_usuario>
+            <mask></mask>
+            <value>1</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </codigo_usuario>
+
+        <codigo_instituicao>
+            <mask></mask>
+            <value>1</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </codigo_instituicao>
+
+        <codigo_habite>
+            <mask></mask>
+            <value>3</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </codigo_habite>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>sqlite</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>distinct         obraspropri.ob03_numcgm       as cgm,   
+                   cgm.z01_nome                                                   as nome_proprietario,
+                   cgm.z01_cgccpf                                                 as cpf_cnpj_proprietario,        
+                   cgm.z01_ender       as logradouro,        
+                   cgm.z01_numero       as numero,        
+                   cgm.z01_compl       as complemento,        
+                   cgm.z01_bairro       as bairro,        
+                   lote.j34_setor             || '-' ||        setor.j30_descr            || '/' ||          lote.j34_quadra            || '/' ||        lote.j34_lote                                                  as sql,        
+                   setorloc.j05_codigoproprio || '-' ||        setorloc.j05_descr         || '/' ||        loteloc.j06_quadraloc      || '/' ||         loteloc.j06_lote                                               as pql, 
+                   iptubase.j01_matric                       as matricula_imovel,        
+                   obrashabite.ob09_habite       as cod_habite,        
+                   obrashabite.ob09_codhab       as sequencial_habite,      
+                   extract (year from obrashabite.ob09_data) as ano_sequencial_habite, 
+                   ( select array_to_string(array_accum(obrasalvara.ob04_alvara),', ') from projetos.obrashabite a inner join projetos.obrasconstr on obrasconstr.ob08_codconstr = a.ob09_codconstr inner join projetos.obras on obras.ob01_codobra = obrasconstr.ob08_codobra inner join projetos.obrasalvara on obrasalvara.ob04_codobra = obras.ob01_codobra where a.ob09_codhab = obrashabite.ob09_codhab ) as sequencial_alvara, 
+                   ( select array_to_string(array_accum(extract (year from obrasalvara.ob04_data)),', ') from projetos.obrashabite a inner join projetos.obrasconstr on obrasconstr.ob08_codconstr = a.ob09_codconstr inner join projetos.obras on obras.ob01_codobra = obrasconstr.ob08_codobra inner join projetos.obrasalvara on obrasalvara.ob04_codobra = obras.ob01_codobra where a.ob09_codhab = obrashabite.ob09_codhab ) as ano_sequencial_alvara, 
+                   ( select array_to_string(array_accum(to_char(obrasalvara.ob04_dataexpedicao,'DD-MM-YYYY')),', ') from projetos.obrashabite a inner join projetos.obrasconstr on obrasconstr.ob08_codconstr = a.ob09_codconstr inner join projetos.obras on obras.ob01_codobra = obrasconstr.ob08_codobra inner join projetos.obrasalvara on obrasalvara.ob04_codobra = obras.ob01_codobra where a.ob09_codhab = obrashabite.ob09_codhab ) as expedicao_alvara, 
+                   to_char(obrashabite.ob09_data, 'dd/mm/yyyy')                   as data_habite,
+                   engenheiro.z01_nome       as engenheiro,        
+                   obrastec.ob15_crea        as crea,        
+                   case when ob22_codproc is not null then ob22_codproc else protprocesso.p58_codproc end as protocolo, 
+                   to_char(case when ob22_codproc is not null then ob22_data else protprocesso.p58_dtproc end, 'dd/mm/yyyy') as data_protocolo, 
+                   obrasconstr.ob08_area                                          as area_total,         
+                   obrashabite.ob09_area                                          as area_liberada,       
+                   ruastipo.j88_sigla || ' ' || ruas.j14_nome                                                  as endereco_obra,        
+                   obrasender.ob07_numero                                         as numero_endereco_obra,        
+                   obrasender.ob07_compl                                          as complemento_endereco_obra,        bairro.j13_descr                                               as bairro_endereco_obra,         obrashabite.ob09_obs       as observacoes,         obrashabite.ob09_obsinss       as observacoes_inss,        ob08_ocupacao ||'-'|| caracter.j31_descr       as carac_ocupacao,        case when ob09_parcial is true then 'Parcial' else 'Total' end as tipo_habite,        (select z01_nome            from db_usuacgm                 inner join cgm on cgm.z01_numcgm = db_usuacgm.cgmlogin        where db_usuacgm.id_usuario = $codigo_usuario)                 as nome_servidor,        
+            
+            (select rh37_descr            
+               from rhpessoal                
+                    inner join rhfuncao    on rhpessoal.rh01_funcao = rhfuncao.rh37_funcao                                      
+                                          and rhfuncao.rh37_instit  = $codigo_instituicao                
+                    inner join db_usuacgm  on db_usuacgm.cgmlogin   = rhpessoal.rh01_numcgm                                      
+                                          and db_usuacgm.id_usuario = $codigo_usuario 
+                   left join pessoal.rhpessoalmov  on rh02_regist = rh01_regist
+                                                  and rh02_anousu = fc_anofolha($codigo_instituicao::integer)
+                                                  and rh02_mesusu = fc_mesfolha($codigo_instituicao::integer)
+                                                  and rh02_instit = $codigo_instituicao
+            left join pessoal.rhpesrescisao on rh02_seqpes = rh05_seqpes 
+            where rh05_seqpes is null            
+            ) as cargo_servidor,        
+            
+            (select rh01_regist            
+            from rhpessoal                
+            inner join db_usuacgm  on db_usuacgm.cgmlogin   = rhpessoal.rh01_numcgm                                      
+                                  and db_usuacgm.id_usuario = $codigo_usuario
+            left join pessoal.rhpessoalmov  on rh02_regist = rh01_regist
+                                           and rh02_anousu = fc_anofolha($codigo_instituicao::integer)
+                                           and rh02_mesusu = fc_mesfolha($codigo_instituicao::integer)
+                                           and rh02_instit = $codigo_instituicao
+            left join pessoal.rhpesrescisao on rh02_seqpes = rh05_seqpes 
+            where rh05_seqpes is null ) as matricula_servidor
+            
+            </Select>
+            <From>obrashabite  inner join obrasconstr        on obrasconstr.ob08_codconstr  = obrashabite.ob09_codconstr   inner join obras              on obras.ob01_codobra          = obrasconstr.ob08_codobra   inner join obrasiptubase      on obrasiptubase.ob24_obras    = obras.ob01_codobra  inner join iptubase           on iptubase.j01_matric         = obrasiptubase.ob24_iptubase  inner join obraspropri        on obraspropri.ob03_codobra    = obras.ob01_codobra  inner join cgm                on cgm.z01_numcgm              = obraspropri.ob03_numcgm  inner join obrastecnicos      on obrastecnicos.ob20_codobra  = obras.ob01_codobra  inner join obrastec           on obrastec.ob15_sequencial    = obrastecnicos.ob20_obrastec  inner join cgm engenheiro     on engenheiro.z01_numcgm       = obrastec.ob15_numcgm  inner join obrasender         on obrasender.ob07_codconstr   = obrasconstr.ob08_codconstr  inner join ruas               on ruas.j14_codigo             = obrasender.ob07_lograd inner join ruastipo on j14_tipo = j88_codigo  inner join bairro             on bairro.j13_codi             = obrasender.ob07_bairro  inner join caracter           on caracter.j31_codigo         = obrasconstr.ob08_ocupacao  inner join lote               on lote.j34_idbql              = iptubase.j01_idbql  inner join setor         on setor.j30_codi       = lote.j34_setor   left join loteloc            on loteloc.j06_idbql           = iptubase.j01_idbql   left join setorloc           on setorloc.j05_codigo         = loteloc.j06_setorloc   left join obrashabiteprot    on obrashabiteprot.ob19_codhab = obrashabite.ob09_codhab   left join protprocesso       on protprocesso.p58_codproc    = obrashabiteprot.ob19_codproc left join obrashabiteprotoff on ob09_codhab = ob22_codhab</From>
+            <Where>obrashabite.ob09_codhab = $codigo_habite</Where>
+            <GroupBy></GroupBy>
+            <OrderBy></OrderBy>
+            <Config>
+                <Distinct></Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+                <ShowHeader></ShowHeader>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+            <Column9>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column9>
+
+            <Column10>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column10>
+
+            <Column11>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column11>
+
+            <Column12>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column12>
+
+            <Column13>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column13>
+
+            <Column14>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column14>
+
+            <Column15>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column15>
+
+            <Column16>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column16>
+
+            <Column17>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column17>
+
+            <Column18>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column18>
+
+            <Column19>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column19>
+
+            <Column20>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column20>
+
+            <Column21>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column21>
+
+            <Column22>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column22>
+
+            <Column23>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column23>
+
+            <Column24>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column24>
+
+            <Column25>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column25>
+
+            <Column26>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column26>
+
+            <Column27>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column27>
+
+            <Column28>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column28>
+
+            <Column29>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column29>
+
+            <Column30>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column30>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup></PageSetup>
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : cgm</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup></PageSetup>
+        <Config>
+            <RepeatHeader></RepeatHeader>
+            <ShowFooter></ShowFooter>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source></Source>
+        <Config>
+            <FixedDetails>1</FixedDetails>
+            <ExpandDetails></ExpandDetails>
+            <printEmptyDetail>1</printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+        <Details>
+        </Details>
+
+    </OpenOffice>
+
+</Report>

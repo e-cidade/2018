@@ -1,0 +1,93 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* Wait class, shows the "Wait a moment" window
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class Wait
+{
+    /***********************************************************/
+    /* Raises the window
+    /***********************************************************/
+    static function On()
+    {
+        if (isGui)
+        {
+            if (OS != 'WIN')
+            {
+                exec("php wait.php >/dev/null &");
+            }
+            else
+            {
+                if (PHP_OS != 'WINNT')
+                {
+                    exec("wait >NULL &");
+                }
+            }
+        }
+    }
+
+    /***********************************************************/
+    /* Kills the window
+    /***********************************************************/
+    static function Off()
+    {
+        if (isGui)
+        {
+            if (OS != 'WIN')
+            {
+                exec("for i in `ps ax|grep wait.php |grep -v \"grep\"|awk -F\" \" '{printf  $1\"\\n\"   }'`; do kill -9 \$i; done");
+            }
+            else
+            {
+                if (PHP_OS != 'WINNT')
+                {
+                    exec("pv > processes.pid");
+                    $pid = -1;
+                    $fd = fopen ('processes.pid', "r");
+                    while (!feof ($fd))
+                    {
+                        $buffer = trim(fgets($fd, 500));
+                        if ($buffer!='')
+                        {
+                            $Linha = explode(".EXE", trim($buffer));
+                            if (trim($Linha[0]) == 'PHP')
+                            {
+                                if ((trim($Linha[0]) > $pid) || ($pid == -1))
+                                $pid = trim($Linha[1]);
+                            }
+                        }
+                    }
+                    fclose($fd);
+                    exec("kill $pid");
+                }
+            }
+        }
+    }
+}
+?>

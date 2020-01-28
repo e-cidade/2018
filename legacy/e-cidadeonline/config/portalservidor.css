@@ -1,0 +1,133 @@
+   
+   * {
+     font-family: Arial, Verdana, Helvetica, sans-serif;
+   }
+   body 
+   {
+     background-color:#FFFFCC;
+     font-family: Arial, Verdana, Helvetica, sans-serif;
+   }
+
+   fieldset 
+   { 
+     border:2px solid #dca54e
+   }
+
+
+   .tableForm tr td 
+   {
+     font-family: Arial, Verdana, Helvetica, sans-serif;
+     font-size: 11px;
+     color:#000000;
+   }
+      
+   .dadosForm 
+   {
+     background-color:#FFFFFF;
+   }
+   
+   .labelForm 
+   {
+     font-weight:bold;     
+     background-color:#ede67c;
+   } 
+   
+   .tituloForm 
+   {
+     background-color: #dca54e;
+     font-size: 12px; 
+     font-weight:bold;
+     padding: 4px;
+     padding-left: 6px;
+
+   }   
+
+   
+   .subTituloForm 
+   {
+     padding-left:2%;
+     background-color:#e6c15b;
+     font-size: 11px; 
+     font-weight:bold;
+   }   
+   
+   fieldset
+   {
+     font-size: 11px;
+     font-weight:bold;
+   }
+    
+   .headerTableForm
+   {
+     font-size: 11px;
+     font-weight:bold;
+     background-color:ede67c;     
+   }   
+   
+   select 
+   { 
+     font-family: Arial, Helvetica, sans-serif; 
+     font-style: normal; 
+     font-size: 11px; 
+     color: #000000; 
+     background-color: #FFFFFF; 
+     border: 1px solid #444444; 
+   }
+   
+   input 
+   { 
+     font-family: Arial, Helvetica, sans-serif; 
+     font-style: normal; 
+     font-size: 11px; 
+     color: #000000; 
+     background-color: #FFFFFF; 
+     border: 1px solid #444444; 
+   }
+   
+   input:disabled
+   { 
+     color: #CCCCCC; 
+     border: 1px solid #CCCCCC;
+   }
+   
+   #navigation a 
+   {
+	  font: bold 9px Arial, Helvetica, sans-serif;
+	  line-height:11px;
+	  letter-spacing:0.1em;
+	  text-decoration: none;
+	  display:block;
+	  padding:3px 3px 3px 10px;
+   }
+  
+	#navigation a:hover 
+	{
+	  background:#dca54e;
+	  color:#FFFFF;
+	  border-bottom: #EDEDED;
+	}
+	
+	#navigation a:visited 
+	{
+	  color: #000000;
+	}
+	
+	#navigation a:active
+	{
+    background-color:#f3e2c8;
+	}
+	 
+  #navigation td
+  {
+    background-color:#ede67c;
+   /* #99bbff*/
+  }
+
+  .navText 
+  {
+	  font: 10px Arial, Helvetica, sans-serif;
+	  color: #000000;
+	  line-height:14px;
+	  letter-spacing:normal;
+	  text-decoration: none;
+	}

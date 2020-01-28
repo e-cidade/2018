@@ -1,0 +1,118 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBSeller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+########################### ALTERAÇÕES NO ATENDIMENTO CLIENTE ######################################################################
+
+
+Criar as tabelas
+
+atendcadarea
+at26_sequencial PK
+at25_descr
+
+atendareatec
+at27_sequencial PK
+at27_atendcadarea FK com atendcadarea
+at27_usuarios FK db_usuarios
+
+atendarea
+at28_sequencial PK
+at28_atendimento FK atendimento
+at28_atendcadarea FK com atendcadarea
+
+************* depois **********************************
+
+Para registrar quando o tecnico esta fora...
+
+motivofora
+at33_sequencial (pk-sequence)
+at33_descr
+
+tecnicofora
+at34_sequencial PK
+at34_usuarios FK com a db_usuarios
+at34_motivofora FK com motivofora
+at34_dataini
+at34_horaini
+at34_datafim
+at34_horafim
+
+#################################################################################################
+
+no arquivo ate4_atendcli001.php
+
+colocar uma opção para escolher a área de atendimento, colocando um <select> com os dados da tabela atendcadarea, (sendo este obrigatório) após selecionar a área, no campo técnico deve mostrar somente os técnicos desta área.( este campo não é obrigatório)
+
+no arquivo ate4_atendcli002.php
+Adicionar a mesma alteração anterior permitindo a alteração das informações.
+
+
+########################### ALTERAÇÕES NO ATENDIMENTO SUPORTE ######################################################################
+
+Quando for incluir o atendimento a suporte, a func deve mostras os atendimentos em aberto para o tecnico logado e deve mostrar também os atendimentos pertecentes a area que o tecnico pertence.
+
+##################################### FEITO ##################################
+
+insert into atendcadarea  select nextval('atendcadarea_at26_sequencial_seq'),'TRIBUTÁRIO';
+insert into atendcadarea  select nextval('atendcadarea_at26_sequencial_seq'),'FINACEIRO';
+insert into atendcadarea  select nextval('atendcadarea_at26_sequencial_seq'),'FOLHA';
+insert into atendcadarea  select nextval('atendcadarea_at26_sequencial_seq'),'PATRIMONIAL';
+insert into atendcadarea  select nextval('atendcadarea_at26_sequencial_seq'),'DBPREF';
+
+
+
+ id_usuario |     login     |                nome
+------------+---------------+------------------------------------
+   11136006 |               | AUTORIZA TAREFAS
+   11136028 | Documentacao  | Documentacao
+   11136032 | Procedimentos | Procedimentos
+   11136008 | anderson      | ANDERSON
+   11136029 | atendimento   | ATENDIMENTO
+      11131 | carlos        | CRESTANI, CARLOS VINÍCIUS          financeiro
+   11136015 | costa         | COSTA, CARLOS                      patrimonial
+   11136002 | dalpozzo      | DALPOZZO, LEANDRO PEREIRA          tributario
+          1 | dbseller      | DBSELLER INFORMÁTICA LTDA
+          8 | evandro       | EVANDRO SCHAULET                   tributario
+   11136012 | fmello        | FABRIZIO DE ROYES MELLO            tributario
+   11136023 | henrique      | HENRIQUE                           financeiro
+   11136024 | israel        | ISRAEL MAURENTE MAGALHAES          tributario
+   11136017 | ivair         | IVAIR DIAS CARDOSO                 tributario
+   11136014 | jaqueline     | JAQUELINE TORRES DOS SANTOS TONIAL
+   11136010 | jeferson      | JEFERSON SCHIMITHES                financeiro  patrimonial
+   11136027 | karina        | KARINA PIRES TRARBACH              dbpref
+   11136001 | leandro       | LEANDRO FAGUNDES DE SOUZA          financeiro
+   11136016 | leandrosilva  | LEANDRO DA SILVA FERREIRA
+   11136022 | marcus        | MARCUS VINICIUS DE SOUZA VIANA     financeiro
+      11134 | marlon        | MARLON ALVES
+          7 | paulo         | PAULO RICARDO DA SILVA             financeiro
+   11136031 | pcesar        | CESAR, PAULO OLIVEIRA D AVILA      folha
+   11136018 | reis          | ANDRE MONTANO REIS                 folha
+   11136005 | robson        | ROBSON
+   11136003 | rogerio       | ROGERIO BAUM
+         10 | sandro        | SANDRO MORETI FREITAS RODRIGUES    folha
+   11136019 | tarcisio      | TARCISIO MACHADO DOS REIS
+   11136021 | vaneza        | VANEZA BARRETOS PEREIRA            folha

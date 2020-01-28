@@ -1,0 +1,8 @@
+{
+  "erro_buscar_assentamento"                          : "Ocorreu um erro ao buscar os assentamentos",
+  "nenhum_assentamento_encontrado"                    : "Não foi encontrado nenhum assentamento",
+  "erro_persistir_assentamento"                       : "Não foi possível salvar o assentamento",
+  "erro_buscar_servidores_assentamento_substituicao"  : "Ocorreu um erro ao buscar os servidores com assentamento de substituição",
+  "erro_buscar_assentamentos_servidor"                : "Não Foi possível retornar os Assentamentos do Servidor."
+
+}

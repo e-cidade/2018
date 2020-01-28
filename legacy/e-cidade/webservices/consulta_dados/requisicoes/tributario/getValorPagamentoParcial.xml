@@ -1,0 +1,100 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="SUM(subquery.k00_valor)" label="valor_pago" />
+  </campos>
+  <from tabela="( SELECT DISTINCT arrepaga.k00_numpre,
+                       arrepaga.k00_numpar,
+                       arrepaga.k00_numtot,
+                       arrepaga.k00_receit,
+                       k02_drecei,
+                       arrepaga.k00_hist,
+                       k01_descr,
+                       arrepaga.k00_valor,
+                       arrepaga.k00_conta,
+                       arrepaga.k00_dtpaga,
+                       arrecant.k00_tipo
+                  FROM arrepaga
+                       LEFT JOIN arrecant ON arrecant.k00_numpre = arrepaga.k00_numpre
+                                         AND arrecant.k00_numpar = arrepaga.k00_numpar
+                                         AND arrecant.k00_receit = arrepaga.k00_receit
+                                         AND arrecant.k00_hist &lt;&gt; 918
+                       INNER JOIN tabrec ON tabrec.k02_codigo = arrepaga.k00_receit
+                       INNER JOIN tabrecjm ON tabrecjm.k02_codjm = tabrec.k02_codjm
+                       INNER JOIN histcalc ON histcalc.k01_codigo = arrepaga.k00_hist
+                       LEFT JOIN arreidret ON arreidret.k00_numpre = arrepaga.k00_numpre
+                                          AND arreidret.k00_numpar = arrepaga.k00_numpar
+                       LEFT JOIN disbanco ON disbanco.idret = arreidret.idret
+                 WHERE NOT EXISTS(SELECT 1
+                                    FROM abatimentorecibo
+                                         INNER JOIN abatimento ON abatimento.k125_sequencial = abatimentorecibo.k127_abatimento
+                                   WHERE abatimentorecibo.k127_numprerecibo = arrepaga.k00_numpre
+                                     AND abatimento.k125_tipoabatimento = 1 LIMIT 1)
+                   AND arrepaga.k00_numpre = $numpre
+                   AND arrepaga.k00_numpar = $numpar
+              GROUP BY arrepaga.k00_numpre,
+                       arrepaga.k00_numpar,
+                       arrepaga.k00_numtot,
+                       arrepaga.k00_hist,
+                       arrepaga.k00_receit,
+                       k02_drecei,
+                       k01_descr,
+                       arrepaga.k00_conta,
+                       arrepaga.k00_dtpaga,
+                       arrecant.k00_tipo,
+                       arrepaga.k00_dtoper,
+                       arrecant.k00_dtoper,
+                       disbanco.dtpago,
+                       k00_dtpaga,
+                       arrepaga.k00_dtvenc,
+                       arrecant.k00_dtvenc,
+                       arrepaga.k00_valor
+             UNION ALL
+       SELECT DISTINCT arreckey.k00_numpre,
+                       arreckey.k00_numpar,
+                       CASE
+                           WHEN arrecad.k00_numtot IS NOT NULL THEN arrecad.k00_numtot
+                           WHEN arrecant.k00_numtot IS NOT NULL THEN arrecant.k00_numtot
+                           ELSE arrepaga.k00_numtot
+                       END AS k00_numtot,
+                       arreckey.k00_receit,
+                       tabrec.k02_drecei,
+                       arreckey.k00_hist,
+                       histcalc.k01_descr,
+                       (abatimentoarreckey.k128_valorabatido + abatimentoarreckey.k128_correcao + abatimentoarreckey.k128_juros + abatimentoarreckey.k128_multa) AS valorabatido,
+                       arrepaga.k00_conta,
+                       arrepaga.k00_dtpaga,
+                       CASE
+                           WHEN arrecad.k00_tipo IS NOT NULL THEN arrecad.k00_tipo
+                           ELSE arrecant.k00_tipo
+                       END AS k00_tipo
+                  FROM abatimentorecibo
+                       INNER JOIN abatimento ON abatimento.k125_sequencial = abatimentorecibo.k127_abatimento
+                       INNER JOIN abatimentodisbanco ON abatimentodisbanco.k132_abatimento = abatimento.k125_sequencial
+                       INNER JOIN disbanco ON disbanco.idret = abatimentodisbanco.k132_idret
+                       INNER JOIN abatimentoarreckey ON abatimentoarreckey.k128_abatimento = abatimento.k125_sequencial
+                       INNER JOIN arreckey ON arreckey.k00_sequencial = abatimentoarreckey.k128_arreckey
+                       INNER JOIN tabrec ON tabrec.k02_codigo = arreckey.k00_receit
+                       INNER JOIN histcalc ON histcalc.k01_codigo = arreckey.k00_hist
+                       LEFT JOIN arrepaga ON arrepaga.k00_numpre = abatimentorecibo.k127_numprerecibo
+                       INNER JOIN arreinstit ON arreinstit.k00_numpre = arrepaga.k00_numpre
+                                            AND arreinstit.k00_instit = 1
+                       LEFT JOIN arrecant ON arrecant.k00_numpre = arreckey.k00_numpre
+                                         AND arrecant.k00_numpar = arreckey.k00_numpar
+                                         AND arrecant.k00_receit = arreckey.k00_receit
+                       LEFT JOIN arrecad ON arrecad.k00_numpre = arreckey.k00_numpre
+                                        AND arrecad.k00_numpar = arreckey.k00_numpar
+                                        AND arrecad.k00_receit = arreckey.k00_receit
+                 WHERE abatimento.k125_tipoabatimento = 1
+                   AND (arrepaga.k00_numpre = $numpre OR arreckey.k00_numpre = $numpre)
+                   AND (arrepaga.k00_numpar = $numpar OR arreckey.k00_numpar = $numpar)
+              ORDER BY k00_numpre,
+                       k00_numpar ) AS subquery" />
+  <juncoes></juncoes>
+  <filtros>
+    <filtro label="numpre" condicao="1=1" obrigatorio="true" />
+    <filtro label="numpar" condicao="1=1" obrigatorio="true" />
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao />
+</consulta>

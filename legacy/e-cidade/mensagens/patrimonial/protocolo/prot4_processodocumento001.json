@@ -1,0 +1,11 @@
+{
+  "erro_processo_nao_informado"   : "Escolha um processo.",
+  "erro_descricao_nao_informada"  : "Informe uma descrição para o documento.",
+  "erro_documento_nao_informado"  : "Escolha um documento.",
+  "erro_nenhum_documento_selecionado_exclusao" : "Nenhum documento selecionado.",
+  "mensagem_salvando_documento"   : "Aguarde... Salvando documento.",
+  "mensagem_carregando_documento" : "Aguarde... Carregando documento.",
+  "mensagem_enviando_documento"   : "Aguarde... Enviando documento.",
+  "mensagem_excluindo_documentos" : "Aguarde... Excluindo documentos do processo.",
+  "mensagem_buscando_documentos"  : "Aguarde... Buscando documentos do processo."
+}

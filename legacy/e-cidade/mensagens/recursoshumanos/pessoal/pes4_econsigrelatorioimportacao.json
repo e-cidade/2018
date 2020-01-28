@@ -1,0 +1,6 @@
+{
+  "competencia_nao_informada"          : "Informe a competência da folha.",
+  "competencia_informada_ultrapassada" : "A competência informada não pode ser maior que a atual.",
+  "nao_existe_relatorio"               : "Não há relatório para a competência informada.",
+  "erro_escrever_relatorio"            : "Erro ao escrever o relatório de importação"
+}

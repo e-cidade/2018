@@ -1,0 +1,7 @@
+{
+  "erro_autorizar_requisicao"      : "Erro ao autorizar a requisição:\n[sErro]",
+  "erro_autorizar_item_requisicao" : "Erro ao autorizar item da requisição:\n[sErro]",
+  "exames_autorizados"             : "Exame(s) autorizado(s) com sucesso!",
+  "saldo_insuficiente"             : "A soma dos exames autorizados são superiores ao limite disponível.\n\nExame: [exame]\nTotal Disponibilizado: [valor_disponivel]\nValor Autorizado: [valor_autorizado]",
+  "informe_data_coleta"            : "Exame sem data de coleta informada."
+}

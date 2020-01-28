@@ -1,0 +1,16 @@
+{
+  "informe_tipo_hora"            : "Campo Tipo Hora não informado.",
+  "informe_regime_trabalho"      : "Campo Regime de Trabalho não informado.",
+  "informe_nivel_ensino"         : "Campo Nível de Ensino não informado.",
+  "informe_area_trabalho"        : "Campo Área de Trabalho não informado.",
+  "informe_disciplina"           : "Campo Disciplina(s) não informado.",
+  "marque_uma_disciplina"        : "Marque ao menos uma Disciplina.",
+  "erro_buscar_tipo_hora"        : "Erro ao buscar os Tipos de Hora de Trabalho.",
+  "buscando_funcoes"             : "Buscando função exercída do profissional. ",
+  "cadastre_funcao_profissional" : "Cadastre uma função para o profissional antes.",
+  "informe_funcao"               : "Campo Função Exercida não informado.",
+  "aguarde_salvando"             : "Salvando dados da Relação de Trabalho.",
+  "confirma_exclusao"            : "Confirma exclusão Relação de Trabalho?",
+  "aguarde_excluindo"            : "Excluindo Relação de Trabalho.",
+  "informe_ensino"               : "Informe o Nível de Ensino."
+}

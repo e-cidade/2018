@@ -1,0 +1,296 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010226' name='caixa.arquivoinfracao' description="Tabela de arquivos de infração de trânsito" prefix="i07" label="Arquivo Infração" type="0">
+  <fields>
+    <field codigo="1009431" 
+           campo_api='' 
+           name="i07_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial." 
+           inivalue="0" 
+           label="Código Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código Sequencial" 
+           reference="" 
+           ispk="t"
+           hassequence="t" >
+           
+      <sequence name='caixa.arquivoinfracao_i07_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009432" 
+           campo_api='' 
+           name="i07_dtimportacao" 
+           conteudo="date" 
+           description="Data da importação" 
+           inivalue="null" 
+           label="Data da importação" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data da importação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009433" 
+           campo_api='' 
+           name="i07_dtpagamento" 
+           conteudo="date" 
+           description="Data de Pagamento" 
+           inivalue="null" 
+           label="Data de Pagamento" 
+           size="10" 
+           null="t"
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data de Pagamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009434" 
+           campo_api='' 
+           name="i07_dtrepasse" 
+           conteudo="date" 
+           description="Data de Repasse" 
+           inivalue="null" 
+           label="Data de Repasse" 
+           size="10" 
+           null="t"
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data de Repasse" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009442" 
+           campo_api='' 
+           name="i07_registro" 
+           conteudo="int4" 
+           description="Quantidade de Registros" 
+           inivalue="0" 
+           label="Quantidade de Registros" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Quantidade de Registros" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009435" 
+           campo_api='' 
+           name="i07_vlbruto" 
+           conteudo="float8" 
+           description="Valor Bruto" 
+           inivalue="0" 
+           label="Valor Bruto" 
+           size="15" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor Bruto" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009440" 
+           campo_api='' 
+           name="i07_vlprefeitura" 
+           conteudo="float8" 
+           description="Valor da Prefeitura" 
+           inivalue="0" 
+           label="Valor da Prefeitura" 
+           size="15" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor da Prefeitura" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009441" 
+           campo_api='' 
+           name="i07_vlduplicado" 
+           conteudo="float8" 
+           description="Valor de Pagamento Duplicado" 
+           inivalue="0" 
+           label="Valor de Pagamento Duplicado" 
+           size="15" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor de Pagamento Duplicado" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009438" 
+           campo_api='' 
+           name="i07_vlfunset" 
+           conteudo="float8" 
+           description="Valor do Funset" 
+           inivalue="0" 
+           label="Valor do Funset" 
+           size="15" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor do Funset" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009437" 
+           campo_api='' 
+           name="i07_vldetran" 
+           conteudo="float8" 
+           description="Valor do Detran" 
+           inivalue="0" 
+           label="Valor do Detran" 
+           size="15" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor do Detran" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009436" 
+           campo_api='' 
+           name="i07_vlprestacaocontas" 
+           conteudo="float8" 
+           description="Valor da Prestação de Contas" 
+           inivalue="0"
+           label="Valor da Prestação de Contas" 
+           size="15" 
+           null="t"
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor da Prestação de Contas" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009439" 
+           campo_api='' 
+           name="i07_vloutros" 
+           conteudo="float8" 
+           description="Valor de Outros" 
+           inivalue="0"
+           label="Valor de Outros" 
+           size="15" 
+           null="t"
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor de Outros" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009447" 
+           campo_api='' 
+           name="i07_dtmovimento" 
+           conteudo="date" 
+           description="Data do Movimento" 
+           inivalue="null" 
+           label="Data do Movimento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data do Movimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009446" 
+           campo_api='' 
+           name="i07_remessa" 
+           conteudo="char(5)" 
+           description="Código de Remessa" 
+           inivalue="" 
+           label="Código de Remessa" 
+           size="5" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Código de Remessa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009445" 
+           campo_api='' 
+           name="i07_convenio" 
+           conteudo="char(6)" 
+           description="Código do Convênio" 
+           inivalue="" 
+           label="Código do Convênio" 
+           size="6" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Código do Convênio" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

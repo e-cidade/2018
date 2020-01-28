@@ -1,0 +1,9 @@
+{
+   "sem_exames_conferidos"         : "Não foi encontrado nenhum exame para o período ou financiamento selecionado."
+  ,"nao_foi_possivel_salvar"       : "Não foi possivel salvar o encerramento da competência"
+  ,"erro_ao_conferir_exame"        : "Não foi possivel encerrar o exame. [sql_erro]"
+  ,"erro_ao_excluir_arquivo"       : "Erro ao remover arquivo do BPA Magnético."
+  ,"erro_ao_excluir_procedimentos" : "Erro ao excluir procedimentos conferidos."
+  ,"erro_ao_excluir_fechamento"    : "Erro ao excluir fechamento."
+  ,"nenhum_procedimento_encontrado" : "Nenhum procedimento encontrado"
+}

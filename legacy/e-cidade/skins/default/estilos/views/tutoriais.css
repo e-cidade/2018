@@ -1,0 +1,172 @@
+.tutoriais-container * {
+  font-size: 16px;
+}
+
+.tutoriais-container {
+  width: 600px;
+  min-height: 300px;
+  max-height: 600px;
+  background-color: #e1dede;
+  border: 2px solid #4a789c;
+  border-top: 50px solid #4a789c;
+  position: absolute;
+  margin: auto auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.tutoriais-container > .close {
+  position: absolute;
+  right: 10px;
+  top: -33px;
+  font-size: 18px;
+  color: #fff;
+  padding: 5px;
+  height: 9px;
+  width: 10px;
+  line-height: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.tutoriais-container > .close:hover {
+  background-color: #39678b;
+}
+
+.tutoriais-container::before {
+  content: "Tutorial";
+  position: absolute;
+  top: -33px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bolder;
+  left: 5px;
+}
+
+.tutoriais-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.tutoriais-list-empty em.tutoriais-list-item {
+  color: #999;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+
+div.tutoriais-list-item {
+  height: 30px;
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+  margin-bottom: 5px;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+div.tutoriais-list-item:hover {
+  background-color: #cecdcd;  
+}
+
+.tutorial-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #e1dede;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.tutorial-info .back {
+  cursor: pointer;  
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #4a789c;
+}
+
+.tutorial-info .back:hover {
+  text-decoration: underline;
+}
+
+.tutorial-info > div {
+  position: relative;
+}
+
+.tutorial-info-titulo {
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tutorial-info-etapa {
+  box-sizing: border-box;
+  padding: 3px;
+  border-bottom: 1px solid #000;
+  position: relative;
+}
+
+.tutorial-info-etapa-disabled {
+  background-color: #cdcdcd;
+  color: #797979;
+  cursor: not-allowed;
+}
+
+.tutorial-info-etapa .start {
+  position: absolute;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAHVSURBVHjajNVPiE9RFAfwz++Z/ElRaLKhaUhG2FA0SSmmIYoFG4VSikgT2SgbCwtilA0LZa3IYlIaNL8MzSRsZmpKU9JPw1ixoMb8sjmvntt75vet27nn3nO/9/vuufe8mr1nVKANPdiG1TE2hVEM4mfVojIcxyVsqJj/jJvon4twPp6gN/xvGMAEZrEOe9CBWziK/fhaRpjhA7rwC2dxv0Lh4VC3FWNYj+85SY6BIPuEziDrwYUSwodYgxEsR72oSnxiL/7ErlMxvhI3oqX4je2YDiGni4TXw17MpRfOUKh8gaUVCYRrWJiFoo2Ywe0keF6hvwsf0Z3EPEUjNjuQYUdMPDc3VmAY55Pxx2G7M7SHM6F19OMVFoU/GbY9QzNJUKsYK1nbbMOXcDa3SPQDhyJJObrCNjIMhbMzXsr/8AZrEzI4GHYoC+nDqOFKEjhT6N+JDE8nMcficjfwLCvcM7icFITOsCdwrkTxMtyLfh9mc8KRwrsdxZbov45i8KCErAPvsQAv4zn+k9mTMbEYb3EV41H7ilgSaiajTo7HpqBWUmDv4lTBr8cdbUZB2J1c6CNRAyoJxaI+7KvIdj2e6aNWK/ZgtE3xC1gVx9PAuzjnUvwdANnSZHg/UkiMAAAAAElFTkSuQmCC') no-repeat;
+  display: block;
+  cursor: pointer;
+  right: 7px;
+  top: 7px;
+  width: 20px;
+  height: 20px;
+}
+
+.tutorial-info-etapa-disabled .start {
+  cursor: not-allowed;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAHRSURBVHjahNTPi81hFAbwz/0m7oqYmtXQRMkYbKiryUZdmiaWZslCKSWlZGmlLEQ0K5v5B6bINCI/65Yyk7BgYqPQ1cVYCcPcmbE5t7697juezem8532f93nPec+pTFarMliFg6hhU6y1MIMH+J471A3HcA7bM/GPuIKraaCSKFyNWxgOfw5TeINFbMUB9Ef8GQ7hczeFBV5iAL9wCuMZhUdC3R68xra4XFHadDvI3mNzQlZDHX3hT2ALptGDRlmVeOIw2nFrK1F0F/fjeR3MYy++hpCTZcJLYc92pCf4EPZbpoBwEdUiFO3AAq5lcvYz7I8usTtoYh0OF9gXgYfy+B32TyZ+M+xQgd5w3q5AOJ8oTfEubG+BpaRA3dAOu5CJd84uFfgUzq4VCNcnxCkGwjYrk9XqIF5hGdVMnnoi1oqOSTEXe0aK+OlPUMH5jII+DMWeFEeDrIl7nV6u4WlsGMRscmg57GmMldY3RMrWYBQTnWROl1ptBrsTwgvxraZKa/14EWSPox3/mTaPsL9EMoYvCflaHMflSMFsFHSxGyFcx4mS34jx1Y7xVU8+9Gi5+pXMxK7jDEYyRWpEm97434BNsTMKtjE+bxPPI89d8XcASQ9pjuAzy3QAAAAASUVORK5CYII=') no-repeat
+}
+
+.tutorial-info-etapa h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0px;
+}
+
+.tutorial-info-etapa h4 > span {
+  color: #777;
+  font-size: 12px !important;
+  font-weight: normal;
+  margin: 0px 5px;
+}
+
+.tutorial-info-etapa ul {
+  margin: 5px 0px;
+  padding-left: 15px;
+}
+
+.tutorial-info-etapa ul li {
+  font-size: 14px;
+  list-style: none;
+}

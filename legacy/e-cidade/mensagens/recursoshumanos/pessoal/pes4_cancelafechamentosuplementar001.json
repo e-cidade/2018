@@ -1,0 +1,5 @@
+{ 
+  "incluido_com_sucesso"      : "Fechamento da folha suplementar cancelado com sucesso.",
+  "folha_fechada_inexistente" : "Não existe folha suplementar fechada.",
+  "rotina_desativada"         : "Esta rotina não está ativa. Para ativar, contate um administrador."
+}

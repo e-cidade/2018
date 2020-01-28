@@ -1,0 +1,14 @@
+{
+  "campo_obrigatorio"            : "O campo [sCampo] é de preenchimento obrigatório.",
+  "selecione_rescisao"           : "Selecione alguma rescisão para continuar.",
+  "processando"                  : "Processando, aguarde...",
+  "gerando_empenhos"             : "Gerando Empenhos...",
+  "pesquisando_rescisoes"        : "Pesquisando Rescisões...",
+  "empenhos_gerados"             : "Empenhos gerados com sucesso!",
+  "verificando_empenhos"         : "Verificando empenhos existentes...",
+  "reprocessa_empenhos"          : "Empenhos já gerados para este período.\nReprocessar?",
+  "data_final_menor_que_inicial" : "A data final deve ser menor que a data inicial.",
+  "competencia_invalida"         : "A competência informada é maior que a competência atual.",
+  "carregando"                   : "Carregando as informações...",
+  "folha_salario_fechada"        : "A folha de salário está aberta. Execute o fechamento."
+}

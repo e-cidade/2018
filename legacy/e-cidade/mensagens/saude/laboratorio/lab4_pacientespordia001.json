@@ -1,0 +1,13 @@
+{
+   "buscandoLaboratorios"               : "Buscando laboratórios, aguarde."
+  ,"selecione_laboratorio"              : "Selecione o laboratório."
+  ,"informe_exame"                      : "Informe o exame."
+  ,"informe_limite"                     : "Informe o limite do exame."
+  ,"exame_ja_existe"                    : "O exame informado já possui cota diária configurada para o laboratório."
+  ,"excluindo_exame"                    : "Excluindo cotas do exame [sExame]."
+  ,"informe_laboratorio"                : "Informe o laboratório."
+  ,"informe_limite_diario"              : "Informe o limite diário."
+  ,"limite_exame_menor_limite_diario"   : "Limite de exame deve ser menor que o limite diário."
+  ,"configuracao_financeiro_cadastrado" : "Já existe configuração de controle Físico/Financeiro cadastrada.\nPara utilizar o controle de cotas de Atendimento é necessário que seja excluído o controle Físico/ Financeiro cadastrado anteriormente.\n\nAcesse Procedimentos > Controle de Cotas > Controle Físico / Financeiro > Lançar"
+  ,"validando_parametros"               : "Aguarde, validando parâmetros..."
+}

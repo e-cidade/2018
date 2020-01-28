@@ -1,0 +1,11 @@
+{
+   "erro_buscar_escolas_rede" : "Erro ao buscar escolas da rede."
+  ,"informe_etapa"            : "Informe a etapa."
+  ,"informe_escola_destino"   : "Informe a escola de destino."
+  ,"informe_alunos"           : "Informe os alunos a serem transferidos."
+  ,"transferencia_realizada"  : "Transferência realizada com sucesso."
+  ,"informe_transferencia"    : "Informe o codigo da Transferência."
+  ,"informe_aluno"            : "Informe o aluno."
+  ,"transferencia_anulada"    : "Transferência cancelada com sucesso."
+  ,"erro_buscar_emissor"      : "Erro ao buscar emissor."
+}

@@ -1,0 +1,6 @@
+{
+  "selecione_inventario"         : "Selecione um inventário.",
+  "processando_inventario"       : "Aguarde, processando Inventário...",
+  "deseja_efetuar_processamento" : "Esta rotina atualizará os bens deste inventário. Deseja efetuar este processamento agora?",
+  "buscando_inventario"          : "Aguarde, buscando Inventário..."
+}

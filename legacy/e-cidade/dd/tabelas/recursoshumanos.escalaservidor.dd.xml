@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4009' name='recursoshumanos.escalaservidor' description="Tabela com as escalas do servidor" prefix="rh192" label="Escalas do servidor" type="0">
+  <fields>
+    <field codigo="22244" 
+           campo_api='' 
+           name="rh192_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.escalaservidor_rh192_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22245" 
+           campo_api='' 
+           name="rh192_gradeshorarios" 
+           conteudo="int4" 
+           description="Vínculo com a tabela de grades de horários" 
+           inivalue="0" 
+           label="Grades de Horários" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Grades de Horários" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22246" 
+           campo_api='' 
+           name="rh192_regist" 
+           conteudo="int4" 
+           description="Matrícula do servidor" 
+           inivalue="0" 
+           label="Matrícula" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Matrícula" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22247" 
+           campo_api='' 
+           name="rh192_instit" 
+           conteudo="int4" 
+           description="Código da instituição" 
+           inivalue="0" 
+           label="Instituição" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Instituição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22248" 
+           campo_api='' 
+           name="rh192_dataescala" 
+           conteudo="date" 
+           description="Data da escala" 
+           inivalue="null" 
+           label="Data da Escala" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data da Escala" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh192_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_config">
+      <fieldfk name="rh192_instit" reference="codigo" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="gradeshorarios">
+      <fieldfk name="rh192_gradeshorarios" reference="rh190_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

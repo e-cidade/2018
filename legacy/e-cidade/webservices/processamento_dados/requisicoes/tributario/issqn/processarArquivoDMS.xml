@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>
+<processamento>
+  <parametros>
+    <parametro nome="iInscricaoMunicipal" obrigatorio="false" tipo="integer" />
+    <parametro nome="sArquivo" obrigatorio="true" tipo="string" />
+  </parametros>
+  <configuracoes>
+    <classe nome="processarArquivoDMSWebservice" parametros="" caminho="model/issqn/processarArquivoDMSWebservice.model.php">
+      <metodos>
+        <metodo nome="setInscricaoMunicipal" parametros="$iInscricaoMunicipal" />
+        <metodo nome="setArquivo"            parametros="$sArquivo" />
+        <metodo nome="processar" />
+      </metodos>
+    </classe>
+  </configuracoes>
+</processamento>

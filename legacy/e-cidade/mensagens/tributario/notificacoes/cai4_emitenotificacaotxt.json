@@ -1,0 +1,10 @@
+{
+  "verificar_parametros"            : "Verificar parametros de notificação.",
+  "nenhuma_notificacao_gerada"      : "Nenhuma notificação gerada para a lista [sLista]",
+  "problemas_verificar_se_pagou"    : "Problemas ao verificar se ja pagou. SQL: [sqlJaPagou]",
+  "problemas_gerar_select_recibo"   : "Problemas ao gerar select do recibo. SQL: [sqlTipoDebito]",
+  "layout_tipos_debitos_diferentes" : "Tipos de debitos com layout diferentes.",
+  "recebido_com_valor_zerado"       : "Recibo com valor zerado.",
+  "configure_terceiro_digito"       : "Configure o terceiro dígito do código de barras no cadastro do tipo de débito para este tipo de débito.",
+  "problemas_gerar_totais_ano"      : "Problemas ao gerar totais por anos. SQL: [sqlAnos]"
+}

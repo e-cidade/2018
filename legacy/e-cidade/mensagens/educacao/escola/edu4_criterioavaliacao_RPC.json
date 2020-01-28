@@ -1,0 +1,11 @@
+{
+  "criterio_nao_informado"      : "Código do critério de avaliação não informado.",
+  "criterio_salvo"              : "Critério salvo com sucesso.",
+  "descricao_nao_informada"     : "Descrição do critério não informada.",
+  "abreviatura_nao_informada"   : "Abreviatura do critério não informada.",
+  "criterio_excluido"           : "Critério excluído com sucesso.",
+  "nenhuma_turma_selecionada"   : "Nenhuma turma foi selecionada para vínculo com o critério.",
+  "turmas_vinculadas"           : "Turma(s) vinculada(s) com sucesso.",
+  "reordenado_criterio_sucesso" : "Critério de avaliação reordenado com sucesso!",
+  "vinculo_alterado_sucesso"    : "Vínculo alterado com sucesso!"
+}

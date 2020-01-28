@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="codUf"                obrigatorio="true" tipo="integer" />
+    <parametro nome="municipio"         obrigatorio="true" tipo="string" />
+  </parametros>
+  <configuracoes>
+    <classe   referencia="oConsultaEndereco" nome="LocalizaEndereco" parametros="" caminho="model/arrecadacao/webservice/ConsultaEndereco.model.php"/>
+    <exec>
+      <metodo referencia="oConsultaEndereco" nome="setCodUf"        parametros="$codUf" />
+      <metodo referencia="oConsultaEndereco" nome="setMunicipio"        parametros="$municipio" />
+      <metodo referencia="oConsultaEndereco" nome="buscaDadosMunicipio" parametros="" />
+    </exec>
+  </configuracoes>
+</processamento>

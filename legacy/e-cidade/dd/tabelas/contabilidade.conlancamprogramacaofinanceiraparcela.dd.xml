@@ -1,0 +1,53 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4035' name='contabilidade.conlancamprogramacaofinanceiraparcela' description="Tabela de vinculo entra a conlancam e programacaofinanceiraparcela" prefix="rh191" label="Tabela de vinculo entra a conlancam e programacaofinanceiraparcela" type="0">
+  <fields>
+    <field codigo="22417" 
+           campo_api='' 
+           name="c118_conlancam" 
+           conteudo="int4" 
+           description="Código do lançamento contabil" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="f"> 
+    </field> 
+    <field codigo="22418" 
+           campo_api='' 
+           name="c118_programacaofinanceiraparcela" 
+           conteudo="int4" 
+           description="Vinculo com a tabela programacaofinanceiraparcela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="f"> 
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="c118_conlancam"></fieldpk> 
+    <fieldpk name="c118_programacaofinanceiraparcela"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="conlancam">
+      <fieldfk name="c118_conlancam" reference="c70_codlan" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="conlancamprogramacaofinanceiraparcela">
+      <fieldfk name="c118_programacaofinanceiraparcela" reference="k118_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

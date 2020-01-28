@@ -1,0 +1,62 @@
+ [ {
+  codigo_grupo:67,
+  descricao_grupo: 'PAVIMENTACAO',
+  codigo_possui_caracteristica:813,
+  codigo_nao_possui_caracteristica:814
+  },
+  {
+  codigo_grupo:65,
+  descricao_grupo: 'GALERIAS PLUVIAIS',
+  codigo_possui_caracteristica:809,
+  codigo_nao_possui_caracteristica:810
+  },
+  {
+  codigo_grupo:64,
+  descricao_grupo: 'REDE DE AGUA',
+  codigo_possui_caracteristica:807,
+  codigo_nao_possui_caracteristica:808
+  },
+  {
+  codigo_grupo:70,
+  descricao_grupo: 'REDE DE ESGOSTO',
+  codigo_possui_caracteristica:819,
+  codigo_nao_possui_caracteristica:820
+  },
+  {
+  codigo_grupo:62,
+  descricao_grupo: 'REDE ELETRICA',
+  codigo_possui_caracteristica:803,
+  codigo_nao_possui_caracteristica:804
+  },
+  {
+  codigo_grupo:61,
+  descricao_grupo: 'ILUMINACAO',
+  codigo_possui_caracteristica:801,
+  codigo_nao_possui_caracteristica:802
+  },
+  {
+  codigo_grupo:63,
+  descricao_grupo: 'REDE TELEFONICA',
+  codigo_possui_caracteristica:805,
+  codigo_nao_possui_caracteristica:806
+  },
+  {
+  codigo_grupo:68,
+  descricao_grupo: 'COLETA DE LIXO',
+  codigo_possui_caracteristica:815,
+  codigo_nao_possui_caracteristica:816
+  },
+  {
+  codigo_grupo:69,
+  descricao_grupo: 'VARRICAO',
+  codigo_possui_caracteristica:817,
+  codigo_nao_possui_caracteristica:818
+  },
+  {
+  codigo_grupo:66,
+  descricao_grupo: 'SUJEITO A INUNDACOES',
+  codigo_possui_caracteristica:811,
+  codigo_nao_possui_caracteristica:812
+  } ]
+
+

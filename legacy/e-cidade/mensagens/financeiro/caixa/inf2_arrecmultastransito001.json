@@ -1,0 +1,6 @@
+{
+  "informe_data_inicial"     : "Informe a data inicial de repasse.",
+  "informe_data_final"       : "Informe a data final de repasse.",
+  "data_inicial_menor_final" : "Data inicial de repasse deve ser menor que a data final.",
+  "ano_igual"                : "Os anos informado nas datas de pagamentos devem ser iguais."
+}

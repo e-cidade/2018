@@ -1,0 +1,8 @@
+{
+  "validando_turma"       : "Aguarde, validando as informações da turma...",
+  "selecione_calendario"  : "Selecione um calendário.",
+  "selecione_turma"       : "Selecione uma turma.",
+  "selecione_periodo"     : "Selecione um período.",
+  "selecione_disciplinas" : "Selecione ao menos uma disciplina.",
+  "regencias_sem_grade"   : "A(s) seguinte(s) regência(s) não serão impressas pois não possuem grade de horários configurada: \n[sRegencias].\nAcesse:\n\tCadastro>Turmas>Alteração - Aba Horários e configure a grade. "
+}

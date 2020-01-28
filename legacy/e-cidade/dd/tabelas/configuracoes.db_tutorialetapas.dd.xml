@@ -1,0 +1,122 @@
+<?xml version="1.0" standalone="yes" ?>
+<table name="configuracoes.db_tutorialetapas" description="Etapas de um tutorial" prefix="" label="TutorialEtapas" type="0">
+
+  <fields>
+
+    <field name="id"
+           conteudo="int4"
+           description="Código"
+           inivalue="0"
+           label="Código"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código"
+           reference=""
+           ispk="t"
+           hassequence="t">
+      <sequence name="configuracoes.db_tutorialetapas_id_seq" ></sequence>
+    </field>
+
+    <field name="db_tutorial_id"
+           conteudo="int4"
+           description="Codigo do Tutorial"
+           inivalue="f"
+           label="Codigo do Tutorial"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Codigo do Tutorial"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+
+    <field name="descricao"
+           conteudo="varchar"
+           description="Nome do Etapa"
+           inivalue="f"
+           label="Nome do Etapa"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Nome do Etapa"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+
+    <field name="ordem"
+           conteudo="int4"
+           description="Ordem da Etapa"
+           inivalue="f"
+           label="Ordem da Etapa"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Ordem da Etapa"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+
+    <field name="menu_id"
+           conteudo="int4"
+           description="Codigo do Menu"
+           inivalue="f"
+           label="Codigo do Menu"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Codigo do Menu"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+
+    <field name="modulo_id"
+           conteudo="int4"
+           description="Codigo do Módulo"
+           inivalue="f"
+           label="Codigo do Módulo"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Codigo do Módulo"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+
+  </fields>
+  <primarykey>
+    <fieldpk  name="id"></fieldpk>
+  </primarykey>
+
+  <foreignkeys>
+
+    <foreignkey reference="configuracoes.db_tutorial" inner='true'>
+      <fieldfk name="db_tutorial_id" reference="id"></fieldfk>
+    </foreignkey>
+
+  </foreignkeys>
+
+</table>

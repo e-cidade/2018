@@ -1,0 +1,6 @@
+{
+  "erro_data_processamento": "A data informada é inferior a do último processamento. \n\nData do último processamento: [data_ultimo_processamento].",
+  "sucesso_processamento": "Processamento executado com sucesso.",
+  "data_processamento_invalida": "Informe a data para o processamento.",
+  "confirmar_processamento_fechamento_material": "O fechamento do material poderá demandar algum tempo, uma vez\nque o sistema irá processar todos os materiais cadastrados.\n\nDeseja continuar com o processamento?"
+}

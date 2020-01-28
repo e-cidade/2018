@@ -1,0 +1,80 @@
+.DBLovrotTable {
+  border-collapse: collapse;
+}
+
+.DBLovrotNumeroRegistros {
+  color      : #FF0000;
+  font-weight: bold;
+}
+
+.DBLovrotInputCabecalho {
+  text-decoration : underline;
+  background-color: transparent;
+  border-style    : none;
+}
+
+.DBLovrotTdCabecalho {
+  text-align: center;
+}
+
+.DBLovrotTdFuncaoAuxiliar {
+  text-decoration: none;
+  color          : #000000;
+}
+
+.DBLovrotRegistrosRetornados {
+  text-decoration: none;
+  color          : #000000;
+}
+
+.DBLovrotRegistrosRetornadosTotalizacao {
+  text-decoration  : none;
+  color            : #000000;
+  background-color : #ffffff;
+  text-align       : right;
+}
+
+.DBLovrotTdTotalGeral {
+  text-align : right;
+  font-weight: bold;
+}
+
+.DBLovrotInputRodape {
+  background-color: #E6E4F1;
+}
+
+.DBLovrotDivText {
+  position         : absolute;
+  left             : 10px;
+  top              : 10px;
+  visibility       : hidden;
+  background-color : #6699CC;
+  border           : 2px outset #cccccc;
+  text-align       : left;
+}
+
+.DBLovrotLabelDivTextTitulo {
+  color       : #000000;
+  font-family : Arial;
+  font-size   : 13px;
+  font-weight : bold;
+}
+
+.DBLovrotLabelDivTextDescricao {
+  color       : #000000;
+  font-family : Arial;
+  font-size   : 12px;
+}
+
+.DBLovrotBold {
+  font-weight: bold;
+}
+
+table.DBLovrotTable td {
+  white-space: nowrap;
+  border: 2px groove gray;
+}
+
+.DBLovrotClique {
+  text-align: center;
+}

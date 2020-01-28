@@ -1,0 +1,197 @@
+.taskbar-container {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #4a789c;
+  font-family: "DejaVu Sans";
+  font-size: 0;
+  z-index: 200;
+
+  -webkit-box-shadow: 0px 0px 1px 5px #000;
+     -moz-box-shadow: 0px 0px 1px 5px #000;
+          box-shadow: 0px 1px 5px 0px #000;
+
+  background-position: 100% 59%;
+}
+
+.taskbar-buttons {
+  list-style: none;
+  white-space: nowrap;
+}
+
+.taskbar-buttons > li {
+  display: inline-block;
+  padding: 0px 10px;
+  height: 36px;
+  line-height: 36px;
+  cursor: pointer;
+  font-size: 12px;
+
+  -webkit-transition: background-color 0.2s;
+     -moz-transition: background-color 0.2s;
+          transition: background-color 0.2s;
+}
+
+.taskbar-buttons li.taskbar-buttons-item {
+  min-width: 150px;
+  text-align: center;
+  white-space: nowrap;
+  color: #fdfdfd;
+  font-size: 11px;
+  position: relative;
+  margin-left: 5px;
+}
+
+.taskbar-buttons li.taskbar-buttons-item.active {
+  background-color: #2c5676;
+}
+
+.taskbar-buttons li.taskbar-buttons-item.active:hover {
+  background-color: #2c5676;
+}
+
+.taskbar-buttons li.taskbar-buttons-item:first-child {
+  margin-left: 0px;
+}
+
+.taskbar-buttons li.taskbar-buttons-item:hover {
+  background-color: rgba(255,255,255, 0.1);
+}
+
+.taskbar-buttons li.taskbar-buttons-item:active {
+  background-color: rgba(255,255,255, 0.05);
+}
+
+.taskbar-buttons li.taskbar-buttons-item::after {
+  content: "";
+  border-right: 1px solid #426c8c;
+  position: absolute;
+  left: 100%;
+  height: 24px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0px auto 2px;
+  padding: 0;
+}
+
+/** MENU button **/
+.taskbar-container .taskbar-menu-button {
+  background-color: #426c8c;
+  text-align: center;
+  border-right: none;
+  color: #fdfdfd;
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  float: left;
+  cursor: pointer;
+}
+
+.taskbar-container .taskbar-menu-button:active {
+  background-color: rgba(255,255,255, 0.1);
+}
+
+.taskbar-buttons li.taskbar-buttons-item .notify {
+  background: red;
+  position:absolute;
+  top: -2px;
+  right: -4px;
+  height : 15px;
+  width : 15px;
+  border-radius:15px;
+  line-height: 15px;
+  z-index: 1;
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 3px #222;
+  border: 1px solid white;
+}
+
+.taskbar-buttons-modal {
+  height: 100%;
+  width: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  background-color: #4a789c;
+}
+
+.taskbar-buttons-modal .icon {
+  padding: 10px 9px 6px 11px;
+}
+
+.taskbar-buttons-modal .icon span{
+  width: 20px;
+  height: 4px;
+  border-radius: 1px;
+  margin-bottom: 3px;
+  display: block;
+  background: #ededed;
+  -webkit-transition: all .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+
+.taskbar-buttons-modal.active .icon .bar-1 {
+  -webkit-transform: translateY(7px) rotate(-45deg);
+     -moz-transform: translateY(7px) rotate(-45deg);
+          transform: translateY(7px) rotate(-45deg);
+}
+
+.taskbar-buttons-modal.active .icon .bar-2 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.taskbar-buttons-modal.active .icon .bar-3 {
+  -webkit-transform: translateY(-7px) rotate(45deg);
+     -moz-transform: translateY(-7px) rotate(45deg);
+          transform: translateY(-7px) rotate(45deg);
+}
+
+.taskbar-buttons-modal .content > ul{
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: #e0dddd;
+  padding: 15px;
+  box-shadow: 0px 0px 5px -2px #222;
+  max-height: 500px;
+  min-width: 200px;
+  bottom: 100%;
+}
+
+.taskbar-buttons-modal.active .content > ul {
+  display: block;
+}
+
+
+
+.taskbar-buttons-modal .taskbar-buttons .taskbar-buttons-item {
+  display: block;
+  color: #666;
+  line-height: 50px;
+  border-bottom: 1px solid #CCC;
+  text-align: left;
+  padding-left: 0px;
+  margin-left: 10px;
+}
+
+.taskbar-buttons-modal .taskbar-buttons li.taskbar-buttons-item.active,
+.taskbar-buttons-modal .taskbar-buttons li.taskbar-buttons-item.active:hover {
+  background-color: transparent;
+}
+
+.taskbar-buttons-modal .taskbar-buttons li.taskbar-buttons-item:first-child {
+  margin-left: 10px;
+}
+
+.taskbar-buttons-modal .taskbar-buttons .taskbar-buttons-item:hover {
+  color: #426c8c;
+}
+
+.taskbar-buttons-modal .taskbar-buttons .taskbar-buttons-item::after {
+  content: none;
+}

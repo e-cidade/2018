@@ -1,0 +1,9 @@
+{
+   "informe_turma":"Informe a Turma!"
+  ,"aguarde_buscando_turno_vinculado" : "Aguarde, buscando turno(s) vinculado(s)..."
+  ,"erro_buscar_turno_vinculado" : "Erro ao buscar o(s) turno(s) vinculado(s) ao aluno. "
+  ,"erro_data_modificacao" : "A data de modificação deve estar dentro período do calendário. \n  Período do calendário: [dtInicio] até [dtFim] "
+  ,"erro_turno_sem_vagas"  : "Turno de referencia \"[sTurno]\" não possui vagas na turma."
+  ,"nenhum_turno_selecionado" : "Você deve selecionar ao menos um turno!"
+  ,"aguarde_salvando_alteracao_turno" : "Aguarde, a alteração esta sendo salva..."
+}

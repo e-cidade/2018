@@ -1,0 +1,20 @@
+{
+  "periodo_de_gozo_zerado"                    : "Dias de gozo ou Dias a Abonar devem ser informados.",
+  "dias_direito_menor_abono_dias_a_gozar"     : "A soma de Dias de Abono + Dias a Gozar não pode ser maior que os Dias de Direito.",
+  "data_final_menor_que_inicial"              : "A Data Final não pode ser menor que a Data Inicial.",
+  "data_inicial_menor_que_periodo_aquisitivo" : "A Data Inicial não pode ser menor que a Data Inicial do Período Aquisitivo.",
+  "periodo_especifico_inicial_nao_informado"  : "Campo Data Específica Inicial não informado.",
+  "periodo_especifico_final_nao_informado"    : "Campo Data Específica Final não informado.",
+  "data_especifica_final_menor_que_inicial"   : "A Data Específica Final não pode ser menor que a Data Específica Inicial.",
+  "dias_abono_maior_que_terco_dias_direito"   : "O número de Dias de Abono não poder ser maior que um terço dos Dias de Direito",
+  "data_inicial_nao_informada"                : "Campo Data Inicial não informado.",
+  "ano_pagamento_menor_folha"                 : "O Ano Pagamento não pode ser menor que o ano atual da folha de pagamento.",
+  "mes_pagamento_menor_folha"                 : "O Mês Pagamento não pode ser menor que o mês atual da folha de pagamento.",
+  "mes_invalido"                              : "Mês inválido!",
+  "ano_pagamento_maior_data_incial"           : "Ano/Mês de Pagamento não pode ser maior que o Ano/Mês da Data Inicial.",
+  "mes_pagamento_maior_data_incial"           : "Ano/Mês de Pagamento não pode ser maior que o Ano/Mês da Data Inicial.",
+  "ano_pagamento_nao_informado"               : "Ano de pagamento não informado.",
+  "mes_pagamento_nao_informado"               : "Mês de pagamento não informado." ,
+  "dias_gozar_nao_informado"                  : "Dias a gozar não informado.",
+  "dias_abonar_nao_informado"                 : "Dias a abonar não informado."
+}

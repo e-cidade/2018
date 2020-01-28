@@ -1,0 +1,7 @@
+{
+  "periodo_invalido" : "Período é de preenchimento obrigatório.",
+  "instituicoes_invalido" : "Instituições são de preenchimento obrigatório.",
+  "parameter_query_builder" : "Parâmetro para busca dos restos a pagar é de preenchimento obrigatório.",
+  "erro_consulta_restos_a_pagar" : "Ocorreu um erro ao buscar os empenhos de Restos a Pagar.",
+  "tipo_instituicao_invalido" : "Não foi localizado o tipo de instituição."
+}

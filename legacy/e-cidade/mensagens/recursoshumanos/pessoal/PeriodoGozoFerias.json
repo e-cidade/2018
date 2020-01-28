@@ -1,0 +1,17 @@
+{ 
+  "incluir"                                          : "Período de Gozo cadastrado com sucesso.", 
+  "excluir"                                          : "Período de Gozo exlcuído com sucesso.",
+  "erro_buscar_periodo"                              : "Erro ao buscar periodo periodo de férias.\nErro técnico: \n[sErroBanco]",
+  "erro_buscar_periodo_aquisitivo"                   : "Erro ao buscar periodo aquisitivo de férias.\nErro técnico: \n[sErroBanco]",
+  "erro_incluir_periodo"                             : "Erro ao incluir periodo.\nErro técnico: \n[sErroBanco]",
+  "erro_alterar_periodo"                             : "Erro ao alterar periodo.\nErro técnico: \n[sErroBanco]",
+  "nenhuma_transacao_banco"                          : "Nenhuma transação com o banco ativa.",
+  "erro_excluir_periodo"                             : "Erro ao excluir periodo.\nErro técnico: \n[sErroBanco]",
+  "processamento_realizado_sucesso"                  : "Processamento realizado com sucesso",
+  "cancelamento_realizado_sucesso"                   : "Cancelamento realizado com sucesso",
+  "periodo_gozo_existente"                           : "Perído de Gozo já existe com o período informado.",
+  "erro_executar_query_validacao_periodo_aquisitivo" : "Erro ao validar periodo de gozo.\nErro técnico: \n[sErroBanco]",
+  "periodo_aquisitivo_vazio"                         : "Nenhum período aquisitivo foi encontrado.",
+  "periodo_gozo_igual_outro_periodo_aquisitivo"      : "Já existe um  período de gozo \n[sErroBanco] cadastrado em outro período periodo aquisitivo.",
+  "perdeu_periodo_aquisitivo_ferias"                 : "Período aquisitivo não possui  mais direito a férias."
+ }

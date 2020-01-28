@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010246' name='esocial.avaliacaogruporespostalotacao' description="Grupo de respostas da Lotação Tributária do eSocial" prefix="eso04" label="Respostas da Lotação" type="0">
+  <fields>
+    <field codigo="1009555" 
+           campo_api='' 
+           name="eso04_sequencial" 
+           conteudo="int4" 
+           description="Código Sequencial da tabela avaliacaogruporespostalotacao" 
+           inivalue="0" 
+           label="Código Sequencial" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='esocial.avaliacaogruporespostalotacao_eso04_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009556" 
+           campo_api='' 
+           name="eso04_avaliacaogruporesposta" 
+           conteudo="int4" 
+           description="Campo de vinculo da resposta com o cgm" 
+           inivalue="0" 
+           label="Código do Grupo de Respostas" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código do Grupo de Respostas" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009557" 
+           campo_api='' 
+           name="eso04_cgm" 
+           conteudo="int4" 
+           description="Código de vinculo do cgm com o grupo de respostas" 
+           inivalue="0" 
+           label="Código do Cgm" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código do Cgm" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="eso04_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="cgm" inner='t'>
+      <fieldfk name="eso04_cgm" reference="z01_numcgm" /> 
+    </foreignkey>
+    <foreignkey reference="avaliacaogruporesposta" inner='t'>
+      <fieldfk name="eso04_avaliacaogruporesposta" reference="db107_sequencial" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

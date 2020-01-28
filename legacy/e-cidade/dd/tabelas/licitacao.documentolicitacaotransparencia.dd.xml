@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010230' name='licitacao.documentolicitacaotransparencia' description="Documento de Licitação para o Portal Transparência" prefix="l48" label="Documento de Licitação para o Portal Transparência" type="0">
+  <fields>
+    <field codigo="1009467" 
+           campo_api='' 
+           name="l48_sequencial" 
+           conteudo="int4" 
+           description="Código Sequencial da tabela" 
+           inivalue="0" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='licitacao.documentolicitacaotransparencia_l48_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009468" 
+           campo_api='' 
+           name="l48_documento" 
+           conteudo="int4" 
+           description="Código do tipo de Documento do LicitaCon" 
+           inivalue="0" 
+           label="Documento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Documento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="l48_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

@@ -1,0 +1,69 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3999' name='caixa.movimentoocorrenciacobrancaregistrada' description="Movimento da Ocorrência da Cobrança Registrada" prefix="k169" label="Movimento da Ocorrência da Cobrança Registrada" type="0">
+  <fields>
+    <field codigo="22204"
+           campo_api='codigo_sequencial'
+           name="k169_sequencial"
+           conteudo="int4"
+           description="Sequencial"
+           inivalue=""
+           label="Sequencial"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Sequencial"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='caixa.movimentoocorrenciacobrancaregistrada_k169_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22205"
+           campo_api='codigo'
+           name="k169_codigo"
+           conteudo="varchar(2)"
+           description="Código do Movimento"
+           inivalue=""
+           label="Código do Movimento"
+           size="2"
+           null="f"
+           uppercase="t"
+           autocompl="f"
+           aceitatipo="0"
+           tipoobj="text"
+           labelrel="Código do Movimento"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22206"
+           campo_api='descricao'
+           name="k169_descricao"
+           conteudo="varchar(500)"
+           description="Descrição"
+           inivalue=""
+           label="Descrição"
+           size="500"
+           null="f"
+           uppercase="t"
+           autocompl="f"
+           aceitatipo="0"
+           tipoobj="text"
+           labelrel="Descrição"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="k169_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

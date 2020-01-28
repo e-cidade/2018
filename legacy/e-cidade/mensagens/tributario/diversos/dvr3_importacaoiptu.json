@@ -1,0 +1,20 @@
+{
+  "erro_buscar_dados_receitas"                    : "Erro ao buscar as Receitas.",
+  "erro_buscar_importacoes"            			  : "Erro ao buscar as Importações Gerais.",
+  "erro_buscar_dados_procedencia"                 : "Erro ao buscar as Procedências.",
+  "nenhuma_receita_encontrada"                    : "Nenhuma Receita encontrada.",
+  "nenhuma_importacao_geral_encontrada"           : "Nenhuma Importação Geral encontrada.",
+  "nenhuma_procedencia_encontrada"                : "Nenhuma Procedência encontrada.",
+  "preenchimento_quantidade_parcelas_obrigatorio" : "O preenchimento da Quantidade de Parcelas é obrigatório.",
+  "preenchimento_procedencias_obrigatorio"        : "Deve ser selecionado pelo menos uma Procedência.",
+  "deseja_efetuar_importacao_geral"				  : "Deseja efetuar a importação geral das receitas selecionadas?",
+  "processando_importacao_geral"				  : "Processando importação geral de receitas, aguarde...",
+  "sucesso_importacao_geral"             		  : "Importação de débitos realizada com sucesso!",
+  "codigo_pesquisa_nao_informado"                 : "Código do contribuinte não informado.",
+  "tipo_chave_nao_informado"                      : "Tipo de contribuinte a ser pesquisado não informado.",
+  "erro_buscar_tipos_debito_origem"               : "Erro ao buscar os tipos de débito de origem.",
+  "nenhum_tipo_debito_origem_encontrado"          : "Nenhum tipo de débito de origem encontrado.",
+  "erro_buscar_tipos_debito_destino"              : "Erro ao buscar os tipos de débito de destino.",
+  "nenhum_tipo_debito_destino_encontrado"         : "Nenhum tipo de débito de destino encontrado.",
+  "tipo_origem_invalido"                          : "Tipo de Origem inválido."
+}

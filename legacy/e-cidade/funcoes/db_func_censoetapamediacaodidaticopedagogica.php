@@ -1,0 +1,3 @@
+<?
+$campos = "censoetapamediacaodidaticopedagogica.ed131_codigo,censoetapamediacaodidaticopedagogica.ed131_mediacaodidaticopedagogica,censoetapamediacaodidaticopedagogica.ed131_censoetapa,censoetapamediacaodidaticopedagogica.ed131_ano";
+?>

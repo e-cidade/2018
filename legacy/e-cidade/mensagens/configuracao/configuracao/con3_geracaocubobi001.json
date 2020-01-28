@@ -1,0 +1,8 @@
+{
+   "buscando_cubos"        : "Aguarde, buscando cubos."
+  ,"selecione_cubos_grade" : "Selecione ao menos um cubo."
+  ,"informe_horario"       : "Informe ao menos um horário para a periodicidade diaria."
+  ,"informe_dia_semana"    : "Informe ao menos um dia da semana."
+  ,"informe_dia_mes"       : "Informe ao menos um dia do mês."
+  ,"salvar_cubos"          : "Aguarde, agendando cubos."
+}

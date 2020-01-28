@@ -1,0 +1,224 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010211' name='recursoshumanos.pontoeletronicoevento' description="Evento para o ponto eletrônico" prefix="rh207" label="pontoeletronicoevento" type="0">
+  <fields>
+    <field codigo="1009362" 
+           campo_api='' 
+           name="rh207_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial" 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='recursoshumanos.pontoeletronicoevento_rh207_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009364" 
+           campo_api='' 
+           name="rh207_datainicial" 
+           conteudo="date" 
+           description="Data Inicial" 
+           inivalue="null" 
+           label="Data Inicial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data Inicial" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009365" 
+           campo_api='' 
+           name="rh207_datafinal" 
+           conteudo="date" 
+           description="Data Final" 
+           inivalue="null" 
+           label="Data Final" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data Final" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009366" 
+           campo_api='' 
+           name="rh207_entrada_1" 
+           conteudo="varchar(5)" 
+           description="Entrada 1" 
+           inivalue="" 
+           label="Entrada 1" 
+           size="5" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Entrada 1" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009367" 
+           campo_api='' 
+           name="rh207_saida_1" 
+           conteudo="varchar(5)" 
+           description="Saída 1" 
+           inivalue="" 
+           label="Saída 1" 
+           size="5" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Saída 1" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009363" 
+           campo_api='' 
+           name="rh207_titulo" 
+           conteudo="varchar(100)" 
+           description="Descrição do evento" 
+           inivalue="" 
+           label="Título" 
+           size="100" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Título" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009369" 
+           campo_api='' 
+           name="rh207_entrada_2" 
+           conteudo="varchar(5)" 
+           description="Entrada 2" 
+           inivalue="" 
+           label="Entrada 2" 
+           size="5" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Entrada 2" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009370" 
+           campo_api='' 
+           name="rh207_saida_2" 
+           conteudo="varchar(5)" 
+           description="Saída 2" 
+           inivalue="" 
+           label="Saída 2" 
+           size="5" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Saída 2" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009371" 
+           campo_api='' 
+           name="rh207_horasextras_2" 
+           conteudo="int4" 
+           description="Horas Extras 2" 
+           inivalue="0" 
+           label="Horas Extras 2" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Horas Extras 2" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009385" 
+           campo_api='' 
+           name="rh207_instit" 
+           conteudo="int4" 
+           description="Código da Instituição" 
+           inivalue="0" 
+           label="Instituição" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Instituição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009368" 
+           campo_api='' 
+           name="rh207_horasextras_1" 
+           conteudo="int4" 
+           description="Horas Extras 1" 
+           inivalue="0" 
+           label="Horas Extras 1" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Horas Extras 1" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh207_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_config" inner='t'>
+      <fieldfk name="rh207_instit" reference="codigo" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

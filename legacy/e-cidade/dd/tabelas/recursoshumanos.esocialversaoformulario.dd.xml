@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010233' name='recursoshumanos.esocialversaoformulario' description="Vincula um formulário a um tipo e versão do eSocial." prefix="rh211" label="eSocial Versão do Formulário" type="0">
+  <fields>
+    <field codigo="1009474" 
+           campo_api='' 
+           name="rh211_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='recursoshumanos.esocialversaoformulario_rh211_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009475" 
+           campo_api='' 
+           name="rh211_versao" 
+           conteudo="varchar(10)" 
+           description="Versão" 
+           inivalue="" 
+           label="Versão" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Versão" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009476" 
+           campo_api='' 
+           name="rh211_avaliacao" 
+           conteudo="int4" 
+           description="Formulário do eSocial" 
+           inivalue="" 
+           label="Formulário" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Formulário" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009477" 
+           campo_api='' 
+           name="rh211_esocialformulariotipo" 
+           conteudo="int4" 
+           description="Tipo de Formulário do eSocial" 
+           inivalue="" 
+           label="Tipo de Formulário" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Formulário" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh211_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="avaliacao" inner='t'>
+      <fieldfk name="rh211_avaliacao" reference="db101_sequencial" /> 
+    </foreignkey>
+    <foreignkey reference="esocialformulariotipo" inner='t'>
+      <fieldfk name="rh211_esocialformulariotipo" reference="rh209_sequencial" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

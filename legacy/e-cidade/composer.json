@@ -1,0 +1,51 @@
+{
+
+  "name": "dbseller/e-cidade",
+  "description": "e-cidade GRP",
+
+  "require": {
+    "php": ">=5.3.9",
+    "dbseller/legacy": "^1.0",
+    "symfony/polyfill-php54": "^1.1",
+    "symfony/polyfill-php55": "^1.1",
+    "symfony/polyfill-php56": "^1.1",
+    "symfony/polyfill-php70": "^1.1",
+    "michelf/php-markdown": "^1.6",
+    "silex/silex": "~1.3",
+    "symfony/validator": "^2.8",
+    "robmorgan/phinx": "^0.4.6",
+    "dbseller/phinx_postgres": "^1.0",
+    "league/fractal": "0.11.0",
+    "phpoffice/phpword": "^0.12.1",
+    "zendframework/zend-eventmanager": "2.2.10"
+  },
+
+  "require-dev": {
+    "rafaelnery/phputils": "^1.3.10",
+    "phpunit/phpunit": "~4.5",
+    "guzzle/guzzle": "^3.9"
+  },
+
+  "scripts": {
+
+    "test": "phpunit",
+
+    "merge-ecidade-3": [
+      "php bin/v3/modification/refresh-metadata",
+      "php bin/v3/modification/refresh-cache",
+      "echo 'DONE!'"
+    ],
+
+    "install-desktop": [
+      "bin/v3/extension/pack Desktop",
+      "bin/v3/extension/unpack desktop-package.tar.gz true",
+      "bin/v3/extension/install Desktop dbseller"
+    ],
+
+    "install-dbug": [
+      "bin/v3/extension/pack DBug",
+      "bin/v3/extension/unpack dbug-package.tar.gz true",
+      "bin/v3/extension/install DBug"
+    ]
+  }
+}

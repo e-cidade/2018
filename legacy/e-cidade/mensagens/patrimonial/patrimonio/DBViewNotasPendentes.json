@@ -1,0 +1,9 @@
+{
+  "buscando_notas_pendentes"    : "Aguarde! Buscando notas pendentes...",
+  "buscando_bens_nota"          : "Aguarde! Buscando bens da nota...",
+  "notas_pendentes"             : "Notas Pendentes.",
+  "existem_bens_notas_pedentes" : "Existem bens com notas pendentes.",
+  "sem_fracionamento"           : "Caso a Nota possua quantidade fracionada, deve ser utilizado a rotina Unificar/Desmembrar Notas",
+  "bens_notas_pendentes"        : "Bens com notas pendentes.",
+  "bens_nao_localizados"        : "Os bens abaixo não foram localizados no Patrimônio. Entre em contato com o setor responsável."
+}

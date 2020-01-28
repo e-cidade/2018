@@ -1,0 +1,9 @@
+{
+  "erro_buscar_cursos"              : "Erro ao buscar cursos.",
+  "nenhum_curso_encontrado"         : "Nenhum curso encontrado.",
+  "erro_buscar_cursos_equivalentes" : "Erro ao buscar cursos equivalentes.",
+  "informe_curso"                   : "Curso não informado.",
+  "informe_curso_equivalente"       : "Curso(s) equivalente(s) não informado(s).",
+  "curso_equivalente_salvo"         : "Curso(s) equivalente(s) salvo(s) com sucesso!",
+  "informe_aluno"                   : "Aluno não informado."
+}

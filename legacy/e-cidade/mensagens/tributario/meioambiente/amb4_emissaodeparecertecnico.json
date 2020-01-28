@@ -1,0 +1,20 @@
+{
+  "empreendimento_obrigatorio"   : "Campo Código do Empreendimento é de preenchimento obrigatório.",
+  "processo_obrigatorio"         : "Campo Código do Processo é de preenchimento obrigatório.",
+  "licenca_obrigatorio"          : "Campo Licença é de preenchimento obrigatório.",
+  "tipo_de_licenca_obrigatorio"  : "Campo Tipo de Licença é de preenchimento obrigatório.",
+  "tipo_de_emissao_obrigatorio"  : "Campo Tipo de Emissão é de preenchimento obrigatório.",
+  "data_emissao_obrigatorio"     : "Campo Data de Emissão é de preenchimento obrigatório.",
+  "data_vencimento_obrigatorio"  : "Campo Data de Vencimento é de preenchimento obrigatório.",
+  "carregando_dados_tipolicenca" : "Aguarde, carregando Tipo de Licença...",
+  "carregando_dados_tipoemissao" : "Aguarde, carregando Tipo de Emissão...",
+  "erro_atividade_obrigatorio"   : "Não há nenhuma atividade principal vinculada a este Empreendimento",
+  "erro_responsavel_obrigatorio" : "Não há nenhum Responsável Técnico vinculado a este Empreendimento",
+  "erro_licenca_inexistente"     : "Não há este tipo licença para ser renovada ou prorrogada. Deve emitir uma nova.",
+  "erro_licenca_existente"       : "Já há uma Licenca Nova para este Empreendimento",
+  "emissao_sucesso"              : "Parecer Técnico emitido com sucesso!",
+  "datas_invalidas"              : "A Data de Vencimento deve ser posterior a Data de Emissão.",
+  "erro_gerararquivo"            : "Erro ao gerar arquivo.",
+  "erro_gravar_parecer"          : "Erro ao gravar Parecer Técnico",
+  "empreendimento_inexistente"   : "Empreendimento não encontrado"
+}

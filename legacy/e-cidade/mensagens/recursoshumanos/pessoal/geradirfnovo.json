@@ -1,0 +1,9 @@
+{
+  "nome_invalido"           : "Informe um Nome válido.",
+  "cpf_invalido"            : "Informe um CPF válido.",
+  "ddd_invalido"            : "Informe um DDD válido.",
+  "fone_invalido"           : "Informe um Telefone válido.",
+  "cpfresponsavel_invalido" : "Informe o CPF do Respomsável pelo CNPJ válido.",
+  "ano_base_invalido"       : "Ano Base não informado.",
+  "nao_processado"          : "Não foi efetuado o processamento da DIRF para o ano \ne instituição informados."
+}

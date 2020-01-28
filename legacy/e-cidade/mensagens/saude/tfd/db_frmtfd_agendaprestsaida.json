@@ -1,0 +1,8 @@
+{
+  "selecione_registro"             : "Selecione ao menos um registro antes de gerar o relatório.",
+  "nenhum_pedido_tfd"              : "Nenhum pedido de TFD encontrado.",
+  "data_final_menor_inicial"       : "Data final não pode ser menor que a Data Inicial.",
+  "preencha_periodo"               : "Preencha o período.",
+  "existem_prestadoras_diferentes" : "Existem Prestadoras diferentes.",
+  "nenhum_registro_marcado"        : "Nenhum registro marcado para informar uma prestadora."
+}

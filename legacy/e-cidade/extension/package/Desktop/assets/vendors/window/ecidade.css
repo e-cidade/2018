@@ -1,0 +1,144 @@
+.dialog, .dialog * {
+  font-family: "DejaVu Sans";
+}
+
+.dialog {
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 0px #000;
+  width: 100%;
+  height:100%;
+  float: left;
+  -webkit-box-sizing: padding-box;
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+
+.dialog .table_window {
+  float:left;
+  width: 100%;
+}
+
+.ecidade_n {
+  background: #4a789c;
+  border-bottom: 1px solid #333;
+  height: 27px;
+  width: 100%;
+  float: left;
+}
+
+.dialog .top {
+  border-right: 3px solid #4a789c;
+  border-left: 3px solid #4a789c;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  width : calc(100% - 6px);
+}
+
+.ecidade_sizer {
+  cursor:se-resize;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: -5px;
+  right: -8px;
+}
+
+.ecidade_setting::hover, .ecidade_minimize::hover, .ecidade_maximize::hover, .ecidade_close::hover {
+  background-color:#000 !important;
+}
+
+.ecidade_window_buttons {
+  height: 25px;
+  margin: 1px;
+  padding-right: 3px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.window_button {
+  float: left;
+  height: 100%;
+  width: 23px;
+  position: relative;
+}
+
+.window_button img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.ecidade_title {
+  float:left;
+  height: 25px;
+  font-size:14px;
+  text-align: left;
+  margin-top:2px;
+  line-height: 25px;
+  color: white;
+  font-family: "DejaVu Sans";
+}
+
+.ecidade_window_icon {
+  float: left;
+  height: 21px;
+  width: 25px;
+  position: relative;
+  top: 3px;
+  background: url('ecidade/e-cidade.png') no-repeat center center;
+}
+
+.dialog .mid {
+  /* width: 100%; */
+  width : calc(100% - 6px);
+  background:#e1dede;
+  border-left: 3px solid #4a789c;
+  border-right: 3px solid #4a789c;
+  position: relative;
+}
+
+.ecidade_content {
+  height: 100%;
+}
+
+.dialog iframe {
+  float:left;
+  border:0;
+}
+
+.overlay_ecidade {
+  background-color: #000;
+  filter:alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+.dialog .bot {
+  background: #4a789c;
+  height : 3px;
+  /* width : 100%; */
+  width : calc(100% - 6px);
+  border-right: 3px solid #4a789c;
+  border-left: 3px solid #4a789c;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.ecidade_s {
+  background: #4a789c;
+  width: 100%;
+  height: 3px;
+}
+
+.ecidade_wired_frame {
+  background: #000;
+  filter : alpha(opacity=60);
+  -webkit-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}

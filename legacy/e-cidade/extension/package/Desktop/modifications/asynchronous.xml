@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modification>
+
+  <id>dbportal-v3-asynchronous</id>
+  <label>DBPortal v3 - desktop</label>
+  <version>1.0</version>
+  <type>global</type>
+
+  <file path="scripts/scripts.js">
+    <operation error="abort" label="torna asynchronous alert,confirm, Element.load, require e require_once">
+      <add position="bottom"><![CDATA[
+/**
+ * compatibilidade com versao 3.0
+ * cria callback para funcoes builtin alert e confirm
+ */
+;(function(global) {
+
+  var _alert = global.alert, _confirm = global.confirm;
+
+  if (_alert.length <= 1) {
+    global.alert = function(message, done) {
+      return _alert(message);
+      if (done) return done.call(global);
+    }
+  }
+
+  if (_confirm.length <= 1) {
+    global.confirm = function(message, done) {
+      if (!done) return _confirm(message);
+      return done(_confirm(message));
+    }
+  }
+
+})(this);
+
+/**
+ * Cria require(), require_once(), e Element.load()
+ */
+;(function(global) {
+
+  /**
+   * Objeto que vai armazenar os arquivos requiridos
+   */
+  var oRequisicoes = {};
+  var oHead = document.getElementsByTagName("head")[0];
+
+  function getContent(sUrl, fCallback, lAsynchronous) {
+
+    var oRequisicao = new XMLHttpRequest();
+    var lAsynchronous = lAsynchronous === undefined ? true : lAsynchronous;
+
+    oRequisicao.open('GET', sUrl, lAsynchronous);
+    oRequisicao.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=ISO-8859-1");
+    oRequisicao.overrideMimeType("application/x-www-form-urlencoded; charset=ISO-8859-1");
+
+    oRequisicao.addEventListener('load', function() {
+      fCallback(oRequisicao.status >= 400, oRequisicao.responseText, oRequisicao); 
+    });
+
+    oRequisicao.addEventListener('error', function() {
+      console.error('Erro ao buscar:', sUrl, oRequisicao.status, oRequisicao.statusText);
+    });
+
+    oRequisicao.send(null);
+  }
+
+  /**
+   * Carrega um arquivo JavaScript
+   * @param sArquivo - caminho do arquivo relativo a raiz do e-Cidade
+   * @param Function done - callback
+   * @returns {Boolean}
+   */
+  function load(sArquivo, fCallback, lAsynchronous) {
+
+    if (oRequisicoes[sArquivo]) {
+      return console.error("Arquivo não pode ser sobrecarregado: " + sArquivo);
+    }
+
+    var lAsynchronous = lAsynchronous === undefined ? !!fCallback : lAsynchronous;
+
+    getContent(sArquivo, function(lError, sContent, oRequisicao) {
+      
+      if (lError) {
+        return console.error('Erro ao carregar arquivo: ' + sArquivo, oRequisicao.status, oRequisicao.statusText) ;
+      }
+
+      oRequisicoes[sArquivo] = true;
+
+      switch (sArquivo.split('.').pop()) {
+
+        case "js":
+
+          var oScript = document.createElement("script");
+          oScript.type = "text/javascript";
+          oScript.innerHTML = sContent;
+          oHead.appendChild(oScript);
+
+        break;
+
+        case "css":
+
+          var oScript = document.createElement("style");
+          oScript.innerHTML = sContent;
+          oHead.appendChild(oScript);
+
+        break;
+      }
+
+      if (fCallback && typeof fCallback == 'function') {
+        fCallback.call(global);
+      }
+    
+    }, lAsynchronous);
+  }
+
+  /**
+   * @param {Array|String} files - arquivos para carregar
+   * @param {Function|Boolean} done - callback  executado apos carregar scripts ou boolean para definir asynchronous
+   */
+  function require(files, done) {
+
+    if (typeof files == 'string') {
+      files = [files];
+    }
+
+    if (files.length == 0) {
+      return typeof done == 'function' ? done.call(global) : false; 
+    }
+
+    return (function execute() {
+      return load(files.shift(), files.length > 0 ? execute : done, !!done);
+    })();
+  }
+
+  /**
+   * @param {Array|String} files - arquivos para carregar
+   * @param {Function|Boolean} done - callback  executado apos carregar scripts ou boolean para definir asynchronous
+   */
+  function require_once(files, done) {
+
+    var filesLoad = [];
+
+    if (typeof files == 'string') {
+      files = [files];
+    }
+
+    for (var index = 0, length = files.length; index < length; index++) {
+
+      var file = files[index];
+      if (oRequisicoes[file]) {
+        continue;
+      }
+
+      filesLoad.push(file);
+    }
+
+    return require(filesLoad, done);
+  }
+
+  /**
+   * @param {String} sUrl
+   * @param {Function} fCallback
+   * @return {Element}
+   */
+  function elementLoad(sUrl, fCallback) {
+
+    var fCallback = fCallback || function() {};
+    var oElemento = this;
+    var lAsynchronous = true;
+
+    getContent(sUrl, function(lError, sContent, oRequisicao) {
+
+      if (lError) {
+        return fCallback(false);
+      }
+
+      oElemento.innerHTML += sContent;
+      fCallback(true);
+
+    }, lAsynchronous);
+
+    return this;
+  }
+
+  // exports
+  global.require = require;
+  global.require_once = require_once;
+  Element.prototype.load = elementLoad;
+
+})(window || this);
+]]></add>
+    </operation>
+  </file>
+
+  <file path="scripts/classes/configuracao/DBViewFeedback.classe.js">
+
+    <operation error="abort" label="Altera a funcao build">
+      <search><![CDATA[DBViewFeedback.dependencies();]]></search>  
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+
+    <operation error="abort" label="Altera a funcao build">
+      <search><![CDATA[DBViewFeedback.build = function() {]]></search>  
+      <add position="after"><![CDATA[
+
+        DBViewFeedback.dependencies(function() {
+          var oDBViewFeedback = new DBViewFeedback();
+          oDBViewFeedback.initButton();
+          
+        });
+        return;
+      ]]></add>
+    </operation>
+
+    <operation error="abort" label="Altera a funcao dependencies">
+      <search><![CDATA[DBViewFeedback.dependencies = function() {]]></search>
+      <add position="replace"><![CDATA[
+DBViewFeedback.dependencies = function(callback) {
+
+  var urls = [
+    'skins/estilos.php?file=views/DBViewFeedback.css'
+  ];
+
+  if ( !CONTEXT["require_once"] ) {
+    throw "Não é possível carregar as dependências (scripts.js não carregado)";
+  }
+
+  if ( !String.prototype.urlDecode ) urls.push("scripts/strings.js");
+  if ( !CONTEXT["DBModal"] ) urls.push("scripts/widgets/DBModal.widget.js");
+  if ( !CONTEXT["Ajax"] ) urls.push("scripts/prototype.js");
+  if ( !CONTEXT["DBMask"] ) urls.push("scripts/widgets/DBMask.widget.js");  
+
+  
+  require_once(urls, function() {
+    DBModal.dependencies(callback)
+  });
+
+  return;
+        ]]></add>    
+    </operation>    
+
+  </file>
+
+  <file path="scripts/widgets/DBModal.widget.js">
+
+    <operation error="abort" label="Remove chamada do dependencies do construtor">
+      <search><![CDATA[DBModal.dependencies();]]></search>
+      <add position="replace"></add>
+    </operation>
+
+    <operation error="abort" label="Alterawera a funcao dependencies">
+      <search><![CDATA[DBModal.dependencies = function() {]]></search>
+      <add position="replace"><![CDATA[
+        DBModal.dependencies = function(callback) {
+
+        var urls = ['estilos/widgets/DBModalBase.css'];
+
+          if ( !CONTEXT["DBMask"] ) urls.push("scripts/widgets/DBMask.widget.js");
+
+          require_once(urls, callback);
+
+          return;
+        ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="scripts/datagrid.widget.js">
+    <operation error="abort" label="Coloca require do estilo da grid assincrono">
+      <search><![CDATA[require_once('estilos/grid.style.css');]]></search>
+      <add><![CDATA[require_once('estilos/grid.style.css', true);]]></add>
+    </operation>
+  </file>
+
+</modification>

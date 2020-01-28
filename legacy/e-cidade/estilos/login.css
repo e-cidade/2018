@@ -1,0 +1,306 @@
+body {
+  height:100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body, a {
+  font-family: Arial, Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+body img {
+  border:0;
+}
+
+a {
+  outline: none;
+}
+
+/**
+ * Backgrounds Padroes
+ */
+body.imagem01 {
+  background-image: url('../imagens/ecidade/login/imagem-01.jpg');
+}
+
+body.imagem02 {
+  background-image: url('../imagens/ecidade/login/imagem-02.jpg');
+}
+
+body.imagem03 {
+  background-image: url('../imagens/ecidade/login/imagem-03.jpg');
+}
+
+body.imagem04 {
+  background-image: url('../imagens/ecidade/login/imagem-04.jpg');
+}
+
+.container {
+  min-height: 468px;
+  width: 350px;
+  right: 125px;
+  top: 50%;
+  margin-top: -234px;
+  padding: 20px;
+  padding-top: 5px;
+
+  position: absolute;
+  display: block;
+  background-color: #e1dede;
+
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+
+  -webkit-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.82);
+  -moz-box-shadow:    5px 5px 13px 0px rgba(50, 50, 50, 0.82);
+  box-shadow:         5px 5px 13px 0px rgba(50, 50, 50, 0.82);
+}
+
+.container.primeiroAcesso {
+  width: 435px;
+}
+
+.container form {
+  border-top: 1px solid #a9a9a9;
+  padding-top: 18px;
+  margin-top: 10px;
+}
+
+.logo-ecidade {
+  margin: 0 auto;
+  display: block;
+}
+
+.logo-db {
+  margin: 15px auto;
+  display: block;
+}
+
+#div_lista_basename{
+  display: block;
+  margin: 0 auto !important;
+  border: 1px solid #F00 !important;
+}
+
+.ui-autocomplete li.ui-menu-item a {
+  font-size: 11px !important;
+}
+
+/**
+ * FORMULARIO
+ */
+.access-fields {
+  display: block;
+  overflow: hidden;
+}
+
+.access-fields label, .container-captcha .container-captcha-controllers {
+  font-weight: bold;
+  color: #828282;
+  float: left;
+  display: block;
+  width: 16%;
+  margin-left: 1%;
+  line-height: 30px;
+  margin-bottom: 6px;
+}
+
+.primeiroAcesso .access-fields label {
+  white-space: nowrap;
+  width: 33%;
+  text-align: right;
+  padding-right: 1%;
+  horizontal-align: right;
+}
+
+.access-fields input:not([type="button"]), .access-fields select {
+  float: left;
+  display: block;
+  height: 28px;
+  width: 268px;
+  max-width: 80%;
+
+  border-style: solid;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  margin-bottom: 6px;
+
+  padding: 0px 5px;
+
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.access-fields select {
+  width: 280px;
+  padding: 3px;
+}
+
+.access-fields input+label, .access-fields select+label, .access-fields div.input+label {
+  clear: both;
+}
+
+.access-fields input[type="button"] {
+  margin-left: 17%;
+  width: 280px;
+  clear: both;
+  display: block;
+  height: 30px;
+  color:#FFFFFF;
+  font-weight: bold;
+
+  background-color: #79aedb;
+  border-color: #578ebc;
+  border-style: solid;
+
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+
+  text-shadow: 0px 0px 4px rgba(150, 150, 150, 1);
+}
+
+.primeiroAcesso .access-fields input[type="button"] {
+  margin-left: 35%;
+}
+
+.access-fields input[type="button"]:hover {
+  cursor: pointer;
+  background-color: #578ebc;
+}
+
+.access-fields input:not([type="button"]):focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0 none;
+}
+
+/**
+ * Primeiro acesso e esqueceu sua senha
+ */
+.link-acesso {
+  display: block;
+  margin-top: 10px;
+  margin-left: 17%;
+  width: 280px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.primeiroAcesso .link-acesso {
+  margin-left: 35%;
+}
+
+.link-acesso a:first-child {
+  float: right;
+  display: block;
+}
+
+.link-acesso a {
+  color: #a9a9a9;
+  font-weight: bold;
+}
+
+/**
+ * Mensagem de retorno
+ */
+#testaLogin {
+  width: 80%;
+  margin: 15px auto 0;
+  color: #c12604;
+  text-align: center;
+  display: block;
+  font-size: 12px;
+}
+
+/**
+ * Icones das redes sociais
+ */
+.social-midia p a, .social-midia p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #828282;
+  font-weight: bold;
+  line-height: 22px;
+  display: inline-block;
+}
+
+.social-midia > a {
+  float: right;
+}
+
+.icon-twitter {
+  margin-left: 30px;
+}
+
+/**
+ * CAPTCHA
+ */
+.container-captcha-hide {
+  display: none;
+}
+
+.container-captcha .container-captcha-controllers{
+  margin-bottom: 0;
+}
+
+.container-captcha-controllers object{
+  margin-left: 17px;
+}
+
+.container-captcha .imgCaptcha {
+  float: left;
+  display: block;
+  height: 56px;
+  width: 276px;
+  max-width: 80%;
+
+  border: 1px solid #CCCCCC;
+  border-style: solid;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+
+.captcha-controllers-images, .captcha-controllers-images-plus {
+  display: block;
+  float: right;
+  overflow: hidden;
+  margin-right: 1%;
+  width: 37px;
+  clear: right;
+}
+
+.captcha-controllers-input {
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+
+.captcha-controllers-input label {
+  width: 46%;
+}
+
+.captcha-controllers-input input[type="text"] {
+  width: 46%;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+/**
+ * jQuery UI - Autocomplete
+ */
+.ui-autocomplete-loading {
+  background: transparent url('jQueryUI/images/ui-anim_basic_16x16.gif') right center no-repeat;
+}

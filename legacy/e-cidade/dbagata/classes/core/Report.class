@@ -1,0 +1,297 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* Class to deal with Report Files
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class Report
+{
+    /***********************************************************/
+    /*
+    /***********************************************************/
+    static function OpenReport($FileName)
+    {
+        $Report['Report'] = AgataCompatibility::readReport($FileName);
+        //var_dump($Report);
+        return $Report;
+    }
+
+    /***********************************************************/
+    /*
+    /***********************************************************/
+    function OpenSql($FileName)
+    {
+        $Report = AgataCompatibility::readReport($FileName);
+        return $Report;
+    }
+
+    /***********************************************************/
+    /*
+    /***********************************************************/
+    function SaveReport($FileName, $XmlArray)
+    {
+        $fd = @fopen ($FileName, "w");
+        if (!$fd)
+        {
+            new Dialog(_a('Permission Denied'), true, false, _a('File') . ': ' . $FileName);
+            return false;
+        }
+        fwrite($fd, trim( XMLHEADER . Array2Xml($XmlArray)));
+    }
+
+    /***********************************************************/
+    /* exporta sql de um dataset
+    /***********************************************************/
+    static function BlockToSql($Block, $distinct = false, $break = false)
+    {
+        $sql = '';
+        $ln = $break ? "\n" : '';
+        foreach ($Block as $Clause)
+        {
+            if ($Clause[1])
+            {
+                if ($Clause[0] == 'Select')
+                {
+                    if ($break)
+                    {
+                        // elimina quebras de linha e tabulacoes
+                        $Clause[1] = str_replace("\n",  ' ',  $Clause[1]);
+                        $Clause[1] = str_replace("\t",  ' ',  $Clause[1]);
+                        
+                        $Clause[1] = str_replace(' WHEN ',  "\n\t\t\t WHEN ",  $Clause[1]);
+                        $Clause[1] = str_replace(' when ',  "\n\t\t\t WHEN ",  $Clause[1]);
+                        $Clause[1] = str_replace(' FROM ',  "\n\t\t\t FROM ",  $Clause[1]);
+                        $Clause[1] = str_replace(' from ',  "\n\t\t\t FROM ",  $Clause[1]);
+                        $Clause[1] = str_replace(' WHERE ', "\n\t\t\t WHERE ", $Clause[1]);
+                        $Clause[1] = str_replace(' where ', "\n\t\t\t WHERE ", $Clause[1]);
+                        $Clause[1] = str_replace(' AND ', "\n\t\t\t\t AND ", $Clause[1]);
+                        $Clause[1] = str_replace(' and ', "\n\t\t\t\t AND ", $Clause[1]);
+                        $Clause[1] = str_replace(', ', ",\n\t\t", $Clause[1]);
+                    }
+                    
+                    if ($distinct)
+                    {
+                        $sql .= strtoupper($Clause[0]) . ' distinct ' . $Clause[1] . ' ';
+                    }
+                    else
+                    {
+                        $sql .= strtoupper($Clause[0]) . ' ' . $Clause[1] . ' ';
+                    }
+                }
+                else if ($Clause[0] == 'Where')
+                {
+                    if ($break)
+                    {
+                        // elimina quebras de linha e tabulacoes
+                        $Clause[1] = str_replace("\n",  ' ',  $Clause[1]);
+                        $Clause[1] = str_replace("\t",  ' ',  $Clause[1]);
+                        
+                        // substitui os AND de dentro de subselects do where
+                        $match_subselect_and = create_function('$matches', '
+                        $return = $matches[0];
+                        $return = str_replace(" AND ", "\n\t\t\t\t\tAND ", $return);
+                        $return = str_replace(" and ", "\n\t\t\t\t\tAND ", $return);
+                        return $return;
+                        ');
+                        $pattern = '/\(SELECT (.*) WHERE (.*)\)/i';
+                        $Clause[1] = preg_replace_callback($pattern, $match_subselect_and, $Clause[1]);
+                        
+                        $Clause[1] = str_replace('(SELECT ',"\n\t\t\t(SELECT ",  $Clause[1]);
+                        $Clause[1] = str_replace('(select ',"\n\t\t\t(SELECT ",  $Clause[1]);
+                        $Clause[1] = str_replace(' FROM ',  "\n\t\t\t\t FROM ",  $Clause[1]);
+                        $Clause[1] = str_replace(' from ',  "\n\t\t\t\t FROM ",  $Clause[1]);
+                        $Clause[1] = str_replace(' WHERE ', "\n\t\t\t\t WHERE ", $Clause[1]);
+                        $Clause[1] = str_replace(' where ', "\n\t\t\t\t WHERE ", $Clause[1]);
+                        $Clause[1] = str_replace(' AND ',   "\n\t\t AND ", $Clause[1]);
+                        $Clause[1] = str_replace(' and ',   "\n\t\t AND ", $Clause[1]);
+                    }
+                    $sql .= $ln . strtoupper($Clause[0]) . ' ' . $Clause[1] . ' ';
+                }
+                else if ($Clause[0] == 'From')
+                {
+                    if ($break)
+                    {
+                        // elimina quebras de linha e tabulacoes
+                        $Clause[1] = str_replace("\n",  ' ',  $Clause[1]);
+                        $Clause[1] = str_replace("\t",  ' ',  $Clause[1]);
+                        
+                        $Clause[1] = str_replace(' inner join ', "\n\t\t inner join ", $Clause[1]);
+                        $Clause[1] = str_replace(' INNER JOIN ', "\n\t\t INNER JOIN ", $Clause[1]);
+                        $Clause[1] = str_replace(' left join ',  "\n\t\t left join ", $Clause[1]);
+                        $Clause[1] = str_replace(' LEFT JOIN ',  "\n\t\t LEFT JOIN ", $Clause[1]);
+                        $Clause[1] = str_replace(' left outer join ',  "\n\t\t left outer join ", $Clause[1]);
+                        $Clause[1] = str_replace(' LEFT OUTER JOIN ',  "\n\t\t LEFT OUTER JOIN ", $Clause[1]);
+                    }
+                    $sql .= $ln . strtoupper($Clause[0]) . ' ' . $Clause[1] . ' ';
+                }
+                else
+                {
+                    $sql .= $ln . strtoupper($Clause[0]) . ' ' . $Clause[1] . ' ';
+                }
+            }
+        }
+        
+        return $sql;
+    }
+
+    /***********************************************************/
+    /*
+    /***********************************************************/
+    function SqlToBlock($sql)
+    {
+        $sqlteste = strtoupper($sql);
+        
+        if (strpos($sqlteste, ' ORDER BY ') !== false)
+        {
+            $pieces  = WordExplode(' ORDER BY ', $sql);
+            $orderby = $pieces[1];
+            $sql     = $pieces[0];
+        }
+
+
+        if (strpos($sqlteste, ' GROUP BY ') !== false)
+        {
+            $pieces  = WordExplode(' GROUP BY ', $sql);
+            $groupby = $pieces[1];
+            $sql     = $pieces[0];
+        }
+
+        if (strpos($sqlteste, ' WHERE ') !== false)
+        {
+            $pieces = WordExplode(' WHERE ', $sql);
+            $where  = $pieces[1];
+            $sql    = $pieces[0];
+        }
+        
+        if (strpos($sqlteste, ' FROM ') !== false)
+        {
+            $pieces = WordExplode(' FROM ', $sql);
+            $from   = $pieces[1];
+            $sql    = $pieces[0];
+        }
+        
+        if (strpos($sqlteste, 'SELECT ') !== false)
+        {
+            $pieces = WordExplode('SELECT ', $sql);
+            $select = $pieces[1];
+            $sql    = $pieces[0];
+        }
+
+        
+        $Block['Select']   = array('Select',   $select);
+        $Block['From']     = array('From',     $from);
+        $Block['Where']    = array('Where',    $where);
+        $Block['Group by'] = array('Group by', $groupby);
+        $Block['Order by'] = array('Order by', $orderby);
+        return $Block;
+    }
+
+    /***********************************************************/
+    /*
+    /***********************************************************/    
+    static function SqlFromReport($DataSet)
+    {
+        return Report::BlockToSql(Report::ExtractBlock($DataSet), $DataSet['Query']['Config']['Distinct'], false);
+    }
+
+    /***********************************************************/
+    /*
+    /***********************************************************/
+    static function ExtractBlock($DataSet)
+    {
+        $Block['Select']   = array('Select',   $DataSet['Query']['Select']);
+        $Block['From']     = array('From',     $DataSet['Query']['From']);
+        $Block['Where']    = array('Where',    $DataSet['Query']['Where']);
+        $Block['Group by'] = array('Group by', $DataSet['Query']['GroupBy']);
+        $Block['Order by'] = array('Order by', $DataSet['Query']['OrderBy']);
+        
+        return $Block;
+    }
+    
+    static function ExtractAdjustments($DataSet)
+    {            
+        $adjustments = $DataSet['Fields'];
+        
+        if ($adjustments)
+        {
+            foreach ($adjustments as $index => $content)
+            {
+                foreach ($content as $key => $value)
+                {
+                    $index_ = substr($index, 6);
+                    $Adjustments[$index_][$key] = $value;
+                }
+            }
+        }
+        //var_dump($Adjustments);
+        return $Adjustments;
+    }
+    
+    static function ExtractBreaks($Report)
+    {
+        if ($groups = $Report['Report']['DataSet']['Groups']['Formulas'])
+        {
+            foreach ($groups as $key => $formula)
+            {
+                $break = substr($key,5);
+                $Breaks[$break] = trim($formula);
+            }
+        }
+        return $Breaks;
+    }
+    
+    static function GetFunctionNames()
+    {
+        return array('count' => 'Count',        'sum'   => 'Sum',
+                     'gavg'  => 'Group Average','avg'   => 'Average',
+                     'min'   => 'Minimal',      'max'   => 'Maximal',
+                     'var'   => 'Variance',     'dev'   => 'Standard Deviation');
+    }
+    
+    function TranslateFormulas($Select, $Formula)
+    {
+        $Elements_ = MyExplode(trim($Select), null, true);
+        $Formulas  = MyExplode($Formula);
+        $Functions = Report::GetFunctionNames();
+        
+        for ($n=0; $n<=count($Formulas) -1; $n++)
+        {
+            foreach ($Functions as $function => $name)
+            {
+                $Formulas[$n] = str_replace($function, _a($name), $Formulas[$n]);
+            }
+            $function = $Formulas[$n];
+            $pieces1 = explode('(', $function);
+            $pieces2 = explode(')', $pieces1[1]);
+            $index = $pieces2[0];
+            $Formulas[$n] = str_replace($index, $Elements_[$index], $function);
+        }
+        return $Formulas;
+    }
+}
+?>

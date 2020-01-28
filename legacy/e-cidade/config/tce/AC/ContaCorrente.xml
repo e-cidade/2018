@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<contascorrentes>
+  <contacorrente tce='2' ecidade='100' />
+  <contacorrente tce='3' ecidade='101' />
+  <contacorrente tce='4' ecidade='102' />
+  <contacorrente tce='6' ecidade='103' />
+  <contacorrente tce='1' ecidade='104' />
+  <contacorrente tce='5' ecidade='105' />
+  <contacorrente tce='7' ecidade='106' />
+  <contacorrente tce='8' ecidade='107' />
+  <contacorrente tce='9' ecidade='108' />
+</contascorrentes>

@@ -1,0 +1,4 @@
+{
+  "campo_obrigatorio" : "Campo [sCampo] é de preenchimento obrigatório.",
+  "processo_inicial_maior" : "O Processo Inicial deve ser menor ou igual ao Processo Final."
+}

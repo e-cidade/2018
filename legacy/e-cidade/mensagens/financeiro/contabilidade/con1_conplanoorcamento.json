@@ -1,0 +1,5 @@
+{
+  "vincular_regra"     : "Existem documentos usando este estrutural:\n\n[sDocumentos]\nDeseja vincular esta conta ao lançamento?\n",
+  "vinculandoReduzido" : "Vinculando reduzido, aguarde...",
+  "reduzidoVinculado"  : "Reduzido vinculado às regras com sucesso." 
+}

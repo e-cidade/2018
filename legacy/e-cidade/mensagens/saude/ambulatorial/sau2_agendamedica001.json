@@ -1,0 +1,7 @@
+{
+  "periodo_inicial_maior"        : "Período inicial maior que período final.",
+  "periodo_inicial_nao_informado": "Período inicial não informado.",
+  "periodo_final_nao_informado"  : "Período final não informado.",
+  "profissional_nao_selecionado" : "Nenhum profissional selecionado.",
+  "especialidade_nao_selecionada": "Nenhuma especialidade selecionada."
+}

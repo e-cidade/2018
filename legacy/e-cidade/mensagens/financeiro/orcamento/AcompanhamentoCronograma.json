@@ -1,0 +1,10 @@
+{
+  "erro_registro_nao_encontrado"          : "A Perspectiva informada ([perspectiva]) não foi encontrada.",
+  "erro_inclusao_acompanhamento"          : "Erro ao processar dados do acompanhamento.\n[msg]",
+  "erro_busca_despesa_cronograma"         : "Erro ao buscar dados da despesa para o acompanhamento do cronograma",
+  "erro_inclusao_despesa_cronograma"      : "Erro ao incluir dados da despesa para o acompanhamento do cronograma",
+  "erro_inclusao_meta_despesa_cronograma" : "Erro ao salvar dados da meta da despesa.",
+  "erro_inclusao_receita_cronograma"      : "Não foi possivel incluir dados da Receita [codrec] - [fonte] para o acompanhamento.",
+  "erro_busca_meta_receita"               : "Erro ao buscar dados da meta da receita [codrec] - [fonte]",
+  "erro_inclusao_meta_receita"            : "Erro ao incluir dados da meta da receita [codrec] - [fonte]"
+}

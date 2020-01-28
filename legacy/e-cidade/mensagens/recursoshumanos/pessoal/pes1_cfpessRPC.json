@@ -1,0 +1,13 @@
+{
+  "erro_migracao_estrutura_temporaria"        : "Não foi possível excluir as tabelas de estrutura temporária.",
+  "erro_migracao_estrutura_salario"           : "Não foi possível migrar a estrutura de salário.",
+  "erro_migracao_estrutura_rescisao"          : "Não foi possível migrar a estrutura de rescisão.",
+  "erro_migracao_estrutura_13salario"         : "Não foi possível migrar a estrutura de 13º salário.",
+  "erro_migracao_estrutura_adiantamento"      : "Não foi possível migrar a estrutura de adiantamento.",
+  "erro_migracao_estrutura_complementar"      : "Não foi possível migrar a estrutura de complementar.",
+  "erro_parametro_suplementar_anteriores"     : "Não foi possível salvar a configuração para competências anteriores." ,
+  "erro_parametro_suplementar_registro_atual" : "Não foi possível salvar a configuração atual." ,
+  "erro_migracao_estrutura_update_final"      : "Não foi possível atualizar a tabela rhfolhapagamento com o parâmetro aberto.",
+  "sucesso_desativado"                        : "A estrutura suplementar foi desativada com sucesso.",
+  "sucesso_ativado"                           : "A estrutura suplementar foi ativada com sucesso."
+}

@@ -1,0 +1,16 @@
+{
+  "preenchimento_tipofolha_obrigatorio"        : "Campo Arquivos é de preenchimento obrigatório.",
+  "preenchimento_competencia_obrigatorio"      : "Campo Competência é de preenchimento obrigatório.",
+  "preenchimento_dataAdmissao_obrigatorio"     : "Campo Listar Servidores Admitidos é de preenchimento obrigatório.",
+  "preenchimento_tipoVinculo_obrigatorio"      : "Campo Vínculo é de preenchimento obrigatório.",
+  "preenchimento_ano_invalido"                 : "Ano inválido.",  
+  "preenchimento_mes_invalido"                 : "Mês inválido.",
+  "erro_busca_dados_planilha"  							   : "Erro ao buscar os dados para Gerar Planilhas IAPEP.",
+  "nenhum_registro_planilha_encontrado"        : "Nenhum registro encontrado para os filtros informados.",
+  "erro_busca_dados_total_planilha"  					 : "Erro ao buscar os dados para Gerar Totalizadores das Planilhas IAPEP.",
+  "nenhum_registro_total_planilha_encontrado"  : "Nenhum registro encontrado para Gerar PDF dos Totalizadores das Planilhas IAPEP.",
+  "erro_criar_csv"												     : "Erro ao criar arquivo CSV.",
+  "erro_gerar_csv"												     : "Erro ao gerar arquivo CSV.",
+  "erro_gerar_pdf"												     : "Erro ao gerar arquivo de Totalizadores.",
+  "erro_criar_pdf"												     : "Erro ao criar arquivo de Totalizadores."
+}

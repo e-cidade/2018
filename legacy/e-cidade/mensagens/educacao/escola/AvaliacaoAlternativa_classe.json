@@ -1,0 +1,13 @@
+{
+  "buscando_avaliacoes_alternativas"        : "Aguarde, buscando avaliações alternativas...",
+  "buscando_avaliacoes_alternativas_aluno"  : "Aguarde, buscando avaliações alternativas do aluno...",
+  "salvando"                                : "Aguarde, salvando as alterações...",
+  "vinculos_salvos"                         : "Vínculo do aluno com a avaliação alternativa salvo com sucesso.",
+  "selecione_aluno"                         : "Selecione um aluno.",
+  "confirma_exclusao_avaliacao_alternativa" : "Confirma a exclusão da avaliação alternativa?",
+  "selecione_avaliacao_alternativa"         : "Selecione uma avaliação alternativa.",
+  "salvar_avaliacoes_alternativas_aluno"    : "Aguarde, salvando avaliações alternativas do aluno...",
+  "confirma_salvar_avaliacao_alternativa"   : "Todas as avaliações lançadas para o aluno nos períodos de avaliações serão removidas.\n\n Tem certeza que deseja salvar?",
+  "excluir_avaliacoes_alternativas_aluno"   : "Aguarde, excluindo avaliaçãoes alternativas do aluno...",
+  "conflito_avaliacoe_x_alternativa"        : "Há conflito entre as avaliações do aluno e a avaliação alternativa selecionada. Seguem os conflitos:\n[sDisciplinas]\nAjuste os aproveitamentos ou escolha outra avaliação alternativa."
+}

@@ -1,0 +1,11 @@
+{
+  "confirma_exclusao"              : "AVISO: Todas as informações das disciplinas lançadas para esta etapa serão excluidas. Confirma a exclusão ?",
+  "preencha_minimo_aprovacao"      : "Preencha o campo Mínimo para Aprovação.",
+  "preencha_escola"                : "Preencha a escola.",
+  "preencha_etapa"                 : "Preencha a etapa.",
+  "preencha_ano"                   : "Preencha o ano.",
+  "valor_invalido_carga_horaria"   : "Valor inválido para carga horária.",
+  "percentual_frequencia_negativo" : "Percentual de frequência não pode ser negativo.",
+  "percentual_frequencia_maximo"   : "Percentual de frequência deve ser no máximo 100%.",
+  "preencha_minimo_aprovacao"      : "Preencha o campo Mínimo para Aprovação."
+}

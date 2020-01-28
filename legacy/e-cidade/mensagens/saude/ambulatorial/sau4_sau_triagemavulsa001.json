@@ -1,0 +1,5 @@
+{
+  "erro_selecionar_profissional"    : "Erro ao selecionar profissional.",
+  "alteracao_triagem_mesmo_usuario" : "A alteração da Triagem só pode ser realizada no mesmo dia que foi lançada, e pelo mesmo usuário que a lançou.",
+  "usuario_logado"                  : "Usuário logado não é um profissional da saúde ou não está vinculado ao departamento."
+}

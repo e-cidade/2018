@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <versao>1.2</versao>
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="planilha"       obrigatorio="true" tipo="stdclass" />
+    <parametro nome="data_pagamento" obrigatorio="true" tipo="date" />
+    <parametro nome="tipo_debito"    obrigatorio="true" tipo="string" />
+  </parametros>
+
+  <configuracoes>
+    <classe referencia="oGerarDebitoIss" nome="DebitoIssContribuinte" parametros="" caminho="model/arrecadacao/webservice/DebitoIssContribuinte.model.php"/>
+    <exec>
+      <metodo referencia="oGerarDebitoIss" nome="setPlanilha"      parametros="$planilha" />
+      <metodo referencia="oGerarDebitoIss" nome="setDataPagamento" parametros="$data_pagamento" />
+      <metodo referencia="oGerarDebitoIss" nome="setTipoDebito"    parametros="$tipo_debito" />
+      <metodo referencia="oGerarDebitoIss" nome="gerarDebito"      parametros="" />
+    </exec>
+  </configuracoes>
+
+</processamento>

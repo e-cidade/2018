@@ -1,0 +1,8 @@
+{
+   "informe_hora_inicial"     : "Informe a hora inicial."
+  ,"hora_inicial_maior_final" : "Informada hora inicial maior que a hora final."
+  ,"informe_exame"            : "Informe o exame."
+  ,"informe_numero_fichas"    : "Informe o número de fichas para agendamento."
+  ,"informe_ficha_reserva"    : "Informe o número de fichas reservas."
+  ,"informe_hora_final"       : "Informe a hora final de atendimento."
+}

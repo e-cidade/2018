@@ -1,0 +1,25 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="db_usuarios.id_usuario" label="id_usuario" />
+    <campo campo="db_userinst.id_instit" label="id_instit" />
+    <campo campo="db_config.nomeinst" label="nome_inst" />
+    <campo campo="db_usuarios.email" label="email_login" />
+    <campo campo="cgm.z01_email" label="email_cgm" />
+    <campo campo="cgm.z01_nome" label="nome_cgm" />
+  </campos>
+  <from tabela="configuracoes.db_logsacessa" />
+  <juncoes>
+    <join tipo="inner" tabela="configuracoes.db_userinst" condicao="db_logsacessa.id_usuario = db_userinst.id_usuario" />
+    <join tipo="inner" tabela="configuracoes.db_config" condicao="db_userinst.id_instit = db_config.codigo" />
+    <join tipo="left" tabela="configuracoes.db_usuarios" condicao="db_logsacessa.id_usuario = db_usuarios.id_usuario" />
+    <join tipo="left" tabela="configuracoes.db_usuacgm" condicao="db_logsacessa.id_usuario = db_usuacgm.id_usuario" />
+    <join tipo="left" tabela="protocolo.cgm" condicao="db_usuacgm.cgmlogin = cgm.z01_numcgm" />
+  </juncoes>
+  <filtros>
+    <filtro label="idModulo" condicao="db_logsacessa.id_modulo in ($idModulo)" obrigatorio="true" />
+    <filtro label="iAno" condicao="extract(year from db_logsacessa.data) = $iAno and db_usuarios.usuarioativo = 1" obrigatorio="true" />
+  </filtros>
+  <agrupamento campos="db_usuarios.id_usuario, db_usuarios.email, cgm.z01_email, cgm.z01_nome, db_userinst.id_instit, db_config.nomeinst" />
+  <ordenacao />
+</consulta>

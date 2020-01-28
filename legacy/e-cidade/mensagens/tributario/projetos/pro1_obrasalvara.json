@@ -1,0 +1,18 @@
+{
+  "nenhuma_construcao_encontrada"            : "Nenhuma construção encontrada.",
+  "nenhum_registro_encontrado"               : "Nenhum registro encontrado.",
+  "nao_foi_possivel_alterar_alvara"          : "Não foi possível alterar alvará. \n\nERRO: [msgErro]",
+  "nao_foi_possivel_excluir_processo"        : "Não foi possível excluir processo. \n\nERRO: [msgErro]",
+  "nao_foi_possivel_salvar_processo"         : "Não foi possível salvar processo. \n\nERRO: [msgErro]",
+  "nao_foi_possivel_salvar_alvara"           : "Não foi possível salvar alvará. \n\nERRO: [msgErro]",
+  "nao_foi_possivel_salvar_processo_2"       : "[2]Não foi possível salvar processo. \n\nERRO: [msgErro]",
+  "nao_foi_possivel_excluir_processo_alvara" : "Não foi possivel excluir processo alvará. \n\nERRO: [msgErro]",
+  "nao_foi_possivel_excluir_alvara"          : "Não foi possivel excluir alvará. \n\nERRO: [msgErro]",
+  "informe_codigo_obra"                      : "Código da obra não informado.",
+  "erro_excluir_historico"                   : "Erro ao excluir o histórico do alvará.",
+  "sucesso_exclusao"                         : "Exclusão efetuada com sucesso!",
+  "validacao_data_alvara"                    : "Data do Alvará não pode ser menor que a data inicial do Último Período.",
+  "validade_inferior"                        : "Data de Validade do Alvará não pode ser menor que a Data do Alvará.",
+  "sucesso_alterar"                          : "Alteração efetuada com sucesso!",
+  "sucesso_incluir"                          : "Inclusão efetuada com sucesso!"
+}

@@ -1,0 +1,9 @@
+{
+  "descricao_nao_informada"        : "Descrição não informada.",
+  "abreviatura_nao_informada"      : "Abreviatura não informada",
+  "efetividade_nao_informada"      : "Efetividade não selecionada.",
+  "salvando_tipo_hora_trabalho"    : "Aguarde, salvando o tipo de hora de trabalho...",
+  "buscando_tipo_hora_cadastradas" : "Aguarde, buscando tipos de hora cadastradas...",
+  "confirma_exclusao"              : "Confirma a exclusão do tipo de hora '[sDescricao]' ?",
+  "excluindo_tipo_hora"            : "Aguarde, excluindo o tipo de hora de trabalho..."
+}

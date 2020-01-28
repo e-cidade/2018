@@ -1,0 +1,11 @@
+{
+  "selecione_escola_destino" : "Selecione a escola de destino.",
+  "selecione_etapa_origem"   : "Selecione a etapa de origem.",
+  "buscando_cursos"          : "Buscando cursos, aguarde...",
+  "buscando_alunos"          : "Buscando alunos, aguarde...",
+  "buscando_etapas"          : "Buscando etapas, aguarde...",
+  "selecione_aluno"          : "Nenhum aluno selecionado.",
+  "transferindo_alunos"      : "Transferindo alunos selecionados, aguarde...",
+  "buscando_emissor"         : "Buscando emissor, aguarde...",
+  "selecione_curso"          : "Selecione o curso de origem."
+}

@@ -1,0 +1,4 @@
+{
+	"limite_quantidade_excedido" : "Quantidade maior que o limite ([quantidade]) configurado no cadastro de rubrica.",
+  "limite_valor_excedido"      : "Valor maior que o limite ([valor]) configurado no cadastro de rubrica."
+}

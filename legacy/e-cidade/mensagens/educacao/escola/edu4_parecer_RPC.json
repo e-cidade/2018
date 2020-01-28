@@ -1,0 +1,5 @@
+{
+  "erro_vincular_turma_parecer"        : "Erro ao incluir vínculo do Parecer com a turma.\n [sErro]",
+  "turma_vinculada_sucesso"            : "Alteração efetuada com sucesso.",
+  "erro_excluir_vinculo_turma_parecer" : "Erro ao excluir vínculo das turmas com o parecer\n [sErro]"
+}

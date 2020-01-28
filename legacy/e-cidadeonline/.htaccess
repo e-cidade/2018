@@ -1,0 +1,12 @@
+#php_value max_input_vars 3000 
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{REQUEST_URI} !=/server-status
+  RewriteCond %{REQUEST_URI} !=/server-status-php-fpm
+  RewriteRule ^(.*)$ FrontController.php?_path=$1 [QSA]
+</IfModule>
+
+<filesMatch "\.(htaccess|htpasswd|ini|sh)$">
+ Order Allow,Deny
+ Deny from all
+</filesMatch>

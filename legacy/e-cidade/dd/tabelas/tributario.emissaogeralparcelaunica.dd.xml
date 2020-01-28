@@ -1,0 +1,110 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3991' name='tributario.emissaogeralparcelaunica' description="Parcela Única usada na emissão geral" prefix="tr05" label="Parcela Única" type="0">
+  <fields>
+    <field codigo="22155"
+           campo_api='codigo_sequencial'
+           name="tr05_sequencial"
+           conteudo="int4"
+           description="Código sequencial do vínculo entre Parcela Única e Emissão geral"
+           inivalue="0"
+           label="Parcela Única"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Parcela Única"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='tributario.emissaogeralparcelaunica_tr05_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22156"
+           campo_api='emissaogeral'
+           name="tr05_emissaogeral"
+           conteudo="int4"
+           description="Código da Emissão Geral"
+           inivalue="0"
+           label="Emissão Geral"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Emissão Geral"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22157"
+           campo_api='dataoperacao'
+           name="tr05_dataoperacao"
+           conteudo="date"
+           description="Data de Operação da Parcela única"
+           inivalue="null"
+           label="Data de Operação"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="0"
+           tipoobj="text"
+           labelrel="Data de Operação"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22158"
+           campo_api='datavencimento'
+           name="tr05_datavencimento"
+           conteudo="date"
+           description="Data de Vencimento da Parcela Única"
+           inivalue="null"
+           label="Data de Vencimento"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Data de Vencimento"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22159"
+           campo_api='percentual'
+           name="tr05_percentual"
+           conteudo="int4"
+           description="Percentual de desconto da Parcela Única usada na Emissão Geral"
+           inivalue="0"
+           label="Percentual"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Percentual"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="tr05_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="emissaogeral">
+      <fieldfk name="tr05_emissaogeral" reference="tr01_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

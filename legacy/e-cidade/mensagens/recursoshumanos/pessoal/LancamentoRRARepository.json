@@ -1,0 +1,5 @@
+{
+	"parametros_nao_informados"      : "Informe corretamento um assentamento ou um codigo de lancamento de RRA.",
+	"erro_buscar_lancamentos"        : "Ocorreu um erro ao buscar os lancamentorra de RRA.",
+	"nenhum_lancamento_encontrado"   : "Não foi encontrado nenhum lançamento."
+}

@@ -1,0 +1,5 @@
+{
+ "sem_transacao_ativa"  : "Não existe transação com o banco de dados",
+ "falha_buscar_debitos" : "Erro ao buscar débitos para importação. \nErro Técnico: [sErro]",
+ "parametro_data_vencimento" : "O parâmetro informado para data de vencimento é inválido."
+}

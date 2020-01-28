@@ -1,0 +1,9 @@
+{
+
+  "sem_arquivo_selecionado" : "Nenhum arquivo para importação selecionado.",
+  "falha_abrir_arquivo"     : "Erro ao abrir o arquivo selecionado.",
+  "Relatorio_diferente"     : "Relatorio para alteração diferente do conteúdo do arquivo.",
+  "sem_transacao_ativa"     : "ERRO - Sem transação ativa com o banco de dados.",
+  "erro_setar_sequencial"   : "Erro ao setar sequencial: [sequencia].",
+  "configuracao_usuario"    : "Este relatório possui linhas configuradas manualmente no(s) ano(s) [anos]. É preciso excluir essas configurações antes de importar a configuração padrão."
+}

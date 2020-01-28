@@ -1,0 +1,11 @@
+{
+  "arquivo_obrigatorio"        : "Selecione um arquivo a ser validado.",
+  "validando"                  : "Realizando a Validação do Arquivo \n Aguarde...",
+  "processando"                : "Realizando o Processamento do Arquivo \n Aguarde...",
+  "erro_arquivo_nao_informado" : "Código do arquivo não informado",
+  "nenhuma_inconsistencia"     : "Nenhuma inconsistência encontrada.",
+  "tomadorSemCGM"              : "[iDocumento] do <strong>tomador</strong> não existe no cadastro do CGM.",
+  "prestadorSemCGM"            : "[iDocumento] do <strong>prestador</strong> não existe no cadastro do CGM.",
+  "banco_obrigatorio"          : "Campo Banco é de preenchimento obrigatório.",
+  "prestadorSemInscricaoAtiva" : "<strong>Prestador</strong> não possui Inscrição ativa no sistema."
+}

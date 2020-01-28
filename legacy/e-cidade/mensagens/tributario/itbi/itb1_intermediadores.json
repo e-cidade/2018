@@ -1,0 +1,20 @@
+{
+  "campo_obrigatorio_itbi"              : "Campo ITBI é de preenchimento obrigatório.",
+  "campo_obrigatorio_nome"              : "Campo Nome é de preenchimento obrigatório.",
+  "campo_obrigatorio_cnpj_cpf"          : "Campo CPF/CNPJ é de preenchimento obrigatório.",
+  "campo_obrigatorio_creci"             : "Campo CRECI é de preenchimento obrigatório.",
+  "carrega_dados_grid_intermediadores"  : "Salvando ITBI Intermediador.",
+  "itbi_intermediadores_salvar"         : "Carrega Intermediadores.",
+  "erro_carrega_intermediadores_itbi"   : "Erro ao consultar registros de intermediadores do ITBI.",
+  "excluir_intermediador"               : "Deseja excluir este intermediador?",
+  "erro_salvar_intermediador"           : "Erro ao salvar intermediador!",
+  "erro_excluir_intermediador"          : "Erro ao excluir intermediador!",
+  "sucesso_excluir_intermediador"       : "Intermediador excluido com sucesso!",
+  "sucesso_salvar_intermediador"        : "Intermediador salvo com sucesso!",
+  "carrega_excluir_intermediadores"     : "Excluindo intermediador.",
+  "consulta_intermediador_alteracao"    : "Carregando dados do intermediador.",
+  "erro_salvar_intermediador_documento" : "CPF/CNPJ já registrado como intermediador.",
+  "carrega_principal"                   : "Verificando intermediador principal.",
+  "erro_excluir_principal"              : "Impossível excluir intermediador principal.",
+  "campo_cnpj_cpf_irregular"            : "CPF/CNPJ deve ser preenchido com 14 digitos para CNPJ ou 11 digitos para CPF."
+}

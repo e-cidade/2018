@@ -1,0 +1,53 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010220' name='caixa.debcontapedidoaguacontrato' description="Tabela para cadastrar débito em conta para contrato de água" prefix="d81" label="Cadastro de débito em conta para contrato de água" type="0">
+  <fields>
+    <field codigo="1009404"
+           campo_api=''
+           name="d81_codigo"
+           conteudo="int4"
+           description="Código do pedido"
+           inivalue="0"
+           label="Código"
+           size="19"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código"
+           reference=""
+           ispk="t"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009405"
+           campo_api=''
+           name="d81_contrato"
+           conteudo="int4"
+           description="Código do contrato de água"
+           inivalue="0"
+           label="Contrato"
+           size="19"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Contrato"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+  </fields>
+  <primarykey>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="debcontapedido" inner='t'>
+      <fieldfk name="d81_codigo" reference="d63_codigo" />
+    </foreignkey>
+    <foreignkey reference="aguacontrato" inner='t'>
+      <fieldfk name="d81_contrato" reference="x54_sequencial" />
+    </foreignkey>
+  </foreignkeys>
+</table>

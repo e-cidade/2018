@@ -1,0 +1,5 @@
+{
+  "possui_lancamento_contabil": "Esta planilha possui autenticação. Portanto não poderá ser excluída.",
+  "exclusao_processo_administrativo":"Não foi possível excluir o processo administrativo vinculado a planilha.",
+  "vincular_processo_administrativo":"Não foi possível vincular o processo administrativo na planilha."
+}

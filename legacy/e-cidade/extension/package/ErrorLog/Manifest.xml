@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<manifest>
+
+  <id>ErrorLog</id>
+  <version>1.0</version>
+
+  <events>
+    <event trigger="app.error" class="ECidade\Package\ErrorLog\Event\Handler" />
+  </events>
+
+</manifest>

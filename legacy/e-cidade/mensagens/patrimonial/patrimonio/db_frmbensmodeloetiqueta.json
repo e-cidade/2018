@@ -1,0 +1,7 @@
+{
+  "falha_ao_importar" : "Falha ao importar conteúdo do arquivo informado.",
+  "falha_no_upload"   : "Falha no upload do arquivo informado.",
+  "informe_descricao" : "Descrição não informada.",
+  "informe_arquivo"   : "Deve ser informado um arquivo XML ou importar um modelo padrão.",
+  "salvando_xml"      : "Aguarde salvando arquivo XML..."
+}

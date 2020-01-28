@@ -1,0 +1,3 @@
+<?
+$campos = "movimentacaoprontuario.sd102_codigo,movimentacaoprontuario.sd102_prontuarios,movimentacaoprontuario.sd102_db_usuarios,movimentacaoprontuario.sd102_setorambulatorial,movimentacaoprontuario.sd102_data,movimentacaoprontuario.sd102_hora,movimentacaoprontuario.sd102_situacao,movimentacaoprontuario.sd102_observacao";
+?>

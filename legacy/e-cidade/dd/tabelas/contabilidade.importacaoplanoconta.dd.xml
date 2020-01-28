@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3995' name='contabilidade.importacaoplanoconta' description="importacaoplanoconta" prefix="c96" label="importacaoplanoconta" type="0">
+  <fields>
+    <field codigo="22193"
+           campo_api=''
+           name="c96_sequencial"
+           conteudo="int4"
+           description="Codigo"
+           inivalue="0"
+           label="Código"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='contabilidade.importacaoplanoconta_c96_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22194"
+           campo_api=''
+           name="c96_modeloplanoconta"
+           conteudo="int4"
+           description="Modelos do Plano de Contas"
+           inivalue="0"
+           label="Modelos do Plano de Contas"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Modelos do Plano de Contas"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22195"
+           campo_api=''
+           name="c96_data"
+           conteudo="date"
+           description="Data do processamento"
+           inivalue="null"
+           label="Data de Processamento"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Data de Processamento"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="c96_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="modeloplanoconta">
+      <fieldfk name="c96_modeloplanoconta" reference="c94_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

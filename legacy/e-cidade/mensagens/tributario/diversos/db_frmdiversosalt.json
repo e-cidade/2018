@@ -1,0 +1,22 @@
+{
+  "verifique_data_inscricao"            : "Verifique a data de inscrição.",
+  "verifique_ano_origem"                : "Verifique o campo ano da origem.",
+  "verifique_procedencia"               : "Verifique o campo procedência.",
+  "verifique_data_primeiro_vencimento"  : "Verifique a data do primeiro vencimento.",
+  "verifique_valor_historico"           : "Verifique o campo valor histórico.",
+  "verifique_data_operacao"             : "Verifique a data de operação.",
+  "verifique_valor_total"               : "Verifique o campo valor total.",
+  "verifique_numero_parcelas"           : "Verifique o campo numero de parcelas.",
+  "verifique_data_proximo_vencimento"   : "Verifique a data do próximo vencimento.",
+  "verifique_dia_proximos_vencimentos"  : "Verifique o campo dia dos próximos vencimentos.",
+  "preencha_data_primeiro_vencimento"   : "Preencha a data do primeiro vencimento.",
+  "selecione_procedencia"               : "Selecione a procedência.",
+  "preencha_valor_historico"            : "Preencha o campo valor histórico.",
+  "informe_valor_corrigido_total"       : "Não há dados suficientes para corrigir o valor. \nInforme o valor corrigido total.",
+  "configure_tipo_debitos_destino"      : "Configure o tipo de debitos destino para a procedência selecionada.",
+  "verifique_situacao_geral_financeira" : "Alteração não permitida para este Diversos. \nVerifique a situação na Consulta Geral Financeira. \nDúvidas verifique o help.",
+  "verificar_pagamento_parcial"         : "Erro ao verificar pagamento parcial! Contate o suporte!",
+  "existe_pagamento_parcial"            : "Alteração não permitida para este Diversos. \nExiste pagamento parcial para do débito informado!",
+  "debito_parcela_paga"                 : "Débito com parcela paga. Exclusão não permitida.",
+  "erro_geracao_diverso"                : "Ocorreu um problema durante a geração do diverso. Contate suporte."
+}

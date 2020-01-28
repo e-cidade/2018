@@ -1,0 +1,301 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4014' name='recursoshumanos.pontoeletronicoarquivodata' description="Tabela com as datas de marcações do registro de ponto." prefix="rh197" label="Datas das marcações do arquivo" type="0">
+  <fields>
+    <field codigo="22263" 
+           campo_api='' 
+           name="rh197_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.pontoeletronicoarquivodata_rh197_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22264" 
+           campo_api='' 
+           name="rh197_pontoeletronicoarquivo" 
+           conteudo="int4" 
+           description="Vínculo com o arquivo de marcações do ponto" 
+           inivalue="0" 
+           label="Arquivo" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Arquivo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22265" 
+           campo_api='' 
+           name="rh197_data" 
+           conteudo="date" 
+           description="Data do registro do ponto" 
+           inivalue="null" 
+           label="Data" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22266" 
+           campo_api='' 
+           name="rh197_matricula" 
+           conteudo="int4" 
+           description="Matrícula do servidor" 
+           inivalue="0" 
+           label="Matrícula" 
+           size="19" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Matrícula" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22267" 
+           campo_api='' 
+           name="rh197_horas_trabalhadas" 
+           conteudo="text" 
+           description="Horas trabalhadas" 
+           inivalue="" 
+           label="Horas Trabalhadas" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Trabalhadas" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22269" 
+           campo_api='' 
+           name="rh197_horas_falta" 
+           conteudo="text" 
+           description="Horas de falta" 
+           inivalue="" 
+           label="Horas Falta" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Falta" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22270" 
+           campo_api='' 
+           name="rh197_horas_extras_50_d" 
+           conteudo="text" 
+           description="Horas extras 50% Diurna" 
+           inivalue="" 
+           label="Horas Extras 50% Diurna" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 50% Diurna" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22271" 
+           campo_api='' 
+           name="rh197_horas_extras_75_d" 
+           conteudo="text" 
+           description="Horas extras 75% Diurna" 
+           inivalue="" 
+           label="Horas Extras 75% Diurna" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 75% Diurna" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22272" 
+           campo_api='' 
+           name="rh197_horas_extras_100_d" 
+           conteudo="text" 
+           description="Horas extras 100% Diurna" 
+           inivalue="" 
+           label="Horas Extras 100% Diurna" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 100% Diurna" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22273" 
+           campo_api='' 
+           name="rh197_horas_adicinal_noturno" 
+           conteudo="text" 
+           description="Horas de adicional noturno" 
+           inivalue="" 
+           label="Horas Adicional Noturno" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Adicional Noturno" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22326" 
+           campo_api='' 
+           name="rh197_pis" 
+           conteudo="varchar(11)" 
+           description="Número PIS do servidor." 
+           inivalue="" 
+           label="PIS" 
+           size="11" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="PIS" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22396" 
+           campo_api='' 
+           name="rh197_horas_extras_50_n" 
+           conteudo="text" 
+           description="Horas extras 50% noturnas" 
+           inivalue="" 
+           label="Horas Extras 50% Noturna" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 50% Noturna" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22397" 
+           campo_api='' 
+           name="rh197_horas_extras_75_n" 
+           conteudo="text" 
+           description="Horas extras 75% noturnas" 
+           inivalue="" 
+           label="Horas Extras 75% Noturna" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 75% Noturna" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22398" 
+           campo_api='' 
+           name="rh197_horas_extras_100_n" 
+           conteudo="text" 
+           description="Horas extras 100% noturnas" 
+           inivalue="" 
+           label="Horas Extras 100% Noturna" 
+           size="10" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 100% Noturna" 
+           reference="" 
+           ispk="f" 
+           hassequence="t">
+    </field>
+    <field codigo="1009336"
+           campo_api=''
+           name="rh197_afastamento"
+           conteudo="int4"
+           description="Assentamento de Afastamento do servidor na data"
+           inivalue=""
+           label="Afastamento"
+           size="10"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="0"
+           tipoobj="text"
+           labelrel="Afastamento"
+           reference=""
+           ispk="f"
+           hassequence="f">        
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh197_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="rhpessoal">
+      <fieldfk name="rh197_matricula" reference="rh01_regist" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="assenta">
+      <fieldfk name="rh197_afastamento" reference="h16_codigo" inner='f'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

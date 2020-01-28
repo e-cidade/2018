@@ -1,0 +1,9 @@
+{
+  "buscando_periodos"              : "Aguarde, buscando os perídos de avaliação da turma...",
+  "buscando_disciplinas"           : "Aguarde, buscando as disciplinas da turma...",
+  "nenhuma_disciplina_selecionada" : "Nenhuma disciplina foi selecionada.",
+  "nenhum_periodo_selecionado"     : "Nenhum período foi selecionado.",
+  "nenhuma_turma_selecionada"      : "Nenhuma turma foi selecionada.",
+  "nenhum_calendario_selecionado"  : "Nenhum calendário foi selecionado.",
+  "nenhum_periodo_encontrado"      : "Nenhum período de avaliação encontrado, que possua vínculo com algum critério de avaliação."
+}

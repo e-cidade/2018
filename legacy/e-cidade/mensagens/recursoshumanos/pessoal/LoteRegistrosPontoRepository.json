@@ -1,0 +1,13 @@
+{
+  "erro_pesquisar_lote_competencia"         : "Não foram encontrados registros de lote nesta competência.",
+  "erro_pesquisar_lote"                     : "Não foi possível encontrar o lote.",
+  "erro_consultar_pre_ponto"                : "Ocorreu um erro ao consultar o pre ponto.",
+  "erro_persistir_lote"                     : "Não foi possível salvar o lote.",
+  "erro_persistir_registro"                 : "Não foi possível salvar os registros do lote.",
+  "erro_excluir_vinculo_registro_ponto"     : "Ocorreu um erro ao excluir os vínculos entre os registros do ponto com  o lote.",
+  "erro_consultar_vinculo_registro_ponto"   : "Ocorreu um erro ao consultar os vínculos entre os registros do ponto com o lote.",
+  "erro_excluir_registro_ponto"             : "Ocorreu um erro ao excluir os registros do ponto do lote.",
+  "erro_excluir_lote"                       : "Ocorreu um erro ao excluir o lote dos registros do ponto.",
+  "erro_confirmar_lote_vazio"               : "Não é possível confirmar um lote vazio.",
+  "erro_buscar_lotacao_servidor"            : "Não foi possível buscar a lotação para o servidor."
+}

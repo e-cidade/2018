@@ -1,0 +1,10 @@
+{
+  "selecione_dia"         : "Nenhum registro selecionado.",
+  "registro_ja_incluido"  : "Registro já incluído.",
+  "salvar_dias_vazio"     : "Selecione dias para verificar vencimento.",
+  "salvar_usuario_vazio"  : "Selecione um usuário para receber a notificação.",
+  "salvar_assunto_vazio"  : "Selecione um assunto para a notificação.",
+  "salvar_mensagem_vazio" : "Selecione uma mensagem para a notificação.",
+  "salvando"              : "Salvando alterações.",
+  "limite_dia"            : "O campo Dias possui limite para até 4 anos."
+}

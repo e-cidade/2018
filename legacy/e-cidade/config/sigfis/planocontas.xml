@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<planoconta>
+ <conta ano="2012" estrutural="0.0.00.00.00.00.00" descricao="NÃO APLICÁVEL" codigo="999"/>
+ <conta ano="2012" estrutural="1.1.00.00.00.00.00" descricao="RECEITA" codigo="656"/>
+ <conta ano="2012" estrutural="1.1.01.00.00.00.00" descricao="RECEITA PREVISTA" codigo="657"/>
+ <conta ano="2012" estrutural="1.1.01.01.00.00.00" descricao="RECEITA CORRENTE" codigo="658"/>
+ <conta ano="2012" estrutural="1.1.01.02.00.00.00" descricao="RECEITA DE CAPITAL" codigo="659"/>
+ <conta ano="2012" estrutural="1.2.00.00.00.00.00" descricao="DESPESA" codigo="660"/>
+ <conta ano="2012" estrutural="1.2.01.00.00.00.00" descricao="CRÉDITOS DISPONÍVEIS" codigo="661"/>
+ <conta ano="2012" estrutural="1.2.01.01.00.00.00" descricao="CRÉDITOS ORÇAMENTÁRIOS E SUPLEMENTARES" codigo="662"/>
+ <conta ano="2012" estrutural="1.2.01.02.00.00.00" descricao="CRÉDITOS ESPECIAIS" codigo="663"/>
+ <conta ano="2012" estrutural="1.2.01.03.00.00.00" descricao="CRÉDITOS EXTRAORDINÁRIOS" codigo="664"/>
+ <conta ano="2012" estrutural="1.3.00.00.00.00.00" descricao="CONTAS DE MOVIMENTAÇÃO" codigo="665"/>
+ <conta ano="2012" estrutural="1.3.01.00.00.00.00" descricao="ORÇAMENTO DA RECEITA" codigo="666"/>
+ <conta ano="2012" estrutural="1.3.02.00.00.00.00" descricao="EXECUÇÃO DA RECEITA" codigo="667"/>
+ <conta ano="2012" estrutural="1.3.03.00.00.00.00" descricao="ORÇAMENTO DA DESPESA" codigo="668"/>
+ <conta ano="2012" estrutural="1.3.04.00.00.00.00" descricao="CRÉDITOS INDISPONÍVEIS" codigo="669"/>
+ <conta ano="2012" estrutural="1.3.05.00.00.00.00" descricao="CRÉDITOS SUPLEMENTARES ABERTOS" codigo="670"/>
+ <conta ano="2012" estrutural="1.3.06.00.00.00.00" descricao="CRÉDITOS ESPECIAIS ABERTOS" codigo="671"/>
+ <conta ano="2012" estrutural="1.3.07.00.00.00.00" descricao="CRÉDITOS EXTRAORDINÁRIOS ABERTOS" codigo="672"/>
+ <conta ano="2012" estrutural="1.3.08.00.00.00.00" descricao="DESPESA EMPENHADA" codigo="673"/>
+ <conta ano="2012" estrutural="1.3.09.00.00.00.00" descricao="DESPESA LIQUIDADA" codigo="674"/>
+ <conta ano="2012" estrutural="1.3.10.00.00.00.00" descricao="EXECUÇÃO DA DESPESA" codigo="675"/>
+ <conta ano="2012" estrutural="2.0.00.00.00.00.00" descricao="SISTEMA FINANCEIRO" codigo="676"/>
+ <conta ano="2012" estrutural="2.1.00.00.00.00.00" descricao="ATIVO FINANCEIRO" codigo="1"/>
+ <conta ano="2012" estrutural="2.1.01.00.00.00.00" descricao="DISPONÍVEL" codigo="2"/>
+ <conta ano="2012" estrutural="2.1.01.01.00.00.00" descricao="Caixa" codigo="3"/>
+ <conta ano="2012" estrutural="2.1.01.02.00.00.00" descricao="Bancos Conta Movimento" codigo="4"/>
+ <conta ano="2012" estrutural="2.1.01.03.00.00.00" descricao="Exatores" codigo="5"/>
+ <conta ano="2012" estrutural="2.1.01.04.00.00.00" descricao="Outras Disponibilidades" codigo="6"/>
+ <conta ano="2012" estrutural="2.1.02.00.00.00.00" descricao="VINCULADO CONTA CORRENTE BANCÁRIA" codigo="7"/>
+ <conta ano="2012" estrutural="2.1.02.01.00.00.00" descricao="Bancos Oficiais" codigo="8"/>
+ <conta ano="2012" estrutural="2.1.02.01.01.00.00" descricao="Bancos - Contas Vinculadas - Royalties" codigo="9"/>
+ <conta ano="2012" estrutural="2.1.02.01.02.00.00" descricao="Bancos - Contas Vinculadas - Recursos do Regime Próprio(RPPS)" codigo="10"/>
+ <conta ano="2012" estrutural="2.1.02.01.03.00.00" descricao="Bancos - Contas Vinculadas - Convênios" codigo="11"/>
+ <conta ano="2012" estrutural="2.1.02.01.04.00.00" descricao="Bancos - Contas Vinculadas - FUNDEF" codigo="12"/>
+ <conta ano="2012" estrutural="2.1.02.01.05.00.00" descricao="Bancos - Contas Vinculadas - Recursos do Fundo de Saúde(FMS)" codigo="13"/>
+ <conta ano="2012" estrutural="2.1.02.01.05.01.00" descricao="Recursos FMS - Origem de Impostos " codigo="1440"/>
+ <conta ano="2012" estrutural="2.1.02.01.05.02.00" descricao="Recursos FMS - Origem do SUS " codigo="1450"/>
+ <conta ano="2012" estrutural="2.1.02.01.05.03.00" descricao="Recursos FMS - Origem de Operação de Crédito " codigo="1460"/>
+ <conta ano="2012" estrutural="2.1.02.01.05.04.00" descricao="Recursos FMS - Outras Origens " codigo="1470"/>
+ <conta ano="2012" estrutural="2.1.02.01.05.05.00" descricao="Recursos FMS - Consórcio de Saúde " codigo="1480"/>
+ <conta ano="2012" estrutural="2.1.02.01.05.06.00" descricao="Recursos FMS - Alienação de Bens Destinados a Programas de Saúde " codigo="1490"/>
+ <conta ano="2012" estrutural="2.1.02.01.06.00.00" descricao="Bancos - Contas Vinculadas - Salário Educação" codigo="14"/>
+ <conta ano="2012" estrutural="2.1.02.01.06.01.00" descricao="Recursos do Salário Educação " codigo="1390"/>
+ <conta ano="2012" estrutural="2.1.02.01.06.02.00" descricao="Outros Recursos do FNDE " codigo="1400"/>
+ <conta ano="2012" estrutural="2.1.02.01.06.03.00" descricao="Recursos de Operações de Crédito " codigo="1410"/>
+ <conta ano="2012" estrutural="2.1.02.01.06.04.00" descricao="Recursos da Alienação de Bens Destinados a Programas de Educação " codigo="1420"/>
+ <conta ano="2012" estrutural="2.1.02.01.06.05.00" descricao="Recursos de Outras Origens " codigo="1430"/>
+ <conta ano="2012" estrutural="2.1.02.01.07.00.00" descricao="Bancos - Contas Vinculadas -Outras Vinculações" codigo="15"/>
+ <conta ano="2012" estrutural="2.1.02.01.08.00.00" descricao="Bancos - Contas Vinculadas - Convênios Educação " codigo="1201"/>
+ <conta ano="2012" estrutural="2.1.02.01.09.00.00" descricao="Bancos - Contas Vinculadas - Convênios Saúde " codigo="1202"/>
+ <conta ano="2012" estrutural="2.1.02.01.10.00.00" descricao="Bancos - Contas Vinculadas - Conservação Ambiental " codigo="1203"/>
+ <conta ano="2012" estrutural="2.1.02.01.11.00.00" descricao="Bancos - Contas Vinculadas - CIDE " codigo="1204"/>
+ <conta ano="2012" estrutural="2.1.02.01.12.00.00" descricao="Bancos - Contas Vinculadas - Assistência Social " codigo="1205"/>
+ <conta ano="2012" estrutural="2.1.02.01.13.00.00" descricao="Bancos - Contas Vinculadas - Custeio dos Serviços de Iluminação Pública " codigo="1207"/>
+ <conta ano="2012" estrutural="2.1.02.01.14.00.00" descricao="Bancos - Contas Vinculadas - Operações de Crédito Internas - finalidade específica " codigo="1208"/>
+ <conta ano="2012" estrutural="2.1.02.01.15.00.00" descricao="Bancos - Contas Vinculadas - Operações de Crédito Externas " codigo="1209"/>
+ <conta ano="2012" estrutural="2.1.02.01.16.00.00" descricao="Bancos - Contas Vinculadas - Alienação de Bens (exceto Saúde e Educação) " codigo="1210"/>
+ <conta ano="2012" estrutural="2.1.02.01.17.00.00" descricao="Bancos - Contas Vinculadas - Operações de Crédito Internas (empréstimos não específicos) " codigo="1211"/> 
+ <conta ano="2012" estrutural="2.1.02.02.00.00.00" descricao="Bancos Privados" codigo="16"/>
+ <conta ano="2012" estrutural="2.1.02.02.01.00.00" descricao="Recursos do Regime Próprio RPPS" codigo="17"/>
+ <conta ano="2012" estrutural="2.1.02.02.02.00.00" descricao="Recursos de Fontes Diversas" codigo="18"/>
+ <conta ano="2012" estrutural="2.1.03.00.00.00.00" descricao="REALIZÁVEL" codigo="19"/>
+ <conta ano="2012" estrutural="2.1.03.01.00.00.00" descricao="Aplicações Financeiras" codigo="20"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.00.00" descricao="Bancos Oficiais" codigo="21"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.01.00" descricao="Royalties" codigo="22"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.02.00" descricao="Salário Educação" codigo="23"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.02.01" descricao="Recursos do Salário Educação " codigo="1340"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.02.02" descricao="Outros Recursos do FNDE " codigo="1350"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.02.03" descricao="Recursos de Operações de Crédito " codigo="1360"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.02.04" descricao="Recursos da Alienação de Bens Destinados a Programas de Educação " codigo="1370"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.02.05" descricao="Recursos de Outras Origens " codigo="1380"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.04.00" descricao="Recursos de Operações de Crédito" codigo="24"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.05.00" descricao="Convênios" codigo="25"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.05.01" descricao="Convênio Vinculado a Programas de Educação" codigo="26"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.05.02" descricao="Convênio Vinculado a Programas de Saúde" codigo="27"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.05.99" descricao="Outros Convênios" codigo="28"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.06.00" descricao="FUNDEB" codigo="29"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.07.00" descricao="Recursos do Fundo de Saúde (FMS)" codigo="30"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.07.01" descricao="Recursos FMS - Origem de Impostos" codigo="31"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.07.02" descricao="Recursos FMS - Origem do SUS" codigo="32"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.07.03" descricao="Recursos FMS - Origem de Operação de Crédito" codigo="33"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.07.04" descricao="Recursos FMS - Outras Origens" codigo="34"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.07.05" descricao="Recursos FMS - Consórcios de Saúde " codigo="1320"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.07.06" descricao="Recursos FMS - Alienação de Bens Destinados a Programas de Saúde " codigo="1330"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.08.00" descricao="Outras Vinculações" codigo="35"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.08.01" descricao="Aplicações - Recursos de Operações de Crédito Externas " codigo="1212"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.08.02" descricao="Aplicações - Recursos de Conservação Ambiental " codigo="1213"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.08.03" descricao="Aplicações - Recursos CIDE " codigo="1214"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.08.04" descricao="Aplicações - Recursos COSIP " codigo="1215"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.08.05" descricao="Aplicações - Recursos Assistência Social " codigo="1216"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.08.06" descricao="Aplicações - Diversos Recursos Vinculados " codigo="1217"/> 
+ <conta ano="2012" estrutural="2.1.03.01.01.09.00" descricao="Recursos Não-Vinculados" codigo="36"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.09.01" descricao="Aplicações - Recursos de Alienação de Bens (exceto Saúde e Educação) " codigo="1218"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.09.02" descricao="Aplicações - Recursos de Operações de Crédito Internas (empréstimos não específicos) " codigo="1219"/>
+ <conta ano="2012" estrutural="2.1.03.01.01.09.03" descricao="Aplicações - Demais Recursos não Vinculados " codigo="1220"/>
+ <conta ano="2012" estrutural="2.1.03.01.02.00.00" descricao="Bancos Privados" codigo="37"/>
+ <conta ano="2012" estrutural="2.1.03.01.02.01.00" descricao="Recursos de Diversas Fontes" codigo="38"/>
+ <conta ano="2012" estrutural="2.1.03.02.00.00.00" descricao="Recursos Especiais a Receber do RPPS" codigo="39"/>
+ <conta ano="2012" estrutural="2.1.03.02.01.00.00" descricao="Limite de Saque com Vinculação de Pagamento" codigo="40"/>
+ <conta ano="2012" estrutural="2.1.03.02.02.00.00" descricao="Repasses a Receber" codigo="41"/>
+ <conta ano="2012" estrutural="2.1.03.02.02.01.00" descricao="Relativos a Contribuições Previdenciárias Patronais" codigo="42"/>
+ <conta ano="2012" estrutural="2.1.03.02.02.02.00" descricao="Relativos a Contribuições Previdenciárias dos Servidores" codigo="43"/>
+ <conta ano="2012" estrutural="2.1.03.02.02.99.00" descricao="Outros Repasses a Receber" codigo="44"/>
+ <conta ano="2012" estrutural="2.1.03.02.03.00.00" descricao="Vinculado ao Pagamento de Restos a Pagar" codigo="45"/>
+ <conta ano="2012" estrutural="2.1.03.03.00.00.00" descricao="Valores e Créditos Diversos a Receber" codigo="46"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.00.00" descricao="Regime Próprio - RPPS" codigo="47"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.01.00" descricao="Valores a Receber - Operação de Crédito" codigo="48"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.02.00" descricao="Créditos Diversos a Receber" codigo="49"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.02.01" descricao="Salário Família" codigo="50"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.02.02" descricao="Salário Maternidade" codigo="51"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.02.99" descricao="Outros Créditos a Receber" codigo="52"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.03.00" descricao="Recursos Vinculados" codigo="901"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.03.01" descricao="Depósitos Judiciais" codigo="902"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.03.99" descricao="Outros Depósitos" codigo="903"/>
+ <conta ano="2012" estrutural="2.1.03.03.01.99.00" descricao="Outros Valores e Créditos a Receber" codigo="53"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.00.00" descricao="Outras Unidades" codigo="54"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.01.00" descricao="Recursos Previsto no Orçamento e Não-Recebidos até 31/12" codigo="55"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.01.01" descricao="Repasse Financeiro da Prefeitura para Câmara Municipal" codigo="56"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.01.02" descricao="Repasse Financeiro da Prefeitura para Autarquias" codigo="57"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.01.03" descricao="Repasse Financeiro da Prefeitura para Fundações" codigo="58"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.01.04" descricao="Repasse Financeiro da Prefeitura para Fundos Especiais" codigo="59"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.01.05" descricao="Repasse Financeiro da Prefeitura para Empresas Públicas" codigo="60"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.01.06" descricao="Repasse Financeiro da Prefeitura para Sociedades de Economia Mista" codigo="61"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.02.00" descricao="Outros Valores e Créditos a Receber" codigo="62"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.02.01" descricao="Entidades Devedoras" codigo="63"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.02.02" descricao="Restos a Receber" codigo="64"/>
+ <conta ano="2012" estrutural="2.1.03.03.02.02.03" descricao="Diversos Valores e Créditos a Receber" codigo="65"/>
+ <conta ano="2012" estrutural="2.1.03.04.01.01.00" descricao="DESPESAS ANTECIPADAS" codigo="66"/>
+ <conta ano="2012" estrutural="2.1.03.05.00.00.00" descricao="Créditos em Circulação " codigo="1221"/>
+ <conta ano="2012" estrutural="2.1.03.05.01.00.00" descricao="Créditos A Receber " codigo="1222"/>
+ <conta ano="2012" estrutural="2.1.03.05.01.01.00" descricao="Créditos A Receber RPPS " codigo="1223"/>
+ <conta ano="2012" estrutural="2.1.03.05.01.02.00" descricao="Créditos A Receber Demais Unidades " codigo="1224"/>
+ <conta ano="2012" estrutural="2.1.03.05.02.00.00" descricao="Devedores - Entidades e Agentes " codigo="1225"/>
+ <conta ano="2012" estrutural="2.1.03.05.02.01.00" descricao="Devedores - Entidades e Agentesr RPPS " codigo="1226"/>
+ <conta ano="2012" estrutural="2.1.03.05.02.02.00" descricao="Devedores - Entidades e Agentes Demais Unidades " codigo="1227"/>
+ <conta ano="2012" estrutural="2.1.03.05.03.00.00" descricao="Devedores - Entidades e Agentes " codigo="1228"/>
+ <conta ano="2012" estrutural="2.1.03.05.03.01.00" descricao="Devedores - Entidades e Agentesr RPPS " codigo="1229"/>
+ <conta ano="2012" estrutural="2.1.03.05.03.02.00" descricao="Devedores - Entidades e Agentes Demais Unidades " codigo="1230"/>
+ <conta ano="2012" estrutural="2.1.03.05.04.00.00" descricao="Adiantamentos Concedidos " codigo="1231"/>
+ <conta ano="2012" estrutural="2.1.03.05.04.01.00" descricao="Adiantamentos Concedidos RPPS " codigo="1232"/>
+ <conta ano="2012" estrutural="2.1.03.05.04.02.00" descricao="Adiantamentos Concedidos Demais Unidades " codigo="1233"/>
+ <conta ano="2012" estrutural="2.1.03.05.05.00.00" descricao="Depósitos Realizáveis a Curto Prazo " codigo="1234"/>
+ <conta ano="2012" estrutural="2.1.03.05.05.01.00" descricao="Depósitos Realizáveis a Curto Prazo RPPS " codigo="1235"/>
+ <conta ano="2012" estrutural="2.1.03.05.05.02.00" descricao="Depósitos Realizáveis a Curto Prazo Demais Unidades " codigo="1236"/>
+ <conta ano="2012" estrutural="2.1.03.05.06.00.00" descricao="Valores em Trânsito Realizáveis " codigo="1237"/>
+ <conta ano="2012" estrutural="2.1.03.05.06.01.00" descricao="Valores em Trânsito Realizáveis RPPS " codigo="1238"/>
+ <conta ano="2012" estrutural="2.1.03.05.06.02.00" descricao="Valores em Trânsito Realizáveis Demais Unidades " codigo="1239"/>
+ <conta ano="2012" estrutural="2.1.03.06.00.00.00" descricao="Diversos Responsáveis" codigo="67"/>
+ <conta ano="2012" estrutural="2.1.03.07.00.00.00" descricao="Outros Valores em Circulação " codigo="1240"/>
+ <conta ano="2012" estrutural="2.1.03.07.01.00.00" descricao="Bens e Valores em Circulação " codigo="1241"/>
+ <conta ano="2012" estrutural="2.1.03.07.01.01.00" descricao="Estoques internos - almoxarifado " codigo="1242"/>
+ <conta ano="2012" estrutural="2.1.03.07.01.01.01" descricao="Estoques internos - almoxarifado RPPS " codigo="1243"/>
+ <conta ano="2012" estrutural="2.1.03.07.01.01.02" descricao="Estoques internos - almoxarifado Demais Unidades " codigo="1244"/>
+ <conta ano="2012" estrutural="2.1.03.07.02.00.00" descricao="Despesas Antecipadas " codigo="1245"/>
+ <conta ano="2012" estrutural="2.1.03.07.02.01.00" descricao="Despesas Antecipadas RPPS " codigo="1246"/>
+ <conta ano="2012" estrutural="2.1.03.07.02.02.00" descricao="Despesas Antecipadas Demais Unidades " codigo="1247"/>
+ <conta ano="2012" estrutural="2.1.03.08.00.00.00" descricao="Investimentos do Regime Próprio de Previdência" codigo="68"/>
+ <conta ano="2012" estrutural="2.1.03.08.01.00.00" descricao="Investimentos em Segmento de Renda Fixa" codigo="904"/>
+ <conta ano="2012" estrutural="2.1.03.08.01.01.00" descricao="Títulos de Responsabilidade do Tesouro - Pré Fixado" codigo="70"/>
+ <conta ano="2012" estrutural="2.1.03.08.01.02.00" descricao="Títulos de Responsabilidade do Tesouro - Pós Fixado" codigo="905"/>
+ <conta ano="2012" estrutural="2.1.03.08.01.03.00" descricao="Títulos de Responsabilidade do Banco Central - Pré Fixado" codigo="76"/>
+ <conta ano="2012" estrutural="2.1.03.08.01.04.00" descricao="Títulos de Responsabilidade do Banco Central - Pós Fixado" codigo="906"/>
+ <conta ano="2012" estrutural="2.1.03.08.01.05.00" descricao="Fundos de Investimento" codigo="71"/>
+ <conta ano="2012" estrutural="2.1.03.08.01.06.00" descricao="Poupança" codigo="73"/>
+ <conta ano="2012" estrutural="2.1.03.08.01.50.00" descricao="Outros Fundos de Investimento em Renda Fixa" codigo="907"/>
+ <conta ano="2012" estrutural="2.1.03.08.02.00.00" descricao="Investimentos em Segmento de Renda Variável" codigo="908"/>
+ <conta ano="2012" estrutural="2.1.03.08.03.00.00" descricao="Investimentos em Segmento de Imóveis" codigo="78"/>
+ <conta ano="2012" estrutural="2.1.03.08.03.01.00" descricao="Imóveis" codigo="79"/>
+ <conta ano="2012" estrutural="2.1.03.08.03.02.00" descricao="Fundo de Investimentos Imobiliários" codigo="909"/>
+ <conta ano="2012" estrutural="2.1.03.08.04.00.00" descricao="Provisão para Perdas em Investimentos (redutora)" codigo="85"/>
+ <conta ano="2012" estrutural="2.1.03.08.05.00.00" descricao="Aplicações em Ativos não Sujeitos ao Enquadramento " codigo="1249"/>
+ <conta ano="2012" estrutural="2.1.03.08.06.00.00" descricao="Aplicações com a Taxa de Administração do RPPS " codigo="1250"/>
+ <conta ano="2012" estrutural="2.1.03.08.09.00.00" descricao="Provisão para Perdas em Aplicações da Carteira do RPPS (redutora) " codigo="85"/>
+ <conta ano="2012" estrutural="2.1.03.12.00.00.00" descricao="Outras Operações Realizáveis" codigo="86"/>
+ <conta ano="2012" estrutural="2.2.00.00.00.00.00" descricao="PASSIVO FINANCEIRO" codigo="87"/>
+ <conta ano="2012" estrutural="2.2.01.00.00.00.00" descricao="EXIGÍVEL" codigo="88"/>
+ <conta ano="2012" estrutural="2.2.01.01.00.00.00" descricao="Restos a Pagar" codigo="89"/>
+ <conta ano="2012" estrutural="2.2.01.01.01.00.00" descricao="Restos a Pagar Processados" codigo="90"/>
+ <conta ano="2012" estrutural="2.2.01.01.01.01.00" descricao="RP Processado - Precatórios " codigo="1312"/>
+ <conta ano="2012" estrutural="2.2.01.01.01.02.00" descricao="RP Processado - Demais Despesas " codigo="1313"/>
+ <conta ano="2012" estrutural="2.2.01.01.02.00.00" descricao="Restos a Pagar não Processados" codigo="91"/>
+ <conta ano="2012" estrutural="2.2.01.01.02.01.00" descricao="Restos a Pagar não Processados - precatórios " codigo="1314"/>
+ <conta ano="2012" estrutural="2.2.01.01.02.02.00" descricao="Restos a Pagar não Processados - demais despesas " codigo="1315"/> 
+ <conta ano="2012" estrutural="2.2.01.02.00.00.00" descricao="Obrigações em Circulação" codigo="92"/>
+ <conta ano="2012" estrutural="2.2.01.02.01.00.00" descricao="Empenhos Liquidados a Pagar" codigo="93"/>
+ <conta ano="2012" estrutural="2.2.01.02.02.00.00" descricao="Provisões" codigo="94"/>
+ <conta ano="2012" estrutural="2.2.01.02.02.01.00" descricao="Provisões Parcerias Público Privadas - PPP´s" codigo="910"/>
+ <conta ano="2012" estrutural="2.2.01.02.02.02.00" descricao="Demais Provisões" codigo="920"/>
+ <conta ano="2012" estrutural="2.2.01.02.03.00.00" descricao="Credores - Entidades e Agentes" codigo="95"/>
+ <conta ano="2012" estrutural="2.2.01.02.50.00.00" descricao="Outras Obrigações" codigo="96"/>
+ <conta ano="2012" estrutural="2.2.01.03.00.00.00" descricao="Restituições a Pagar" codigo="97"/>
+ <conta ano="2012" estrutural="2.2.01.03.01.00.00" descricao="Restituições a Pagar (RPPS)" codigo="98"/>
+ <conta ano="2012" estrutural="2.2.01.03.02.00.00" descricao="Restituições a Pagar (demais unidades)" codigo="99"/>
+ <conta ano="2012" estrutural="2.2.01.04.00.00.00" descricao="Serviço da Dívida a Pagar" codigo="100"/>
+ <conta ano="2012" estrutural="2.2.01.04.01.00.00" descricao="Serviços da Dívida (RPPS)" codigo="101"/>
+ <conta ano="2012" estrutural="2.2.01.04.02.00.00" descricao="Serviço da Dívida (Demais unidades)" codigo="102"/>
+
+ <conta ano="2012" estrutural="2.2.01.05.00.00.00" descricao="Depósitos" codigo="103"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.00.00" descricao="Consignações" codigo="104"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.01.00" descricao="Consignações (RPPS)" codigo="105"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.00" descricao="Consignações (Demais Unidades)" codigo="106"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.01" descricao="Consignações - Recursos de Royalties " codigo="1260"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.02" descricao="Consignações - Recursos de Manutenção e Desenvolvimento do Ensino " codigo="1261"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.03" descricao="Consignações - Recursos de Operações de Crédito Internas - finalidade específica " codigo="1262"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.04" descricao="Consignações - Recursos de Convênio Vinculado a Programas de Educação " codigo="1263"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.05" descricao="Consignações - Recursos de Convênio Vinculado a Programas de Saúde " codigo="1264"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.06" descricao="Consignações - Recursos de Convênios exceto educação e saúde " codigo="1265"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.07" descricao="Consignações - FUNDEB " codigo="1266"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.08" descricao="Consignações - Recursos de Ações e Serviços Públicos de Saúde " codigo="1267"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.09" descricao="Consignações - Recursos de Operações de Crédito Externas " codigo="1268"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.10" descricao="Consignações - Recursos de Conservação Ambiental " codigo="1269"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.11" descricao="Consignações - Recursos CIDE " codigo="1270"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.12" descricao="Consignações - Recursos COSIP " codigo="271"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.13" descricao="Consignações - Recursos Assistência Social " codigo="1272"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.14" descricao="Consignações - Recursos de Alienação de Bens (exceto Saúde e Educação) 	1" codigo="273"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.15" descricao="Consignações - Recursos de Operações de Crédito Internas (empréstimos não específicos) " codigo="1274"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.16" descricao="Consignações - Diversos Recursos Vinculados " codigo="1275"/>
+ <conta ano="2012" estrutural="2.2.01.05.01.02.17" descricao="Consignações - Recursos não Vinculados " codigo="1276"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.00.00" descricao="Depósitos de Diversas Origens" codigo="107"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.01.00" descricao="DDO (RPPS)" codigo="108"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.00" descricao="DDO (Demais Unidades)" codigo="109"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.01" descricao="DDO - Recursos de Royalties " codigo="1277"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.02" descricao="DDO - Recursos de Manutenção e Desenvolvimento do Ensino " codigo="1278"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.04" descricao="DDO - Recursos de Convênio Vinculado a Programas de Educação " codigo="1280"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.05" descricao="DDO - Recursos de Convênio Vinculado a Programas de Saúde " codigo="1281"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.06" descricao="DDO - Recursos de Convênios exceto educação e saúde " codigo="1282"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.07" descricao="DDO - FUNDEB " codigo="1283"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.08" descricao="DDO - Recursos de Ações e Serviços Públicos de Saúde " codigo="1284"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.09" descricao="DDO - Recursos de Operações de Crédito Externas " codigo="1285"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.10" descricao="DDO - Recursos de Conservação Ambiental " codigo="1286"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.11" descricao="DDO - Recursos CIDE " codigo="1287"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.12" descricao="DDO - Recursos COSIP " codigo="1288"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.13" descricao="DDO - Recursos Assistência Social " codigo="1290"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.14" descricao="DDO - Recursos de Alienação de Bens (exceto Saúde e Educação) 	1291"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.15" descricao="DDO - Recursos de Operações de Crédito Internas (empréstimos não específicos) 	1292"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.16" descricao="DDO - Diversos Recursos Vinculados " codigo="1293"/>
+ <conta ano="2012" estrutural="2.2.01.05.02.02.17" descricao="DDO - Recursos não Vinculados " codigo="1294"/> 
+ <conta ano="2012" estrutural="2.2.01.05.50.00.00" descricao="Outros Depósitos" codigo="110"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.01.00" descricao="Depósitos Especiais (RPPS)" codigo="111"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.00" descricao="Depósitos Especiais (Demais Unidades)" codigo="112"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.01" descricao="Depósitos Especiais - Recursos de Royalties " codigo="1295"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.02" descricao="Depósitos Especiais - Recursos de Manutenção e Desenvolvimento do Ensino " codigo="1296"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.03" descricao="Depósitos Especiais - Recursos de Operações de Crédito Internas - finalidade específica " codigo="1297"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.04" descricao="Depósitos Especiais - Recursos de Convênio Vinculado a Programas de Educação " codigo="1298"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.05" descricao="Depósitos Especiais - Recursos de Convênio Vinculado a Programas de Saúde " codigo="1299"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.06" descricao="Depósitos Especiais - Recursos de Convênios exceto educação e saúde " codigo="1300"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.07" descricao="Depósitos Especiais - FUNDEB " codigo="1301"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.08" descricao="Depósitos Especiais - Recursos de Ações e Serviços Públicos de Saúde " codigo="1302"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.09" descricao="Depósitos Especiais - Recursos de Operações de Crédito Externas " codigo="1303"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.10" descricao="Depósitos Especiais - Recursos de Conservação Ambiental " codigo="1304"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.11" descricao="Depósitos Especiais - Recursos CIDE " codigo="1305"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.12" descricao="Depósitos Especiais - Recursos COSIP " codigo="1306"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.13" descricao="Depósitos Especiais - Recursos Assistência Social " codigo="1307"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.14" descricao="Depósitos Especiais - Recursos de Alienação de Bens (exceto Saúde e Educação) " codigo="1308"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.15" descricao="Depósitos Especiais - Recursos de Operações de Crédito Internas (empréstimos não específicos) " codigo="1309"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.16" descricao="Depósitos Especiais - Diversos Recursos Vinculados " codigo="1310"/>
+ <conta ano="2012" estrutural="2.2.01.05.50.02.17" descricao="Depósitos Especiais - Recursos não Vinculados " codigo="1311"/>
+ <conta ano="2012" estrutural="2.2.01.06.00.00.00" descricao="Débitos Tesouraria - Saldos de ARO" codigo="113"/>
+ <conta ano="2012" estrutural="2.2.01.06.01.00.00" descricao="ARO - Contratos" codigo="114"/>
+ <conta ano="2012" estrutural="2.2.01.06.02.00.00" descricao="ARO - Pagamentos" codigo="115"/>
+ <conta ano="2012" estrutural="2.2.01.07.00.00.00" descricao="Credores Diversos" codigo="116"/>
+ <conta ano="2012" estrutural="2.2.01.07.01.00.00" descricao="Credores Diversos (RPPS)" codigo="117"/>
+ <conta ano="2012" estrutural="2.2.01.07.02.00.00" descricao="Credores Diversos (Demais Unidades)" codigo="118"/>
+ <conta ano="2012" estrutural="2.2.01.08.00.00.00" descricao="Precatórios Judiciais (devidos e não empenhados)" codigo="119"/>
+ <conta ano="2012" estrutural="2.2.01.08.01.00.00" descricao="Regime Próprio" codigo="120"/>
+ <conta ano="2012" estrutural="2.2.01.08.01.01.00" descricao="Precatórios Judiciais Não-Pagos pelo Regime Próprio (§7º,Art.30,LRF)" codigo="121"/>
+ <conta ano="2012" estrutural="2.2.01.08.01.01.01" descricao="Precatórios Não-Pagos Emitidos até 04/05/2000" codigo="122"/>
+ <conta ano="2012" estrutural="2.2.01.08.01.01.02" descricao="Precatórios Não-Pagos Emitidos a partir de 05/05/2000 (inclusive)" codigo="123"/>
+ <conta ano="2012" estrutural="2.2.01.08.02.00.00" descricao="Demais Unidades" codigo="124"/>
+ <conta ano="2012" estrutural="2.2.01.08.02.01.00" descricao="Precatórios Judiciais Não-Pagos (Demais Unidades)" codigo="125"/>
+ <conta ano="2012" estrutural="2.2.01.08.02.01.01" descricao="Precatórios Não-Pagos Emitidos até 04/05/2000" codigo="126"/>
+ <conta ano="2012" estrutural="2.2.01.08.02.01.02" descricao="Precatórios Não-Pagos Emitidos a partir de 05/05/2000 (inclusive)" codigo="127"/>
+ <conta ano="2012" estrutural="2.2.01.09.00.00.00" descricao="Precatórios Judiciais" codigo="721"/>
+ <conta ano="2012" estrutural="2.2.01.09.01.00.00" descricao="Precatórios Judiciais - Regime Próprio" codigo="722"/>
+ <conta ano="2012" estrutural="2.2.01.09.01.01.00" descricao="Precatórios Judiciais - Regime Próprio (Pessoal e Encargos)" codigo="723"/>
+ <conta ano="2012" estrutural="2.2.01.09.01.02.00" descricao="Precatórios Judiciais - Regime Próprio (Demais Despesas)" codigo="724"/>
+ <conta ano="2012" estrutural="2.2.01.09.02.00.00" descricao="Precatórios Judiciais - Demais Unidades" codigo="725"/>
+ <conta ano="2012" estrutural="2.2.01.09.02.01.00" descricao="Precatórios Judiciais - Demais Unidades (Pessoal e Encargos)" codigo="726"/>
+ <conta ano="2012" estrutural="2.2.01.09.02.02.00" descricao="Precatórios Judiciais - Demais Unidades (Demais Despesas)" codigo="727"/>
+ <conta ano="2012" estrutural="2.2.01.10.01.00.00" descricao="Precatórios Judiciais - Regime Próprio " codigo="1321"/>
+ <conta ano="2012" estrutural="2.2.01.10.01.01.00" descricao="Precatórios Judiciais - Regime Próprio (Pessoal e Encargos) " codigo="1322"/>
+ <conta ano="2012" estrutural="2.2.01.10.01.02.00" descricao="Precatórios Judiciais - Regime Próprio (Demais Despesas) " codigo="1323"/>
+ <conta ano="2012" estrutural="2.2.01.10.02.00.00" descricao="Precatórios Judiciais - Demais Unidades " codigo="1324"/>
+ <conta ano="2012" estrutural="2.2.01.10.02.01.00" descricao="Precatórios Judiciais - Demais Unidades (Pessoal e Encargos) " codigo="1325"/>
+ <conta ano="2012" estrutural="2.2.01.10.02.02.00" descricao="Precatórios Judiciais - Demais Unidades (Demais Despesas) " codigo="1326"/>
+ <conta ano="2012" estrutural="2.2.01.11.00.00.00" descricao="Precatórios Judiciais em regime de parcelamento - próximos exercícios " codigo="1327"/>
+ <conta ano="2012" estrutural="2.2.01.11.01.00.00" descricao="Precatórios Judiciais - Regime Próprio " codigo="1328"/>
+ <conta ano="2012" estrutural="2.2.01.11.01.01.00" descricao="Precatórios Judiciais - Regime Próprio (Pessoal e Encargos) " codigo="1329"/>
+ <conta ano="2012" estrutural="2.2.01.11.02.00.00" descricao="Precatórios Judiciais - Demais Unidades " codigo="1341"/>
+ <conta ano="2012" estrutural="2.2.01.11.02.01.00" descricao="Precatórios Judiciais - Demais Unidades (Pessoal e Encargos) " codigo="1342"/>
+ <conta ano="2012" estrutural="2.2.01.11.02.02.00" descricao="Precatórios Judiciais - Demais Unidades (Demais Despesas) " codigo="1343"/>
+ <conta ano="2012" estrutural="2.2.01.30.00.00.00" descricao="Despesas Impugnadas" codigo="128"/>
+ <conta ano="2012" estrutural="2.2.01.30.01.00.00" descricao="Despesas Impugnadas (RPPS)" codigo="129"/>
+ <conta ano="2012" estrutural="2.2.01.30.02.00.00" descricao="Despesas Impugnadas (demais unidades)" codigo="130"/>
+ <conta ano="2012" estrutural="2.2.01.50.00.00.00" descricao="Repasses Fixados no Orçamento e Não-Transferidos até 31/12" codigo="131"/>
+ <conta ano="2012" estrutural="2.2.01.50.01.00.00" descricao="Repasse Financeiro da Prefeitura para Câmara Municipal" codigo="132"/>
+ <conta ano="2012" estrutural="2.2.01.50.02.00.00" descricao="Repasse Financeiro da Prefeitura para Autarquias" codigo="133"/>
+ <conta ano="2012" estrutural="2.2.01.50.03.00.00" descricao="Repasse Financeiro da Prefeitura para Fundações" codigo="134"/>
+ <conta ano="2012" estrutural="2.2.01.50.04.00.00" descricao="Repasse Financeiro da Prefeitura para Fundos Especiais" codigo="135"/>
+ <conta ano="2012" estrutural="2.2.01.50.05.00.00" descricao="Repasse Financeiro da Prefeitura para Empresas Públicas" codigo="136"/>
+ <conta ano="2012" estrutural="2.2.01.50.06.00.00" descricao="Repasse Financeiro da Prefeitura para Sociedades de Economia Mista" codigo="137"/>
+ <conta ano="2012" estrutural="2.2.01.99.00.00.00" descricao="Outros Exigíveis" codigo="138"/>
+ <conta ano="2012" estrutural="2.2.01.99.01.00.00" descricao="Outros Exigíveis (RPPS)" codigo="139"/>
+ <conta ano="2012" estrutural="2.2.01.99.02.00.00" descricao="Outros Exigíveis (Demais Unidades)" codigo="140"/>
+ <conta ano="2012" estrutural="2.3.00.00.00.00" descricao="Contas Operacionais do Exercício" codigo="141"/>
+ <conta ano="2012" estrutural="2.3.01.00.00.00" descricao="Receita Orçamentária" codigo="142"/>
+ <conta ano="2012" estrutural="2.3.01.01.00.00.00" descricao="RECEITAS CORRENTES" codigo="278"/>
+ <conta ano="2012" estrutural="2.3.01.01.01.00.00" descricao="RECEITA TRIBUTÁRIA" codigo="279"/>
+ <conta ano="2012" estrutural="2.3.01.01.02.00.00" descricao="RECEITA DE CONTRIBUIÇÕES" codigo="283"/>
+ <conta ano="2012" estrutural="2.3.01.01.03.00.00" descricao="RECEITA PATRIMONIAL" codigo="286"/>
+ <conta ano="2012" estrutural="2.3.01.01.04.00.00" descricao="RECEITA AGROPECUÁRIA" codigo="291"/>
+ <conta ano="2012" estrutural="2.3.01.01.05.00.00" descricao="RECEITA INDUSTRIAL" codigo="292"/>
+ <conta ano="2012" estrutural="2.3.01.01.06.00.00" descricao="RECEITA DE SERVIÇOS" codigo="293"/>
+ <conta ano="2012" estrutural="2.3.01.01.07.00.00" descricao="TRANSFERÊNCIAS CORRENTES" codigo="294"/>
+ <conta ano="2012" estrutural="2.3.01.01.08.00.00" descricao="OUTRAS RECEITAS CORRENTES" codigo="304"/>
+ <conta ano="2012" estrutural="2.3.01.02.00.00.00" descricao="RECEITAS DE CAPITAL" codigo="312"/>
+ <conta ano="2012" estrutural="2.3.01.02.01.00.00" descricao="OPERAÇÕES DE CRÉDITO" codigo="313"/>
+ <conta ano="2012" estrutural="2.3.01.02.02.00.00" descricao="ALIENAÇÃO DE BENS" codigo="314"/>
+ <conta ano="2012" estrutural="2.3.01.02.03.00.00" descricao="AMORTIZAÇÃO DE EMPRÉSTIMOS" codigo="317"/>
+ <conta ano="2012" estrutural="2.3.01.02.04.00.00" descricao="TRANSFERÊNCIA DE CAPITAL" codigo="318"/>
+ <conta ano="2012" estrutural="2.3.01.02.05.00.00" descricao="OUTRAS RECEITAS DE CAPITAL" codigo="327"/>
+ <conta ano="2012" estrutural="2.3.01.99.00.00.00" descricao="(-)DEDUÇÕES DA RECEITA" codigo="328"/>
+ <conta ano="2012" estrutural="2.3.02.00.00.00" descricao="Despesa Orçamentária" codigo="143"/>
+ <conta ano="2012" estrutural="2.3.02.01.00.00.00" descricao="DESPESAS CORRENTES" codigo="336"/>
+ <conta ano="2012" estrutural="2.3.02.02.00.00.00" descricao="DESPESAS DE CAPITAL" codigo="340"/>
+ <conta ano="2012" estrutural="2.4.00.00.00.00" descricao="Contas de Interferência" codigo="144"/>
+ <conta ano="2012" estrutural="2.4.01.00.00.00" descricao="Cotas Financeiras Recebidas" codigo="145"/>
+ <conta ano="2012" estrutural="2.4.01.01.00.00.00" descricao="REGIME PRÓPRIO - RPPS" codigo="346"/>
+ <conta ano="2012" estrutural="2.4.01.01.01.00.00" descricao="CONTRIBUIÇÃO PATRONAL DO EXERCÍCIO" codigo="347"/>
+ <conta ano="2012" estrutural="2.4.01.01.02.00.00" descricao="CONTRIBUIÇÃO PATRONAL DE EXERCÍCIOS ANTERIORES" codigo="348"/>
+ <conta ano="2012" estrutural="2.4.01.01.05.00.00" descricao="OUTROS REPASSES RECEBIDOS" codigo="349"/>
+ <conta ano="2012" estrutural="2.4.01.02.00.00.00" descricao="OUTRAS UNIDADES" codigo="350"/>
+ <conta ano="2012" estrutural="2.4.02.00.00.00" descricao="Cotas Financeiras Concedidas" codigo="146"/>
+ <conta ano="2012" estrutural="2.4.02.01.00.00.00" descricao="CONTRIBUIÇÃO PATRONAL DO EXERCÍCIO" codigo="352"/>
+ <conta ano="2012" estrutural="2.4.02.02.00.00.00" descricao="CONTRIBUIÇÃO PATRONAL DE EXERCÍCIOS ANTERIORES" codigo="353"/>
+ <conta ano="2012" estrutural="2.4.02.03.00.00.00" descricao="OUTROS REPASSES CONCEDIDOS" codigo="354"/>
+ <conta ano="2012" estrutural="2.4.03.00.00.00" descricao="Movimento de Fundos" codigo="147"/>
+ <conta ano="2012" estrutural="2.4.04.00.00.00" descricao="Receita a Classificar" codigo="148"/>
+ <conta ano="2012" estrutural="2.4.05.00.00.00" descricao="Despesa a Classificar" codigo="149"/>
+ <conta ano="2012" estrutural="2.4.06.00.00.00" descricao="Transferência Financeira Conta Reflexa (Caso o saldo seja devedor colocar sinal -)" codigo="150"/>
+ <conta ano="2012" estrutural="3.0.00.00.00.00.00" descricao="SISTEMA PATRIMONIAL" codigo="151"/>
+ <conta ano="2012" estrutural="3.1.00.00.00.00.00" descricao="ATIVO PERMANENTE" codigo="152"/>
+ <conta ano="2012" estrutural="3.1.01.00.00.00.00" descricao="BENS IMÓVEIS" codigo="153"/>
+ <conta ano="2012" estrutural="3.1.01.01.00.00.00" descricao="TERRENOS" codigo="362"/>
+ <conta ano="2012" estrutural="3.1.01.02.00.00.00" descricao="EDIFICAÇÕES" codigo="363"/>
+ <conta ano="2012" estrutural="3.1.01.03.00.00.00" descricao="OBRAS EM ANDAMENTO" codigo="364"/>
+ <conta ano="2012" estrutural="3.1.01.50.00.00.00" descricao="OUTROS IMÓVEIS" codigo="365"/>
+ <conta ano="2012" estrutural="3.1.01.90.00.00.00" descricao="DEPRECIAÇÃO ACUMULADA" codigo="366"/>
+ <conta ano="2012" estrutural="3.1.02.00.00.00.00" descricao="BENS MÓVEIS" codigo="154"/>
+ <conta ano="2012" estrutural="3.1.02.01.00.00.00" descricao="MÓVEIS E UTENSÍLIOS" codigo="368"/>
+ <conta ano="2012" estrutural="3.1.02.02.00.00.00" descricao="MÁQUINAS E EQUIPAMENTOS" codigo="369"/>
+ <conta ano="2012" estrutural="3.1.02.03.00.00.00" descricao="INSTALAÇOES" codigo="370"/>
+ <conta ano="2012" estrutural="3.1.02.04.00.00.00" descricao="VEÍCULOS" codigo="371"/>
+ <conta ano="2012" estrutural="3.1.02.80.00.00.00" descricao="OUTROS BENS MÓVEIS" codigo="372"/>
+ <conta ano="2012" estrutural="3.1.02.90.00.00.00" descricao="DEPRECIAÇÃO ACUMULADA" codigo="373"/>
+ <conta ano="2012" estrutural="3.1.03.00.00.00.00" descricao="BENS DE NATUREZA INDUSTRIAL" codigo="155"/>
+ <conta ano="2012" estrutural="3.1.04.00.00.00.00" descricao="CRÉDITOS" codigo="156"/>
+ <conta ano="2012" estrutural="3.1.04.01.00.00.00" descricao="Dívida Ativa" codigo="157"/>
+ <conta ano="2012" estrutural="3.1.04.01.01.00.00" descricao="Dívida Ativa Tributária" codigo="158"/>
+ <conta ano="2012" estrutural="3.1.04.01.01.01.00" descricao="Dívida Ativa de Impostos" codigo="159"/>
+ <conta ano="2012" estrutural="3.1.04.01.01.02.00" descricao="Dívida Ativa dos Demais Tributos" codigo="160"/>
+ <conta ano="2012" estrutural="3.1.04.01.02.00.00" descricao="Dívida Ativa Não-Tributária" codigo="161"/>
+ <conta ano="2012" estrutural="3.1.04.01.03.00.00" descricao="Valores Diversos Inscritos na Dívida Ativa" codigo="162"/>
+ <conta ano="2012" estrutural="3.1.04.01.03.01.00" descricao="Regime Próprio - RPPS" codigo="163"/>
+ <conta ano="2012" estrutural="3.1.04.01.03.02.00" descricao="Demais Unidades" codigo="164"/>
+ <conta ano="2012" estrutural="3.1.04.01.90.00.00" descricao="Provisão para Perdas" codigo="165"/>
+ <conta ano="2012" estrutural="3.1.04.02.00.00.00" descricao="Créditos Diversos a Receber" codigo="166"/>
+ <conta ano="2012" estrutural="3.1.05.00.00.00.00" descricao="Valores" codigo="167"/>
+ <conta ano="2012" estrutural="3.1.05.01.00.00.00" descricao="AÇÕES DE SOCIEDADES DE ECONOMIA MISTA" codigo="391"/>
+ <conta ano="2012" estrutural="3.1.05.02.00.00.00" descricao="TÍTULOS DIVERSOS" codigo="392"/>
+ <conta ano="2012" estrutural="3.1.05.03.00.00.00" descricao="ALMOXARIFADOS" codigo="393"/>
+ <conta ano="2012" estrutural="3.1.05.04.00.00.00" descricao="BENS A INCORPORAR" codigo="394"/>
+ <conta ano="2012" estrutural="3.1.05.05.00.00.00" descricao="DESPESAS ANTECIPADAS" codigo="395"/>
+ <conta ano="2012" estrutural="3.1.05.50.00.00.00" descricao="OUTROS VALORES" codigo="396"/>
+ <conta ano="2012" estrutural="3.1.05.50.01.00.00" descricao="OUTROS VALORES DO RPPS" codigo="397"/>
+ <conta ano="2012" estrutural="3.1.05.50.01.01.00" descricao="DEPÓSITOS E CAUÇÕES" codigo="398"/>
+ <conta ano="2012" estrutural="3.1.05.50.01.02.00" descricao="DEPÓSITOS JUDICIAIS" codigo="399"/>
+ <conta ano="2012" estrutural="3.1.05.50.01.03.00" descricao="VALORES DIVERSOS" codigo="400"/>
+ <conta ano="2012" estrutural="3.1.05.50.02.00.00" descricao="OUTROS VALORES DE OUTRAS UNIDADES" codigo="401"/>
+ <conta ano="2012" estrutural="3.1.05.90.00.00.00" descricao="PROVISÃO PARA PERDAS" codigo="402"/>
+ <conta ano="2012" estrutural="3.1.07.00.00.00.00" descricao="Devedores Diversos" codigo="171"/>
+ <conta ano="2012" estrutural="3.1.07.01.00.00.00" descricao="Empréstimos Concedidos" codigo="172"/>
+ <conta ano="2012" estrutural="3.1.07.01.01.00.00" descricao="Empréstimos Concedidos com Recursos do RPPS" codigo="173"/>
+ <conta ano="2012" estrutural="3.1.07.01.02.00.00" descricao="Empréstimos Concedidos com Recursos Diversos" codigo="174"/>
+ <conta ano="2012" estrutural="3.1.07.02.00.00.00" descricao="Financiamentos Concedidos" codigo="175"/>
+ <conta ano="2012" estrutural="3.1.07.02.01.00.00" descricao="Financiamentos Concedidos com Recursos do RPPS" codigo="176"/>
+ <conta ano="2012" estrutural="3.1.07.02.02.00.00" descricao="Financiamentos Concedidos com Recursos Diversos" codigo="177"/>
+ <conta ano="2012" estrutural="3.1.07.50.00.00.00" descricao="Outros Débitos a Receber" codigo="178"/>
+ <conta ano="2012" estrutural="3.1.07.90.00.00.00" descricao="Provisão para Perdas" codigo="179"/>
+ <conta ano="2012" estrutural="3.1.08.00.00.00.00" descricao="Diferido" codigo="180"/>
+ <conta ano="2012" estrutural="3.2.00.00.00.00.00" descricao="PASSIVO PERMANENTE" codigo="181"/>
+ <conta ano="2012" estrutural="3.2.01.00.00.00.00" descricao="DÍVIDA FUNDADA INTERNA" codigo="182"/>
+ <conta ano="2012" estrutural="3.2.01.01.00.00.00" descricao="Dívida Mobiliária" codigo="183"/>
+ <conta ano="2012" estrutural="3.2.01.02.00.00.00" descricao="Dívida Contratual - Amortização superior a 12 meses" codigo="184"/>
+ <conta ano="2012" estrutural="3.2.01.02.01.00.00" descricao="Empréstimos Internos" codigo="185"/>
+ <conta ano="2012" estrutural="3.2.01.02.02.00.00" descricao="Financiamentos Internos" codigo="186"/>
+ <conta ano="2012" estrutural="3.2.01.02.03.00.00" descricao="Refinanciamento Junto à União (autorizado mediante Lei Federal)" codigo="187"/>
+ <conta ano="2012" estrutural="3.2.01.02.50.00.00" descricao="Demais Dívidas Contratuais" codigo="188"/>
+ <conta ano="2012" estrutural="3.2.01.03.00.00.00" descricao="Operações de Crédito de Curto Prazo c/ Receita no Orçamento(§3º,Art.29,LRF)" codigo="189"/>
+ <conta ano="2012" estrutural="3.2.01.04.00.00.00" descricao="Outras Dívidas Internas" codigo="190"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.00.00" descricao="Parcelamento de Débitos com a União - Superior a 12 meses" codigo="191"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.01.00" descricao="Parcelamento de Tributos Federais" codigo="192"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.02.00" descricao="Parcelamento do FGTS" codigo="194"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.02.01" descricao="Débitos da Prefeitura" codigo="921"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.02.02" descricao="Débitos da Câmara Municipal" codigo="922"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.02.02" descricao="Débitos da Câmara Municipal" codigo="195"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.02.03" descricao="Débitos de Autarquias/Fundações" codigo="196"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.02.03" descricao="Débitos de Autarquias/Fundações" codigo="923"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.02.04" descricao=" Débitos de Empresas Públicas/Sociedades de Economia Mista" codigo="924"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.02.04" descricao="Débitos de Empresas Públicas/Sociedades de Economia Mista" codigo="197"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.03.00" descricao="Parcelamento com INSS" codigo="198"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.03.01" descricao="Débitos da Prefeitura" codigo="199"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.03.02" descricao="Débitos da Câmara Municipal" codigo="200"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.03.03" descricao="Débitos de Autarquias/Fundações" codigo="201"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.03.04" descricao="Débitos de Empresas Públicas/Sociedades de Economia Mista" codigo="202"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.04.00" descricao="Parcelamento de Demais Contribuições Sociais da União" codigo="203"/>
+ <conta ano="2012" estrutural="3.2.01.04.01.50.00" descricao="Outros Parcelamentos com a União" codigo="204"/>
+ <conta ano="2012" estrutural="3.2.01.04.02.00.00" descricao="Parcelamento de Débitos com o Estado - Superior a 12 meses" codigo="205"/>
+ <conta ano="2012" estrutural="3.2.01.04.02.01.00" descricao="Parcelamento de Tributos Estaduais" codigo="206"/>
+ <conta ano="2012" estrutural="3.2.01.04.02.50.00" descricao="Parcelamento de Outros Débitos" codigo="207"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.00.00" descricao="Op. Crédito Assunção/Reconhec/Confissão Dívida - Amort. Sup. a 12 meses (Inc. I, art. 29 LRF e §1º)" codigo="208"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.01.00" descricao="Débitos com a União - Parcelamento superior a 12 meses" codigo="209"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.01.01" descricao="Parcelamento de Tributos Federais" codigo="210"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.01.02" descricao="Parcelamento de FGTS" codigo="211"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.01.03" descricao="Parcelamento com INSS" codigo="212"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.01.04" descricao="Parcelamento de Demais Contribuições Sociais da União" codigo="213"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.01.50" descricao="Outros Parcelamentos da União" codigo="214"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.02.00" descricao="Débitos com o Estado - Parcelamento Superior a 12 meses" codigo="215"/>
+ <conta ano="2012" estrutural="3.2.01.04.03.03.00" descricao="Outras Op. Créd. Assunção/Reconhec/Confissão Dívida-Amort. Sup. a 12 meses" codigo="216"/>
+ <conta ano="2012" estrutural="3.2.01.04.50.00.00" descricao="Demais Dívidas Internas" codigo="217"/>
+ <conta ano="2012" estrutural="3.2.01.04.50.00.00" descricao="Dívidas Entre Unidades do Ente" codigo="218"/>
+ <conta ano="2012" estrutural="3.2.01.04.50.01.00" descricao="Com RPPS" codigo="1001"/>
+ <conta ano="2012" estrutural="3.2.01.04.50.01.01" descricao="Parcelamento de Contribuições" codigo="219"/>
+ <conta ano="2012" estrutural="3.2.01.04.50.01.02" descricao="Outras Dívidas Internas" codigo="1002"/>
+ <conta ano="2012" estrutural="3.2.01.04.50.02.00" descricao="Com Demais Unidades" codigo="220"/>
+ <conta ano="2012" estrutural="3.2.01.04.60.00.00" descricao="Outras Dívidas Internas" codigo="221"/>
+ <conta ano="2012" estrutural="3.2.02.00.00.00.00" descricao="DÍVIDA FUNDADA EXTERNA" codigo="222"/>
+ <conta ano="2012" estrutural="3.2.02.01.00.00.00" descricao="Dívida Externa Contratual - Amortização superior a 12 meses" codigo="223"/>
+ <conta ano="2012" estrutural="3.2.02.01.01.00.00" descricao="Empréstimos Externos" codigo="224"/>
+ <conta ano="2012" estrutural="3.2.02.01.02.00.00" descricao="Financiamentos Externos" codigo="225"/>
+ <conta ano="2012" estrutural="3.2.02.01.03.00.00" descricao="Demais Dívidas Contratuais Externas" codigo="226"/>
+ <conta ano="2012" estrutural="3.2.02.50.00.00.00" descricao="Outras Dívidas Externas" codigo="227"/>
+ <conta ano="2012" estrutural="3.2.03.00.00.00.00" descricao="OUTRAS OBRIGAÇÕES COM AMORTIZAÇÃO ATÉ 12 MESES" codigo="228"/>
+ <conta ano="2012" estrutural="3.2.03.01.00.00.00" descricao="Assunção/Reconhecimento/Confissão de Débitos c/ União/Estado-Amort. até 12 meses (§1º art. 29 LRF)" codigo="229"/>
+ <conta ano="2012" estrutural="3.2.03.01.01.00.00" descricao="Débitos com a União - Parcelamento até 12 meses" codigo="230"/>
+ <conta ano="2012" estrutural="3.2.03.01.02.00.00" descricao="Débitos com o Estado - Parcelamento até 12 meses" codigo="231"/>
+ <conta ano="2012" estrutural="3.2.03.02.00.00.00" descricao="Operações de Crédito para Amortização até 12 meses (§1º art. 29 LRF)" codigo="232"/>
+ <conta ano="2012" estrutural="3.2.03.02.01.00.00" descricao="Operações de Crédito Previstas no inciso III do art. 29 LRF" codigo="233"/>
+ <conta ano="2012" estrutural="3.2.03.02.02.00.00" descricao="Assunção/Reconhecimento/Confissão de Dívidas (§1º art. 29 LRF)" codigo="234"/>
+ <conta ano="2012" estrutural="3.2.03.03.00.00.00" descricao="Demais Dívidas com amortização até 12 meses" codigo="235"/>
+ <conta ano="2012" estrutural="3.2.04.00.00.00.00" descricao="Obrigações Diversas" codigo="236"/>
+ <conta ano="2012" estrutural="3.2.04.01.00.00.00" descricao="Provisão para Contingência" codigo="237"/>
+ <conta ano="2012" estrutural="3.2.04.02.00.00.00" descricao="Outras Obrigações" codigo="238"/>
+ <conta ano="2012" estrutural="3.2.05.00.00.00.00" descricao="PROVISÕES MATEMÁTICAS PREVIDENCIÁRIAS" codigo="239"/>
+ <conta ano="2012" estrutural="3.2.05.01.00.00.00" descricao="Provisões para Benefícios Concedidos" codigo="240"/>
+ <conta ano="2012" estrutural="3.2.05.01.01.00.00" descricao="APOSENTADORIAS/PENSÕES/OUTROS BENEFÍCIOS DO PLANO" codigo="478"/>
+ <conta ano="2012" estrutural="3.2.05.01.02.00.00" descricao="CONTRIBUIÇÕES DO ENTE (redutora)" codigo="479"/>
+ <conta ano="2012" estrutural="3.2.05.01.03.00.00" descricao="CONTRIBUIÇÕES DOS SERVIDORES (redutora)" codigo="480"/>
+ <conta ano="2012" estrutural="3.2.05.01.03.01.00" descricao="ATIVOS (redutora)" codigo="481"/>
+ <conta ano="2012" estrutural="3.2.05.01.03.02.00" descricao="INATIVOS (redutora)" codigo="482"/>
+ <conta ano="2012" estrutural="3.2.05.01.04.00.00" descricao="CONTRIBUIÇÕES DOS PENSIONISTAS (redutora)" codigo="483"/>
+ <conta ano="2012" estrutural="3.2.05.02.00.00.00" descricao="Provisões para Benefícios a Conceder" codigo="241"/>
+ <conta ano="2012" estrutural="3.2.05.02.01.00.00" descricao="APOSENTADORIAS/PENSÕES/OUTROS BENEFÍCIOS DO PLANO PARA GERAÇÃO ATUAL" codigo="485"/>
+ <conta ano="2012" estrutural="3.2.05.02.02.00.00" descricao="CONTRIBUIÇÕES DO ENTE PARA GERAÇÃO ATUAL (redutora)" codigo="486"/>
+ <conta ano="2012" estrutural="3.2.05.02.03.00.00" descricao="CONTRIBUIÇÕES DOS SERVIDORES PARA A GERAÇÃO ATUAL (redutora)" codigo="487"/>
+ <conta ano="2012" estrutural="3.2.05.02.03.01.00" descricao="ATIVOS (redutora)" codigo="488"/>
+ <conta ano="2012" estrutural="3.2.05.02.03.02.00" descricao="INATIVOS (redutora)" codigo="489"/>
+ <conta ano="2012" estrutural="3.2.05.02.04.00.00" descricao="CONTRIBUIÇÕES DOS PENSIONISTAS PARA AGERAÇÃO ATUAL (redutora)" codigo="490"/>
+ <conta ano="2012" estrutural="3.2.05.02.05.00.00" descricao="APOSENTADORIAS/PENSÕES/OUTROS BENEFÍCIOS DO PLANO PARA GERAÇÃO FUTURA" codigo="491"/>
+ <conta ano="2012" estrutural="3.2.05.02.06.00.00" descricao="CONTRIBUIÇÃO DO ENTE PARA A GERAÇÃO FUTURA (redutora)" codigo="492"/>
+ <conta ano="2012" estrutural="3.2.05.02.07.00.00" descricao="CONTRIBUIÇÕES DOS SERVIDORES PARA A GERAÇÃO FUTURA (redutora)" codigo="493"/>
+ <conta ano="2012" estrutural="3.2.05.02.07.01.00" descricao="ATIVOS (redutora)" codigo="494"/>
+ <conta ano="2012" estrutural="3.2.05.02.07.02.00" descricao="INATIVOS (redutora)" codigo="495"/>
+ <conta ano="2012" estrutural="3.2.05.02.08.00.00" descricao="CONTRIBUIÇÕES DOS PENSIONISTAS PARA AGERAÇÃO FUTURA (redutora)" codigo="496"/>
+ <conta ano="2012" estrutural="3.2.05.03.00.00.00" descricao="Reservas à Amortizar (Redutora)" codigo="242"/>
+ <conta ano="2012" estrutural="3.2.05.03.01.00.00" descricao="SERVIÇO PASSADO (redutora)" codigo="498"/>
+ <conta ano="2012" estrutural="3.2.05.03.02.00.00" descricao="DÉFICIT EQUACIONADO (redutora)" codigo="499"/>
+ <conta ano="2012" estrutural="3.2.05.09.00.00.00" descricao="      PROVISÕES ATUARIAS PARA AJUSTES DO PLANO" codigo="1003"/>
+ <conta ano="2012" estrutural="3.3.00.00.00.00.00" descricao="Saldo Patrimonial" codigo="243"/>
+ <conta ano="2012" estrutural="3.3.01.00.00.00.00" descricao="Patrimônio" codigo="244"/>
+ <conta ano="2012" estrutural="3.3.01.01.00.00.00" descricao="Ativo Real Líquido" codigo="245"/>
+ <conta ano="2012" estrutural="3.3.01.02.00.00.00" descricao="Passivo Real a Descoberto" codigo="246"/>
+ <conta ano="2012" estrutural="3.3.10.00.00.00.00" descricao="Reservas" codigo="247"/>
+ <conta ano="2012" estrutural="3.3.10.01.00.00.00" descricao="Reservas de Reavaliação" codigo="248"/>
+ <conta ano="2012" estrutural="3.3.10.01.01.00.00" descricao="REAVALIAÇÃO DE BENS IMÓVEIS" codigo="506"/>
+ <conta ano="2012" estrutural="3.3.10.01.02.00.00" descricao="REAVALIAÇÃO DE BENS MÓVEIS" codigo="507"/>
+ <conta ano="2012" estrutural="3.3.10.02.00.00.00" descricao="Reservas Técnicas" codigo="249"/>
+ <conta ano="2012" estrutural="3.3.10.02.01.00.00" descricao="RESERVAS PARA SINISTROS IMOBILIÁRIOS" codigo="509"/>
+ <conta ano="2012" estrutural="3.3.10.02.02.00.00" descricao="RESERVA DE GARANTIA" codigo="510"/>
+ <conta ano="2012" estrutural="3.3.10.02.03.00.00" descricao="RESERVAS ADMINISTRATIVAS" codigo="511"/>
+ <conta ano="2012" estrutural="3.3.10.03.00.00.00" descricao="Reservas Atuariais" codigo="250"/>
+ <conta ano="2012" estrutural="3.3.10.03.01.00.00" descricao="RESERVAS DE BENEFÍCIOS A REGULARIZAR" codigo="513"/>
+ <conta ano="2012" estrutural="3.3.10.03.02.00.00" descricao="RESERVAS DE OSCILAÇÕES DE RISCOS" codigo="514"/>
+ <conta ano="2012" estrutural="3.3.10.03.03.00.00" descricao="RESERVA DE CONTINGÊNCIA" codigo="515"/>
+ <conta ano="2012" estrutural="3.3.10.03.04.00.00" descricao="RESERVAS PARA AJUSTE DO PLANO" codigo="516"/>
+ <conta ano="2012" estrutural="3.3.10.50.00.00.00" descricao="Outras Reservas" codigo="251"/>
+ <conta ano="2012" estrutural="3.3.20.00.00.00.00" descricao="DÉFICIT OU SUPERÁVIT ACUMULADO" codigo="518"/>
+ <conta ano="2012" estrutural="3.3.20.01.00.00.00" descricao="RESULTADO DO EXERCÍCIO" codigo="519"/>
+ <conta ano="2012" estrutural="3.3.20.01.01.00.00" descricao="SUPERÁVIT" codigo="520"/>
+ <conta ano="2012" estrutural="3.3.20.01.02.00.00" descricao="DÉFICIT" codigo="521"/>
+ <conta ano="2012" estrutural="3.3.20.02.00.00.00" descricao="RESULTADO DE EXERCÍCIOS ANTERIORES" codigo="522"/>
+ <conta ano="2012" estrutural="3.3.20.02.01.00.00" descricao="SUPERÁVIT" codigo="523"/>
+ <conta ano="2012" estrutural="3.3.20.02.02.00.00" descricao="DÉFICIT" codigo="524"/>
+ <conta ano="2012" estrutural="3.4.00.00.00.00.00" descricao="Sistema de Resultado Patrimonial" codigo="252"/>
+ <conta ano="2012" estrutural="3.4.01.00.00.00.00" descricao="Variações Ativas" codigo="253"/>
+ <conta ano="2012" estrutural="3.4.01.01.00.00.00" descricao="RESULTANTE EXECUÇÃO ORCAMENTÁRIA" codigo="527"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.00.00" descricao="RECEITA ORÇAMENTÁRIA REALIZADA" codigo="528"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.00" descricao="RECEITAS CORRENTES" codigo="529"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.01" descricao="RECEITA TRIBUTÁRIA" codigo="530"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.02" descricao="RECEITA DE CONTRIBUIÇÕES" codigo="531"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.03" descricao="RECEITA PATRIMONIAL" codigo="532"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.04" descricao="RECEITA AGROPECUÁRIA" codigo="533"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.05" descricao="RECEITA INDUSTRIAL" codigo="534"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.06" descricao="RECEITA DE SERVIÇOS" codigo="535"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.07" descricao="TRANSFERÊNCIAS CORRENTES" codigo="536"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.01.08" descricao="OUTRAS RECEITAS CORRENTES" codigo="537"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.02.00" descricao="RECEITAS DE CAPITAL" codigo="538"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.02.01" descricao="OPERAÇÕES DE CRÉDITO" codigo="539"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.02.02" descricao="ALIENAÇÃO DE BENS" codigo="540"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.02.03" descricao="AMORTIZAÇÃO DE EMPRÉSTIMOS" codigo="541"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.02.04" descricao="TRANSFERÊNCIAS DE CAPITAL" codigo="542"/>
+ <conta ano="2012" estrutural="3.4.01.01.01.02.05" descricao="OUTRAS RECEITAS DE CAPITAL" codigo="543"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.00.00" descricao="MUTAÇÕES PATRIMONIAIS" codigo="544"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.01.00" descricao="AQUISIÇÃO DE BENS MÓVEIS" codigo="545"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.02.00" descricao="CONSTRUÇÃO E AQUISIÇÃO DE BENS IMÓVEIS" codigo="546"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.03.00" descricao="CONSTRUÇÃO E AQUISIÇÃO DE BENS DE NATUREZA INDUSTRIAL" codigo="547"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.04.00" descricao="FORMAÇÃO DE CRÉDITOS DIVERSOS" codigo="548"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.05.00" descricao="AQUISIÇÃO DE TÍTULOS E VALORES" codigo="549"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.06.00" descricao="AQUISIÇÃO DE BENS DIVERSOS" codigo="550"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.07.00" descricao="EMPRÉSTIMOS CONCEDIDOS" codigo="551"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.08.00" descricao="AMORTIZAÇÃO DA DÍVIDA FUNDADA" codigo="552"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.09.00" descricao="BENS A INCORPORAR" codigo="553"/>
+ <conta ano="2012" estrutural="3.4.01.01.02.99.00" descricao="OUTRAS" codigo="554"/>
+ <conta ano="2012" estrutural="3.4.01.02.00.00.00" descricao="INDEPENDENTES DA EXECUÇÃO ORÇAMENTÁRIA" codigo="555"/>
+ <conta ano="2012" estrutural="3.4.01.02.01.00.00" descricao="INCORPORAÇÃO DE BENS E VALORES" codigo="556"/>
+ <conta ano="2012" estrutural="3.4.01.02.02.00.00" descricao="RECEBIMENTO DE BENS EM DOAÇÃO" codigo="557"/>
+ <conta ano="2012" estrutural="3.4.01.02.03.00.00" descricao="REAVALIAÇÃO DE BENS E VALORES" codigo="558"/>
+ <conta ano="2012" estrutural="3.4.01.02.04.00.00" descricao="INCORPORAÇÃO DE ALMOXARIFADO" codigo="559"/>
+ <conta ano="2012" estrutural="3.4.01.02.05.00.00" descricao="INSCRIÇÃO DA DÍVIDA ATIVA" codigo="560"/>
+ <conta ano="2012" estrutural="3.4.01.02.06.00.00" descricao="INSCRIÇÃO DE OUTROS CRÉDITOS" codigo="561"/>
+ <conta ano="2012" estrutural="3.4.01.02.07.00.00" descricao="CANCELAMENTO DE DÍVIDAS PASSIVAS" codigo="562"/>
+ <conta ano="2012" estrutural="3.4.01.02.08.00.00" descricao="BAIXA DE PASSIVOS PRESCRITOS OU INDEVIDOS" codigo="563"/>
+ <conta ano="2012" estrutural="3.4.01.02.99.00.00" descricao="OUTRAS" codigo="564"/>
+ <conta ano="2012" estrutural="3.4.02.00.00.00.00" descricao="VARIAÇÕES PASSIVAS" codigo="254"/>
+ <conta ano="2012" estrutural="3.4.02.01.00.00.00" descricao="RESULTANTES DA EXECUÇÃO ORÇAMENTÁRIA" codigo="566"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.00.00" descricao="DESPESAS ORÇAMENTÁRIAS REALIZADAS" codigo="567"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.01.00" descricao="DESPESAS CORRENTES" codigo="568"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.01.01" descricao="PESSOAL E ENCARGOS SOCIAIS" codigo="569"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.01.02" descricao="JUROS E ENCARGOS DA DÍVIDA" codigo="570"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.01.03" descricao="OUTRAS DESPESAS CORRENTES" codigo="571"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.02.00" descricao="DESPESAS DE CAPITAL" codigo="572"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.02.01" descricao="INVESTIMENTOS" codigo="573"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.02.02" descricao="INVERSÕES FINANCEIRAS" codigo="574"/>
+ <conta ano="2012" estrutural="3.4.02.01.01.02.03" descricao="AMORTIZAÇÃO DA DÍVIDA" codigo="575"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.00.00" descricao="MUTAÇÕES PATRIMONIAIS" codigo="576"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.01.00" descricao="ALIENAÇÃO DE BENS MÓVEIS" codigo="577"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.02.00" descricao="ALIENAÇÃO DE BENS IMÓVEIS" codigo="578"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.03.00" descricao="ALIENAÇÃO DE BENS DE NATUREZA INDUSTRIAL" codigo="579"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.04.00" descricao="RECEBIMENTO DE CRÉDITOS DIVERSOS" codigo="580"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.05.00" descricao="ALIENAÇÃO DE TÍTULOS E VALORES" codigo="581"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.06.00" descricao="ALIENAÇÃO DE BENS DIVERSOS" codigo="582"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.07.00" descricao="RECEBIMENTO DE EMPRÉSTIMOS CONCEDIDOS" codigo="583"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.08.00" descricao="EMPRÉSTIMOS TOMADOS" codigo="584"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.09.00" descricao="COBRANCA DA DÍVIDA ATIVA" codigo="585"/>
+ <conta ano="2012" estrutural="3.4.02.01.02.99.00" descricao="OUTRAS" codigo="586"/>
+ <conta ano="2012" estrutural="3.4.02.02.00.00.00" descricao="INDEPENDENTE DA EXECUÇÃO ORCAMENTÁRIA" codigo="587"/>
+ <conta ano="2012" estrutural="3.4.02.02.01.00.00" descricao="BAIXA DE BENS INSERVÍVEIS" codigo="588"/>
+ <conta ano="2012" estrutural="3.4.02.02.02.00.00" descricao="BAIXA DE BENS POR PERMUTA" codigo="589"/>
+ <conta ano="2012" estrutural="3.4.02.02.03.00.00" descricao="BAIXA DE BENS POR DOAÇÃO" codigo="590"/>
+ <conta ano="2012" estrutural="3.4.02.02.04.00.00" descricao="BAIXA DE BENS INCINERADOS" codigo="591"/>
+ <conta ano="2012" estrutural="3.4.02.02.05.00.00" descricao="BAIXA DE BENS POR FURTO OU ROUBO" codigo="592"/>
+ <conta ano="2012" estrutural="3.4.02.02.06.00.00" descricao="BAIXA DE ALMOXARIFADO" codigo="593"/>
+ <conta ano="2012" estrutural="3.4.02.02.07.00.00" descricao="DEPRECIAÇÃO/AMORTIZAÇÃO DE BENS" codigo="594"/>
+ <conta ano="2012" estrutural="3.4.02.02.08.00.00" descricao="CANCELAMENTO DA DÍVIDA ATIVA" codigo="595"/>
+ <conta ano="2012" estrutural="3.4.02.02.08.01.00" descricao="CANCELAMENTO DA DÍVIDA ATIVA TRIBUTÁRIA" codigo="596"/>
+ <conta ano="2012" estrutural="3.4.02.02.08.01.01" descricao="DÍVIDA ATIVA DE IMPOSTOS" codigo="597"/>
+ <conta ano="2012" estrutural="3.4.02.02.08.01.02" descricao="DÍVIDA ATIVA DOS DEMAIS TRIBUTOS" codigo="598"/>
+ <conta ano="2012" estrutural="3.4.02.02.08.02.00" descricao="CANCELAMENTO DA DÍVIDA ATIVA NÃO TRIBUTÁRIA" codigo="599"/>
+ <conta ano="2012" estrutural="3.4.02.02.08.03.00" descricao="CANCELAMENTO DA DÍVIDA ATIVA DE OUTROS VALORES" codigo="600"/>
+ <conta ano="2012" estrutural="3.4.02.02.09.00.00" descricao="CANCELAMENTO DE OUTROS CRÉDITOS" codigo="601"/>
+ <conta ano="2012" estrutural="3.4.02.02.10.00.00" descricao="ENCAMPAÇÃO DE DÍVIDAS PASSIVAS" codigo="602"/>
+ <conta ano="2012" estrutural="3.4.02.02.11.00.00" descricao="CORREÇÃO DE DÍVIDAS PASSIVAS" codigo="603"/>
+ <conta ano="2012" estrutural="3.4.02.02.12.00.00" descricao="BAIXA/DESVALORIZÇÃO DE TÍTULOS E VALORES" codigo="604"/>
+ <conta ano="2012" estrutural="3.4.02.02.13.00.00" descricao="TRANSFERÊNCIA DE OBRAS EM ANDAMENTO P/CUSTO FINAL" codigo="605"/>
+ <conta ano="2012" estrutural="3.4.02.02.14.00.00" descricao="DEVOLUÇÃO DE BENS" codigo="606"/>
+ <conta ano="2012" estrutural="3.4.02.02.15.00.00" descricao="RECONHECIMENTO DE DÍVIDA" codigo="607"/>
+ <conta ano="2012" estrutural="3.4.02.02.99.00.00" descricao="OUTRAS" codigo="608"/>
+ <conta ano="2012" estrutural="3.4.03.00.00.00.00" descricao="RESULTADO PATRIMONIAL" codigo="611"/>
+ <conta ano="2012" estrutural="3.5.00.00.00.00.00" descricao="CONTAS DE INTERFERÊNCIA" codigo="609"/>
+ <conta ano="2012" estrutural="3.5.01.00.00.00.00" descricao="TRANSFERÊNCIAS PATRIMONIAIS C/REFLEXA (Caso o saldo seja devedor colocar sinal -)" codigo="610"/>
+ <conta ano="2012" estrutural="4.0.00.00.00.00.00" descricao="SISTEMA DE COMPENSAÇÃO" codigo="612"/>
+ <conta ano="2012" estrutural="4.1.00.00.00.00.00" descricao="ATIVO COMPENSADO" codigo="613"/>
+ <conta ano="2012" estrutural="4.1.01.00.00.00.00" descricao="VALORES EM PODER DE TERCEIROS" codigo="614"/>
+ <conta ano="2012" estrutural="4.1.02.00.00.00.00" descricao="VALORES NOMINAIS EMITIDOS" codigo="615"/>
+ <conta ano="2012" estrutural="4.1.03.00.00.00.00" descricao="RESPONSABILIDADES DE TERCEIROS" codigo="616"/>
+ <conta ano="2012" estrutural="4.1.03.01.00.00.00" descricao="GARANTIAS DIVERSAS PRESTADAS" codigo="617"/>
+ <conta ano="2012" estrutural="4.1.03.02.00.00.00" descricao="RESPONSÁVEIS POR ADIANTAMENTO" codigo="618"/>
+ <conta ano="2012" estrutural="4.1.03.03.00.00.00" descricao="DIREITOS CONTRATUAIS" codigo="619"/>
+ <conta ano="2012" estrutural="4.1.03.04.00.00.00" descricao="BENS CEDIDOS EM COMODATO" codigo="620"/>
+ <conta ano="2012" estrutural="4.1.03.05.00.00.00" descricao="RESPONSÁVEIS DIVERSOS" codigo="621"/>
+ <conta ano="2012" estrutural="4.1.04.00.00.00.00" descricao="DIVERSOS ATIVOS" codigo="622"/>
+ <conta ano="2012" estrutural="4.1.05.00.00.00.00" descricao="CONTRAPARTIDAS" codigo="623"/>
+ <conta ano="2012" estrutural="4.1.05.01.00.00.00" descricao="CONTRAPARTIDAS SINTÉTICAS" codigo="624"/>
+ <conta ano="2012" estrutural="4.1.05.01.01.00.00" descricao="CONTRAPARTIDA DE VALORES DE TERCEIROS EM NOSSO PODER" codigo="625"/>
+ <conta ano="2012" estrutural="4.1.05.01.02.00.00" descricao="CONTRAPARTIDA DE VALORES NOMINAIS RECEBIDOS" codigo="626"/>
+ <conta ano="2012" estrutural="4.1.05.01.03.00.00" descricao="CONTRAPARTIDA DE RESPONSABILIDADES COM TERCEIROS" codigo="627"/>
+ <conta ano="2012" estrutural="4.1.05.01.04.00.00" descricao="CONTRAPARTIDA DE DIVERSOS PASSIVOS" codigo="628"/>
+ <conta ano="2012" estrutural="4.2.00.00.00.00.00" descricao="PASSIVO COMPENSADO" codigo="629"/>
+ <conta ano="2012" estrutural="4.2.01.00.00.00.00" descricao="VALORES DE TERCEIROS EM NOSSO PODER" codigo="630"/>
+ <conta ano="2012" estrutural="4.2.02.00.00.00.00" descricao="VALORES NOMINAIS RECEBIDOS" codigo="631"/>
+ <conta ano="2012" estrutural="4.2.03.00.00.00.00" descricao="RESPONSABILIDADES COM TERCEIROS" codigo="632"/>
+ <conta ano="2012" estrutural="4.2.03.01.00.00.00" descricao="GARANTIAS DIVERSAS RECEBIDAS" codigo="633"/>
+ <conta ano="2012" estrutural="4.2.03.02.00.00.00" descricao="AUXÍLIOS E SUBVENÇÕES RECEBIDAS" codigo="634"/>
+ <conta ano="2012" estrutural="4.2.03.03.00.00.00" descricao="DEVERES CONTRATUAIS" codigo="635"/>
+ <conta ano="2012" estrutural="4.2.03.04.00.00.00" descricao="BENS RECEBIDOS EM COMODATO" codigo="636"/>
+ <conta ano="2012" estrutural="4.2.03.05.00.00.00" descricao="RESPONSABILIDADES DIVERSAS" codigo="637"/>
+ <conta ano="2012" estrutural="4.2.04.00.00.00.00" descricao="DIVERSOS PASSIVOS" codigo="638"/>
+ <conta ano="2012" estrutural="4.2.05.00.00.00.00" descricao="CONTRAPARTIDAS" codigo="639"/>
+ <conta ano="2012" estrutural="4.2.05.01.00.00.00" descricao="CONTRAPARTIDAS SINTÉTICAS" codigo="640"/>
+ <conta ano="2012" estrutural="4.2.05.01.01.00.00" descricao="CONTRAPARTIDA DE VALORES EM PODER TERCEIROS" codigo="641"/>
+ <conta ano="2012" estrutural="4.2.05.01.02.00.00" descricao="CONTRAPARTIDA DE VALORES NOMINAIS EMITIDOS" codigo="642"/>
+ <conta ano="2012" estrutural="4.2.05.01.03.00.00" descricao="CONTRAPARTIDA DE RESPONSABILIDADE DE TERCEIROS" codigo="643"/>
+ <conta ano="2012" estrutural="4.2.05.01.04.00.00" descricao="CONTRAPARTIDA DE DIVERSOS ATIVOS" codigo=""/>
+</planoconta>

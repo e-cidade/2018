@@ -1,0 +1,12 @@
+{
+  "ponto_nao_cadastrado"                    : "Ponto de parada com o código informado([codigo]) nao cadastrado",
+  "nome_ponto_nao_informado"                : "O nome do ponto de Parada deve ser informado.",
+  "abreviatura_ponto_nao_informado"         : "A abreviatura do nome do ponto de Parada deve ser informado.",
+  "rua_bairro_ponto_nao_informado"          : "Localização do ponto de parada não informado",
+  "erro_persitir_dados_ponto"               : "Não foi possível salvar os dados do ponto de parada.\nErro Técnico:\n[erro_dao]",
+  "erro_persitir_dados_ponto_departamento"  : "Não foi possível atualizar vínculo do ponto de parada a um departamento.\nErro Técnico:\n[erro_dao]",
+  "erro_remover_dados_ponto"                : "Não foi possível remover o ponto de parada.\nErro Técnico:\n[erro_dao]",
+  "ponto_parada_vinculada_linha_transporte" : "Exclusão não permitida. Ponto de Parada vinculado ao itinerário da linha [sLinha].",
+  "erro_persitir_dados_escola_procedencia"  : "Não foi possível atualizar vínculo do ponto de parada a uma escola de procedência.\nErro Técnico:\n[sErro]",
+  "erro_remover_escola_procedencia" : "Não foi possível remover o vínculo com a escola de procedência.\nErro Técnico:\n[sErro]"
+}

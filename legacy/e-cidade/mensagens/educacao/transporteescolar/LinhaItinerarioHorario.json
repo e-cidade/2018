@@ -1,0 +1,13 @@
+{
+  "linhaitinerariohorario_nao_cadastrado"   : "Linha Itinerário de código [codigo] não encontrado.",
+  "hora_nao_informada"                      : "Hora de saída não informada",
+  "linhatransporteitinerario_nao_informada" : "Linha de transporte itinerário não vinculado",
+  "erro_persitir_dados_itinerariohorario"   : "[erro_dao]",
+  "erro_remover_dados_itinerariohorario"    : "Não foi possível remover registro. \nErro Técnico:[erro_dao]",
+  "hora_partida_menor_ultima_chegada"       : "Inclusão de horário não permitida. Hora de partida menor ou igual a última hora de chegada.",
+  "transporte_vinculado_horario"            : "Exclusão do horário não permitida. Existem veículos vinculados ao horário selecionado.",
+  "sem_transacao"                           : "Não existe transação com o banco de dados.",
+  "erro_excluir_vinculo_veiculo"            : "Não foi possível remover registro. \nErro Técnico:[erro_dao]",
+  "erro_incluir_vinculo_veiculo"            : "Não foi possível remover registro. \nErro Técnico:[erro_dao]",
+  "aluno_vinculado"                         : "Não é possível excluir o itinerário com alunos vinculados."
+}

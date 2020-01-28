@@ -1,0 +1,8 @@
+{
+  "carregando_meses"         : "Carregando meses, aguarde...",
+  "depreciacao_ja_cancelada" : "A depreciação para os meses do ano corrente já foram canceladas, ou não estão processadas.",
+  "informe_tipo"             : "Informe o tipo da deprecição.",
+  "informe_mes"              : "Informe o mês que deseja cancelar o processamento a depreciação.",
+  "cancelando_processamento" : "Aguarde, cancelando o processamento.",
+  "cancelada_com_sucesso"    : "Processamento da depreciação foi cancelada com sucesso!"
+}

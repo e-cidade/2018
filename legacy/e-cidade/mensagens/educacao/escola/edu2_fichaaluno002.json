@@ -1,0 +1,15 @@
+{
+  "erro_buscar_dados_aluno"                : "Erro aos buscar os dados do aluno:\\n[sErro]",
+  "erro_buscar_tipo_sanguineo"             : "Erro ao buscar o tipo sanguíneo:\\n[sErro]",
+  "erro_buscar_escola_aluno"               : "Erro ao buscar a escola do aluno:\\n[sErro]",
+  "erro_buscar_necessidade_aluno"          : "Erro ao buscar as necessidades do aluno:\\n[sErro]",
+  "erro_buscar_matriculas_aluno"           : "Erro ao buscar as matrículas do aluno:\\n[sErro]",
+  "nenhum_registro_encontrado"             : "Nenhum registro encontrado.",
+  "erro_buscar_situacao_aluno"             : "Erro ao buscar a situação da matrícula do aluno:\\n[sErro]",
+  "erro_buscar_dados_conselho"             : "Erro ao buscar os dados da aprovação do conselho:\\n[sErro]",
+  "erro_buscar_dados_historico"            : "Erro ao buscar o histórico:\\n[sErro]",
+  "erro_buscar_resultado_historico"        : "Erro ao buscar o resultado do histórico:\\n[sErro]",
+  "erro_buscar_movimentacoes"              : "Erro ao buscar as movimentações do aluno:\\n[sErro]",
+  "erro_buscar_movimentacoes_cancelamento" : "Erro ao buscar as movimentações de cancelamento do aluno:\\n[sErro]",
+  "erro_buscar_movimentacoes_encerramento" : "Erro ao buscar as movimentações de encerramento do aluno:\\n[sErro]"
+}

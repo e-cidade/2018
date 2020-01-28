@@ -1,0 +1,9 @@
+{
+  "confirma_exclusao_documento" : "Deseja excluir o documento do evento do acordo?",
+  "confirma_exclusao_evento" : "Deseja excluir o evento do acordo?",
+  "campo_obrigatorio" : "Campo [sCampo] é de preenchimento obrigatório.",
+  "evento_salvo" : "Evento salvo com sucesso.",
+  "evento_excluido" : "Evento excluído com sucesso.",
+  "documento_salvo" : "Documento salvo com sucesso.",
+  "documento_excluido" : "Documento excluído com sucesso."
+}

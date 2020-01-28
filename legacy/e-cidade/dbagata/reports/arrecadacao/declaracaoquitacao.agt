@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout></Layout>
+        <UseTemplates></UseTemplates>
+        <OutputMask></OutputMask>
+    </Properties>
+
+    <Header>
+        <Body></Body>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body></Body>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <declaracao>
+            <mask></mask>
+            <value>38045</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </declaracao>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>192.168.77.119</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>campo_cod_declaracao,    campo_ano,    campo_nome_origem,    campo_cod_cpf_cnpj,    campo_instituicao,    campo_origem,    campo_cod_origem,    campo_endereco_origem</Select>
+            <From>(                         select declaracaoquitacao.ar30_sequencial  as campo_cod_declaracao,                                        declaracaoquitacao.ar30_exercicio   as campo_ano,                                        cgm.z01_nome                        as campo_nome_origem,                                        cgm.z01_cgccpf                      as campo_cod_cpf_cnpj,                                        db_config.nomeinst                  as campo_instituicao,                                        'Somente Cgm'::varchar              as campo_origem,                                        declaracaoquitacaocgm.ar34_numcgm   as campo_cod_origem,                                       cgm.z01_ender||', '||cgm.z01_numero as campo_endereco_origem                      from declaracaoquitacao            inner join declaracaoquitacaocgm    on declaracaoquitacaocgm.ar34_declaracaoquitacao = declaracaoquitacao.ar30_sequencial            inner join cgm                      on cgm.z01_numcgm                                = declaracaoquitacaocgm.ar34_numcgm         inner join db_config                on db_config.codigo                              = declaracaoquitacao.ar30_instit                     where declaracaoquitacaocgm.ar34_somentecgm = 'true'                       and declaracaoquitacao.ar30_sequencial IN ($declaracao)                        union                     select declaracaoquitacao.ar30_sequencial as campo_cod_declaracao,                                        declaracaoquitacao.ar30_exercicio  as campo_ano,                                        cgm.z01_nome                       as campo_nome_origem,                                        cgm.z01_cgccpf                     as campo_cod_cpf_cnpj,                                        db_config.nomeinst                 as campo_instituicao,                                        cast('Cgm Geral' as varchar)       as campo_origem,                                        declaracaoquitacaocgm.ar34_numcgm  as campo_cod_origem,                                       cgm.z01_ender||', '||cgm.z01_numero as campo_endereco_origem                      from declaracaoquitacao        inner join declaracaoquitacaocgm    on declaracaoquitacaocgm.ar34_declaracaoquitacao = declaracaoquitacao.ar30_sequencial        inner join cgm                      on cgm.z01_numcgm                                = declaracaoquitacaocgm.ar34_numcgm         inner join db_config                on db_config.codigo                              = declaracaoquitacao.ar30_instit                     where declaracaoquitacaocgm.ar34_somentecgm = 'false'               and declaracaoquitacao.ar30_sequencial IN ($declaracao)                         and not exists (select 1                               from declaracaoquitacaomatric                              where ar33_declaracaoquitacao IN ($declaracao))                                and not exists (select 1      from declaracaoquitacaoinscr             where ar35_declaracaoquitacao IN ($declaracao))                       union            select declaracaoquitacao.ar30_sequencial    as campo_cod_declaracao,                                   declaracaoquitacao.ar30_exercicio     as campo_ano,                         proprietario.z01_nome                 as campo_nome_origem,  proprietario.z01_cgccpf               as campo_cod_cpf_cnpj,                          db_config.nomeinst                    as campo_instituicao,                          cast('Matrícula' as varchar)          as campo_origem,                          declaracaoquitacaomatric.ar33_matric  as campo_cod_origem,                         ruas.j14_nome||', '||x01_numero       as campo_endereco_origem             from declaracaoquitacao        inner join declaracaoquitacaomatric on declaracaoquitacaomatric.ar33_declaracaoquitacao = declaracaoquitacao.ar30_sequencial        inner join aguabase                 on aguabase.x01_matric                              = declaracaoquitacaomatric.ar33_matric   inner join proprietario             on proprietario.j01_matric                          = aguabase.x01_matric       inner join ruas                     on ruas.j14_codigo                                  = aguabase.x01_codrua        inner join db_config                on db_config.codigo                                 = declaracaoquitacao.ar30_instit             where declaracaoquitacao.ar30_sequencial IN ($declaracao)                         union                       select declaracaoquitacao.ar30_sequencial  as campo_cod_declaracao,                          declaracaoquitacao.ar30_exercicio   as campo_ano,                          cgm.z01_nome                        as campo_nome_origem,                          cgm.z01_cgccpf                      as campo_cod_cpf_cnpj,                          db_config.nomeinst                  as campo_instituicao,                          cast('Inscrição' as varchar)        as campo_origem,                          declaracaoquitacaoinscr.ar35_inscr  as campo_cod_origem,                         cgm.z01_ender||', '||cgm.z01_numero as campo_endereco_origem                        from declaracaoquitacao        inner join declaracaoquitacaoinscr  on declaracaoquitacaoinscr.ar35_declaracaoquitacao = declaracaoquitacao.ar30_sequencial        inner join issbase                  on issbase.q02_inscr                               = declaracaoquitacaoinscr.ar35_inscr         inner join cgm                      on cgm.z01_numcgm                                  = issbase.q02_numcgm        inner join db_config                on db_config.codigo                                = declaracaoquitacao.ar30_instit                     where declaracaoquitacao.ar30_sequencial IN ($declaracao))              as declaracaoquitacao</From>
+            <Where></Where>
+            <GroupBy></GroupBy>
+            <OrderBy></OrderBy>
+            <Config>
+                <Distinct></Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+                <ShowHeader></ShowHeader>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup></PageSetup>
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : campo_cod_declaracao</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup></PageSetup>
+        <Config>
+            <RepeatHeader></RepeatHeader>
+            <ShowFooter></ShowFooter>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source></Source>
+        <Config>
+            <FixedDetails></FixedDetails>
+            <ExpandDetails>1</ExpandDetails>
+            <printEmptyDetail>1</printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+        <Details>
+            <Detail1>
+                <DataSet>
+                    <Query>
+                        <Select>distinct arretipo.k00_descr as tipo_debito</Select>
+                        <From>declaracaoquitacaoreg     left join arrecant   on arrecant.k00_numpre   = declaracaoquitacaoreg.ar31_numpre                                              and arrecant.k00_numpar   = declaracaoquitacaoreg.ar31_numpar     left join arreprescr on arreprescr.k30_numpre = declaracaoquitacaoreg.ar31_numpre                                              and arreprescr.k30_numpar = declaracaoquitacaoreg.ar31_numpar   left join arreforo on arreforo.k00_numpre = declaracaoquitacaoreg.ar31_numpre                                              and arreforo.k00_numpar = declaracaoquitacaoreg.ar31_numpar   left join arreold on arreold.k00_numpre = declaracaoquitacaoreg.ar31_numpre                                              and arreold.k00_numpar = declaracaoquitacaoreg.ar31_numpar   inner join arretipo on (arretipo.k00_tipo = arrecant.k00_tipo or arretipo.k00_tipo = arreprescr.k30_tipo or arretipo.k00_tipo = arreforo.k00_tipo or arretipo.k00_tipo = arreold.k00_tipo)</From>
+                        <Where>declaracaoquitacaoreg.ar31_declaracaoquitacao = $var1</Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields>
+                        <Column1>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column1>
+
+                    </Fields>
+
+                </DataSet>
+
+            </Detail1>
+
+        </Details>
+
+    </OpenOffice>
+
+</Report>

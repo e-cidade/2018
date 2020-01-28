@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3989' name='tributario.emissaogeralinscricao' description="Tabela que vincula os registros das Emissões Gerais do Sistemas com as suas inscrições, quando necessário." prefix="tr04" label="Emissão Geral Inscrição" type="0">
+  <fields>
+    <field codigo="22144"
+           campo_api='codigo_sequencial'
+           name="tr04_sequencial"
+           conteudo="int4"
+           description="Código Sequencial da tabela de vínculo do Registro com a Inscrição"
+           inivalue="0"
+           label="Código Sequencial"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código Sequencial"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='tributario.emissaogeralinscricao_tr04_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22145"
+           campo_api='codigo_registro'
+           name="tr04_emissaogeralregistro"
+           conteudo="int4"
+           description="Código da Emissão Geral"
+           inivalue="0"
+           label="Código da Emissão Geral"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código da Emissão Geral"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22146"
+           campo_api='inscricao'
+           name="tr04_inscr"
+           conteudo="int4"
+           description="Inscrição vinculada ao Registro"
+           inivalue="0"
+           label="Inscrição"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Inscrição"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="tr04_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="issbase">
+      <fieldfk name="tr04_inscr" reference="q02_inscr" inner='t'></fieldfk>
+    </foreignkey>
+    <foreignkey reference="emissaogeralregistro">
+      <fieldfk name="tr04_emissaogeralregistro" reference="tr02_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

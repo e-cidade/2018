@@ -1,0 +1,490 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout></Layout>
+        <UseTemplates></UseTemplates>
+        <OutputMask></OutputMask>
+    </Properties>
+
+    <Header>
+        <Body></Body>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body></Body>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <anofolha>
+            <mask></mask>
+            <value>2009</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </anofolha>
+
+        <mesfolha>
+            <mask></mask>
+            <value>09</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </mesfolha>
+
+        <instit>
+            <mask></mask>
+            <value>2</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </instit>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>Eldorado2</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>r30_regist as matric, z01_nome as nome, r30_ndias as dias, r30_perai as periodo_aquisitivo_inicial, r30_peraf as periodo_aquisitivo_final, case WHEN r30_proc2 is not null then  r30_per2i else  r30_per1i end as periodo_gozo_inicial, case when r30_proc2 is not null then  r30_per2f else  r30_per1f end as periodo_gozo_final</Select>
+            <From>cadferia         
+       inner join rhpessoal      on rhpessoal.rh01_regist    = cadferia.r30_regist        
+       inner join cgm            on cgm.z01_numcgm           = rhpessoal.rh01_numcgm
+       inner join rhpessoalmov   on rhpessoalmov.rh02_regist = cadferia.r30_regist        
+                                and rhpessoalmov.rh02_anousu = cadferia.r30_anousu        
+                                and rhpessoalmov.rh02_mesusu = cadferia.r30_mesusu        
+       inner join rhlota 				 on rhlota.r70_codigo				 = rhpessoalmov.rh02_lota                        	
+       left  join rhpeslocaltrab on rh56_seqpes = rh02_seqpes  
+                                and rh56_princ  = 't'
+       left  join rhlocaltrab    on rh55_codigo = rh56_localtrab
+                                and rh55_instit = $instit</From>
+
+            <Where></Where>
+            <GroupBy></GroupBy>
+            <OrderBy></OrderBy>
+            <Config>
+                <Distinct></Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+                <ShowHeader></ShowHeader>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/time/yyyymmdd2ddmmaaaa.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/time/yyyymmdd2ddmmaaaa.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/time/yyyymmdd2ddmmaaaa.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/time/yyyymmdd2ddmmaaaa.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup></PageSetup>
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : matric</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select>rubric,        descr,        quant,        round(sum(proventos),2)      as proventos,        round(sum(descontos),2)      as descontos,        round(sum(aprovisionados),2) as aprovisionados,        tipo,        round((sum(proventos) - sum(descontos) - sum(aprovisionados)),2) as liquido</Select>
+                        <From>( select distinct r31_regist as regist,               r31_rubric          as rubric,               rh27_descr          as descr,               r31_quant           as quant,               r31_valor           as proventos,               0                   as descontos,               0                   as aprovisionados,               r31_tpp             as tipo                                      from gerffer                                                  inner join rhrubricas on rh27_rubric = r31_rubric                                                                                                                  and rh27_instit = r31_instit                                   where r31_anousu = $anofolha                                        and r31_mesusu = $mesfolha                                       and r31_instit = $instit                                         and r31_pd     = 1                                        and r31_tpp in ('F','D','A')                  union all               select r31_regist          as regist,               rh27_rubric         as rubric,               rh27_descr          as descr,               case                  when r30_ponto = 'S' then r14_quant                                      when r30_ponto = 'C' then r48_quant                               end as quant,               0                   as proventos,               case                  when r30_ponto = 'S' then r14_valor                                      when r30_ponto = 'C' then r48_valor                               end as descontos,               0                   as aprovisionados,               r31_tpp             as tipo                     from gerffer                              inner join rhrubricas on rh27_rubric = case                                                                                                                 when substr(r31_rubric,1,1) = 'R' then r31_rubric                                                                                                                 else  lpad(cast( (cast( r31_rubric  as integer ) - 2000 ) as varchar),4,'0')                                                                                                             end                                    and rh27_instit = r31_instit                                    inner join cadferia   on r30_anousu  = r31_anousu                                                                         and r30_mesusu  = r31_mesusu                                                                         and r30_regist  = r31_regist                               left  join gerfsal    on r14_anousu  = r31_anousu                                                                         and r14_mesusu  = r31_mesusu                                                                         and r14_regist  = r31_regist                                                                         and r14_rubric  = rh27_rubric                               left  join gerfcom    on r48_anousu  = r31_anousu                                                                         and r48_mesusu  = r31_mesusu                                                                         and r48_regist  = r31_regist                                                                          and r48_rubric  = rh27_rubric                     where r31_anousu = $anofolha                       and r31_mesusu = $mesfolha                       and r31_instit = $instit                        and r31_pd     = 2                       and r31_tpp    = 'F'                       and case                                    when r30_ponto = 'S' and r14_valor &gt; 0  then true                                    else case                                                  when r30_ponto = 'C' and r48_valor &gt; 0  then true                                                  else false                                             end                           end                       and (    trim(r30_proc1) = $anofolha||'/'||$mesfolha                                   or trim(r30_proc2) = $anofolha||'/'||$mesfolha                               )                       and (    r31_rubric in ('R903','R906','R909','R915')                                   or case                                   when  r30_ndias = 30 and (                                                    (     r30_per1i between     ($anofolha||'-'||$mesfolha||'-01')::date                                                                          and ($anofolha||'-'||$mesfolha||'-'||fc_ultimodiames($anofolha,$mesfolha))::date                                                                                                          and r30_per1f between     ($anofolha||'-'||$mesfolha||'-01')::date                                                                                                                                and ($anofolha||'-'||$mesfolha||'-'||fc_ultimodiames($anofolha,$mesfolha))::date                                                                                                      )                                                                                                     or                                                  (     r30_per2i between     ($anofolha||'-'||$mesfolha||'-01')::date                                                                                                                                and ($anofolha||'-'||$mesfolha||'-'||fc_ultimodiames($anofolha,$mesfolha))::date                                                                                                          and r30_per2f between     ($anofolha||'-'||$mesfolha||'-01')::date                                                                                                                                and ($anofolha||'-'||$mesfolha||'-'||fc_ultimodiames($anofolha,$mesfolha))::date                                                                                                      )                                                                                     ) then case                                                                        when (  rh27_tipo = 1                                                                                                                                or (      rh27_tipo = 2                                                                                                                                            and rh27_limdat is true                                                                                                                                            and rh27_presta is true                                                                    )                                                                                                                             )                                                                                                                          and rh27_calcp is false                                                                                                                          and rh27_propq is false  then true                                                        else false                                                                                                              end                                             else false                          end                               )                union all                                     select distinct r31_regist as regist,               r31_rubric          as rubric,               rh27_descr          as descr,               r31_quant           as quant,               0                   as proventos,               r31_valor           as descontos,               0                   as aprovisionados,               r31_tpp             as tipo                                     from gerffer                                                 inner join rhrubricas on rh27_rubric = r31_rubric                                                                                                                  and rh27_instit = r31_instit                                                  inner join cadferia   on r30_anousu  = r31_anousu                                                                                                                 and r30_mesusu  = r31_mesusu                                                                                                                 and r30_regist  = r31_regist                                where r31_anousu = $anofolha                                       and r31_mesusu = $mesfolha                                       and r31_instit = $instit                                         and r31_pd     = 2                                       and ( r31_tpp  is null or trim(r31_tpp) = '' )                       and r31_rubric &lt; 'R950'                                   union all              select distinct r31_regist as regist,               r31_rubric          as rubric,               rh27_descr          as descr,               r31_quant           as quant,               0                   as proventos,               0                   as descontos,               r31_valor           as aprovisionados,               r31_tpp             as tipo                                     from gerffer                                                 inner join rhrubricas on rh27_rubric = r31_rubric                                                                                                                  and rh27_instit = r31_instit                                  where r31_anousu = $anofolha                                       and r31_mesusu = $mesfolha                                      and r31_instit = $instit                                        and r31_pd     = 2                                       and r31_tpp    = 'D'                        ) as x</From>
+                        <Where>regist = $var1</Where>
+                        <GroupBy>rubric,                    descr,                    quant,                    tipo</GroupBy>
+                        <OrderBy>rubric</OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields>
+                        <Column1>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column1>
+
+                        <Column2>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column2>
+
+                        <Column3>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column3>
+
+                        <Column4>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column4>
+
+                        <Column5>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column5>
+
+                        <Column6>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column6>
+
+                        <Column7>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column7>
+
+                        <Column8>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column8>
+
+                    </Fields>
+
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup></PageSetup>
+        <Config>
+            <RepeatHeader></RepeatHeader>
+            <ShowFooter></ShowFooter>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source>/home/dbseller/Desktop/testereport.sxw</Source>
+        <Config>
+            <FixedDetails></FixedDetails>
+            <ExpandDetails>1</ExpandDetails>
+            <printEmptyDetail></printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+        <Details>
+            <Detail1>
+                <DataSet>
+                    <Query>
+                        <Select>rubric,        descr,        quant,        round(sum(proventos),2)      as proventos,        round(sum(descontos),2)      as descontos,        round(sum(aprovisionados),2) as aprovisionados,        tipo,        round((sum(proventos) - sum(descontos) - sum(aprovisionados)),2) as liquido</Select>
+                        <From>( select distinct r31_regist as regist,               r31_rubric          as rubric,               rh27_descr          as descr,               r31_quant           as quant,               r31_valor           as proventos,               0                   as descontos,               0                   as aprovisionados,               r31_tpp             as tipo                                      from gerffer                                                  inner join rhrubricas on rh27_rubric = r31_rubric                                                                                                                  and rh27_instit = r31_instit                                   where r31_anousu = $anofolha                                        and r31_mesusu = $mesfolha                                       and r31_instit = $instit                                         and r31_pd     = 1                                        and r31_tpp in ('F','D','A')                  union all               select r31_regist          as regist,               rh27_rubric         as rubric,               rh27_descr          as descr,               case                  when r30_ponto = 'S' then r14_quant                                      when r30_ponto = 'C' then r48_quant                               end as quant,               0                   as proventos,               case                  when r30_ponto = 'S' then r14_valor                                      when r30_ponto = 'C' then r48_valor                               end as descontos,               0                   as aprovisionados,               r31_tpp             as tipo                     from gerffer                              inner join rhrubricas on rh27_rubric = case                                                                                                                 when substr(r31_rubric,1,1) = 'R' then r31_rubric                                                                                                                 else  lpad(cast( (cast( r31_rubric  as integer ) - 2000 ) as varchar),4,'0')                                                                                                             end                                    and rh27_instit = r31_instit                                    inner join cadferia   on r30_anousu  = r31_anousu                                                                         and r30_mesusu  = r31_mesusu                                                                         and r30_regist  = r31_regist                               left  join gerfsal    on r14_anousu  = r31_anousu                                                                         and r14_mesusu  = r31_mesusu                                                                         and r14_regist  = r31_regist                                                                         and r14_rubric  = rh27_rubric                               left  join gerfcom    on r48_anousu  = r31_anousu                                                                         and r48_mesusu  = r31_mesusu                                                                         and r48_regist  = r31_regist                                                                          and r48_rubric  = rh27_rubric                     where r31_anousu = $anofolha                       and r31_mesusu = $mesfolha                       and r31_instit = $instit                        and r31_pd     = 2                       and r31_tpp    = 'F'                       and case                                    when r30_ponto = 'S' and r14_valor &gt; 0  then true                                    else case                                                  when r30_ponto = 'C' and r48_valor &gt; 0  then true                                                  else false                                             end                           end                       and (    trim(r30_proc1) = $anofolha||'/'||$mesfolha                                   or trim(r30_proc2) = $anofolha||'/'||$mesfolha                               )                       and (    r31_rubric in ('R903','R906','R909','R915')                                   or case                                   when  r30_ndias = 30 and (                                                    (     r30_per1i between     ($anofolha||'-'||$mesfolha||'-01')::date                                                                          and ($anofolha||'-'||$mesfolha||'-'||fc_ultimodiames($anofolha,$mesfolha))::date                                                                                                          and r30_per1f between     ($anofolha||'-'||$mesfolha||'-01')::date                                                                                                                                and ($anofolha||'-'||$mesfolha||'-'||fc_ultimodiames($anofolha,$mesfolha))::date                                                                                                      )                                                                                                     or                                                  (     r30_per2i between     ($anofolha||'-'||$mesfolha||'-01')::date                                                                                                                                and ($anofolha||'-'||$mesfolha||'-'||fc_ultimodiames($anofolha,$mesfolha))::date                                                                                                          and r30_per2f between     ($anofolha||'-'||$mesfolha||'-01')::date                                                                                                                                and ($anofolha||'-'||$mesfolha||'-'||fc_ultimodiames($anofolha,$mesfolha))::date                                                                                                      )                                                                                     ) then case                                                                        when (  rh27_tipo = 1                                                                                                                                or (      rh27_tipo = 2                                                                                                                                            and rh27_limdat is true                                                                                                                                            and rh27_presta is true                                                                    )                                                                                                                             )                                                                                                                          and rh27_calcp is false                                                                                                                          and rh27_propq is false  then true                                                        else false                                                                                                              end                                             else false                          end                               )                union all                                     select distinct r31_regist as regist,               r31_rubric          as rubric,               rh27_descr          as descr,               r31_quant           as quant,               0                   as proventos,               r31_valor           as descontos,               0                   as aprovisionados,               r31_tpp             as tipo                                     from gerffer                                                 inner join rhrubricas on rh27_rubric = r31_rubric                                                                                                                  and rh27_instit = r31_instit                                                  inner join cadferia   on r30_anousu  = r31_anousu                                                                                                                 and r30_mesusu  = r31_mesusu                                                                                                                 and r30_regist  = r31_regist                                where r31_anousu = $anofolha                                       and r31_mesusu = $mesfolha                                       and r31_instit = $instit                                         and r31_pd     = 2                                       and ( r31_tpp  is null or trim(r31_tpp) = '' )                       and r31_rubric &lt; 'R950'                                   union all              select distinct r31_regist as regist,               r31_rubric          as rubric,               rh27_descr          as descr,               r31_quant           as quant,               0                   as proventos,               0                   as descontos,               r31_valor           as aprovisionados,               r31_tpp             as tipo                                     from gerffer                                                 inner join rhrubricas on rh27_rubric = r31_rubric                                                                                                                  and rh27_instit = r31_instit                                  where r31_anousu = $anofolha                                       and r31_mesusu = $mesfolha                                      and r31_instit = $instit                                        and r31_pd     = 2                                       and r31_tpp    = 'D'                        ) as x</From>
+                        <Where>regist = $var1</Where>
+                        <GroupBy>rubric,                    descr,                    quant,                    tipo</GroupBy>
+                        <OrderBy>rubric</OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields>
+                        <Column1>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column1>
+
+                        <Column2>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column2>
+
+                        <Column3>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column3>
+
+                        <Column4>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column4>
+
+                        <Column5>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column5>
+
+                        <Column6>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column6>
+
+                        <Column7>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>left</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask></Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column7>
+
+                        <Column8>
+                            <Chars>30</Chars>
+                            <Points>60</Points>
+                            <Align>right</Align>
+                            <HeadAlign>left</HeadAlign>
+                            <Mask>#  -9.999,99s</Mask>
+                            <Function></Function>
+                            <Cross></Cross>
+                            <Conditional></Conditional>
+                            <Hidden></Hidden>
+                        </Column8>
+
+                    </Fields>
+
+                </DataSet>
+
+            </Detail1>
+
+        </Details>
+
+    </OpenOffice>
+
+</Report>

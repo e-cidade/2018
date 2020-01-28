@@ -1,0 +1,6 @@
+{
+  "numeroremessa_nao_informado"   : "Número de remessa não informado",
+  "erro_incluir_arquivo_registro" : "Erro ao gravar registros do arquivo de retenção.",
+  "erro_incluir_arquivo"          : "Erro ao gravar arquivo de retenção.",
+  "erro_arquivo_invalido"         : "Arquivo Inválido"
+}

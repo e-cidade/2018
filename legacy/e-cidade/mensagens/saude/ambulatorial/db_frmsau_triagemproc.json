@@ -1,0 +1,12 @@
+{
+  "pesquisando_procedimento"       : "Aguarde, pesquisando procedimentos...",
+  "faa_nao_encontrada"             : "FAA não informada!",
+  "faa_sem_procedimentos"          : "FAA sem procedimentos.",
+  "cbo_sem_procedimentos"          : "CBO não tem ligação com procedimento.",
+  "nenhuma_faa_para_gerar"         : "Nenhuma FAA para gerar.",
+  "pesquisando_cid"                : "Aguarde, pesquisando CID...",
+  "informe_cid"                    : "Informe o CID.",
+  "buscando_procedimentos"         : "Aguarde, buscando os procedimentos...",
+  "confirma_exclusao_procedimento" : "Confirma a exclusão do procedimento [iProcedimento] - [sProcedimento]?",
+  "excluindo_procedimento"         : "Aguarde, excluindo o procedimento..."
+}

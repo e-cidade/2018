@@ -1,0 +1,392 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBSeller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+require ('fpdf151/pdf1.php');
+if (isset ($HTTP_GET_VARS["tipo"]) && $HTTP_GET_VARS["tipo"] != "pdf") {
+
+	db_postmemory($HTTP_GET_VARS);
+	$sql = "select nomeinst,ender,munic,uf,telef,email,url,logo from db_config where codigo = 1";
+	$result = @ pg_query($sql);
+	@ db_fieldsmemory($result, 0);
+
+	$meses = array (
+		"",
+		"JANEIRO",
+		"FEVEREIRO",
+		"MARÇO",
+		"ABRIL",
+		"MAIO",
+		"JUNHO",
+		"JULHO",
+		"AGOSTO",
+		"SETEMBRO",
+		"OUTUBRO",
+		"NOVEMBRO",
+		"DEZEMBRO"
+	);
+	$mes1 = date("m");
+	$ano = date("Y");
+	$dia = date("d");
+	$hora = date("H");
+	$min = date("i");
+	$sec = date("s");
+	$ip = getenv("REMOTE_ADDR");
+
+	$venc = dateadd(90, $datahoje = "?");
+
+	$sqlvenc = "select '$ano-$mes1-$dia'::date + ' 1 months'::interval as datavenc";
+	$resultvenc = pg_exec($sqlvenc) or die($sqlvenc);
+	db_fieldsmemory($resultvenc, 0);
+
+	$venc = $datavenc;
+
+	$dia2 = substr($venc, 8, 2);
+	$mes2 = substr($venc, 5, 2);
+	$ano2 = substr($venc, 0, 4);
+
+	$venc = $ano2 . "-" . $mes2 . "-" . $dia2;
+
+	$sequencia = pg_query("select nextval('db_certidaoweb_codcert_seq')") or die("erro ao gerar sequencia");
+	$seq2 = pg_result($sequencia, 0, 0);
+	$tamanho = strlen($seq2);
+	$seq = "";
+	for ($i = 0; $i < (7 - $tamanho); $i++) {
+		$seq .= "0";
+	}
+	$seq .= $seq2;
+	$sql = pg_query("select cgc from db_config limit 1");
+	for ($i = 0; $i < (pg_numfields($sql)); $i++) {
+		@ db_fieldsmemory($sql, 0);
+	}
+	$nros = $seq . $cgc . $ano . $mes1 . $dia . $hora . $min . $sec . $ano2 . $mes2 . $dia2;
+	$t1 = strrev($nros);
+
+	if ($tipo == 1) {
+
+		// certidao positiva 
+		$tipocer = "CERTIDÃO POSITIVA DE DÉBITO";
+		if (isset ($matric)) {
+			$codtipo = 26;
+			$sql = "select * from proprietario where j01_matric = $matric";
+			$result = pg_query($sql);
+			@ db_fieldsmemory($result, 0);
+			/////// TEXTOS E ASSINATURAS
+			$instit = db_getsession("DB_instit");
+			$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'positiva%' or descrtexto like 'ass%')";
+
+			$resulttexto = pg_query($sqltexto);
+			for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+				db_fieldsmemory($resulttexto, $xx);
+				$text = $descrtexto;
+				$$text = db_geratexto($conteudotexto);
+			}
+			////////
+			$texto1 = $positiva_mat1;
+			$texto2 = $positiva_mat2;
+			$texto3 = $positiva_mat3;
+			$texto4 = '';
+			//        $texto1  = 'CERTIFICAMOS a requerimento, que não existe cadastro em nome de '.$z01_nome.', e que nada deve à Fazenda Municipal até a presente data.'."\n".'                    Fica ressalvado o direito do Município de Sapiranga de apurar e cobrar eventuais débitos de responsabilidade do contribuinte supra identificado.'."\n".'                    E para que produza os efeitos a que se destina, emite a presente certidão que é válida por 60 (sessenta) dias a contar da data de sua expedição.';
+
+		} else
+			if (isset ($numcgm)) {
+				$codtipo = 27;
+				$sql = "select trim(z01_nome) as z01_nome,* from cgm where z01_numcgm = $numcgm";
+				$result = pg_query($sql);
+				db_fieldsmemory($result, 0);
+				/////// TEXTOS E ASSINATURAS
+				$instit = db_getsession("DB_instit");
+				$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'positiva%' or descrtexto like 'ass%')";
+				$resulttexto = pg_query($sqltexto);
+				for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+					db_fieldsmemory($resulttexto, $xx);
+					$text = $descrtexto;
+					$$text = db_geratexto($conteudotexto);
+				}
+				////////
+				$texto1 = $positiva_cgm1;
+				$texto2 = $positiva_cgm2;
+				$texto3 = $positiva_cgm3;
+				$texto4 = '';
+			} else
+				if (isset ($inscr)) {
+					$codtipo = 28;
+					$sql = "select * from empresa where q02_inscr = $inscr";
+					$result = pg_query($sql);
+					db_fieldsmemory($result, 0);
+					/////// TEXTOS E ASSINATURAS
+					$instit = db_getsession("DB_instit");
+					$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'positiva%' or descrtexto like 'ass%')";
+					$resulttexto = pg_query($sqltexto);
+					for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+						db_fieldsmemory($resulttexto, $xx);
+						$text = $descrtexto;
+						$$text = db_geratexto($conteudotexto);
+					}
+					////////
+					$texto1 = $positiva_ins1;
+					$texto2 = $positiva_ins2;
+					$texto3 = $positiva_ins3;
+					$texto4 = '';
+				}
+	} else if ($tipo == 2) {
+			// certidao negativa
+			$tipocer = "CERTIDÃO NEGATIVA";
+			if (isset ($matric)) {
+				$codtipo = 29;
+				$sql = "select * from proprietario where j01_matric = $matric";
+				$result = pg_query($sql);
+				db_fieldsmemory($result, 0);
+				/////// TEXTOS E ASSINATURAS
+				$instit = db_getsession("DB_instit");
+				$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'negativa%' or descrtexto like 'ass%')";
+			//	die("dafasfa");
+				$resulttexto = pg_query($sqltexto);
+				for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+					db_fieldsmemory($resulttexto, $xx);
+					$text = $descrtexto;
+					$$text = db_geratexto($conteudotexto);
+				}
+				////////
+				$texto1 = $negativa_mat1;
+				$texto2 = $negativa_mat2;
+				$texto3 = $negativa_mat3;
+				$texto4 = '';
+			} else
+				if (isset ($numcgm)) {
+					$codtipo = 30;
+					$sql = "select trim(z01_nome) as z01_nome,* from cgm where z01_numcgm = $numcgm";
+					$result = pg_query($sql);
+					if (pg_num_rows($result) == 0) {
+?>
+       <script>
+        alert("Não foi possível encontrar seu cadastro no CGM!\n\nEntre em contato com a Prefeitura.");
+        window.close();
+       </script>
+       <?
+
+						exit;
+					}
+					db_fieldsmemory($result, 0);
+					/////// TEXTOS E ASSINATURAS
+					$instit = db_getsession("DB_instit");
+					$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'negativa%' or descrtexto like 'ass%')";
+					//die($sqltexto);
+					$resulttexto = pg_query($sqltexto);
+					for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+						db_fieldsmemory($resulttexto, $xx);
+						$text = $descrtexto;
+						$$text = db_geratexto($conteudotexto);
+					}
+					////////
+					$texto1 = $negativa_cgm1;
+					$texto2 = $negativa_cgm2;
+					$texto3 = $negativa_cgm3;
+					$texto4 = '';
+				} else
+					if (isset ($inscr)) {
+						$codtipo = 31;
+						$sql = "select * from empresa where q02_inscr = $inscr";
+						$result = pg_query($sql);
+						db_fieldsmemory($result, 0);
+						/////// TEXTOS E ASSINATURAS
+						$instit = db_getsession("DB_instit");
+						$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'negativa%' or descrtexto like 'ass%')";
+						$resulttexto = pg_query($sqltexto);
+						for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+							db_fieldsmemory($resulttexto, $xx);
+							$text = $descrtexto;
+							$$text = db_geratexto($conteudotexto);
+						}
+						////////
+						$texto1 = $negativa_ins1;
+						$texto2 = $negativa_ins2;
+						$texto3 = $negativa_ins3;
+						$texto4 = '';
+					}
+		} else {
+			// certidao regular
+			$tipocer = "CERTIDÃO POSITIVA COM EFEITOS NEGATIVOS";
+			if (isset ($matric)) {
+				$codtipo = 32;
+				$sql = "select * from proprietario where j01_matric = $matric";
+				$result = pg_query($sql);
+				db_fieldsmemory($result, 0);
+				/////// TEXTOS E ASSINATURAS
+				$instit = db_getsession("DB_instit");
+				$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'regular%' or descrtexto like 'ass%')";
+				$resulttexto = pg_query($sqltexto);
+				for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+					db_fieldsmemory($resulttexto, $xx);
+					$text = $descrtexto;
+					$$text = db_geratexto($conteudotexto);
+				}
+				////////
+				$texto1 = $regular_mat1;
+				$texto2 = $regular_mat2;
+				$texto3 = $regular_mat3;
+				$texto4 = '';
+			} else
+				if (isset ($numcgm)) {
+					$codtipo = 33;
+					$sql = "select trim(z01_nome) as z01_nome,* from cgm where z01_numcgm = $numcgm";
+					$result = pg_query($sql);
+					db_fieldsmemory($result, 0);
+					/////// TEXTOS E ASSINATURAS
+					$instit = db_getsession("DB_instit");
+					$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'regular%' or descrtexto like 'ass%')";
+					$resulttexto = pg_query($sqltexto);
+					for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+						db_fieldsmemory($resulttexto, $xx);
+						$text = $descrtexto;
+						$$text = db_geratexto($conteudotexto);
+					}
+					////////
+					$texto1 = $regular_cgm1;
+					$texto2 = $regular_cgm2;
+					$texto3 = $regular_cgm3;
+					$texto4 = '';
+				} else
+					if (isset ($inscr)) {
+						$codtipo = 34;
+						$sql = "select * from empresa where q02_inscr = $inscr";
+						$result = pg_query($sql);
+						db_fieldsmemory($result, 0);
+						/////// TEXTOS E ASSINATURAS
+						$instit = db_getsession("DB_instit");
+						$sqltexto = "select * from db_textos where id_instit = $instit and ( descrtexto like 'regular%' or descrtexto like 'ass%')";
+						$resulttexto = pg_query($sqltexto);
+						for ($xx = 0; $xx < pg_numrows($resulttexto); $xx++) {
+							db_fieldsmemory($resulttexto, $xx);
+							$text = $descrtexto;
+							$$text = db_geratexto($conteudotexto);
+						}
+						////////
+						$texto1 = $regular_ins1;
+						$texto2 = $regular_ins2;
+						$texto3 = $regular_ins3;
+						$texto4 = '';
+					}
+		}
+
+	$textos = $texto1 . "\n" . $texto2 . "\n" . $texto3 . "\n" . $texto4;
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	include ("classes/db_db_certidaoweb_classe.php");
+	$clcertidao = new cl_db_certidaoweb;
+	$clcertidao->codcert = $t1;
+	$clcertidao->tipocer = $tipo;
+	$clcertidao->cerdtemite = $ano . "-" . $mes1 . "-" . $dia;
+	$clcertidao->cerhora = $hora . ":" . $min . ":" . $sec;
+	$clcertidao->cerdtvenc = $venc;
+	$clcertidao->cerip = $ip;
+	$clcertidao->ceracesso = "1";
+	$clcertidao->cercertidao = "1";
+	$clcertidao->cernomecontr = $z01_nome;
+	$clcertidao->cerhtml = $textos;
+	$clcertidao->cerweb = 1;
+	$clcertidao->incluir();
+	if ($clcertidao->erro_status == 0) {
+		db_msgbox("Erro ao gerar certidao! Contate suporte!");
+		exit;
+	}
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+?>
+    <body>
+    <form method="post" name="form1" action="cai3_gerfinanc006.php?tipo=pdf">
+       <input type="hidden" name="tipocer" value="<?=@$tipocer?>">
+       <input type="hidden" name="Letra" value="<?=@$Letra?>">
+       <input type="hidden" name="texto1" value="<?=@$texto1?>">
+       <input type="hidden" name="texto2" value="<?=@$texto2?>">
+       <input type="hidden" name="texto3" value="<?=@$texto3?>">
+       <input type="hidden" name="texto4" value="<?=@$texto4?>">
+       <input type="hidden" name="nomeinst" value="<?=@$nomeinst?>">
+       <input type="hidden" name="t1" value="<?=@$t1?>" >
+    </form>
+    <script>
+       document.form1.submit();
+    </script>
+    </body>
+    <?
+
+}
+elseif (isset ($HTTP_GET_VARS["tipo"]) && $HTTP_GET_VARS["tipo"] == "pdf") {
+	db_postmemory($HTTP_POST_VARS);
+
+	$sqlparag = "select db02_texto
+				       from db_documento
+					    inner join db_docparag on db03_docum = db04_docum
+					    inner join db_tipodoc on db08_codigo  = db03_tipodoc
+					    inner join db_paragrafo on db04_idparag = db02_idparag
+				     where db03_tipodoc = 1017 
+	                   and db03_instit = 1 
+	                 order by db04_ordem ";
+
+	$resparag = pg_query($sqlparag);
+	$linhas = (pg_numrows($resparag));
+	//die("linhas= $linhas");
+
+	if (pg_numrows($resparag) == 0) {
+		$head1 = "DEPARTAMENTO DE FINANÇAS";
+	} else {
+		db_fieldsmemory($resparag, 0);
+		$head1 = $db02_texto;
+	}
+
+	$pdf = new PDF1(); // abre a classe
+	$pdf->Open(); // abre o relatorio
+	$pdf->AliasNbPages(); // gera alias para as paginas
+	$pdf->AddPage(); // adiciona uma pagina
+	$pdf->SetTextColor(0, 0, 0);
+	$pdf->SetFillColor(235);
+	$Letra = 'Times';
+	$pdf->MultiCell(0, 4, $tipocer." Nº " . substr(strrev($t1), 0, 7), 0, "C", 0);
+	//$pdf->MultiCell(0, 4, "Nº " . substr(strrev($t1), 0, 7), 0, "C", 0);
+	$pdf->SetFont($Letra, '', 11);
+	$pdf->Ln(15);
+
+	//$pdf->Cell(3, 1, "", 0, 0, "L", 0) 
+	$pdf->MultiCell(0, 6, $texto1, 0, "J", 0);
+	$pdf->MultiCell(0, 6, $texto2, 0, "J", 0);
+	$pdf->MultiCell(0, 6, $texto3, 0, "J", 0);
+	$pdf->MultiCell(0, 6, $texto4, 0, "J", 0);
+
+	$pdf->Cell(10, 4, "", 0, 1, "L", 0);
+	$pdf->MultiCell(0, 8, $nomeinst . ', ' . date('d') . " de " . db_mes(date('m')) . " de " . date('Y') . '.', 0, 0, "R", 0);
+	$pdf->Cell(10, 20, "", 0, 1, "L", 0);
+	$pdf->SetY(150);
+	$pdf->SetY(252);
+	$y = $pdf->GetY();
+	$pdf->MultiCell(90, 5, '', 0, "C", 0);
+	$pdf->SetFillColor(000);
+	$pdf->MultiCell(180, 3, "Código de Autenticidade da Certidão", 0, "R", 0);
+	$pdf->MultiCell(180, 15, $t1, 0, "R", 0);
+	$pdf->int25(85, 270, $t1, 15, 0.341);
+	//echo "<script>alert('dfasdfasdfagsf k');</script>";
+	//die("xxxxx");
+	$pdf->Output();
+
+}
+?>

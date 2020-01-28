@@ -1,0 +1,6 @@
+{
+   "ordem_nao_informada"     : "Ordem não informada."
+  ,"categoria_nao_informada" : "Categoria não informada."
+  ,"erro_buscar_leitores"    : "Erro ao buscar leitores."
+  ,"nenhum_leitor_encontrado": "Nenhum leitor cadastrado para o tipo de cartegoria informada."
+}

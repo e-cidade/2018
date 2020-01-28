@@ -1,0 +1,148 @@
+/*
+    Default Theme 
+ */
+
+div#db-menu  *{
+  -moz-text-selection: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  outline: none;
+  text-transform: uppercase;
+}
+
+/**
+ * Configuracao da div que envolve os menus.
+ */
+div#db-menu {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: -moz-linear-gradient(center top , #008CBF, #006E98) repeat scroll 0 0 transparent;
+  height: 16px;
+  margin: 0;
+  padding: 2px 0;
+
+  z-index: 999;
+}
+
+div#db-menu a {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: normal;
+  padding: 1px 6px;
+}
+
+/**
+ * Comportamentos e estados dos sub-menus
+ */
+
+div#db-menu .sub-menu ul{
+  border-style: solid;
+  border-width: 2px;
+  padding: 0 1px 1px 0;
+
+  background-color: #F3F3F3;
+  border: 1px solid #CCCCCC;
+  border-radius: 0 10px 10px 10px;
+  margin: 3px 1px;
+}
+
+div#db-menu .sub-menu > ul ul{
+  top: -2px;
+}
+
+div#db-menu li.sub-menu ul a {
+  color: #333333;
+  cursor: default;
+  display: block;
+  font-size: 8pt;
+  padding: 3px 1em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#db-menu > ul > li .sub-menu > a {
+  padding-right: 30px !important;
+}
+
+#db-menu > ul > li li.sub-menu > a::after {
+  content: ">>>";
+  position: absolute;
+  right: 1px;
+  top: 4px;
+  font-weight: bold;
+}
+
+/**
+ * Fim comportamentos e estados sub-menus
+ */
+
+/**
+ * Hover padrao dos itens
+ */
+div#db-menu li.sub-menu li.hover {
+  background-color: #0087BA;
+  border: medium none;
+  border-radius: 10px 10px 10px 10px;
+}
+
+div#db-menu li.sub-menu li.hover > a{
+  color: #FFFFFF;
+}
+
+div#db-menu li ul > li.hover:first-child {
+  border-radius: 0px 10px 10px 10px;
+}
+/**
+ * Estados dos menus principais
+ */
+
+div#db-menu > ul > li {
+  margin: -3px 0px -3px -1px;
+  background: -moz-linear-gradient(center top , #00ADEE, #0078A5) repeat scroll 0 0 transparent;
+  border: 1px solid #0076A3;
+  
+}
+
+div#db-menu > ul > li:hover {
+  background: -moz-linear-gradient(center top , #0095CC, #00678E) repeat scroll 0 0 transparent;
+}
+
+div#db-menu > ul > li:active {
+  background: -moz-linear-gradient(center top , #0078A5, #00ADEE) repeat scroll 0 0 transparent;
+}
+
+div#db-menu > ul > li > a { 
+  font-size: 11px;
+  padding: 0.2em 1em 0.275em;
+  text-decoration: none;
+}
+/**
+ * Fim estados menus principais
+ */
+
+/**
+ * Autocomplete
+ */
+div#db-menu div#autoComplete {
+  margin-right:20px; 
+  float:right;
+}
+
+div#db-menu div#autoComplete > label {
+  white-space: nowrap;
+  width: auto;
+  color: #FFF;
+}
+
+div#db-menu div#autoComplete input#autoCompleteMenus {
+  width: 300px; 
+  height: 15px;
+}
+
+div#db-menu div#autoComplete div#div_lista_autoCompleteMenus a {
+  color: #000;
+}

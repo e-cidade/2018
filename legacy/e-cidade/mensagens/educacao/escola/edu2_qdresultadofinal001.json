@@ -1,0 +1,9 @@
+{
+  "buscando_turmas"                : "Aguarde, buscando as turmas...",
+  "buscando_modelos"               : "Aguarde, buscandos os modelos de relatório...",
+  "buscando_diretores_secretarios" : "Aguarde, buscando os diretores e secretários da escola...",
+  "selecione_escola"               : "Selecione uma escola.",
+  "selecione_calendario"           : "Selecione um calendário.",
+  "selecione_turma"                : "Selecione ao menos uma turma.",
+  "selecione_tipo_modelo"          : "Selecione um tipo de modelo de relatório."
+}

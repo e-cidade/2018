@@ -1,0 +1,6 @@
+{
+  "carregando_dados_geracao"   : "Pesquisando dados da geração, aguarde...",
+  "excluindo_geracao"          : "Excluindo dados da geração, aguarde...",
+  "codigo_geracao_obrigatorio" : "Campo Código da Geração é de preenchimento obrigatório.",
+  "confirma_exclusao"          : "Registros que possuem pagamento não serão exluídos.\nEste procedimento não poderá ser revertido!\nTem certeza que deseja excluir?"
+}

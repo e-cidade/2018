@@ -1,0 +1,7 @@
+{
+   "quantidade_negativa"       : "A quantidade de descarte deve ser maior que zero."
+  ,"motivo_nao_informado"      : "Campo Motivo não informado."
+  ,"quantidade_nao_informada"  : "Campo Quantidade não informado."
+  ,"medicamento_nao_informado" : "Campo Medicamento não informado."
+  ,"quantidade_nao_numerica"   : "Quantidade informada não é válida."
+}

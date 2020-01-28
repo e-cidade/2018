@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modification>
+
+  <id>dbportal-v3-db-complementar</id>
+  <label>DBPortal v3 - db_complementar</label>
+  <version>1.0</version>
+
+  <file path="libs/db_conecta.php">
+
+    <operation error="log" label="define variavel de sessao DB_COMPLEMENTAR">        
+      <search><![CDATA[$_SESSION["DB_use_pcasp"] = USE_PCASP ? 't' : 'f';]]></search>
+      <add position="after"><![CDATA[
+
+  /**
+   * Declara a estrutura da folha de pagamento conforme 
+   * a instituição e competência da folha de pagamento.
+   */
+  if (!isset($_SESSION['DB_COMPLEMENTAR'])) {
+
+    try {
+
+      db_putsession('DB_COMPLEMENTAR', false);
+      $oInstituicao = InstituicaoRepository::getInstituicaoSessao();
+      $oCompetencia = DBPessoal::getCompetenciaFolha();
+      DBPessoal::declararEstruturaFolhaPagamento($oInstituicao, $oCompetencia);
+
+    } catch (Exception $ex) {
+      db_putsession('DB_COMPLEMENTAR', false);
+    }
+  }
+]]></add>
+    </operation>
+  
+  </file>
+
+</modification>

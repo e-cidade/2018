@@ -1,0 +1,12 @@
+{
+   "buscando_vinculados"  : "Aguarde, verificando profissionais/monitores vinculados..."
+  ,"busca_atividades"     : "Aguarde, buscando as atividades..."
+  ,"selecione_atividade"  : "Antes de pesquisar o profissional, selecione uma atividade."
+  ,"conflito_entre_horas" : "Hora inicial maior que final."
+  ,"hora_inicial_nao_informado" : "Hora inicial deve ser informada."
+  ,"hora_final_nao_informado"   : "Hora final deve ser informada."
+  ,"profissional_nao_informado" : "O profissional/monitor deve ser informado."
+  ,"selecione_dia_semana"       : "Selecione ao menos um dia da semana."
+  ,"salvando" : "Vinculando profissional/monitor a Turma."
+  ,"removendo_vinculo" : "Removeno vínculo do profissional/monitor com a Turma."
+}

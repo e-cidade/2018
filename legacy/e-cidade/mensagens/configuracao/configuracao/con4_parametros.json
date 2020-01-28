@@ -1,0 +1,8 @@
+{
+  "alteracao_nao_efetuada" : "Não foi possível alterar configuração do arquivo [sArquivo].",
+  "skin_nao_informado"     : "Skin não informado.",
+  "configuracao_nao_salva" : "Não foi possível gravar configuração.",
+  "configuracao_salva"     : "Configuração salva com sucesso.",
+  "configuracao_aplicada"  : "Configuração aplicada para todos usuários.",
+  "valida_zero"            : "Campo [sCampo] não pode ser zero."
+}

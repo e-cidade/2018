@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3560' name='orcamento.orcmeta' description="Meta do programa" prefix="o145" label="Meta" type="0">
+  <fields>
+    <field codigo="19882" 
+           campo_api='' 
+           name="o145_sequencial" 
+           conteudo="int4" 
+           description="Sequencial da tabela orcmeta" 
+           inivalue="0" 
+           label="Código da Meta" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código da Meta" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='orcamento.orcmeta_o145_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="19884" 
+           campo_api='' 
+           name="o145_descricao" 
+           conteudo="varchar(250)" 
+           description="Descrição da meta" 
+           inivalue="" 
+           label="Descrição" 
+           size="250" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="19885" 
+           campo_api='' 
+           name="o145_meta" 
+           conteudo="text" 
+           description="Meta" 
+           inivalue="" 
+           label="Meta" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Meta" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="19883" 
+           campo_api='' 
+           name="o145_orcobjetivo" 
+           conteudo="int4" 
+           description="Chave com a tabela orcobjetivo" 
+           inivalue="0" 
+           label="Objetivo" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Objetivo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="o145_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="orcobjetivo">
+      <fieldfk name="o145_orcobjetivo" reference="o143_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

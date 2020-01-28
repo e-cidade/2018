@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="cod_tipo"                            label="cod_tipo"    />
+    <campo campo="ano_comp"                           label="ano_comp"        />
+    <campo campo="sig_tipo"                         label="sig_tipo"          />
+  </campos>
+  <from tabela="(select q144_tipo AS cod_tipo, q144_ano as ano_comp, 'P' as sig_tipo from confvencissqnvariavel
+    union
+      select w10_tipo as cod_tipo, 0 as ano_comp, 'T' as sig_tipo from db_confplan) as tipodebito"/>
+  <juncoes>
+  </juncoes>
+  <filtros>
+  </filtros>
+  <agrupamento />
+  <ordenacao campos="ano_comp"/>
+</consulta>

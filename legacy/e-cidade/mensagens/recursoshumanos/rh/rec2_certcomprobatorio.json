@@ -1,0 +1,12 @@
+{
+  "numerocertidao_invalido" : "O campo Número Certidão dever ser preenchido somente com números.",
+  "matricula_invalida"      : "O campo Matrícula dever ser preenchido somente com números.",
+  "matricula_obrigatoria"   : "O campo Matrícula é de preenchimento obrigatório.",
+  "emissor_obrigatorio"     : "O campo Emissor é de preenchimento obrigatório.",
+  "emissor_invalido"        : "O campo Emissor deve ser preenchido somente com números.",
+  "data_invalida"           : "O campo Data Certidão é de preenchimento obrigatório.",
+  "erro_sql_pessoal"        : "Ocorreu um erro ao retornar os dados do Servidor.",
+  "nenhum_dado_servidor"    : "Nenhuma informação retornada para o Servidor.",
+  "erro_sql_emissor"        : "Ocorreu um erro ao retornar os dados do Emissor.",
+  "nenhum_dado_emissor"     : "Ocorreu um erro ao retornar os dados do Emissor."
+}

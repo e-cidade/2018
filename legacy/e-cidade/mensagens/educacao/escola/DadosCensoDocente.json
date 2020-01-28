@@ -1,0 +1,11 @@
+{
+  "erro_buscar_dados_docente"          : "Erro ao buscar os dados do docente [iDocente]:\n[sErro]",
+  "recurso_humano_nao_encontrado"      : "Recurso humano [iDocente] não encontrado.",
+  "erro_buscar_necessidades_docente"   : "Erro ao buscar as necessidades especiais do docente [iDocente]:\n[sErro]",
+  "erro_buscar_documentos_docente"     : "Erro ao buscar os documentos e endereço do docente [iDocente]:\n[sErro]",
+  "documentos_nao_encontrados"         : "Documentos e endereço do docente [iDocente] não encontrados.",
+  "erro_buscar_dados_formacao_docente" : "Erro ao buscar os dados de formação do docente [iDocente]:\n[sErro]",
+  "erro_buscar_avaliacao_docente"      : "Erro ao buscar a avaliação do docente [iDocente]:\n[sErro]",
+  "erro_buscar_outros_cursos_docente"  : "Erro ao buscar outros dados de cursos do docente [iDocente]:\n[sErro]",
+  "erro_buscar_disciplinas"            : "Erro ao buscar as disciplinas da turma:\n[sErro]"
+}

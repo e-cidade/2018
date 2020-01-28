@@ -1,0 +1,6 @@
+{
+  "sem_transacao_ativa"                   : "Sem transação ativa.",
+  "tipolicenca_obrigatorio"               : "Tipo de Licença é de preenchimento obrigatório",
+  "condicionante_obrigatorio"             : "Condicionante é de preenchimento obrigatório",
+  "erro_incluir_condicionantetipolicenca" : "Erro ao incluir Condicionante"
+}

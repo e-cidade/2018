@@ -1,0 +1,4 @@
+{
+  "erro_buscar_proccid"   : "Erro ao buscar o proccid:\n [sErro]",
+  "codigo_nao_encontrado" : "Não foi encontrado nenhum proccid com o código informado: [iCodigo]"
+}

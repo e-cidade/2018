@@ -1,0 +1,21 @@
+{
+  "nao_existe_transacao"                             : "Não existe transação com o banco de dados ativa.",
+  "planilha_sem_calculos"                            : "Planilha sem calculos informados!",
+  "planilha_sem_mes_de_processamento"                : "Planilha sem o mês de processamento informado.",
+  "planilha_sem_ano_de_processamento"                : "Planilha sem o ano de processamento informado.",
+  "erro_salvar"                                      : "Erro ao salvar dados da Planilha. \n[sErro]",
+  "planilha_nao_salva"                               : "Planilha não está salva. Não poderá ser cancelada.",
+  "planilha_nao_cancelada"                           : "Planilha de cancelamento. Não poderá ser cancelada.",
+  "planilha_ja_cancelada"                            : "Planilha já cancelada.",
+  "processamentos_anteriores_planilha_nao_cancelada" : "Existem processamentos posteriores a esse mês. Planilha não poderá ser Cancelada.",
+  "ano_possui_meses_nao_processados"                 : "O ano de [iAno] possui meses não processados.",
+  "informe_calculo"                                  : "Tipo de cálculo da planilha não informado.",
+  "informe_processamento"                            : "Tipo de processamento da planilha não informado.",
+  "depreciacao_nao_configurada_para_instituicao"     : "Depreciação não está configurada para essa Instituição.",
+  "nao_existem_bens_para_depreciacao"                : "Não existem bens para serem depreciados.",
+  "mes_invalido"                                     : "Mês para processamento inválido.",
+  "planilha_sem_calculos_informados"                 : "Planilha sem calculos informados.",
+  "sem_bens_para_depreciacao_no_ano"                 : "Não existem bens para serem depreciados no ano [iAnoSessao].\nO primeiro bem adquirido foi cadastrado em [aDataAquisicao]}",
+  "calculo_valor_inconsistente"                      : "Calculo para o bem [sDescricao] com valor inconsistente.",
+  "calculo_ja_adicionado"                            : "Já existe um calculo adicionado para o bem [sDescricao]."
+}

@@ -1,0 +1,9 @@
+{
+  "aguardando_salvar"               : "Aguarde, salvando dados...",
+  "buscando_veiculoshorario"        : "Buscando veículos do horário...",
+  "confirma_remover_veiculohorario" : "Deseja remover este vínculo?",
+  "aguardando_remover_vinculo"      : "Removendo vínculo...",
+  "linha_nao_informada"             : "Favor, selecione uma linha.",
+  "horario_nao_informado"           : "Favor, informe o horário que o veículo fará o itinerário.",
+  "veiculo_nao_informado"           : "Favor, informe o veículo para o horário."
+}

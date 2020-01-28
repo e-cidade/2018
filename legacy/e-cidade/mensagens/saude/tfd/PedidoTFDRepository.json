@@ -1,0 +1,6 @@
+{
+  "data_inicio_invalida"     : "Período de início informado é inválido.",
+  "data_fim_invalida"        : "Período de fim informado é inválido.",
+  "erro_buscar_pedido"       : "Erro ao buscar o pedido TFD:\n[sErro]",
+  "nenhuma_saida_encontrada" : "Nenhuma saída encontrada para o período informado."
+}

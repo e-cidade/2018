@@ -1,0 +1,13 @@
+{
+  "verificando_inconsistencias"                  : "Aguarde, verificando possíveis inconsistências entre as disciplinas das turmas...",
+  "sem_disciplinas_inconsistentes"               : "Sem disciplinas inconsistentes.",
+  "selecione_aluno"                              : "Selecione um aluno para realizar a troca de turma.",
+  "selecione_nova_turma"                         : "Selecione uma nova turma para o aluno [sNomeAluno].",
+  "vinculo_unico_disciplina"                     : "A disciplina [sNomeDisciplina] não pode ser vinculada a mais de uma disciplina da turma origem.",
+  "aguarde_realizando_troca"                     : "Aguarde, realizando a troca de turma do aluno [sNomeAluno] para a turma [sNomeTurmaDestino]",
+  "troca_turma_realizada"                        : "Troca de turma realizada com sucesso.",
+  "turma_sem_vagas"                              : "Turma sem vagas disponíveis.",
+  "nenhum_turno_selecionado"                     : "Nenhum turno foi selecionado.",
+  "disciplinas_procedimentos_diferentes"         : "A turma selecionada possui disciplinas com Procedimentos de Avaliação diferentes da turma de origem. Selecione uma turma que possua os mesmos Procedimentos de Avaliação.",
+  "disciplinas_procedimentos_diferentes_destino" : "As seguintes disciplinas da turma de origem, possuem Procedimento de Avaliação diferente do destino:\n[sDisciplinas]\n\nSelecione uma disciplina que possua o mesmo procedimento de avaliação ou não informe a disciplina de destino."
+}

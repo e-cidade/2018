@@ -1,0 +1,20 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="q38_sequencial" label="sequencial" />
+    <campo campo="q38_inscr" label="inscricao_municipal" />
+    <campo campo="q38_dtinicial" label="data_inicial" />
+    <campo campo="q38_categoria" label="categoria" />
+    <campo campo="q39_dtbaixa" label="data_baixa" />
+    <campo campo="q39_issmotivobaixa" label="motivo_baixa" />
+  </campos>
+  <from tabela="isscadsimples" />
+  <juncoes>
+      <join tipo="left" tabela="isscadsimplesbaixa" condicao="q38_sequencial = q39_isscadsimples" />
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao_municipal" condicao="q38_inscr = '$inscricao_municipal'" obrigatorio="true" />
+  </filtros>
+  <agrupamento />
+  <ordenacao campos="inscricao_municipal, data_inicial" />
+</consulta>

@@ -1,0 +1,157 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/*******************************************************************************/
+/* AgataDataSet - Class that means the query itself and
+/* its funcionalities
+/* by Pablo Dall'Oglio - 2001 - 2006
+/*******************************************************************************/
+class AgataDataSet
+{
+    var $result;
+    var $ColumnCount;
+    var $FunctionMatrix;
+    var $CrossMatrix;
+    var $rownum = 0;
+    var $lastrow = null;
+
+    function reset()
+    {
+        $this->result->reset();
+        $this->rownum = 0;
+        $this->lastrow = array();
+    }
+    /*******************************************************************************/
+    /* Fetch next result
+    /*******************************************************************************/
+    function FetchNext()
+    {
+        if ($row=$this->result->Fetch())
+        {
+            $this->rownum ++;
+            for ($col=1; $col<=$this->ColumnCount; $col++)
+            {
+                $Conteudo = $row[$col-1] == null ? '' : trim($row[$col-1]);
+                
+                if ($this->CrossMatrix[$col])
+                {
+                    $Conteudo =  $this->GetExternalField($this->ext_conn, $this->CrossMatrix[$col], $Conteudo);
+                }
+                
+                if ($this->FunctionMatrix[$col])
+                {
+                    $function = $this->FunctionMatrix[$col];
+                    if (function_exists($function))
+                    {
+                        $Conteudo = $function($Conteudo, $row, $this->lastrow, $this->rownum, $col -1);
+                    }
+                    else
+                    {
+                        $Conteudo = $Content;
+                    }
+                }
+                
+                $QueryLine[$col]  = $Conteudo;
+                $LastLine[$col-1] = $Conteudo;
+            }
+            $this->lastrow = $LastLine;
+        }
+        return $QueryLine;
+    }
+
+    /*******************************************************************************/
+    /* Connects to the third Database and get the resultant field.
+    /*******************************************************************************/
+    function GetExternalField($ext_conn, $matrix, $var)
+    {
+        $database  = $matrix[0];
+        $get_table = $matrix[1];
+        $get_field = $matrix[2];
+        $equ_expr  = $matrix[3];
+        
+        $conn = $ext_conn[$database];
+        if ($conn)
+        {
+            $result_data = $this->ExternalData[$get_table][$get_field][$equ_expr][$var];
+            if ($result_data)
+            {
+                return $result_data;
+            }
+            else
+            {
+                $sql = "select $get_field from $get_table where $equ_expr='$var'";
+                $query = $conn->CreateQuery($sql);
+                $result = $query->result;
+                if ($result)
+                {
+                    if ($row = $query->Fetch())
+                    {
+                        $content = trim($row[0]);
+                        $this->ExternalData[$get_table][$get_field][$equ_expr][$var] = $content;
+                        return $content;
+                    }
+                }
+            }
+        }
+        return '';
+    }
+}
+
+/*******************************************************************************/
+/* AgataQueryArray - A Query stored in one big array
+/* by Pablo Dall'Oglio - 2001 - 2006
+/*******************************************************************************/
+class AgataQueryArray
+{
+    var $QueryArray;
+    var $i;
+
+    /*******************************************************************************/
+    /* Constructor
+    /*******************************************************************************/
+    function AgataQueryArray($QueryArray)
+    {
+        $this->QueryArray = $QueryArray;
+        $this->i = 0;
+    }
+
+    /*******************************************************************************/
+    /* Fetch next result
+    /*******************************************************************************/
+    function FetchNext()
+    {
+        $i = $this->i;
+        $this->i ++;
+        return $this->QueryArray[$i];
+    }
+    
+    function reset()
+    {
+        $this->i =0;
+    }
+}
+?>

@@ -1,0 +1,7 @@
+{
+  "buscando"                     : "Buscando...",
+  "buscando_divisao"             : "Buscando Divisão...",
+  "informe_placa_bem"            : "Informe a placa do bem!",
+  "bens_cadastrados"             : "Bens cadastrados com Sucesso!",
+  "residual_maior_que_aquisicao" : "Valor Residual não pode ser maior que o Valor da Aquisição."
+}

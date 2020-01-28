@@ -1,0 +1,5 @@
+{
+  "sequencial_possui_bem" : "Sequencial informado já possui Bem cadastrado.",
+  "contate_dbseller"      : "Já existem bens cadastrados com esta configuração para alterar entre em contato com a DBSELLER",
+  "quantidade_digitos"    : "Quantidade de dígitos da placa permitido: 10."
+}

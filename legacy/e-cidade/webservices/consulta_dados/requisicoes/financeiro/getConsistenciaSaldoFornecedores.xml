@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<consulta>
+
+  <campos>
+
+    <campo campo="e60_numemp" label="e60_numemp"></campo> 
+    <campo campo="e60_anousu" label="e60_anousu"></campo>
+    <campo campo="e60_codemp" label="e60_codemp"></campo>
+    <campo campo="c67_codele" label="c67_codele"></campo>
+    <campo campo="o56_elemento" label="o56_elemento"></campo>
+    <campo campo="debitos" label="debitos"></campo>
+    <campo campo="creditos" label="creditos"></campo>
+    <campo campo="saldo_liquidado_empenho" label="saldo_liquidado_empenho"></campo>
+    <campo campo="saldo" label="saldo"></campo>
+
+  </campos>
+
+  <from tabela="(
+    select e60_numemp,
+           e60_anousu,
+           e60_codemp,
+           c67_codele,
+           o56_elemento,
+           debitos,
+           creditos,
+           (e60_vlrliq - e60_vlrpag) as saldo_liquidado_empenho,
+           (creditos - debitos) as saldo
+      from (
+             select e60_numemp,
+                  e60_anousu,
+                  e60_codemp,
+                  c67_codele,
+                  o56_elemento,
+                  round(e60_vlrliq,2) as e60_vlrliq,
+                  round(e60_vlrpag,2) as e60_vlrpag,
+                  coalesce((select sum(round(c69_valor,2))
+                     from conlancamval 
+                          inner join conlancamemp on c69_codlan = c75_codlan 
+                          inner join conlancamele on c69_codlan = c67_codlan 
+                    where c69_debito = $conta 
+                      and c69_data between '$datainicial' and '$datafinal'
+                      and c75_numemp = e60_numemp
+                      and c69_codlan = c75_codlan),0) as debitos,
+                  coalesce((select sum(round(c69_valor,2))
+                     from conlancamval 
+                          inner join conlancamemp on c69_codlan = c75_codlan 
+                          inner join conlancamele on c69_codlan = c67_codlan 
+                    where c69_credito = $conta 
+                      and c69_data between '$datainicial' and '$datafinal'
+                      and c75_numemp = e60_numemp
+                      and c69_codlan = c75_codlan),0) as creditos
+             from conlancamval 
+                  inner join conlancamemp on c69_codlan = c75_codlan 
+                  inner join conlancamele on c69_codlan = c67_codlan 
+                  inner join orcelemento  on c67_codele = o56_codele 
+                                         and o56_anousu = fc_getsession('DB_anousu')::int
+                  inner join empempenho   on c75_numemp = e60_numemp 
+            where (c69_credito = $conta or c69_debito = $conta ) 
+              and c69_data between '$datainicial' and '$datafinal'
+         group by e60_numemp,
+                  e60_anousu,
+                  e60_codemp,
+                  c67_codele,
+                  o56_elemento
+    ) as x
+  ) as y"></from>
+
+  <juncoes></juncoes>
+
+  <filtros>
+
+    <filtro condicao="saldo &lt;&gt; 0" obrigatorio="true"></filtro>
+    <filtro condicao="saldo_liquidado_empenho &lt;&gt; 0"></filtro>
+    <filtro label="datainicial" condicao="1=1" obrigatorio="true"></filtro>
+    <filtro label="datafinal" condicao="1=1" obrigatorio="true"></filtro>
+    <filtro label="conta" condicao="1=1" obrigatorio="true"></filtro>
+    <filtro label="ano" condicao="1=1" obrigatorio="true"></filtro>
+    <filtro label="instit" condicao="1=1" obrigatorio="true"></filtro>
+
+  </filtros>
+
+  <agrupamento campos="" />
+  <ordenacao></ordenacao>
+
+</consulta>

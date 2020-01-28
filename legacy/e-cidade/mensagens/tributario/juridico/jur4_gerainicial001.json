@@ -1,0 +1,7 @@
+{
+  "escolha_intervalo"                     : "Escolha um intervalo de Certidões.",
+  "certidao_invalido"                     : "Numero de Certidão inválido.",
+  "certidao_invalido_final_menor_inicial" : "Numero de Certidão inválido. Número final menor que o incial.",
+  "certidao_nao_encontrada"               : "Não foi encontrada nenhuma Certidão no intervalo informado.",
+  "totais_geradas"                        : "Foram geradas [iTotal] inicial(ais). Da inicial [dataInicial] até [dataFinal]."
+}

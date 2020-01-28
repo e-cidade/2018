@@ -1,0 +1,4 @@
+{
+   "calendario_sem_vinculo_escola" : "Calendário sem vínculo com escola."
+  ,"sem_configuracao_ano_escola"   : "Não foi encontrado uma forma de calculo cadastrada para a escola: [sEscola] no ano [iAno]"
+}

@@ -1,0 +1,600 @@
+<?php
+class AgataReport
+{
+    /*
+     * Set Properties
+     */
+    function SetProperties($params)
+    {
+        $AgataDir = $params[1]['general']['AgataDir'];
+        $Query    = $params[3];
+        $this->CurrentQuery     = $Query;
+        $this->Query            = $Query->Query;
+        $this->MaxLen           = $Query->MaxLen;
+        $this->Columns          = $Query->Columns;
+        $this->ColumnTypes      = $Query->ColumnTypes;
+        $this->FunctionMatrix   = $Query->FunctionMatrix;
+        $this->Parameters       = $Query->Parameters;
+        
+        $this->agataDB          = $params[0];
+        $this->agataConfig      = $params[1];
+        $this->FileName         = $params[2];
+        
+        $this->XmlArray         = $XmlArray = $params[4];
+        $this->posAction        = $params[5];
+        $this->layout           = $params[6];
+        $this->ReportName       = $params[7];
+        
+        $this->Adjustments      = Report::ExtractAdjustments($XmlArray['Report']['DataSet']);
+        $Breaks                 = Report::ExtractBreaks($XmlArray);
+        
+        if ($Breaks)
+        {
+            foreach ($Breaks as $key => $formula)
+            {
+                if ($formula)
+                {
+                    $this->Breaks[$key] = $formula;
+                }
+                else
+                {
+                    $this->Breaks[$key] = true;
+                }
+            }
+        }
+        
+        $this->ShowBreakColumns = $XmlArray['Report']['DataSet']['Groups']['Config']['ShowGroup'];
+        $this->ShowDataColumns  = $XmlArray['Report']['DataSet']['Groups']['Config']['ShowDetail'];
+        $this->ShowTotalLabel   = $XmlArray['Report']['DataSet']['Groups']['Config']['ShowLabel'];
+        $this->ShowNumber       = $XmlArray['Report']['DataSet']['Groups']['Config']['ShowNumber'];
+        $this->ShowIndent       = $XmlArray['Report']['DataSet']['Groups']['Config']['ShowIndent'];
+        $this->ShowHeader       = $XmlArray['Report']['DataSet']['Groups']['Config']['ShowHeader'];
+        
+        $this->textHeader       = $XmlArray['Report']['Header']['Body'];
+        $this->alignHeader      = $XmlArray['Report']['Header']['Align'];
+        $this->textFooter       = $XmlArray['Report']['Footer']['Body'];
+        $this->alignFooter      = $XmlArray['Report']['Footer']['Align'];
+        
+        $this->FunctionNames    = Report::GetFunctionNames();
+        
+        return true;
+    }
+
+    /*
+     * Returns a Formatted String
+     */
+    function GetReportName()
+    {
+        //$this->InputBox = new InputBox(_a('Type the Report Name'), 200);
+        //$this->InputBox->button->connect_object('clicked', array($this,'Process'), true);
+        $this->Process(true);
+    }
+    
+    /*
+     * Returns a Formatted String
+     */
+    function FormatString($Expression, $Lenght, $alignKind = 'left')
+    {
+        $aligns['center'] = STR_PAD_BOTH;
+        $aligns['left']   = STR_PAD_RIGHT;
+        $aligns['right']  = STR_PAD_LEFT;
+        
+        if (strlen($Expression)>$Lenght)
+            return substr($Expression,0,$Lenght);
+        
+        return str_pad($Expression, $Lenght, ' ', $aligns[$alignKind]);
+    }
+    
+    /******************************
+    Returns a Replicatted Character
+    *******************************/
+    function Replicate($Expression, $Lenght)
+    {
+        for ($n=1; $n<=$Lenght; $n++)
+        {
+            $Return .= $Expression;
+        }
+        
+        return $Return;
+    }
+
+    function PreProcessBreaks($QueryLine)
+    {
+        // inBreaks sao as quebras dentro da funcao, tipo sum(4,0);
+        $breaks = $this->Breaks;
+        if ($breaks)
+        {
+            foreach ($breaks as $break => $Formulafull)
+            {
+                $av = $QueryLine[$break]; // Actual Value
+                $array_key[$break] = $av;
+                $string_key = serialize($array_key); # usar json_encode por que pode ter ":" ou ";" na chave
+                
+                $count = 1;
+                foreach ($QueryLine as $Cell)
+                {
+                    if (strstr($Formulafull, "($count)") or strstr($Formulafull, "($count,)"))
+                    {
+                        $this->newSummary[$string_key][$count]['sum'] += $Cell;
+                        $this->newSummary[$string_key][$count]['count'] ++;
+                        $this->newSummary[$string_key][$count]['dist'][$Cell] ++;
+                        $this->newSummary[$string_key][$count]['max'] = ($Cell > $this->newSummary[$string_key][$count]['max']) ? $Cell : $this->newSummary[$string_key][$count]['max'];
+                        
+                        if (!$this->newSummary[$string_key][$count]['min'])
+                        {
+                            $this->newSummary[$string_key][$count]['min'] = $Cell;
+                        }
+                        
+                        $this->newSummary[$string_key][$count]['min'] = ($Cell < $this->newSummary[$string_key][$count]['min']) ? $Cell : $this->newSummary[$string_key][$count]['min'];
+                    }
+                    $count ++;
+                }
+            }
+        } // end if Breaks
+        
+        return array($break);
+    }
+    
+
+    function ProcessBreaks($QueryLine)
+    {
+        if ($this->Breaks)
+        {
+            $CountBreak = 0;
+            if ($this->Breaks['0'])
+            {
+                $CountBreak = -1;
+            }
+            foreach ($this->Breaks as $break => $Formulafull)
+            {
+                $av = $QueryLine[$break]; // Actual Value
+                # usar json_encode por que pode ter ":" ou ";" na chave
+                $array_key[$break] = $av;
+                $string_key = serialize($array_key);
+                
+                ######################### VARIANCIA #########################
+                $count = 1;
+                foreach ($QueryLine as $Cell)
+                {
+                    if (strstr($Formulafull, "($count)") or strstr($Formulafull, "($count,)"))
+                    {
+                        $average =  $this->newSummary[$string_key][$count]['sum'] /
+                                    $this->newSummary[$string_key][$count]['count'];
+                        
+                        $this->newSummary[$string_key][$count]['sum_var'] += pow($Cell - $average, 2);
+                    }
+                    $count ++;
+                }
+                
+                ######################### VARIANCIA #########################
+                $Formulas = MyExplode($Formulafull, null);
+                
+                $ClearColumns = array();
+                # Change in the algorithm: Instead of analize the last break change,
+                # analize all break changes.
+                $this->Summary[$break]['ActualValue'] = $QueryLine[$break];
+                
+                # Hey !! QueryCell = QueryLine[$y]
+                
+                if (($this->Summary[$break]['ActualValue'] != $this->Summary[$break]['LastValue']) or ($this->lastchanged < $break))
+                {
+                    $this->Summary[$break]['Count'] ++;
+                    $this->lastchanged = $break;
+                    
+                    foreach ($Formulas as $Formula)
+                    {
+                        #PARTE NOVA
+                        $this->HasFormula[$break] = true;
+                        
+                        if ($this->Summary[$break]['LastValue'])
+                        {
+                            //var_dump($Formula);
+                            list($result, $column, $formula, $label, $columns) = $this->ProcessFormula($break, $Formula);
+                            //var_dump($formula);
+                            $cellBreakContent = trim(_a($this->FunctionNames[$formula])) ? _a($this->FunctionNames[$formula]) . ": $result" : $result;
+                            
+                            # Custom Total Label
+                            if (is_string ($label))
+                            {
+                                if ($label) 
+                                {
+                                    $cellBreakContent =  $label . ": $result";
+                                }
+                                else
+                                {
+                                    $cellBreakContent =  $result;
+                                }
+                            }
+                            
+                            $this->BreakMatrix[$break][$column][] = $cellBreakContent;
+                            $ClearColumns = @array_merge($ClearColumns, $columns);
+                        }
+                        $FormattedCell = FormatMask($this->Adjustments[$y]['Mask'], $QueryLine[$break]);
+                        if ($this->ShowHeader)
+                        {
+                            $this->Headers[$CountBreak] = trim($this->Columns[$break -1]) . " : " . trim($FormattedCell);
+                        }
+                        else
+                        {
+                            $this->Headers[$CountBreak] = trim($FormattedCell);
+                        }
+                        $this->Association[$break] = $CountBreak;
+                    }
+                    $this->Summary[$break + 1]['Count'] = 0;  // reinicializa contador de sub-quebras
+                }
+                $CountBreak ++;
+            }
+            
+            // update values, tem que ser depois de processar todas formulas
+            foreach ($this->Breaks as $break => $Formulafull)
+            {
+                $this->Summary[$break]['BeforeLastValue'] = $this->Summary[$break]['LastValue'];
+                $this->Summary[$break]['LastValue'] = $QueryLine[$break];
+            }
+        } // end if Breaks
+        
+        return array($break);
+    }
+    
+    
+    /******************************************
+    Makes the Totalization after the last line
+    *******************************************/
+    function ProcessLastBreak()
+    {
+        $this->Headers = null;
+        $this->BreakMatrix = null;
+        if ($this->Breaks)
+        {
+            $CountBreak = 0;
+            foreach ($this->Breaks as $Break => $Formulafull)
+            {
+                $break = $Break;
+                $Formulas = MyExplode($Formulafull, null);
+                
+                $ClearColumns = array();
+                foreach ($Formulas as $Formula)
+                {
+                    list($result, $column, $formula, $label, $columns) = $this->ProcessFormula($break, $Formula);
+                    
+                    $cellBreakContent = trim(_a($this->FunctionNames[$formula])) ? _a($this->FunctionNames[$formula]) . ": $result" : $result;
+                    
+                    # Custom Total Label
+                    if (is_string ($label))
+                    {
+                        if ($label) 
+                        {
+                            $cellBreakContent =  $label . ": $result";
+                        }
+                        else
+                        {
+                            $cellBreakContent =  $result;
+                        }
+                    }
+                    
+                    $this->BreakMatrix[$break][$column][] = $cellBreakContent;
+                    // colunas afetadas pela fórmula
+                    $ClearColumns = @array_merge($ClearColumns, $columns);
+                    
+                    $this->Headers[$CountBreak] = trim($QueryCell);
+                }
+            }
+        } // end if Breaks
+    }
+
+    /*
+     * Process Formula
+     */
+    function ProcessFormula($break, $Formula)
+    {
+        /*
+            "sum(5) as 'soma'"
+            "count(4)"
+            "(sum(2) / max(7)* 10 + (200/2) as 'preço total'"
+        */
+        if ($this->Parameters)
+        {
+            foreach ($this->Parameters as $parameter => $value)
+            {
+                $Formula = str_replace($parameter, $value, $Formula);
+            }
+        }
+        
+        if (strstr($Formula, ' function '))
+        {
+            $func_pos = strpos($Formula, ' function ');
+            $func     = substr($Formula, $func_pos +11, -1);
+            $Formula  = substr($Formula, 0, $func_pos);
+        }
+        
+        if (strstr($Formula, ' mask '))
+        {
+            $mask_pos = strpos($Formula, ' mask ');
+            $mask     = substr($Formula, $mask_pos +7, -1);
+            $Formula  = substr($Formula, 0, $mask_pos);
+        }
+        // (count(6)*100 /$meta) * 2 as 'perc. ' mask '#  (9.999,9)s %'
+        if (strstr($Formula, ' as '))
+        {
+            # Custom Total Label
+            $as_pos = strpos($Formula, ' as ');
+            if ($as_pos !== false)
+            {
+                $label = substr($Formula, $as_pos+5, -1);
+            }
+            else
+            {
+                $label = false;
+            }
+        }
+        
+        $pieces = explode(' as ', $Formula);
+        $Formula = $pieces[0];
+        $pieces = extractFunctions($Formula);
+        if ($pieces)
+        {
+            foreach ($pieces as $Expression)
+            {
+                $formula= trim($Expression[0]);
+                $column = trim($Expression[1]);
+                $firstcol = !$firstcol ? $column : $firstcol;
+                // fórmula aplicada na quebra atual
+                $Formula = str_replace("$formula($column)", $this->Summarize($break, $column, $formula), $Formula);
+                // fórmula aplicada em todas quebras
+                foreach ($this->Breaks as $nbreak => $Formulafull)
+                {
+                    $Formula = str_replace("$formula($column,$nbreak)", $this->Summarize($nbreak, $column, $formula), $Formula);
+                }
+                $columns[] = $column;
+            }
+            
+            if ($Formula)
+            {
+                $problem=FALSE;
+                // verifica se alguma função não foi totalizada
+                // ou seja, não deu str_replace
+                $formulas = array_keys(Report::GetFunctionNames());
+                foreach ($formulas as $eq)
+                {
+                    if (strstr($Formula, $eq))
+                    {
+                        $problem=TRUE;
+                    }
+                }
+                if ($problem)
+                {
+                    $result = $Formula;
+                }
+                else
+                {
+                    @eval("\$result = $Formula;");
+                }
+            }
+            
+            if ($func)
+            {
+                $function_name = AgataCore::requireFunction($func);
+                $result = @$function_name($result);
+            }
+            
+            if ($mask)
+            {
+                $result = FormatMask($mask, $result);
+            }
+            else if ($formula != 'count') // count nao vai mascara
+            {
+                $result = FormatMask($this->Adjustments[$firstcol]['Mask'], $result);
+            }
+        }
+        return array($result, $firstcol, $formula, $label, $columns);
+    }
+
+    /*
+     * Summarize
+     */
+    function Summarize($break, $column, $formula)
+    {
+    
+        $breaks = $this->Breaks;
+        if ($breaks)
+        {
+            foreach ($breaks as $nbreak => $Formulafull)
+            {
+                $av = $this->Summary[$nbreak]['LastValue'] ? $this->Summary[$nbreak]['LastValue'] :
+                                                             $this->Summary[$nbreak]['ActualValue'];
+                
+                # usar json_encode por que pode ter ":" ou ";" na chave
+                $array_key[$nbreak] = $av;
+                $string_key = serialize($array_key);
+                
+                if ($break == $nbreak)
+                {
+                    break;
+                }
+            }
+        }
+        
+        
+        //echo 'last: '.$this->Summary[$break]['LastValue']. ' actual: ' .$this->Summary[$break]['ActualValue']."\n";
+        if ($formula == 'avg')
+        {
+            # Normal average
+            $result =  $this->newSummary[$string_key][$column]['sum'] /
+                       $this->newSummary[$string_key][$column]['count'];
+        }
+        else if ($formula == 'dist')
+        {
+            # Normal average
+            $result =  count($this->newSummary[$string_key][$column]['dist']);
+        }
+        else if ($formula == 'var') // variancia
+        {
+            # Normal average
+            if ($this->newSummary[$string_key][$column]['count'] -1 > 0)
+            {
+                $result =  $this->newSummary[$string_key][$column]['sum_var'] /
+                           ($this->newSummary[$string_key][$column]['count'] -1);
+            }
+        }
+        else if ($formula == 'dev') // desvio padrao
+        {
+            if ($this->newSummary[$string_key][$column]['count'] -1 > 0)
+            {
+                $result =  sqrt($this->newSummary[$string_key][$column]['sum_var'] /
+                           ($this->newSummary[$string_key][$column]['count'] -1));
+            }
+        }
+        else if ($formula == 'gavg')
+        {
+            for ($n=$break + 1; $n<=count($this->Columns); $n++)
+            {
+                if ($this->Summary[$n]['Count']) // se há um sub-nível
+                {
+                    $result =  $this->newSummary[$string_key][$column]['sum'] /
+                               $this->Summary[$n]['Count'];
+                    break;
+                }
+            }
+            
+            if (!$result)
+            {
+                # Normal average
+                $result =  $this->newSummary[$string_key][$column]['sum'] /
+                           $this->newSummary[$string_key][$column]['count'];
+            }
+        }
+        else if ($formula == 'gmax')  // Média dos máximos de cada quebra
+        {
+            for ($n=$break + 1; $n<=count($this->Columns); $n++)
+            {
+                if ($this->Summary[$n]['Count']) // se há um sub-nível
+                {
+                    $result =  $this->newSummary[$n][$av][$column]['gmax'];
+                    break;
+                }
+            }
+            
+            if (!$result)
+            {
+                # Normal Max
+                $result =  $this->newSummary[$string_key][$column]['max'];
+            }
+        }
+        else if ($formula == 'gmin') // Média dos mínimos de cada quebra
+        {
+            for ($n=$break + 1; $n<=count($this->Columns); $n++)
+            {
+                if ($this->Summary[$n]['Count']) // se há um sub-nível
+                {
+                    $result =  $this->newSummary[$n][$av][$column]['gmin'];
+                    break;
+                }
+            }
+            
+            if (!$result)
+            {
+                # Normal Min
+                $result =  $this->newSummary[$string_key][$column]['min'];
+            }
+        }
+        else
+        {
+            $result = $this->newSummary[$string_key][$column][$formula];
+        }
+        return $result;
+    }
+    
+    function ExecPosAction()
+    {
+        $obj = $this->posAction[0];
+        $att = $this->posAction[1];
+        $obj->{$att}();
+    }
+    
+    /***********************************************************
+     * Conditional Formatting
+     ***********************************************************/
+    function EvalConditional($expression, $QueryCell, $QueryLine)
+    {
+        $cond_pieces = explode(';', $expression);
+        $i = 1;
+        foreach ($cond_pieces as $piece)
+        {
+            if (trim($piece))
+            {
+                $cond_high  = splitCondHigh($piece);
+                if ($cond_high)
+                {
+                    $function_name     = AgataCore::requireFunction($cond_high['function']);
+                    //$conditionalResult = ($function_name($QueryCell, $QueryLine) == $cond_high['result']);
+                    $operator = $cond_high['operator'];
+                    $value = @$function_name($QueryCell, $QueryLine);
+                    $result = $cond_high['result'];
+                    if ($value)
+                    {
+                        @eval ("\$conditionalResult = ($value $operator $result);");
+                        //echo "\$conditionalResult = ($value $operator $result);\n";
+                        if ($conditionalResult)
+                        {
+                            return $cond_high;
+                        }
+                    }
+                }
+            }
+        }
+        
+        return false;
+    }
+    
+    
+    /**********************************************************
+    This Function Equilize the GroupResults
+    ***********************************************************/
+    function EqualizeBreak($chave)
+    {
+        $Biggest = 0;
+        $FinalBreak = null;
+        $linebreak = $this->BreakMatrix[$chave];
+        
+        foreach ($linebreak as $tmp)
+        {
+            $Len = count($tmp);
+            if ($Len > $Biggest)
+            $Biggest = $Len;
+        }
+        
+        for ($w=1; $w<=count($this->Columns); $w++)
+        {
+            $contents = $linebreak[$w];
+            if (!$contents)
+            $contents = array('');
+            
+            $contents = array_pad ($contents, $Biggest, '');
+            $wline = 0;
+            foreach ($contents as $content)
+            {
+                $FinalBreak[$wline][] = $content;
+                $wline ++;
+            }
+        }
+        return $FinalBreak;
+    }
+
+    function SetReportLocale()
+    {
+        setlocale(LC_ALL, 'POSIX');
+    }
+
+    function UnsetReportLocale()
+    {
+        if (OS == 'WIN')
+        {
+            setlocale(LC_ALL, 'english');
+        }
+        else
+        {
+            setlocale(LC_ALL, 'pt_BR');
+        }
+    }
+}
+?>

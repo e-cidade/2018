@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4007' name='recursoshumanos.gradeshorarios' description="Tabela com as grades de horários" prefix="rh190" label="Grades de horários" type="0">
+  <fields>
+    <field codigo="22237" 
+           campo_api='' 
+           name="rh190_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.gradeshorarios_rh190_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22238" 
+           campo_api='' 
+           name="rh190_descricao" 
+           conteudo="varchar(50)" 
+           description="Descrição da grade de horários" 
+           inivalue="" 
+           label="Descrição" 
+           size="50" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22239" 
+           campo_api='' 
+           name="rh190_database" 
+           conteudo="date" 
+           description="Data base da grade de horários" 
+           inivalue="null" 
+           label="Data Base" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data Base" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+
+    </field> 
+    <field codigo="1009521" 
+           campo_api='' 
+           name="rh190_revezamento" 
+           conteudo="bool" 
+           description="Determina se a escala é de revezamento." 
+           inivalue="f" 
+           label="Revezamento" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Revezamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh190_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

@@ -1,0 +1,11 @@
+{
+  "erro_buscar_tipos_documentos"     : "Erro ao buscar os tipos de documentos:\n[sErro]",
+  "tipos_documentos_nao_encontrados" : "Nenhum tipo de documento encontrado.",
+  "requisicao_nao_informada"         : "Requisição não informada.",
+  "exames_nao_informados"            : "Nenhum exame informado.",
+  "tipo_documento_nao_informado"     : "Tipo de documento não informado.",
+  "documento_nao_informado"          : "Documento não informado.",
+  "retirado_nao_informado"           : "É necessário informar quem retirou o resultado.",
+  "cgs_nao_informado"                : "Cgs não informado.",
+  "entrega_salva"                    : "Entrega salva com sucesso."
+}

@@ -1,0 +1,8 @@
+{
+  "buscando_tipo_transmissao"  : "Buscando Dados <br>Aguarde ..."         ,
+  "pesquisando_registro"       : "Pesquisando Registros <br> Aguarde ..." ,
+  "buscando_detalhes"          : "Buscando Registros <br> Aguarde ..."    ,
+  "salvando_detalhes"          : "Salvando Registros <br> Aguarde ..."    ,
+  "excluir_detalhe"            : "Excluindo Registros <br> Aguarde ..."   ,
+  "verificando_recurso_fundeb" : "Aguarde, verificando recurso FUNDEB..."
+}

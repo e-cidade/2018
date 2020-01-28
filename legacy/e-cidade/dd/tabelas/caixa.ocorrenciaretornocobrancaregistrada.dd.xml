@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4000' name='caixa.ocorrenciaretornocobrancaregistrada' description="Vínculo entre o retorno da cobrança registrada e a ocorrência" prefix="k170" label="Ocorrência Retorno Cobrança Registrada" type="0">
+  <fields>
+    <field codigo="22208"
+           campo_api='codigo_sequencial'
+           name="k170_sequencial"
+           conteudo="int4"
+           description="Sequêncial"
+           inivalue=""
+           label="Sequêncial"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Sequêncial"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='caixa.ocorrenciaretornocobrancaregistrada_k170_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22209"
+           campo_api='codigo_retorno'
+           name="k170_retornocobrancaregistrada"
+           conteudo="int4"
+           description="Retorno Cobrança Registrada"
+           inivalue=""
+           label="Retorno Cobrança Registrada"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Retorno Cobrança Registrada"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22210"
+           campo_api='codigo_ocorrencia'
+           name="k170_ocorrenciacobrancaregistrada"
+           conteudo="int4"
+           description="Ocorrência Cobrança Registrada"
+           inivalue=""
+           label="Ocorrência Cobrança Registrada"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Ocorrência Cobrança Registrada"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="k170_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="ocorrenciacobrancaregistrada">
+      <fieldfk name="k170_ocorrenciacobrancaregistrada" reference="k149_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+    <foreignkey reference="retornocobrancaregistrada">
+      <fieldfk name="k170_retornocobrancaregistrada" reference="k168_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

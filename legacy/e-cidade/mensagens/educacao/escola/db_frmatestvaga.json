@@ -1,0 +1,11 @@
+{
+  "informe_base"                        : "Informe a base!",
+  "informe_aluno"                       : "Informe o aluno!",
+  "informe_aluno_calendario"            : "Informe o aluno!",
+  "aluno_pertence_calendario_diferente" : "Aluno selecionado no atestado pertence a um calendário com ano diferente [iAno] do calendário selecionado [iCalendario]!",
+  "informe_aluno_turno"                 : "Informe o aluno!",
+  "informe_base_curricular_turno"       : "Informe a base curricular!",
+  "informe_data_atestado"               : "Informe a Data do Atestado para prosseguir!",
+  "data_atestado_fora_periodo"          : "Data do Atestado fora do periodo do calendario ( [iDataInicial] a [iDataFinal] ).",
+  "data_atestado_menor_data_matricula"  : "Data do Atestado menor que a data da matrícula do aluno!"
+}

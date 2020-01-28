@@ -1,0 +1,9 @@
+{
+  "selecione_arquivo"    : "Ao menos um arquivo deve ser informado.",
+  "informe_data"         : "Data não encontrada no nome do arquivo: [sErro]",
+  "datas_diferentes"     : "Arquivos possuem datas diferentes.",
+  "arquivo_lotes"        : "Arquivo selecionado não é referente a um arquivo de lotes.",
+  "arquivo_edificacoes"  : "Arquivo selecionado não é referente a um arquivo de edificações.",
+  "arquivo_testadas"     : "Arquivo selecionado não é referente a um arquivo de testadas.",
+  "confirmar_importacao" : "A importação do(s) arquivo(s) pode demorar alguns minutos. Deseja continuar?"
+}

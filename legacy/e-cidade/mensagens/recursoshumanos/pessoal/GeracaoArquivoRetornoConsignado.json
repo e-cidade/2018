@@ -1,0 +1,6 @@
+{
+  "erro_alterar_econsigmovimentoservidor" : "Erro alterar dados na tabela consignadomovimentoservidor",
+  "erro_econsigmotivo"                    : "Erro ao buscar os motivos.",
+  "nenhum_registro"                       : "Nenhum Registro válido para geração do arquivo de Retorno.",
+  "nenhum_arquivo"                        : "Nenhum arquivo processado para essa competência."
+}

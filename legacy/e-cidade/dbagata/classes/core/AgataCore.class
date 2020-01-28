@@ -1,0 +1,249 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/*******************************************************************************/
+/* Agata Core - Class that creates the queries and calls
+/* the report classes
+/* by Pablo Dall'Oglio - 2001 - 2006
+/*******************************************************************************/
+class AgataCore
+{
+    /*******************************************************************************/
+    /* Creates a Report
+    /*******************************************************************************/
+    static function CreateReport($type, $params)
+    {
+        $class = 'Agata' . strtoupper(substr($type,0,1)) . substr($type,1);
+        include_once AGATA_PATH . "/classes/reports/{$class}.class";
+        $obj = new $class;
+        $obj->SetProperties($params);
+        return $obj;
+    }
+
+    /*******************************************************************************/
+    /* Creates a merged document
+    /*******************************************************************************/
+    static function CreateMergedDocument($params, $kind)  
+    {
+        include_once AGATA_PATH . '/classes/reports/AgataMerge.class';
+        include_once AGATA_PATH . "/classes/reports/AgataMerge{$kind}.class";
+        $class = "AgataMerge$kind";
+        $obj = new $class;
+        $obj->SetProperties($params);
+        return $obj;
+    }
+    
+    /*******************************************************************************/
+    /* Parse an OpenOffice Document
+    /*******************************************************************************/
+    static function ParseOpenOffice($params, $kind)
+    {
+        include_once AGATA_PATH . '/classes/reports/AgataMerge.class';
+        include_once AGATA_PATH . '/classes/reports/AgataOOParser.class';
+        $class = "AgataOOParser";
+        $obj = new $class;
+        $obj->SetProperties($params);
+        return $obj;
+    }
+
+    /*******************************************************************************/
+    /* Creates an address label
+    /*******************************************************************************/
+    static function CreateAddressLabel($params)
+    {
+        include_once AGATA_PATH . '/classes/reports/AgataMerge.class';
+        include_once AGATA_PATH . '/classes/reports/AgataLabel.class';
+        $obj = new AgataLabel;
+        $obj->SetProperties($params);
+        return $obj;
+    }
+
+    /*******************************************************************************/
+    /* Creates a graph
+    /*******************************************************************************/
+    static function CreateGraph($params)
+    {
+        include_once AGATA_PATH . '/classes/reports/AgataGraph.class';
+        $obj = new AgataGraph;
+        $obj->SetProperties($params);
+        return $obj;
+    }
+
+    /*******************************************************************************/
+    /* Creates a query object
+    /*******************************************************************************/
+    static function CreateQuery($agataDB, $DataSet, $ParametersContent)
+    {
+        $sql = Report::SqlFromReport($DataSet);
+        $Adjustments = Report::ExtractAdjustments($DataSet);
+        
+        if ($ParametersContent)
+        {
+            // sort to $teste2 comes before that $teste in replace
+            krsort($ParametersContent);
+            foreach ($ParametersContent as $Parameter => $Content)
+            {
+                // substitui os parametros no offset e limit também
+                $DataSet['Query']['Config']['OffSet'] = str_replace($Parameter, $Content, $DataSet['Query']['Config']['OffSet']);
+                $DataSet['Query']['Config']['Limit']  = str_replace($Parameter, $Content, $DataSet['Query']['Config']['Limit']);
+                
+                # Fill the Paramenter content with '' around.
+                if ((substr($Content,0,1) != "'") and (substr($Content,0,-1) != "'"))
+                {
+                    $Content = "'$Content'";
+                }
+                $sql = str_replace($Parameter, $Content, $sql);
+                $NewParametersContent[$Parameter] = $Content;
+            }
+        }
+        if ($sql)
+        {
+            $conn = new AgataConnection;
+            if ($conn->Open($agataDB))
+            {
+                //Wait::On();
+                if ($DataSet['PreQuery'])
+                {
+                    $conn->CreateQuery($DataSet['PreQuery']);
+                }
+                $query = $conn->CreateQuery($sql);
+                $query->SetOffSet($DataSet['Query']['Config']['OffSet']);
+                $query->SetLimit($DataSet['Query']['Config']['Limit']);
+                if ($DataSet['PosQuery'])
+                {
+                    $conn->CreateQuery($DataSet['PosQuery']);
+                }
+                $result = $query->result;
+                if (!$result)
+                {
+                    $conn->Close();
+                    //Wait::Off();
+                    return new AgataError(_a('Query Error') . ': ' . $sql);
+                }
+                
+                $ColumnCount = $query->GetColumnCount();
+                $ColumnNames = $query->GetColumnNames();
+                $ColumnTypes = $query->GetColumnTypes();
+                
+                $i = 1;
+                foreach ($Adjustments as $column => $Adjustment)
+                {
+                    foreach ($Adjustment as $key => $content)
+                    {
+                        
+                        if (($key == 'Function') and $content)
+                        {
+                            $function_name = AgataCore::requireFunction($content);
+                            $function_matrix[$i] = $function_name;
+                        }
+                        elseif (($key == 'Fross') and $content)
+                        {
+                            $cut_hash = explode('#', $content);
+                            $database = substr($cut_hash[0], 1);
+                            
+                            $expr1 = explode('(', $cut_hash[1]);
+                            $get_stuffs = explode('.', $expr1[0]);
+                            $get_table = $get_stuffs[0];
+                            $get_field = $get_stuffs[1];
+                            
+                            $equ_expr = substr($expr1[1], 0, -1);
+                            $connections[] = $database;
+
+                            $definitions = Project::ReadProjectDefinitions($database);
+                            $index = "table:$get_table:field:$get_field";
+                            $nickname = $definitions[3][$index];
+                            if ($nickname)
+                            {
+                                $ColumnNames[$i -1] = $nickname;
+                            }
+                            $cross_matrix[$i] = array($database, $get_table, $get_field, $equ_expr);
+                        }
+                    }
+                    $i ++;
+                }
+                if ($cross_matrix)
+                {
+                    $projects = Project::ReadProjects();
+                    $connections = array_unique($connections);
+                    foreach($connections as $connection)
+                    {
+                        $ext_conn[$connection] = new AgataConnection;
+                        if (!$ext_conn[$connection]->Open($projects[$connection], false))
+                        {
+                            $ext_conn[$connection] = null;
+                        }
+                    }
+                }
+                
+                $CurrentQuery = new AgataDataSet;           
+                $CurrentQuery->FunctionMatrix = $function_matrix;
+                $CurrentQuery->CrossMatrix    = $cross_matrix;
+                $CurrentQuery->ColumnCount    = $ColumnCount;
+                $CurrentQuery->ColumnNames    = $ColumnNames;
+                $CurrentQuery->ColumnTypes    = $ColumnTypes;
+                $CurrentQuery->Columns        = $ColumnNames;
+                $CurrentQuery->ext_conn       = $ext_conn;
+                $CurrentQuery->result         = $query;
+                $CurrentQuery->Parameters     = $NewParametersContent;
+                //$this->CurrentQuery           = $CurrentQuery;
+
+                //$conn->Close();
+                //@Wait::Off();
+                return $CurrentQuery;
+            }
+            else
+            {
+                return new AgataError(_a('Cannot connect to Database'));
+            }
+        }
+        else
+        {
+            return new AgataError(_a('Query Error') . BREAKLN . $sql);
+        }
+    }
+
+    /*******************************************************************************/
+    /* Requires an Agata Function
+    /*******************************************************************************/
+    static function requireFunction($function)
+    {
+        $function_dir    = AGATA_PATH . '/functions';
+        $function_path   = $function_dir . str_replace('/', bar, $function);
+        $function_divide = explode('/', $function);
+        $function_file   = $function_divide[count($function_divide) -1];
+        $function_dots   = explode('.', $function_file);
+        $function_name   = $function_dots[0];
+        
+        if (!function_exists($function_name))
+        {
+            include_once($function_path);
+        }
+        
+        return $function_name;
+    }
+}
+?>

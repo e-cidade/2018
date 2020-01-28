@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010209' name='caixa.cgmnatureza' description="Tabela da CGM da Natureza" prefix="c05" label="CGM da Natureza" type="0">
+  <fields>
+    <field codigo="1009349"
+           campo_api=''
+           name="c05_sequencial"
+           conteudo="int4"
+           description="Código CGM da Natureza"
+           inivalue="0"
+           label="Código CGM da Natureza"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código CGM da Natureza"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='caixa.cgmnatureza_c05_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="1009350"
+           campo_api=''
+           name="c05_numcgm"
+           conteudo="int4"
+           description="Código do CGM"
+           inivalue="0"
+           label="Código do CGM"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código do CGM"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="1009348"
+           campo_api=''
+           name="c05_tipo"
+           conteudo="int4"
+           description="Tipo da natureza"
+           inivalue="0"
+           label="Tipo da natureza"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Tipo da natureza"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="c05_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="cgm" inner='t'>
+      <fieldfk name="c05_numcgm" reference="z01_numcgm" ></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

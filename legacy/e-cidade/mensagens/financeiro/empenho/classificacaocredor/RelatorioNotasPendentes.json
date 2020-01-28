@@ -1,0 +1,5 @@
+{
+  "movimento_invalidos" : "Não foram informados movimentos válidos para impressão do relatório.",
+  "erro_busca_movimento_pendente" : "Ocorreu um erro ao buscar as notas pendentes de pagamento.",
+  "nenhum_movimento_pendente" : "Não foram encontrados movimentos anteriores ao selecionados para impressão do relatório."
+}

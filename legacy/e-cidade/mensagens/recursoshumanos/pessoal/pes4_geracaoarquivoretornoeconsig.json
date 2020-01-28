@@ -1,0 +1,8 @@
+{
+  "competencia_nao_informada"          : "Informe a competência da folha.",
+  "nenhum_registro_encontrado"         : "Nenhum registro encontrado para a competência informada.",
+  "folha_salario_aberta"               : "A folha salário encontra-se aberta.",
+  "folha_nao_virada"                   : "A folha na competência informada ainda encontra-se aberta.",
+  "competencia_informada_ultrapassada" : "A competência informada não pode ser maior que a atual.",
+  "arquivo_nao_importado"              : "Nenhum arquivo importado nesta competência."
+}

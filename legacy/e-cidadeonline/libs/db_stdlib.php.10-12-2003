@@ -1,0 +1,923 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBSeller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+$URL_ABS = "http://".$HTTP_SERVER_VARS['HTTP_HOST'].substr($HTTP_SERVER_VARS['PHP_SELF'],0,strrpos($HTTP_SERVER_VARS['PHP_SELF'],"/")+1);
+
+
+function db_criatabela($result) {
+  $numrows = pg_numrows($result);
+  $numcols = pg_numfields($result);
+  ?> <br><br><table border="1" cellpadding="0" cellspacing="0"> <?
+  echo "<tr bgcolor=\"#00CCFF\">\n";
+  for($j = 0;$j < $numcols;$j++) {
+    echo "<td>".pg_fieldname($result,$j)."</td>\n";
+  }
+  $cor = "#07F89D";  
+  echo "</tr>\n";
+  for($i = 0;$i < $numrows;$i++) {
+    echo "<tr bgcolor=\"".($cor = ($cor == "#07F89D"?"#51F50A":"#07F89D"))."\">\n";
+	for($j = 0;$j < $numcols;$j++) {
+	  echo "<td>".pg_result($result,$i,$j)."</td>\n";
+	}
+	echo "</tr>\n";
+  }
+  ?> </table><br><br> <?
+}
+
+//redireciona para uma url
+function db_redireciona($url="0") {
+  if($url == "0")
+    $url = $GLOBALS["PHP_SELF"];
+  echo "<script>location.href='$url'</script>\n";
+}
+/*
+function layer_dbseller() {
+?>
+<div id="avail" style="position:absolute; left:154px; top:39px; width:476px; height:193px; z-index:1; background-color: #0099FF; layer-background-color: #0099FF; border: 1px none #000000;"> 
+  <div align="center"><font size="6" face="Arial, Helvetica, sans-serif">DBSeller 
+    Inform&aacute;tica Ltda<br>
+    </font></div>	
+  <blockquote>
+    <p><font face="Arial, Helvetica, sans-serif">Sistema em vers&atilde;o para 
+      avalia&ccedil;&atilde;o.<br>
+      Entre em contato:<a href="http://www.dbseller.com.br" target="_top"><br>
+      www.dbseller.com.br</a> </font></p>
+  </blockquote>
+</div>
+<?
+}
+$data_expiracao = "11-03-2003";
+if($data_expiracao <= date("d-m-Y")) {
+  echo "
+  <script src=\"javascript/db_script.js\"></script>
+  <script>
+    MM_showHideLayers('avail','','show');
+  </script>\n";
+  layer_dbseller();
+}
+
+*/
+function postmemory($vetor,$verNomeIndices = 0) {
+  if(!is_array($vetor)) {
+    echo "Erro na função postmemory: Parametro não é um array válido.<Br>\n";
+	return false;
+  }
+  $tam_vetor = sizeof($vetor);
+  reset($vetor);
+  if($verNomeIndices > 0)
+    echo "<br><br>\n";
+  for($i = 0;$i < $tam_vetor;$i++) {
+    $matriz[$i] = key($vetor);
+	global $$matriz[$i];
+	$$matriz[$i] = $vetor[$matriz[$i]];
+	if($verNomeIndices == 1)
+	  echo "$".$matriz[$i]."<br>\n";
+	else if($verNomeIndices == 2)
+	  echo "$".$matriz[$i]." = '".$$matriz[$i]."';<br>\n";
+    next($vetor);
+  }
+  if($verNomeIndices > 0)
+	echo "<br><br>\n";
+}
+
+
+
+//Cria uma variavel
+function cria_var($nome,$valor) {
+  global $$nome;
+  $$nome = $valor;
+}
+//Tipo a parseInt do javascript
+function parse_int($str) {
+  $num = array("0","1","2","3","4","5","6","7","8","9","0");
+  $tam = strlen($str);
+  $aux = "";
+  for($i = 0;$i < $tam;$i++) {
+    if(in_array($str[$i],$num))
+	  $aux .= $str[$i];
+  }
+  return $aux;
+}
+// Tipo o indexOf do javascript
+function indexOf($str,$proc) {
+  // 0 nao encontrou
+  // > 0 encontrou
+  return strlen(strstr($str,$proc));
+}
+// ******************************************************
+//  Funcoes de help
+// ******************************************************
+function mens_OnHelp() {
+  global $nome_help;
+?>
+  onhelp="MM_showHideLayers('<?=$nome_help?>','',(document.getElementById('<?=$nome_help?>').style.visibility=='visible'?'hide':'show'));return false"
+<?  
+}
+function mens_div() {
+  global $larg_div;
+  global $alt_div;
+  global $x_div;
+  global $y_div;
+  global $cor_div;
+  global $nome_help;
+  global $texto_help;
+?>
+<div id="<?=$nome_help?>" style="border: thin inset #CCCCCC;position:absolute; left:<?=$x_div?>px; top:<?=$y_div?>px; width:<?=$larg_div?>px; height:<?=$alt_div?>px; z-index:1; background-color: <?=$cor_div?>; layer-background-color: #00FFFF; visibility: hidden;">
+<div id="div2" align="right" style="background-color:blue;border: thin outset #CCCCCC;" onMouseDown="js_MD_Div()" onMouseUp="js_MU_Div()" onMouseOut="js_MU_Div()" onMouseMove="js_moverDiv()">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+	<td align="right">
+<a href="" style="letter-spacing:3px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;text-decoration:none;color=white" onMouseOver="this.hideFocus=true" onClick="MM_showHideLayers('<?=$nome_help?>','','hide');return false"> X </a>
+</td>
+<tr>
+</table>
+</div>
+<?=$texto_help?>
+</div>
+<?
+}
+function mens_help() {
+  global $larg_div;
+  global $alt_div;
+  global $x_div;
+  global $y_div;
+  global $cor_div;
+  global $nome_help;
+  global $texto_help;
+  global $_SERVER;
+  global $conn;
+    
+  $uo = strrpos(@$_SERVER['PATH_INFO'],"/") + 1;
+  $ponto = strpos(@$_SERVER['PATH_INFO'],".");
+  $mens = substr(@$_SERVER['PATH_INFO'],$uo,$ponto - $uo);
+  
+  $result = pg_exec($conn,"select * from db_confmensagem where cod = '".$mens."_help'");
+  if (pg_numrows($result) == 0 ) {
+     $result = pg_exec($conn,"insert into db_confmensagem values('".$mens."_help','Help da Página','400&40&100&150&olive&')");
+     $result = pg_exec($conn,"select * from db_confmensagem where cod = '".$mens."_help'");
+  }
+  $nome_help = pg_result($result,0,"cod");
+  $texto_help = pg_result($result,0,"mens");
+  $param_help = split("&",pg_result($result,0,"alinhamento"));
+  $larg_div = $param_help[0];
+  $alt_div  = $param_help[1];
+  $x_div    = $param_help[2];
+  $y_div    = $param_help[3];
+  $cor_div  = $param_help[4];
+}
+// ***********************************************************
+
+function db_vencimento(){
+  $data = date("Y-m-d");
+  if ( (date("H") >= "16" ) ) {
+    $data = verifica_data(date("d")+1,date("m"),date("Y"));
+//	echo $data;
+  } else {
+      if ( ( date("w",mktime(0,0,0,date("m"),date("d"),date("Y"))) == "0" ) or ( date("w",mktime(0,0,0,date("m"),date("d"),date("Y"))) == "6" )  ) { 
+        $data = verifica_data(date("d")+1,date("m"),date("Y"));
+	  } 
+  }
+//  echo $data;
+  return $data;
+}
+function verifica_data($dia,$mes,$ano){
+  while ( (checkdate($mes,$dia,$ano) == false) or  ( ( date("w",mktime(0,0,0,$mes,$dia,$ano)) == "0" ) or ( date("w",mktime(0,0,0,$mes,$dia,$ano)) == "6" ) ) ){
+    if ( $dia > 31 ){
+	   $dia = 1;
+       $mes ++;
+	   if ( $mes > 12 ){
+	      $mes = 1;
+		  $ano ++;
+        }
+    }else{
+	  $dia ++;
+	}
+  }
+  return $ano."-".$mes."-".$dia;
+}
+
+function db_logs($matricula,$incricao,$numcgm,$string) {
+  global $_SERVER;
+  global $conn;
+  pg_exec($conn,"BEGIN");
+  $result = pg_exec($conn,"INSERT INTO db_logs VALUES ('".$_SERVER["REMOTE_ADDR"]."','".date("Y-m-d")."','".date("G:i:s")."','".$_SERVER["REQUEST_URI"]."','$matricula','$incricao',$numcgm,'$string')");
+  if(pg_cmdtuples($result) > 0)
+    pg_exec($conn,"COMMIT");
+  else {
+  	pg_exec($conn,"ROLLBACK");
+  }
+}
+
+
+
+
+
+function sqlformat($campo,$quant,$qual)  {
+  $aux = "";
+  for($i = strlen($campo);$i < $quant;$i++)
+    $aux .= $qual;
+  return  $aux.$campo;
+}
+function db_sqlformat($campo,$quant,$qual)  {
+  $aux = "";
+  for($i = strlen($campo);$i < $quant;$i++)
+    $aux .= $qual;
+  return  $aux.$campo;
+}
+
+
+//Cria veriaveis globais de todos os campos do recordset no indice $indice
+function db_fieldsmemory($recordset,$indice,$formatar=""){
+  $fm_numfields = pg_numfields($recordset);
+  for ($i = 0;$i < $fm_numfields;$i++){
+    $matriz[$i] = pg_fieldname($recordset,$i);
+    global $$matriz[$i];
+	$aux = trim(pg_result($recordset,$indice,$matriz[$i]));
+	if(!empty($formatar)) {
+  	  switch(pg_fieldtype($recordset,$i)) {
+	    case "float8":
+	    case "float4":
+	    case "float":
+          $$matriz[$i] = number_format($aux,2,",",".");
+		  break;
+		case "date":
+		  $data = split("-",$aux);
+		  $$matriz[$i] = $data[2]."/".$data[1]."/".$data[0];
+		  break;
+		default:
+          $$matriz[$i] = $aux;		  		
+		  break;
+	  }
+	} else
+      $$matriz[$i] = $aux;
+  }
+}
+
+
+
+function printfieldsmemory($recordset,$indice){
+
+$fm_numfields = pg_numfields($recordset);
+
+for ($i=0;$i < $fm_numfields;$i ++){
+
+  $matriz[$i] = pg_fieldname($recordset,$i);
+
+  $$matriz[$i] = trim(pg_result($recordset,$indice,$matriz[$i]));
+
+  echo $matriz[$i]." - ".$$matriz[$i]."<br>";
+
+}
+
+}
+function db_msgbox2($msg) {
+  echo "<script>alert('$msg');</script>\n";
+}
+function db_msgbox($msg) {
+  global $erro_mensagem;
+  $erro_mensagem = $msg;
+  /*echo "<script>alert('$msg');</script>\n";	*/
+}
+function msgbox($msg) {
+  global $erro_mensagem;
+  $erro_mensagem = $msg;
+/*echo "<script>alert('$msg');</script>\n";	*/
+}
+function mostra_msgbox() {
+   global $erro_mensagem;
+  if($erro_mensagem!=""){
+    echo "<script>alert('".$erro_mensagem."');</script>\n";	
+  }
+}
+
+function redireciona($url) {
+  if($url == "index.php")
+    $topo = "top.";
+  else
+    $topo = "";
+  if ( $url == -1 ) 
+    echo "<script>".$topo."history.go(-1)</script>\n";	
+  else{
+    echo "<script>".$topo."location.href='$url'</script>\n";
+	exit;	
+  }
+}
+
+
+
+
+
+
+
+function db_date($mes=0,$dia=0,$ano=0,$operacao="-",$quantidade=1,$formato="dma",$tipo="/") {
+
+
+
+/*
+
+Função para formatação da data
+
+*/
+
+
+
+if( $ano != 0 )
+
+{
+
+$diminui = 0;
+
+if ($operacao == '-')
+
+   $dia = $dia - $quantidade;
+
+   if ($dia < 0 ) 
+
+	  $diminui = $dia;
+
+else
+
+   $dia = $dia + $quantidade;
+
+   if ($dia > 31 ) 
+
+	  $diminui = $dia - 31;
+
+    
+
+while (! checkdate($mes,$dia,$ano) )
+
+  {
+
+  if( $operacao == "-" ) 
+
+  {
+
+     $dia = $dia - 1;
+
+     if ($dia < 1 ) 
+
+     {
+
+        $dia = 31 + $diminui;
+
+        $mes = $mes - 1;
+
+        if ($mes < 1 ) 
+
+        {
+
+           $mes = 12;
+
+           $ano = $ano - 1;
+
+        }
+
+     }
+
+   }
+
+   else 
+
+   { 
+
+     $dia = $dia + 1 ;
+
+     if ($dia > 31 ) 
+
+     {
+
+        $dia = 1 + $diminui;
+
+        $mes = $mes + 1;
+
+        if ($mes > 12 ) 
+
+        {
+
+           $mes = 1;
+
+           $ano = $ano + 1;
+
+        }
+
+     }
+
+	 }
+
+   }
+
+}
+
+else
+
+{
+
+  if ( empty($mes) )
+
+    {
+
+    return "&nbsp"; 
+
+    }
+
+  else
+
+    {
+
+    $tipo = $dia;
+
+    $ano = substr($mes,0,4);
+
+    $dia = substr($mes,8,2);
+
+    $mes = substr($mes,5,2);
+
+    }
+
+}
+
+if ( $dia < 10 )
+
+  $dia = "$dia";
+
+if ( $mes < 10 )
+
+  $mes = "$mes";
+
+
+
+   if($formato == "dma")
+
+     $retorno = "$dia$tipo$mes$tipo$ano";
+
+   elseif ($formato == "dam")
+
+     $retorno = "$dia$tipo$ano$tipo$mes";
+
+   elseif ($formato == "mda")
+
+     $retorno = "$mes$tipo$dia$tipo$ano";
+
+   elseif ($formato == "mad")
+
+     $retorno = "$mes$tipo$dia$tipo$ano";
+
+   elseif ($formato == "adm")
+
+     $retorno = "$ano$tipo$dia$tipo$mes";
+
+   elseif ($formato == "amd")
+
+     $retorno = "$ano$tipo$mes$tipo$dia";
+
+return $retorno;
+
+}
+
+
+
+
+
+function calcula_idade($dtaniver,$dtcorrente)
+
+{
+
+/*
+
+Função calcula idade
+
+*/
+
+$anon = substr($dtaniver,0,4);
+
+$mesn = substr($dtaniver,5,2);
+
+$dia = substr($dtaniver,8,2);
+
+$anoa = substr($dtcorrente,0,4);
+
+$mesa = substr($dtcorrente,5,2);
+
+if ($anon < $anoa )
+
+{
+
+   $retorno = -1;
+
+   while ($anon <= $anoa)
+
+   {
+
+      $retorno ++;
+
+      $anon ++;
+
+   }
+
+   if ( $mesn > $mesa )
+
+   {
+
+      $retorno --;
+
+   }
+
+   elseif ($mesn = $mesa)
+
+   {
+
+      if( $dia >= substr($dtcorrente,8,2) )
+
+         $retorno --;
+
+   }
+
+} 
+
+else
+
+{
+
+   $retorno = 0;
+
+}
+
+return $retorno;
+
+} 
+
+
+
+
+
+function menos($a,$b) {
+
+
+
+/*
+
+função para diminuir um valor do outro
+
+*/
+
+
+
+	return $a - $b;	
+
+}
+
+
+
+/*
+
+cria uma tabela com o select
+
+*/
+
+function db_browse($query,$arquivo,$num_linhas,$offset = 0)
+
+{
+    global $_SERVER, $_ENV;
+	global $conn;
+    global $db_corlinha1, $db_corlinha2, $db_corcabec;
+	if(empty($arquivo))
+
+		$arquivo = "http://".$_SERVER["HTTP_HOST"].$_ENV["PATH_INFO"];
+
+	else
+
+		$arquivo = "http://".$_SERVER["HTTP_HOST"]."/$arquivo";
+
+		
+
+		
+
+	if(($__tot__ = query_string("__tot__")) == false) {				
+
+		$result = pg_exec($conn,"select count(*) from ($query) as temp");
+
+		$__tot__ = pg_result($result,0,0);
+
+	}
+
+	$query .= " limit $num_linhas offset $offset";	
+
+	if($offset <= $num_linhas)
+
+		$Voffset = 0;
+
+	else if($offset == $num_linhas)
+
+		$Voffset = $num_linhas;		
+
+	else if($offset >= ($num_linhas + $num_linhas))
+
+		$Voffset = $offset - $num_linhas;
+
+	$offset += $num_linhas;
+
+	$result = pg_exec($conn,$query);
+
+	$NumRows = pg_numrows($result);
+
+	$NumFields = pg_numfields($result);
+
+	$bool = 0;
+
+	echo "<center>\n<table border=\"1\" cellspacing=\"0\" cellpadding=\"0\">\n";
+
+	echo "<tr><td>\n";
+
+		echo "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n";
+
+		echo "<tr>\n";
+
+		echo "<td colspan=\"1\">\n";
+
+		echo "<a href=\"".$_ENV["PATH_INFO"]."?offset=0\"><img src=\"imagens/esq2.jpg\" border=\"0\"></a>\n";
+
+		echo "<a href=\"".$_ENV["PATH_INFO"]."?offset=$Voffset&__tot__=$__tot__\"><img src=\"imagens/esq1.jpg\" border=\"0\"></a>\n";
+
+		echo "<a href=\"".$_ENV["PATH_INFO"]."?offset=$offset&__tot__=$__tot__\"><img src=\"imagens/direi1.jpg\" border=\"0\"></a>\n";
+
+		echo "<a href=\"".$_ENV["PATH_INFO"]."?offset=".menos($__tot__,$num_linhas)."\"><img src=\"imagens/direi2.jpg\" border=\"0\"></a>\n</td>\n";
+
+		echo "</tr><tr><td>\n";
+
+		echo "Foram retornados $__tot__ registros\n";
+
+		echo "</td><tr>\n";
+
+		echo "</table>\n";
+
+	echo "</td></tr>\n";
+
+	echo "<tr><td>\n";
+
+		echo "<table border=\"0\" cellspacing=\"1\" cellpadding=\"1\">\n";	
+
+		echo "<tr>\n";
+
+	for($i = 0;$i < $NumFields;$i++)
+
+	{
+
+		if(strlen(strstr(pg_fieldname($result,$i),"db")) == 0)
+
+		{
+
+			echo "<td bgcolor=\"$db_corcabec\" align=\"center\"><u><b>".ucfirst(pg_fieldname($result,$i))."</b></u></td>\n";
+
+		}
+
+	}
+
+	echo "</tr>\n";
+
+	for($i = 0;$i < $NumRows;$i++)
+
+	{
+
+		echo "<tr>\n";
+
+		if($bool == 0)
+
+		{
+
+			$bool = 1;
+
+			$cor = $db_corlinha1;
+
+		} else {
+
+			$bool = 0;
+
+			$cor = $db_corlinha2;	
+
+		}
+
+		for($j = 0;$j < $NumFields;$j++)
+
+		{	
+
+			if(strlen(strstr(pg_fieldname($result,$j),"db")) == 0)
+
+				echo "<td bgcolor=\"$cor\">
+
+				      <a style=\"text-decoration: none; color: #000000\" href=\"$arquivo".pg_result($result,$i,0)."\">".trim(pg_result($result,$i,$j))."</a></td>\n";
+
+		}	
+
+		echo "</tr>\n";
+
+	}		
+
+		echo "</table>\n";
+
+	echo "</td></tr>\n";
+
+	echo "</table>\n</center>\n";
+
+}
+
+
+
+
+
+// Se usar a funcao sem argumentos, ele retorna um array com todos os valores da QUERY_STRING na ordem
+
+//em que foram passadas.
+
+// Se $param for diferente de 0, ele retorna o conteudo da variavel especificada em $param.
+
+function query_string($param = "0") {
+
+	if($param == "0") 
+
+	{
+
+		$param = split("=",$_SERVER["QUERY_STRING"]);
+
+		for($i = 1;$i < sizeof($param);$i++) 
+
+		{
+
+			$aux = split("&",$param[$i]);
+
+			$ret[$i - 1] = $aux[0];	
+
+		}
+
+		return $ret;
+
+	} else {
+
+		$param = strstr($_SERVER["QUERY_STRING"],$param);
+
+		$param = split("&",$param);
+
+		return substr($param[0],strpos($param[0],"=") + 1,strlen($param[0]));
+
+	}
+
+}
+
+/* Cria menus */
+
+function db_menu($usuario,$Cfundo = "blue",$Cfonte = "white",$CfundoOver = "cyan",$CfonteOver = "black",$largura = "100",$altura = "20",$Cborda = "black") 
+
+{
+global $conn;
+  $menu = pg_exec($conn,"SELECT m.id_item,m.id_item_filho,m.menusequencia,i.descricao,i.help,i.funcao
+
+    				 FROM menu m
+
+  					 INNER JOIN permissao p
+
+  				     ON p.id_item = m.id_item
+
+  					 INNER JOIN itensmenu i
+
+  					 ON i.id_item = m.id_item_filho
+
+    				 WHERE p.id_usuario = $usuario
+
+  					 AND p.permissaoativa = 1
+
+  					 AND i.itemativo = 1
+
+    				 ORDER BY p.id_item,m.id_item_filho,m.menusequencia");
+
+  
+
+  $NumMenu = pg_numrows($menu);
+
+  echo "<br><Br><Br><Br><Br><Br><Br><table border=1>";  
+
+  for($i = 0;$i < $NumMenu;$i++) 
+
+  {
+
+    echo "<tr><td>\n".pg_result($menu,$i,0)."</td>\n<td>\n".pg_result($menu,$i,1)."</td>\n<td>\n ".pg_result($menu,$i,2)."</td>\n<td>\n".
+
+         pg_result($menu,$i,3)."</td>\n<td>\n ".pg_result($menu,$i,4)."</td>\n<td>\n ´".pg_result($menu,$i,5)."´</td>\n</tr>\n";
+
+  }
+
+  echo "</table>\n";
+
+  
+
+  echo "<script type='text/javascript' src='awjsmenugold10trial.js'>\n</script>\n";
+
+  echo "<script type='text/javascript'>\n";
+
+  echo "var awbMNBSpm=new awbmnbspm();\n";    //V/H                 //fonte,tamanho,negrito,italico,espessura da borda 
+
+  echo "menus=new TJSMenuType2(\"menus\",\"\",1,1,0,0,5,0,0,1000,2,\"arial,helvetica,times new roman\",12,0,0,2,\"$Cborda\",40,15,1,5,1,\"\");\n";  
+
+  
+
+  /**********************/
+
+  for($i = 0;$i < $NumMenu;$i++) 
+
+  {
+
+  	if(pg_result($menu,$i,0) == 1)
+
+  	  echo "menus.awBmnbspM(\"I".pg_result($menu,$i,1)."\",\"\",\"".pg_result($menu,$i,3)."\",\"".pg_result($menu,$i,5)."\",\"_self\",$largura,$altura,\"\",\"\",\"$Cfundo\",\"$Cfundo\",\"$Cfonte\",\"$CfonteOver\",\"".pg_result($menu,$i,4)."\");\n";
+
+  	else
+
+  	{    
+
+      for($j = 0;$j < $NumMenu;$j++)
+
+      {
+
+        if(pg_result($menu,$i,0) == pg_result($menu,$j,1))
+
+          echo "menus.awBmnbspM(\"I".pg_result($menu,$i,1)."\",\"I".pg_result($menu,$i,0)."\",\"".pg_result($menu,$i,3)."\",\"".pg_result($menu,$i,5)."\",\"_self\",$largura,$altura,\"\",\"\",\"$Cfundo\",\"$CfundoOver\",\"$Cfonte\",\"$CfonteOver\",\"".pg_result($menu,$i,4)."\");\n";
+
+      }
+
+  	}
+
+  }
+
+  echo "menus.awBmNBspm();\n";
+
+  echo "</script>\n";
+
+  echo "<noscript>Seu browser nao suporta javascript</noscript>\n";
+
+}
+/////////////////////////////////////////////////////////////////
+///////  Calcula Digito Verificador 
+///////  sCampo - Valor  Ipeso - Qual peso 10 11
+
+function db_CalculaDV($sCampo, $iPeso = 11){
+    $mult = 2;
+	$i = 0;
+	$iDigito = 0;
+	$iSoma1 = 0;
+	$iDV1 = 0;
+	$iTamCampo = strlen($sCampo);
+	for ($i=$iTamCampo - 1; $i > -1; $i--){
+		$iDigito = $sCampo[$i];
+		$iSoma1 = intval($iSoma1,10) + intval(($iDigito * $mult),10);
+		$mult++;
+        if($mult > 9)
+		  $mult = 2;		  
+	}	
+	$iDV1 = ($iSoma1 % 11);	
+	if ($iDV1 < 2)
+		$iDV1 = 0;
+	else
+	    $iDV1 = 11 - $iDV1;
+	return $iDV1;
+}
+
+
+
+//////////////////////////////////////////////////////////////////		
+
+
+
+function db_Calcular_Peso($iPosicao, $iPeso)
+{
+
+return ($iPosicao % ($iPeso - 1)) + 2;
+
+}
+/////////////////////////////////////////////////////////////////
+
+
+
+?>

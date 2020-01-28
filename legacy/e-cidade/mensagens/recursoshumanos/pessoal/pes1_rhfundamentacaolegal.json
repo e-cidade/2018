@@ -1,0 +1,6 @@
+{
+  "erro_buscar_vinculo_rubrica"        : "Ocorreu um erro ao consultar as rubricas da fundamentação legal.",
+  "confirma_excluir_fundamentacao"     : "A fundamentação legal está vinculada com alguma(s) rubrica(s). \n\nDeseja prosseguir na exclusão?",
+  "erro_excluir_fundamentacao_rubrica" : "Ocorreu um erro ao desvincular a fundamentação legal nas rubricas.",
+  "erro_excluir_fundamentacao"         : "Ocorreu um erro ao excluir a fundamentação legal."
+}

@@ -1,0 +1,41 @@
+{
+  "name": "dbseller/legacy",
+  "description": "Retrocompatibilidade do PHP para versao 5.3 -> 7.0",
+  "authors": [
+    {
+      "name": "Rafael Nery",
+      "email": "rafael.nery@dbseller.com.br"
+    },
+    {
+      "name": "Jeferson Belmiro",
+      "email": "jeferson.belmiro@dbseller.com.br"
+    },
+    {
+      "name": "Mauricio Costa",
+      "email": "mauricio@dbseller.com.br"
+    },
+    {
+      "name": "Davi Ferreira",
+      "email": "davi@dbseller.com.br"
+    }
+  ],
+
+  "license": "GPL-2.0",
+  
+  "autoload" : {
+    "files": [
+      "bootstrap/PHP_53.php",
+      "bootstrap/PHP_54.php",
+      "bootstrap/PHP_55.php",
+      "bootstrap/PHP_56.php"
+    ],
+    "psr-4" : {
+      "DBSeller\\Legacy\\"        : "src/",
+      "DBSeller\\Legacy\\Tests\\" : "tests/"
+    }
+  },
+
+  "require-dev": {
+    "phpunit/phpunit": "^4.8||^5.4"
+  }
+}

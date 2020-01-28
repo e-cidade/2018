@@ -1,0 +1,10 @@
+{
+  "periodo_com_execucao"     : "Periodo inválido, possui execução:\nData Inicial: [sDataInicial]\nData final: [sDataFinal]",
+  "sem_transacao_ativa"      : "Sem transação com o banco de dados ativa.",
+  "sequencial_nao_existente" : "Código sequencial de Acordo inválido.",
+  "contrato_homologado"      : "Exclusão não permitida. O contrato está homologado.",
+  "contrato_ja_paralisado"   : "O contrato já se encontra paralisado.",
+  "erro_ao_buscar_paralisacoes" : "Erro ao buscar paralisações do acordo",
+  "paralisacao_ja_retomada" : "Paralisação do acordo ja retomada",
+  "contrato_nao_paralisado" : "Contrato não está paralisado"
+}

@@ -1,0 +1,161 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* FileBox, used to allows the user to choose colors
+/* by Pablo Dall'Oglio 2004-2006
+/***********************************************************/
+class FileBox
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+    function FileBox($Description, $isdir)
+    {
+        global $Pixmaps;
+        $tooltip = new GtkTooltips;
+        $this->entry = new GtkEntry;
+
+        $box = new GtkHBox;
+        $this->widget = new Box($box, $Description);
+        $this->button = new Button(array($this, 'FileSel'), _a('File Selection'), $Pixmaps['file'], ICONBUTTON, $isdir, true);
+        $this->button->set_relief(GTK_RELIEF_NONE);
+
+        $box->pack_start($this->entry);
+        $box->pack_start($this->button);
+    }
+    /***********************************************************/
+    /* Changes the color
+    /***********************************************************/
+    function set_text($data)
+    {
+        $this->entry->set_text($data);
+    }
+
+    function set_editable($bool)
+    {
+        $this->entry->set_editable($bool);
+    }
+
+    /***********************************************************/
+    /* Returns the color
+    /***********************************************************/
+    function get_text()
+    {
+        return $this->entry->get_text();
+    }
+
+    /***********************************************************/
+    /* Changes the visibility
+    /***********************************************************/    
+    function set_visibility($bool)
+    {
+        $this->entry->set_visibility($bool);
+    }
+
+    /***********************************************************/
+    /* Show the button
+    /***********************************************************/
+    function show()
+    {
+        $this->widget->show_all();
+    }
+
+    /***********************************************************/
+    /* Define the size
+    /***********************************************************/
+    function set_usize($width, $height)
+    {
+        $this->entry->set_usize($width, $height);
+    }
+
+    /***********************************************************/
+    /* File Selection Dialog
+    /***********************************************************/
+    function FileSel($is_dir = false)
+    {
+        $FileSelection = new FileDialog(_a('File Selection'));
+        $button_ok = $FileSelection->ok_button;
+        $button_ok->connect_object('clicked', array($this, 'GetFileName'), &$FileSelection, $is_dir);
+
+        $button_cancel = $FileSelection->cancel_button;
+        $button_cancel->connect_object('clicked', array(&$FileSelection, 'hide'));
+    }
+
+    /***********************************************************/
+    /* Returns the selected FileName
+    /***********************************************************/
+    function GetFileName(&$FileSelection, $is_dir)
+    {
+        $FileName = $FileSelection->get_filename();
+        $PathName = $FileSelection->get_path();
+
+        if ($is_dir)
+        {
+            if (is_dir($PathName))
+            {
+                $FileSelection->hide();
+                if ((substr($PathName,-1) == '\\') || (substr($PathName,-1) == '/'))
+                {
+                    $PathName = substr($PathNameName, 0, -1);
+                }
+                $this->set_text("$PathName");
+            }
+        }
+        else
+        {
+            if (file_exists($FileName))
+            {
+                $FileSelection->hide();
+                if ((substr($FileName,-1) == '\\') || (substr($FileName,-1) == '/'))
+                {
+                    $FileName = substr($FileName, 0, -1);
+                }
+                if (strpos($FileName, ' ') !== false)
+                {
+                    $this->set_text("\"$FileName\"");
+                }
+                else
+                {
+                    $this->set_text("$FileName");
+                }
+            }
+        }
+    }
+
+    /***********************************************************/
+    /* KeyTest Method
+    /***********************************************************/
+    function KeyTest($obj, $window)
+    {
+        if ($obj->keyval == K_ESC)
+        {
+            $window->hide();
+        }
+    }
+}
+?>

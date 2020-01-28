@@ -1,0 +1,262 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010228' name='caixa.arquivoinfracaomulta' description="Guarda as multas do arquivo de infração importado." prefix="i08" label="Multas" type="0">
+  <fields>
+    <field codigo="1009452"
+           campo_api=''
+           name="i08_sequencial"
+           conteudo="int4"
+           description="Código sequencial da tabela."
+           inivalue="0"
+           label="Código"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código"
+           reference=""
+           ispk="t"
+           hassequence="t" >
+
+      <sequence name='caixa.arquivoinfracaomulta_i08_sequencial_seq' />
+
+    </field>
+    <field codigo="1009453"
+           campo_api=''
+           name="i08_arquivoinfracao"
+           conteudo="int4"
+           description="Vínculo das multas com o arquivo de infração importado."
+           inivalue="0"
+           label="Arquivo de Infração"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Arquivo de Infração"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009454"
+           campo_api=''
+           name="i08_dtpagamento"
+           conteudo="date"
+           description="Data de pagamento da multa."
+           inivalue="null"
+           label="Data de Pagamento"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Data de Pagamento"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009455"
+           campo_api=''
+           name="i08_dtrepasse"
+           conteudo="date"
+           description="Data do repasse da multa."
+           inivalue="null"
+           label="Data de Repasse"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Data de Repasse"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009456"
+           campo_api=''
+           name="i08_nivel"
+           conteudo="int4"
+           description="Nível da multa."
+           inivalue="0"
+           label="Nível"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Nível"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009457"
+           campo_api=''
+           name="i08_vlfunset"
+           conteudo="float4"
+           description="Valor de repasse para a FUNSET."
+           inivalue="0"
+           label="Valor FUNSET"
+           size="10"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="4"
+           tipoobj="text"
+           labelrel="Valor FUNSET"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009458"
+           campo_api=''
+           name="i08_vldetran"
+           conteudo="float4"
+           description="Valor de repasse para o DETRAN."
+           inivalue="0"
+           label="Valor DETRAN"
+           size="10"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="4"
+           tipoobj="text"
+           labelrel="Valor DETRAN"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009459"
+           campo_api=''
+           name="i08_vlprefeitura"
+           conteudo="float4"
+           description="Valor de repasse para a Prefeitura."
+           inivalue="0"
+           label="Valor Prefeitura"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="4"
+           tipoobj="text"
+           labelrel="Valor Prefeitura"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009460"
+           campo_api=''
+           name="i08_vlbruto"
+           conteudo="float4"
+           description="Valor bruto da multa."
+           inivalue="0"
+           label="Valor Bruto"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="4"
+           tipoobj="text"
+           labelrel="Valor Bruto"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009461"
+           campo_api=''
+           name="i08_codigoinfracao"
+           conteudo="varchar(10)"
+           description="Código da infração."
+           inivalue=""
+           label="Código da Infração"
+           size="10"
+           null="f"
+           uppercase="t"
+           autocompl="f"
+           aceitatipo="0"
+           tipoobj="text"
+           labelrel="Código da Infração"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009462"
+           campo_api=''
+           name="i08_nossonumero"
+           conteudo="varchar(11)"
+           description="Identificação do Titulo no banco(Nosso Número)."
+           inivalue=""
+           label="Nosso Número"
+           size="11"
+           null="f"
+           uppercase="t"
+           autocompl="f"
+           aceitatipo="0"
+           tipoobj="text"
+           labelrel="Nosso Número"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009463"
+           campo_api=''
+           name="i08_autoinfracao"
+           conteudo="varchar(13)"
+           description="Código do auto de infração."
+           inivalue=""
+           label="Auto de Infração"
+           size="13"
+           null="f"
+           uppercase="t"
+           autocompl="f"
+           aceitatipo="0"
+           tipoobj="text"
+           labelrel="Auto de Infração"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+    <field codigo="1009464"
+           campo_api=''
+           name="i08_duplicado"
+           conteudo="bool"
+           description="Mostra se é um pagamento de multa duplicado."
+           inivalue="f"
+           label="Duplicado"
+           size="1"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="5"
+           tipoobj="text"
+           labelrel="Duplicado"
+           reference=""
+           ispk="f"
+           hassequence="t" >
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="i08_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="arquivoinfracao" inner='t'>
+      <fieldfk name="i08_arquivoinfracao" reference="i07_sequencial" />
+    </foreignkey>
+  </foreignkeys>
+</table>

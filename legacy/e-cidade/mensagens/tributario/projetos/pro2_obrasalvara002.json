@@ -1,0 +1,5 @@
+{
+  "nenhum_cadastro_encontrado" : "Nenhum cadastro de alvará encontrado.",
+  "erro_escrever_cvs"          : "Erro ao escrever arquivo CSV.",
+  "erro_escrever_cvs_linha"    : "Erro ao escrever arquivo CSV. Linha [iRegistro]."
+}

@@ -1,0 +1,1411 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="sandro">
+	<META NAME="CREATED" CONTENT="20080308;10444600">
+	<META NAME="CHANGEDBY" CONTENT="dbseller">
+	<META NAME="CHANGED" CONTENT="20081117;23384200">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.1cm }
+		P { margin-bottom: 0.21cm }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "HG Mincho Light J"; font-size: 16pt }
+		H1.ctl { font-family: "Lucidasans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Helvetica"; font-size: 14pt; so-language: pt-BR; font-style: italic }
+		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		H3 { margin-bottom: 0.21cm }
+		H3.western { font-family: "Helvetica"; so-language: pt-BR }
+		H3.cjk { font-family: "HG Mincho Light J" }
+		TD P { margin-bottom: 0cm }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR">
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.Cadastros|outline">Cadastros	</A><A HREF="#1.Cadastros|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.Tipo de Situa&ccedil;&atilde;o|outline">Tipo
+	de Situa&ccedil;&atilde;o	</A><A HREF="#1.1.Tipo de Situa&ccedil;&atilde;o|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.Tipo de Transa&ccedil;&atilde;o|outline">Tipo
+	de Transa&ccedil;&atilde;o	</A><A HREF="#1.2.Tipo de Transa&ccedil;&atilde;o|outline">2</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.Consultas|outline">Consultas	</A><A HREF="#2.Consultas|outline">4</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.ITBI|outline">ITBI	</A><A HREF="#2.1.ITBI|outline">4</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.Relat&oacute;rios|outline">Relat&oacute;rios	</A><A HREF="#3.Relat&oacute;rios|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.Resumo de ITBI|outline">Resumo
+	de ITBI	</A><A HREF="#3.1.Resumo de ITBI|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.Tipo de Situa&ccedil;&atilde;o|outline">Tipo
+	de Situa&ccedil;&atilde;o	</A><A HREF="#3.2.Tipo de Situa&ccedil;&atilde;o|outline">7</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.Emite Guia|outline">Emite
+	Guia	</A><A HREF="#3.3.Emite Guia|outline">7</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.Procedimentos|outline">Procedimentos	</A><A HREF="#4.Procedimentos|outline">8</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.Manuten&ccedil;&atilde;o de ITBI|outline">Manuten&ccedil;&atilde;o
+	de ITBI	</A><A HREF="#4.1.Manuten&ccedil;&atilde;o de ITBI|outline">8</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.1.Urbano|outline">Urbano	</A><A HREF="#4.1.1.Urbano|outline">9</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.2.Rural|outline">Rural	</A><A HREF="#4.1.2.Rural|outline">14</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.Libera ITBI|outline">Libera
+	ITBI	</A><A HREF="#4.2.Libera ITBI|outline">18</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.Par&acirc;metros|outline">Par&acirc;metros	</A><A HREF="#4.3.Par&acirc;metros|outline">21</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.1.Tipo de constru&ccedil;&atilde;o|outline">Tipo
+	de constru&ccedil;&atilde;o	</A><A HREF="#4.3.1.Tipo de constru&ccedil;&atilde;o|outline">21</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.2.Esp&eacute;cie de constru&ccedil;&atilde;o|outline">Esp&eacute;cie
+	de constru&ccedil;&atilde;o	</A><A HREF="#4.3.2.Esp&eacute;cie de constru&ccedil;&atilde;o|outline">21</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.3.Recibo ITBI|outline">Recibo
+	ITBI	</A><A HREF="#4.3.3.Recibo ITBI|outline">21</A></FONT></P>
+</DIV>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-before: always; page-break-after: avoid">
+<FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO ITBI</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm">Imposto
+de Transmiss&atilde;o de Bens Im&oacute;veis por Ato Oneroso &ldquo;inter
+vivos&rdquo;</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="1.Cadastros|outline"></A><A NAME="1.Cadastros|outline"></A>
+<FONT SIZE=5 STYLE="font-size: 16pt">Cadastros</FONT></H1>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal"><A NAME="1.1.Tipo de Situa&ccedil;&atilde;o|outline"></A><A NAME="1.1.Tipo de Situa&ccedil;&atilde;o|outline"></A>
+<FONT SIZE=4><A HREF="#Sum&aacute;rio1|region" NAME="db2563db">Tipo
+de </A><A HREF="#Sum&aacute;rio1|region" NAME="db2563db">S</A><A HREF="#Sum&aacute;rio1|region" NAME="db2563db">itua&ccedil;&atilde;o</A></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.06cm">Esse
+cadastro consiste em criar uma base contendo os tipos de situa&ccedil;&otilde;es
+dos im&oacute;veis em rela&ccedil;&atilde;o a quadra onde est&atilde;o
+localizados.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.06cm"><B>Ex.:</B>	Interno
+&ndash; se o im&oacute;vel fica no meio da quadra.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 3.73cm">	Encravado
+&ndash; se o im&oacute;vel n&atilde;o faz testada com nenhum
+logradouro.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 3.73cm">	Esquina
+&ndash; se o im&oacute;vel est&aacute; situado em uma esquina.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 3.73cm"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.03cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2564db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 3.73cm"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.06cm">Para
+fazer inclus&otilde;es nesse cadastro, preencha os seguinte campos:</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm">Esse
+campo ser&aacute; gerado automaticamente e corresponde ao c&oacute;digo
+do item que est&aacute; sendo inclu&iacute;do.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm">Digite a
+descri&ccedil;&atilde;o (nome) da situa&ccedil;&atilde;o que est&aacute;
+incluindo.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><B><A HREF="#Sum&aacute;rio1|region" NAME="db2565db">ALTERA&Ccedil;&Atilde;O</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm">Para
+alterar um cadastro de tipo de situa&ccedil;&atilde;o, basta
+selecionar o registro desejado e efetuar a altera&ccedil;&atilde;o. O
+&uacute;nico campo permitido para alterar &eacute; a descri&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><B><A HREF="#Sum&aacute;rio1|region" NAME="db2566db">EXCLUS&Atilde;O</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm">Para
+excluir um cadastro de tipo de situa&ccedil;&atilde;o, basta
+selecionar o registro desejado e clicar no bot&atilde;o excluir.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm">Somente
+&eacute; permitida a exclus&atilde;o de um registro desse cadastro
+desde que ele ainda n&atilde;o tenha sido vinculado a nenhuma ITBI.</P>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal"><A NAME="1.2.Tipo de Transa&ccedil;&atilde;o|outline"></A><A NAME="1.2.Tipo de Transa&ccedil;&atilde;o|outline"></A>
+<FONT SIZE=4><A HREF="#Sum&aacute;rio1|region" NAME="db2552db">Tipo
+de Transa&ccedil;&atilde;o</A></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm">Esse
+cadastro consiste em criar uma base contendo as formas de transmiss&atilde;o
+de im&oacute;veis, independentemente de ter ou n&atilde;o a
+incid&ecirc;ncia do imposto.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm">Nesse
+cadastro, devem ser lan&ccedil;ados todos os item que est&atilde;o
+definidos no C&oacute;digo Tribut&aacute;rio Municipal, da parte que
+trata da incid&ecirc;ncia e da n&atilde;o incid&ecirc;ncia.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm"><B>Ex.:</B>
+compra e venda, cess&atilde;o de direitos contratuais, compra e venda
+com usufruto, compra e venda da nu propriedade, etc.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2553db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm">Para
+fazer inclus&otilde;es nesse cadastro, preencha os seguinte campos:</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm">Esse
+campo ser&aacute; gerado automaticamente e corresponde ao c&oacute;digo
+do item que est&aacute; sendo inclu&iacute;do.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Informe nesse campo uma descri&ccedil;&atilde;o que possibilite sua
+identifica&ccedil;&atilde;o no momento que for seleciona-la ao
+cadastrar uma ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Podemos ter como exemplos os que foram mencionados logo acima neste
+manual.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Desconto
+(%)</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo deve ser informado o percentual de desconto previsto na
+legisla&ccedil;&atilde;o para esse tipo de transa&ccedil;&atilde;o.
+Caso n&atilde;o haja nenhuma previs&atilde;o/informa&ccedil;&atilde;o,
+deve-ser informado 0 (zero).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo pode ser digitada qualquer observa&ccedil;&atilde;o a
+respeito desse tipo de transa&ccedil;&atilde;o, por&eacute;m n&atilde;o
+&eacute; um campo obrigat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Al&iacute;quota
+(valor total)</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo deve ser informada a al&iacute;quota que incide sobre o
+valor a vista na transa&ccedil;&atilde;o que est&aacute; sendo
+cadastrada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Caso a transa&ccedil;&atilde;o n&atilde;o tenha incid&ecirc;ncia de
+imposto, deve ser informado al&iacute;quota 0 (zero).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Al&iacute;quota
+(financiamento)</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo deve ser informada a al&iacute;quota que incide sobre o
+valor financiado (valor financiado pelo sistema financeiro de
+habita&ccedil;&atilde;o) na transa&ccedil;&atilde;o que est&aacute;
+sendo cadastrada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Caso a transa&ccedil;&atilde;o n&atilde;o tenha incid&ecirc;ncia de
+imposto, deve ser informado al&iacute;quota 0 (zero).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="manual_ITBI_html_m4286560c.png" NAME="figura2" ALIGN=LEFT WIDTH=605 HEIGHT=145 BORDER=0><BR CLEAR=LEFT>figura
+1</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db2554db">Altera&ccedil;&atilde;o</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Para efetuar altera&ccedil;&atilde;o em um cadastro de tipo de
+transa&ccedil;&atilde;o, selecione o item desejado na lista conforme
+figura 2, altere os campos desejados e ap&oacute;s clique no bot&atilde;o
+alterar.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_4dd7f50c.png" NAME="figura3" ALIGN=LEFT WIDTH=605 HEIGHT=184 BORDER=0><BR CLEAR=LEFT>figura
+2</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db2555db">Exclus&atilde;o</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Para excluir um cadastro de tipo de transa&ccedil;&atilde;o, basta
+selecionar o registro desejado na lista conforme figura 2 e clicar no
+bot&atilde;o excluir. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Somente &eacute; permitida a exclus&atilde;o de um registro que ainda
+n&atilde;o tenha sido vinculada a nenhuma ITBI.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY STYLE="font-weight: medium"></H3>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="2.Consultas|outline"></A><A NAME="2.Consultas|outline"></A>
+Consultas</H1>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal"><A NAME="2.1.ITBI|outline"></A><A NAME="2.1.ITBI|outline"></A>
+<FONT SIZE=4><A HREF="#Sum&aacute;rio1|region" NAME="db4232db">ITBI</A></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Para efetuar a consulta de ITBI, deve ser informado pelo
+menos um dos filtros, conforme demonstrado nas figuras 3 e 4.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Adquirente</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Informando o nome do adquirente ser&aacute; apresentada
+uma lista contendo todos os cadastros de ITBI que foram efetuados
+nesse nome.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Transmitente</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Informando o nome do transmitente ser&aacute;
+apresentada uma lista contendo todos os cadastros de ITBI que foram
+efetuados nesse nome.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Data
+inicial / Data final</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Informando o per&iacute;odo desejado ser&aacute;
+apresentada uma lista contendo todos os cadastros de ITBI efetuados
+no intervalo de datas informado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Caso seja informada apenas a data inicial, ser&aacute;
+apresentada uma lista com os cadastros efetuados a partir dessa data
+at&eacute; a data atual.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Caso seja informada apenas a data final, ser&aacute;
+apresentada uma lista com todos os cadastros de ITBI efetuados at&eacute;
+a data indicada, desconsiderando a data inicial.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Tipo
+de ITBI</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Selecione o tipo de ITBI que deseja apresentar na
+consulta conforme os filtros mencionados anteriormente.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3><B>Ex.:</B> caso informe a data inicial: 01/01/2007 e
+data final: 31/12/2007 e selecione o tipo de ITBI urbana, ser&aacute;
+apresentada uma lista somente com as ITBIs urbanas cadastradas nesse
+intervalo de datas.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Matr&iacute;cula
+do im&oacute;vel</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Informe o n&uacute;mero de uma determinada matr&iacute;cula
+que deseja consultar a ITBI.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Caso tenha sido inclu&iacute;da mais de uma ITBI para a
+matr&iacute;cula indicada, ser&atilde;o apresentados os registros
+para selecionar o que deseja consultar. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Setor
+</B></I></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Informe o setor desejado e ser&aacute; apresentada uma
+lista com todas as ITBIs cadastradas para os im&oacute;veis desse
+setor.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Quadra</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Informe a quadra <FONT SIZE=3><SPAN STYLE="font-style: normal">desejada
+e ser&aacute; apresentada uma lista com todas as ITBIs cadastradas
+para os im&oacute;veis que pertencem a essa quadra. </SPAN></FONT></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.93cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Pode-se utilizar os dois filtro mencionados
+(setor/quadra) de forma conjugada, ou seja, se for informado o setor
+e a quadra, ser&aacute; apresentada uma listas com as ITBIs
+cadastrada para os im&oacute;veis do setor e quadra indicado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Logradouro</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>Informe o c&oacute;digo do logradouro desejado ou
+selecione na lista clicando no link. Ser&aacute; apresentada uma
+lista contendo todas as ITBIs cadastradas para os im&oacute;veis que
+estejam localizados no logradouro indicado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=3>As op&ccedil;&otilde;es de filtro &ndash; matr&iacute;cula
+do im&oacute;vel, setor, quadra, logradouro - s&oacute; estar&atilde;o
+ativas se o tipo de ITBI selecionado for urbana.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<IMG SRC="manual_ITBI_html_6b97bbc6.png" NAME="figura21" ALIGN=LEFT WIDTH=605 HEIGHT=173 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>figura
+3 &ndash; consulta de itbi urbana</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<IMG SRC="manual_ITBI_html_m7a1bf4b6.png" NAME="figura22" ALIGN=LEFT WIDTH=605 HEIGHT=169 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>figura
+4 &ndash; consulta de itbi rural</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="3.Relat&oacute;rios|outline"></A><A NAME="3.Relat&oacute;rios|outline"></A>
+Relat&oacute;rios</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal"><A NAME="3.1.Resumo de ITBI|outline"></A><A NAME="3.1.Resumo de ITBI|outline"></A>
+<FONT SIZE=4><A HREF="#Sum&aacute;rio1|region" NAME="db5087db">Resumo
+de ITBI</A></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Esse relat&oacute;rio imprime todos as ITBIs que foram cadastradas e
+liberadas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+S&oacute; ser&atilde;o listadas no relat&oacute;rio as ITBIs cujas
+guias j&aacute; tenham sido emitidas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Per&iacute;odo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Informe o intervalo de datas referente a data de inclus&atilde;o da
+ITBI que deseja imprimir no relat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Caso seja informado apenas a data inicial, ser&atilde;o impressos
+todos os registros a partir dessa data at&eacute; a data atual. Caso
+seja informado apenas a data final, ser&atilde;o impressos todos os
+registros at&eacute; a data indicada, desconsiderando a data de
+in&iacute;cio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Ordem</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Selecione a ordem que deseja imprimir no relat&oacute;rio, podendo
+ser pelo c&oacute;digo da ITBI (guia) ou  pelo nome do adquirente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_611e635d.png" NAME="figura24" ALIGN=LEFT WIDTH=605 HEIGHT=168 BORDER=0><BR CLEAR=LEFT>figura
+5</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<FONT SIZE=4><B><A HREF="#Sum&aacute;rio1|region" NAME="db3804db">Tipo
+de</A><A HREF="#Sum&aacute;rio1|region" NAME="db3804db"> T</A><A HREF="#Sum&aacute;rio1|region" NAME="db3804db">ransa&ccedil;&atilde;o</A></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Esse relat&oacute;rio imprime uma rela&ccedil;&atilde;o com os tipos
+de transa&ccedil;&otilde;es cadastrados, podendo ser ordenado pelo
+c&oacute;digo da transa&ccedil;&atilde;o ou pelo nome (alfab&eacute;tica).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_3c612f49.png" NAME="figura25" ALIGN=LEFT WIDTH=605 HEIGHT=148 BORDER=0><BR CLEAR=LEFT>figura
+6</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal"><A NAME="3.2.Tipo de Situa&ccedil;&atilde;o|outline"></A><A NAME="3.2.Tipo de Situa&ccedil;&atilde;o|outline"></A>
+<FONT SIZE=4><A HREF="#Sum&aacute;rio1|region" NAME="db3805db">Tipo
+de </A><A HREF="#Sum&aacute;rio1|region" NAME="db3805db">S</A><A HREF="#Sum&aacute;rio1|region" NAME="db3805db">itua&ccedil;&atilde;o</A></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Esse relat&oacute;rio imprime uma rela&ccedil;&atilde;o com os tipos
+de situa&ccedil;&otilde;es cadastradas, podendo ser ordenado pelo
+c&oacute;digo da situa&ccedil;&atilde;o ou pelo nome (alfab&eacute;tica).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m1a87e449.png" NAME="figura26" ALIGN=LEFT WIDTH=605 HEIGHT=161 BORDER=0><BR CLEAR=LEFT>figura
+7</P>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal"><A NAME="3.3.Emite Guia|outline"></A><A NAME="3.3.Emite Guia|outline"></A>
+<FONT SIZE=4><A HREF="#Sum&aacute;rio1|region" NAME="db3571db">Emite
+</A><A HREF="#Sum&aacute;rio1|region" NAME="db3571db">G</A><A HREF="#Sum&aacute;rio1|region" NAME="db3571db">uia</A></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; font-style: normal">
+<FONT SIZE=3>Nessa op&ccedil;&atilde;o &eacute; efetuada a emiss&atilde;o
+da guia de ITBI conforme modelo demonstrado na figura 8. A guia de
+ITBI &eacute; composta por todas as informa&ccedil;&otilde;es
+lan&ccedil;adas em seu cadastro, al&eacute;m dos valores atribu&iacute;dos
+ao im&oacute;vel pelo avaliador da prefeitura. A guia de ITBI tamb&eacute;m
+&eacute; composta pelo recibo de arrecada&ccedil;&atilde;o do d&eacute;bito.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; font-style: normal">
+<FONT SIZE=3>S&oacute; &eacute; permitida a emiss&atilde;o da guia de
+ITBIs que j&aacute; tenha sido efetuada a libera&ccedil;&atilde;o
+(avalia&ccedil;&atilde;o pela prefeitura).</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m7bd087e5.png" NAME="figura23" ALIGN=LEFT WIDTH=608 HEIGHT=525 BORDER=0><BR CLEAR=LEFT>figura
+8</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="4.Procedimentos|outline"></A><A NAME="4.Procedimentos|outline"></A>
+Procedimentos</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal"><A NAME="4.1.Manuten&ccedil;&atilde;o de ITBI|outline"></A><A NAME="4.1.Manuten&ccedil;&atilde;o de ITBI|outline"></A>
+<FONT SIZE=4><A HREF="#Sum&aacute;rio1|region" NAME="db2545db">Manuten&ccedil;&atilde;o
+de ITBI</A></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Para incluir uma ITBI, acesse o menu correspondente ao tipo de im&oacute;vel
+objeto da transa&ccedil;&atilde;o, ou seja, se o im&oacute;vel
+estiver localizado na zona urbana do munic&iacute;pio, acesse o menu
+&ldquo;Urbano&rdquo;, se o im&oacute;vel estiver localizado na zona
+rural, acesse o menu &ldquo;Rural&rdquo; conforme figura 9</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m184071b2.png" NAME="figura4" ALIGN=LEFT WIDTH=605 HEIGHT=88 BORDER=0><BR CLEAR=LEFT>figura
+9</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.1.1.Urbano|outline"></A><A NAME="4.1.1.Urbano|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2550db">Urbano</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Para inclus&atilde;o de ITBI urbano, o im&oacute;vel dever&aacute;
+obrigatoriamente estar registrado no cadastro imobili&aacute;rio,
+pois esse ITBI ser&aacute; vinculado a uma matr&iacute;cula.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Para inclus&atilde;o, informe o n&uacute;mero da matr&iacute;cula ou
+clique no link &ldquo;selecionar o im&oacute;vel&rdquo; pesquisando
+pelos seguintes campos:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Logradouro</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+&ndash; ser&aacute; apresentada uma lista contendo todos os im&oacute;veis
+que fazem testada para o logradouro informado, devendo ser
+selecionado o registro desejado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Nome/raz&atilde;o
+social</B></I> - <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ser&aacute;
+apresentada uma lista contendo todos os im&oacute;veis </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">em
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">que
+o contribuinte informado &eacute; propriet&aacute;rio, devendo ser
+selecionado o registro desejado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Setor</B></I><I><B>/</B></I><I><B>quadra</B></I><I><B>/</B></I><I><B>lote</B></I>
+&ndash; esses campos podem  ser informados  simultaneamente,
+apresentando assim uma lista com as matr&iacute;culas vinculadas ao
+lote (caso haja mais de uma).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Outra
+forma de fazer pesquisa utilizando setor/quadra/lote &eacute;
+informar apenas um dos campos, nesse caso ser&aacute; apresentada uma
+lista com todas as matr&iacute;culas que est&atilde;o vinculadas a
+lotes que possuam em seu cadastro o item informado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<B>Ex.:</B> se for efetuada a pesquisa informando setor 0001 e quadra
+0010, nesse caso ser&atilde;o apresentadas todas as matriculas
+vinculadas ao lotes que est&atilde;o na localiza&ccedil;&atilde;o
+indicada. Caso informe apenas a quadra 0010, nesse caso, ser&aacute;
+apresentada uma lista com todas as matr&iacute;culas  que est&atilde;o
+ligadas a todos os lotes que est&atilde;o localizados na quadra
+indicada, independentemente do setor. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Refer&ecirc;ncia
+anterior</B></I> &ndash; essa op&ccedil;&atilde;o de filtro, consiste
+em fazer uma busca no cadastro da matr&iacute;cula que possui como a
+refer&ecirc;ncia anterior o c&oacute;digo informado. Esse c&oacute;digo
+corresponde ao n&uacute;mero da matr&iacute;cula utilizada
+anteriormente por outro sistema informatizado de cadastro
+imobili&aacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Na figura 10 est&aacute; sendo demonstrado como op&ccedil;&atilde;o
+de filtro, a busca pelo setor 0001 e quadra 0010 e na figura 11 est&aacute;
+sendo demonstrado o resultado com as matr&iacute;culas encontradas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_305b1306.png" NAME="figura5" ALIGN=LEFT WIDTH=605 HEIGHT=141 BORDER=0><BR CLEAR=LEFT>figura
+10</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m7e642788.png" NAME="figura6" ALIGN=LEFT WIDTH=605 HEIGHT=296 BORDER=0><BR CLEAR=LEFT>figura
+11</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Ap&oacute;s selecionar a matr&iacute;cula desejada, clique no bot&atilde;o
+incluir e preencha os campos conforme descrito a seguir.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+ITBI</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo
+da ITBI </B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Esse campo ser&aacute; gerado automaticamente e corresponde ao n&uacute;mero
+que esse cadastro vai receber ap&oacute;s clicar no bot&atilde;o
+incluir.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Tipo
+de transa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe o c&oacute;digo do tipo de transa&ccedil;&atilde;o ou clique
+no link para selecionar na lista.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+do terreno</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe a &aacute;rea do im&oacute;vel em metros quadrados. caso a
+&aacute;rea possua casas decimais, o separador para ser digitado &eacute;
+ponto(.) como no exemplo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+<B>Ex.: </B>355.60</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+edificada</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe a &aacute;rea edificada sobre o im&oacute;vel, utilizando o
+mesmo princ&iacute;pio para casas decimais do item acima.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&otilde;es</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Nesse campo, pode ser digitado qualquer observa&ccedil;&atilde;o que
+queira fazer a respeito desse cadastro.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+da transa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.96cm; margin-bottom: 0cm">
+Nesse campo deve ser informado o valor pago a vista na transa&ccedil;&atilde;o,
+declarado pelo contribuinte.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+financiado da transa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nesse campo deve ser informado, caso haja, o valor que o contribuinte
+declarou que est&aacute; sendo financiado na aquisi&ccedil;&atilde;o
+do im&oacute;vel.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+transmitida do terreno</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Esse campo ser&aacute; preenchido automaticamente com a mesma &aacute;rea
+informada na &aacute;rea do terreno, por&eacute;m pode ser alterada e
+corresponde a parte do im&oacute;vel est&aacute; sendo transmitida na
+transa&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>E-mail
+de contato</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nesse campo pode ser registrado o e-mail para contato com o
+contribuinte. O preenchimento desse campo n&atilde;o &eacute;
+obrigat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Frente
+/ Fundos / Lado direito / Lado esquerdo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Informe a metragem linear correspondente a cada testada do terreno.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Situa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Informe a situa&ccedil;&atilde;o do terreno ou clique no link para
+selecionar em uma lista. Essa informa&ccedil;&atilde;o corresponde ao
+posicionamento do im&oacute;vel na quadra onde est&aacute;
+localizado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m13f23808.png" NAME="figura7" ALIGN=LEFT WIDTH=605 HEIGHT=226 BORDER=0><BR CLEAR=LEFT>figura
+12</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+DADOS DO IM&Oacute;VEL</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm; margin-bottom: 0cm">
+Nessa aba ser&atilde;o apresentados os dados do terreno que est&atilde;o
+registrados no cadastro imobili&aacute;rio: setor, quadra, lote e
+endere&ccedil;o, por&eacute;m permite que sejam alteradas essas
+informa&ccedil;&otilde;es, pois na guia de ITBI devem ser impressos
+os dados conforme est&atilde;o registrados no Cart&oacute;rio de
+Registro de Im&oacute;veis.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+TRANSMITENTES</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nessa aba, s&atilde;o informados os transmitentes do im&oacute;vel.
+Uma ITBI pode possuir mais de um transmitente, por&eacute;m um deles
+deve ser escolhido como principal.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Sempre que cadastrar uma ITBI, ser&aacute; apresentado como
+transmitente os contribuintes que s&atilde;o propriet&aacute;rios do
+im&oacute;vel, por&eacute;m caso essa informa&ccedil;&atilde;o n&atilde;o
+coincida, pode ser exclu&iacute;do e adicionado outros transmitentes.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Os novos transmitentes adicionados na ITBI, podem ser do cadastro de
+CGM, ou ter os dados digitados diretamente conforme os campos abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Numcgm</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Para incluir transmitentes que estejam no cadastro do CGM, basta
+Informar o c&oacute;digo do CGM do ou clicar no link para pesquisar
+pelo nome, selecionando se o transmitente &eacute; o principal e o
+sexo e ap&oacute;s clicar no bot&atilde;o incluir. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Para os demais transmitentes, repita a opera&ccedil;&atilde;o, por&eacute;m
+s&oacute; &eacute; permitido um transmitente principal em cada ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"> 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>N&uacute;mero
+da guia de ITBI</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Esse campo corresponde ao c&oacute;digo da ITBI e ser&aacute;
+preenchido automaticamente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Os campos: nome, CPF/CNPJ, endere&ccedil;o, n&uacute;mero,
+complemento, bairro, caixa postal, UF, CEP e e-mail devem ser
+preenchidos para os casos em que o transmitente que est&aacute; sendo
+inclu&iacute;do na ITBI, n&atilde;o est&aacute; no cadastro do CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_61a85662.png" NAME="figura8" ALIGN=LEFT WIDTH=605 HEIGHT=255 BORDER=0><BR CLEAR=LEFT>figura
+13</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+COMPRADORES</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nessa aba, s&atilde;o informados os compradores do im&oacute;vel. Uma
+ITBI pode possuir mais de um comprador, por&eacute;m um deles deve
+ser escolhido como principal.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Os compradores adicionados na ITBI, podem ser do cadastro de CGM, ou
+ter os dados digitados diretamente conforme os campos abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Numcgm</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Para incluir um comprador que esteja no cadastro do CGM, basta
+informar o c&oacute;digo do CGM ou clicar no link para pesquisar pelo
+nome, selecionando se o comprador &eacute; o principal e o sexo e
+ap&oacute;s clicar no bot&atilde;o incluir. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Para os demais compradores, repita a opera&ccedil;&atilde;o, por&eacute;m
+s&oacute; &eacute; permitido um comprador principal em cada ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"> 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>N&uacute;mero
+da guia de ITBI</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Esse campo corresponde ao c&oacute;digo da ITBI e ser&aacute;
+preenchido automaticamente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Os campos: nome, CPF/CNPJ, endere&ccedil;o, n&uacute;mero,
+complemento, bairro, caixa postal, UF, CEP, e e-mail devem ser
+preenchidos para os casos em que o comprador que est&aacute; sendo
+inclu&iacute;do na ITBI, n&atilde;o est&aacute; no cadastro do CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_3238f366.png" NAME="figura9" ALIGN=LEFT WIDTH=605 HEIGHT=258 BORDER=0><BR CLEAR=LEFT>figura
+14</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+CONSTRU&Ccedil;&Otilde;ES</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Nessa aba s&atilde;o lan&ccedil;adas as constru&ccedil;&otilde;es
+existentes no im&oacute;vel que est&aacute; sendo transmitido.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe a &aacute;rea total da constru&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+transmitida</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe a &aacute;rea da constru&ccedil;&atilde;o que ser&aacute;
+transmitida. Esse campo ser&aacute; preenchido automaticamente com a
+&aacute;rea total da constru&ccedil;&atilde;o, por&eacute;m pode ser
+alterado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Ano
+da constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Nesse campo, informe o ano que a constru&ccedil;&atilde;o que est&aacute;
+sendo lan&ccedil;ada foi edificada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&otilde;es</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Nesse campo pode ser digitada qualquer observa&ccedil;&atilde;o a
+respeito da constru&ccedil;&atilde;o que est&aacute; sendo lan&ccedil;ada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<B>Ex.: </B>Constru&ccedil;&atilde;o em ru&iacute;nas, constru&ccedil;&atilde;o
+em andamento, etc.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Esp&eacute;cie
+de constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Selecione a esp&eacute;cie da constru&ccedil;&atilde;o que est&aacute;
+sendo inclu&iacute;da. A rela&ccedil;&atilde;o que aparece para
+selecionar faz parte do cadastro de caracter&iacute;sticas de
+constru&ccedil;&otilde;es do cadastro imobili&aacute;rio que est&atilde;o
+vinculados ao grupo de esp&eacute;cie de constru&ccedil;&otilde;es
+para ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<B>Ex.: </B>alvenaria, madeira, mista, etc.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Tipo
+de constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Selecione o tipo da constru&ccedil;&atilde;o que est&aacute; sendo
+inclu&iacute;da. A rela&ccedil;&atilde;o que aparece para selecionar
+faz parte do cadastro de caracter&iacute;sticas de constru&ccedil;&otilde;es
+do cadastro imobili&aacute;rio que est&atilde;o vinculados ao grupo
+de tipo de constru&ccedil;&otilde;es para ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<B>Ex.:</B> casa, apartamento, garagem, loja, pavilh&atilde;o, etc.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="manual_ITBI_html_mefca0a2.png" NAME="figura10" ALIGN=LEFT WIDTH=605 HEIGHT=195 BORDER=0><BR CLEAR=LEFT>figura
+15</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.1.2.Rural|outline"></A><A NAME="4.1.2.Rural|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2551db">Rural</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Para inclus&atilde;o de ITBI rural, devem ser lan&ccedil;adas as
+informa&ccedil;&otilde;es relativas ao im&oacute;vel, conforme
+especifica&ccedil;&atilde;o dos campos a seguir.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+ITBI</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo
+da ITBI </B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Esse campo ser&aacute; gerado automaticamente e corresponde ao n&uacute;mero
+que esse cadastro vai receber ap&oacute;s clicar no bot&atilde;o
+incluir.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Tipo
+de transa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe o c&oacute;digo do tipo de transa&ccedil;&atilde;o ou clique
+no link para selecionar na lista.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+do terreno</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe a &aacute;rea do im&oacute;vel em hectares quadrados. Caso a
+&aacute;rea possua casas decimais, o separador para ser digitado &eacute;
+ponto (.) como no exemplo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+<B>Ex.: </B>76.00</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+edificada</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Informe a &aacute;rea edificada sobre o im&oacute;vel, utilizando o
+mesmo princ&iacute;pio para casas decimais do item acima.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&otilde;es</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nesse campo, pode ser digitado qualquer observa&ccedil;&atilde;o que
+queira fazer a respeito desse cadastro.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+da transa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nesse campo deve ser informado o valor pago a vista na transa&ccedil;&atilde;o
+declarado pelo contribuinte.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+financiado da transa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm">
+Nesse campo deve ser informado, caso haja, o valor que o contribuinte
+declarou como sendo financiado na aquisi&ccedil;&atilde;o do im&oacute;vel.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+transmitida do terreno</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Esse campo ser&aacute; preenchido automaticamente com a mesma &aacute;rea
+informada na &aacute;rea do terreno, por&eacute;m pode ser alterada e
+corresponde a parte do im&oacute;vel est&aacute; sendo transmitida na
+transa&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>E-mail
+de contato</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nesse campo pode ser registrado o e-mail para contato com o
+contribuinte. O preenchimento desse campo n&atilde;o &eacute;
+obrigat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Frente
+/ Fundos / Profundidade</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe a metragem linear correspondente a cada testada do terreno.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Caracter&iacute;stica</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Para lan&ccedil;ar as caracter&iacute;sticas que comp&otilde;em o
+im&oacute;vel rural, clique no lin<FONT COLOR="#000000"><SPAN STYLE="text-decoration: none">k
+Caracter&iacute;sticas. </SPAN></FONT>Ser&aacute; apresentada na
+tela, uma rela&ccedil;&atilde;o com as caracter&iacute;sticas
+configuradas para identificar a composi&ccedil;&atilde;o da pedologia
+e utiliza&ccedil;&atilde;o da &aacute;rea conforme figura 16. Informe
+o percentual que cada caracter&iacute;stica representa sobre o total
+da &aacute;rea.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m6f1e42df.png" NAME="figura12" ALIGN=LEFT WIDTH=605 HEIGHT=164 BORDER=0><BR CLEAR=LEFT>figura
+16</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m496d5c2.png" NAME="figura11" ALIGN=LEFT WIDTH=605 HEIGHT=213 BORDER=0><BR CLEAR=LEFT>figura
+17</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+DADOS DO IM&Oacute;VEL</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nessa aba podem ser informados os dados relativos a localiza&ccedil;&atilde;o
+do im&oacute;vel como: setor, quadra, lote, endere&ccedil;o por&eacute;m,
+essas informa&ccedil;&otilde;es n&atilde;o s&atilde;o campos
+obrigat&oacute;rios, pois normalmente &aacute;reas rurais n&atilde;o
+s&atilde;o organizadas dessa forma.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+TRANSMITENTES</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nessa aba, s&atilde;o informados os transmitentes do im&oacute;vel.
+Uma ITBI pode possuir mais de um transmitente, por&eacute;m um deles
+deve ser escolhido como principal.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Os transmitentes adicionados na ITBI, podem ser do cadastro de CGM,
+ou ter os dados digitados diretamente conforme os campos abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Numcgm</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm; margin-bottom: 0cm">
+Para incluir transmitentes que estejam no cadastro do CGM, basta
+Informar o c&oacute;digo do cgm do  ou clicar no link para pesquisar
+pelo nome, selecionar se o transmitente &eacute; o principal e o sexo
+e ap&oacute;s clicar no bot&atilde;o incluir. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Para os demais transmitentes, repita a opera&ccedil;&atilde;o, por&eacute;m
+s&oacute; &eacute; permitido um transmitente principal em cada ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"> 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>N&uacute;mero
+da guia de ITBI</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Esse campo corresponde ao c&oacute;digo da ITBI e ser&aacute;
+preenchido automaticamente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Os campos: nome, CPF/CNPJ, endere&ccedil;o, n&uacute;mero,
+complemento, bairro, caixa postal, UF, CEP, e e-mail devem ser
+preenchidos para os casos em que o transmitente que est&aacute; sendo
+inclu&iacute;do na ITBI, n&atilde;o est&aacute; no cadastro do CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m39867225.png" NAME="figura13" ALIGN=LEFT WIDTH=605 HEIGHT=264 BORDER=0><BR CLEAR=LEFT>figura
+18</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+COMPRADORES</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Nessa aba, s&atilde;o informados os compradores do im&oacute;vel. Uma
+ITBI pode possuir mais de um comprador, por&eacute;m um deles deve
+ser escolhido como principal.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Os compradores adicionados na ITBI, podem ser do cadastro de CGM, ou
+ter os dados digitados diretamente conforme os campos abaixo.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Numcgm</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Para incluir comprador que estejam no cadastro do CGM, basta Informar
+o c&oacute;digo do cgm do  ou clicar no link para pesquisar pelo
+nome, selecionar se o comprador &eacute; o principal e o sexo e ap&oacute;s
+clicar no bot&atilde;o incluir. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Para os demais compradores, repita a opera&ccedil;&atilde;o, por&eacute;m
+s&oacute; &eacute; permitido um comprador principal em cada ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+ 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>N&uacute;mero
+da guia de ITBI</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Esse campo corresponde ao c&oacute;digo da ITBI e ser&aacute;
+preenchido automaticamente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Os campos: nome, CPF/CNPJ, endere&ccedil;o, n&uacute;mero,
+complemento, bairro, caixa postal, UF, CEP, e e-mail devem ser
+preenchidos para os casos em que o comprador que est&aacute; sendo
+inclu&iacute;do na ITBI, n&atilde;o est&aacute; no cadastro do CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="manual_ITBI_html_m56ce2431.png" NAME="figura14" ALIGN=LEFT WIDTH=605 HEIGHT=265 BORDER=0><BR CLEAR=LEFT>figura
+19</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+CONSTRU&Ccedil;&Otilde;ES</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nessa aba s&atilde;o lan&ccedil;adas as constru&ccedil;&otilde;es
+existentes no im&oacute;vel que est&aacute; sendo transmitido.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Informe a &aacute;rea total da constru&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+transmitida</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Informe a &aacute;rea da constru&ccedil;&atilde;o que ser&aacute;
+transmitida. Esse campo ser&aacute; preenchido automaticamente com a
+&aacute;rea total da constru&ccedil;&atilde;o, por&eacute;m pode ser
+alterado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Ano
+da constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nessa campo, informe o ano que a constru&ccedil;&atilde;o que est&aacute;
+sendo lan&ccedil;ada foi edificada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&otilde;es</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nesse campo pode ser digitada qualquer observa&ccedil;&atilde;o a
+respeito da constru&ccedil;&atilde;o que est&aacute; sendo lan&ccedil;ada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<B>Ex.:</B> Constru&ccedil;&atilde;o em ru&iacute;nas, constru&ccedil;&atilde;o
+em andamento, etc.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Esp&eacute;cie
+de constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm; margin-bottom: 0cm">
+Selecione a esp&eacute;cie da constru&ccedil;&atilde;o que est&aacute;
+sendo inclu&iacute;da. A rela&ccedil;&atilde;o que aparece para
+selecionar faz parte do cadastro de caracter&iacute;sticas de
+constru&ccedil;&otilde;es do cadastro imobili&aacute;rio que est&atilde;o
+vinculados ao grupo de esp&eacute;cie de constru&ccedil;&otilde;es
+para ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm; margin-bottom: 0cm">
+<B>Ex.: </B>alvenaria, madeira, mista, etc.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Tipo
+de constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Selecione a tipo da constru&ccedil;&atilde;o que est&aacute; sendo
+inclu&iacute;da. A rela&ccedil;&atilde;o que aparece para selecionar
+faz parte do cadastro de caracter&iacute;sticas de constru&ccedil;&otilde;es
+do cadastro imobili&aacute;rio que est&atilde;o vinculados ao grupo
+de tipo de constru&ccedil;&otilde;es para ITBI.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Ex.: casa, apartamento, garagem, loja, pavilh&atilde;o, etc.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="manual_ITBI_html_4be1610.png" NAME="figura15" ALIGN=LEFT WIDTH=605 HEIGHT=138 BORDER=0><BR CLEAR=LEFT>figura
+20</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="manual_ITBI_html_m7d833fbf.png" NAME="figura16" ALIGN=LEFT WIDTH=605 HEIGHT=156 BORDER=0><BR CLEAR=LEFT>figura
+21</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H2 CLASS="western"><A NAME="4.2.Libera ITBI|outline"></A><A NAME="4.2.Libera ITBI|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2571db">Libera ITBI</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+A rotina de libera&ccedil;&atilde;o de ITBI, consiste no processo
+pelo qual o avaliador da prefeitura atribui o valor do im&oacute;vel
+objeto da transmiss&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Para avaliar uma ITBI, selecione o registro desejado na lista
+conforme figura 22. A tela ser&aacute; apresentada contendo as
+informa&ccedil;&otilde;es que foram lan&ccedil;adas na inclus&atilde;o.
+Ap&oacute;s a sele&ccedil;&atilde;o, preencha os campos conforme
+descrito a seguir e demonstrado na figura 23.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Data
+de Vencimento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo deve ser informada a data de vencimento do d&eacute;bito,
+que ser&aacute; gerado correspondente ao imposto devido pelo
+contribuinte.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Sempre ser&aacute; sugerida a data de vencimento considerando 30 dias
+ap&oacute;s a data que foi cadastrada a ITBI, por&eacute;m pode ser
+alterada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&otilde;es</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo, pode ser lan&ccedil;ada qualquer observa&ccedil;&atilde;o
+a respeito da ITBI que est&aacute; sendo liberada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+a vista do terreno</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo deve ser informado o valor do terreno atribu&iacute;do
+pelo avaliador da prefeitura correspondente a parcela da transa&ccedil;&atilde;o
+que ser&aacute; paga a vista pelo adquirente do im&oacute;vel.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+a vista da constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo deve ser informado o valor da(s) constru&ccedil;&atilde;o(&otilde;es)
+atribu&iacute;do pelo avaliador da prefeitura correspondente a
+parcela da transa&ccedil;&atilde;o que ser&aacute; paga a vista pelo
+adquirente do im&oacute;vel.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+total a vista</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Esse campo ser&aacute; preenchido automaticamente com o valor da soma
+dos valores a vista do terreno e o valor a vista da constru&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+financiado do terreno</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.98cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo deve ser informado o valor do terreno atribu&iacute;do
+pelo avaliador da prefeitura correspondente a parcela da transa&ccedil;&atilde;o
+que ser&aacute; financiado pelo adquirente do im&oacute;vel.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+financiado da constru&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo deve ser informado o valor da(s) constru&ccedil;&atilde;o(&otilde;es)
+atribu&iacute;do pelo avaliador da prefeitura correspondente a
+parcela da transa&ccedil;&atilde;o que ser&aacute; financiado pelo
+adquirente do im&oacute;vel.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+bruto</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Esse campo ser&aacute; preenchido automaticamente e corresponde ao
+valor do imposto calculado aplicando as al&iacute;quotas definidas no
+cadastro de tipo de transa&ccedil;&atilde;o sobre os valores
+atribu&iacute;dos pelo avaliador, considerando o percentual de
+desconto quando houver.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Valor
+a pagar</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Essa informa&ccedil;&atilde;o corresponde ao valor do imposto
+incidente sobre a transmiss&atilde;o que ser&aacute; impresso no
+boleto de pagamento integrado com o formul&aacute;rio para pagamento.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+O valor do imposto gerado nessa rotina, n&atilde;o &eacute; lan&ccedil;ado
+como d&eacute;bito pendente para o contribuinte, somente ser&aacute;
+visualizado como &ldquo;Pagamento Efetuado&rdquo; na Consulta Geral
+Financeira quando for registrado seu pagamento. Dessa forma, caso o
+contribuinte n&atilde;o efetuar o pagamento, n&atilde;o ser&aacute;
+apresentado nenhum d&eacute;bito em aberto em seu nome e isso n&atilde;o
+ser&aacute; considerado na emiss&atilde;o de certid&atilde;o de
+d&eacute;bitos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Ap&oacute;s o preenchimento dos valores descritos anteriormente,
+clique o bot&atilde;o &ldquo;Libera Guia&rdquo;. Ap&oacute;s esse
+procedimento, dever&aacute; acessar o menu Relat&oacute;rios &gt;&gt;
+Emite Guia para realizar a impress&atilde;o do formul&aacute;rio de
+ITBI devidamente preenchido e com o boleto para pagamento do imposto.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="manual_ITBI_html_mc6393ab.png" NAME="figura17" ALIGN=LEFT WIDTH=605 HEIGHT=185 BORDER=0><BR CLEAR=LEFT>figura
+22</P>
+<H2 CLASS="western"></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="manual_ITBI_html_m5f043b8c.png" NAME="figura18" ALIGN=LEFT WIDTH=605 HEIGHT=226 BORDER=0><BR CLEAR=LEFT>figura
+23</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H2 CLASS="western"><A HREF="#Sum&aacute;rio1|region">Altera&ccedil;&atilde;o
+de ITBI</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nessa rotina, pode-se efetuar altera&ccedil;&atilde;o nas ITBIs que
+ainda foram liberadas (avaliadas) pelo avaliador da prefeitura. Nesse
+caso, &eacute; permitido alterar qualquer informa&ccedil;&atilde;o
+lan&ccedil;ada na inclus&atilde;o exceto a matr&iacute;cula que para
+o qual foi feita a inclus&atilde;o no caso de ITBI urbana.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Para efetuar a altera&ccedil;&atilde;o, selecione o registro desejado
+na lista conforme figura 22. Somente ser&atilde;o relacionadas na
+lista as ITBIs que ainda n&atilde;o foram liberadas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H2 CLASS="western"><A HREF="#Sum&aacute;rio1|region" NAME="db4530db">Altera&ccedil;&atilde;o
+de ITBI liberada</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nessa rotina, pode-se efetuar altera&ccedil;&atilde;o somente das
+informa&ccedil;&otilde;es relativas a data de solicita&ccedil;&atilde;o,
+data da libera&ccedil;&atilde;o e data de vencimento do d&eacute;bito,
+para isso basta selecionar o registro desejado na lista conforme
+figura 24 e efetuar as altera&ccedil;&otilde;es conforme demonstrado
+na figura 25.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="manual_ITBI_html_m5d232c93.png" NAME="figura19" ALIGN=LEFT WIDTH=605 HEIGHT=171 BORDER=0><BR CLEAR=LEFT>figura
+24</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="manual_ITBI_html_m475a7178.png" NAME="figura20" ALIGN=LEFT WIDTH=605 HEIGHT=117 BORDER=0><BR CLEAR=LEFT>figura
+25</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal"><A NAME="4.3.Par&acirc;metros|outline"></A><A NAME="4.3.Par&acirc;metros|outline"></A>
+<FONT SIZE=4><A HREF="#Sum&aacute;rio1|region" NAME="db2558db">Par&acirc;metros</A></FONT></H2>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.1.Tipo de constru&ccedil;&atilde;o|outline"></A><A NAME="4.3.1.Tipo de constru&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2556db">Tipo de constru&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nesse par&acirc;metro, deve ser informado qual o grupo de
+caracter&iacute;sticas que ser&aacute; apresentado na inclus&atilde;o
+de uma ITBI na aba constru&ccedil;&otilde;es para definir o tipo de
+constru&ccedil;&atilde;o. Esse grupo de caracter&iacute;stica faz
+parte do cadastro de grupos de caracter&iacute;sticas efetuados no
+m&oacute;dulo cadastro imobili&aacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<B>Ex.:</B> grupo: tipo de constru&ccedil;&atilde;o</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.91cm; margin-bottom: 0cm">
+Caracter&iacute;sticas ligadas ao grupo: casa, apartamento, galp&atilde;o,
+dep&oacute;sito, pavilh&atilde;o, etc.</P>
+<H3 CLASS="western"><A NAME="4.3.2.Esp&eacute;cie de constru&ccedil;&atilde;o|outline"></A><A NAME="4.3.2.Esp&eacute;cie de constru&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2557db">Esp&eacute;cie de
+constru&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+Nesse par&acirc;metro, deve ser informado qual o grupo de
+caracter&iacute;sticas que ser&aacute; apresentado na inclus&atilde;o
+de uma ITBI na aba constru&ccedil;&otilde;es para definir a esp&eacute;cie
+da constru&ccedil;&atilde;o. Esse grupo de caracter&iacute;stica faz
+parte do cadastro de grupos de caracter&iacute;sticas efetuados no
+m&oacute;dulo cadastro imobili&aacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+<B>Ex.:</B> grupo: esp&eacute;cie de constru&ccedil;&atilde;o</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.99cm; margin-bottom: 0cm">
+Caracter&iacute;sticas ligadas ao grupo: alvenaria, madeira, mista,
+etc.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.04cm; margin-bottom: 0cm">
+<BR>
+</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.3.Recibo ITBI|outline"></A><A NAME="4.3.3.Recibo ITBI|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3593db">Recibo ITBI</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Nesse par&acirc;metro s&atilde;o configurados os seguinte campos:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Numcgm</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm; margin-bottom: 0cm">
+Informe o CGM que dever&aacute; ser registrado o pagamento do d&eacute;bito
+quando for efetivado o pagamento de uma guia de ITBI que foi
+cadastrada sem utilizar nenhum comprador do cadastro do CGM e sim
+digitado diretamente os dados na inclus&atilde;o da guia. Normalmente
+nesse par&acirc;metro &eacute; configurado o CGM da pr&oacute;pria
+prefeitura.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;digo da receita</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.01cm">Informe
+nesse campo o c&oacute;digo da receita or&ccedil;ament&aacute;ria que
+ser&aacute; registrado o pagamento do d&eacute;bito.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="manual_ITBI_html_m78f97132.png" NAME="figura1" ALIGN=LEFT WIDTH=605 HEIGHT=74 BORDER=0><BR CLEAR=LEFT>figura
+26</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<DIV ALIGN=RIGHT>
+		<TABLE WIDTH=605 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=523>
+			<COL WIDTH=66>
+			<TR VALIGN=TOP>
+				<TD WIDTH=523>
+					<P ALIGN=CENTER STYLE="background: transparent"><FONT SIZE=2 STYLE="font-size: 9pt">DBSeller
+					Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+					</FONT><A HREF="http://www.dbseller.com.br/"><FONT SIZE=2 STYLE="font-size: 9pt">www.dbseller.com.br</FONT></A><FONT SIZE=2 STYLE="font-size: 9pt">
+					                                                                
+					                                                Rua General
+					C&acirc;mara, 406/301 - Porto Alegre/RS - Fone: (51) 3076-5101</FONT></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>24</SDFIELD>
+					/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>24</SDFIELD></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

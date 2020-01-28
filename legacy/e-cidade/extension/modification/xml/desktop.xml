@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modification>
+
+  <id>dbportal-v3-desktop</id>
+  <label>DBPortal v3 - desktop</label>
+  <version>1.0</version>
+  <type>global</type>
+
+  <!-- scrips alterados antes de trocar top. CurrentWindow. {{{ -->
+
+  <file path="con4_trocadata.php">
+
+    <operation error="skip" label="deixa compativel com versao">
+      <search><![CDATA[echo "<script>";
+  echo "parent.{$sParentAdicional}bstatus.document.getElementById('dtatual').innerHTML = '".date("d/m/Y",db_getsession("DB_datausu"))."';";
+  echo "parent.{$sParentAdicional}bstatus.document.getElementById('dtanousu').innerHTML = '".db_getsession("DB_anousu")."' ;";
+  echo "</script>";]]></search>
+      <add>
+        <![CDATA[echo "<script>";
+  echo "parent.{$sParentAdicional}bstatus.document.getElementById('dtatual').innerHTML = '".date("d/m/Y",db_getsession("DB_datausu"))."';";
+  echo "parent.{$sParentAdicional}bstatus.document.getElementById('dtanousu').innerHTML = '".db_getsession("DB_anousu")."' ;";
+  echo "</script>";]]>
+      </add>
+    </operation>
+
+    <operation error="log" label="troca data da sessao global">
+      <search><![CDATA[echo "<script>";
+  echo "parent.{$sParentAdicional}bstatus.document.getElementById('dtatual').innerHTML = '".date("d/m/Y",db_getsession("DB_datausu"))."';";
+  echo "parent.{$sParentAdicional}bstatus.document.getElementById('dtanousu').innerHTML = '".db_getsession("DB_anousu")."' ;";
+  echo "</script>";]]></search>
+      <add><![CDATA[?>
+<script>
+parent.parent.Desktop.Session.updateGlobal({
+  DB_datausu : '<?php echo db_getsession("DB_datausu"); ?>',
+  DB_anousu : '<?php echo db_getsession("DB_anousu"); ?>',
+}, function(error, data) {
+
+  if (error) {
+    return alert(error);
+  }
+
+  CurrentWindow.bstatus.location.href = CurrentWindow.bstatus.location.href;
+
+});
+</script>
+<?php  ]]></add>
+    </operation>
+  </file>
+
+  <!-- }}} scrips alterados antes de trocar CurrentWindow. CurrentWindow. -->
+
+  <file path="func_calendario.php">
+    <operation error="log" label="remove href vazio">
+			<search><![CDATA[href=\"\"]]></search>
+      <add position="replace"><![CDATA[]]></add>
+    </operation>
+  </file>
+
+  <file path="inicio.php">
+    <operation error="abort" label="Redireciona para extension/desktop/">
+			<search limit="1"><![CDATA[<?php]]></search>
+      <add position="after"><![CDATA[
+        \ECidade\V3\Extension\Registry::get('app.response', \ECidade\V3\Extension\Registry::get('extension.response'))->redirect('extension/desktop/');]]></add>
+    </operation>
+  </file>
+
+  <file path="dbforms/db_funcoes.php">
+
+    <operation error="log">
+      <search><![CDATA[<a href='#' id="<?=$varnome?>" class='dbancora']]></search>
+      <add><![CDATA[<a id="<?=$varnome?>" class='DBAncora']]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[<a href='#' class='dbancora']]></search>
+      <add><![CDATA[<a class='DBAncora']]></add>
+    </operation>
+
+  </file>
+
+  <file path="libs/db_stdlib.php">
+
+    <operation error="log">
+      <search><![CDATA[db_msgbox($sMensagem);]]></search>
+      <add><![CDATA[throw new \ECidade\V3\Extension\Exceptions\ResponseException($sMensagem);]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[href=\"\"]]></search>
+      <add></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[$this->iniciarVisivel = "visible"]]></search>
+      <add><![CDATA[$this->iniciarVisivel = "block"]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[$this->iniciarVisivel = "hidden"]]></search>
+      <add><![CDATA[$this->iniciarVisivel = "none"]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[visibility: <? echo $this->iniciarVisivel ?>]]></search>
+      <add><![CDATA[display: <? echo $this->iniciarVisivel ?>]]></add>
+    </operation>
+
+    <operation error="log" label="alert. por CurrentWindow.alert">
+      <search regex="true"><![CDATA[([^A-z\$])alert([^A-z])]]></search>
+      <add><![CDATA[$1(window.CurrentWindow || parent.CurrentWindow).alert$2]]></add>
+    </operation>
+
+  </file>
+
+  <file path="skins/*/estilos/estilos.css">
+
+    <operation error="log">
+      <search><![CDATA[body.body-default {
+  margin: 0;
+  margin-top: 30px;
+  background: #e1dede;
+}
+
+body.abas {
+  margin-top: 20px;
+}]]></search>
+      <add><![CDATA[body.body-default {
+  margin: 0;
+  margin-top: 0px !important;
+  background: #e1dede;
+}
+
+body.abas {
+  margin-top: 0px !important;
+}
+body.no-menu, body.body-default {
+  margin-top: 0px !important;
+}
+  ]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[.DBAncora {
+  text-decoration: underline;
+  font-weight: bold;]]></search>
+      <add position="after"><![CDATA[
+  color: #551A8B;
+  cursor: pointer;
+]]></add>
+    </operation>
+    <operation error="log">
+      <add position="bottom"><![CDATA[a {
+  cursor: pointer;
+}
+]]>
+ </add>
+    </operation>
+  </file>
+
+  <file path="scripts/widgets/windowAux.widget.js">
+    <operation error="log">
+      <search><![CDATA[this.divWindow.style.left = left+"px";]]></search>
+      <add position="before"><![CDATA[left = ((CurrentWindow.corpo.innerWidth - this.iWidth)/2);
+      CurrentWindow.fixSize.windowAux[this.divWindow.id] = this.divWindow;
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="dbforms/db_classesgenericas.php">
+
+    <operation error="log">
+      <search><![CDATA[$abas_top      = "46"]]></search>
+      <add><![CDATA[$abas_top      = "44"]]></add>
+    </operation>
+
+    <operation error="log" label="altera tipo de input das abas de text para button">
+      <search><![CDATA[type="text"  value="<?=$this->identifica[$chave]?>"]]></search>
+      <add><![CDATA[type="button"  value="<?=$this->identifica[$chave]?>"]]></add>
+    </operation>
+
+    <operation error="log" label="remove outline do input das abas">
+      <search><![CDATA[.input-abas {]]></search>
+      <add><![CDATA[.input-abas::-moz-focus-inner {
+            border: 0;
+          }
+          .input-abas {
+             outline : none;
+]]></add>
+    </operation>
+
+  </file>
+
+  <file path="scripts/{scripts,webseller}.js">
+    <operation error="log" label="adiciona definicao da variavel CurrentWindow no topo do arquivo">
+      <add position="top"><![CDATA[
+;(function(global) {
+
+  // script ja carregado
+  if (global.CurrentWindow) {
+    return false;
+  }
+
+  var
+
+    // confirm() builtin do navegador
+    _confirm = global.confirm,
+
+    // tanta buscar a variavel CurrentWindow do parent
+    CurrentWindow = global.CurrentWindow || parent.CurrentWindow || window.frameElement.CurrentWindow,
+
+    /**
+     * @param {String} message
+     * @param {Function} done
+     * @return {Boolean}
+     */
+    confirm = function(message, done) {
+
+      if (!done) {
+        return _confirm.call(global, message);
+      }
+
+      return CurrentWindow.confirm.call(global, message, done);
+    }
+  ;
+
+  global.CurrentWindow = CurrentWindow;
+  global.Desktop = CurrentWindow.Desktop;
+  global.alert = CurrentWindow.alert;
+  global.confirm = confirm;
+
+  document.addEventListener('mousedown', CurrentWindow._eventHandler);
+
+})(this);
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="scripts/scripts.js">
+
+    <operation error="log" label="faz backup da funcao js_divCarregando">
+      <search><![CDATA[function js_divCarregando(mensagem,id, lBloqueia){]]></search>
+      <add position="replace"><![CDATA[function js_divCarregando_old(mensagem,id, lBloqueia){]]></add>
+    </operation>
+
+    <operation error="log" label="usar loader da window no lugar do js_divCarregando">
+      <search><![CDATA[function js_divCarregando_old(mensagem,id, lBloqueia){]]></search>
+      <add position="before"><![CDATA[function js_divCarregando(mensagem,id, lBloqueia) {
+  var loader = window.frameElement && window.frameElement.loader ? window.frameElement.loader : CurrentWindow.loader;
+
+  loader.message.add({
+    id : id, html : mensagem.replace(/\\n\\n/gm, '<br>')
+  });
+
+  var obj = document.createElement('div');
+  obj.setAttribute('id', id);
+  obj.style.display = 'none';
+  document.body.appendChild(obj);
+
+  return loader.show();
+}
+
+ ]]></add>
+    </operation>
+
+    <operation error="log" label="faz backup da funcao js_removeObj">
+      <search><![CDATA[function js_removeObj(idObj) {]]></search>
+      <add position="replace"><![CDATA[function js_removeObj_old(idObj) {]]></add>
+    </operation>
+
+    <operation error="log" label="usar loader da window no lugar do js_removeObj">
+      <search><![CDATA[function js_removeObj_old(idObj) {]]></search>
+      <add position="before"><![CDATA[function js_removeObj(idObj) {
+  var loader = window.frameElement && window.frameElement.loader ? window.frameElement.loader : CurrentWindow.loader;
+  loader.message.remove(idObj);
+  loader.hide();
+
+  var obj = document.getElementById(idObj);
+  if (obj) {
+    document.body.removeChild(obj);
+  }
+}
+
+ ]]></add>
+
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[if (browser.isIE)
+  document.onmousedown = pageMousedown;
+else {
+  document.addEventListener("mousedown", pageMousedown, true);
+     document.addEventListener("mousedown", function(event) {
+      CurrentWindow.corpo.pageMousedown(event);
+     }, false);
+}]]></search>
+      <add></add>
+    </operation>
+
+    <operation error="log">
+      <search>
+        <![CDATA[document.getElementById('IF' + nomeJan).src = arquivo;
+
+  eval(nomeJan + ".focus()");
+  return eval(nomeJan);
+}]]>
+      </search>
+      <add>
+        <![CDATA[
+  CurrentWindow.createLoading(document.getElementById('IF' + nomeJan), tab1Linha2);
+
+  document.getElementById('IF' + nomeJan).src = arquivo;
+
+  eval(nomeJan + ".focus()");
+  return eval(nomeJan);
+}
+]]>
+      </add>
+    </operation>
+
+    <operation error="log">
+      <search>
+        <![CDATA[window.document.captureEvents(Event.KEYDOWN);
+window.document.onkeydown  = function (event) {
+  if (event.which == 116) {
+    return false;
+  };
+}]]>
+      </search>
+      <add></add>
+    </operation>
+
+    <operation error="log" label="faz backup da funcao js_bloqueiaMenus">
+      <search>
+        <![CDATA[function js_bloqueiaMenus(lBloqueia, sCallBack) {]]>
+      </search>
+      <add position="replace"><![CDATA[function js_bloqueiaMenus_old(lBloqueia, sCallBack) {]]></add>
+    </operation>
+
+    <operation error="log" label="remove comportamente da funcao js_bloqueiaMenus">
+      <search>
+        <![CDATA[function js_bloqueiaMenus_old(lBloqueia, sCallBack) {]]>
+      </search>
+      <add position="before"><![CDATA[function js_bloqueiaMenus(lBloqueia, sCallBack) { return true; }
+
+        ]]></add>
+    </operation>
+
+    <operation error="log">
+      <search>
+        <![CDATA[CurrentWindow.topo.document.addEventListener("mousedown", Menu_events)
+CurrentWindow.bstatus.document.addEventListener("mousedown", Menu_events)
+this.document.addEventListener("mousedown", Menu_events);]]>
+      </search>
+      <add></add>
+    </operation>
+
+    <operation error="log">
+      <search>
+        <![CDATA[document.addEventListener('DOMContentLoaded', function() {
+
+  if (!this['Ajax']) {
+    return;
+  }
+
+  var oParametros = {
+    screen: {
+      width: CurrentWindow.screen.width,
+      height: CurrentWindow.screen.height,
+      availWidth: CurrentWindow.screen.availWidth,
+      availHeight: CurrentWindow.screen.availHeight
+    },
+    userAgent: CurrentWindow.navigator.userAgent,
+    exec: "coletaInfoCliente"
+  }
+
+  if (CurrentWindow.performance && CurrentWindow.performance.timing) {
+    oParametros.timing = CurrentWindow.performance.timing;
+  }
+
+  var oRequisicao = {
+    method       : 'POST',
+    asynchronous : true,
+    parameters   : 'json='+JSON.stringify(oParametros)
+  }
+
+  new Ajax.Request("con1_usuariosistema.RPC.php", oRequisicao);
+
+});]]>
+        </search>
+      <add></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[if(CurrentWindow.corpo.document)
+    CurrentWindow.corpo.document.onkeyup = function(event) { someFrame(event); };]]></search>
+      <add></add>
+    </operation>
+
+
+    <operation error="log">
+      <search><![CDATA[if( eval(qual_div+'.style.visibility') == 'visible')]]></search>
+      <add><![CDATA[if( eval(qual_div+'.style.display') == 'block')]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[location.href='index.php';]]></search>
+      <add></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[if(mostraJanela==undefined)]]>
+      </search>
+      <add position="before"><![CDATA[
+  var margin = {top : 0, left : 0};
+]]>
+      </add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[if(leftJanela==undefined)
+    leftJanela = '1';]]></search>
+      <add><![CDATA[if(leftJanela==undefined)
+    leftJanela = '0';]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[if(topoJanela==undefined)
+    topoJanela = '20';]]></search>
+      <add><![CDATA[if(topoJanela==undefined)
+    topoJanela = '0';]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[executa  = eval(executa);]]></search>
+      <add position="after"><![CDATA[
+
+    var boxJanela = (aondeJanela ? eval(aondeJanela+'.'+nomeJanela) : eval(nomeJanela))['moldura'];
+    var boxCalendar = boxJanela.id.indexOf('Janiframe_data_') === 0;
+
+    boxJanela._fix = {
+      height : 15,
+      width : 25,
+      top : window.scrollY,
+      left : window.scrollX + 10,
+    };
+
+    if (!boxCalendar && window.frameElement.getAttribute('class') == 'bordasi') {
+      boxJanela._fix.height = 45;
+    }
+
+    if (!boxCalendar) {
+
+      var _maxWidth = CurrentWindow.corpo.innerWidth - boxJanela._fix.width;
+      var _maxHeight = CurrentWindow.corpo.innerHeight - boxJanela._fix.height;
+
+      boxJanela.style.width = _maxWidth + 'px';
+      boxJanela.style.height = _maxHeight + 'px';
+
+      if (widthJanela && Number(widthJanela) < _maxWidth) {
+        boxJanela.style.width = widthJanela + 'px';
+      }
+
+      if (heigthJanela && Number(heigthJanela) < _maxHeight) {
+        boxJanela.style.height = heigthJanela + 'px';
+      }
+
+      boxJanela.style.top = boxJanela._fix.top + 'px';
+      boxJanela.style.left = boxJanela._fix.left + 'px';
+
+      CurrentWindow.fixSize.divIframe[boxJanela.id] = boxJanela;
+    }
+        ]]>
+      </add>
+    </operation>
+
+    <operation error="log" label="Altera mensagem de processando... pelo gif loading">
+      <search><![CDATA[var elem = Iframe.document.getElementById("mensagem");
+      elem.innerHTML = "<table border='0' cellpadding='0' cellspacing='0'><tr><td width='" + Larg + "' height='" + Alt + "' align='center' valign='middle'><strong>" + msg + "</strong></td></tr></table>";
+      elem.style.backgroundColor = cor;
+      elem.style.layerBackgroundColor = cor;
+      elem.style.position = "absolute";
+      elem.style.left = "0px";
+      elem.style.top = "0px";
+      elem.style.zIndex = "100";
+      elem.style.visibility = 'visible';
+      elem.style.width = Larg;
+      elem.style.height = Alt;]]></search>
+      <add><![CDATA[var elem = Iframe.document.getElementById("mensagem");
+      elem.style.background = '#e1dede';
+      elem.style.position = "absolute";
+      elem.style.left = "0px";
+      elem.style.top = "0px";
+      elem.style.zIndex = "100";
+      elem.style.visibility = 'visible';
+      elem.style.width = '100%';
+      elem.style.height = '100%';]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[style.visibility = "hidden"]]></search>
+      <add><![CDATA[style.display = "none"]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[style.visibility = 'hidden';]]></search>
+      <add><![CDATA[style.display = 'none';]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[camada.style.zIndex               = "1";]]></search>
+      <add><![CDATA[camada.style.zIndex               = "100";]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[widthJanela =  screen.availWidth-25;]]></search>
+      <add><![CDATA[widthJanela =  CurrentWindow.corpo.innerWidth - margin.left;]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[heigthJanela = screen.availHeight-150;]]></search>
+      <add><![CDATA[heigthJanela = CurrentWindow.corpo.innerHeight - margin.top;]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[document.forms[i].elements[j].style.visibility = v;]]></search>
+      <add><![CDATA[document.forms[i].elements[j].style.display = v;]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[F[i].elements[j].style.visibility = v;]]></search>
+      <add><![CDATA[F[i].elements[j].style.display = v;]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[style.visibility = "visible"]]></search>
+      <add><![CDATA[style.display = "block"]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[style.visibility = 'visible']]></search>
+      <add><![CDATA[style.display = 'block']]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[.style.visibility           = 'hidden']]></search>
+      <add><![CDATA[.style.display              = 'none']]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[js_hideshowselect('visible')]]></search>
+      <add><![CDATA[js_hideshowselect('block')]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[js_hideshowselect('hidden')]]></search>
+      <add><![CDATA[js_hideshowselect('none')]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[screen.availHeight]]></search>
+      <add><![CDATA[CurrentWindow.corpo.innerHeight]]></add>
+    </operation>
+
+    <operation error="log">
+      <search><![CDATA[screen.availWidth]]></search>
+      <add><![CDATA[CurrentWindow.corpo.innerWidth]]></add>
+    </operation>
+
+  </file>
+
+  <!-- @todo - usar outra exception/tela de erro, ParameterException? -->
+  <!-- redirect para corpo.php {{{ -->
+
+  <file path="cai3_gerfinanc001.php">
+    <operation error="log">
+      <search regex="true"><![CDATA[db_msgbox\("(Tabela.*administrador)"\);]]></search>
+      <add><![CDATA[throw new \ECidade\V3\Extension\Exceptions\ResponseException("$1");]]></add>
+    </operation>
+  </file>
+
+  <file path="libs/db_conecta.php">
+    <operation error="log">
+      <search regex="true"><![CDATA[\$sMsg\s\s=\s"(A\sEmis.*acesso.\\n)";]]></search>
+      <add position="replace"><![CDATA[
+    throw new \ECidade\V3\Extension\Exceptions\ResponseException("$1");]]></add>
+    </operation>
+  </file>
+
+  <file path="{pes4_cancelafechamentosuplementar001,pes4_aberturacomplementar001,pes4_cancelaaberturasuplementar001,pes4_aberturasuplementar001,pes4_cancelafechamentosalario001,pes4_fechamentosuplementar001,pes4_cancelaaberturacomplementar001,pes4_cancelafechamentocomplementar001}.php">
+    <operation error="log">
+      <search><![CDATA[db_msgbox($eException->getMessage());]]></search>
+      <add><![CDATA[throw new \ECidade\V3\Extension\Exceptions\ResponseException($eException->getMessage());]]></add>
+    </operation>
+  </file>
+
+  <file path="pes4_fechamentocomplementar001.php">
+    <operation error="log">
+      <search><![CDATA[db_msgbox($eException->getMessage());]]></search>
+      <add><![CDATA[throw new \ECidade\V3\Extension\Exceptions\ResponseException($eException->getMessage());]]></add>
+    </operation>
+  </file>
+
+  <file path="{arr3_histocorrencia001,iss2_simples002,func_histocorrencia}.php">
+    <operation error="log">
+      <search regex="true"><![CDATA[db_msgbox\("(Tabela.*administrador)"\);]]></search>
+      <add><![CDATA[throw new \ECidade\V3\Extension\Exceptions\ResponseException("$1");]]></add>
+    </operation>
+  </file>
+
+  <!-- }}} redirect para corpo.php -->
+
+  <!-- Modification para alterar o js_objectToJson em arquivos no qual a funcao foi declarada na "m�o" -->
+  <file path="{emp4_anularpagamentoagenda001,emp4_emitereciboretencao001,emp4_pagamentoagenda001,forms/db_frmempageformache,forms/db_frmestornamovimento,forms/db_frmgerarslipretencao,forms/db_frmgerarslipretencaofolha,forms/db_frmmanutencaoagendaslip,forms/db_frmorccenarioeconomicoconplano}.php">
+
+    <operation error="log">
+      <search>
+        <![CDATA[function js_objectToJson(oObject) {]]>
+      </search>
+      <add position="after"><![CDATA[ return JSON.stringify(oObject); ]]></add>
+    </operation>
+
+  </file>
+
+  <!-- trace log {{{ -->
+
+  <file path="con1_ativatrace.RPC.php">
+
+    <operation error="skip" label="deixa compativel com ultimas versoes do fonte">
+      <search>
+        <![CDATA[if ( !$oParametros->lActive ) {
+
+      db_destroysession("DB_traceLog");
+    //  db_destroysession("DB_traceLogAcount");
+    }]]>
+      </search>
+      <add position="replace">
+        <![CDATA[if ( !$oParametros->lActive ) {
+        db_destroysession("DB_traceLog");
+      }]]>
+      </add>
+    </operation>
+
+    <operation error="log" label="atualiza todas as sessoes, ativando tracelog">
+      <search>
+        <![CDATA[if ( !$oParametros->lActive ) {
+        db_destroysession("DB_traceLog");
+      }]]>
+      </search>
+      <add position="replace">
+        <![CDATA[if ( !$oParametros->lActive ) {
+
+        db_destroysession("DB_traceLog");
+        db_destroysession("TracelogObject");
+      }
+
+      $data = array();
+
+      $data['TracelogObject'] = isset($_SESSION['TracelogObject']) ? $_SESSION['TracelogObject'] : null;
+      $data['DB_traceLog'] = isset($_SESSION['DB_traceLog']) ? $_SESSION['DB_traceLog'] : null;
+      $data['DB_traceLogAcount'] = isset($_SESSION['DB_traceLogAcount']) ? $_SESSION['DB_traceLogAcount'] : null;
+
+      \ECidade\V3\Window\Session::iterateAll(function($name, $id) use ($data) {
+
+        foreach ($data as $key => $value) {
+
+          if (empty($value)) {
+            unset($_SESSION[$key]);
+            continue;
+          }
+
+          $_SESSION[$key] = $value;
+        }
+      });
+ ]]>
+      </add>
+    </operation>
+
+    <operation error="log" label="atualiza todas as sessoes, ativando pre menu">
+    <search>
+      <![CDATA[db_destroysession('DB_premenus');]]>
+   </search>
+   <add position="after">
+     <![CDATA[
+      \ECidade\V3\Window\Session::iterateAll(function($name, $id) use ($oParametros) {
+
+        unset($_SESSION["DB_premenus"]);
+        if ($oParametros->status =='ativar') {
+          $_SESSION["DB_premenus"] = true;
+        }
+      });
+   ]]>
+   </add>
+    </operation>
+
+  </file>
+
+  <file path="model/configuracao/TraceLog.model.php">
+    <operation error="log" label="corrige metodo getFormatedBacktrace para closure">
+      <search><![CDATA[foreach ( $aBackTraceData as $iIndice => $aRouteData ) {]]></search>
+      <add position="after"><![CDATA[ if (empty($aRouteData['file'])) {continue;} ]]></add>
+    </operation>
+  </file>
+
+  <!-- }}} trace log -->
+
+  <file path="libs/db_{sessoes,conecta}.php">
+    <operation error="log" label="Redireciona para db_erros caso ocorra erro com sessao">
+      <search><![CDATA[session_destroy();]]></search>
+      <add position="after">
+        <![CDATA[\ECidade\V3\Extension\Registry::get('app.response')->redirect('db_erros.php?fechar=true&db_erro='.urlencode("Sess�o inv�lida."));]]>
+      </add>
+    </operation>
+  </file>
+
+</modification>

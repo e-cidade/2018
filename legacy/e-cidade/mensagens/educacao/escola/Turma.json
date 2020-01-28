@@ -1,0 +1,23 @@
+{
+  "etapa_inexistente_na_turma"        : "A turma não possui a etapa informada",
+  "erro_buscar_vagas"                 : "Erro ao buscar as vagas da turma:\n[sErro]",
+  "erro_buscar_matriculas_turno"      : "Erro ao buscar as matrículas por turno da turma:\n[sErro]",
+  "sem_registro_turno"                : "Erro ao buscar turno(s) referente(s) da turma. Turma não possui registros na tabela turmaturnorefente.",
+  "informe_profissional"              : "Código do profissional não informado.",
+  "informe_atividade"                 : "Código da atividade não informado.",
+  "erro_vincular_profissional"        : "Erro ao salvar o vínculo do profissional com a turma:\n[sErro]",
+  "erro_buscar_profissionais"         : "Erro ao buscar os profissionais vinculados a turma:\n[sErro]",
+  "codigo_vinculo_nao_informado"      : "Código do vínculo do profissional não informado.",
+  "erro_excluir_profissional"         : "Erro ao excluir vínculo do profissional com a turma: \n[sErro]",
+  "erro_buscar_turma"                 : "Erro ao buscar a turma:\n[sErro]",
+  "erro_buscar_etapas_turma"          : "Erro ao buscar as etapas da turma:\n[sErro]",
+  "erro_buscar_regencias"             : "Erro ao buscar as regências da turma:\n[sErro]",
+  "erro_buscar_alunos_progressao"     : "Erro ao buscar os alunos em progressão da turma:\n[sErro]",
+  "erro_buscar_regencia_encerrada"    : "Erro ao validar as regências encerradas:\n[sErro]",
+  "erro_validar_encerramento_parcial" : "Erro ao validar se a turma encontra-se parcialmente encerrada:\n[sErro]",
+  "erro_buscar_regente_conselheiro"   : "Erro ao buscar o regente conselheiro da turma:\n[sErro]",
+  "erro_buscar_turno_adicional"       : "Erro ao buscar o turno adicional:\n[sErro]",
+  "erro_buscar_numeros_bloqueados"    : "Erro ao buscar os números bloqueados da turma:\n[sErro]",
+  "erro_buscar_turno_referente"       : "Erro ao buscar o turno referente:\n[sErro]",
+  "erro_buscar_ultima_matricula"      : "Erro ao buscar as últimas matrículas dos alunos:\n[sErro]"
+}

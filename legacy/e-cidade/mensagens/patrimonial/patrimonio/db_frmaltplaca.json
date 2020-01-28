@@ -1,0 +1,8 @@
+{
+  "placa_igual_zero"     : "Bem não alterado. Alteração Abortada.\nPlaca de identificação não pode ser zero.",
+  "informe_placa"        : "Bem não alterado. Alteração Abortada.\nUsuário: Placa de identificação não informada.",
+  "palca_ja_acadastrada" : "Inclusão não concluída, placa de identificação já cadastrada para outro bem.",
+  "informe_nova_placa"   : "A nova placa do bem : NÃO INFORMADA.",
+  "nova_placa"           : "A nova placa do bem : [nPlacaseq] - [sPlaca].",
+  "nova_placa_formatada" : "A nova placa do bem : [nPlacaseqFormatada] - [sPlaca]."
+}

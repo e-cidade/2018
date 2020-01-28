@@ -1,0 +1,145 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4013' name='recursoshumanos.pontoeletronicoarquivo' description="Tabela que guarda o arquivo do ponto importado" prefix="rh196" label="Tabela com arquivo do ponto importado" type="0">
+  <fields>
+    <field codigo="22274" 
+           campo_api='' 
+           name="rh196_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.pontoeletronicoarquivo_rh196_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22277" 
+           campo_api='' 
+           name="rh196_efetividade_competencia" 
+           conteudo="varchar(2)" 
+           description="Vínculo com a efetividade, competência" 
+           inivalue="" 
+           label="Competência da Efetividade" 
+           size="2" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Competência da Efetividade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22275" 
+           campo_api='' 
+           name="rh196_instituicao" 
+           conteudo="int4" 
+           description="Vínculo com a efetividade, instituição" 
+           inivalue="0" 
+           label="Instituição" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Instituição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22276" 
+           campo_api='' 
+           name="rh196_efetividade_exercicio" 
+           conteudo="int4" 
+           description="Vínculo com a efetividade, exercício" 
+           inivalue="0" 
+           label="Exercício da Efetividade" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Exercício da Efetividade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22279" 
+           campo_api='' 
+           name="rh196_mes" 
+           conteudo="int4" 
+           description="Mês da competência" 
+           inivalue="0" 
+           label="Mês da competência" 
+           size="19" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Mês da competência" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22280" 
+           campo_api='' 
+           name="rh196_arquivo" 
+           conteudo="oid" 
+           description="Arquivo de marcaçõs do ponto" 
+           inivalue="" 
+           label="Arquivo" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Arquivo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22278" 
+           campo_api='' 
+           name="rh196_ano" 
+           conteudo="int4" 
+           description="Ano da competência" 
+           inivalue="0" 
+           label="Ano da Competência" 
+           size="19" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Ano da Competência" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh196_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

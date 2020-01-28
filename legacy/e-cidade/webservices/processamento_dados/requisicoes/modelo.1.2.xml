@@ -1,0 +1,25 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <transacao>false</transacao>
+  <parametros>
+    <parametro nome="tipo0"   obrigatorio="true" tipo="texto" />
+    <parametro nome="tipo1"   obrigatorio="true" tipo="texto" />
+    <parametro nome="caminho" obrigatorio="true" tipo="texto" />
+    <parametro nome="cpf"     obrigatorio="true" tipo="cpf"   />
+    <parametro nome="cnpj"    obrigatorio="true" tipo="cnpj"  />
+    <parametro nome="email"   obrigatorio="true" tipo="email" />
+  </parametros>
+  <configuracoes>
+    <classe referencia="logTxt" nome="DBLog" parametros="$tipo0,$caminho" caminho="model/configuracao/DBLog.model.php" />
+    <classe referencia="logXml" nome="DBLog" parametros="$tipo1,$caminho" caminho="model/configuracao/DBLog.model.php" />
+    <exec>
+      <metodo referencia="logTxt" nome="escreverLog" parametros="$cpf, 0"   />
+      <metodo referencia="logTxt" nome="escreverLog" parametros="$email, 1" />
+      <metodo referencia="logTxt" nome="escreverLog" parametros="$cnpj, 2"  />
+      <metodo referencia="logXml" nome="escreverLog" parametros="$email, 1" />
+      <metodo referencia="logXml" nome="escreverLog" parametros="$cnpj, 2"  />
+      <metodo referencia="logXml" nome="escreverLog" parametros="$email, 1" />
+    </exec>
+  </configuracoes>
+</processamento>

@@ -1,0 +1,85 @@
+<?xml version='1.0' standalone='yes'?>
+<configuracoes>
+  <modulos>
+  	<modulo name='zip'        valorpadrao='zip'        label='Zip'></modulo>
+  	<modulo name='php-pgsql'  valorpadrao='pgsql'      label='PostgreSQL'></modulo>
+  	<modulo name='xmlwriter'  valorpadrao='xmlwriter'  label='XMLWriter'></modulo>
+  	<modulo name='libxml'     valorpadrao='libxml'     label='libxml'></modulo>
+  	<modulo name='php-dom'    valorpadrao='dom'        label='Document Object Model'></modulo>
+  	<modulo name='php-gd'     valorpadrao='gd'         label='Processamento de Imagem (GD)'></modulo>
+  	<modulo name='php-mhash'  valorpadrao='mhash'      label='Mhash'></modulo>
+  	<modulo name='php-mcrypt' valorpadrao='mcrypt'     label='Mcrypt'></modulo>
+  	<modulo name='php-bcmath' valorpadrao='bcmath'     label='BCMath Funcoes Matematicas de Precisao Arbitraria'></modulo>
+  	<modulo name='mbstring'   valorpadrao='mbstring'   label='Multibyte String'></modulo>
+  </modulos>
+
+  <parametros>
+    <parametro name='register_globals'               bool='true'   valorpadrao='1'     operacao='==' label_valorpadrao='On'    label='Register Globals'></parametro>
+    <parametro name='register_long_arrays'           bool='true'   valorpadrao='1'     operacao='==' label_valorpadrao='On'    label='Register Long Arrays'></parametro>
+    <parametro name='register_argc_argv'             bool='true'   valorpadrao='1'     operacao='==' label_valorpadrao='On'    label='Register Argc Argv'></parametro>
+    <parametro name='post_max_size'                  bool='false'  valorpadrao='64M'   operacao='>=' label_valorpadrao='64M'   label='Post Max Size'></parametro>
+    <parametro name='magic_quotes_gpc'               bool='true'   valorpadrao='1'     operacao='==' label_valorpadrao='On'    label='Magic Quotes Gpc'></parametro>
+    <parametro name='upload_max_filesize'            bool='false'  valorpadrao='64M'   operacao='>=' label_valorpadrao='64M'   label='Upload Max Filesize'></parametro>
+    <parametro name='default_socket_timeout'         bool='false'  valorpadrao='60000' operacao='>=' label_valorpadrao='60000' label='Default Socket Timeout'></parametro>
+    <parametro name='max_execution_time'             bool='false'  valorpadrao='60000' operacao='>=' label_valorpadrao='60000' label='Max Execution Time'></parametro>
+    <parametro name='memory_limit'                   bool='false'  valorpadrao='512M'  operacao='>=' label_valorpadrao='512M'  label='Memory Limit'></parametro>
+    <parametro name='allow_call_time_pass_reference' bool='true'   valorpadrao='1'     operacao='==' label_valorpadrao='On'    label='Allow Call Time Pass Reference'></parametro>
+    <parametro name='display_errors'                 bool='false'  valorpadrao='0'     operacao='==' label_valorpadrao='Off'   label='Display Errors'></parametro>
+    <parametro name='session.gc_maxlifetime'         bool='false'  valorpadrao='7200'  operacao='>=' label_valorpadrao='7200'  label='Session.gc Maxlifetime'></parametro>
+  </parametros>
+
+  <database>
+    <parametro name='server_version'               label='Server Version'              valorpadrao='9.2.*'   bool='true'   valor_min='90200' valor_max='90299'></parametro>
+    <parametro name='default_with_oids'            label='Default With Oids'           valorpadrao='on'      bool='false'  valor_min='null'  valor_max='null'></parametro>
+    <parametro name='server_encoding'              label='Server Encoding'             valorpadrao='LATIN1'  bool='false'  valor_min='null'  valor_max='null'></parametro>
+    <parametro name='bytea_output'                 label='Bytea Output'                valorpadrao='escape'  bool='false'  valor_min='null'  valor_max='null'></parametro>
+    <parametro name='escape_string_warning'        label='Escape String Warning'       valorpadrao='off'     bool='false'  valor_min='null'  valor_max='null'></parametro>
+    <parametro name='standard_conforming_strings'  label='Standard Conforming Strings' valorpadrao='off'     bool='false'  valor_min='null'  valor_max='null'></parametro>
+  </database>
+
+  <browsers>
+    <browser name='firefox' versao='1.5.*'></browser>
+    <browser name='firefox' versao='2.0.*'></browser>
+    <browser name='firefox' versao='3.0.*'></browser>
+    <browser name='firefox' versao='3.1.*'></browser>
+    <browser name='firefox' versao='3.5.*'></browser>
+    <browser name='firefox' versao='3.6.*'></browser>
+    <browser name='firefox' versao='4.0.*'></browser>
+    <browser name='firefox' versao='5.0.*'></browser>
+    <browser name='firefox' versao='6.0.*'></browser>
+    <browser name='firefox' versao='7.0.*'></browser>
+    <browser name='firefox' versao='8.0.*'></browser>
+    <browser name='firefox' versao='9.0.*'></browser>
+    <browser name='firefox' versao='10.0.*'></browser>
+    <browser name='firefox' versao='11.0.*'></browser>
+    <browser name='firefox' versao='12.0.*'></browser>
+    <browser name='firefox' versao='13.0.*'></browser>
+    <browser name='firefox' versao='14.0.*'></browser>
+    <browser name='firefox' versao='15.0.*'></browser>
+    <browser name='firefox' versao='16.0.*'></browser>
+    <browser name='firefox' versao='17.0.*'></browser>
+    <browser name='firefox' versao='18.0.*'></browser>
+    <browser name='firefox' versao='19.0.*'></browser>
+    <browser name='firefox' versao='20.0.*'></browser>
+    <browser name='firefox' versao='21.0.*'></browser>
+    <browser name='firefox' versao='22.0.*'></browser>
+    <browser name='firefox' versao='23.0.*'></browser>
+    <browser name='firefox' versao='24.0.*'></browser>
+    <browser name='firefox' versao='25.0.*'></browser>
+    <browser name='firefox' versao='26.0.*'></browser>
+    <browser name='firefox' versao='27.0.*'></browser>
+    <browser name='firefox' versao='28.0.*'></browser>
+    <browser name='firefox' versao='29.0.*'></browser>
+    <browser name='firefox' versao='30.0.*'></browser>
+    <browser name='firefox' versao='31.0.*'></browser>
+    <browser name='firefox' versao='32.0.*'></browser>
+    <browser name='firefox' versao='33.0.*'></browser>
+    <browser name='firefox' versao='34.0.*'></browser>
+    <browser name='firefox' versao='35.0.*'></browser>
+    <browser name='firefox' versao='36.0.*'></browser>
+  </browsers>
+
+  <diretorio name='dbportal2' valorpadrao='e-cidade' label='Diretorio padrao para o e-cidade'></diretorio>
+
+  <template_login label='Diretorio padrao para templates de login' src='templates/template_login_e-cidade.php'></template_login>
+</configuracoes>

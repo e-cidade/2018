@@ -1,0 +1,7 @@
+{
+  "registro_invalido"         : "Importação abortada. Registro inválido encontrado no arquivo.\n - Registro: [iRegistro]\n  - Linha: [iLinha]",
+  "registros_nao_encontrados" : "Não foram encontrados registros para importação.",
+  "departamento_invalido"     : "Importação Abortada. Arquivo não pertence ao departamento selecionado.\n- Departamento: [iCodigo] - [sDescricao] / INEP: [iCodigoInep].\n- Código INEP Escola Arquivo: [iCodigoInepArquivo]",
+  "quantidade_campos"         : "Importação Abortada. Linha [iLinha]\nQuantidade de campos inválido. Cada linha deve conter [iCampos] campos.",
+  "arquivo_invalido"          : "Arquivo inválido."
+}

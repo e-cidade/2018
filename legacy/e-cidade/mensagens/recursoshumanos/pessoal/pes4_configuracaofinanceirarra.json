@@ -1,0 +1,9 @@
+{
+  "tipo_asse_nao_informado"               : "Tipo de assentamento não informado.",
+  "rubrica_provendo_nao_informado"        : "Campo Rubrica de Provento não informada.",
+  "rubrica_previdencia_nao_informado"     : "Campo Rubrica de Previdência não informada.",
+  "rubrica_irrf_nao_informado"            : "Campo Rubrica de IRRF não informada.",
+  "rubrica_pensao_nao_informado"          : "Campo Rubrica de Pensão não informada.",
+  "rubrica_parceladeducao_nao_informado"  : "Campo Rubrica de Encargos não informada.",
+  "rubrica_molestia_nao_informado"        : "Campo Rubrica de Encargos não informada."
+}

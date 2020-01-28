@@ -1,0 +1,9 @@
+{
+   "erro_buscar_dados"        : "Erro ao buscar dados dos professores.\n[sErro]."
+  ,"tipo_servidor_indefinido" : "Erro: Não possível identificar o tipo do servidor."
+  ,"erro_buscar_nome" : "Erro ao buscar nome do professor.\n[sErro]."
+  ,"tipo_totalizado_invalido" : "Tipo do totalizador não é válido ou não foi definido."
+  ,"erro_verificar_regencia"  : "Erro ao verificar se professor é um regente.\n[sErro]."
+  ,"sem_registros_para_filtro_selecionado" : "Não há registros para filtros selecionados."
+  ,"impossivel_localizar_modelo" : "Não foi possível identificar o Modelo."
+}

@@ -1,0 +1,13 @@
+{
+  "carregando_mes"                     : "Carregando meses, aguarde...",
+  "depreciacao_ja_executada"           : "A depreciação para os meses do ano corrente já foram executadas.",
+  "informe_mes"                        : "Informe o mês que deseja processar a depreciação.",
+  "deseja_executar_processamento"      : "Deseja executar o processamento da depreciação para o mês selecionado?",
+  "executando_depreciacao"             : "Executando a depreciação dos bens, aguarde...",
+  "verificando_depreciacao_cadastrada" : "Verificando se todos os bens possuem depreciação cadastrada, aguarde...",
+  "buscando_bens"                      : "Buscando os bens, aguarde...",
+  "bens_nao_encontados"                : "Não foi encontrado bens para executar a deprecição.",
+  "valor_total_maior_valor_atualizado" : "O valor total à ser depreciado não pode ser superior ao valor atualizado.",
+  "informe_percentual"                 : "Existem bens com percentual zerado. Informe um percentual para que a depreciação seja executada.",
+  "processando_depreciacao"            : "Processando depreciação dos bens, aguarde..."
+}

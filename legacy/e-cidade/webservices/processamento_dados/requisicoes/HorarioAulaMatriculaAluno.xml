@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="codigo_matricula" obrigatorio="true" tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe   referencia="matricula" nome="HorarioAulaMatriculaAlunoWebservice" parametros="$codigo_matricula" 
+              caminho="model/educacao/HorarioAulaMatriculaAlunoWebservice.model.php" />
+    <exec>
+      <metodo referencia="matricula" nome="getHorario" parametros="$codigo_matricula" />
+    </exec>
+  </configuracoes>
+</processamento>

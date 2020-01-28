@@ -1,0 +1,25 @@
+<condensar>
+
+
+                                                           ${NOME_CGS}{54}+${IDADE_PAC}{3}+ anos.      ${SEXO_PAC}{9}+
+                                                              ${RUA_PAC}, ${NRO_PAC}, ${COMPLEMENTO_END_PAC}
+               ${NOME_UPS}{36}+        ${BAIRRO_PAC}
+
+                     ${DATA_FAA}{10}+ ${HORA_FAA}{5}+ ${NRO_FAA}{7}+                   ${cidade_pac}{30}+               ${UF_PAC}{2}+               ${NRO_CGS}
+
+  ${cod_medico} ${nome_medico}
+
+  ${faa_proc_cod} ${faa_proc_nome}
+
+
+
+<2 limite=10 preencher>  ${PROCED_DATA}{10}+     ${PROCED_PROF}{40}
+</2>
+
+
+
+
+
+<1 limite=17 preencher>  ${PROC_DATA}{10}+     ${PROC_NOME}{40}
+</1>
+</condensar><fim>

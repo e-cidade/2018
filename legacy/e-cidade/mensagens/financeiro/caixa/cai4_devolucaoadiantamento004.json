@@ -1,0 +1,5 @@
+{
+  "receita_finalidade_devolucao_adiantamento" : "Você está incluindo uma receita classificada na finalidade de registro de devolução de adiantamento. Se a operação desejada não consiste neste tipo de evento, verifique a configuração do Grupo de Contas do Plano Orçamentário nº 11 ou solicite suporte técnico para esclarecimento de dúvidas. Se a operação realmente for uma devolução de adiantamento, acesse o menu CAIXA > PROCEDIMENTOS > DEVOLUÇÃO DE ADIANTAMENTOS",
+  "empenho_prestacao_contas"                  : "Esta Ordem de Pagamento pertence ao empenho [sEmpenho], classificado no tipo de evento Prestação de Contas. Para realizar esta operação acesse o menu CAIXA > PROCEDIMENTOS > DEVOLUÇÃO DE ADIANTAMENTOS",
+  "movimento_nao_encontrado"                  : "Movimento não encontrado."
+}

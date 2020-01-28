@@ -1,0 +1,5 @@
+{
+  "erro_mais_de_uma_projecao"  : "Não foi salvar Meta de arrecadação para o para a Receita [receita] no Mês de [mes] existem mais que uma projeção para o mês.",
+  "erro_inclusao_meta_receita" : "Não foi salvar incluir Meta de arrecadação para o para a Receita [receita] no Mês de [mes]",
+  "erro_salvar_meses"          : "Erro ao salvar Meses da base de calculo da Receita [receita]![msg]"
+}

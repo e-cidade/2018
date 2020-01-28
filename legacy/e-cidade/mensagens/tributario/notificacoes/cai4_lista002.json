@@ -1,0 +1,7 @@
+{
+  "erro_executar_query"        : "Erro ao executar a query [sSql], Mensagem Banco: [sResultado]",
+  "erro_executar_query_inclui" : "Erro ao executar a query [sSqlInclui], Mensagem Banco: [sResultado]",
+  "processando_tipos_debitos"  : "Processando tipos de debitos da lista [iLista]...",
+  "defina_tipo_lista"          : "Tipo de Lista [sTipoLista] não definida.",
+  "data_debito"                : "Data de Débitos não definida."
+}

@@ -1,0 +1,13 @@
+{
+  "acordo_empempitem_excluir"             : "ERRO - [ 1 ] - Desvinculando itens - [erro_msg]"    ,
+  "acordo_item_excluir"                   : "ERRO - [ 2 ] - Desvinculando itens - [erro_msg]"    ,
+  "acordo_vigencia_excluir"               : "ERRO - [ 3 ] - Desvinculando itens - [erro_msg]"    ,
+  "acordo_posicao_periodo_excluir"        : "ERRO - [ 4 ] - Desvinculando itens - [erro_msg]"    ,
+  "acordo_posicao"                        : "ERRO - [ 5 ] - Desvinculando itens - [erro_msg]"    ,
+  "empempenho_contrato_excluir"           : "ERRO - [ 1 ] - Desvinculando empenho - [erro_msg]"  ,
+  "periodo_item_maior_execucao"           : "ERRO - O periodo de execução inicial do item [codigomaterial] é  maior que a execução final.",
+  "periodo_item_menor_vigencia"           : "ERRO - O periodo de execução inicial do item [codigomaterial] é  menor que a vigencia do contrato.",
+  "periodo_execucao_final_maior_vigencia" : "ERRO - O periodo de execução final do item [codigomaterial] é  maior que a vigencia do contrato. ",
+  "acordo_nao_informado"                  : "ERRO - Acordo não informado. ",
+  "acordo_excluido"                       : "Acordo excluído com sucesso."
+}

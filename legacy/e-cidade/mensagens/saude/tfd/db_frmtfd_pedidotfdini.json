@@ -1,0 +1,20 @@
+{
+  "informe_cgs"                   : "Você deve digitar um CGS.",
+  "chave_nao_encontrada"          : "Chave não encontrada.",
+  "numero_cns_invalido"           : "Número de CNS inválido para busca.",
+  "cns_nao_encontrado"            : "CNS não encontrado.",
+  "cep_nao_encontrado"            : "CEP não encontrado.",
+  "cgs_atualizado_sucesso"        : "Informações do CGS atualizadas com sucesso!",
+  "cns_nao_informado"             : "Cartão SUS não informado.",
+  "telefone_invalido"             : "Número de caracteres do telefone inválido( 10 ou 11 caracteres ).",
+  "celular_invalido"              : "Número de caracteres do telefone celular inválido( 10 ou 11 caracteres ).",
+  "atualize_cadastro"             : "Atualize o cadastro.",
+  "cgs_nao_informado"             : "CGS não informado.",
+  "endereco_nao_informado"        : "Endereço não informado.",
+  "bairro_nao_informado"          : "Bairro não informado.",
+  "municipio_nao_informado"       : "Município não informado.",
+  "ibge_nao_informado"            : "Código IBGE não informado.",
+  "uf_nao_informada"              : "UF não informada.",
+  "data_nascimento_nao_informada" : "Data de nascimento não informada.",
+  "mae_nao_informada"             : "Nome da mãe não informado."
+}

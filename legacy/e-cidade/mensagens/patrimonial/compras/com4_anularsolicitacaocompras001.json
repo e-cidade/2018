@@ -1,0 +1,13 @@
+{
+  "fieldsetGlobal" : "Anulação da Solicitação de Compras",
+  "fieldsetObservacao" : "Motivo",
+  "confirma_anulacao" : "Confirma a anulação da solicitação de compras?",
+  "ajax_salvando_anulacao" : "Aguarde, anulando solicitação de compras...",
+  "codigo_solicitacao_vazio" : "Campo Solicitação de Compras é de preenchimento obrigatório.",
+  "motivo_vazio" : "Campo Motivo é de preenchimento obrigatório.",
+  "solicitacao_anulada" : "Solicitação de Compras anulada com sucesso.",
+  "erro_anulacao" : "Não foi possível incluir os dados na tabela solicitaanulada.",
+  "solicitacao_autorizada" : "A solicitação já possui uma autorização de empenho. Para anular a solicitação é necessário anular a autorização de empenho.",
+  "solicitacao_ja_anulada" : "A Solicitação de Compras já possui anulação.",
+  "solicitacao_licitada"   : "A Solicitação de Compras possui licitação."
+}

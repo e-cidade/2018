@@ -1,0 +1,5 @@
+{
+  "situacao_nao_informada" : "Não foi informado a Situação para impressão do relatório.",
+  "erro_busca_notas_suspensas" : "Ocorreu um erro ao buscar as notas de liquidação suspensas.",
+  "notas_nao_encontradas" : "Não foram encontradas notas de liquidação suspensas para os filtros informados."
+}

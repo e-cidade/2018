@@ -1,0 +1,4 @@
+{
+  "data_invalida" : "A Data Final de Suspensão deve ser maior que a Data Inicial de Suspensão.",
+  "formulario_sem_filtro" : "Nenhum filtro foi informado para a emissão do relatório, o que poderá tornar a emissão lenta. \nDeseja prosseguir?"
+}

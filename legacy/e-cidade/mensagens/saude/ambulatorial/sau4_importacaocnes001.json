@@ -1,0 +1,9 @@
+{
+  "processando_arquivo"               : "Aguarde, processando arquivo...",
+  "departamento_duplicado"            : "Departamento '[sDepartamento]' foi vinculado a mais de um CNES.",
+  "nenhum_vinculo_selecionado"        : "Selecione ao menos um Departamento a ser vinculado a um dos CNES.",
+  "arquivo_invalido"                  : "Arquivo selecionado possui uma extensão inválida. A mesma deve ser XML.",
+  "salvando_novos_vinculos"           : "Aguarde, salvando novos vínculos...",
+  "imprimir_relatorio"                : "[sMensagem]\nDeseja imprimir o relatório?",
+  "importacao_sucesso_inconsistencia" : "Importação realizada com sucesso. Porém, algumas inconsistências foram encontradas."
+}

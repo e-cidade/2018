@@ -1,0 +1,9 @@
+{
+  "aguarde_buscando_areatrabalho" : "Aguarde, buscando áreas de trabalho",
+  "buscando_tipos_hora"           : "Aguarde, buscando os tipos de hora...",
+  "nenhuma_escola_selecionada"    : "Nenhuma Escola selecionada.",
+  "nenhuma_area_selecionada"      : "Nenhuma Área de Trabalho selecionada.",
+  "nenhum_tipo_hora_selecionado"  : "Nenhum Tipo de Hora selecionado.",
+  "nenhuma_area_encontrada"       : "Nenhuma Área de Trabalho encontrada para a escola selecionada.",
+  "nenhum_tipo_hora_encontrado"   : "Nenhum Tipo de Hora encontrado para a escola selecionada."
+}

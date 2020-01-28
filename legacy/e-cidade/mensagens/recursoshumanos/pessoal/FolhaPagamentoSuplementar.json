@@ -1,0 +1,10 @@
+{
+  "erro_excluir_gerfsal"         : "Ocorreu um erro ao tentar excluir os cálculos do ponto suplementar.",
+  "erro_excluir_pontofs"         : "Ocorreu um erro ao tentar excluir os pontos da suplementar.",
+  "folha_fechada"                : "Não existe folha suplementar em aberto.",
+  "sem_registro_ponto"           : "Não foi encontrado registros de ponto suplementar.",
+  "erro_ponto"                   : "Erro ao buscar dados do ponto suplementar.",
+  "fechamento_folha_fechada"     : "Não existe folha suplementar em aberto.",
+  "erro_excluir_rhfolhapagamento": "Erro ao cancelar a abertura da folha suplementar.",
+  "folha_salario_aberta"         : "Não é possível abrir uma folha suplementar, pois existe uma folha salário aberta."
+}

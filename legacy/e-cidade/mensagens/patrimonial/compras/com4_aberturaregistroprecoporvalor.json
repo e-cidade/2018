@@ -1,0 +1,23 @@
+{
+  "liberar_aba_item"                   : "Informe os dados da abertura do Registro de Preço.",
+  "informe_data_inicial"               : "Campo Data de Vigência Inicial é de preenchimento obrigatório.",
+  "informe_data_final"                 : "Campo Data de Vigência Final é de preenchimento obrigatório.",
+  "conflito_data"                      : "Data de Vigência Inicial não pode ser maior que a Data de Vigência Final.",
+  "resumo_obrigatorio"                 : "Campo Resumo é de preenchimento obrigatório.",
+  "salvando_informacoes_abertura"      : "Aguarde, salvando dados da abertura...",
+  "label_aba_DadosDaAbertura"          : "Dados da Abertura",
+  "abertura_salva"                     : "Inclusão efetuada com sucesso.",
+  "carregar_itens_solicitacao"         : "Aguarde, carregando os itens...",
+  "salvando_item"                      : "Aguarde, salvando itens...",
+  "item_salvo"                         : "Item salvo com sucesso.",
+  "carregando_itens"                   : "Aguarde, carregando itens...",
+  "carregando_informacao_item"         : "Aguarde, carregando informações do item...",
+  "confirma_exclusao"                  : "Confirma a exclusão do item?",
+  "item_excluido"                      : "Item excluído com sucesso.",
+  "valor_obrigatorio"                  : "Campo Valor é de preenchimento obrigatório.",
+  "servico_obrigatorio"                : "Campo Serviço é de preenchimento obrigatório.",
+  "carregando_informacoes_solicitacao" : "Aguarde, carregando informações...",
+  "servico_ja_incluso"                 : "Serviço já incluído!",
+  "possui_manifestacao_excluir"        : "Esta abertura possui manifestação de interesse. É necessário anular a manifestação para excluir o item da abertura.",
+  "possui_manifestacao_alterar"        : "Esta abertura possui manifestação de interesse. É necessário anular a manifestação para alterar o item da abertura."
+}
