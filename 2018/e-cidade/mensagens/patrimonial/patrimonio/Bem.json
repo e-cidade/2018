@@ -1,0 +1,21 @@
+{
+  "sem_transacao"                : "Não existe transação com o banco de dados ativa.",
+  "placa_nao_definida"           : "Placa do bem não definida.",
+  "informe_fornecedor"           : "Fornecedor do bem não informado.",
+  "informe_classificacao"        : "Classificacao do bem não informado.",
+  "erro_salvar"                  : "Erro ao salvar dados do bem.\n[erro_msg]",
+  "nao_possivel_excluir_vinculo" : "Não foi possível excluir o vínculo entre a nota fiscal e o bem.",
+  "nao_possivel_criar_vinculo"   : "Não foi possível criar o vínculo entre a nota fiscal e o bem.\n[erro_msg]",
+  "erro_salvar_calculo"          : "Erro ao salvar as informações para cálculo de depreciação do bem.\n[erro_msg]",
+  "erro_salvar_divisao_bem"      : "Erro ao salvar dados da Divisão do Bem.",
+  "erro_excluir_divisao_bem"      : "Erro ao excluir dados da Divisão do Bem.",
+  "erro_salvar_dados_cedente"    : "Erro ao salvar dados do cedente do Bem",
+  "informe_motivo_baixa"         : "Motivo da baixa não informado.",
+  "informe_data_baixa"           : "Data da baixa não informado.",
+  "bem_ja_baixado"               : "Bem já baixado.",
+  "erro_baixar_bem"              : "Erro ao baixar bem",
+  "bem_nao_existe_base_de_dados" : "Bem não existe na base de dados.",
+  "bem_nao_esta_baixado"         : "O bem não está baixado.",
+  "erro_reativar_bem"            : "Erro ao reativar bem.\n[Erro Técnico:\n[erro_msg]",
+  "sem_especificacao"            : "Erro Técnico: Não há depreciação para o bem [codigoBem]."
+}

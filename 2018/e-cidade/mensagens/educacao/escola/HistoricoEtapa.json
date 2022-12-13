@@ -1,0 +1,5 @@
+{
+  "erro_query_busca_ultima_etapa" : "Erro de query: Não foi possível buscar etapas do histórico.",
+  "nenhuma_etapa_encontrada"      : "Nenhuma etapa encontrada.",
+  "etapas_relacionadas_etapa_cursada" : "ATENÇÃO: Aluno(a) [aluno] tem a Etapa [etapa] ([ensino] - [ensino_abrev]) como a última cursada, na situação de [situacao].\nSelecione uma turma que contenha alguma das etapas abaixo relacionadas:\n\n[etapas_equivalentes]"
+}

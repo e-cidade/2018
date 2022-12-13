@@ -1,0 +1,8 @@
+{
+  "erro_buscar_matriculas_turma" : "Erro ao buscar as matrículas da turma:\n[sErro]",
+  "erro_buscar_matricula_ativa"  : "Erro ao buscar matrícula ativa:\n[sErro]",
+  "erro_buscar_ultima_matricula" : "Erro ao buscar última matrícula do aluno:\n[sErro]",
+  "erro_buscar_matricula"        : "Erro ao buscar a matrícula do aluno:\n[sErro]",
+  "erro_buscar_matriculas"       : "Erro so buscar todas as matriculas do aluno:\n[sErro]",
+  "erro_buscar_matriculas_encerradas" : "Erro ao buscar matriculas encerradas."
+}

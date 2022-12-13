@@ -1,0 +1,6 @@
+{
+   "filtro_periodo_obrigatorio" : "Filtro período é obrigatório.",
+  "erro_buscar_medicamentos"   : "Erro ao buscar medicamentos solicitados.",
+  "sem_medicamentos"           : "Não há medicamentos para os filtros selecionados.",
+  "erro_buscar_administracoes" : "Erro ao buscar administrações solicitadas"
+ }

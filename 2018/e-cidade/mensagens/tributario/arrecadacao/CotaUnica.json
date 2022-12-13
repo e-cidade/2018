@@ -1,0 +1,7 @@
+{
+   "erro_unica_geral_codigo"         : "Código de cota única geral inválido.",
+   "erro_unica_geral"                : "Erro ao consultar dados de cota única geral.",
+   "erro_unica_parcial"              : "Erro ao consultar dados de cota única parcial.",
+   "erro_excluir_unica_geral_recibo" : "Não foi possível excluir os registros vinculados a única geral.",
+   "erro_excluir_unica_geral"        : "Não foi possível excluir a única geral."
+}

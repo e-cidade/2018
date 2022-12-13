@@ -1,0 +1,13 @@
+{
+  "prontuario_nao_informado"                : "Prontuário não informado.",
+  "medico_nao_informado"                    : "Médico não informado.",
+  "exames_nao_informados"                   : "Nenhum exame informado.",
+  "erro_salvar_requisicao_exame"            : "Erro ao salvar a requisição de exames. \n[sErro]",
+  "erro_salvar_exames"                      : "Erro ao salvar os exames da requisição. \n[sErro]",
+  "requisicao_exame_sucesso"                : "Requisição de exames para o prontuário salva com sucesso!",
+  "erro_buscar_exames_vinculados"           : "Erro ao buscar os exames vinculados a requisição deste prontuário.",
+  "codigo_exame_requisicao_nao_informado"   : "Código do exame não informado.",
+  "erro_excluir_exame"                      : "Erro ao excluir o exame. \n[sErro]",
+  "exame_excluido_sucesso"                  : "Exame excluído com sucesso!",
+  "erro_buscar_dados_requisicao_prontuario" : "Erro ao buscar os dados da requisição de exames do prontuário."
+}

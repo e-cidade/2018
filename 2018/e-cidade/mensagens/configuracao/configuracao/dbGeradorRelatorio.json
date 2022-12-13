@@ -1,0 +1,9 @@
+{
+"erro_arquivo_nao_informado":"Arquivo não informado.",
+"erro_codigo_grupo_relatorio":"Código do grupo do relatório não informado.",
+"erro_codigo_tipo_relatorio":"Código do tipo de relatório não informado.",
+"erro_xml_node_sem_atributo_id":"Arquivo inválido.", 
+"erro_xml_node_inexistente":"Arquivo inválido.",
+"erro_xml_sem_node":"Arquivo inválido.",
+"erro_xml_node_invalido":"Arquivo inválido."
+}

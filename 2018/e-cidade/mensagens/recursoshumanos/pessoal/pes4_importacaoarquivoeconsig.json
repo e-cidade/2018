@@ -1,0 +1,11 @@
+{
+  "falha_importacao"           : "Falha ao importar arquivo.",
+  "arquivo_importado"          : "Importação realizada com sucesso!",
+  "inconsistencias"            : "Arquivo inconsistente! Verifique o relatório de inconsistências.",
+  "arquivo_invalido"           : "O Campo Arquivo é de preenchimento obrigatório.",
+  "nome_invalido"              : "Arquivo com nome inválido! Nome do arquivo deve possuir formato:\\n econsig_AAAA_MM(competência)_XXX(código da instituição).",
+  "extensao_invalida"          : "Arquivo com extensão inválida! Arquivo deve possuir extensão .txt",
+  "erro_ponto"                 : "Erro ao buscar dados do ponto salário.",
+  "erro_ponto_nao_inicializado": "Não é possível importar os dados, pois o ponto não foi inicializado.",
+  "salario_fechado"            : "Folha de salário encontra-se fechada, não é possível importar o arquivo."
+}

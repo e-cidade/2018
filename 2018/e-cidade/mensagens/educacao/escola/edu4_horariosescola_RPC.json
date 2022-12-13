@@ -1,0 +1,5 @@
+{
+  "excluido_sucesso"     : "Horário excluído com sucesso!",
+  "salvo_sucesso"        : "Horário da Escola salvo com sucesso!",
+  "erro_buscar_horarios" : "Erro ao buscar os horários de funcionamento da escola."
+}

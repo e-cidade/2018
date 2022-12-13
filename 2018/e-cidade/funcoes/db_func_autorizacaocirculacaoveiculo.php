@@ -1,0 +1,3 @@
+<?
+$campos = "autorizacaocirculacaoveiculo.ve13_sequencial,autorizacaocirculacaoveiculo.ve13_instituicao,autorizacaocirculacaoveiculo.ve13_veiculo,autorizacaocirculacaoveiculo.ve13_motorista,autorizacaocirculacaoveiculo.ve13_datainicial,autorizacaocirculacaoveiculo.ve13_datafinal,autorizacaocirculacaoveiculo.ve13_dataemissao,autorizacaocirculacaoveiculo.ve13_observacao";
+?>

@@ -1,0 +1,14 @@
+{
+  "recurso_humano_sem_vinculo"            : "Recurso humano não possui vínculo ativo com a escola.",
+  "profissional_sem_dia_semana"           : "Profissional não possui atividade para o dia da semana selecionado.",
+  "profissional_sem_atividade_dia_semana" : "[sDiaSemana] - Profissional não possui atividade para este dia da semana.",
+  "profissional_sem_atividade_turno"      : "Profissional não possui atividade para o turno [sTurno] selecionado.",
+  "erro_verificar_conflitos"              : "Não foi possível verificar conflitos com outros horários.",
+  "erro_conflitos"                        : "[sPeriodo] - Período ( [sHoraInicio] às [sHoraFim] )  não Incluído. Conflito com período(s): ",
+  "periodos_conflitantes"                 : " * [sPeriodoConflito] ([sHoraInicioConflito] às [sHoraFimConflito]) já marcado na Escola [iEscolaConflito] ([iMatriculaConflito]);",
+  "erro_incluir_periodos"                 : "Erro ao incluir alguns períodos informados.",
+  "sem_atividade_tipo_hora"               : "[sDiaSemana] [sPeriodo] Período - Não incluido pois o profissional não possui atividade para este tipo de hora.",
+  "incluido_sucesso"                      : "Inclusão efetuada com sucesso!",
+  "incluido_demais_periodos"              : "Demais períodos incluídos com sucesso!",
+  "informe_tipo_hora"                     : "Informe o Tipo de Hora de Trabalho."
+}

@@ -1,0 +1,12 @@
+{
+  "periodoaquisitivo_nao_informado"          : "Período Aquisitivo é obrigatório.",
+  "periodoaquisitivo_sem_dias_direito"       : "Não há dias de direito para gozo disponíveis para o servidor.",
+  "assentamento_nao_informado"               : "Código do assentamento não informado.",
+  "servidor_nao_informado"                   : "Servidor não informado.",
+  "data_final_obrigatorio"                   : "Data Final não informada.",
+  "ja_possui_reajuste_salarial"              : "Servidor já possui assentamento de reajuste salarial.",
+  "reajuste_servidor_ativo"                  : "Não é possível cadastrar assentamento de reajuste salarial para servidor ativo.",
+  "reajuste_servidor_rescindido"             : "Não é possível cadastrar assentamento de reajuste salarial para servidor rescindido.",
+  "alterar_reajuste_salarial"                : "Não é possivel alterar assentamentos do tipo de reajuste salarial.",
+  "data_fim_assentamentos_hora_extra_manual" : "Tipos de assentamentos de natureza \"HE - Manual\" devem possuir data final.\nInforme a data final do assentamento."
+}

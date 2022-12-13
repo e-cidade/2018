@@ -1,0 +1,22 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="z01_cgccpf"  label="cpf"/>
+    <campo campo="z01_numcgm"  label="codigo_pessoa" />
+    <campo campo="z01_nome"    label="nome"/>
+    <campo campo="z01_bairro"  label="bairro"/>
+    <campo campo="z01_ender"   label="endereco"/>
+    <campo campo="z01_numero"  label="numero"/>
+    <campo campo="z01_compl"   label="complemento"/>
+    <campo campo="z01_munic"   label="municipio"/>
+    <campo campo="z01_uf"      label="uf"/>
+    <campo campo="z01_cep"     label="cep"/>
+  </campos>
+  <from tabela="cgm" />
+  <juncoes></juncoes>
+  <filtros>
+    <filtro label="cpf" condicao="z01_cgccpf = '$cpf'" obrigatorio="true"/></filtros>
+  <agrupamento campos="" />
+  <ordenacao />
+</consulta>
+

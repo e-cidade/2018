@@ -1,0 +1,7 @@
+{
+    "erro_data_deposito"  : "Campo Data do Depósito é de preenchimento obrigatório.",
+    "erro_data_geracao"   : "Campo Data da Geração é de preenchimento obrigatório.",
+    "erro_codigo_arquivo" : "Campo Código do Arquivo é de preenchimento obrigatório.",
+    "erro_geracao_disco"  : "Campo Código Geração em Disco é de preenchimento obrigatório.",
+    "erro_banco_febraban" : "Campo Código do Banco FEBRABAN é de preenchimento obrigatório"
+}

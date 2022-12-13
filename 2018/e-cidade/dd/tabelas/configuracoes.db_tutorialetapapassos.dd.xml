@@ -1,0 +1,105 @@
+<?xml version="1.0" standalone="yes" ?>
+<table name="configuracoes.db_tutorialetapapassos" description="Passo de uma etapa de um tutorial" prefix="" label="TutorialEtapaPassos" type="0">
+
+  <fields>
+
+    <field name="id"
+           conteudo="int4"
+           description="Código"
+           inivalue="0"
+           label="Código"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código"
+           reference=""
+           ispk="t"
+           hassequence="t">
+      <sequence name="configuracoes.db_tutorialetapapassos_id_seq" ></sequence>
+    </field>
+
+    <field name="db_tutorialetapa_id"
+           conteudo="int4"
+           description="Codigo da Etapa"
+           inivalue="f"
+           label="Codigo da Etapa"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Codigo da Etapa"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+
+    <field name="xpath"
+           conteudo="varchar"
+           description="Xpath"
+           inivalue="f"
+           label="Xpath"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Xpath"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+
+    <field name="ordem"
+           conteudo="int4"
+           description="Ordem"
+           inivalue="f"
+           label="Ordem"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Ordem"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>    
+
+    <field name="conteudo"
+           conteudo="varchar"
+           description="Conteudo"
+           inivalue="f"
+           label="Conteudo"
+           size=""
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Conteudo"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>    
+
+  </fields>
+  <primarykey>
+    <fieldpk  name="id"></fieldpk>
+  </primarykey>
+
+  <foreignkeys>
+
+    <foreignkey reference="configuracoes.db_tutorialetapas" inner='true'>
+      <fieldfk name="db_tutorialetapa_id" reference="id"></fieldfk>
+    </foreignkey>
+
+  </foreignkeys>
+
+</table>

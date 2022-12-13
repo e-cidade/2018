@@ -1,0 +1,5 @@
+{
+ "data_inicial_nao_informada" : "Data inicial não informada.",
+ "data_final_nao_informada"   : "Data final não informada.",
+ "data_inicial_maior_final"   : "Data inicial maior que a data final."
+}

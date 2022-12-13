@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010201' name='laboratorio.limiteatendimentoexameusado' description="Armazena a quantidade de exames realizados em um dia." prefix="la63" label="Limite de Exame Usado" type="0">
+  <fields>
+    <field codigo="1009299" 
+           campo_api='' 
+           name="la63_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial." 
+           inivalue="0" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='laboratorio.limiteatendimentoexameusado_la63_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="1009300" 
+           campo_api='' 
+           name="la63_quantidade" 
+           conteudo="int4" 
+           description="Quantidade de exames realizados." 
+           inivalue="0" 
+           label="Quantidade" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Quantidade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009301" 
+           campo_api='' 
+           name="la63_data" 
+           conteudo="date" 
+           description="Data na qual os exames foram marcados." 
+           inivalue="null" 
+           label="Data" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009302" 
+           campo_api='' 
+           name="la63_lab_setorexame" 
+           conteudo="int4" 
+           description="Vínculo com o exame." 
+           inivalue="0" 
+           label="Exame" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Exame" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="la63_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="lab_setorexame">
+      <fieldfk name="la63_lab_setorexame" reference="la09_i_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

@@ -1,0 +1,7 @@
+{
+  "escola_nao_informada"    : "Escola não informada.",
+  "nenhum_bairro_informado" : "Nenhum bairro informado.",
+  "erro_excluir_bairros"    : "Erro ao excluir os bairros vinculados a escola:\n[sErro]",
+  "erro_salvar_bairros"     : "Erro ao salvar o bairro vinculado a escola:\n[sErro]",
+  "dados_sucesso"           : "Dados salvos com sucesso."
+}

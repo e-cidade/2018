@@ -1,0 +1,8 @@
+{
+   "confirmar_remocao_permanente": "Atenção ao remover o(s) período(s) permanentemente, será perdido todos os lançamentos de frequência e conteúdo vinculados. \nTem certeza que deseja excluir?"
+  ,"removendo_periodo" : "Removendo período..."
+  ,"informe_data": "Informe a data."
+  ,"titulo_msg": "Selecione a forma de remoção do período do regente: "
+  ,"msg_help_permanente": "<b>Remoção permanente:</b> Exclui o período do professor e remove todos os registros de faltas e aulas desenvolvidas vinculadas ao período."
+  ,"msg_help_periodo": "<p style=\"text-indent: 15px; margin-top:0px;\"><b>Vigência do período até a data:</b> Exclui o período do professor, porém não remove os registros de faltas e aulas desenvolvidas vinculadas ao período e continua permitindo edição das aulas até a data informada.</p>"
+}

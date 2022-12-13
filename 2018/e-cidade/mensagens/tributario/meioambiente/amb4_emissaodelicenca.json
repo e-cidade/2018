@@ -1,0 +1,8 @@
+{
+  "parecertecnico_obrigatorio" : "Campo Parecer Técnico é de preenchimento obrigatório.",
+  "carregando_emissao"         : "Aguarde, emitindo licença...",
+  "emissao_sucesso"            : "Licença emitida com sucesso!",
+  "erro_emissao_arquivo"       : "Erro ao gerar arquivo.",
+  "licenca_inexistente"        : "A licença não pode ser emitida, pois não há um parecer técnico para esse empreendimento.",
+  "licenca_invalida"           : "A licença não pode ser emitida, pois há um parecer técnico DESFAVORÁVEL para esse empreendimento."
+}

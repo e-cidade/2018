@@ -1,0 +1,18 @@
+{
+  "incluir"                                  : "Período aquisitivo incluido com sucesso.",
+  "alterar"                                  : "Período aquisitivo alterado com sucesso.",
+  "erro_incluir_periodo_aquisitivo"          : "Erro ao incluir período aquisitivo.\nErro técnico: \n[sErroBanco]",
+  "erro_alterar_periodo_aquisitivo"          : "Erro ao alterar período aquisitivo.\nErro técnico: \n[sErroBanco]", 
+  "erro_buscar_periodo_aquisitivo"           : "Erro ao buscar período aquisitivo.\nErro técnico: \n[sErroBanco]", 
+  "erro_ao_buscar_quatidade_faltas"          : "Erro ao buscar faltas para o regime, \n [sErroBanco]",
+  "dias_direito_ferias_invalido"             : "Número de dias de direito a férias inválido.",
+  "dias_direito_ferias_nao_informado"        : "Dias de direito a férias não informado.",
+  "nenhuma_transacao_banco"                  : "Nenhuma transação com o banco ativa.",
+  "servidor_nao_informado"                   : "Servidor não informado.",
+  "periodo_aquisitivo_inicial_nao_informado" : "Data do período aquisitivo inicial não informada.",
+  "periodo_aquisitivo_final_nao_informado"   : "Data do período aquisitivo final não informada.",
+  "busca_periodo_aquisitivo_pelo_codigo"     : "Nenhum período aquisitivo encontrado para o código [iCodigo].",
+  "busca_periodo_aquisitivo_pela_matricula"  : "Nenhum período aquisitivo encontrado para a matricula [iCodigo].",
+  "codigo_nao_informado"                     : "Código do período aquisitivo não informado.",
+  "erro_buscar_periodo_gozo"                 : "Erro ao buscar os períodos de gozo."
+}

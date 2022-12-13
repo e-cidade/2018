@@ -1,0 +1,11 @@
+{
+  "cgm_nao_cadastrado"            : "Sem CGM cadastrado.",
+  "cgm_duplicado"                 : "Empresa com CGM duplicado.",
+  "inscricao_nao_cadastrada"      : "Sem Inscrição cadastrada.",
+  "inscricao_invalida"            : "Inscrição inválida.",
+  "empresa_com_debitos_em_aberto" : "Empresa com débitos em aberto.",
+  "empresa_sem_alvara"            : "Sem Alvará liberado.",
+  "alvara_inativo"                : "Alvará inativo.",
+  "nenhuma_empresa_encontrada"    : "Nenhuma Empresa encontrada.",
+  "inscricao_baixada"             : "Inscrição já baixada."
+}

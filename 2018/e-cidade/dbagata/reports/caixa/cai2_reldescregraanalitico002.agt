@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout>dbseller2</Layout>
+        <UseTemplates></UseTemplates>
+        <OutputMask></OutputMask>
+    </Properties>
+
+    <Header>
+        <Body>#sety020
+#image $db_logo
+#sety020
+#setfaw10
+#setspace012
+#tab80 $db_nomeinst
+#setfai10
+#tab80 $db_enderinst
+#tab80 $db_municinst - $db_ufinst
+#tab80 $db_foneinst
+#tab80 $db_emailinst
+#tab80 $db_siteinst
+#sety100
+#lineH790
+#sety020
+#tab600#rect*000*000*200*080*1*#e7e7e7*#000000
+#setfan07
+#sety025
+#tab610$head1
+#sety035
+#tab610$head2
+#sety045
+#tab610$head3
+#sety055
+#tab610$head4
+#sety065
+#tab610$head5
+#sety075
+#tab610$head6
+#sety085
+#tab610$head7
+#sety095</Body>
+
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body>#setfai07
+Nota: (*)Significa mais de uma matrícula para o mesmo Numpre.
+#lineH800
+#setfan06
+Base: $db_base  #tab270$db_programa  Emissor: $db_nomeusu  Exercício: $db_anousu  Data: $db_datausu  Hora: $db_horausu  #tab735 Página: $page de {nb}</Body>
+
+        <Align>center</Align>
+    </Footer>
+
+    <DataSet>
+        <DataSource>
+            <Name>sqlite</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>k00_numpre as "Numpre", z01_nome as "Contribuinte", fc_origem_numpre(k00_numpre, 1) as "Origem", k00_receit as "Rec Tes", k02_codrec as "Rec Orc", k02_drecei as "Descrição Receita (Orçamento)", sum(valor_sem_desconto) as "Valor a Pagar", sum(valor_pago)         as "Valor Pago", sum(valor_desconto)     as "Desconto"</Select>
+            <From>( select arrepaga.k00_numpre,                
+                cgm.z01_nome,                
+                arrepaga.k00_receit,                
+                taborc.k02_codrec,                
+                tabrec.k02_drecei,                
+                round(sum(fc_iif( (arrepaga.k00_valor &lt; 0), arrepaga.k00_valor, 0::float8)), 2) as valor_desconto,                
+                round(sum(fc_iif( (arrepaga.k00_valor &gt; 0), arrepaga.k00_valor, 0::float8)), 2) as valor_sem_desconto,               
+                round(sum(arrepaga.k00_valor),                                               2) as valor_pago           
+           from cornump               
+                inner join tabrec     on tabrec.k02_codigo   = cornump.k12_receit               
+                inner join taborc     on taborc.k02_codigo   = cornump.k12_receit                              
+                                     and taborc.k02_anousu   =$anousu              
+                inner join arrepaga   on arrepaga.k00_numpre = cornump.k12_numpre                                     
+                                     and arrepaga.k00_numpar = cornump.k12_numpar                                     
+                                     and arrepaga.k00_receit = cornump.k12_receit               
+                inner join cgm        on cgm.z01_numcgm      = arrepaga.k00_numcgm          
+          where cornump.k12_data between $datai  and $dataf             
+            and exists (select k99_numpre_n                          
+                          from db_reciboweb                              
+                               inner join recibopaga on k00_numnov = k99_numpre_n                         
+                         where k99_numpre_n = cornump.k12_numnov                           
+                           and k99_tipo in (1, 2, 3)                            
+                           and exists (select 1                                         
+                                         from arreinstit                                                                                 
+                                        where arreinstit.k00_numpre = recibopaga.k00_numpre                                          
+                                          and arreinstit.k00_instit = $instit) )        
+          group by arrepaga.k00_numpre,                
+                   cgm.z01_nome,                
+                   arrepaga.k00_receit,                
+                   taborc.k02_codrec,                
+                   tabrec.k02_drecei         
+            
+      union all          
+      
+         select arrepaga.k00_numpre,                
+                cgm.z01_nome,                
+                arrepaga.k00_receit,                
+                taborc.k02_codrec,                
+                tabrec.k02_drecei,                
+                round(sum(fc_iif( (arrepaga.k00_valor &lt; 0), arrepaga.k00_valor, 0::float8)), 2) as valor_desconto,                
+                round(sum(fc_iif( (arrepaga.k00_valor &gt; 0), arrepaga.k00_valor, 0::float8)), 2) as valor_sem_desconto,                
+                round(sum(arrepaga.k00_valor),                                               2) as valor_pago           
+           from disbanco               
+                inner join arreidret  on arreidret.idret     = disbanco.idret               
+                inner join arrepaga   on arrepaga.k00_numpre = arreidret.k00_numpre                                     
+                                     and arrepaga.k00_numpar = arreidret.k00_numpar               
+                inner join tabrec     on tabrec.k02_codigo   = arrepaga.k00_receit               
+                inner join taborc     on taborc.k02_codigo   = arrepaga.k00_receit                                     
+                                     and taborc.k02_anousu   =$anousu              
+                inner join cgm        on cgm.z01_numcgm      = arrepaga.k00_numcgm          
+          where disbanco.dtpago between $datai  and $dataf             
+            and disbanco.instit =$instit           
+            and exists (select k99_numpre_n                          
+                         from db_reciboweb                              
+                              inner join recibopaga on k00_numnov = k99_numpre_n                         
+                        where k99_numpre_n = disbanco.k00_numpre                           
+                          and k99_tipo in (1, 2, 3) )        
+          group by arrepaga.k00_numpre,                
+                   cgm.z01_nome,                
+                   arrepaga.k00_receit,                
+                   taborc.k02_codrec,                
+                   tabrec.k02_drecei         
+            
+      union all        
+         
+         select k00_numpre,              
+                z01_nome,              
+                k00_receit,              
+                k02_codrec,              
+                k02_drecei,              
+                round(sum(valor_desconto), 2)     as valor_desconto,              
+                round(sum(valor_sem_desconto), 2) as valor_sem_desconto,              
+                round(sum(valor_pago), 2)         as valor_pago         
+           from ( select arrepaga.k00_numpre,                    
+                         cgm.z01_nome,                    
+                         arrepaga.k00_receit,                    
+                         taborc.k02_codrec,                    
+                         tabrec.k02_drecei,                     
+                         ((((termo.v07_vlrcor+termo.v07_vlrjur+termo.v07_vlrmul)*100)/fc_iif((termo.v07_valor=0::float8), 1::float8, termo.v07_valor))-100) as percdes,                     
+                         (((((termo.v07_vlrcor+termo.v07_vlrjur+termo.v07_vlrmul)*100)/fc_iif((termo.v07_valor=0::float8), 1::float8, termo.v07_valor))-100)/100)*arrepaga.k00_valor * -1 as valor_desconto,           
+                         arrepaga.k00_valor as valor_pago,                     
+                         ((((((termo.v07_vlrcor+termo.v07_vlrjur+termo.v07_vlrmul)*100)/fc_iif((termo.v07_valor=0::float8), 1::float8, termo.v07_valor))-100)/100)* arrepaga.k00_valor)+arrepaga.k00_valor as valor_sem_desconto           
+                    from termo                   
+                         inner join arrepaga   on arrepaga.k00_numpre = termo.v07_numpre                                         
+                                              and arrepaga.k00_hist not in (400, 401, 500, 501)                   
+                         inner join tabrec     on tabrec.k02_codigo   = arrepaga.k00_receit                    
+                         inner join taborc     on taborc.k02_codigo   = arrepaga.k00_receit                                         
+                                              and taborc.k02_anousu   =$anousu                  
+                         inner join cgm        on cgm.z01_numcgm      = arrepaga.k00_numcgm              
+                   where arrepaga.k00_dtpaga between $datai  and $dataf                 
+                     and termo.v07_instit =$instit               
+                     and ((((termo.v07_vlrcor+termo.v07_vlrjur+termo.v07_vlrmul)*100)/fc_iif((termo.v07_valor=0::float8), 1::float8, termo.v07_valor))-100) is not null         
+                ) as y        
+          group by k00_numpre,                
+                   z01_nome,                
+                   k00_receit,                
+                   k02_codrec,                
+                   k02_drecei         
+         
+  ) as x </From>
+
+            <Where></Where>
+            <GroupBy>k00_numpre, z01_nome, "Origem", k00_receit, k02_codrec, k02_drecei having abs(sum(valor_desconto)) &gt; 0 </GroupBy>
+            <OrderBy>z01_nome</OrderBy>
+            <Config>
+                <Distinct></Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+                <ShowHeader></ShowHeader>
+            </Config>
+
+            <Formulas>
+                <Group0>sum(7) as 'TOTAIS' mask '#  -9.999,99s', sum(8) as "" mask '#  -9.999,99s', sum(9) as "" mask '#  -9.999,99s'</Group0>
+            </Formulas>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>10</Chars>
+                <Points>20</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>35</Chars>
+                <Points>70</Points>
+                <Align>left</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>15</Chars>
+                <Points>30</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>10</Chars>
+                <Points>15</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>10</Chars>
+                <Points>15</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>35</Chars>
+                <Points>70</Points>
+                <Align>left</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>10</Chars>
+                <Points>20</Points>
+                <Align>right</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>10</Chars>
+                <Points>20</Points>
+                <Align>right</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+            <Column9>
+                <Chars>10</Chars>
+                <Points>20</Points>
+                <Align>right</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column9>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup>
+        <Format>A4</Format>
+        <Orientation>landscape</Orientation>
+        <LeftMargin>20</LeftMargin>
+        <RightMargin>20</RightMargin>
+        <TopMargin>0</TopMargin>
+        <BottomMargin>0</BottomMargin>
+        <LineSpace>0</LineSpace>
+        <FooterHeight>0</FooterHeight>
+    </PageSetup>
+
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : "Numpre"</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup></PageSetup>
+        <Config>
+            <RepeatHeader></RepeatHeader>
+            <ShowFooter></ShowFooter>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source></Source>
+        <Config>
+            <FixedDetails>1</FixedDetails>
+            <ExpandDetails></ExpandDetails>
+            <printEmptyDetail>1</printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+        <Details>
+            <Detail1>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+            </Detail1>
+
+        </Details>
+
+    </OpenOffice>
+
+</Report>

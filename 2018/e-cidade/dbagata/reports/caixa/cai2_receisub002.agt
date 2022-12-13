@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout>dbseller2</Layout>
+        <UseTemplates></UseTemplates>
+        <OutputMask></OutputMask>
+    </Properties>
+
+    <Header>
+        <Body>#sety020
+#image $db_logo
+#sety020
+#setfaw10
+#setspace012
+#tab80 $db_nomeinst
+#setfai10
+#tab80 $db_enderinst
+#tab80 $db_municinst - $db_ufinst
+#tab80 $db_foneinst
+#tab80 $db_emailinst
+#tab80 $db_siteinst
+#sety100
+#lineH790
+#sety020
+#tab600#rect*000*000*200*080*1*#e7e7e7*#000000
+#setfan07
+#sety025
+#tab610$head1
+#sety035
+#tab610$head2
+#sety045
+#tab610$head3
+#sety055
+#tab610$head4
+#sety065
+#tab610$head5
+#sety075
+#tab610$head6
+#sety085
+#tab610$head7
+#sety095</Body>
+
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body>#lineH800
+#setfan06
+Base: $db_base  #tab270$db_programa  Emissor: $db_nomeusu  Exercício: $db_anousu  Data: $db_datausu  Hora: $db_horausu  #tab735 Página: $page de {nb}
+</Body>
+
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <instit>
+            <mask></mask>
+            <value>1</value>
+            <source></source>
+            <label></label>
+        </instit>
+
+        <head1>
+            <mask></mask>
+            <value>CADASTO DE RECEITAS</value>
+            <source></source>
+            <label></label>
+        </head1>
+
+        <head2>
+            <mask></mask>
+            <value>Emisão</value>
+            <source></source>
+            <label></label>
+        </head2>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>Alegrete</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>k02_codigo as &quot;RECEITA&quot;,k02_descr as &quot;Descrição Receita Tesouraria&quot;,codsubrec as &quot;SUBRECEITA&quot;,k07_descr as &quot;DESCRIÇÃO DA SUBRECEITA&quot;,k07_valorf as &quot;VALOR FIXO&quot;,k07_valorv as &quot;VALOR VARIÁVEL&quot;,case           when k07_data is not null           and k07_codinf = 'REAL'::varchar          then k07_valorf          when k07_data is not null           and k07_codinf &lt;&gt; 'REAL'::varchar          then (select round( fc_corre( k02_codigo, k07_data, k07_valorf, current_date, extract( year FROM  current_date)::integer, current_date),2))          else 0         end as &quot;VALOR CORRIGIDO&quot;,k07_percde as &quot; % DESC &quot;,k07_data as &quot;DATA DE CRIAÇÃO&quot;,k07_dtval as &quot;DATA DE VALIDADE&quot;</Select>
+            <From>tabdesc     inner join tabrec       on  tabrec.k02_codigo = tabdesc.k07_codigo     inner join inflan        on  inflan.i01_codigo = tabdesc.k07_codinf     inner join db_config  on  db_config.codigo = tabdesc.k07_instit     inner join tabrecjm    on  tabrecjm.k02_codjm = tabrec.k02_codjm     inner join cgm          on  cgm.z01_numcgm = db_config.numcgm</From>
+            <Where>k07_instit = $instit</Where>
+            <GroupBy></GroupBy>
+            <OrderBy>1,2,1,2</OrderBy>
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber></ShowNumber>
+                <ShowIndent></ShowIndent>
+                <ShowHeader>1</ShowHeader>
+            </Config>
+
+            <Formulas>
+                <Group1>count(3) as "Total SubReceitas"</Group1>
+                <Group2> </Group2>
+            </Formulas>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>15</Chars>
+                <Points>30</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>15</Chars>
+                <Points>30</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>40</Chars>
+                <Points>80</Points>
+                <Align>left</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>15</Chars>
+                <Points>30</Points>
+                <Align>right</Align>
+                <HeadAlign>right</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>15</Chars>
+                <Points>30</Points>
+                <Align>right</Align>
+                <HeadAlign>right</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>15</Chars>
+                <Points>30</Points>
+                <Align>right</Align>
+                <HeadAlign>right</HeadAlign>
+                <Mask>#  -9.999,99s</Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>10</Chars>
+                <Points>20</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+            <Column9>
+                <Chars>15</Chars>
+                <Points>30</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function>/time/yyyymmdd2ddmmaaaa.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column9>
+
+            <Column10>
+                <Chars>15</Chars>
+                <Points>30</Points>
+                <Align>center</Align>
+                <HeadAlign>center</HeadAlign>
+                <Mask></Mask>
+                <Function>/time/yyyymmdd2ddmmaaaa.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column10>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup>
+        <Format>A4</Format>
+        <Orientation>landscape</Orientation>
+        <LeftMargin>20</LeftMargin>
+        <RightMargin>20</RightMargin>
+        <TopMargin>0</TopMargin>
+        <BottomMargin>0</BottomMargin>
+        <LineSpace>14</LineSpace>
+        <FooterHeight>0</FooterHeight>
+    </PageSetup>
+
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : "RECEITA"</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup>
+            <Format>A4</Format>
+            <Orientation>portrait</Orientation>
+            <LeftMargin>0</LeftMargin>
+            <RightMargin>0</RightMargin>
+            <TopMargin>0</TopMargin>
+            <BottomMargin>0</BottomMargin>
+            <LineSpace>14</LineSpace>
+        </PageSetup>
+
+        <Config>
+            <RepeatHeader></RepeatHeader>
+            <ShowFooter></ShowFooter>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source></Source>
+        <Config>
+            <FixedDetails>1</FixedDetails>
+            <ExpandDetails></ExpandDetails>
+            <printEmptyDetail>1</printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+        <Details>
+            <Detail1>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+            </Detail1>
+
+        </Details>
+
+    </OpenOffice>
+
+</Report>

@@ -1,0 +1,5 @@
+{
+  "erro_buscar_relacao_trabalho" : "Erro ao buscar a Relação de Trabalho. \n[sErro]",
+  "erro_salvar"                  : "Erro ao salvar a Relação de Trabalho. \n[sErro]",
+  "sem_transacao"                : "Nenhuma transação no banco."
+}

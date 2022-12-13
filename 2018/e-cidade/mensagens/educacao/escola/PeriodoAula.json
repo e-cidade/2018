@@ -1,0 +1,12 @@
+{
+   "data_final_menor_que_inicio" : "Data final menor que a data que o regente iniciou no período: [dataInicio]"
+  ,"data_final_maior_que_data_calendario" : "Data final informada é maio que a data final do calendário da turma: [dataCalendario]"
+  ,"erro_salvar" : "Não foi possível salvar."
+  ,"erro_transacao_bd" : "Sem transação ativa com banco de dados no momento."
+  ,"erro_remover_ocorrencia" : "Não foi possível remover as ocorrencias."
+  ,"erro_remover_falta" : "Não foi possível remover as faltas lançadas no período."
+  ,"erro_remover_aulas" : "Não foi possível remover as aulas desenvolvidas."
+  ,"erro_remover_vinculo_aulas_desenvolvidas" : "Não foi possível remover vínculo com as aulas desenvolvidas."
+  ,"erro_remover_regencia_horario" : "Não foi possível remover o período."
+  ,"falha_buscar_dias" : "Não foi possível buscar os dias vinculados ao período."
+}

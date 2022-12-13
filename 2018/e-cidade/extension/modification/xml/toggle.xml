@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modification>
+
+  <id>dbportal-v3-toggle</id>
+  <label>DBPortal v3 - toggle</label>
+  <version>1.0</version>
+
+  <file path="acesso.php">
+
+    <operation>
+			<search><![CDATA[top.quadroprincipal.onunload]]></search>
+			<add><![CDATA[top.document.body.onunload]]></add>
+    </operation>
+
+    <operation>
+			<search><![CDATA[$_SESSION["DB_itemmenu_acessado"] = "0";]]></search>
+      <add position="after"><![CDATA[
+$sArquivoUsuariosVersaoNova = ECIDADE_EXTENSION_PACKAGE_PATH . 'Desktop/users-install.json';
+$aUsuarios = file_exists($sArquivoUsuariosVersaoNova) ? json_decode(file_get_contents($sArquivoUsuariosVersaoNova)) : array();
+$lUsaVersaoNova = false;
+
+if (is_array($aUsuarios) && in_array($_SESSION['DB_login'], $aUsuarios)) {
+  $lUsaVersaoNova = true;
+}
+ ]]></add>
+    </operation>
+
+    <operation>
+			<search><![CDATA[<td><?php db_select('skin', $aSkins, true, 1); ?></td>
+           </tr>]]></search>
+      <add position="after"><![CDATA[
+        <?php if ($lUsaVersaoNova) : ?>
+             <tr>
+            <td><strong>Usar versão 3.0:</strong></td>
+            <td><?php db_select('versao3', array('0' => 'Não', '1' => 'Sim'), true, 1); ?></td>
+           </tr>
+        <?php endif; ?>
+ ]]></add>
+    </operation>
+
+    <operation>
+			<search><![CDATA[<form name="form1"]]></search>
+			<add position="before"><![CDATA[
+  <script type="text/javascript">
+      function salvandoPreferencias() {
+        <?php if ($lUsaVersaoNova) : ?>
+          js_divCarregando('Aguarde...', 'msgBox', false);
+        <?php endif; ?>
+      }
+  </script>
+ ]]></add>
+    </operation>
+
+    <operation>
+			<search><![CDATA[<form name="form1" action="" method="post" class="form-container"]]></search>
+			<add><![CDATA[<form name="form1" action="" method="post" class="form-container" onSubmit="return salvandoPreferencias();"]]></add>
+    </operation>
+
+    <operation>
+			<search><![CDATA[$oPreferenciaUsuario->salvar();]]></search>
+			<add position="after"><![CDATA[
+    if ($lUsaVersaoNova && isset($_POST['versao3']) && $_POST['versao3'] == 1) {
+
+      if (isset($db_base)) {
+        db_putsession("DB_NBASE", $db_base);
+      }
+
+      ini_set('memory_limit', '-1');
+
+      $extensionManager = new \ECidade\V3\Extension\Manager();
+      $success = $extensionManager->install('Desktop', $_SESSION['DB_login']);
+
+      if ($success) {
+        echo "<script type='text/javascript'>
+          top.document.body.onunload = '';
+          top.document.location.href = 'extension/desktop';
+        </script>";
+        exit;
+      }
+
+      echo "<script>alert('Não foi possível alterar para a versão 3.\\nTente novamente mais tarde.');</script>";
+
+    }
+ ]]></add>
+    </operation>
+
+  </file>
+
+</modification>

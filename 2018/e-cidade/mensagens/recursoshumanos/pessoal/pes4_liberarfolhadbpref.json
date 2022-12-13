@@ -1,0 +1,8 @@
+{
+  "liberar_folha_sucesso": "Folha(s) selecionada(s) liberada(s) com sucesso.",
+  "nenhuma_atualizacao"  : "É necessário marcar ou desmarcar ao menos uma das folhas disponíveis.",
+  "liberar_folha_erro"   : "Não foi possível liberar a(s) folha(s) selecionada(s)!",
+  "liberar_folha_suggest": "Selecione as folhas disponíveis para liberar a consulta e emissão de contracheque no e-Cidade Online.<br />Ao selecionar um tipo de folha, a mesma será bloqueada para novos cadastros, para desbloquear basta desmarcá-la.<br />As folhas complementar, salário e suplementar são liberadas no e-Cidade Online após realizar o fechamento.",
+  "nao_existe_folhas"    : "Não existe cadastro para as folhas adiantamento, 13º salário e rescisão para esta competência. Por este motivo as folhas estão indisponíveis para liberação no e-Cidade Online.",
+  "rotina_desativada"    : "Esta rotina não está ativa. Para ativar, contate um administrador."
+}

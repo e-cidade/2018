@@ -1,0 +1,8 @@
+{
+  "erro_buscar_selecoes"                   : "Ocorreu um erro ao buscar as seleções vinculadas para o tipo.",
+  "erro_executar_formula_condicao"         : "Ocorreu um erro ao executar a formula de condicao para o assentamento.",
+  "erro_gerar_informacoes_assentamentos"   : "Ocorreu um erro ao gerar informações de assentamento.",
+  "erro_adicionar_assentamento_automatico" : "Ocorreu um erro ao adicionar assentamento automático.",
+  "nenhum_assentamento_processar"          : "Nenhum assentamento selecionado para processar.",
+  "sucesso_processar"                      : "Assentamentos autorizados com sucesso."
+}

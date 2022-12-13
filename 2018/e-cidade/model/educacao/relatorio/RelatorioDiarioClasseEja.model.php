@@ -1,0 +1,70 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal
+ *  Copyright (C) 2014  DBSeller Servicos de Informatica
+ *                            www.dbseller.com.br
+ *                         e-cidade@dbseller.com.br
+ *
+ *  Este programa e software livre; voce pode redistribui-lo e/ou
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme
+ *  publicada pela Free Software Foundation; tanto a versao 2 da
+ *  Licenca como (a seu criterio) qualquer versao mais nova.
+ *
+ *  Este programa e distribuido na expectativa de ser util, mas SEM
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais
+ *  detalhes.
+ *
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU
+ *  junto com este programa; se nao, escreva para a Free Software
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+ *  02111-1307, USA.
+ *
+ *  Copia da licenca no diretorio licenca/licenca_en.txt
+ *                                licenca/licenca_pt.txt
+ */
+
+/**
+ * Classe para impressão do modelo 4 (Uma disciplina por página (Área)) do diário de classe
+ * @author Fábio Esteves <fabio.esteves@dbseller.com.br>
+ * @package    educacao
+ * @subpackage relatorio
+ */
+class RelatorioDiarioClasseEja extends RelatorioDiarioClasseBase {
+
+  /**
+   * Construtor da classe. Recebe Turma, Etapa e AvaliacaoPeriodica como parâmetro, e instância o construtor da classe
+   * RelatorioDiarioClasseBase
+   * @param Turma              $oTurma
+   * @param Etapa              $oEtapa
+   * @param AvaliacaoPeriodica $oAvaliacaoPeriodica
+   */
+  public function __construct( Turma $oTurma, Etapa $oEtapa, AvaliacaoPeriodica $oAvaliacaoPeriodica ) {
+
+    parent::__construct( $oTurma, $oEtapa, $oAvaliacaoPeriodica );
+
+    $this->aMatriculas  = $oTurma->getAlunosMatriculados(true);
+    $this->lExibirIdade = false;
+    $this->lExibirEtapa = true;
+
+    $this->lTurmaMultEtapa = true;
+  }
+
+
+  /**
+   * Define se devemos exibir a coluna de avaliação
+   * @param boolean $lExibirAvaliacao
+   */
+  public function setExibirAvaliacao($lExibirAvaliacao) {
+    $this->lExibirAvaliacao = $lExibirAvaliacao;
+  }
+
+  /**
+   * Define se devemos exibir a coluna de faltas
+   * @param boolean $lExibirFaltas
+   */
+  public function setExibirFaltas($lExibirFaltas) {
+    $this->lExibirFaltas = $lExibirFaltas;
+  }
+}

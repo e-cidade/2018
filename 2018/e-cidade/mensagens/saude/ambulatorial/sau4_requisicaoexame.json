@@ -1,0 +1,8 @@
+{
+   "verificando_exames"     : "Verificando exames requisitados."
+  ,"excluindo_exame"        : "Excluindo exame da requisição."
+  ,"salvando_requisicao"    : "Salvando requisição de exame."
+  ,"informe_exames"         : "Nenhum exame informado.\nInforme os exames para criar a requisição."
+  ,"prontuario_inesistente" : "Ficha de atendimento não informada."
+  ,"confirmar_exclusao"     : "Deseja realmente excluir este exame?"
+}

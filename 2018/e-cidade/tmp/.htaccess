@@ -1,0 +1,4 @@
+<filesMatch "\.yml">
+ Order Allow,Deny
+ Allow from all
+</filesMatch>

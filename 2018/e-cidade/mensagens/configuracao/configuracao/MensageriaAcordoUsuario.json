@@ -1,0 +1,10 @@
+{
+  "destinatario_nao_encontrado" : "Destinatário não encontrado.",
+  "destinatarios_dia_nao_encontrado" : "Impossível localizar os destinatários com os dias selecionados para remoção.",
+  "erro_salvar" : "Erro ao salvar usuário.",
+  "destinatario_nao_informado" : "Destinatário não informado.",
+  "dias_nao_informados" : "Dias para notificação não informados.",
+  "exclusao_abortada"           : "ERRO TÉCNICO: Sequencial mensageriaacordodb_usuario não definido para exlusão",
+  "erro_excluir_acordousuario"  : "Erro na exclusão: [mensagem] .",
+  "sem_transacao"               : "Procedimento exclusão abortado, sem transação ativa"
+}

@@ -1,0 +1,8 @@
+{
+  "nao_foi_possivel_gerar_oid"    : "Não foi possível gerar Oid para arquivo.",
+  "erro_ao_salvar_arquivo"        : "Erro ao salvar arquivo.",
+  "arquivo_de_log_nao_instaciado" : "Não foi informado a instância do arquivo de Log.",
+  "layout_invalido"               : "Layout não é válido para emissão do BPA.",
+  "procedimentos_nao_encontrados" : "Não foi encontrado nenhum procedimento para competência informada.",
+  "erro_marcar_gerado"            : "Erro ao salvar procedimentos gerados."
+}

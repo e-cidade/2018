@@ -1,0 +1,22 @@
+{
+  "input_nome_linha_vazio"           : "É necessário informar o nome da linha.",
+  "aguardando_salvar"                : "Aguarde, salvando as informações da linha.",
+  "codigo_logradouro_vazio"          : "É necessário informar o código do logradouro",
+  "aguardando_adicionar_logradouro"  : "Aguarde, adicionando o logradouro.",
+  "aguardando_buscar_logradouros"    : "Aguarde, buscando os logradouros vinculados ao itinerário.",
+  "remover_logradouro"               : "Confirma a exclusão do logradouro vinculado ao itinerário?",
+  "aguardando_remover_logradouro"    : "Aguarde, removendo o logradouro.",
+  "hora_partida_vazio"               : "É necessário informar a hora de partida.",
+  "hora_chegada_vazio"               : "É necessário informar a hora de chegada.",
+  "formato_hora_partida_invalido"    : "Formato da hora de partida inválido.",
+  "formato_hora_chegada_invalido"    : "Formato da hora de chegada inválido.",
+  "aguardando_adicionar_horario"     : "Aguarde, adicionando o horário ao itinerário.",
+  "aguardando_buscar_horarios"       : "Aguarde, buscando os horários do itinerário.",
+  "remover_itinerario"               : "Confirma a exclusão do horário do itinerário?",
+  "aguardando_remover_horario"       : "Aguarde, removendo o horário do itinerário.",
+  "confirma_exclusao_linha"          : "Confirma a exclusão da linha [sNomeLinha]?",
+  "aguardando_remover_linha"         : "Aguarde, removendo a linha.",
+  "hora_partida_maior"               : "Hora de partida maior que a hora de chegada.",
+  "nenhum_logradouro_para_reordenar" : "Não há logradouros suficientes para reordenar.",
+  "aguarde_gerando_retorno"          : "Aguarde, gerando retorno."
+}

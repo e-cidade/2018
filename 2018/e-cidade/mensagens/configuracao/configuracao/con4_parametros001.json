@@ -1,0 +1,6 @@
+{
+  "preenchimento_tentativasLogin_obrigatorio"    : "Campo Tentativas de Login é de preenchimento obrigatório.",
+  "preenchimento_diasExpiracaoToken_obrigatorio" : "Campo Dias para expirar link de ativação é de preenchimento obrigatório.",
+  "deseja_aplicar_a_todos"                       : "Deseja realmente aplicar o Skin a todos os usuários? \n Isto sobreescreverá todos os arquivos de preferência dos usuários.",
+  "valida_zero"                                  : "Campo [sCampo] não pode ser zero."
+}

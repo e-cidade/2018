@@ -1,0 +1,17 @@
+{
+  "selecione_aluno"              : "Você deve selecionar o aluno."
+ ,"aguarde_salvando"             : "Aguarde... salvando Reclassificacao"
+ ,"aguarde_buscando_dados_aluno" : "Aguarde... buscando dados do aluno"
+ ,"salvo_sucesso"                : "Reclassificação executada com sucesso."
+ ,"resultado_avaliacao_vazio"    : "Campo Registrar Avaliações informado com a opção Sim, deverá ser registrado o campo Avaliação para no mínimo um dos componentes curriculares."
+ ,"turma_destino_nao_informada"  : "Você deve informar uma turma de destino."
+ ,"aguarde_buscando_vagas_turma" : "Aguarde... buscando vagas da turma."
+ ,"erro_buscar_vagas_turma"      : "Erro ao buscar vasgas da turma."
+ ,"turno_sem_vaga"               : "O turno [sTurno] não possui vagas disponíveis."
+ ,"erro_deve_selecionar_turno"   : "Dever ser selecionado ao menos um turno."
+ ,"selecione_turno"              : "Selecione ao menos um turno."
+ ,"turma_sem_vagas"              : "Turma não possui vagas disponíveis."
+ ,"informe_data"                 : "Informe campo Data."
+ ,"ano_data_deve_ser_igual_calendario" : "Data de matrícula e data da Reclassificação deve esta no mesmo calendário."
+ ,"data_deve_ser_maior_data_matricula" : "Campo data, tem que ser maior que a data de matrícula."
+}

@@ -1,0 +1,8 @@
+{
+   "calendario_nao_informado"  : "Calendário não informado."
+  ,"ensino_nao_informado" : "Ensino não informado."
+  ,"modelo_nao_informado" : "Modelo não informado."
+  ,"erro_buscar_turmas" : "Erro ao buscar turmas.\n[sErro]"
+  ,"sem_turmas" : "Sem turmas para os filtros selecionados."
+  ,"sem_alunos_matriculados" : "Não há matrículas para o(s) filtro(s) selecionado(s)."
+}

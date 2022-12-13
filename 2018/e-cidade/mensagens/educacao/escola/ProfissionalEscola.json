@@ -1,0 +1,7 @@
+{
+   "erro_buscar_profissional"       : "Erro ao buscar profissional da escola.\n[sErro]"
+  ,"nenhum_profissional_escola"     : "Profissional não encontrado."
+  ,"sem_transacao"                  : "Nenhuma transação no banco."
+  ,"erro_buscar_horarios_regencia"  : "Erro ao buscar os horários da regência do profissional."
+  ,"erro_buscar_dados_profissional" : "Erro ao buscar os dados pessoais do profissional:\n[sErro]"
+}

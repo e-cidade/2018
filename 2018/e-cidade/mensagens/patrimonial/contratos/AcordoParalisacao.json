@@ -1,0 +1,11 @@
+{
+  "paralisacao_nao_encontrada":"A paralisação informada não foi encontrada no sistema.",
+  "data_de_inicio_nao_informada": "A data de início da paralisação é obrigatória.",
+  "erro_salvar" : "Erro ao salvar paralisação \n [erro] ",
+  "acordo_nao_informado":"Acordo que sera paralisado não foi informado.",
+  "paralisacao_ja_terminada": "Paralisação já foi terminada. A paralisação não pode ser Removida",
+  "erro_excluir_vinculo_mov_paralisacao" : "Erro ao desvincular movimentação.\n [erro].",
+  "erro_excluir_paralisacao" : "Erro ao excluir paralisação.\n[erro].",
+  "erro_excluir_acordo_periodo" : "Erro ao excluir periodos paralisados.\n[erro].",
+  "erro_incluir_vinculo_novo_periodo" : "Erro ao vincular periodos complementares.\n[erro]"
+}

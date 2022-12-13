@@ -1,0 +1,6 @@
+{
+  "limite_pixels_ultrapassado"     : "Limite máximo de [iLimite] pixels ultrapassado!",
+  "selecione_campo_para_processar" : "Selecione algum campo para processar!",
+  "selecione_calendario"           : "Selecione o calendario!",
+  "desmarque_alguns_campos"        : "Campos já selecionados ultrapassam o limite de 195 pixels.\nDesmarque alguns campos para usar a orientação RETRATO"
+}

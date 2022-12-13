@@ -1,0 +1,37 @@
+
+Como funciona a opção atendimento suporte-> alteração.
+
+Arquivo ate4_atendsup0001.php
+
+Objetivo: alterar os dados do atendimento ao suporte.
+
+Descrição:
+- Mostra uma tabela com os atendimentos que ja que possuem um atendimento de suporte incluido, o sistema mostra os atendimento de todos os tecnicos.
+- O usuário seleciona o atendimento  desejado.
+- Mostra as informações do atendimento, como:
+	* Usuário envolvido.
+	* solicitação;
+	* executado
+	* percentual
+	* modulo
+	* procedimento
+	* prazo para atendimento sugerido pelo cliente
+
+Botão Alterar
+
+validações: somente o campo solicitação é obrigatório.
+
+Ação do botão alterar:
+
+O sistema altera tabelas:
+	- atenditem
+veifica se ja possuia um modulo cadastrado.
+	- se possuir modulo o sistema altera nas tabelas:
+	    * atenditemmod
+	    * atendimentomod
+	- se não possuir modulo cadastrado para este atendiemnto, o sistema inclui na tabelas:
+ 	    * atenditemmod
+	    * atendimentomod
+O sistema não altera o usuario envolvido nem o procedimento, permite alterar o usuario e procedimento e depois clicar em alterar, da uma mensagem de alteração com sucesso, mas não altera o usuario nem o procedimento.
+
+- Apos clicar em alterar, mostra uma mensagem de alterado com sucesso e volta para a tela de alteração.

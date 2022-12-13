@@ -1,0 +1,8 @@
+{
+  "erro_sem_receitas_ano"   : "Não Existem Receitas cadastradas para o ano de [ano]",
+  "erro_sem_dotacoes_ano"   : "Não Existem Dotações Cadastradas para o ano de [ano]",
+  "erro_inclusao_receita"   : "Não foi possivel incluir receita na Perspectiva\n[msg]",
+  "erro_inclusao_despesa"   : "Não foi possivel incluir despesa na Perspectiva\n[msg]",
+  "erro_ajuste_receita"     : "Erro ao ajustar receita [receita]. Inconsistncia no registro.",
+  "erro_nivel_nao_definido" : "Nivel [agrupar] nao definido"
+}

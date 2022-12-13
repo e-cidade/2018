@@ -1,0 +1,23 @@
+{
+  "selecione_faa"                   : "Selecione uma FAA.",
+  "selecione_cgs"                   : "Selecione um CGS.",
+  "indique_pressao_sistolica"       : "Indique a pressão sistólica do paciente.",
+  "indique_pressao_diastolica"      : "Indique a pressão diastólica do paciente.",
+  "indique_medida_cintura"          : "Indique a medida da cintura do paciente (em cm).",
+  "indique_peso"                    : "Indique o peso do paciente (em kg).",
+  "peso_acima_casas_decimais"       : "O peso do paciente não pode ter mais que 3 casas decimais.",
+  "peso_menor"                      : "O peso do paciente tem que ser menor que 1000 kg.",
+  "indique_altura"                  : "Indique a altura do paciente.",
+  "altura_maior"                    : "A altura do paciente não pode ser maior que 250 cm.",
+  "status_alimentacao"              : "Selecione o status da alimentação.",
+  "selecione_profissional"          : "Selecione o profissional de atendimento.",
+  "selecione_unidade"               : "Selecione a unidade de atendimento.",
+  "selecione_cbos"                  : "Selecione o CBOS do profissional.",
+  "preencha_data_consulta"          : "Preencha a data da consulta.",
+  "numero_cns_invalido"             : "Número de CNS inválido para busca.",
+  "cns_nao_encontrado"              : "CNS não encontrado.",
+  "unidade_nao_informada"           : "Unidade não informada.",
+  "selecione_profissional_primeiro" : "Selecione um profissional primeiro.",
+  "lancar_triagem_primeiro"         : "Para prosseguir é necessário lançar a triagem primeiro.",
+  "nenhuma_faa_gerar"               : "Nenhuma FAA para gerar."
+}

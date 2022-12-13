@@ -1,0 +1,24 @@
+{
+  "name": "dbseller/phinx_postgres",
+  "description": "Compatibilização do phinx para manipulação de tabelas que não estejam no esquema public.",
+  "authors": [
+    {
+      "name": "Renan Pigato Silva",
+      "email": "renan.silva@dbseller.com.br"
+    },
+    {
+      "name": "Vitor Rocha da Silva",
+      "email": "vitor@dbseller.com.br"
+    }
+  ],
+  "license": "GPL-2.0",
+  "require": {
+     "php": ">=5.3.9",
+     "robmorgan/phinx": "v0.4.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Classes\\": "classes"
+    }
+  }
+}

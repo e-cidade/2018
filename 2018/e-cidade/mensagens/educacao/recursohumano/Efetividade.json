@@ -1,0 +1,6 @@
+{
+  "erro_buscar_efetividade"         : "Erro ao buscar a efetividade:\n[sErro]",
+  "nenhuma_efetividade_encontrada"  : "Nenhuma efetividade encontrada.",
+  "erro_buscar_profissional_escola" : "Erro ao buscar o profissional da escola.\n[sErro]",
+  "erro_buscar_dados_servidor"      : "Erro ao buscar os dados do servidor:\n[sErro]"
+}

@@ -1,0 +1,7 @@
+{
+  "departamento_nao_ups"         : "Departamento não está cadastrado como UPS no módulo Ambulatorial!",
+  "erro_cadastrar_procedimentos" : "Erro ao cadastrar os procedimentos. Encaminhamento não efetuado.",
+  "erro_alterar_procedimentos"   : "Houve um problema na alteração dos procedimentos. Alteração não realizada.",
+  "erro_cancelamento"            : "Houve um erro ao efetuar o cancelamento. Cancelamento não efetuado.",
+  "cancelamento_realizado"       : "Cancelamento realizado com sucesso!"
+}

@@ -1,0 +1,11 @@
+{
+   "aguarde_verifica_matricula_escola" : "Aguarde, verificando se aluno teve matrícula com a escola este ano..."
+  ,"aguarde_buscando_etapa_turma"      : "Aguarde, buscando etapa(s) da turma."
+  ,"aguarde_verifica_importacao_avaliacao" :"Aguarde..."
+  ,"aviso_turma_sem_vagas"   : "Turma sem vagas. \nSelecione outra turma."
+  ,"selecione_uma_etapa"     : "Selecione uma etapa."
+  ,"informe_data_matricular" : "Informe a data da matrícula."
+  ,"data_fora_intervalo"     : "A data informada está fora do intervalo do calendário.\n  Início:[sDataInicio] até [sDataFim]"
+  ,"data_matricula_menor_data_matricula_anterior" : "A data informada é menor que a data de matrícula anterior do aluno!\n  Data da matrícula: [sDataMatricula]"
+  ,"data_matricula_menor_data_saida" : "A data informada é menor que a data de saída do aluno!\n  Data de saída: [sDataSaida]"
+}

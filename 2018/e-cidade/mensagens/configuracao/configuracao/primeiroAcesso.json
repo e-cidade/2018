@@ -1,0 +1,12 @@
+{
+  "senha_obrigatorio"          : "Campo Senha é de preenchimento obrigatório.",
+  "cpf_obrigatorio"            : "Campo CPF é de preenchimento obrigatório.",
+  "datanascimento_obrigatorio" : "Campo Data de nascimento é de preenchimento obrigatório.",
+  "email_obrigatorio"          : "Campo E-mail é de preenchimento obrigatório.",
+  "idusuario_obrigatorio"      : "Campo Código do usuário é de preenchimento obrigatório.",
+  "erro_busca_dbusuacgm"       : "Erro ao consultar dados do usuário.",
+  "cgm_nao_encontrado"         : "Cadastro Geral do Município (CGM) não encontrado.",
+  "usuario_nao_encontrado"     : "Não foi encontrado nenhum usuário apto para ativação com os dados informados.",
+  "usuario_ativado"            : "Usuário ativado com sucesso!",
+  "token_invalido"             : "Token Inválido."
+}

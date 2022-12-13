@@ -1,0 +1,5 @@
+{
+  "erro_ponto"                 : "Ocorreu um erro ao consultar a inicialização do ponto.",
+  "erro_ponto_nao_inicializado": "Não é possível importar os dados, pois o ponto não foi inicializado.",
+  "salario_fechado"            : "Folha de salário encontra-se fechada, não é possível importar o arquivo consignado."
+}

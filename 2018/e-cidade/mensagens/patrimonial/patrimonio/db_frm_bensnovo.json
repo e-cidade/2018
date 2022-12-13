@@ -1,0 +1,9 @@
+{
+  "carregando"                   : "Aguarde, carregando dados...",
+  "buscando"                     : "Buscando...",
+  "informe_placa_bem"            : "Informe a placa do bem!",
+  "buscando_divisao"             : "Buscando Divisão...",
+  "bem_salvo"                    : "Bem Salvo com Sucesso.",
+  "residual_maior_que_aquisicao" : "Valor Residual não pode ser maior que o Valor da Aquisição.",
+  "limite_placa"                 : "Quantidade de dígitos da placa permitido: [limitePlaca]."
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4002' name='recursoshumanos.db_departrhlocaltrab' description="Tabela que vincula departamento ao local de trabalho." prefix="rh185" label="Vincula entre departamento ao local de trabalho" type="0">
+  <fields>
+    <field codigo="22216" 
+           campo_api='' 
+           name="rh185_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela." 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.db_departrhlocaltrab_rh185_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22217" 
+           campo_api='' 
+           name="rh185_db_depart" 
+           conteudo="int4" 
+           description="Vínculo com departamento" 
+           inivalue="0" 
+           label="Departamento" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Departamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22218" 
+           campo_api='' 
+           name="rh185_rhlocaltrab" 
+           conteudo="int4" 
+           description="Vínculo com local de trabalho" 
+           inivalue="0" 
+           label="Local de Trabalho" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Local de Trabalho" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22219" 
+           campo_api='' 
+           name="rh185_instit" 
+           conteudo="int4" 
+           description="Vínculo com a instituição" 
+           inivalue="0" 
+           label="Instituição" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Instituição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh185_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_depart">
+      <fieldfk name="rh185_db_depart" reference="coddepto" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="rhlocaltrab">
+      <fieldfk name="rh185_rhlocaltrab" reference="rh55_codigo" inner='t'></fieldfk> 
+      <fieldfk name="rh185_instit" reference="rh55_instit" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

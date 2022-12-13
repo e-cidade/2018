@@ -1,0 +1,9 @@
+{
+   "msg_conflito_salvar" : "Atividade não pode ser salva pois há conflito(s) no(s) horário(s):"
+  ,"dados_conflito_dia"  : "[sDiaSemana] - horário: [sHoraInicioSalvar] às [sHoraFimSalvar] conflita com Tipo de Hora: [sTipoHoraAgenda] horário: [sHoraInicioAgenda] às [sHoraFimAgenda]."
+  ,"dados_conflito_escola" : "Profissional exerce a Função/Atividade de atividade [sAtividade] na escola: [sEscola] na [sDiaSemana] no horário: [sHoraInicioAgenda] às [sHoraFimAgenda]"
+  ,"atividade_salva_sucesso"    : "Atividade salva com sucesso."
+  ,"atividade_excluida_sucesso" : "Atividade excluída com sucesso."
+  ,"erro_buscar_agendas_profissional" : "Erro ao validar conflito entre agendas do profissional.\n[sErro]."
+  ,"vinculo_relacao_trabalho" : "Não foi possível excluir a atividade, pois a mesma possui vínculo com relação de trabalho."
+}

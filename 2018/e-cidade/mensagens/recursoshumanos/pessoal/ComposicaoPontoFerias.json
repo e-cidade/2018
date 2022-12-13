@@ -1,0 +1,5 @@
+{ 
+  "erro_incluir_composicao"    : "Erro ao incluir composição do ponto de ferias.\nErro técnico: \n[sErroBanco]",
+  "nenhum_registro_composicao" : "Nenhuma rubrica encontrada na competência atual.",
+  "erro_remover_ponto_ferias"  : "Não foi possível remover ponton de férias"
+ }

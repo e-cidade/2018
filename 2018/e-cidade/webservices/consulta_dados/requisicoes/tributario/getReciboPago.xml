@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="recibo.k00_receit"  label="codigo_receita" />
+    <campo campo="recibo.k00_valor"  label="valor"/>
+    <campo campo="recibo.k00_numpre"  label="numpre"/>
+  </campos>
+  <from tabela="recibo" />
+    <juncoes>
+      <join tipo="left" tabela="arrepaga" condicao="arrepaga.k00_receit = recibo.k00_receit and arrepaga.k00_numpre = recibo.k00_numpre"/>
+    </juncoes>
+  <filtros>
+    <filtro label="codigo_receita" condicao="recibo.k00_receit='$codigo_receita' and arrepaga.k00_dtpaga is null and recibo.k00_numpre = $numpre" obrigatorio="true"/>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao />
+</consulta>

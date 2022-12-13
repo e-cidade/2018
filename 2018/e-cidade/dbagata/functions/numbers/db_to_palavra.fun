@@ -1,0 +1,15 @@
+<?
+/**
+ * Exibe um número por extenso.
+ * Utilizando a função db_extenso do dbportal arquivo db_stdlib
+ * Esta função só irá funcionar sómente dentro do sistema dbseller  
+ * Andrio Costa 10/05/2012
+ * $string_column é a coluna selecionada 
+ * $array_row é a linha atual do relatório
+ */
+ 
+function db_to_palavra($string_column, $array_row) {
+  
+  $sString = strtoupper(db_extenso($string_column, true)); 
+  return strtr($sString ,'áéíóúâêôãõàèìòùç','ÁÉÍÓÚÂÊÔÃÕÀÈÌÒÙÇ'); 
+}

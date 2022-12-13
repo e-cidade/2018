@@ -1,0 +1,133 @@
+/*
+    Default Theme 
+ */
+
+div#db-menu  *{
+  font-family: Arial, sans-serif, serif, verdana;
+  font-size: 8pt;
+  font-style: normal;
+  font-weight: normal;
+  outline: none;
+  -moz-text-selection: none;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/**
+ * Configuracao da div que envolve os menus.
+ */
+div#db-menu {
+  background-color: #d0d0d0;
+  border:  1px solid;
+  border-color: #f0f0f0 #909090 #909090 #f0f0f0;
+  padding: 1px 2px;
+  text-align: left;
+  height: 17px;
+  position: absolute;
+
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  z-index: 999;
+}
+
+div#db-menu a {
+  color: #000;
+  text-decoration: none;
+  padding: 1px 6px;
+  cursor: default;
+}
+
+/**
+ * Comportamentos e estados dos sub-menus
+ */
+
+div#db-menu .sub-menu ul{
+  border: 2px solid;
+  border-color: #f0f0f0 #909090 #909090 #f0f0f0;
+  padding: 0px 1px 1px 0px;
+  background-color: #d0d0d0;
+}
+
+div#db-menu .sub-menu > ul ul{
+  top: -2px;
+}
+
+div#db-menu li.sub-menu ul a {
+  padding: 3px 1em;
+}
+
+div#db-menu ul ul {
+  left: -2px;
+}
+
+#db-menu > ul > li .sub-menu > a {
+  padding-right: 30px !important;
+}
+
+#db-menu > ul > li li.sub-menu > a::after {
+  content: ">>>";
+  position: absolute;
+  right: 1px;
+  top: 4px;
+  font-weight: bold;
+}
+
+/**
+ * Fim comportamentos e estados sub-menus
+ */
+
+/**
+ * Hover padrao dos itens
+ */
+div#db-menu  li.hover > a {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+/**
+ * Estados dos menus principais
+ */
+div#db-menu > ul > li {
+  border: 1px solid transparent;
+}
+
+div#db-menu > ul > li.active {
+  background-color: #a0a0a0;
+  color: #FFF;
+  border-color: #909090 #f0f0f0 #f0f0f0 #909090;
+}
+
+div#db-menu > ul > li.active:hover {
+  border-color: #909090 #f0f0f0 #f0f0f0 #909090;
+}
+
+div#db-menu > ul > li.active > a {
+  color: #FFF;
+}
+
+div#db-menu > ul > li:hover {
+  border-color: #f0f0f0 #909090 #909090 #f0f0f0;
+}
+
+/**
+ * Fim estados menus principais
+ */
+
+/**
+ * Autocomplete
+ */
+div#db-menu div#autoComplete {
+  margin-right:20px; 
+  float:right;
+}
+
+div#db-menu div#autoComplete input#autoCompleteMenus {
+  width: 300px; 
+  height: 15px;
+}

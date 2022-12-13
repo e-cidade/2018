@@ -1,0 +1,5 @@
+{
+  "erro_buscar_ciclo"         : "Erro ao buscar o ciclo:\n[sErro]",
+  "codigo_nao_informado"      : "Código do ciclo não informado.",
+  "erro_buscar_ciclos_ensino" : "Erro ao buscar os ensinos vinculados ao ciclo:\n[sErro]"
+}

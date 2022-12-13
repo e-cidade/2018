@@ -1,0 +1,13 @@
+<condensar>
+${ESCOLA}{258}+ ${PERIODO}
+${NOME_DISCIPLINA}{127}+ ${TURNO}{28}+ ${SERIE}{22}+ ${TURMA}{28}+ ${ANO}
+
+
+
+           
+
+<1 limite=40 preencher>                                       ${MATRICULA}{9}-    ${NUMERO}{2}- ${NOME}
+</1>
+-
+</condensar>
+<fim>

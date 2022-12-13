@@ -1,0 +1,15 @@
+{
+   "numero_disciplinas_atingiu_limite_configurado" : "O número de disciplinas em progressão parcial, atingiu o limite configurado para esta escola.\nForma de controle: [sFormaControle].\nNúmero de disciplinas configurado: [iNumeroDisciplina]"
+  ,"selecione_aluno"               : "Selecione um aluno."
+  ,"selecione_curso"               : "Você deve selecionar o curso antes."
+  ,"informe_ano_progressao"        : "Informe o ano da progressão."
+  ,"informe_etapa_progressao"      : "Informe a etapa da progressão."
+  ,"informe_disciplina_progressao" : "Informe a disciplina da progressão."
+  ,"parametro_nao_configurado"     : "Parâmetros da progressão parcial não confirgurado para esta escola.\nNão é possível incluir Progressão Parcial."
+  ,"progressao_ja_informada"       : "Esta progressão já foi informada para o aluno selecionado."
+  ,"ano_invalido"                  : "O ano deve conter 4 caractéres numéricos."
+  ,"ano_maior_que_calendario_matriculado" : "Ano informado deve ser menor do que o ano de execução do calendário em que o aluno esta matriculado."
+  ,"adicione_disciplna_progressao" : "Adicione ao menos uma disciplina em progressão."
+  ,"aguarde_salvando_progressao"   : "Aguarde... salvando progressão para aluno."
+  ,"aguarde_verificando_progressoes" : "Aguarde... verificando progressões lançadas para o aluno."
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010198' name='laboratorio.limiteatendimento' description="Armazena a configuração de limite de atendimentos realizados por dia." prefix="la45" label="Limite de Atendimentos" type="0">
+  <fields>
+    <field codigo="1009290"
+           campo_api=''
+           name="la45_sequencial"
+           conteudo="int4"
+           description="Código sequencial da tabela"
+           inivalue="0"
+           label="Sequencial"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Sequencial"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='laboratorio.limiteatendimento_la45_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="1009291"
+           campo_api=''
+           name="la45_lab_laboratorio"
+           conteudo="int4"
+           description="Vínculo com o laboratório."
+           inivalue="0"
+           label="Laboratório"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Laboratório"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="1009292"
+           campo_api=''
+           name="la45_quantidade"
+           conteudo="int4"
+           description="Quantidade de pacientes que podem ser atendidos em um dia."
+           inivalue="0"
+           label="Quantidade"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Quantidade"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="la45_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="lab_laboratorio">
+      <fieldfk name="la45_lab_laboratorio" reference="la02_i_codigo" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

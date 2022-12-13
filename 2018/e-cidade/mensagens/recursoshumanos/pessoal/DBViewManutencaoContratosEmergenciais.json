@@ -1,0 +1,7 @@
+{
+  "informe_data_inicial"              : "Informe a data de início.",
+  "informe_data_final"                : "Informe a data de término.",
+  "data_inicial_maior_data_final"     : "A data de início deve ser maior que a data de término do período anterior.",
+  "data_final_maior_data_inicial"     : "A data de término deve ser maior que a data de início.",
+  "erro_buscar_renovações"            : "Não foi possível buscar as renovações de contrato."
+}

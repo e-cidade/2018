@@ -1,0 +1,108 @@
+%PDF-1.3
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Contents 4 0 R>>
+endobj
+4 0 obj
+<</Filter /FlateDecode /Length 231>>
+stream
+xœuÑÍNÃ0ğûÂG8Ì8_mºhây²ºSĞÚNIÊ^ŸÒj¹Z?ÙşÛ„&‡ÓâÁÁİV€È\÷U’Ê &°$03à*¸yíßâ.øcò]uš[pïƒ¾RB2 ¤FmaIh	Cı3@ş ŠòŒP©±ÿÖ‡˜ -^]:ÿbZ}³çò%3TrTÜVf¨ÄHî«*pŒS“™!Ï9ófÙ”ş0C”E­GòÂ;ö]¦l¸…ÌGÖò)8¥¹¥La°8ï½.¯`*¬Àüò¿oËÔ‡kşOÑíq
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R ]
+/Count 1
+/MediaBox [0 0 595.28 841.89]
+>>
+endobj
+5 0 obj
+<</Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+2 0 obj
+<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 5 0 R
+>>
+>>
+endobj
+6 0 obj
+<<
+/Names [(EmbeddedJS) 7 0 R ]
+>>
+endobj
+7 0 obj
+<<
+/S /JavaScript
+/JS (f=addField\('firstname','text',0,[127.56,772.02,269.29,757.85]\);f.textSize=12;f.strokeColor=color.ltGray;f=addField\('lastname','text',0,[127.56,755.01,269.29,740.84]\);f.textSize=12;f.strokeColor=color.ltGray;f=addField\('gender','combobox',0,[127.56,738.00,155.91,723.83]\);f.textSize=12;f.strokeColor=color.ltGray;f.setItems\(['','M','F']\);f=addField\('address','text',0,[127.56,721.00,297.64,669.97]\);f.textSize=12;f.strokeColor=color.ltGray;f.multiline=true;f=addField\('email','text',0,[127.56,667.14,269.29,652.97]\);f.textSize=12;f.strokeColor=color.ltGray;f=addField\('newsletter','checkbox',0,[127.56,635.96,141.74,621.78]\);f.textSize=12;f.value='Yes';f.strokeColor=color.black;f=addField\('date','text',0,[60.37,607.61,145.41,593.44]\);f.textSize=12;getField\('date'\).value=util.printd\('dd/mm/yyyy',new Date\(\)\);f=addField\('print','button',0,[269.29,584.93,325.98,562.26]\);f.textSize=12;f.textColor=color.yellow;f.fillColor=['RGB',1.000,0.314,0.314];f.strokeColor=color.black;f.borderStyle='beveled';f.buttonSetCaption\('Print'\);f.setAction\('MouseUp','Print\(\)'\);f.highlight='push';f.print=false;
+function CheckField\(name,message\)
+{
+	f=getField\(name\);
+	if\(f.value==''\)
+	{
+		app.alert\(message\);
+		f.setFocus\(\);
+		return false;
+	}
+	return true;
+}
+
+function Print\(\)
+{
+	//Validation
+	if\(!CheckField\('firstname','First name is mandatory'\)\)
+		return;
+	if\(!CheckField\('lastname','Last name is mandatory'\)\)
+		return;
+	if\(!CheckField\('gender','Gender is mandatory'\)\)
+		return;
+	if\(!CheckField\('address','Address is mandatory'\)\)
+		return;
+	//Print
+	print\(\);
+}
+)
+>>
+endobj
+8 0 obj
+<<
+/Producer (FPDF 1.51)
+/CreationDate (D:20031222193545)
+>>
+endobj
+9 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+/Names <</JavaScript 6 0 R>>
+>>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000388 00000 n 
+0000000571 00000 n 
+0000000009 00000 n 
+0000000087 00000 n 
+0000000475 00000 n 
+0000000659 00000 n 
+0000000709 00000 n 
+0000002384 00000 n 
+0000002460 00000 n 
+trailer
+<<
+/Size 10
+/Root 9 0 R
+/Info 8 0 R
+>>
+startxref
+2592
+%%EOF

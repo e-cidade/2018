@@ -1,0 +1,250 @@
+body {
+  font-family: Arial, Helvetica, serif,sans-serif, verdana;
+  font-size: 12px;
+  color: #000000;
+}
+.rotulos {
+  font-family: Arial, Helvetica, serif,sans-serif, verdana;;
+  font-size: 14px;
+  color: #000000;
+}
+
+td {
+  font-family: Arial, Helvetica, serif,sans-serif, verdana;;
+  font-size: 12px;
+}
+th {
+  font-family: Arial, Helvetica, serif,sans-serif, verdana;
+  font-size: 12px;
+}
+input {
+  font-family: Arial, Helvetica, sans-serif, verdana;
+  font-size: 12px;
+  height: 17px;
+  border: 1px solid #999999;
+}
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  border: 1px solid #999999;
+}
+select {
+  border:1px solid #999999;
+  background-color:white;
+}
+
+div.menuBar,
+div.menuBar a.menuButton,
+div.menu,
+div.menu a.menuItem {
+  font-family: Arial, sans-serif, serif, verdana;
+  font-size: 8pt;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+}
+
+div.menuBar {
+  background-color: #d0d0d0;
+  border: 1px solid;
+  border-color: #f0f0f0 #909090 #909090 #f0f0f0;
+  padding: 2px 2px 2px 2px;
+  text-align: left;
+}
+
+div.menuBar a.menuButton {
+  background-color: transparent;
+  border: 1px solid #d0d0d0;
+  color: #000000;
+  cursor: default;
+  left: 0px;
+  margin: 1px;
+  padding: 1px 6px 1px 6px;
+  position: relative;
+  text-decoration: none;
+  top: 0px;
+  z-index: 100;
+}
+
+div.menuBar a.menuButton:hover {
+  background-color: transparent;
+  border-color: #f0f0f0 #909090 #909090 #f0f0f0;
+  color: #000000;
+}
+
+div.menuBar a.menuButtonActive,
+div.menuBar a.menuButtonActive:hover {
+  background-color: #a0a0a0;
+  border-color: #909090 #f0f0f0 #f0f0f0 #909090;
+  color: #ffffff;
+  left: 1px;
+  top: 1px;
+}
+
+div.menu {
+  background-color: #d0d0d0;
+  border: 2px solid;
+  border-color: #f0f0f0 #909090 #909090 #f0f0f0;
+  left: 0px;
+  padding: 0px 1px 1px 0px;
+  position: absolute;
+  top: 0px;
+  visibility: hidden;
+  z-index: 101;
+}
+
+div.menu a.menuItem {
+  color: #000000;
+  cursor: default;
+  display: block;
+  padding: 3px 1em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+div.menu a.menuItem:hover, div.menu a.menuItemHighlight {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+div.menu a.menuItem span.menuItemText {}
+
+div.menu a.menuItem span.menuItemArrow {
+  margin-right: -.75em;
+}
+
+div.menu div.menuItemSep {
+  border-top: 1px solid #909090;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 4px 2px;
+}
+
+
+table.tab_sem_cor {
+    border-collapse: collapse;
+}
+table.tab_sem_cor th {
+    border:1px solid #000000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+table.tab_sem_cor td {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+
+table.tab {
+  border-collapse: collapse;
+}
+table.tab th {
+  border:1px solid #000066;
+  background-color: #aacccc;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: darkblue;
+}
+table.tab td {
+  border:1px solid #000066;
+  background-color: #ccddcc;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #000000;
+}
+
+table.tab_cinza {
+  border-collapse: collapse;
+}
+table.tab_cinza th {
+  border:1px solid #000000;
+  background-color: #999999;
+  color: #000000;
+}
+table.tab_cinza td {
+  border:1px solid #000000;
+  background-color: #cccccc;
+  color: #000000;
+}
+input[type=button][disabled] {background-color:#EFEFEF}
+input[type=submit][disabled] {background-color:#EFEFEF}
+[button][disabled] {background-color:#EFEFEF}
+
+/**
+ * Componente Select Multiplo
+ */
+ .DBSelectMultiplo option:nth-child(odd) {
+   background-color: #D7CC06;
+ }
+ .DBSelectMultiplo option:nth-child(even) {
+   background-color: #F8EC07;
+ }
+
+/**
+ * DB Âncora
+ */
+
+ .DBAncora {
+   text-decoration : underline;
+   font-weight     : bold;
+
+ }
+
+ legend {
+  font-weight: bold;
+ }
+
+/**
+ * Estilos padrões do sistema
+ */
+body.body-default {
+  margin: 0;
+  margin-top: 30px;
+  background: #ccc;
+}
+
+body.abas {
+  margin-top: 20px;
+}
+
+table.table-default {
+  width: 100%;
+  border: none;
+}
+
+div.action-buttons-container {
+  margin-top: 8px;
+}
+
+#acessosModulo table tr:nth-child(even) {
+  background-color: #CCCC00;
+}
+
+#acessosModulo table tr:not(:first-child):nth-child(odd) {
+  background-color: #CCCC66;
+}
+
+/**
+ * "Datepicker"
+ */
+.dbdatepicker  tr td {
+  font-size:14px !important;
+}
+
+.dbdatepicker .fimsemana {
+  background-color: #CCCCCC;
+}
+
+.dbdatepicker .diaatual {
+  background-color: #FFA500;
+}
+
+button:not([rel="ignore-css"]),
+input[type='button']:not([rel="ignore-css"]),
+input[type='reset']:not([rel="ignore-css"]),
+input[type='text']:not([rel="ignore-css"]),
+input[type='submit']:not([rel="ignore-css"]) {
+  height: 17px !important;
+}a {
+  cursor: pointer;
+}

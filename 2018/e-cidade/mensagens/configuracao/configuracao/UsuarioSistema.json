@@ -1,0 +1,12 @@
+{
+  "erro_departamentos_usuario"  : "Erro ao buscar departamentos do usuario.",
+  "nenhuma_instituicao_usuario" : "Nenhuma instituição encontrada para o usuário.",
+  "usuario_nao_localizado"      : "Usuário não localizado.",
+  "erro_salvar_usuario"         : "Não foi possível salvar os dados do usuário.",
+  "situacao_invalida_ativacao"  : "Usuário possui situação inválida para ativação.",
+  "senha_padrao_invalida"       : "Usuário com senha em padrão inválido para ativação.",
+  "usuario_administrador"       : "Usuário com tipo inválido para ativação.",
+  "usuario_perfil_invalido"     : "Usuário com perfil inválido para ativação.",
+  "token_invalido"              : "Usuário com token de ativação inválido.",
+  "token_expirado"              : "Usuário com token de ativação expirado."
+}

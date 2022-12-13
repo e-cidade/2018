@@ -1,0 +1,12 @@
+{
+   "informe_hora_inicio"       : "Informe o horário de início para calcular a duração."
+  ,"informe_hora_inicio_fim"   : "Informe hora de início e fim do período."
+  ,"hora_final_menor_igual"    : "Hora final deve ser maior que hora inicial."
+  ,"carregando_turnos"         : "Carregando turnos."
+  ,"selecione_um_periodo"      : "Selecione ao menos um período de aula."
+  ,"selecione_um_turno"        : "Selecione o turno."
+  ,"hora_inicio_nao_informada" : "Hora inicial do período: [periodo] não foi informada."
+  ,"hora_final_nao_informada"  : "Hora final do período: [periodo] não foi informada."
+  ,"hora_inicio_conflita_periodo" : "Hora informada esta conflitando com hora final do período: [sPeriodo]."
+  ,"hora_final_conflita_periodo" : "Hora informada esta conflitando com hora inicial do período: [sPeriodo]."
+}

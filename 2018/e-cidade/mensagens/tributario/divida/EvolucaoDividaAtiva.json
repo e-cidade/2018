@@ -1,0 +1,11 @@
+{
+  "erro_data_inicio_obrigatorio"  : "Campo Data Início é de preenchimento obrigatório.",
+  "erro_data_fim_obrigatorio"     : "Campo Data Fim é de preenchimento obrigatório.",
+  "erro_data_sistema_obrigatorio" : "Data do Sistema não informada.",
+  "dados_nao_encontrados"         : "Nehum registro encontrado para o período informado.",
+  "intervalo_invalido"            : "Campo Data Inicial deve ser menor que a Data Final.",
+  "emissao_hoje"                  : "Campo [sCampo] não pode ser igual ou superior ao dia de hoje.",
+  "dados_inconsistentes"          : "Dados inconsistentes para geração do relatório.",
+  "datas_inconsistentes"          : "Dados inconsistentes! \nData(s) não encontrada(s): [sDatas]",
+  "erro_gerar_relatorio"          : "Erro ao gerar relatório."
+}

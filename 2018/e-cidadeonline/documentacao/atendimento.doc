@@ -1,0 +1,219 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBSeller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+1- Alterar o nome do form db_frmatend.php para db_frmatendsup.php            .......Ok  
+
+2- Alterar o nome do arquivo ate4_atend002.php para ate4_atendsup001.php      .......Ok  
+
+
+3- Alterar o arquivo ate4_atend001.php para ate4_atendcli001.php
+	- Tirar o form e passar para um arquivo separado forms/db_frmatendcli.php .......Ok  
+
+4- Criar o arquivo: ate4_atendcli002.php para alteração.                      .......Ok  
+
+
+5- Tem que alterar os itens de menus:
+Atendimento cliente ->inclusão ...  para ate4_atendcli001.php		      .......Ok  
+Atendimento Suporte ->inclusão ...  para ate4_atendcli002.php?opcao=incluir   .......Ok  
+Atendimento Suporte ->alteração ... para ate4_atendcli002.php?opcao=alterar .......Ok  
+
+6- Criar item de menu alteração para atendimento a cliente.  .......Ok  
+
+7- Criar a opção de alteração de atendimento a cliente.
+
+9- Quando abrir o menu alterar de atendimento cliente:
+ * Mostrar a func, com a tabela mostrando os dados do atendimento.
+ * Após escolher o atendimento, voltar para pag. de atendimento mostrando as informações do atendimento selecionado.
+
+10- Se alterar o cliente decve apagar o usuario 
+
+11- Quando clicar no botão alterar:
+
+alterar as informações nas tabelas:
+ * atendimento
+ * atendimentousu
+ * atendimentosituacao
+
+Excluir e depois incluir nas tabelas:
+ * tecnico
+ * tendimentomod
+
+-----------------------------------------------
+
+* Foi criado uma nova func, func_atendcli.php para mostrar na tabela somente os atendimento que ainda não foram incluidos um andamento de atendimento a suporte.
+* Quando alterar um cliente do atendimento, não deve permitir efetuar uma alteração se o usuário não for informado.
+
+------------------------------------------------
+
+
+select at01_codcli as cliente, at10_usuario as usuario, at10_nome as nome, at03_id_usuario as tecnico, nome as nome_tecnico, at08_modulo, nome_modulo, at04_codtipo, at16_situacao, at02_observacao,at20_sequencial,at16_sequencial
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend 
+left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend
+left join atendimentomod on atendimentomod.at08_atend=atendimento.at02_codatend
+inner join db_modulos on db_modulos.id_item= atendimentomod.at08_modulo
+where atendimento.at02_codatend = 3538;
+
+
+select  *
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend 
+left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend
+left join atendimentomod on atendimentomod.at08_atend=atendimento.at02_codatend
+left join db_modulos on db_modulos.id_item= atendimentomod.at08_modulo
+where atendimento.at02_codatend = 1704;
+
+
+update tecnico set at03_codatend = 3538 , at03_id_usuario = 11136002 where at03_codatend = 3538 and at03_id_usuario = 11136002
+
+delete from tecnico where . at03_codatend = 3538 and at03_id_usuario = 11131 
+insert into tecnico( at03_codatend ,at03_id_usuario ) values ( 3538 ,11131 )
+
+delete from tecnico where . at03_codatend = 3538 and at03_id_usuario = 11136018
+insert into tecnico( at03_codatend ,at03_id_usuario ) values ( 3538 ,11136018 )
+
+delete from tecnico where . at03_codatend = 3538
+insert into tecnico( at03_codatend ,at03_id_usuario ) values ( 3538 ,8 )
+
+
+
+select atendimento.* 
+from atendimento
+inner join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+inner join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+order by at02_codatend desc;
+
+
+
+
+
+select at02_codatend,at06_datalanc as dl_data,at06_horalanc as dl_hora,at01_nomecli as dl_cliente,at10_nome as dl_solicitante,at04_descr as dl_Contato_por,nome as dl_Tecnico 
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+where atenditem.at05_codatend is null and at02_codtipo >= 100 and atendorig.at11_origematend is null and atendimentosituacao.at16_situacao = 1 
+order by at02_codatend desc
+
+
+select
+ at02_codatend,at06_datalanc as dl_data,at06_horalanc as dl_hora,at01_codcli,at01_nomecli as dl_cliente,at10_nome as dl_solicitante,at04_descr as dl_Contato_por,nome as dl_Tecnico 
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+where atenditem.at05_codatend is null  
+order by at02_codatend desc
+limit 10;
+
+
+select *
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+where atenditem.at05_codatend is null  
+order by at02_codatend desc
+limit 10;
+
+
+select
+ at02_codatend,at06_datalanc as dl_data,at06_horalanc as dl_hora,at01_codcli,at01_nomecli as dl_cliente,at10_nome as dl_solicitante,at04_descr as dl_Contato_por,nome as dl_Tecnico 
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+order by at02_codatend desc
+limit 10;
+
+
+
+select 
+*
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend 
+left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+left join atendimentomod on atendimentomod.at08_atend =atendimento.at02_codatend 
+left join db_modulos on db_modulos.id_item = atendimentomod.at08_modulo 
+where atendimento.at02_codatend = 3529 and at05_seq=3574;
+
+select 
+*
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend 
+left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+left join atendimentomod on atendimentomod.at08_atend =atendimento.at02_codatend 
+left join db_modulos on db_modulos.id_item = atendimentomod.at08_modulo 
+where atendimento.at02_codatend = 3529 and at05_seq=3574;

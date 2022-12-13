@@ -1,0 +1,5 @@
+{
+  "data_inicial_maior_final"    : "Data inicial maior que data final. Verifique." ,
+  "sem_conta_selecionada"       : "Você não selecionou contas, gerar todas?",
+  "sem_documentos_selecionados" : "Você não selecionou documentos, gerar todos?"
+}

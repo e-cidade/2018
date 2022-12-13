@@ -1,0 +1,69 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010237' name='tributario.requisicaocivitassituacao' description="Tabela com todas as situações das requisições do CIVITAS e suas descrições" prefix="rq02" label="requisicaocivitassituacao" type="0">
+  <fields>
+    <field codigo="1009517" 
+           campo_api='' 
+           name="rq02_sequencial" 
+           conteudo="int4" 
+           description="Código Sequencial da tabela de situações do CIVITAS" 
+           inivalue="0" 
+           label="Código Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='tributario.requisicaocivitassituacao_rq02_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009518" 
+           campo_api='' 
+           name="rq02_codigo" 
+           conteudo="int4" 
+           description="Código da situação do CIVITAS" 
+           inivalue="0" 
+           label="Código Situação" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código Situação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009519" 
+           campo_api='' 
+           name="rq02_descricao" 
+           conteudo="text" 
+           description="Descrição da Situação da requisição do CIVITAS" 
+           inivalue="" 
+           label="Descrição Situação" 
+           size="100" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição Situação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rq02_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

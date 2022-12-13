@@ -1,0 +1,5 @@
+{
+  "orcamento_nao_encontrado" : "O orçamento [sCodigo] não foi encontrado.", 
+  "selecione_apenas_um"      : "Você deve selecionar apenas um orçamento entre o processo de compras ou solicitação de compras.",
+  "selecione_um_orcamento"   : "Você deve selecionar um orçamento."
+}

@@ -1,0 +1,9 @@
+{
+  "erro_salvar"                    : "Erro ao salvar dados do exame.",
+  "erro_buscar_setor"              : "Erro ao buscar o setor vinculado ao exame:\n[sErro]",
+  "setor_nao_encontrado"           : "Nenhum setor encontrado para o exame.",
+  "erro_excluir_medicamento_exame" : "Erro ao excluir o medicamento vinculado ao exame.\n[sErro]",
+  "erro_salvar_medicamento"        : "Erro ao salvar o medicamento.\n[sErro]",
+  "erro_buscar_medicamentos"       : "Erro ao buscar os medicamentos.\n[sErro]",
+  "erro_bucar_cid"                 : "Erro ao buscar o CID vinculado ao exame.\n[sErro]"
+}

@@ -1,0 +1,11 @@
+ConPrefeitura_host=192.168.0.21
+ConPrefeitura_port=5432
+ConPrefeitura_dbname=nao_apagar_auto_bage_20101108
+ConPrefeitura_user=postgres
+ConPrefeitura_password=halegria 
+
+ConDestino_host=192.168.0.2
+ConDestino_port=5432
+ConDestino_dbname=portal_transparencia
+ConDestino_user=postgres
+ConDestino_password=halegria

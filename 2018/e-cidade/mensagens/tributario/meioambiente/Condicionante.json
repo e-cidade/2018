@@ -1,0 +1,6 @@
+{
+  "sem_transacao_ativa"        : "Sem transação ativa com banco",
+  "padrao_obrigatorio"         : "Campo Padrão é de preenchimento obrigatório",
+  "descricao_obrigatorio"      : "Campo Descrição é de preenchimento obrigatório",
+  "erro_remover_condicionante" : "Erro ao excluir condicionante!"
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3988' name='tributario.emissaogeralmatricula' description="Tabela que vincula os registros das Emissões Gerais do Sistemas com as suas matrículas, quando necessário." prefix="tr03" label="Emissao Geral Matrícula" type="0">
+  <fields>
+    <field codigo="22140"
+           campo_api='codigo_sequencial'
+           name="tr03_sequencial"
+           conteudo="int4"
+           description="Código do Registro da Emissão Geral"
+           inivalue="0"
+           label="Código do Registro"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código do Registro"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='tributario.emissaogeralmatricula_tr03_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22142"
+           campo_api='codigo_registro'
+           name="tr03_emissaogeralregistro"
+           conteudo="int4"
+           description="Código do Registro"
+           inivalue="0"
+           label="Código do Registro"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código do Registro"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22143"
+           campo_api='matricula'
+           name="tr03_matric"
+           conteudo="int4"
+           description="Matrícula vinculada ao registro"
+           inivalue="0"
+           label="Matrícula"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Matrícula"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="tr03_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="iptubase">
+      <fieldfk name="tr03_matric" reference="j01_matric" inner='t'></fieldfk>
+    </foreignkey>
+    <foreignkey reference="emissaogeralregistro">
+      <fieldfk name="tr03_emissaogeralregistro" reference="tr02_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

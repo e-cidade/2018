@@ -1,0 +1,10 @@
+{
+  "informe_cgs"               : "Código do CGS não foi informado.",
+  "documento_nao_informado"   : "Documento não informado.",
+  "documento_salvo"           : "Documento salvo com sucesso.",
+  "erro_buscar_dados_familia" : "Erro ao buscar os dados da família.",
+  "erro_buscar_pais_origem"   : "Erro ao buscar os paises de origem.",
+  "dados_salvos"              : "Dados do CGS salvos com sucesso.",
+  "cgs_excluido"              : "CGS excluído com sucesso.",
+  "cgs_inexistente"           : "CGS informado é inexistente."
+}

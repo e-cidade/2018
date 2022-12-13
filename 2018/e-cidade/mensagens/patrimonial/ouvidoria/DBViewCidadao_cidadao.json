@@ -1,0 +1,14 @@
+{
+  "salvando_dados"               : "Aguarde, salvando os dados do cidadão.",
+  "nome_obrigatorio"             : "É necessário informar o Nome / Razão Social do cidadão.",
+  "cpf_obrigatorio"              : "É necessário informar o CPF do cidadão.",
+  "pesquisando_estados"          : "Pesquisando Estados",
+  "pesquisando_municipios"       : "Aguarde, pesquisando municípios.",
+  "cpfcnpj_invalido"             : "Campo CPF/CNPJ inválido.",
+  "confirma_email_secundario"    : "Já existe um email Informado como principal. Deseja incluir este email como secundário?",
+  "confirma_telefone_secundario" : "Já existe um telefone Informado como principal. Deseja incluir este telefone como secundário?",
+  "numero_vazio"                 : "Número de telefone não informado.",
+  "pesquisando_dados_cidadao"    : "Aguarde, pesquisando os dados do cidadão.",
+  "confirma_exclusao_email"      : "Confirma a exclusão do email [sEmail]?",
+  "confirma_exclusao_telefone"   : "Confirma a exclusão do telefone [sDescricaoTipo] - [sTelefone]?"
+}

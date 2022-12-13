@@ -1,0 +1,9 @@
+{
+  "erro_salvar_arquivo"       : "Erro ao importar arquivo: [sNomeArquivo]",
+  "registros_nao_encontrados" : "Registros não encontrados",
+  "arquivo_duplicado"         : "Arquivo já importado para o sistema.",
+  "arquivo_invalido"          : "O arquivo enviado não é do formato correto.",
+  "extensao_invalida"         : "O arquivo enviado possui extensão inválida.",
+  "sem_transacao"             : "Sem Transação Ativa.",
+  "sucesso_importacao"        : "Arquivo importado com sucesso!"
+}

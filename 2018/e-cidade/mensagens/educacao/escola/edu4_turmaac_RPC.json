@@ -1,0 +1,7 @@
+{
+   "erro_vincular_profissional" : "Erro ao vincular o profissional. \n[sErroSql]"
+  ,"profissional_vinculado"     : "Profissional vinculado com sucesso."
+  ,"profissional_vinculado_outras_turmas" : "Profissional não pode ser vinculado no(s) dia(s) da semana:\n [sDiasConflitados].\nPois já possui vínculo com outra turma."
+  ,"erro_desvincular_profissional" : "Erro ao remover vínculo do profissional/monitor. \n[sErroSql]"
+  ,"vinculo_removido" : "Vínculo removido com sucesso."
+}

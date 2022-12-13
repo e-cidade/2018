@@ -1,0 +1,8 @@
+{
+  "nenhum_registro_selecionado"             : "Nenhum registro selecionado para o cancelamento.",
+  "sucesso_cancelamento_importacao_debitos" : "Cancelamento de importação de débitos realizado com sucesso.",
+  "nenhum_registro"                         : "Nenhum registro encontrado.",
+  "revertendo_importacao"                   : "Revertendo importação de débitos, aguarde...",
+  "pesquisando_debito"                      : "Pesquisando débitos, aguarde...",
+  "deseja_reverter_debitos"                 : "Deseja reverter os débitos da(s) importação(ões) selecionada(s)?"
+}

@@ -1,0 +1,8 @@
+{
+  "administracao_nao_encontrada": "A administração informada não foi encontrada.",
+  "medicamento_nao_informado": "O medicamento não foi informado. Não será possível salvar os dados da Administração.",
+  "data_da_administracao_nao_informada": "A data da administração do medicamento não foi informada. Não será possível salvar os dados da Administração.",
+  "unidade_nao_informada": "A Unidade da administração do medicamento não foi informada. Não será possível salvar os dados da Administração.",
+  "usuario_nao_informado": "O usuário da administração do medicamento não foi informada. Não será possível salvar os dados da Administração.",
+  "erro_ao_salvar_administracao" : "Não foi possível salvar os dados da administração:\n[erro]"
+}

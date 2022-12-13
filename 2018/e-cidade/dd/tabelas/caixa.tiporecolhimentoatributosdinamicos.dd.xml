@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010197' name='caixa.tiporecolhimentoatributosdinamicos' description="Atributos dinamicos da guia" prefix="k176" label="Atributos dinamicos da guia" type="0">
+  <fields>
+    <field codigo="1009284" 
+           campo_api='' 
+           name="k176_sequencial" 
+           conteudo="int4" 
+           description="Atributos dinamicos da guia" 
+           inivalue="" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='caixa.tiporecolhimentoatributosdinamicos_k176_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="1009285" 
+           campo_api='' 
+           name="k176_tiporecolhimento" 
+           conteudo="int4" 
+           description="Atributos dinamicos da guia" 
+           inivalue="" 
+           label="Tipo do Recolhimento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo do Recolhimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009286" 
+           campo_api='' 
+           name="k176_db_cadattdinamico" 
+           conteudo="int4" 
+           description="Atributo Dinamico" 
+           inivalue="" 
+           label="Atributo Dinamico" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Atributo Dinamico" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="k176_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_cadattdinamico">
+      <fieldfk name="k176_db_cadattdinamico" reference="db118_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="tiporecolhimento">
+      <fieldfk name="k176_tiporecolhimento" reference="k172_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

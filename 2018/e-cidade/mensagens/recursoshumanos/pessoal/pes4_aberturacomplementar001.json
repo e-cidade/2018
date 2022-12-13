@@ -1,0 +1,10 @@
+{ 
+  "incluido_com_sucesso"   : "Abertura da folha complementar efetuada com sucesso.",
+  "folha_aberta_existente" : "Já existe uma folha complementar aberta.",
+  "descricao_vazio"        : "Descrição não informada.",
+  "folha_salario_aberta"   : "Não é possível abrir uma folha complementar após o fechamento de salário.",
+  "ano_vazio"              : "Ano não informado.",
+  "mes_vazio"              : "Mês não informado.",
+  "ponto_nao_inicializado" : "Não é possível abrir uma folha complementar, pois o ponto não encontra-se inicializado.",
+  "rotina_desativada"      : "Esta rotina não está ativa. Para ativar, contate um administrador."
+}

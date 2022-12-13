@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010219' name='cadastro.atualizacaoiptuschemamatricula' description="Guarda as matrículas que foram atualizadas o cadastro imobiliário." prefix="j144" label="Matrículas Atualizadas" type="0">
+  <fields>
+    <field codigo="1009408" 
+           campo_api='' 
+           name="j144_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial." 
+           inivalue="0" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='cadastro.atualizacaoiptuschemamatricula_j144_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009401" 
+           campo_api='' 
+           name="j144_matricula" 
+           conteudo="int4" 
+           description="Matrícula" 
+           inivalue="0" 
+           label="Matrícula" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Matrícula" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009402" 
+           campo_api='' 
+           name="j144_atualizacaoiptuschema" 
+           conteudo="int4" 
+           description="Vínculo com o schema." 
+           inivalue="0" 
+           label="Dados de Importação" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Dados de Importação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009403" 
+           campo_api='' 
+           name="j144_situacao" 
+           conteudo="int4" 
+           description="Situação que a matrícula se encontra (Nova/Atualizada/Rejeitada)." 
+           inivalue="0" 
+           label="Situação" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Situação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="j144_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="atualizacaoiptuschema" inner='t'>
+      <fieldfk name="j144_atualizacaoiptuschema" reference="j142_sequencial" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

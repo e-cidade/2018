@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4029' name='recursoshumanos.assentamentojustificativaperiodo' description="Tabela que determina se um assentamento de justificativa é de período específico ou integral" prefix="rh206" label="Período do assentamento de justificativa" type="0">
+  <fields>
+    <field codigo="22360" 
+           campo_api='' 
+           name="rh206_codigo" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22361" 
+           campo_api='' 
+           name="rh206_periodo" 
+           conteudo="int4" 
+           description="Período do assentamento de justificativa." 
+           inivalue="0" 
+           label="Período" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Período" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh206_codigo"></fieldpk> 
+    <fieldpk name="rh206_periodo"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="assenta">
+      <fieldfk name="rh206_codigo" reference="h16_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

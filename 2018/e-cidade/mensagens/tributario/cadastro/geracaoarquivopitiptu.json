@@ -1,0 +1,12 @@
+{
+  "erro_imoveis"        : "Erro ao buscar os dados dos Imóveis.",
+  "nenhum_imovel"       : "Nenhum Imóvel encontrado.",
+  "erro_proprietario"   : "Erro ao buscar os dados dos Proprietários.",
+  "nenhum_proprietario" : "Nenhum Proprietário encontrado.",
+  "erro_lote"           : "Erro ao buscar os dados dos Lotes",
+  "nenhum_lote"         : "Nenhum Lote encontrado.",
+  "erro_terreno"        : "Erro ao buscar os dados dos Terrenos.",
+  "nenhum_terreno"      : "Nenhum Terreno encontrado.",
+  "erro_benfeitoria"    : "Erro ao buscar os dados das Benfeitorias.",
+  "erro_municipio"      : "Erro ao buscar os dados do Município."
+}

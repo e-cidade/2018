@@ -1,0 +1,6 @@
+{
+  "codigo_nota_obrigatorio" : "O campo Nota é de preenchimento obrigatório.",
+  "data_obrigatorio" : "O campo Data é de preenchimento obrigatório.",
+  "justificativa_obrigatorio" : "O campo Justificativa é de preenchimento obrigatório.",
+  "erro_busca_nota" : "Houve um erro ao buscar o status da Nota de Liquidação"
+}

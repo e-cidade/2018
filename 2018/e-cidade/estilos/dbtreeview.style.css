@@ -1,0 +1,205 @@
+.marker
+{
+  width: 16px;
+  height: 16px;
+  padding-left: 0px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("../imagens/icons.gif");
+  cursor:default;
+  background-position: 0px -32px;
+}
+.marker-checked
+{
+  width: 16px;
+  height: 16px;
+  padding-left: 0px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  cursor:default;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("../imagens/icons.gif");
+  background-position:-32px -32px;
+}
+
+.marker-checked-disabled
+{
+  width: 16px;
+  height: 16px;
+  padding-left: 0px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  cursor:default;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("../imagens/icons.gif");
+  background-position: -16px -160px
+}
+
+.marker-disabled
+{
+  width: 16px;
+  height: 16px;
+  padding-left: 0px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  cursor:default;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("../imagens/icons.gif");
+  background-position: -0px -160px
+}
+.marker-empty
+{
+  width: 16px;
+  height: 16px;
+  padding-left: 0px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  cursor:default;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("../imagens/icons.gif");
+  background-position:-128px 0px;
+}
+div.DBTreeView ul
+{
+  padding: 0 0 0 16px;
+  margin: 0;
+}
+div.DBTreeView li
+{
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  -moz-background-clip:border;
+  -moz-background-inline-policy: continuous;
+  -moz-background-origin: padding;
+  background-attachment: scroll;
+  background-image: url("../imagens/vline.gif");
+  background-repeat: repeat-y;
+  cursor:pointer;
+  white-space:nowrap;
+  padding: 1px 0px 1px 0px;
+  background-position: -0px -0px;
+}
+
+.conector{
+
+ width: 16px;
+  height: 16px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: left;
+  /*background-image:url("imagens/tree/join2.gif");*/
+  background-image:url("../imagens/icons.gif");
+  background-position: -16px -64px;
+  cursor: pointer;
+}
+
+.conector-close {
+
+  width: 16px;
+  height: 16px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image:url("../imagens/icons.gif");
+  background-position: -16px -96px;
+  cursor: pointer;
+
+}
+
+.last-conector-close {
+
+  width: 16px;
+  height: 16px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image:url("../imagens/icons.gif");
+  background-position: -16px -64px;;
+  cursor: pointer;
+
+}
+.conector-open {
+
+  width: 16px;
+  height: 16px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image:url("../imagens/icons.gif");
+  background-position: -32px -96px;
+  cursor: pointer;
+
+}
+.last-conector {
+
+  width: 16px;
+  height: 16px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: left;
+  /*background-image:url("imagens/tree/join2.gif");*/
+  background-image:url("../imagens/icons.gif");
+  background-position: -16px -62px;
+  cursor: pointer;
+}
+
+div.DBTreeView li.lastnode {
+
+	background-image:none;
+  background-repeat: no-repeat;
+  padding: 1px 0px 1px 0px;
+  background-image: url("../imagens/vline_end.gif");
+  background-position: 0px 0px;
+}
+.nodeValue {
+	white-space: nowrap;
+}
+{
+  padding: 0 0 0 6px;
+  margin: 0;
+}
+
+div.DBTreeView li.selected {
+ background-color: #efefef;
+}
+div.DBTreeView li.lastnode selected {
+
+  background-image:none;
+  background-repeat: no-repeat;
+  padding: 1px 0px 1px 0px;
+}
+
+.delete-icon {
+  width: 16px;
+  height: 16px;
+  display: -moz-inline-box; /* @ FF 1+2 */
+  display: inline-block; /* Required to make a span sizeable */
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: left;
+  /*background-image:url("imagens/tree/join2.gif");*/
+  background-image:url("../imagens/icons.gif");
+  background-position: -16px -112px;
+}

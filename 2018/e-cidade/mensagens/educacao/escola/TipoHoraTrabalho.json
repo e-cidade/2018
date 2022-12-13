@@ -1,0 +1,5 @@
+{
+  "erro_buscar_tipo_hora" : "Erro ao buscar o tipo de hora de trabalho:\n[sErro]",
+  "erro_salvar_tipo_hora" : "Erro ao salvar o tipo de hora de trabalho:\n[sErro]",
+  "nenhum_tipo_hora_cadastrado_para_atividade" : "Não foi encontrado nenhum tipo de hora cadastrado compatível com a função / atividade selecionada."
+}

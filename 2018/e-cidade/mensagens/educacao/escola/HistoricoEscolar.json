@@ -1,0 +1,6 @@
+{
+  "ano_invalido"                : "Inclusão não permitida: ano informado é igual ou superior ao ano da matrícula atual do aluno.",
+  "etapa_invalida"              : "Inclusão não permitida: a etapa é igual ou acima da etapa da matrícula atual do aluno.",
+  "etapa_equivalente_matricula" : "Inclusão não permitida: a etapa é equivalente a etapa da matrícula atual do aluno.",
+  "etapa_equivalente_historico" : "Inclusão não permitida: a etapa é equivalente a uma etapa já existente no histórico do aluno."
+}

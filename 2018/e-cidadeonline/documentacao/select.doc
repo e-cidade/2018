@@ -1,0 +1,103 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBSeller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+select 
+at05_solicitado,
+at05_feito,
+id_item as modulo,
+at05_data
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend 
+left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+left join atendimentomod on atendimentomod.at08_atend =atendimento.at02_codatend 
+left join db_modulos on db_modulos.id_item = atendimentomod.at08_modulo 
+where at02_codatend = 3518 and at05_seq = 3605
+
+
+at05_solicitado,at05_feito,at41_proced,id_item as modulo,at05_data
+
+
+$usucliente_usuario as usuorigem[]
+
+select 
+at05_solicitado,
+at05_feito,
+id_item as modulo,
+at05_data,
+at24_proced as at41_proced
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend 
+left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+left join atenditemmod on at22_atenditem=at05_seq
+left join db_modulos on db_modulos.id_item =atenditemmod.at22_modulo
+left join atenditemproced on at24_atenditem=at05_seq
+where at02_codatend = 3320
+
+at22_modulo
+atenditemmod
+
+
+select at22_sequencial 
+from atenditemmod 
+inner join db_modulos on db_modulos.id_item = atenditemmod.at22_modulo 
+inner join atenditem on atenditem.at05_seq = atenditemmod.at22_atenditem 
+inner join atendimento on atendimento.at02_codatend = atenditem.at05_codatend 
+where at22_atenditem=3616 order by at22_sequencial
+
+
+*********************** select da func que busca por tecnico ou area ********************************
+
+select at02_codatend,at06_datalanc as dl_data,at06_horalanc as dl_hora,at01_nomecli as dl_cliente,at10_nome as dl_solicitante,at04_descr as dl_Contato_por,nome as dl_Tecnico, at25_descr as area
+from atendimento 
+left join atendimentolanc on atendimentolanc.at06_codatend = atendimento.at02_codatend 
+left join atendimentoorigem as atendorig on atendorig.at11_origematend = atendimento.at02_codatend or atendorig.at11_novoatend = atendimento.at02_codatend 
+left join tecnico on tecnico.at03_codatend = atendimento.at02_codatend 
+left join db_usuarios on db_usuarios.id_usuario = tecnico.at03_id_usuario 
+left join clientes on clientes.at01_codcli = atendimento.at02_codcli 
+left join atendimentousu on atendimentousu.at20_codatend = atendimento.at02_codatend 
+left join db_usuclientes on db_usuclientes.at10_usuario = atendimentousu.at20_usuario and db_usuclientes.at10_codcli = atendimento.at02_codcli left join tipoatend on tipoatend.at04_codtipo = atendimento.at02_codtipo 
+left join atenditem on atenditem.at05_codatend = atendimento.at02_codatend 
+left join atendimentosituacao on atendimentosituacao.at16_atendimento = atendimento.at02_codatend 
+left join atendarea on at28_atendimento = at02_codatend 
+left join atendcadarea on at26_sequencial= at28_atendcadarea
+left join atendareatec on at27_atendcadarea=at26_sequencial
+where atenditem.at05_codatend is null and at02_codtipo >= 100 and atendorig.at11_origematend is null and atendimentosituacao.at16_situacao = 1 and (tecnico.at03_id_usuario=11136027 or (at28_atendcadarea is not null and at27_usuarios = 11136027))
+order by at02_codatend desc;

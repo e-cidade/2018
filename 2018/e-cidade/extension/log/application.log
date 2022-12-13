@@ -1,0 +1,15 @@
+[2017-11-21 16:20:45] ERROR: modification() - update file: libs/db_stdlib.php : N√£o foi possivel criar diret√≥rio de cache: /var/www/teste_ecidade_pspb/e-cidade-2017-2-linux-completo/e-cidade/extension/modification/data/cache/parsing-5a146e7da539e/user/dbseller/libs
+[2018-01-15 15:34:54] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-15 15:35:01] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-15 15:35:20] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-15 15:35:31] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-15 15:36:00] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-15 15:36:28] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-15 15:36:29] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-16 11:00:48] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-16 11:00:58] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-01-16 15:30:14] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-02-22 15:23:44] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-02-22 15:23:50] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-02-22 15:24:01] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php
+[2018-02-22 15:24:06] ERROR: modification() - update file: libs/db_conn.php : Arquivo n„o existe: libs/db_conn.php

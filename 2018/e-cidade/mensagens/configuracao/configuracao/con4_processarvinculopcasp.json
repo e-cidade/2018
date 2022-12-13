@@ -1,0 +1,5 @@
+{
+  "processamento_efetuado_com_sucesso" : "Arquivo de vínculo processado com sucesso.",
+  "vinculo_processados"                : "Vínculos das contas orçamentárias com PCASP processadas com sucesso.",
+  "erro_consulta_pcasp"                : "Erro ao consultar as contas do PCASP."
+}

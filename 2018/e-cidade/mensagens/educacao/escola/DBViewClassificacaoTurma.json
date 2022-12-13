@@ -1,0 +1,7 @@
+{
+   "aguarde_buscando_turmas"         : "Aguarde... carregando turmas."
+  ,"aguarde_buscando_alunos"         : "Aguarde... buscando alunos da turma."
+  ,"aguarde_processando"             : "Aguarde... processando."
+  ,"sem_turma_selecionada"           : "Nenhuma turma selecionada"
+  ,"confirma_cancelamento_numeracao" : "Os alunos com matrículas posteriores posicionados ao fim da listagem serão reclassificados na ordem alfabética, clique no botão OK para confirmar e no botão Cancelar para manter classificação numérica atual."
+}

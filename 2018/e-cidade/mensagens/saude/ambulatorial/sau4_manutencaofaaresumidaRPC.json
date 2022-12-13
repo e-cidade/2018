@@ -1,0 +1,13 @@
+{
+   "lote_nao_informado" : "Lote não informado."
+  ,"faa_nao_informado"  : "FAA não foi informada."
+  ,"lote_sem_faa"       : "Lote informado não possui FAAs vinculado."
+  ,"erro_buscar_dados_faa" : "Houve um erro ao buscar os dados da FAA.\n[sErro]"
+  ,"erro_excluir_cid"      : "Não foi possível desvincular cid do procedimento.\n[sErro]"
+  ,"erro_excluir_procedimento_fechado" : "Não foi possível desvincular procedimento do fechamento.\n[sErro]"
+  ,"erro_excluir_procedimento" : "Não foi possível desvincular procedimento da FAA.\n[sErro]"
+  ,"erro_excluir_fechamento"   : "Não foi possível excluir o fechamento.\n[sErro]"
+  ,"erro_excluir_faa_lote"     : "Não foi possível excluir a FAA do lote.\n[sErro]"
+  ,"erro_excluir_lote"         : "Não foi possível excluir o lote.\n[sErro]"
+  ,"exclusao_faa_realizada_com_sucesso" : "Exclusão efetuada com sucesso."
+}

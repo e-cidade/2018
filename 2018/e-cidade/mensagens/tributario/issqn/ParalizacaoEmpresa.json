@@ -1,0 +1,14 @@
+{
+  "erro_inteiro"             : "O Código informado não é um número inteiro.",
+  "erro_buscar_paralizacao"  : "Ocorreu um erro ao buscar a paralização para a empresa. \n Erro técnico: \n [sErroBanco]",
+  "nenhuma_paralizacao"      : "Nenhuma paralização encontrada para o código [iCodigo]",
+  "nenhuma_transacao_banco"  : "Nenhuma transação com o banco ativa.",
+  "issbase_nao_informado"    : "IssBase não informado.",
+  "motivo_nao_informado"     : "Motivo da paralização não informado.",
+  "datainicio_nao_informado" : "Data de inicio da paralização não informado.",
+  "observacao_nao_informado" : "Observação não informado",
+  "erro_incluir_paralizacao" : "Ocorreu um erro ao incluir uma paralização. \n Erro técnico: \n [sErroBanco]",
+  "erro_incluir_ocorrencia"  : "Ocorreu um erro ao incluir uma ocorrência. \n Erro técnico: \n [sErroBanco]",
+  "erro_buscar_paralizacao"  : "Ocorreu um erro ao buscar o motivo da paralização. \n Erro técnico: \n [sErroBanco]",
+  "nenhum_motivo_encontrado" : "Nenhum motivo encontrado para o código informado"
+}

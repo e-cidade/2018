@@ -1,0 +1,151 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4012' name='recursoshumanos.pontoeletronicoconfiguracoeslotacao' description="Tabela de configurações de horas e rubricas para lançamento dos valores no ponto." prefix="rh195" label="" type="0">
+  <fields>
+    <field codigo="22281" 
+           campo_api='' 
+           name="rh195_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+            
+      <sequence name='recursoshumanos.pontoeletronicoconfiguracoeslotacao_rh195_sequencial_seq' ></sequence>
+            
+    </field> 
+    <field codigo="22283" 
+           campo_api='' 
+           name="rh195_tolerancia" 
+           conteudo="int4" 
+           description="Tolerância das batidas" 
+           inivalue="0" 
+           label="Tolerância" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tolerância" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22284" 
+           campo_api='' 
+           name="rh195_hora_extra_50" 
+           conteudo="text" 
+           description="Tempo quando começa a contar como hora extra de 50%" 
+           inivalue="" 
+           label="Horas Extras 50%" 
+           size="5" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 50%" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22285" 
+           campo_api='' 
+           name="rh195_hora_extra_75" 
+           conteudo="text" 
+           description="Tempo para começar a contar como horas extras 75%" 
+           inivalue="" 
+           label="Horas Extras 75%" 
+           size="5" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 75%" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22286" 
+           campo_api='' 
+           name="rh195_hora_extra_100" 
+           conteudo="text" 
+           description="Tempo que começa a contar como hora extra 100%" 
+           inivalue="" 
+           label="Horas Extras 100%" 
+           size="5" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Horas Extras 100%" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22337" 
+           campo_api='' 
+           name="rh195_lotacao" 
+           conteudo="int4" 
+           description="Lotação" 
+           inivalue="0" 
+           label="Lotaçao" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Lotaçao" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22338" 
+           campo_api='' 
+           name="rh195_supervisor" 
+           conteudo="int4" 
+           description="Supervisor" 
+           inivalue="0" 
+           label="Supervisor" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Supervisor" 
+           reference="" 
+           ispk="f" 
+           hassequence="t">
+
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh195_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="rhlota">
+      <fieldfk name="rh195_lotacao" reference="r70_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="rhpessoal">
+      <fieldfk name="rh195_supervisor" reference="rh01_regist" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

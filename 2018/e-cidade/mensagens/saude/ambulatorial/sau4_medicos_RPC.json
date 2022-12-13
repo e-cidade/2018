@@ -1,0 +1,5 @@
+{
+  "profissional_nao_informado"      : "Profissional não informado para busca das especialidades.",
+  "erro_buscar_especialidades"      : "Erro ao buscar as especialidades do profissional.",
+  "nenhuma_especialidade_encontrada": "Nenhuma especialidade encontrada para o profissional na unidade."
+}

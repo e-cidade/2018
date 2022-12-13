@@ -1,0 +1,10 @@
+{
+  "escola_procedencia_nao_encontrada" : "Não foi possível localizar a escola de procedência.",
+  "escola_procedencia_com_vinculo"    : "Esta escola de procedência não pode ser excluída, pois já possui vínculo.",
+  "escola_procedencia_nao_excluida"   : "Escola de procedência não excluída.\n[sErro]",
+  "escola_procedencia_excluida"       : "Escola de procedência excluída com sucesso.",
+  "preencha_nome"                     : "Preencha o nome da escola de procedência.",
+  "selecione_estado"                  : "Selecione um estado.",
+  "erro_incluir_alterar"              : "Erro ao incluir/alterar a escola de procedência.\n[sErro]",
+  "escola_procedencia_sucesso"        : "Escola de procedência incluída/alterada com sucesso."
+}

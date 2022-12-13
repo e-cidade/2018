@@ -1,0 +1,8 @@
+{
+  "parametro_instituicao" : "É necessário informar uma coleção de instituições que deseja processar.",
+  "parametro_datas_nao_informado" : "Os campos Data Inicial e Final são de preenchimento obrigatório.",
+  "parametro_datas" : "A Data Final deve ser superior a Data Inicial.",
+  "parametro_tipo_documentos" : "É preciso informar corretamente os parâmetros para utilização do método.",
+  "consulta_lancamentos" : "Não foi possível consultar os lançamentos contábeis.",
+  "parametro_documentos_nao_informado": "Informe ao menos um documento para executar a consulta"
+}

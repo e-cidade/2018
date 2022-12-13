@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4028' name='recursoshumanos.pontoeletronicojustificativatipoasse' description="Tabela de vínculo entre justificativas e tipos de assentamentos." prefix="rh205" label="Vínculo entre justificativas e tipos assentamentos" type="0">
+  <fields>
+    <field codigo="22357" 
+           campo_api='' 
+           name="rh205_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.pontoeletronicojustificativatipoasse_rh205_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22358" 
+           campo_api='' 
+           name="rh205_pontoeletronicojustificativa" 
+           conteudo="int4" 
+           description="Vínculo com a tabela de justificativas" 
+           inivalue="0" 
+           label="Justificativa" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Justificativa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22359" 
+           campo_api='' 
+           name="rh205_tipoasse" 
+           conteudo="int4" 
+           description="Vínculo com a tabela de tipos de assentamento" 
+           inivalue="0" 
+           label="Tipo de Assentamento" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Assentamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh205_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="tipoasse">
+      <fieldfk name="rh205_tipoasse" reference="h12_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="pontoeletronicojustificativa">
+      <fieldfk name="rh205_pontoeletronicojustificativa" reference="rh194_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

@@ -1,0 +1,7 @@
+{
+   "buscando_medicamentos" : "Buscando medicamentos cadastrados"
+  ,"informe_nome"          : "Informe o nome do medicamento."
+  ,"informe_abreviatura"   : "Informe uma abreviatura para o medicamento"
+  ,"salvando_medicamentos" : "Salvando medicamento, aguarde..."
+  ,"confirma_exclusao"     : "Confirma exclusão do medicamento?"
+}

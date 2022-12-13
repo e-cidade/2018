@@ -1,0 +1,9 @@
+{
+  "buscando_configuracoes"         : "Aguarde, buscando configurações de controle cadastradas...",
+  "confirma_exclusao"              : "Deseja excluir este controle?",
+  "salvando_controle"              : "Aguarde, salvando controle de matrícula...",
+  "existe_controle_em_vigencia"    : "Não é possível salvar, pois existe Controle de Matrícula Inicial em vigência.",
+  "informe_quantidade_dias"        : "Quantidade de Dias não informada.",
+  "valor_invalido_quantidade_dias" : "A Quantidade de Dias deve ser menor ou igual a 365.",
+  "ano_final_menor_inicial"        : "Ano Final menor que Ano Inicial."
+}

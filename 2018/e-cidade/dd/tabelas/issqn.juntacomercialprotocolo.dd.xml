@@ -1,0 +1,183 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010222' name='issqn.juntacomercialprotocolo' description="Dados recebidos por requisição SOAP da Junta comercial para alterar dados de empresas." prefix="q147" label="Dados recebidos pela Junta comercial" type="0">
+  <fields>
+    <field codigo="1009409" 
+           campo_api='' 
+           name="q147_sequencial" 
+           conteudo="int4" 
+           description="Sequencial da tabela." 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='issqn.juntacomercialprotocolo_q147_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009411" 
+           campo_api='' 
+           name="q147_funcao" 
+           conteudo="int4" 
+           description="Um serviço tem uma ou mais funções de processamento e esse parâmetro identifica o tipo de processo enviado." 
+           inivalue="0" 
+           label="Função" 
+           size="3" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Função" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009412" 
+           campo_api='' 
+           name="q147_protocolo" 
+           conteudo="varchar(20)" 
+           description="Identificador único do processo." 
+           inivalue="" 
+           label="Protocólo" 
+           size="20" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Protocólo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009413" 
+           campo_api='' 
+           name="q147_xml" 
+           conteudo="oid" 
+           description="Dados formatados no padrão XML, contendo as informações do processo." 
+           inivalue="" 
+           label="XML" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="XML" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009410" 
+           campo_api='' 
+           name="q147_servico" 
+           conteudo="varchar(20)" 
+           description="Identifica o serviço a ser utilizado para processar os dados." 
+           inivalue="" 
+           label="Serviço" 
+           size="20" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Serviço" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009415" 
+           campo_api='' 
+           name="q147_cnpjenvia" 
+           conteudo="varchar(14)" 
+           description="CNPJ da Instituição que envia o processo." 
+           inivalue="" 
+           label="CNPJ Instituição Envia" 
+           size="14" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="CNPJ Instituição Envia" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009416" 
+           campo_api='' 
+           name="q147_cnpjrecebe" 
+           conteudo="varchar(14)" 
+           description="CNPJ da Instituição que recebe o processo." 
+           inivalue="" 
+           label="CNPJ Instituição Recebe" 
+           size="14" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="CNPJ Instituição Recebe" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009417" 
+           campo_api='' 
+           name="q147_cpfcnpjprocesso" 
+           conteudo="varchar(14)" 
+           description="CPF/CNPJ Pessoa Processo" 
+           inivalue="" 
+           label="CPF/CNPJ Pessoa Processo" 
+           size="14" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="CPF/CNPJ Pessoa Processo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009414" 
+           campo_api='' 
+           name="q147_data" 
+           conteudo="date" 
+           description="Data" 
+           inivalue="null" 
+           label="Data" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Data" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="q147_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

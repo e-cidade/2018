@@ -1,0 +1,144 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* Class to deal with Project Files
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class Project
+{
+    /***********************************************************/
+    /* Read the Project File
+    /***********************************************************/
+    static function ReadProject($Project)
+    {
+        $array         = Xml2Array(AGATA_PATH . "/projects/{$Project}.prj");
+        if ($array)
+        {
+            $array['pass'] = ($array['pass'] ? base64_decode($array['pass']) : $array['pass']);
+        }
+        
+        return $array;
+    }
+
+    /***********************************************************/
+    /* Write the Project File
+    /***********************************************************/
+    function WriteProject($project, $vars)
+    {
+
+        $Project['project']['host']   = $vars['host'];
+        $Project['project']['name']   = $vars['name'];
+        $Project['project']['user']   = $vars['user'];
+        $Project['project']['pass']   = base64_encode($vars['pass']);
+        $Project['project']['type']   = $vars['type'];
+        $Project['project']['dict']   = $vars['dict'];
+        
+        
+        $fd = @fopen (AGATA_PATH . "/projects/{$project}.prj", "w");
+        if (!$fd)
+        {
+            new Dialog(_a('Permission Denied'), true, false, _a('File') . ': ' . AGATA_PATH . "/projects/{$project}.prj");
+            return false;
+        }
+        fwrite($fd, XMLHEADER . Array2Xml($Project));
+        fclose($fd);
+        
+        $fd = fopen (AGATA_PATH . "/projects/last", "w");
+        fwrite($fd, $project);
+        fclose($fd);
+    }
+
+    /***********************************************************/
+    /* Get the last project
+    /***********************************************************/    
+    function getLast()
+    {
+        return file_get_contents(AGATA_PATH . '/projects/last');
+    }
+    
+    /***********************************************************/
+    /* Read all the projects properties
+    /***********************************************************/    
+    function ReadProjects()
+    {
+        $projects    = getSimpleDirArray(AGATA_PATH . '/projects', true, '.prj');
+        if ($projects)
+        {
+            foreach ($projects as $project_file)
+            {
+                $project = substr($project_file, 0, -4);
+                $array   = Xml2Array("projects/{$project_file}");
+                $array['pass'] = ( $array['pass'] ? base64_decode($array['pass']) : $array['pass']);
+                $Projects[$project] = $array;
+            }
+            asort($Projects);
+        }
+        
+        return $Projects;
+    }
+
+    /*******************************************************************************/
+    /* Launchs the Viewer for Report
+    /*******************************************************************************/
+    function OpenReport($FileName, $agataConfig)
+    {
+        $app['.txt']  = $agataConfig['app']['TxtSoft'];
+        $app['.sql']  = $agataConfig['app']['TxtSoft'];
+        $app['.csv']  = $agataConfig['app']['SpreadSoft'];
+        $app['.html'] = $agataConfig['app']['BrowserSoft'];
+        $app['.ps']   = $agataConfig['app']['PsSoft'];
+        $app['.pdf']  = $agataConfig['app']['PdfSoft'];
+        $app['.ps']   = $agataConfig['app']['PsSoft'];
+        $app['.dia']  = $agataConfig['app']['DiaSoft'];
+        $app['.xml']  = $agataConfig['app']['XmlSoft'];
+        $app['.sxw']  = $agataConfig['app']['OpenSoft'];
+        
+        foreach ($app as $key => $ext)
+        {
+            if (strstr($FileName, $key))
+            $launch = $ext;
+        }
+        
+        if ($launch)
+        {
+            if (OS == 'WIN')
+            {
+                exec("$launch $FileName >NULL &");
+            }
+            else
+            {
+                exec("$launch $FileName >/dev/null &");
+            }
+        }
+        else
+        {
+            new Dialog(_a('Viewer for this file is not defined'));
+        }
+    }
+}
+?>

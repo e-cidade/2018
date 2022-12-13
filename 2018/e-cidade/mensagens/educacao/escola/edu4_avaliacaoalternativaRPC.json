@@ -1,0 +1,9 @@
+{
+   "turma_nao_informada"     : "Parâmetro turma não informado."
+  ,"etapa_nao_informada"     : "Parâmetro etapa não informado."
+  ,"matricula_nao_informada" : "Matrícula do aluno não informada."
+  ,"avaliacao_nao_informada" : "Avaliação alternativa não informada."
+  ,"vinculos_salvos"         : "Vínculo do aluno com a avaliação alternativa salvo com sucesso."
+  ,"sem_periodos_avaliacao"  : "Não há períodos de avaliação a ser configurado."
+  ,"vinculos_excluidos"      : "Vínculo do aluno com a avaliação alternativa excluído com sucesso."
+}

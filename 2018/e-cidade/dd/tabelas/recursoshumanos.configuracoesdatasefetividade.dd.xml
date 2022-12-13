@@ -1,0 +1,125 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4003' name='recursoshumanos.configuracoesdatasefetividade' description="Tabela que configura a efetividade" prefix="rh186" label="Configuração da efetividade" type="0">
+  <fields>
+    <field codigo="22221" 
+           campo_api='' 
+           name="rh186_exercicio" 
+           conteudo="int4" 
+           description="Exercício da efetividade" 
+           inivalue="0" 
+           label="Exercício" 
+           size="19" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Exercício" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22222" 
+           campo_api='' 
+           name="rh186_competencia" 
+           conteudo="varchar(2)" 
+           description="Competência da configuração" 
+           inivalue="" 
+           label="Competência" 
+           size="2" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Competência" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22223" 
+           campo_api='' 
+           name="rh186_datainicioefetividade" 
+           conteudo="date" 
+           description="Data de Início da Efetividade" 
+           inivalue="null" 
+           label="Data Início Efetividade" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data Início Efetividade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22224" 
+           campo_api='' 
+           name="rh186_datafechamentoefetividade" 
+           conteudo="date" 
+           description="Data de fechamento da efetividade." 
+           inivalue="null" 
+           label="Data Fechamento Efetividade" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data Fechamento Efetividade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22225" 
+           campo_api='' 
+           name="rh186_dataentregaefetividade" 
+           conteudo="date" 
+           description="Data de entrega da efetividade." 
+           inivalue="null" 
+           label="Data Entrega Efetividade" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data Entrega Efetividade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22226" 
+           campo_api='' 
+           name="rh186_processado" 
+           conteudo="bool" 
+           description="Processado" 
+           inivalue="f" 
+           label="Processado" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Processado" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh186_exercicio"></fieldpk> 
+    <fieldpk name="rh186_competencia"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

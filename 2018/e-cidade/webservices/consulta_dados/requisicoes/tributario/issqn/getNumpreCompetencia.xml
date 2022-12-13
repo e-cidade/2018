@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<consulta distinct="true">
+  <campos>
+    <campo campo="q01_numpre" label="numpre"></campo>
+    <campo campo="q01_inscr"  label="inscricao"></campo>
+    <campo campo="q01_anousu" label="ano"></campo>
+  </campos>
+  <from tabela="isscalc"></from>
+  <juncoes>
+    <join tipo="inner" tabela="issbase" condicao="q02_inscr = q01_inscr" />
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao" condicao="q01_inscr  = $inscricao" obrigatorio="true"></filtro>
+    <filtro label="ano"       condicao="q01_anousu = $ano"       obrigatorio="true"></filtro>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao />
+</consulta>

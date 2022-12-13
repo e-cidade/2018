@@ -1,0 +1,6 @@
+{
+  "campo_obrigatorio" : "Campo [sCampo] é de preenchimento obrigatório.",
+  "base_ultrapassada" : "O período da base informado é superior ao atual.",
+  "ano_nao_permitido" : "Não é permitido informar ano inferior a 2013.",
+  "mes_nao_permitido" : "Mês da base informado é inválido."
+}

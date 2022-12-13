@@ -1,0 +1,46 @@
+* {
+  font-family: "DejaVu Sans";
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 300px;
+  height: 170px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  border-bottom: 1px solid #CCC;
+  width: 100%;
+  height: 48px;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+}
+
+.header div.lock {
+  height: 48px;
+  width: 48px;
+  float: left;
+  background: url('../../img/Window/lock.png');
+}
+
+.header div.content {
+  height: 48px;
+  width: 200px;
+  float: left;
+  line-height: 60px;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #4a789c;
+}

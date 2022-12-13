@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<manifest>
+
+  <id>Desktop</id>
+  <version>1.0</version>
+  <type>global</type>
+
+  <manager class="ECidade\Package\Desktop\Library\Manager" />
+
+</manifest>

@@ -1,0 +1,7 @@
+{
+  "confirma_salvar"         : "Veículo salvo com sucesso.",
+  "confirma_excluir"        : "Veículo excluído com sucesso.",
+  "confirma_salvar_vinculo" : "Veículo vinculado à linha com sucesso.",
+  "confirma_remover_vinculo": "Vínculo do veículo com a linha de transporte excluído com sucesso.",
+  "veiculo_ja_vinculado"    : "Veículo ([sVeiculo]) já está vinculado a linha [sNomeLinha] e horário [sTipo] [sHorario]."
+}

@@ -1,0 +1,5 @@
+{
+  "exclusao_sucesso"  : "Registro(s) excluido(s) com sucesso!",
+  "erro_codigo_unica" : "Registros a serem excluidos inconsistentes.",
+  "erro_data_valor"   : "Data de vencimento não pode ser menor que a data atual."
+}

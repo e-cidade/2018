@@ -1,0 +1,1464 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="AUTHOR" CONTENT="sandro">
+	<META NAME="CREATED" CONTENT="20080308;10444600">
+	<META NAME="CHANGEDBY" CONTENT="dbseller">
+	<META NAME="CHANGED" CONTENT="20081117;22555500">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 2cm; margin-top: 2cm; margin-bottom: 1.1cm }
+		P { margin-bottom: 0.21cm }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "HG Mincho Light J"; font-size: 16pt }
+		H1.ctl { font-family: "Lucidasans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Helvetica"; font-size: 14pt; so-language: pt-BR; font-style: italic }
+		H2.cjk { font-family: "HG Mincho Light J"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-size: 14pt; font-style: italic }
+		H3 { margin-bottom: 0.21cm }
+		H3.western { font-family: "Helvetica"; so-language: pt-BR }
+		H3.cjk { font-family: "HG Mincho Light J" }
+		TD P { margin-bottom: 0cm }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR">
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.Cadastros|outline">Cadastros	</A><A HREF="#1.Cadastros|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.D&iacute;vida Ativa|outline">D&iacute;vida
+	Ativa	</A><A HREF="#1.1.D&iacute;vida Ativa|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.Proced&ecirc;ncia|outline">Proced&ecirc;ncia	</A><A HREF="#1.2.Proced&ecirc;ncia|outline">3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.Documento / Proced&ecirc;ncia &ndash; CDA|outline">Documento
+	/ Proced&ecirc;ncia &ndash; CDA	</A><A HREF="#1.3.Documento / Proced&ecirc;ncia &ndash; CDA|outline">4</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.Configura&ccedil;&atilde;o Tipo de D&eacute;bito|outline">Configura&ccedil;&atilde;o
+	Tipo de D&eacute;bito	</A><A HREF="#1.4.Configura&ccedil;&atilde;o Tipo de D&eacute;bito|outline">5</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.Consultas|outline">Consultas	</A><A HREF="#2.Consultas|outline">5</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.Geral Financeira|outline">Geral
+	Financeira	</A><A HREF="#2.1.Geral Financeira|outline">5</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.2.D&iacute;vida Ativa|outline">D&iacute;vida
+	Ativa	</A><A HREF="#2.2.D&iacute;vida Ativa|outline">5</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.Relat&oacute;rios|outline">Relat&oacute;rios	</A><A HREF="#3.Relat&oacute;rios|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.Termo de Parcelamento|outline">Termo
+	de Parcelamento	</A><A HREF="#3.1.Termo de Parcelamento|outline">6</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.CDA|outline">CDA	</A><A HREF="#3.2.CDA|outline">7</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.Emiss&atilde;o do Livro da D&iacute;vida|outline">Emiss&atilde;o
+	do Livro da D&iacute;vida	</A><A HREF="#3.3.Emiss&atilde;o do Livro da D&iacute;vida|outline">9</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.4.CDA Anulada|outline">CDA
+	Anulada	</A><A HREF="#3.4.CDA Anulada|outline">9</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.5.Prescri&ccedil;&atilde;o de D&iacute;vida|outline">Prescri&ccedil;&atilde;o
+	de D&iacute;vida	</A><A HREF="#3.5.Prescri&ccedil;&atilde;o de D&iacute;vida|outline">10</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.6.Certid&atilde;o|outline">Certid&atilde;o	</A><A HREF="#3.6.Certid&atilde;o|outline">12</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.6.1.D&iacute;vida|outline">D&iacute;vida	</A><A HREF="#3.6.1.D&iacute;vida|outline">12</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.6.2.Parcelamento|outline">Parcelamento	</A><A HREF="#3.6.2.Parcelamento|outline">13</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.7.D&iacute;vida|outline">D&iacute;vida	</A><A HREF="#3.7.D&iacute;vida|outline">14</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.7.1.D&iacute;vida Por Exerc&iacute;cio|outline">D&iacute;vida
+	Por Exerc&iacute;cio	</A><A HREF="#3.7.1.D&iacute;vida Por Exerc&iacute;cio|outline">14</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.7.2.D&iacute;vida Por Contribuinte|outline">D&iacute;vida
+	Por Contribuinte	</A><A HREF="#3.7.2.D&iacute;vida Por Contribuinte|outline">16</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.8.Posi&ccedil;&atilde;o da D&iacute;vida|outline">Posi&ccedil;&atilde;o
+	da D&iacute;vida	</A><A HREF="#3.8.Posi&ccedil;&atilde;o da D&iacute;vida|outline">17</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.8.1.Exerc&iacute;cio / Proced&ecirc;ncia|outline">Exerc&iacute;cio
+	/ Proced&ecirc;ncia	</A><A HREF="#3.8.1.Exerc&iacute;cio / Proced&ecirc;ncia|outline">17</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.8.2.Contribuinte|outline">Contribuinte	</A><A HREF="#3.8.2.Contribuinte|outline">18</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.9.Parcelamento|outline">Parcelamento	</A><A HREF="#3.9.Parcelamento|outline">19</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.9.1.Posi&ccedil;&atilde;o|outline">Posi&ccedil;&atilde;o	</A><A HREF="#3.9.1.Posi&ccedil;&atilde;o|outline">19</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.9.2.Situa&ccedil;&atilde;o|outline">Situa&ccedil;&atilde;o	</A><A HREF="#3.9.2.Situa&ccedil;&atilde;o|outline">21</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.Procedimentos|outline">Procedimentos	</A><A HREF="#4.Procedimentos|outline">22</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.Recibo de Receita|outline">Recibo
+	de Receita	</A><A HREF="#4.1.Recibo de Receita|outline">22</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.Prescri&ccedil;&atilde;o de D&iacute;vida|outline">Prescri&ccedil;&atilde;o
+	de D&iacute;vida	</A><A HREF="#4.2.Prescri&ccedil;&atilde;o de D&iacute;vida|outline">23</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.1.Individual|outline">Individual	</A><A HREF="#4.2.1.Individual|outline">23</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.2.Lista de D&eacute;bito|outline">Lista
+	de D&eacute;bito	</A><A HREF="#4.2.2.Lista de D&eacute;bito|outline">24</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.Certid&atilde;o de D&iacute;vida Ativa|outline">Certid&atilde;o
+	de D&iacute;vida Ativa	</A><A HREF="#4.3.Certid&atilde;o de D&iacute;vida Ativa|outline">25</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.1.Inclus&atilde;o por Lista|outline">Inclus&atilde;o
+	por Lista	</A><A HREF="#4.3.1.Inclus&atilde;o por Lista|outline">25</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.2.Cancelamento Geral|outline">Cancelamento
+	Geral	</A><A HREF="#4.3.2.Cancelamento Geral|outline">25</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.3.Cancelamento Parcial|outline">Cancelamento
+	Parcial	</A><A HREF="#4.3.3.Cancelamento Parcial|outline">26</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.Importa&ccedil;&atilde;o de D&iacute;vida|outline">Importa&ccedil;&atilde;o
+	de D&iacute;vida	</A><A HREF="#4.4.Importa&ccedil;&atilde;o de D&iacute;vida|outline">27</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.1.Importar D&iacute;vida Individual|outline">Importar
+	D&iacute;vida Individual	</A><A HREF="#4.4.1.Importar D&iacute;vida Individual|outline">27</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.2.Importar D&iacute;vida Geral|outline">Importar
+	D&iacute;vida Geral	</A><A HREF="#4.4.2.Importar D&iacute;vida Geral|outline">28</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.3.Importar ISSQN Vari&aacute;vel|outline">Importar
+	ISSQN Vari&aacute;vel	</A><A HREF="#4.4.3.Importar ISSQN Vari&aacute;vel|outline">29</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.4.Cancelamento D&iacute;vida Individual|outline">Cancelamento
+	D&iacute;vida Individual	</A><A HREF="#4.4.4.Cancelamento D&iacute;vida Individual|outline">29</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.5.Cancelamento ISSQN Vari&aacute;vel |outline">Cancelamento
+	ISSQN Vari&aacute;vel 	</A><A HREF="#4.4.5.Cancelamento ISSQN Vari&aacute;vel |outline">31</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.Processamento do Livro|outline">Processamento
+	do Livro	</A><A HREF="#4.5.Processamento do Livro|outline">31</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.6.Texto|outline">Texto	</A><A HREF="#4.6.Texto|outline">32</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.7.Assinatura|outline">Assinatura	</A><A HREF="#4.7.Assinatura|outline">32</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.8.Par&acirc;metro|outline">Par&acirc;metro	</A><A HREF="#4.8.Par&acirc;metro|outline">33</A></FONT></P>
+</DIV>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO
+D&Iacute;VIDA ATIVA</B></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">O m&oacute;dulo
+d&iacute;vida ativa tem como objetivo formalizar a inscri&ccedil;&atilde;o
+em d&iacute;vida, planejar e coordenar a cobran&ccedil;a dos d&eacute;bitos
+municipais, tribut&aacute;rios e n&atilde;o tribut&aacute;rios,
+vencidos e n&atilde;o pagos e emitir a CDA para cobran&ccedil;a
+judicial.</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="1.Cadastros|outline"></A><A NAME="1.Cadastros|outline"></A>
+Cadastros</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.1.D&iacute;vida Ativa|outline"></A><A NAME="1.1.D&iacute;vida Ativa|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2490db">D&iacute;vida Ativa</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+menu &eacute; cadastrado </SPAN></SPAN>a inclus&atilde;o manual de
+uma d&iacute;vida ativa, cujo d&eacute;bito n&atilde;o tenha sido
+lan&ccedil;ado pelos procedimentos automatizados do sistema (C&aacute;lculo
+de IPTU, ISSQN, Taxas, Diversos). Para incluir uma d&iacute;vida, &eacute;
+necess&aacute;rio saber a origem para identificar em qual proced&ecirc;ncia
+enquadrar, pois &eacute; essa informa&ccedil;&atilde;o que vai
+possibilitar a identifica&ccedil;&atilde;o sobre do que que se trata
+o d&eacute;bito, al&eacute;m do exerc&iacute;cio de compet&ecirc;ncia
+e a data de vencimento. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2491db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm">A
+inclus&atilde;o manual permite apenas incluir registro a registro,
+para um CGM, matr&iacute;cula ou inscri&ccedil;&atilde;o. <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo de cadastro conforme Figura 01.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	C&oacute;digo da D&iacute;vida:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Gera o c&oacute;digo automaticamente. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CGM:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Busca o c&oacute;digo do CGM preenchido na ABA anterior.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Data de Inscri&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data de inscri&ccedil;&atilde;o em D&iacute;vida Ativa,  por padr&atilde;o
+busca a data do sistema.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Exerc&iacute;cio:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o exerc&iacute;cio da d&iacute;vida, por padr&atilde;o busca o
+exerc&iacute;cio atual.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Data de Opera&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data para opera&ccedil;&atilde;o do d&eacute;bito na D&iacute;vida.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Data de Vencimento:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher a data de vencimento do d&eacute;bito na D&iacute;vida.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Proced&ecirc;ncia:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+a proced&ecirc;ncia que o d&eacute;bito ser&aacute; incluso em d&iacute;vida
+onde a proced&ecirc;ncia est&aacute; ligada a uma receita.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo de D&eacute;bito:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+o tipo de d&eacute;bito que ser&aacute; incluso na d&iacute;vida. Na
+sele&ccedil;&atilde;o busca apenas os tipos do Grupo de D&eacute;bito
+5 (D&iacute;vida Ativa). </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Valor Hist&oacute;rico:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o campo valor hist&oacute;rico e clicar no bot&atilde;o calcular para
+calcular a corre&ccedil;&atilde;o e preencher o campo valor
+autom&aacute;tico.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Valor:</B></I>  Busca o valor
+do campo preenchido ao clicar no bot&atilde;o calcular, permitindo
+ser alterado pelo usu&aacute;rio.  
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Parcela:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o n&uacute;mero da parcela que ser&aacute; inserido o d&eacute;bito
+na d&iacute;vida.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Livro:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o n&uacute;mero do livro da d&iacute;vida quando for altera&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Folha:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o n&uacute;mero da Folha quando for altera&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<I><B>	Observa&ccedil;&otilde;es:</B></I> Preencher as observa&ccedil;&otilde;es
+referente ao d&eacute;bito.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_539b4f41.png" NAME="figura1" ALIGN=LEFT WIDTH=605 HEIGHT=311 BORDER=0><BR CLEAR=LEFT>Figura
+01</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2492db">Altera&ccedil;&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Permite a altera&ccedil;&atilde;o de todos os campos, menos o CGM da
+D&iacute;vida. Pode alterar d&iacute;vida importada pela rotina de
+importa&ccedil;&atilde;o de D&iacute;vida Ativa e ISSQN Vari&aacute;vel.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2493db">Exclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Permite excluir uma D&iacute;vida Ativa que n&atilde;o estiver
+vinculada a uma  CDA ou  Parcelada.</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.2.Proced&ecirc;ncia|outline"></A><A NAME="1.2.Proced&ecirc;ncia|outline"></A>
+Proced&ecirc;ncia</H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Nesse menu &eacute;  cadastrado a proced&ecirc;ncia do d&eacute;bito,
+esse cadastro &eacute; o vinculo do d&eacute;bito que ser&aacute;
+importado para d&iacute;vida e a receita de onde a d&iacute;vida
+procede. A proced&ecirc;ncia &eacute; vinculada a receita na
+contabilidade, ent&atilde;o ao pagar um d&eacute;bito com essa
+proced&ecirc;ncia o pagamento ir&aacute; para a receita. A
+proced&ecirc;ncia que decide se o d&eacute;bito ser&aacute;
+tribut&aacute;rio ou n&atilde;o. Deve ser preenchido o nome abreviado
+para os relat&oacute;rios gerenciais.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1863db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo de cadastro conforme
+Figura 02.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	C&oacute;digo:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+campo &eacute; gerado autom&aacute;tico. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Descri&ccedil;&atilde;o
+Abreviada:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o nome abreviado da proced&ecirc;ncia, para emiss&atilde;o
+dos relat&oacute;rios.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Descri&ccedil;&atilde;o
+Completa:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o nome completo da proced&ecirc;ncia.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Receita de D&iacute;vida:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo da receita na qual o d&eacute;bito ser&aacute;
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">enviado
+para d&iacute;vida.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Hist&oacute;rico de C&aacute;lculo:</B></I>
+Preencher <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">o
+c&oacute;digo do </SPAN></SPAN><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">hist&oacute;rico
+de c&aacute;lculo</SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ou clicar no link </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tributada:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar se a proced&ecirc;ncia ser&aacute; tributada.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Receita de Parcelamento:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo receita na qual o d&eacute;bito ser&aacute; enviado
+ao fazer o parcelamento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_3a280dda.png" NAME="figura2" ALIGN=LEFT WIDTH=605 HEIGHT=179 BORDER=0><BR CLEAR=LEFT>Figura
+02</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db1864db">Altera&ccedil;&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Permite alterar os campos: Descri&ccedil;&atilde;o Abreviada,
+Descri&ccedil;&atilde;o Completa, Receita, Hist&oacute;rico de
+C&aacute;lculo, Tributada e Receita Reduzida. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><A HREF="#Sum&aacute;rio1|region" NAME="db1865db"><I><B>Exclus&atilde;o</B></I></A>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-style: normal; font-weight: medium">
+Permite a exclus&atilde;o quando a proced&ecirc;ncia n&atilde;o
+estiver vinculada e nenhuma d&iacute;vida do sistema.</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.3.Documento / Proced&ecirc;ncia &ndash; CDA|outline"></A><A NAME="1.3.Documento / Proced&ecirc;ncia &ndash; CDA|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4740db">Documento /
+Proced&ecirc;ncia &ndash; CDA</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-style: normal; font-weight: medium">
+Nesse menu &eacute;  cadastro a proced&ecirc;ncia com o documento, &eacute;
+utilizado quando &eacute; gerado um CDA ela pega o texto do documento
+vinculado a proced&ecirc;ncia da d&iacute;vida. Esse documento busca
+a fundamenta&ccedil;&atilde;o legal do d&eacute;bito para aquela
+proced&ecirc;ncia. O documento padr&atilde;o da fundamenta&ccedil;&atilde;o
+legal Tribut&aacute;ria &eacute; 1015 e a N&atilde;o Tribut&aacute;ria
+1018. Descri&ccedil;&atilde;o dos campos e modelo de cadastro
+conforme Figura 03.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db4741db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Proced&ecirc;ncia:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da proced&ecirc;ncia ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Documento:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do documento ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_797653a1.png" NAME="figura3" ALIGN=LEFT WIDTH=605 HEIGHT=104 BORDER=0><BR CLEAR=LEFT>Figura
+03</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db4742db">Altera&ccedil;&atilde;o</A>
+</B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-style: normal; font-weight: medium">
+Permite a altera&ccedil;&atilde;o do documento no cadastro.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db4743db">Exclus&atilde;o</A>
+</B></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-style: normal; font-weight: medium">
+&Eacute; Permitido excluir o cadastro do vinculo, sem qualquer
+restri&ccedil;&atilde;o.</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.4.Configura&ccedil;&atilde;o Tipo de D&eacute;bito|outline"></A><A NAME="1.4.Configura&ccedil;&atilde;o Tipo de D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db373753db">Configura&ccedil;&atilde;o
+Tipo de D&eacute;bito</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-style: normal; font-weight: medium">
+Nesse menu &eacute; cadastrado os tipos de d&eacute;bito do
+parcelamento vinculando ao grupo de d&eacute;bito de origem,
+configurando assim qual grupo ao fazer um parcelamento na CGF ir&aacute;
+para o tipo de d&eacute;bito escolhido.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo de cadastro conforme
+Figura 04.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_5a26d4e4.png" NAME="figura4" ALIGN=LEFT WIDTH=605 HEIGHT=119 BORDER=0>Figura
+04</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="2.Consultas|outline"></A><A NAME="2.Consultas|outline"></A>
+Consultas</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="2.1.Geral Financeira|outline"></A><A NAME="2.1.Geral Financeira|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db56db">Geral Financeira</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">&Eacute;
+feita a consulta financeira dos d&eacute;bitos dos contribuintes , a
+descri&ccedil;&atilde;o dessa consulta est&aacute; no M&oacute;dulo
+Arrecada&ccedil;&atilde;o, conforme Figura 05.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_2f6f69a1.png" NAME="figura6" ALIGN=LEFT WIDTH=605 HEIGHT=192 BORDER=0><BR CLEAR=LEFT>Figura
+05</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="2.2.D&iacute;vida Ativa|outline"></A><A NAME="2.2.D&iacute;vida Ativa|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1400db">D&iacute;vida Ativa</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Na consulta
+da d&iacute;vida mostra todos os dados cadastrais e financeiros. Ao
+buscar por contribuinte (CGM, Matricula ou Inscri&ccedil;&atilde;o) o
+sistema tr&aacute;s uma pesquisa com todas as d&iacute;vidas
+referente a op&ccedil;&atilde;o de consulta feita.  Ao pesquisar por
+(D&iacute;vida, Certid&atilde;o e Parcelamento) busca diretamente a
+tela de consulta.  
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Descri&ccedil;&atilde;o dos campos e modelo de cadastro conforme
+Figura 06 e 07.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_d61a051.png" NAME="figura5" ALIGN=LEFT WIDTH=605 HEIGHT=167 BORDER=0><BR CLEAR=LEFT>Figura
+06</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><IMG SRC="Manual_Divida_Ativa_html_303068c0.png" NAME="figura7" ALIGN=LEFT WIDTH=605 HEIGHT=121 BORDER=0><BR CLEAR=LEFT>Figura
+07</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="3.Relat&oacute;rios|outline"></A><A NAME="3.Relat&oacute;rios|outline"></A>
+Relat&oacute;rios</H1>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.1.Termo de Parcelamento|outline"></A><A NAME="3.1.Termo de Parcelamento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1581db">Termo de
+Parcelamento</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Emite o Termo de Parcelamento para os parcelamentos em
+abertos no sistema, assim pode ser reemitido o termo no sistema.
+Descri&ccedil;&atilde;o dos campos e modelo de relat&oacute;rio
+conforme Figura 08.</FONT></P>
+<P CLASS="western"><I><B>	Parcelamento:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do parcelamento ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><IMG SRC="Manual_Divida_Ativa_html_m42829134.png" NAME="figura8" ALIGN=LEFT WIDTH=605 HEIGHT=110 BORDER=0>Figura
+08</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium"><BR><BR>
+</P>
+<P CLASS="western" STYLE="font-style: normal; font-weight: medium">Na
+Figura 09 mostra um modelo de Termo de Parcelamento emitido no
+DBPortal. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_35304b52.png" NAME="figura9" ALIGN=LEFT WIDTH=605 HEIGHT=527 BORDER=0><BR CLEAR=LEFT>Figura
+09</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.2.CDA|outline"></A><A NAME="3.2.CDA|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1595db">CDA</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Emite um
+relat&oacute;rio das CDAs geradas pelo sistema permitindo o usu&aacute;rio
+controlar as CDAs por per&iacute;odo emitindo dois relat&oacute;rios
+o completo e resumido. <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 10.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Certid&atilde;o:</B></I>
+Permite escolher entre as certid&otilde;es de <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">D&iacute;vida
+Ativa, Parcelamento ou todas.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Intervalo da Data:</B></I>
+Preencher <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">o
+intervalo da data de cria&ccedil;&atilde;o da  CDA(s).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo:</B></I> Permite emitir
+dois relat&oacute;rios como Resumido que emite um resumo por inicial
+e seu tipo o Completo emite uma quebra por certid&atilde;o buscando
+as d&iacute;vidas vinculada a ela e seu c&oacute;digo de arrecada&ccedil;&atilde;o
+(NUMPRE).</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>	Iniciais:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Permite selecionar se a certid&atilde;o possui </SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Inicial
+do Foro</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+no sistema. </SPAN></SPAN></SPAN></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_m5ac3a811.png" NAME="figura10" ALIGN=LEFT WIDTH=605 HEIGHT=161 BORDER=0><BR CLEAR=LEFT>
+Figura 10</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-style: normal; font-weight: medium">
+Na Figura 11 mostra um modelo de relat&oacute;rio de certid&atilde;o
+Resumido emitido no DBPortal. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_m332178ed.png" NAME="figura11" ALIGN=LEFT WIDTH=605 HEIGHT=288 BORDER=0><BR CLEAR=LEFT>Figura
+11</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Na Figura 12 mostra um modelo de relat&oacute;rio de certid&atilde;o
+Completo emitido no DBPortal. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m6f2cc7e6.png" NAME="figura12" ALIGN=LEFT WIDTH=605 HEIGHT=309 BORDER=0><BR CLEAR=LEFT>Figura
+12</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.3.Emiss&atilde;o do Livro da D&iacute;vida|outline"></A><A NAME="3.3.Emiss&atilde;o do Livro da D&iacute;vida|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3490db">Emiss&atilde;o do
+Livro da D&iacute;vida</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+o livro geral da D&iacute;vida Ativa com todos os dados financeiro
+dos contribuintes que foram importados para d&iacute;vida no
+exerc&iacute;cio. Com o n&uacute;mero do livro e das p&aacute;ginas.
+</SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo de cadastro conforme Figura 13.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo:</B></I> Permite emitir
+um Livro r<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">esumido
+ou completo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Complementar: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar a emiss&atilde;o de um livro complementar ou um novo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	N&uacute;mero do Livro:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Busca
+o n&uacute;mero seq&uuml;encial mais 01 (um) depois do &uacute;ltimo
+livro gerado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>	Data
+para Corre&ccedil;&atilde;o:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Preencher a data de corre&ccedil;&atilde;o dos d&eacute;bitos no
+livro.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_3bb91db7.png" NAME="figura13" ALIGN=LEFT WIDTH=605 HEIGHT=149 BORDER=0><BR CLEAR=LEFT>Figura
+13</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.4.CDA Anulada|outline"></A><A NAME="3.4.CDA Anulada|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db48638db">CDAs Anuladas</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+uma lista com os dados das CDAs Anuladas no sistemas, permitindo o
+usu&aacute;rio saber quantas foram anuladas em um determinado
+per&iacute;odo. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 15.</SPAN></SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+  </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CDA:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar uma de d&iacute;vida e parcelamento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Per&iacute;odo:</B></I> 
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data inicial e final do intervalo que se quer emitir a certid&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Exerc&iacute;cio:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo dos exerc&iacute;cios para emiss&atilde;o da certid&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Divida_Ativa_html_m1cfdbd0a.png" NAME="figura14" ALIGN=LEFT WIDTH=605 HEIGHT=138 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+15</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>	Na Figura 16 mostra um modelo de relat&oacute;rio de
+CDA Anuladas emitida no DBPortal. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Divida_Ativa_html_m61f26258.png" NAME="figura15" ALIGN=LEFT WIDTH=605 HEIGHT=262 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+16</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.5.Prescri&ccedil;&atilde;o de D&iacute;vida|outline"></A><A NAME="3.5.Prescri&ccedil;&atilde;o de D&iacute;vida|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db608593db">Prescri&ccedil;&atilde;o
+de D&iacute;vida</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Esse
+relat&oacute;rio emite todas as d&iacute;vidas prescritas por um
+determinado, podendo emitir individualmente por contribuinte
+permitindo saber quais d&iacute;vidas foram prescritas para ele. Esse
+relat&oacute;rio &eacute; um dos pedidos pela contabilidade para
+dados sobre renuncia de receita na institui&ccedil;&atilde;o. 
+<FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 17.</SPAN></SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+  </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CGM:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o CGM ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Matricula:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o Matricula ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Inscri&ccedil;&atilde;o:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o Inscri&ccedil;&atilde;o ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Data Inicial / Final:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher a data inicial e final da prescri&ccedil;&atilde;o do
+d&eacute;bito. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite selecionar um relat&oacute;rio completo ou resumido.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Ordem:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite ordenar por data, CGM, matricula ou inscri&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Hist&oacute;rico:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite emitir o hist&oacute;rico de cada prescri&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m6c441875.png" NAME="figura16" ALIGN=LEFT WIDTH=605 HEIGHT=212 BORDER=0><BR CLEAR=LEFT>Figura
+17</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 18 mostra um modelo de relat&oacute;rio de
+Prescri&ccedil;&atilde;o Completo emitida no DBPortal. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Divida_Ativa_html_7732b4e2.png" NAME="figura18" ALIGN=LEFT WIDTH=605 HEIGHT=184 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+18</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 19 mostra um modelo de relat&oacute;rio de
+Prescri&ccedil;&atilde;o Resumido emitida no DBPortal. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Divida_Ativa_html_6ac8bda9.png" NAME="figura17" ALIGN=LEFT WIDTH=605 HEIGHT=278 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+19</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.6.Certid&atilde;o|outline"></A><A NAME="3.6.Certid&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3828db">Certid&atilde;o</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm">Nesse
+menu reemite as certid&otilde;es de d&iacute;vida e parcelamento do
+sistema.</P>
+<H3 CLASS="western"><A NAME="3.6.1.D&iacute;vida|outline"></A><A NAME="3.6.1.D&iacute;vida|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1595db">D&iacute;vida</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+as CDA(s) referente a uma D&iacute;vida Ativa, podem ser geradas por
+um intervalo de certid&atilde;o, valores ou data de emiss&atilde;o. A
+CDA possui como padr&atilde;o o documento 1008, ao emitir uma CDA com
+fundamenta&ccedil;&atilde;o legal Tribut&aacute;ria a seq&uuml;encia
+dos par&aacute;grafos seguem a ordem (1008-1, 1015-2, 1008-3, 1008-4,
+1008-5) para a fundamenta&ccedil;&atilde;o N&atilde;o Tribut&aacute;ria
+a ordem (1008-1, 1018-2, 1018-3, 1018-4, 1018-5). </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 20.</SPAN></SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+  </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Intervalo de Certid&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo das CDA(s)  para reemiss&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Faixa de Valores:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo de valores quando quer emitir as CDA(s) em uma faixa de
+valores.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Data de Emiss&atilde;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher a data de emiss&atilde;o das CDA(s) para emiss&atilde;o.
+Campo Opcional.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Ordenar: </B></I>Permite
+ordenar por c<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">ertid&atilde;o
+ou nome.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Reemiss&atilde;o: </B></I>
+Permite reemitir sim ou <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">n&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Totaliza por Exerc&iacute;cio:</B></I>
+Permite totalizar uma certid&atilde;o por exerc&iacute;cio<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Endere&ccedil;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite emitir o endere&ccedil;o de origem do d&eacute;bito ou do CGM
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">do
+respons&aacute;vel.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_415701a8.png" NAME="figura19" ALIGN=LEFT WIDTH=605 HEIGHT=201 BORDER=0><BR CLEAR=LEFT>Figura
+20</P>
+<H3 CLASS="western"><A NAME="3.6.2.Parcelamento|outline"></A><A NAME="3.6.2.Parcelamento|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1586db">Parcelamento</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-style: normal; font-weight: medium">
+Emite as CDA(s) referente a um parcelamento, podem ser geradas por um
+intervalo de certid&atilde;o e por valores. Permitindo o usu&aacute;rio
+emitir todas  as CDA(s) de uma determinada seq&uuml;encia. Ex:
+'Intervalo de Certid&atilde;o': 550 &agrave; 1250. <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 21.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Intervalo de Certid&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo das CDA(s)  para reemiss&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Faixa de Valores:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o intervalo de valores quando quer emitir as CDA(s) em uma faixa de
+valores.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Reemiss&atilde;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite emitir a CDA de parcelamento novamente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_5ad8a419.png" NAME="figura21" ALIGN=LEFT WIDTH=605 HEIGHT=141 BORDER=0><BR CLEAR=LEFT>Figura
+21</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 22 mostra um modelo de CDA de Parcelamento
+emitida no DBPortal. </FONT>
+</P>
+<P CLASS="western" ALIGN=LEFT><IMG SRC="Manual_Divida_Ativa_html_m52bd7719.png" NAME="figura20" ALIGN=LEFT WIDTH=591 HEIGHT=580 BORDER=0><BR CLEAR=LEFT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Figura
+22</SPAN></SPAN>                                                     
+                                                                     
+                                                                     
+                                   
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.7.D&iacute;vida|outline"></A><A NAME="3.7.D&iacute;vida|outline"></A>
+D&iacute;vida</H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse menu
+emite relat&oacute;rios referente a d&iacute;vida ativa do sistema,
+podendo controlar toda a d&iacute;vida do munic&iacute;pio.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.7.1.D&iacute;vida Por Exerc&iacute;cio|outline"></A><A NAME="3.7.1.D&iacute;vida Por Exerc&iacute;cio|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2319db">D&iacute;vida Por
+Exerc&iacute;cio</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Emite um
+relat&oacute;rio financeiro da d&iacute;vida ativa selecionando por
+exerc&iacute;cio dela, listando por contribuinte que est&aacute;
+selecionado no campo <I><B>Tipo</B></I>. <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 23.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Escolher os Anos:</B></I>
+Marca<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+os exerc&iacute;cios que se quer emitir no relat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	D&eacute;bitos Posteriores:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Emite d&eacute;bitos posteriores aos exerc&iacute;cios selecionados.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Modelo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite emitir um relat&oacute;rio sint&eacute;tico ou anal&iacute;tico.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Intervalo de Valores:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite emitir o relat&oacute;rio por um determinado intervalo de
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">valores
+da d&iacute;vida. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite emitir o relat&oacute;rio por (Nome, Matricula e Inscri&ccedil;&atilde;o).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Agrupar:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite agrupar o relat&oacute;rio por exerc&iacute;cio ou
+proced&ecirc;ncia.  </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Registro &agrave; Listar:</B></I>
+Permite listar uma quantidade registro especificada nesse campo. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Ordenar:</B></I> Permite
+ordenar por nome, num&eacute;rico ou valor. (Crescente ou
+Decrescente).</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Proced&ecirc;ncia:</B></I>
+Permite selecionar as proced&ecirc;ncia da d&iacute;vida.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_m2158ce29.png" NAME="figura22" ALIGN=LEFT WIDTH=598 HEIGHT=345 BORDER=0><BR CLEAR=LEFT>Figura
+23</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 24 mostra um modelo de relat&oacute;rio de
+D&iacute;vida Exerc&iacute;cio emitido no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_18d899c5.png" NAME="figura23" ALIGN=LEFT WIDTH=605 HEIGHT=335 BORDER=0><BR CLEAR=LEFT>Figura
+24</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.7.2.D&iacute;vida Por Contribuinte|outline"></A><A NAME="3.7.2.D&iacute;vida Por Contribuinte|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3831db">D&iacute;vida Por
+Contribuinte</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.88cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+um relat&oacute;rio que busca as d&iacute;vidas e parcelamentos
+referente a uma proced&ecirc;ncia. Gerando um relat&oacute;rio
+anal&iacute;tico da D&iacute;vida / Proced&ecirc;ncia. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 25.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Op&ccedil;&atilde;o:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">com
+Proced&ecirc;ncia ou sem Proced&ecirc;ncia.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Sele&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo da proced&ecirc;ncia ou clicar no link para pesquisar
+e lan&ccedil;ar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Escolher os Anos:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Marcar os exerc&iacute;cios que se quer emitir no relat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_413ceead.png" NAME="figura24" ALIGN=LEFT WIDTH=600 HEIGHT=264 BORDER=0><BR CLEAR=LEFT>Figura
+25</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 26 mostra um modelo de relat&oacute;rio de
+D&iacute;vida Contribuinte emitido no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Divida_Ativa_html_m662b3707.png" NAME="figura25" ALIGN=LEFT WIDTH=605 HEIGHT=239 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+26</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.8.Posi&ccedil;&atilde;o da D&iacute;vida|outline"></A><A NAME="3.8.Posi&ccedil;&atilde;o da D&iacute;vida|outline"></A>
+Posi&ccedil;&atilde;o da D&iacute;vida</H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse menu
+emite relat&oacute;rios referente a posi&ccedil;&atilde;o da d&iacute;vida
+ativa no sistema.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.8.1.Exerc&iacute;cio / Proced&ecirc;ncia|outline"></A><A NAME="3.8.1.Exerc&iacute;cio / Proced&ecirc;ncia|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4829db">Exerc&iacute;cio /
+Proced&ecirc;ncia</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+um relat&oacute;rio da proced&ecirc;ncia por exerc&iacute;cio
+separando por d&iacute;vida Tribut&aacute;ria e N&atilde;o
+Tribut&aacute;ria. Esse relat&oacute;rio emite os dados da tabela
+d&eacute;bitos, mostrando no campo Data da D&eacute;bito a ultima
+data de gera&ccedil;&atilde;o da tabela. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 27.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>	Data
+D&eacute;bito:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Selecionar a data de gera&ccedil;&atilde;o da tabela d&eacute;bitos.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Exerc&iacute;cios:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Marcar
+os exerc&iacute;cios da d&iacute;vida.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_40b3dea0.png" NAME="figura26" ALIGN=LEFT WIDTH=605 HEIGHT=192 BORDER=0><BR CLEAR=LEFT>Figura
+27</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 28 mostra um modelo do relat&oacute;rio D&iacute;vida
+Exerc&iacute;cio / Proced&ecirc;ncia emitido no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Divida_Ativa_html_m4bdb6040.png" NAME="figura27" ALIGN=LEFT WIDTH=605 HEIGHT=423 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+28</FONT></P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.8.2.Contribuinte|outline"></A><A NAME="3.8.2.Contribuinte|outline"></A>
+Contribuinte</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+um relat&oacute;rio financeiro da posi&ccedil;&atilde;o da D&iacute;vida
+Ativa por contribuinte, gerando um resumo da d&iacute;vida. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 29.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CGM:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do CGM ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Matr&iacute;cula:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do matricula ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Inscri&ccedil;&atilde;o:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do inscri&ccedil;&atilde;o ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m6919d3b2.png" NAME="figura29" ALIGN=LEFT WIDTH=605 HEIGHT=133 BORDER=0><BR CLEAR=LEFT>Figura
+29</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 30 mostra um modelo de relat&oacute;rio de
+Contribuinte emitido no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_m3f62152d.png" NAME="figura28" ALIGN=LEFT WIDTH=605 HEIGHT=362 BORDER=0><BR CLEAR=LEFT>Figura
+30</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="3.9.Parcelamento|outline"></A><A NAME="3.9.Parcelamento|outline"></A>
+Parcelamento</H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse menu
+emite relat&oacute;rios referente aos parcelamentos de d&iacute;vida
+ativa feito no sistema.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.9.1.Posi&ccedil;&atilde;o|outline"></A><A NAME="3.9.1.Posi&ccedil;&atilde;o|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3865db">Posi&ccedil;&atilde;o</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Emite um
+relat&oacute;rio das posi&ccedil;&otilde;es financeiras dos
+parcelamentos  para o usu&aacute;rio saber quantas parcelas est&atilde;o
+vencidas e o valor que falta ser paga. <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 31.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><B>ABA  Tipo de D&eacute;bito  </B>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo de D&eacute;bito:</B></I>
+Preencher <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">o
+c&oacute;digo do tipo de d&eacute;bito ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Intervalo da Data:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher a data inicial e final de emiss&atilde;o dos parcelamentos.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Quantidade de Parcelas
+Atraso:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o intervalo da quantidade de parcelas em atrasos.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	N&uacute;mero de Parcelas
+Atraso:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o intervalo do n&uacute;mero de parcelas em atrasos.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Modelo: </B></I>Permite
+selecionar tr&ecirc;s tipos como  <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Relat&oacute;rio
+e Gr&aacute;fico, Relat&oacute;rio ou Gr&aacute;fico.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_7712e7be.png" NAME="figura31" ALIGN=LEFT WIDTH=600 HEIGHT=320 BORDER=0><BR CLEAR=LEFT>Figura
+31</P>
+<P CLASS="western" ALIGN=JUSTIFY><B>ABA  Regra de Parcelamento</B></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	C&oacute;digo:</B></I>
+Seleciona<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo da regra de parcelamento ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_20ee442c.png" NAME="figura30" ALIGN=LEFT WIDTH=605 HEIGHT=243 BORDER=0><BR CLEAR=LEFT>Figura
+32</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 33 mostra um modelo de relat&oacute;rio de
+Posi&ccedil;&atilde;o do Parcelamento emitido no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m2a02d7c1.png" NAME="figura32" ALIGN=LEFT WIDTH=605 HEIGHT=260 BORDER=0><BR CLEAR=LEFT>Figura
+33</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="3.9.2.Situa&ccedil;&atilde;o|outline"></A><A NAME="3.9.2.Situa&ccedil;&atilde;o|outline"></A>
+Situa&ccedil;&atilde;o</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+um relat&oacute;rio com os dados gerais  do parcelamento vinculando a
+situa&ccedil;&atilde;o do parcelamento no sistema. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 34.</SPAN></SPAN></SPAN></FONT><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ </SPAN></SPAN> 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Per&iacute;odo:</B></I>
+Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a data inicial e final do lan&ccedil;amento do parcelamento.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Situa&ccedil;&atilde;o:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Selecionar a situa&ccedil;&atilde;o do parcelamento no sistema.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Resumido:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Permite emitir um relat&oacute;rio resumido ou completo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_517b7764.png" NAME="figura33" ALIGN=LEFT WIDTH=605 HEIGHT=130 BORDER=0><BR CLEAR=LEFT>Figura
+34</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2.03cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Na Figura 35 mostra um modelo de relat&oacute;rio da
+situa&ccedil;&atilde;o do Parcelamento emitido no DBPortal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_475f055e.png" NAME="figura34" ALIGN=LEFT WIDTH=605 HEIGHT=212 BORDER=0><BR CLEAR=LEFT>Figura
+35</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="4.Procedimentos|outline"></A><A NAME="4.Procedimentos|outline"></A>
+Procedimentos</H1>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.1.Recibo de Receita|outline"></A><A NAME="4.1.Recibo de Receita|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db111db">Recibo de Receita</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Emite
+um recibo com uma taxa referente a uma receita para pagamentos avulso
+no DBPortal. Gera um c&oacute;digo de arrecada&ccedil;&atilde;o para
+o recibo que possui  vinculo com o CGM, Matricula ou Inscri&ccedil;&atilde;o.
+</SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 36.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CGM:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do CGM ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Matr&iacute;cula:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Matricula ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Inscri&ccedil;&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Inscri&ccedil;&atilde;o ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Obs: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Os
+campos acima do contribuinte deve ser preenchido somente um por
+recibo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Processo:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do processo ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Receita:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo da receita ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Taxa:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Preencher o valor do recibo para pagamento ou clicar em Taxa para
+pesquisar. Depois clicar no bot&atilde;o Gravar, para adicionar os
+dados.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Hist&oacute;rico:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Descrever
+alguma informa&ccedil;&atilde;o para emitir no recibo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Data de Vencimento:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Colocar a data de vencimento para os d&eacute;bitos do recibo.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_4a84b755.png" NAME="figura35" ALIGN=LEFT WIDTH=605 HEIGHT=293 BORDER=0><BR CLEAR=LEFT>Figura
+36</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.2.Prescri&ccedil;&atilde;o de D&iacute;vida|outline"></A><A NAME="4.2.Prescri&ccedil;&atilde;o de D&iacute;vida|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4607db">Prescri&ccedil;&atilde;o
+de D&iacute;vida</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm">Nesse
+menu &eacute; feita a prescri&ccedil;&atilde;o da d&iacute;vida  onde
+consiste na perda do direito de promo&ccedil;&atilde;o da a&ccedil;&atilde;o
+de execu&ccedil;&atilde;o fiscal a ser proposta pelo Fisco, no prazo
+de cinco anos da constitui&ccedil;&atilde;o definitiva do cr&eacute;dito
+tribut&aacute;rio. O cr&eacute;dito torna-se definitivo com o
+lan&ccedil;amento do d&eacute;bito ou com a decis&atilde;o
+administrativa da qual n&atilde;o caiba mais recurso.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.2.1.Individual|outline"></A><A NAME="4.2.1.Individual|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4608db">Individual</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+ procedimento &eacute; feita a prescri&ccedil;&atilde;o dos d&eacute;bitos
+por contribuinte, ao selecionar ele o sistema busca todos d&eacute;bitos
+referente ao grupo de d&eacute;bito 5 &ndash; D&iacute;vida Ativa,  e
+permitindo  ser prescrito por uma faixa de valores ou exerc&iacute;cio.
+ </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 37.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CGM:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do CGM ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Matr&iacute;cula:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Matricula ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Inscri&ccedil;&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Inscri&ccedil;&atilde;o ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Obs: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Os
+campos acima do contribuinte deve ser preenchido somente um por
+prescri&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Prescrever D&eacute;bitos
+Notificados: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Permite
+selecionar apenas os d&eacute;bitos que n&atilde;o foram notificados
+pelo sistema. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m182f9800.png" NAME="figura36" ALIGN=LEFT WIDTH=605 HEIGHT=138 BORDER=0><BR CLEAR=LEFT>Figura
+37</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Faixa de Valores:</B></I>
+Preencher <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+a faixa de valores que se quer prescrever, valor inicial e final. Ex:
+Quero prescrever os d&eacute;bitos de R$ 1,000,00 at&eacute;
+5,000,00.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Observa&ccedil;&otilde;es:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+informa&ccedil;&otilde;es sobre a prescri&ccedil;&atilde;o que sai
+como um hist&oacute;rico no relat&oacute;rio de prescri&ccedil;&atilde;o.
+</SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Exerc&iacute;cios:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Busca
+todos os exerc&iacute;cios que possuem d&eacute;bitos, o usu&aacute;rio
+pode selecionar os exerc&iacute;cios que se quer prescrever e clicar
+em &ldquo;</SPAN></SPAN>Filtrar com os dados selecionados<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&rdquo;
+para buscar os d&eacute;bitos do exerc&iacute;cio selecionado abaixo
+na sele&ccedil;&atilde;o. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m470b2996.png" NAME="figura37" ALIGN=LEFT WIDTH=611 HEIGHT=248 BORDER=0><BR CLEAR=LEFT>Figura
+38</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.2.2.Lista de D&eacute;bito|outline"></A><A NAME="4.2.2.Lista de D&eacute;bito|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4609db">Lista de D&eacute;bito</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; font-style: normal; font-weight: medium">
+Nesse procedimento &eacute; feito a prescri&ccedil;&atilde;o a partir
+da leitura dos registros de uma Lista de d&eacute;bitos gerada no
+M&oacute;dulo Notifica&ccedil;&otilde;es, ser&aacute; prescrito
+somente o grupo de d&eacute;bito 5 &ndash; D&iacute;vida Ativa, se um
+contribuinte da lista for diferente do tipo 5 a rotina n&atilde;o
+prescreve e emite um relat&oacute;rio dos contribuinte que n&atilde;o
+est&atilde;o de acordo para a prescri&ccedil;&atilde;o. O usu&aacute;rio
+deve atualizar o contribuinte ou gerar outra lista de d&eacute;bito. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Os
+d&eacute;bitos que s&atilde;o cancelados por prescri&ccedil;&atilde;o,
+s&atilde;o mostrados na CGF em um atalho espec&iacute;fico chamado &ldquo;
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><B>D&eacute;bitos
+Prescritos</B></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&rdquo;.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 39.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Lista:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do lista ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Prescrever D&eacute;bitos
+Notificados:</B></I> Permite selecionar se quer prescrever todo <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">a
+lista independente se tiver notifica&ccedil;&atilde;o para os
+d&eacute;bitos. Se n&atilde;o quer prescreve esses d&eacute;bitos e
+no final emite um relat&oacute;rio dos d&eacute;bitos que n&atilde;o
+foram prescritos.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Observa&ccedil;&otilde;es:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+alguma observa&ccedil;&atilde;o sobre a prescri&ccedil;&atilde;o,
+assim permite emitir hist&oacute;rico da prescri&ccedil;&atilde;o no
+relat&oacute;rio.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_12a85a85.png" NAME="figura38" ALIGN=LEFT WIDTH=605 HEIGHT=136 BORDER=0><BR CLEAR=LEFT>Figura
+39</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.Certid&atilde;o de D&iacute;vida Ativa|outline"></A><A NAME="4.3.Certid&atilde;o de D&iacute;vida Ativa|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4695db">Certid&atilde;o de
+D&iacute;vida Ativa</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">No menu
+de Certid&atilde;o de D&iacute;vida Ativa (CDA) onde &eacute; t&iacute;tulo
+executivo extrajudicial que permite &agrave; Fazenda P&uacute;blica
+ingressar com a competente execu&ccedil;&atilde;o fiscal. A Certid&atilde;o
+expedida pelo DBPortal, atende &agrave;s exig&ecirc;ncias formais
+impostas pelo C&oacute;digo Tribut&aacute;rio Nacional e pela Lei
+6830/80 (Lei de execu&ccedil;&atilde;o fiscal).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">A inclus&atilde;o
+de CDA individual &eacute; feita pela Consulta Geral Financeira.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.1.Inclus&atilde;o por Lista|outline"></A><A NAME="4.3.1.Inclus&atilde;o por Lista|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4695db">Inclus&atilde;o por
+Lista</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+procedimento &eacute; feita a inclus&atilde;o das CDA por uma Lista
+de D&eacute;bito gerada no M&oacute;dulo Notifica&ccedil;&otilde;es,
+podendo ser  agrupar por exerc&iacute;cio uma CDA. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 40.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Lista:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo da lista ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Op&ccedil;&atilde;o de Lista:</B></I>
+Permite selecionar as op&ccedil;&otilde;es para gerar as CDAs com
+lista notificada ou n&atilde;o. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo:</B></I> Permite o
+usu&aacute;rio gera as CDAs somente por<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+CGM ou por (CGM,Matricula e Inscri&ccedil;&atilde;o).</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Agrupar:</B></I> Permite
+a<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">grupa
+os d&eacute;bitos por exerc&iacute;cio e gera uma CDA por ano.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_m2718add3.png" NAME="figura42" ALIGN=LEFT WIDTH=605 HEIGHT=153 BORDER=0><BR CLEAR=LEFT>Figura
+40</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.2.Cancelamento Geral|outline"></A><A NAME="4.3.2.Cancelamento Geral|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4732db">Cancelamento Geral</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+procedimento &eacute; feito o cancelamento total de todas as CDA
+dentro do um intervalo de CDA preenchido. Obs: As CDA n&atilde;o
+podem estar vincula a uma Inicial do Foro sen&atilde;o n&atilde;o
+ser&aacute; canceladas. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 41.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Intervalo CDA: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Preencher
+o c&oacute;digo da CDA inicial e o c&oacute;digo da CDA final
+cancelando todas as CDA(s) dentro desse per&iacute;odo.  Clicar em
+processar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m69991db8.png" NAME="figura41" ALIGN=LEFT WIDTH=605 HEIGHT=108 BORDER=0><BR CLEAR=LEFT>Figura
+41</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.3.3.Cancelamento Parcial|outline"></A><A NAME="4.3.3.Cancelamento Parcial|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4731db">Cancelamento
+Parcial</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+procedimento permite cancelar parte da d&iacute;vida de uma CDA.
+	</SPAN></SPAN><SPAN STYLE="font-style: normal"><B>Obs:</B></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Deve ser emitido uma nova Inicial Foro referente aquela CDA anulada
+parcialmente. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 42 e 43.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CDA:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do CDA ou clicar no link para pesquisar, e clicar no
+bot&atilde;o Processar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	D&eacute;bitos:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Marcar
+os d&eacute;bitos que se quer cancelar, &eacute; mostrado os d&eacute;bitos
+por d&iacute;vida e clicar no bot&atilde;o Cancelar. Obs: N&atilde;o
+permite cancelar todos os d&eacute;bitos deve permanecer no m&iacute;nimo
+um d&eacute;bito pois est&aacute; rotina cancela parcialmente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m57a62df3.png" NAME="figura40" ALIGN=LEFT WIDTH=605 HEIGHT=108 BORDER=0><BR CLEAR=LEFT>Figura
+42</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_2b3b02b2.png" NAME="figura39" ALIGN=LEFT WIDTH=598 HEIGHT=284 BORDER=0><BR CLEAR=LEFT>Figura
+43</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.Importa&ccedil;&atilde;o de D&iacute;vida|outline"></A><A NAME="4.4.Importa&ccedil;&atilde;o de D&iacute;vida|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4884db">Importa&ccedil;&atilde;o
+de D&iacute;vida</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse menu
+a importa&ccedil;&atilde;o de d&iacute;vida &eacute; o procedimento
+pelo qual se transporta para d&iacute;vida ativa os d&eacute;bitos
+vencidos e n&atilde;o pagos ap&oacute;s expirado o prazo para
+pagamento e pode ser realizada de tr&ecirc;s formas.</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.1.Importar D&iacute;vida Individual|outline"></A><A NAME="4.4.1.Importar D&iacute;vida Individual|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4446db">Importar D&iacute;vida
+Individual</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+procedimento &eacute; feito a importa&ccedil;&atilde;o do d&eacute;bito
+para d&iacute;vida ativa individualmente.  Deve ser selecionado a
+origem e o destino do d&eacute;bito para importa&ccedil;&atilde;o
+para D&iacute;vida Ativa. Abaixo busca os d&eacute;bito para
+importa&ccedil;&atilde;o referente a op&ccedil;&atilde;o escolhida na
+origem do d&eacute;bito. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 44 e 45.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CGM:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do CGM ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Matricula:</B></I> Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Matricula ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Inscri&ccedil;&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Inscri&ccedil;&atilde;o ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Obs: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Os
+campos acima do contribuinte deve ser preenchido somente um por
+importa&ccedil;&atilde;o.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m3075a0e0.png" NAME="figura43" ALIGN=LEFT WIDTH=605 HEIGHT=124 BORDER=0><BR CLEAR=LEFT>Figura
+44</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo de Origem:</B></I> <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Busca os tipos de d&eacute;bito que podem ser  enviados para a D&iacute;vida
+Ativa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo de Destino:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+o tipo de d&eacute;bito que deve ser importado para  D&iacute;vida
+Ativa, a sele&ccedil;&atilde;o busca todos do grupo de d&eacute;bito
+5 &ndash; D&iacute;vida Ativa. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	C&oacute;digo de Arrecada&ccedil;&atilde;o:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Busca
+os d&eacute;bitos pelo c&oacute;digo da arrecada&ccedil;&atilde;o
+(</SPAN></SPAN><I><B>NUMPRE</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">)
+de acordo com a sele&ccedil;&atilde;o do campo Tipo de Origem
+selecionado acima, e clicar em processar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_26734684.png" NAME="figura44" ALIGN=LEFT WIDTH=605 HEIGHT=344 BORDER=0><BR CLEAR=LEFT>Figura
+45</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.2.Importar D&iacute;vida Geral|outline"></A><A NAME="4.4.2.Importar D&iacute;vida Geral|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3834db">Importar D&iacute;vida
+Geral</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+procedimento &eacute; feito a importa&ccedil;&atilde;o geral dos
+d&eacute;bitos de IPTU, ISSQN Fixo, Vistoria, Alvar&aacute;, Auto de
+Infra&ccedil;&atilde;o e Diversos para importa&ccedil;&atilde;o da
+D&iacute;vida Ativa do exerc&iacute;cio atual. Os d&eacute;bitos de
+ISSQN Vari&aacute;vel n&atilde;o s&atilde;o importados por essa
+rotina. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 46 e 47.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo de Origem:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+a origem do d&eacute;bito para importar para a D&iacute;vida Ativa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Tipo de Destino:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecionar
+o destino do d&eacute;bito para importar para a D&iacute;vida Ativa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	D&eacute;bitos Importados:</B></I>
+Permite o usu&aacute;rio escolher op&ccedil;&otilde;es de importa&ccedil;&atilde;o
+para os d&eacute;bitos. <I><B>Todas Vencidas</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">:
+Busca todos os d&eacute;bitos que est&atilde;o vencidos do tipo de
+d&eacute;bito de origem. </SPAN></SPAN><I><B>Parcialmente Vencidas:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Busca
+as parcialmente vencidas com o mesmo c&oacute;digo de arrecada&ccedil;&atilde;o
+</SPAN></SPAN><I><B>.</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN><I><B>Todas Parceladas</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">:
+Busca </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">todas
+as parcelas do d&eacute;bito de origem, n&atilde;o olhando a data de
+vencimentos das parcelas.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Parcelas Vencidas:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+a data final das parcelas vencidas. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Unifica D&eacute;bitos</B></I>
+<I><B>(numpre, Receita)</B></I>: <SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Marcar
+se quiser unificar os d&eacute;bitos pelo c&oacute;digo de
+arrecada&ccedil;&atilde;o e receita.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m161735fe.png" NAME="figura45" ALIGN=LEFT WIDTH=605 HEIGHT=182 BORDER=0><BR CLEAR=LEFT>Figura
+46</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm; font-style: normal; font-weight: medium">
+Na outra tela selecionar a proced&ecirc;ncia que se quer importar
+para D&iacute;vida Ativa.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_m1f52b23b.png" NAME="figura46" ALIGN=LEFT WIDTH=605 HEIGHT=149 BORDER=0><BR CLEAR=LEFT>Figura
+47</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.3.Importar ISSQN Vari&aacute;vel|outline"></A><A NAME="4.4.3.Importar ISSQN Vari&aacute;vel|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4118db">Importar ISSQN
+Vari&aacute;vel</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+procedimento &eacute; feito a importa&ccedil;&atilde;o para D&iacute;vida
+Ativa. O DBPortal busca todas os d&eacute;bitos de ISSQN Vari&aacute;vel
+que estiver com valores lan&ccedil;ados, d&eacute;bitos sem valores
+n&atilde;o podem ser exportado para d&iacute;vida. </SPAN></SPAN><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 48.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CGM:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do CGM ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Inscri&ccedil;&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Inscri&ccedil;&atilde;o ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<B>	Obs:</B> Os campos acima do contribuinte deve ser preenchido
+somente um por importa&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Divida_Ativa_html_516b2264.png" NAME="figura47" ALIGN=LEFT WIDTH=605 HEIGHT=293 BORDER=0><BR CLEAR=LEFT>Figura
+48</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.4.Cancelamento D&iacute;vida Individual|outline"></A><A NAME="4.4.4.Cancelamento D&iacute;vida Individual|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4475db">Cancelamento D&iacute;vida
+Individual</A></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse
+procedimento &eacute; feito o cancelamento da importa&ccedil;&atilde;o
+do d&eacute;bito para d&iacute;vida ativa por contribuinte. Ao
+selecionar o contribuinte busca apenas os c&oacute;digo de
+arrecada&ccedil;&atilde;o que est&atilde;o em aberto e n&atilde;o
+est&atilde;o cancelados e nem pagos. <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do </SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">cadastro
+conforme Figura 49 e 50.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	CGM:</B></I> Preencher<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+o c&oacute;digo do CGM ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Matr&iacute;cula:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Matricula ou clicar no link para pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Inscri&ccedil;&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o c&oacute;digo do Inscri&ccedil;&atilde;o ou clicar no link para
+pesquisar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><B>	Obs:</B> Os campos acima do contribuinte deve ser
+preenchido somente um por cancelamento.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_m3075a0e0.png" NAME="figura48" ALIGN=LEFT WIDTH=605 HEIGHT=124 BORDER=0>
+Figura 49</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	C&oacute;digo de Arrecada&ccedil;&atilde;o:</B></I>
+<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Busca
+os d&eacute;bitos pelo c&oacute;digo da arrecada&ccedil;&atilde;o
+(</SPAN></SPAN><I><B>NUMPRE</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">)
+de acordo com a sele&ccedil;&atilde;o do campo Tipo de Origem
+selecionado acima, e clicar em processar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_12280d05.png" NAME="figura49" ALIGN=LEFT WIDTH=605 HEIGHT=373 BORDER=0><BR CLEAR=LEFT>Figura
+50</P>
+<H3 CLASS="western" ALIGN=JUSTIFY><A NAME="4.4.5.Cancelamento ISSQN Vari&aacute;vel |outline"></A><A NAME="4.4.5.Cancelamento ISSQN Vari&aacute;vel |outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4540db">Cancelamento ISSQN
+Vari&aacute;vel</A> 
+</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse
+procedimento &eacute; feito o cancelamento de ISSQN Vari&aacute;vel
+por contribuinte. Ao selecionar o contribuinte busca apenas os c&oacute;digo
+de arrecada&ccedil;&atilde;o que est&atilde;o em aberto e n&atilde;o
+est&atilde;o cancelados e nem pagos. <FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Descri&ccedil;&atilde;o
+dos campos e modelo do cadastro conforme Figura 51 e 52.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>	Inscri&ccedil;&atilde;o:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo do Inscri&ccedil;&atilde;o ou clicar no
+link para pesquisar.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Divida_Ativa_html_m719105da.png" NAME="figura50" ALIGN=LEFT WIDTH=605 HEIGHT=137 BORDER=0><FONT SIZE=3>Figura
+51</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>	C&oacute;digo
+de Arrecada&ccedil;&atilde;o:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Busca os d&eacute;bitos pelo c&oacute;digo da arrecada&ccedil;&atilde;o
+(</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>NUMPRE</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">)
+de acordo com a sele&ccedil;&atilde;o do campo Tipo de Origem
+selecionado acima, e clicar em processar.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<IMG SRC="Manual_Divida_Ativa_html_d1fffb9.png" NAME="figura51" ALIGN=LEFT WIDTH=605 HEIGHT=297 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+52</FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.5.Processamento do Livro|outline"></A><A NAME="4.5.Processamento do Livro|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2549db">Processamento do
+Livro</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">Nesse
+procedimento &eacute; feito o processamento do Livro da D&iacute;vida
+no qual o sistema codifica cada registro inscrito com um c&oacute;digo
+de livro a folha a qual foi inserida, ou seja, quando imprime-se o
+livro, cada p&aacute;gina &eacute; numerada seq&uuml;encialmente.
+Essa informa&ccedil;&atilde;o &eacute; requisito indispens&aacute;vel
+na CDA, possibilitando a identifica&ccedil;&atilde;o do d&eacute;bito
+ao examinar o livro.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">O
+processamento do do livro subdivide-se em dois modos: 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><B>	1</B> &ndash; <I><B>Processamento
+do livro</B></I> &ndash; Nesse caso o sistema gera um novo livro para
+os registros do exerc&iacute;cio selecionado, iniciando a partir da
+p&aacute;gina 1 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><B>	2</B> &ndash; <I><B>Livro
+complementar</B></I> &ndash; Nesse caso o sistema insere os registros
+do exerc&iacute;cio selecionado no livro escolhido a partir da &uacute;ltima
+p&aacute;gina que esse livro possua. Essa op&ccedil;&atilde;o &eacute;
+utilizada para gerar livro e folha para os registros importados para
+d&iacute;vida ap&oacute;s ter sido efetuado o processamento do livro
+mencionado no item 1. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.94cm; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Descri&ccedil;&atilde;o dos campos e modelo do cadastro
+conforme Figura 53.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Complementar:</B></I> Permite
+o usu&aacute;rio se quer gerar um livro novo ou complementar<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Exerc&iacute;cio da D&iacute;vida:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o exerc&iacute;cio que deve ser gerado o Livro </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">de
+D&iacute;vida Ativa.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	Per&iacute;odo de Inscri&ccedil;&atilde;o:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o per&iacute;odo de inscri&ccedil;&atilde;o em D&iacute;vida Ativa no
+munic&iacute;pio. </SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	&Uacute;ltima P&aacute;gina:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+a &uacute;ltima p&aacute;gina do livro da D&iacute;vida.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>	N&uacute;mero do Livro:</B></I>
+Preenche<SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r
+o n&uacute;mero do Livro que vai ser gerado.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>	Proced&ecirc;ncia:</B></SPAN></I></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Preencher o c&oacute;digo da Proced&ecirc;ncia ou clicar no link para
+pesquisar.</SPAN></SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Divida_Ativa_html_6af92a5.png" NAME="figura52" ALIGN=LEFT WIDTH=605 HEIGHT=289 BORDER=0><BR CLEAR=LEFT>Figura
+53</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.6.Texto|outline"></A><A NAME="4.6.Texto|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1636db">Texto</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.97cm">Nesse
+menu &eacute; cadastrado os textos referente a (Certid&atilde;o,
+Termo de Parcelamento e Peti&ccedil;&atilde;o Inicial) . A Certid&atilde;o
+pode ser (<FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Positiva,
+Negativa, Regular e Baixa), podendo configurar os textos para
+emiss&atilde;o.</SPAN></SPAN></SPAN></FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.7.Assinatura|outline"></A><A NAME="4.7.Assinatura|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db1618db">Assinatura</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm">Nesse menu
+&eacute; cadastrado<FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+os textos referentes as Assinaturas como: Secret&aacute;rio da
+Fazenda, Prefeito e Chefe da D&iacute;vida. Separando as assinaturas
+por sistemas.</SPAN></SPAN></SPAN></FONT></P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="4.8.Par&acirc;metro|outline"></A><A NAME="4.8.Par&acirc;metro|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4886db">Par&acirc;metros</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm">
+<FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nesse
+procedimento busca os menus que os usu&aacute;rio que est&aacute;
+logado possui permiss&atilde;o na Consulta Geral Financeira como
+(</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Permite
+que usu&aacute;rio Cancelar D&eacute;bitos, Permite que o usu&aacute;rio
+Efetue o Parcelamento, Permite que o usu&aacute;rio Gerar CDA,
+</SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Permite
+que o usu&aacute;rio Justifique D&eacute;bitos, </SPAN></SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Permite
+o usu&aacute;rio Anular o Parcelamento.).</SPAN></SPAN></SPAN></FONT></P>
+<DIV TYPE=FOOTER>
+	<DIV ALIGN=RIGHT>
+		<TABLE WIDTH=605 BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=523>
+			<COL WIDTH=66>
+			<TR VALIGN=TOP>
+				<TD WIDTH=523>
+					<P ALIGN=CENTER STYLE="background: transparent"><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt">DBSeller
+					Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+					</FONT></FONT><A HREF="http://www.dbseller.com.br/"><FONT COLOR="#000080"><FONT SIZE=2 STYLE="font-size: 9pt">www.dbseller.com.br</FONT></FONT></A><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt">
+					             </FONT></FONT><FONT COLOR="#000000">               
+					                                                                
+					                   </FONT><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt">Rua
+					General C&acirc;mara, 406/301 &ndash; Porto Alegre/RS &ndash;
+					F</FONT></FONT><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="background: transparent">one:
+					(51) 3076-</SPAN></FONT></FONT><A HREF="http://www.dbseller.com.br/"><FONT COLOR="#000000"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="text-decoration: none"><SPAN STYLE="background: transparent">5101</SPAN></SPAN></FONT></FONT></A></P>
+				</TD>
+				<TD WIDTH=66>
+					<P CLASS="western"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>33</SDFIELD>
+					/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>42</SDFIELD></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

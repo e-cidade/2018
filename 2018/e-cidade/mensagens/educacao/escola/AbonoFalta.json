@@ -1,0 +1,6 @@
+{
+   "abonofalta_nao_encontrado" : "Erro ao procurar vínculos de faltas abonadas."
+  ,"erro_buscar_abonofalta" : "Houve um erro ao tentar buscar as faltas abonadas.\n[sErro]"
+  ,"erro_salvar_abono"  : "Houve um erro ao salvar o abono.\n[sErro]"
+  ,"erro_excluir_abono" : "Houve um erro ao salvar o abono.\n[sErro]"
+}

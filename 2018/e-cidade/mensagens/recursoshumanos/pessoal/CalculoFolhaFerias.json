@@ -1,0 +1,4 @@
+{
+  "erro_buscar_parametro_comparativo": "Ocorreu um erro ao consultar os parâmetros comparativo de férias.",
+  "erro_buscar_parametro_base"       : "Ocorreu um erro ao consultar os parâmetros base do comparativo."
+}

@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<consulta distinct="true">
+  <campos>
+    <campo campo="q03_ativ"         label="cod_atividade"/>
+    <campo campo="q03_descr"        label="atividade"    />
+    <campo campo="q03_deducao"      label="deducao"      />
+    <campo campo="q71_estrutural"   label="estrut_cnae"  />
+    <campo campo="q71_descr"        label="desc_cnae"    />
+    <campo campo="q136_valor"       label="aliq"         />
+    <campo campo="db121_estrutural" label="estrutural"   />
+  </campos>
+  <from tabela="ativid"/>
+  <juncoes>
+    <join tipo="inner" tabela="ativtipo"                    condicao="q80_ativ         = q03_ativ"              />
+    <join tipo="inner" tabela="tipcalc"                     condicao="q80_tipcal       = q81_codigo"            />
+    <join tipo="inner" tabela="cadcalc"                     condicao="q81_cadcalc      = q85_codigo"            />
+    <join tipo="inner" tabela="clasativ"                    condicao="q82_ativ         = q03_ativ"              />
+    <join tipo="left"  tabela="issgruposervicoativid"       condicao="q03_ativ         = q127_ativid"           />
+    <join tipo="left"  tabela="issgruposervico"             condicao="q126_sequencial  = q127_issgruposerviso"  />
+    <join tipo="left"  tabela="db_estruturavalor"           condicao="db121_sequencial = q126_db_estruturavalor"/>
+    <join tipo="left"  tabela="issconfiguracaogruposervico" condicao="q126_sequencial  = q136_issgruposervico"  />
+    <join tipo="left"  tabela="atividcnae"                  condicao="q03_ativ         = q74_ativid"            />
+    <join tipo="left"  tabela="cnaeanalitica"               condicao="q72_sequencial   = q74_cnaeanalitica"     />
+    <join tipo="left"  tabela="cnae"                        condicao="q71_sequencial   = q72_cnae"              />
+  </juncoes>
+  <filtros>
+    <filtro condicao="q81_tipo = 1"         obrigatorio="false"/>
+    <filtro condicao="q85_var = true"       obrigatorio="false"/>
+    <filtro condicao="q72_cnae is not null" obrigatorio="false"/>
+  </filtros>
+  <agrupamento campos=""         />
+  <ordenacao   campos="q03_descr"/>
+</consulta>

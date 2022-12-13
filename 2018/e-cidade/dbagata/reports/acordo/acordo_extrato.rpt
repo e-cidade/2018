@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report>
+    <main>
+        <properties>
+            <title></title>
+            <author></author>
+            <date>2014-04-08</date>
+            <type>document</type>
+            <publishtime/>
+        </properties>
+        <parameters>
+            <parameter1>
+                <name>$iAcordo</name>
+                <label>Sequencial Acordo</label>
+                <component>TEntry</component>
+                <expander>0</expander>
+                <required>0</required>
+                <multiple>0</multiple>
+            </parameter1>
+        </parameters>
+    </main>
+    <data>
+        <master>
+            <datasource>timeB</datasource>
+            <query>select ac16_numeroacordo   as numero_acordo,
+       ac16_anousu         as ano_acordo,               
+       ac16_lei            as lei,
+       ac16_datainicio     as vigencia_inicial,
+       ac16_datafim        as vigencia_final,
+       ac16_dataassinatura as data_assinatura, 
+       ac16_objeto         as objeto,
+       ac16_numeroprocesso as numero_processo,
+       z01_nome            as cgm_favorecido,
+       ac16_valor          as valor,
+       nomeresponsavel     as responsavel_departamento,
+       nomeinst            as instituicao,
+       munic               as municipio
+         from acordo
+inner join db_depart on acordo.ac16_deptoresponsavel = db_depart.coddepto
+inner join cgm on acordo.ac16_contratado = cgm.z01_numcgm 
+inner join db_config on ac16_instit = codigo
+ where ac16_sequencial = $iAcordo     
+       
+       
+
+                
+
+    
+  </query>
+            <fields>
+                <field1>
+                    <name>ac16_numeroacordo   as numero_acordo</name>
+                    <alias>numero_acordo</alias>
+                    <format></format>
+                    <function></function>
+                </field1>
+                <field2>
+                    <name>ac16_anousu         as ano_acordo</name>
+                    <alias>ano_acordo</alias>
+                    <format></format>
+                    <function></function>
+                </field2>
+                <field3>
+                    <name>ac16_lei            as lei</name>
+                    <alias>lei</alias>
+                    <format></format>
+                    <function></function>
+                </field3>
+                <field4>
+                    <name>ac16_datainicio     as vigencia_inicial</name>
+                    <alias>vigencia_inicial</alias>
+                    <format></format>
+                    <function>/time/a_date_to_br.fun</function>
+                </field4>
+                <field5>
+                    <name>ac16_datafim        as vigencia_final</name>
+                    <alias>vigencia_final</alias>
+                    <format></format>
+                    <function>/time/a_date_to_br.fun</function>
+                </field5>
+                <field6>
+                    <name>ac16_dataassinatura as data_assinatura</name>
+                    <alias>data_assinatura</alias>
+                    <format></format>
+                    <function>/time/a_date_to_br.fun</function>
+                </field6>
+                <field7>
+                    <name>ac16_objeto         as objeto</name>
+                    <alias>objeto</alias>
+                    <format></format>
+                    <function></function>
+                </field7>
+                <field8>
+                    <name>ac16_numeroprocesso as numero_processo</name>
+                    <alias>numero_processo</alias>
+                    <format></format>
+                    <function></function>
+                </field8>
+                <field9>
+                    <name>z01_nome            as cgm_favorecido</name>
+                    <alias>cgm_favorecido</alias>
+                    <format></format>
+                    <function></function>
+                </field9>
+                <field10>
+                    <name>ac16_valor          as valor</name>
+                    <alias>valor</alias>
+                    <format>#  -9.999,99s</format>
+                    <function></function>
+                </field10>
+                <field11>
+                    <name>nomeresponsavel     as responsavel_departamento</name>
+                    <alias>responsavel_departamento</alias>
+                    <format></format>
+                    <function></function>
+                </field11>
+                <field12>
+                    <name>nomeinst            as instituicao</name>
+                    <alias>instituicao</alias>
+                    <format></format>
+                    <function></function>
+                </field12>
+                <field13>
+                    <name>munic               as municipio</name>
+                    <alias>municipio</alias>
+                    <format></format>
+                    <function></function>
+                </field13>
+            </fields>
+        </master>
+    </data>
+    <view>
+        <tabular>
+            <header>
+                <row1>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row1>
+                <row2>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row2>
+            </header>
+            <footer>
+                <row1>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row1>
+                <row2>
+                    <col1>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col1>
+                    <col2>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col2>
+                    <col3>
+                        <content></content>
+                        <text_font>Arial--12</text_font>
+                        <text_color>#000000</text_color>
+                        <background>#FFFFFF</background>
+                        <width>160</width>
+                        <align>left</align>
+                    </col3>
+                </row2>
+            </footer>
+            <fields>
+                <field1>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field1>
+                <field2>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field2>
+                <field3>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field3>
+                <field4>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field4>
+                <field5>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field5>
+                <field6>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field6>
+                <field7>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field7>
+                <field8>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field8>
+                <field9>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field9>
+                <field10>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field10>
+                <field11>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field11>
+                <field12>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field12>
+                <field13>
+                    <chars>30</chars>
+                    <points>100</points>
+                    <align>left</align>
+                    <titlealign>left</titlealign>
+                    <hidden>0</hidden>
+                    <conditions/>
+                    <indent>1</indent>
+                </field13>
+            </fields>
+            <preferences>
+                <showgroupcolum>0</showgroupcolum>
+                <showdetails>1</showdetails>
+                <showtotalabels>0</showtotalabels>
+                <showidentation>1</showidentation>
+                <shownumbering>0</shownumbering>
+                <showgrouplabel>0</showgrouplabel>
+            </preferences>
+            <pageconfig>
+                <format></format>
+                <orientation>portrait</orientation>
+                <leftmargin>40</leftmargin>
+                <rightmargin>40</rightmargin>
+                <topmargin>40</topmargin>
+                <bottommargin>40</bottommargin>
+            </pageconfig>
+        </tabular>
+        <chart>
+            <properties>
+                <title></title>
+                <titley></titley>
+                <width>400</width>
+                <height>300</height>
+                <orientation>c</orientation>
+                <charttype>line</charttype>
+            </properties>
+        </chart>
+        <office>
+            <properties>
+                <detailtype>d</detailtype>
+                <showemptydetail>0</showemptydetail>
+                <showgrandtotal>1</showgrandtotal>
+                <repeatheader>1</repeatheader>
+                <repeatfooter>1</repeatfooter>
+            </properties>
+            <details>
+                <detail1>
+                    <query>            select e60_codemp || ' / ' ||  e60_anousu as empenho,
+                   o56_elemento                       as elemento_despesa,
+                   o15_descr                          as recurso
+              from empempenhocontrato
+        inner join empempenho          on e100_numemp = e60_numemp
+				inner join orcdotacao  on  orcdotacao.o58_anousu = empempenho.e60_anousu  
+				                      and  orcdotacao.o58_coddot = empempenho.e60_coddot  
+				inner join orctiporec  on  orctiporec.o15_codigo = orcdotacao.o58_codigo  
+				inner join orcelemento on  orcelemento.o56_codele = orcdotacao.o58_codele 
+				                      and  orcelemento.o56_anousu = orcdotacao.o58_anousu 
+             where e100_acordo = $iAcordo
+          order by e60_anousu, e60_codemp </query>
+                    <fields>
+                        <field1>
+                            <name>e60_codemp || ' / ' ||  e60_anousu as empenho</name>
+                            <alias>empenho</alias>
+                        </field1>
+                        <field2>
+                            <name>o56_elemento                       as elemento_despesa</name>
+                            <alias>elemento_despesa</alias>
+                        </field2>
+                        <field3>
+                            <name>o15_descr                          as recurso</name>
+                            <alias>recurso</alias>
+                        </field3>
+                    </fields>
+                    <name>detail1</name>
+                </detail1>
+            </details>
+            <template></template>
+            <filename>acordo_extrato.sxw</filename>
+        </office>
+    </view>
+</report>

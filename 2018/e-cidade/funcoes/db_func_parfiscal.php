@@ -1,0 +1,3 @@
+<?
+$campos = "parfiscal.y32_instit,parfiscal.y32_tipo,parfiscal.y32_hist,parfiscal.y32_impdatas,parfiscal.y32_impcodativ,parfiscal.y32_impobs,parfiscal.y32_impobslanc,parfiscal.y32_modalvara,parfiscal.y32_modaidof,parfiscal.y32_receit,parfiscal.y32_receitexp,parfiscal.y32_proced,parfiscal.y32_procedexp,parfiscal.y32_formvist,parfiscal.y32_sanidepto,parfiscal.y32_sanbaixadiv,parfiscal.y32_tipoprocpadrao,parfiscal.y32_calcvistanosanteriores,parfiscal.y32_procprotbaixaauto,parfiscal.y32_utilizacalculoporteatividade,parfiscal.y32_templatealvarasanitariopermanente,parfiscal.y32_templatealvarasanitarioprovisorio,parfiscal.y32_templateautoinfracao";
+?>

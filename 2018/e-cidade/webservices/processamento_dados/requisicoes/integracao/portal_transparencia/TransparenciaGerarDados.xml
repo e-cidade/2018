@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="large_objects" obrigatorio="false" tipo="boolean" />
+    <parametro nome="forca_geracao" obrigatorio="false" tipo="boolean" />
+  </parametros>
+  <configuracoes>
+    <classe referencia="transparencia" nome="CargaTransparenciaWebservice" parametros=""
+            caminho="model/integracao/transparencia/CargaTransparenciaWebservice.model.php" />
+    <exec>
+      <metodo referencia="transparencia" nome="gerarDump" parametros="$large_objects, $forca_geracao" />
+    </exec>
+  </configuracoes>
+</processamento>

@@ -1,0 +1,10 @@
+{
+  "confirma_exclusao"             : "Deseja efetuar a exclusão do(s) registro(s) selecionado(s)?",
+  "erro_data_operacao_invalida"   : "Intervalo de Data de Operação inválida.",
+  "erro_data_vencimento_invalida" : "Intervalo de Data de Vencimento inválida.",
+  "sem_filtro_selecionado"        : "Selecione pelo menos um filtro para pesquisa.",
+  "carregando_dadosunica"         : "Pesquisando únicas, aguarde...",
+  "sem_registros_para_filtro"     : "Nenhum registro encontrado para o filtro utilizado.",
+  "sem_unica_selecionada"         : "Selecione pelo menos um registro para exclusão.",
+  "carregando_exclusao_unica"     : "Excluindo regitros, aguarde... "
+}

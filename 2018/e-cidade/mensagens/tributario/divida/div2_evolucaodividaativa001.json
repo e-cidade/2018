@@ -1,0 +1,7 @@
+{
+  "campo_obrigatorio"  : "Campo [sCampo] é de preenchimento obrigatório.",
+  "intervalo_invalido" : "Campo Data Inicial deve ser menor que a Data Final.",
+  "data_iguais"        : "Campo Data Inicial e campo Data Final não podem ser iguais.",
+  "emissao_hoje"       : "Campo [sCampo] não pode ser igual ou superior ao dia de hoje.",
+  "emitindo"           : "Emitindo relatório. \nPor favor, aguarde..."
+}

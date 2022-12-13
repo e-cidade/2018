@@ -1,0 +1,4 @@
+{
+  "erro_pesquisar_rubricas_base"          : "Ocorreu um erro ao buscar as rubricas da base.",
+  "erro_pesquisar_rubricas_base_servidor" : "Ocorreu um erro ao buscar as rubricas da base do servidor."
+}

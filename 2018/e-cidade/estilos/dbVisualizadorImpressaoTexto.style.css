@@ -1,0 +1,40 @@
+.janelaVisualizacao {
+
+  border: 2px solid #000000;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin: auto;
+  
+}
+.pagina {
+
+  background-color: #ffffff;
+  border:2px #000000 solid;
+  display: table;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+        
+}
+
+.textoNormal {
+
+  font-family: roman;
+  font-size:   10px;
+
+}
+
+.textoCondensado {
+
+  font-family: roman;
+  font-size:   12px;
+
+}
+
+.textareaTextoArquivo {
+  
+  display: none;
+  
+}

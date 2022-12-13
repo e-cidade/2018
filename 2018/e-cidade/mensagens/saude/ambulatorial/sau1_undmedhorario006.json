@@ -1,0 +1,18 @@
+{
+  "data_inicial_nao_informada"                   : "Data de validade inicial não informada.",
+  "medico_possui_consulta_agendada"              : "O Médico [sNome] possui [iAgendamento] consulta(s) agendada(s).\nData inicial não pode ser alterada!",
+  "profissional_possui_horario"                  : "Profissional já possui horário agendado nesse intervalo.",
+  "data_inicial_maior_final"                     : "Data Inicial maior que Data Final.",
+  "existe_agendamento_intervalo"                 : "Não é possível alterar o intervalo, pois já constam agendamentos.",
+  "existe_agendamento_dia"                       : "Não é possível alterar o dia da semana, pois já constam agendamentos.",
+  "existe_agendamento_data"                      : "Não é possível alterar a data de validade, pois já constam agendamentos para o período.",
+  "existe_agendamento_fichas"                    : "Não pode alterar Quantidade de Fichas, pois no dia [iDia] já constam [iiAgendamentos] agendamentos.",
+  "agendamentos_posteriores_profissional"        : "Profissional possui agendamentos efetuados posteriormente, não sendo permitida a exclusão do horário.",
+  "agenda_dentro_periodo"                        : "Profissional já possui agenda para data e hora selecionada.",
+  "data_final_menor_ultimo_agendamento"          : "Profissional possui paciente agendado até o dia [ultima_data]. Informe uma data superior a data do último agendamento.",
+  "dia_semana_nao_pode_ser_alterado"             : "Profissional possui agendamento. Dia da semana não pode ser alterado.",
+  "agenda_encerrada"                             : "Agenda já esta encerrada e não pode ser alterada.",
+  "periodo_conflita_agenda"                      : "Período informado conflita com agenda existente.",
+  "impossivel_criar_agenda_possui_agenda_valida" : "Não é possivel incluir agenda para o dia [sDataInicio], sem informar uma data final. Existe uma agenda válida para o profissional no horário de inicio e fim informado."
+}
+

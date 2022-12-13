@@ -1,0 +1,5 @@
+{
+  "erro_buscar_assentamento_substituicao"          : "Ocorreu um erro ao buscar o assentamento de substituição",
+  "erro_persistir_assentamento_substituicao"       : "Ocorreu um erro ao persistir o assentamento de substituição",
+  "erro_buscar_lote_para_assentamento"             : "Ocorreu um erro ao buscar o lote para o assentamento"
+}

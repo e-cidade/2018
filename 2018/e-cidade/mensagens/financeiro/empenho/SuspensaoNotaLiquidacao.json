@@ -1,0 +1,8 @@
+{
+  "nota_liquidacao_necessaria" : "A Nota de Liquidação deve ser prenchida para criação da suspensão.",
+  "erro_busca_suspensao" : "Houve um erro ao buscar as suspensões da nota de liquidação.",
+  "erro_salvar_suspensao" : "Houve um erro ao salvar a suspensão da nota de liquidação.",
+  "suspensao_nao_encontrada_retorno" : "Não foi encontrada a suspensão de nota de empenho para realizar seu retorno.",
+  "justificativa_obrigatoria" : "O campo Justificativa é de preenchimento obrigatório.",
+  "data_obrigatoria" : "O campo Data é de preenchimento obrigatório."
+}

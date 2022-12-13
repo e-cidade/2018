@@ -1,0 +1,9 @@
+{
+   "verficar_fornecedor"  : "Verificando Fornecedor..."
+  ,"salvando_fornecedor"  : "Salvando o fornecedor, aguarde."
+  ,"buscando_fornecedores": "Buscando fornecedores da licitação."
+  ,"excluindo_fornecedor" : "Excluindo Fornecedor, aguarde."
+  ,"selecione_um_item"    : "Selecione um item para víncular ao fornecedor."
+  ,"informe_fornecedor"   : "Selecione o fornecedor."
+  ,"salvar_itens"         : "Salvando itens para o fornecedor, aguarde."
+}

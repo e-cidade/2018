@@ -1,0 +1,14 @@
+{
+  "campo_obrigatorio" : "Campo [sCampo] é de preenchimento obrigatório.",
+  "no_encerrado_sucesso" : "Encerramento efetuado com sucesso.",
+  "vp_encerrado_sucesso" : "Encerramento efetuado com sucesso.",
+  "is_encerrado_sucesso" : "Implantação de Saldos efetuada com sucesso.",
+  "no_cancelado_sucesso" : "Cancelamento do encerramento efetuado com sucesso.",
+  "vp_cancelado_sucesso" : "Cancelamento do encerramento efetuado com sucesso.",
+  "is_cancelado_sucesso" : "Cancelamento de Implantação de Saldos efetuado com sucesso.",
+  "confirma_exclui_regra" : "Confirma exclusão da regra?",
+  "excluido_sucesso" : "Exclusão efetuada com sucesso.",
+  "salvo_sucesso" : "Regra salva com sucesso.",
+  "confirmar_processamento" : "Confirmar [sEncerramento]?",
+  "confirmar_cancelamento" : "Confirmar cancelamento de [sEncerramento]?"
+}

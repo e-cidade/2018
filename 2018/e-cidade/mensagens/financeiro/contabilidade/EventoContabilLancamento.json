@@ -1,0 +1,5 @@
+{
+  "sem_regra" : "Não foram encontradas contas crédito/débito para o lançamento.\n\nDocumento: [iDocumento] - [sDescricaoDocumento]\n Lançamento: [sDescricaoLancamento]\n\nVerifique o cadastro de transação.",
+  "erro_buscar_elemento"  : "Erro ao buscar elemento da transação.",
+  "conta_nao_encontrada_exercicio" : "Conta [sTipoConta] \"[iConta]\" não disponivel para o exercício.\n\nDocumento: [iDocumento] - [sDescricaoDocumento]\nLançamento: [sDescricaoLancamento]\n\nVerifique o cadastro de transação."
+}

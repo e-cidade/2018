@@ -1,0 +1,6 @@
+{
+  "informe_data_inicial"      : "Data inicial de repasse não informada.",
+  "informe_data_final"        : "Data final de repasse não informada.",
+  "ano_igual"                 : "Os anos informado nas datas de repasses devem ser iguais",
+  "registros_nao_encontrados" : "Não foram encontrado registros para o período de repasse informado."
+}

@@ -1,0 +1,4 @@
+{
+  "data_inicial_maior_data_final" : "Data Inicial não pode ser maior que Data Final.",
+  "obra_inicial_maior_obra_final" : "Código da Obra Inicial não pode ser maior que Código da Obra Final."
+}

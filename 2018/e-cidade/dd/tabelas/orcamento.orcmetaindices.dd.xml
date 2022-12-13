@@ -1,0 +1,109 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010207' name='orcamento.orcmetaindices' description="Tabela que contem os índices por ano relacionados a uma meta." prefix="o154" label="orcmetaindices" type="0">
+  <fields>
+    <field codigo="1009330"
+           campo_api=''
+           name="o154_sequencial"
+           conteudo="int8"
+           description="Código do Índice no ano referente a uma Meta."
+           inivalue="0"
+           label="Código do Índice"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código do Índice"
+           reference=""
+           ispk="t"
+           hassequence="t">
+      <sequence name='orcamento.orcmetaindices_o154_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="1009331"
+           campo_api=''
+           name="o154_orcmeta"
+           conteudo="int8"
+           description="Código da Meta"
+           inivalue="0"
+           label="Código da Meta"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código da Meta"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="1009332"
+           campo_api=''
+           name="o154_ano"
+           conteudo="int4"
+           description="Ano do índice relacionado a meta."
+           inivalue="0"
+           label="Ano"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Ano"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="1009333"
+           campo_api=''
+           name="o154_indice"
+           conteudo="int4"
+           description="Índice relacionado a Meta."
+           inivalue="0"
+           label="Índice"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Índice"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="1009334"
+           campo_api=''
+           name="o154_unidademedida"
+           conteudo="varchar(20)"
+           description="Unidade de Medida do índice relacionado a Meta."
+           inivalue=""
+           label="Unidade de Medida"
+           size="20"
+           null="t"
+           uppercase="t"
+           autocompl="f"
+           aceitatipo="0"
+           tipoobj="text"
+           labelrel="Unidade de Medida"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="o154_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="orcmeta">
+      <fieldfk name="o154_orcmeta" reference="o145_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

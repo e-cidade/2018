@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="cep"                  obrigatorio="true" tipo="string" />
+  </parametros>
+  <configuracoes>
+    <classe   referencia="oConsultaEndereco" nome="LocalizaEndereco" parametros="" caminho="model/arrecadacao/webservice/ConsultaEndereco.model.php"/>
+    <exec>
+      <metodo referencia="oConsultaEndereco" nome="setCep"        parametros="$cep" />
+      <metodo referencia="oConsultaEndereco" nome="buscaEnderecoByCep" parametros="" />
+    </exec>
+  </configuracoes>
+</processamento>

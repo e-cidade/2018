@@ -1,0 +1,657 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/*******************************************************************************/
+/* AgataAPI
+/* API for report generation from Web PHP scripts
+/* by Pablo Dall'Oglio - 2001 - 2006
+/*******************************************************************************/
+class AgataAPI
+{
+  public $dataSource = array();
+    function AgataAPI()
+    {
+        # Define the Agata's Path
+        define('AGATA_PATH', substr(__FILE__,0,-28));
+        define('OS', strtoupper(substr(PHP_OS, 0, 3)));
+        
+        if (OS == 'WIN')
+        {
+            define("bar", '\\');
+            setlocale(LC_ALL, 'POSIX');
+            define ("cut", ';');
+            if (is_dir('C:\\temp'))
+            {
+                define("temp", 'C:\\temp');
+            }
+            else if (is_dir('C:\\windows\\temp'))
+            {
+                define("temp", 'C:\\windows\\temp');
+            }
+            else
+            {
+                define("temp", 'c:\\winnt\\temp');
+            }
+        }
+        else
+        {
+            define("bar", '/');
+            setlocale(LC_ALL, 'english');
+            define ("cut", ':');
+            define("temp", '/tmp');
+        }
+        
+        define('isGui', false);
+        define('BREAKLN', "<br>");
+        
+        if (!is_dir(AGATA_PATH))
+        {
+            echo "<b>Error</b> : Wrong Path: " . AGATA_PATH;
+        }
+        else
+        {
+            //chdir(AGATA_PATH);
+            ini_set('include_path', '.' . cut . '/usr/local/lib/php'. cut .
+                    AGATA_PATH . cut . AGATA_PATH . '/classes');
+            
+            include_once AGATA_PATH . "/include/util.inc";
+            include_once AGATA_PATH . "/classes/core/AgataCompatibility.class";
+            include_once AGATA_PATH . "/classes/core/AgataConnection.class";
+            include_once AGATA_PATH . "/classes/core/AgataQuery.class";
+            include_once AGATA_PATH . "/classes/core/AgataError.class";
+            include_once AGATA_PATH . "/classes/core/AgataDataSet.class";
+            include_once AGATA_PATH . "/classes/core/Project.class";
+            include_once AGATA_PATH . "/classes/core/Report.class";
+            include_once AGATA_PATH . "/classes/core/Layout.class";
+            include_once AGATA_PATH . "/classes/core/AgataCore.class";
+            include_once AGATA_PATH . "/classes/core/AgataConfig.class";
+            include_once AGATA_PATH . "/classes/util/Wait.class";
+            include_once AGATA_PATH . "/classes/util/Dialog.class";
+            include_once AGATA_PATH . "/classes/util/MemoArea.class";
+            include_once AGATA_PATH . "/classes/util/Trans.class";
+            include_once AGATA_PATH . "/classes/util/XmlArray.class";
+            include_once AGATA_PATH . "/classes/reports/AgataReport.class";
+        }
+    }
+
+    /**
+     * Defining the output file that will be generated
+     * @param $output = path to the output file
+     */
+    function setOutputPath($output)
+    {
+        $this->outputPath= $output;
+    }
+    
+    /**
+     * Return the output file path that will be generated
+     */
+    function getOutputPath()
+    {
+        return $this->output;
+    }
+    
+    /**
+     * Define the callback
+     * param @callback = for internal use
+     */
+    function setCallBack($callback)
+    {
+        $this->callback = $callback;
+    }
+
+    /**
+     * Defining the Report file to interpret
+     * @param $report = path to .agt file
+     */
+    function setReportPath($report)
+    {
+        $this->reportPath = $report;
+    }
+    
+    /**
+     * Alternative way to setReportPath
+     * @param $Report = Array with report specification
+     */
+    function setReport($Report)
+    {
+        $this->Report = $Report;
+    }
+
+    /**
+     * Return the report as an array
+     */
+    function getReport()
+    {
+        if (isset($this->Report))
+        {
+            return $this->Report;
+        }
+        else
+        {
+            # Reading the Report
+            $this->reportPath = str_replace('"', '', $this->reportPath);
+            $Report = Report::OpenReport($this->reportPath);
+            if (!$Report['Report'])
+            {
+                $this->error = "Cannot read report file: {$this->reportPath}";
+                return false;
+            }
+            return $Report;
+        }
+    }
+    
+    /** 
+     * Return the last error
+     */
+    function getError()
+    {
+        return $this->error;
+    }
+    
+    /**
+     * Return the report parameters
+     */
+    function getParameters()
+    {
+        # Reading the Report
+        $Report = $this->getReport();
+        if (!$Report)
+        {
+            return;
+        }
+        
+        if ($params = @array_keys($Report['Report']['Parameters']))
+        {
+            foreach ($params as $name)
+            {
+                $return[] = "\${$name}";
+            }
+            return $return;
+        } 
+        return null;
+    }
+    
+    /**
+     * Choose the output
+     * @param $format = output format {html, txt, pdf, csv, sxw}
+     */
+    function setFormat($format)
+    {
+        $this->format = $format;
+    }
+
+    /**
+     * Set the report parameters
+     * @param $parameter = parameter name
+     * @param $value     = parameter value
+     */
+    function setParameter($parameter, $value)
+    {
+        $this->parameters[$parameter] = $value;
+    }
+
+    /**
+     * Set the interface language
+     * @param $language = interface language (en,pt,es,de,fr,it,se)
+     */
+    function setLanguage($language)
+    {
+        if (!in_array($language, array('en', 'pt', 'es', 'de', 'fr', 'it', 'se')))
+        {
+            $language = 'en';
+        }
+        
+        # Set the Interface Language
+        Trans::SetLanguage($language);
+    }
+
+    /**
+     * Set the report layout
+     * @param $layout = layout file (.lay)
+     */
+    function setLayout($layout)
+    {
+        $this->layout = $layout;
+    }
+
+    /**
+     * Set the project name
+     * @param $project = project name (.prj)
+     */
+    function setProject($project)
+    {
+        $this->project = $project;
+    }
+    
+    /**
+     * Set the data source
+     * @param $ds = datasource array
+     */
+    function setDataSource($ds)
+    {
+        $this->dataSource = $ds;
+    }
+
+    /**
+     * Return the data source array
+     */
+    function getDataSource()
+    {
+        return $this->dataSource;
+    }
+   
+    /**
+     * Opens an html file dialog
+     */
+    function fileDialog()
+    {
+        switch ($this->format)
+        {
+            case ('txt'):
+                $content_type = 'text/plain';
+                break;
+            case ('csv'):
+                $content_type = 'text/plain';
+                break;
+            case 'xml':
+                $content_type = 'text/xml';
+                break;
+            case 'pdf':
+                $content_type = 'application/pdf';
+                break;
+            case 'ps':
+                $content_type = 'application/postscript';
+                break;
+            case 'sxw':
+                $content_type = 'application/sxw';
+                break;
+            case 'dia':
+                $content_type = 'application/dia';
+                break;
+        }
+
+        $download = 'output.'.$this->format;
+        if ($this->format != 'html')
+        {
+            header("Content-type: $content_type");
+            header("Content-Disposition: attachment; filename=\"$download\"");
+        }
+        readfile($this->outputPath);
+    }
+
+    /**
+     * Returns the project name of the report
+     */
+    function getProject($Report)
+    {
+        if ($this->getDataSource())
+        {
+            $Project = $this->getDataSource();
+        }
+        else
+        {
+            $this->project = $this->project ? $this->project : $Report['Report']['DataSet']['DataSource']['Name'];
+            
+            # You can set the Database connection this way, too:
+            $Project = Project::ReadProject($this->project);
+            
+        }
+        return $Project;
+    }
+    
+    /**
+     * Generate the report
+     */
+    function generateReport()
+    {
+        # Reading the Report
+        $Report = $this->getReport();
+        if (!$Report)
+        {
+            return;
+        }
+        
+        $Project = $this->getProject($Report);
+        if (!$Project)
+        {
+            $this->error = "Cannot read project file: {$this->project}";
+            return;
+        }
+        
+
+        if ($this->parameters)
+        {
+            $header = $Report['Report']['Header']['Body'];
+            $footer = $Report['Report']['Footer']['Body'];
+            
+            foreach ( $this->parameters as $key => $value )
+            {
+                $header = str_replace($key,$value,$header);
+                $footer = str_replace($key,$value,$footer);
+            }
+            $Report['Report']['Header']['Body'] = $header;
+            $Report['Report']['Footer']['Body'] = $footer;
+        }
+        
+        $DataSet = $Report['Report']['DataSet'];
+        
+        # Process the Query.
+        $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
+        
+        if (is_agata_error($Query))
+        {
+            $this->error = $Query->GetError();
+            return;
+        }
+        else
+        {
+            $params[0] = $Project;
+            $params[1] = null;
+            $params[2] = $this->outputPath;
+            $params[3] = $Query;
+            $params[4] = $Report;
+            $params[6] = $this->layout;
+            $myreport = AgataCore::CreateReport($this->format, $params);
+            if ($this->format == 'screen')
+            {
+                $myreport->setCallBack($this->callback);
+            }
+            $myreport->Process();
+            $this->rownum = $myreport->CurrentQuery->rownum;
+        }
+        
+        $this->Query = $Query;
+        return true;
+    }
+
+    /**
+     * Generate Document (Merge Tool)
+     */
+    function generateDocument()
+    {
+        $this->format = 'pdf';
+        
+         # Reading the Report
+        $Report = $this->getReport();
+        if (!$Report)
+        {
+            return;
+        }
+
+        $Project = $this->getProject($Report);
+        if (!$Project)
+        {
+            $this->error = "Cannot read project file: {$this->project}";
+            return;
+        }
+       
+        $DataSet = $Report['Report']['DataSet'];
+        
+        # Process the Query.
+        $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
+        if (is_agata_error($Query))
+        {
+            $this->error = $Query->GetError();
+            return;
+        }
+        else
+        {
+            $params[0] = $Project;
+            $params[1] = null;
+            $params[2] = $this->outputPath;
+            $params[3] = $Query;
+            $params[4] = $Report;
+            $params[6] = $this->parameters;
+            
+            $obj = AgataCore::CreateMergedDocument($params, 'Pdf');
+            $obj->Generate();
+            $this->rownum = $obj->CurrentQuery->rownum;
+        }
+        $this->Query = $Query;
+        return true;
+    }
+    
+    public function setDetailData($detailKey, $detailData)
+    {
+        $this->detailData[$detailKey] = $detailData;
+    }
+    
+    public function setDetailColumns($detailKey, $detailColumns)
+    {
+        $this->detailColumns[$detailKey] = $detailColumns;
+    }
+
+    public function setMasterData($data)
+    {
+        $this->masterData = $data;
+    }
+    
+    public function setMasterColumns($columns)
+    {
+        $this->masterColumns = $columns;
+    }
+    
+    /**
+     * Interprets the OpenOffice template
+     * @param $source = openoffice template file
+     */
+    function parseOpenOffice($source = NULL, $format = 'sxw')
+    {
+        $this->format = $format;
+        
+        # Reading the Report
+        $Report = $this->getReport();
+        if (!$Report)
+        {
+            return;
+        }
+        
+        $Project = $this->getProject($Report);
+        if (!$Project)
+        {
+            $this->error = "Cannot read project file: {$this->project}";
+            return;
+        }
+       
+        $DataSet = $Report['Report']['DataSet'];
+        
+        if (isset($this->masterData))
+        {
+            $Query = new StdClass;
+            $Query->Query       = $this->masterData;
+            $Query->ColumnNames = $this->masterColumns;
+        }
+        else
+        {
+            # Process the Query.
+            $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
+            if (is_agata_error($Query))
+            {
+                $this->error = $Query->GetError();
+                return;
+            }
+        }
+        
+        $params[0] = $Project;
+        $params[1] = null;
+        $params[2] = $this->outputPath;
+        $params[3] = $Query;
+        $params[4] = $Report;
+        $params[6] = $this->parameters;
+        
+        if (!$source)
+        {
+            $Report = $this->getReport();
+
+            $obj = AgataCore::ParseOpenOffice($params, 'Sxw');
+            
+            if ($Report['Report']['OpenOffice']['Template'])
+            {
+                $source = temp.'/template-'.md5(time()).'.'.$format;
+                $f = @fopen($source, 'w');
+                if ($f)
+                {
+                    fwrite($f, base64_decode($Report['Report']['OpenOffice']['Template']));
+                    fclose($f);
+                }
+            }
+            else
+            {
+                $source = $Report['Report']['OpenOffice']['Source'];
+            }
+        }
+        else
+        {
+            $obj = AgataCore::ParseOpenOffice($params, 'Sxw');
+        }
+        
+        if ($this->detailData)
+        {
+            $obj->setDetailData($this->detailData);
+            $obj->setDetailColumns($this->detailColumns);
+        }
+        
+        $obj->Generate($source, $this->outputPath);
+        $this->rownum = @$obj->CurrentQuery->rownum;
+        
+        $this->Query = $Query;
+        return true;
+    }
+    
+    /**
+     * generate the label inside report
+     */
+    function generateLabel()
+    {
+        $this->format = 'pdf';
+        
+        # Reading the Report
+        $Report = $this->getReport();
+        if (!$Report)
+        {
+            return;
+        }
+        
+        $Project = $this->getProject($Report);
+        if (!$Project)
+        {
+            $this->error = "Cannot read project file: {$this->project}";
+            return;
+        }
+       
+        $DataSet = $Report['Report']['DataSet'];
+        
+        # Process the Query.
+        $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
+        if (is_agata_error($Query))
+        {
+            $this->error = $Query->GetError();
+            return;
+        }
+        else
+        {
+            $params[0] = $Project;
+            $params[1] = null;
+            $params[2] = $this->outputPath;
+            $params[3] = $Query;
+            $params[4] = $Report;
+            $params[6] = $this->parameters;
+            
+            $obj = AgataCore::CreateAddressLabel($params);
+            $obj->Generate();
+            $this->rownum = $obj->CurrentQuery->rownum;
+        }
+        $this->Query = $Query;
+        return true;
+    }
+    
+    /**
+     * Generate the graph inside the graph
+     * @param $type = line/bars
+     */
+    function generateGraph($type = 'bars')
+    {
+        # Reading the Report
+        $Report = $this->getReport();
+        if (!$Report)
+        {
+            return;
+        }
+        
+        $Project = $this->getProject($Report);
+        if (!$Project)
+        {
+            $this->error = "Cannot read project file: {$this->project}";
+            return;
+        }
+       
+        $DataSet = $Report['Report']['DataSet'];
+        
+        # Process the Query.
+        $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
+        
+        if (is_agata_error($Query))
+        {
+            $this->error = $Query->GetError();
+            return;
+        }
+        else
+        {
+            $params[0] = $Project;
+            $params[1] = null;
+            $params[2] = $this->outputPath;
+            $params[3] = $Query;
+            $params[4] = $Report;
+            $params[6] = $this->layout;
+            $PlottedColumns = explode(',', $Report['Report']['Graph']['PlottedColumns']);
+            $vetor = MyExplode(trim($Report['Report']['DataSet']['Query']['Select']), _a('Column'), true);
+            $i = 1;
+            foreach ($PlottedColumns as $plot)
+            {
+                $result[] = $vetor[$plot+1];
+                $i++;
+            }
+            $params[7] = $result;
+            $legend = $Report['Report']['Graph']['Legend'];
+            $obj = AgataCore::CreateGraph($params);
+            $method = $type == 'lines' ? 'Lines' : 'Bars';
+            $obj->$method($legend);
+        }
+        $this->Query = $Query;
+        return true;
+    }
+
+    /**
+     * Return the number of rows
+     */
+    function getRowNum()
+    {
+        return $this->rownum;
+    }
+}
+?>

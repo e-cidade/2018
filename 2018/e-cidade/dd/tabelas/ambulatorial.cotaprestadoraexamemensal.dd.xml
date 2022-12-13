@@ -1,0 +1,84 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010194' name='ambulatorial.cotaprestadoraexamemensal' description="Cota de exame mensal por prestador." prefix="age01" label="Cota de Prestadores" type="0">
+  <fields>
+    <field codigo="1009265"
+           name="age01_sequencial"
+           conteudo="int4"
+           description="Código sequencial da tabela cotaprestadoraexamemensal"
+           inivalue="0"
+           label="Código"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='ambulatorial.cotaprestadoraexamemensal_age01_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="1009269"
+           name="age01_quantidade"
+           conteudo="int4"
+           description="Campo de quantidade de exames por prestadora"
+           inivalue="0"
+           label="Quantidade"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Quantidade"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="1009268"
+           name="age01_mes"
+           conteudo="int4"
+           description="Campo de mês do exame"
+           inivalue="0"
+           label="Mês"
+           size="2"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Mês"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="1009267"
+           name="age01_ano"
+           conteudo="int4"
+           description="Campo ano do exame"
+           inivalue="0"
+           label="Ano"
+           size="4"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Ano"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="age01_sequencial"></fieldpk>
+  </primarykey>
+</table>

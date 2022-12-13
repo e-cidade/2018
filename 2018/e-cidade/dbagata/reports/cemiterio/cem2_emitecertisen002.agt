@@ -1,0 +1,399 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description></Description>
+        <Title></Title>
+        <Author></Author>
+        <Keywords></Keywords>
+        <Date></Date>
+        <FrameSize></FrameSize>
+        <Layout></Layout>
+        <UseTemplates></UseTemplates>
+        <OutputMask></OutputMask>
+    </Properties>
+
+    <Header>
+        <Body></Body>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body></Body>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <codigoisencao>
+            <mask></mask>
+            <value>1</value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </codigoisencao>
+
+        <dia_atual>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </dia_atual>
+
+        <mes_atual>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </mes_atual>
+
+        <ano_atual>
+            <mask></mask>
+            <value></value>
+            <source></source>
+            <label></label>
+            <options></options>
+        </ano_atual>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>Charqueadas</Name>
+            <Remote></Remote>
+        </DataSource>
+
+        <PreQuery></PreQuery>
+        <PosQuery></PosQuery>
+        <Query>
+            <Select>cgmdecla.z01_numcgm as cgm_decla, cgmdecla.z01_cgccpf as cnpjcpf_decla, cgmdecla.z01_nome   as nome_decla, cgmdecla.z01_ender  as ender_decla, cgmdecla.z01_numero as numero_decla, cgmdecla.z01_compl  as compl_decla, cgmdecla.z01_bairro as bairro_decla, cgmfalec.z01_numcgm as cgm_falec, cgmfalec.z01_nome   as nome_falec, cm33_sequencial     as pedido_isencao, cm01_i_codigo       as codigo_sepultamento, extract( day   from cm33_datalanc) as dia_lancamento_isencao, extract( month from cm33_datalanc) as mes_lancamento_isencao, extract( year  from cm33_datalanc) as ano_lancamento_isencao, case when sepulta.cm24_i_codigo is not null then a.cm23_i_lotecemit             when restosgavetas.cm26_i_codigo is not null then c.cm23_i_lotecemit             else null         end as lote, case when sepulta.cm24_i_codigo is not null then b.cm22_c_quadra             when restosgavetas.cm26_i_codigo is not null then d.cm22_c_quadra             else null        end as quadra, case when sepulta.cm24_i_codigo is not null then sepulta.cm24_d_entrada             when restosgavetas.cm26_i_codigo is not null then restosgavetas.cm26_d_entrada             else null        end as entrada, protprocesso.p58_codproc as codigo_processo</Select>
+            <From>sepultamentoisencao         inner join protprocesso     on protprocesso.p58_codproc          = sepultamentoisencao.cm33_processo        inner join sepultamentos    on sepultamentos.cm01_i_codigo       = sepultamentoisencao.cm33_sepultamento         inner join cgm as cgmfalec  on cgmfalec.z01_numcgm               = sepultamentos.cm01_i_codigo        inner join cgm as cgmdecla  on cgmdecla.z01_numcgm               = sepultamentos.cm01_i_declarante        left  join sepulta          on sepulta.cm24_i_sepultamento       = sepultamentos.cm01_i_codigo        left  join sepulturas       on sepulturas.cm05_i_codigo          = sepulta.cm24_i_sepultura        left  join lotecemit    a   on a.cm23_i_codigo                   = sepulturas.cm05_i_lotecemit        left  join quadracemit  b   on b.cm22_i_codigo                   = a.cm23_i_quadracemit        left  join restosgavetas    on restosgavetas.cm26_i_sepultamento = sepultamentos.cm01_i_codigo        left  join ossoariojazigo   on ossoariojazigo.cm25_i_codigo      = restosgavetas.cm26_i_ossoariojazigo        left  join lotecemit    c   on c.cm23_i_codigo                   = ossoariojazigo.cm25_i_lotecemit         left  join quadracemit  d   on d.cm22_i_codigo                   = c.cm23_i_quadracemit</From>
+            <Where>cm33_sequencial = $codigoisencao;</Where>
+            <GroupBy></GroupBy>
+            <OrderBy></OrderBy>
+            <Config>
+                <Distinct></Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowGroup></ShowGroup>
+                <ShowDetail>1</ShowDetail>
+                <ShowLabel></ShowLabel>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+                <ShowHeader></ShowHeader>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column2>
+
+            <Column3>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column7>
+
+            <Column8>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column8>
+
+            <Column9>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column9>
+
+            <Column10>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column10>
+
+            <Column11>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column11>
+
+            <Column12>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column12>
+
+            <Column13>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/dbseller/a_mesextenso.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column13>
+
+            <Column14>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column14>
+
+            <Column15>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column15>
+
+            <Column16>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column16>
+
+            <Column17>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function>/dbseller/a_formata_data.fun</Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column17>
+
+            <Column18>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <HeadAlign>left</HeadAlign>
+                <Mask></Mask>
+                <Function></Function>
+                <Cross></Cross>
+                <Conditional></Conditional>
+                <Hidden></Hidden>
+            </Column18>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup></PageSetup>
+    <Graph>
+        <Title></Title>
+        <TitleX></TitleX>
+        <TitleY></TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description></Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+        <PlottedColumns></PlottedColumns>
+        <Legend>Coluna 1 : cgm_decla</Legend>
+    </Graph>
+
+    <Merge>
+        <ReportHeader></ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader></GroupHeader>
+                <Body></Body>
+                <DataSet>
+                    <Query>
+                        <Select></Select>
+                        <From></From>
+                        <Where></Where>
+                        <GroupBy></GroupBy>
+                        <OrderBy></OrderBy>
+                        <Config>
+                            <Distinct></Distinct>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields></Fields>
+                </DataSet>
+
+                <GroupFooter></GroupFooter>
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter></ReportFooter>
+        <PageSetup></PageSetup>
+        <Config>
+            <RepeatHeader></RepeatHeader>
+            <ShowFooter></ShowFooter>
+        </Config>
+
+    </Merge>
+
+    <Label>
+        <Body></Body>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <OpenOffice>
+        <Source>/var/www/dbportal_prj/documentos/templates/certificado_isencao_sepultamento.sxw</Source>
+        <Config>
+            <FixedDetails>1</FixedDetails>
+            <ExpandDetails></ExpandDetails>
+            <printEmptyDetail>1</printEmptyDetail>
+            <SumByTotal>1</SumByTotal>
+            <RepeatHeader>1</RepeatHeader>
+            <RepeatFooter>1</RepeatFooter>
+        </Config>
+
+    </OpenOffice>
+
+</Report>

@@ -1,0 +1,6 @@
+{
+  "informe_cartao_sus" : "Cartão SUS não informado.",
+  "informe_ibge"       : "Código IBGE não informado.",
+  "telefone_invalido"  : "Número de caracteres do telefone inválido( 10 ou 11 caracteres ).",
+  "celular_invalido"   : "Número de caracteres do telefone celular inválido( 10 ou 11 caracteres )."
+}

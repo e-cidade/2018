@@ -1,0 +1,165 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+class FileList extends GtkCList
+{
+    function FileList($title, $names)
+    {
+        $this->names = $names;
+        GtkCList::GtkCList(1, array($title));
+        GtkCList::connect_object('select-row', array($this, 'Pop'));
+        
+        $this->BotaoOk = new GtkButton;
+        GtkCList::show();
+        $this->CreateMenu();
+    }
+    
+    function SetExtension($ext)
+    {
+        $this->Extension = $ext;
+    }
+    
+    function SetWidth($width = 140)
+    {
+        GtkCList::set_column_width(0, $width);
+    }
+    
+    function Load($directory)
+    {
+        global $Pixmaps;
+        $this->Directory = $directory;
+        $data = getSimpleDirArray($directory);
+        
+        foreach ($data as $line)
+        {
+            $item = substr($line, 0, -4);
+            $row = GtkCList::append(array($item));
+            GtkCList::set_pixtext($row, 0, trim($item), 5, $Pixmaps['ico_desc'][0], $Pixmaps['ico_desc'][1]);
+        }
+    }
+    
+    function Reload()
+    {
+        GtkCList::clear();
+        $this->Load($this->Directory);
+    }
+
+    /***********************************************************/
+    /* Pop the File Explorer options
+    /***********************************************************/
+    function Pop()
+    {
+        $Menu = $this->Menu;
+        $Menu->show_all();
+        $Menu->popup(null, null, null, 1, 1);
+    }
+
+    /***********************************************************/
+    /* Creates the PopMenu Options
+    /***********************************************************/
+    function CreateMenu()
+    {
+        global $Pixmaps;
+        $this->Menu = $Menu = new GtkMenu;
+        $names = $this->names;
+
+        if (!$names)
+        {
+            $this->ItemOpen = $Menuitem1 = new MyNormalMenuItem($Pixmaps['menu_open'], _a('Open'), array($this, 'Open'));
+            $this->ItemDel  = $Menuitem2 = new MyNormalMenuItem($Pixmaps['menu_del'], _a('Delete'), array($this, 'Delete'));
+        }
+        else
+        {
+            if ($names[0])
+            {
+                $this->ItemOpen = $Menuitem1 = new MyNormalMenuItem($Pixmaps['menu_open'], _a($names[0][1]) , array($this, 'Open'));
+            }
+            
+            if ($names[1])
+            {
+                $this->ItemDel  = $Menuitem2 = new MyNormalMenuItem($Pixmaps['menu_del'], _a($names[1][1]), array($this, 'Delete'));
+            }
+        }
+        
+        
+        $Menuitem3 = new GtkMenuItem;
+        $Menuitem4 = new MyNormalMenuItem($Pixmaps['menu_close'], _a('Close'), null);
+
+        if ($Menuitem1)
+        {
+            $Menu->append($Menuitem1);
+        }
+        if ($Menuitem2)
+        {
+            $Menu->append($Menuitem2);
+        }
+        $Menu->append($Menuitem3);
+        $Menu->append($Menuitem4);
+    }
+    
+    function Open()
+    {
+        $row = $this->selection[0];
+        $data = GtkCList::get_pixtext($row, 0);
+        $file = $this->Directory . bar . $data[0] . '.' . $this->Extension;
+        if (is_file($file))
+        {
+            call_user_func($this->OpenAction, $file);
+        }
+    }
+    
+    function Delete($flag = false)
+    {
+        $row = $this->selection[0];
+        $data = GtkCList::get_pixtext($row, 0);
+        $file = $this->Directory . bar .    $data[0] . '.' . $this->Extension;
+
+        if (!$flag)
+        {
+            $b = new Ask(_a('Do you really want to delete ?'), array($this,'Delete'), null, array(true));
+            return true;
+        }
+        else
+        {
+            if (is_file($file))
+            {
+                $t1 = unlink($file);
+                if (!$t1)
+                {
+                    new Dialog(_a('Cannot remove the file'));
+                }
+                else
+                {
+                    GtkCList::freeze();
+                    GtkCList::remove($row);
+                    GtkCList::thaw();
+                }
+            }
+        }
+    }
+}
+?>

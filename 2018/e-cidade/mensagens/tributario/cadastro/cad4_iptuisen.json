@@ -1,0 +1,10 @@
+{
+  "tipo_isencao_obrigatorio": "Campo Tipo Isenção é de preenchimento obrigatório.",
+  "data_inicio_obrigatorio":  "Campo Data Inicio é de preenchimento obrigatório.",
+  "data_fim_obrigatorio":     "Campo Data Fim é de preenchimento obrigatório.",
+  "percentual_obrigatorio":   "Campo Percentual é de preenchimento obrigatório.",
+  "controle_obrigatorio":     "Campo Numero de Controle é de preenchimento obrigatório.",
+  "historico_obrigatorio":    "Campo Historico é de preenchimento obrigatório.",
+  "receita_obrigatorio":      "Campos das Taxas são de preenchimento obrigatório.",
+  "erro_data_fim_menor":      "Data Fim deve ser maior que Data Inicio."
+}

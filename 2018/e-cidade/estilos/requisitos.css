@@ -1,0 +1,46 @@
+#lista_pendente{
+  position:relative;
+  width:80%;
+  margin:auto;
+  font-family: arial, "lucida console", sans-serif;
+  border:2px solid #a0a0a0;
+  background-color: white;
+}
+
+#lista_pendente_tr{
+  margin-left:1px;
+  top:1px;
+  background-color: white;
+}
+
+#lista_pendente_td{
+  list-style:none;
+  margin:2px 5px 2px 5px;
+  padding:2px;
+  background:#e7ebe7;
+}
+
+#titulo{
+  align:left;
+  font-size:23px;
+  padding-bottom:20px;
+  margin:5px 0 5px 0;
+  position:relative;
+  top:17px;
+  color:#4c559d;
+  text-align:center;
+}
+
+#titulo img{
+  position:absolute;
+  right:10px;
+}
+
+#conteudo{
+  font-size:15px;
+  text-align:justify;
+  text-indent:20px;
+  white-space:20px;
+  line-height:30px;
+  margin:0 8px 0 8px;
+}

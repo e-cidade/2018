@@ -1,0 +1,133 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* SimpleTree, a wrapper for GtkCtree
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class SimpleTree extends GtkCTree
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+    function SimpleTree($Title)
+    {
+        if (is_array($Title))
+        {
+            GtkCTree::GtkCTree(count($Title),0,$Title);
+            $this->count = count($Title);
+            for ($n=0; $n<=count($Title); $n++)
+            {
+                GtkCTree::set_column_resizeable($n, true);
+            }
+        }
+        else
+        {
+            GtkCTree::GtkCTree(1,0,array($Title));
+            $this->count = 1;
+        }
+        GtkCTree::set_selection_mode(GTK_SELECTION_EXTENDED);
+        GtkCTree::set_line_style(GTK_CTREE_LINES_SOLID);
+    }
+
+    /***********************************************************/
+    /* Append a subtree
+    /***********************************************************/
+    function AppendSubTree($Title, $Pixmap, $parent = null)
+    {
+        if (is_array($Title))
+        $node = $Title;
+        else
+        $node = array($Title);
+        
+        $root = GtkCTree::insert_node($parent, null, $node, 5,
+        $Pixmap[0], $Pixmap[1], $Pixmap[0], $Pixmap[1], false, false);
+        return $root;
+    }
+
+    /***********************************************************/
+    /* Append many items
+    /***********************************************************/
+    function AppendItems($root, $Array, $Pixmap)
+    {
+        foreach ($Array as $Item)
+        {
+            if ($Item[0])
+            {
+                $node = GtkCTree::insert_node($root, null, array($Item[1]), 5,
+                $Pixmap[0], $Pixmap[1], $Pixmap[0], $Pixmap[1], false, false);
+
+                GtkCTree::node_set_row_data( $node, $Item[0]);
+            }
+            else
+            {
+                $node = GtkCTree::insert_node($root, null, array(''), 5,
+                                  null, null, null, null, false, false);
+                GtkCTree::node_set_row_data( $node, $Item[0]);
+            }
+        }
+    }
+
+    /***********************************************************/
+    /* Append one line
+    /***********************************************************/
+    function AppendLineItems($root, $Array, $Pixmap, $style = null)
+    {
+        if ($this->count == count($Array))
+        {
+            $node = GtkCTree::insert_node($root, null, $Array, 5,
+                    $Pixmap[0], $Pixmap[1], $Pixmap[0], $Pixmap[1], false, false);
+        }
+        
+        if ($style)
+        {
+            GtkCTree::node_set_row_style( $node, $style);
+            
+        }
+        return $node;
+    }
+
+    /***********************************************************/
+    /* Returns the current node content
+    /***********************************************************/
+    function GetData()
+    {
+        $selection = $this->selection;
+        $Info = GtkCTree::node_get_row_data($selection[0]);
+        
+        return $Info;
+    }
+
+    /***********************************************************/
+    /* Changes the current node information
+    /***********************************************************/
+    function SetData($node, $info)
+    {
+        GtkCTree::node_set_row_data($node, $info);
+    }
+}
+?>

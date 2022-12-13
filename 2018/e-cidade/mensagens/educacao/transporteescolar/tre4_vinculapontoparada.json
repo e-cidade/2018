@@ -1,0 +1,11 @@
+{
+  "aguardando_logradouros"        : "Aguarde, buscando os logradouros vinculados ao itinerário.",
+  "aguardando_pontos_parada"      : "Aguarde, buscando os pontos de parada cadastradas para o logradouro selecionado.",
+  "aguardando_paradas_itinerario" : "Aguarde, buscando os pontos de parada vinculadas ao itinerário.",
+  "codigo_linha_vazio"            : "É necessário informar a linha de transporte.",
+  "logradouro_itinerario_vazio"   : "É necessário selecionar um logradouro.",
+  "ponto_parada_vazio"            : "É necessário selecionar um ponto de parada.",
+  "aguardando_adicionar_vinculo"  : "Aguarde, vinculado o ponto de parada.",
+  "confirma_remover_ponto_parada" : "Confirma a remoção do ponto de parada vinculado ao itinerário?",
+  "aguardando_remover_vinculo"    : "Aguarde, removendo o vínculo do ponto de parada com o itinerário."
+}

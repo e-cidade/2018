@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="matricula" obrigatorio="true" tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe   referencia="avaliacao" nome="AvaliacaoSocialWebservice" parametros="$matricula" caminho="model/esocial/AvaliacaoSocialWebService.model.php" />
+    <exec>
+      <metodo referencia="avaliacao" nome="getDadosAvaliacao" parametros="$matricula" />
+    </exec>
+  </configuracoes>
+</processamento>

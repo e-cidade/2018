@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="cgm" obrigatorio="true" tipo="integer" />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="CadastroCgmWebService" parametros="" caminho="model/protocolo/cgm/CadastroCgmWebService.model.php">
+     <metodos>
+       <metodo nome="tornarEscritorioContabil" parametros="$cgm" />
+     </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

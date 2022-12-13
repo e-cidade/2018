@@ -1,0 +1,15 @@
+{
+   "verificando_disciplinas" : "Buscando disciplinas da etapa selecionada."
+  ,"excluir_vinculo"         : "Excluindo vinculo, aguarde..."
+  ,"salvando_vinculo"        : "Salvando disciplina, aguarde..."
+  ,"informe_disciplina"      : "Informe uma disciplina."
+  ,"informe_hora_aula"       : "Informe a quantidade de horas-aula."
+  ,"confirma_exclusao"       : "Deseja realmente excluir a disciplina da base?"
+  ,"deseja_replicar"         : "Deseja replicar a disciplina para outras etapas?"
+  ,"confirma_exclusao_turma" : "ATENÇÃO: A exclusão da disciplina na turma apagará todos os registros de todos alunos no Diário de Classe, referente a esta disciplina.\nConfirmar exclusão?"
+  ,"disciplina_encerrada"    : "Esta disciplina não pode ser excluída, pois esta encerrada ou possui ao menos um aluno encerrado."
+  ,"confirma_atualizar_base" : "O sistema irá atualizar as disciplinas desta turma conforme a base curricular:[sNomeBase].\nRemovendo as disciplinas da turma que não estão na base curricular.\nConfirmar atualização?"
+  ,"atualizar_base"          : "Atualizando disciplinas pela base, aguarde."
+  ,"salvando_ordenacao"      : "Salvando nova ordem das disciplinas, aguarde."
+  ,"aviso_disciplina_globalizada" : "Disciplinas globalizadas não serão replicadas para etapas que já possuem uma disciplina Globalizada."
+}

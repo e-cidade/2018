@@ -1,0 +1,15 @@
+{
+  "linha_salva"                     : "Linha de Transporte salva com sucesso.",
+  "itinerario_logradouro_salvo"     : "Logradouro salvo com sucesso.",
+  "itinerario_horario_salvo"        : "Horário da linha de transporte salvo com sucesso.",
+  "itinerario_horario_removido"     : "Horário da linha de transporte removido com sucesso.",
+  "itinerario_logradouro_removido"  : "Logradouro removido com sucesso.",
+  "vinculopontoparada_salvo"        : "Ponto de parada vinculado ao logradouro com sucesso.",
+  "erro_vincularpontoparada"        : "Já existe este vínculo",
+  "vinculopontoparada_excluido"     : "Ponto de Parada excluído do itinerário.",
+  "linha_transporte_removida"       : "Linha de transporte removida com sucesso.",
+  "erro_buscar_vinculo_pontoparada" : "Erro ao buscar o vínculo do ponto de parada a linha:\n[sErro]",
+  "aluno_vinculado"                 : "Exclusão não permitida. Ponto de Parada possui aluno(s) vinculado(s) a mesma.",
+  "itinerario_reordenado"           : "Itinerário reordenado com sucesso.",
+  "retorno_gerado"                  : "Retorno gerado com sucesso."
+}

@@ -1,0 +1,5 @@
+{
+  "erro_pesquisar_bases"     : "Ocorreu um erro ao buscar os dados da base.",
+  "base_nao_encontrada"      : "A base informada não foi encontrada.",
+  "codigo_base_nao_informado": "Código da base não informada."
+}

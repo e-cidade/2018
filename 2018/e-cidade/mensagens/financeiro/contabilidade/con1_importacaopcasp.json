@@ -1,0 +1,8 @@
+{
+  "ano_obrigatorio" : "Campo Exercício é de preenchimento obrigatório.",
+  "modelo_obrigatorio" : "Campo Modelo é de preenchimento obrigatório.",
+  "confirmacao_importacao" : "Atenção!\n\nAo confirmar essa operação, você irá atualizar o plano de contas para o modelo selecionado. Esse procedimento não poderá ser revertido.\n\nConfirma a importação do plano de contas?",
+  "sucesso_importacao" : "Plano de contas importado com sucesso.",
+  "sem_modelos_cadastrados" : "Não foram encontrados modelos para importação do plano de contas.",
+  "sem_recurso_cadastrado" : "Não foi localizado o Recurso Orçamentário de código 1.\nCadastre o recurso para prosseguir com a Atualização do PCASP."
+}

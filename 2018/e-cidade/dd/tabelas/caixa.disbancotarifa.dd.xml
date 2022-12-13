@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010216' name='caixa.disbancotarifa' description="Tarifas dos arquivos processados pela importação do arquivo de retorno de uma baixa de banco" prefix="k179" label="disbancotarifa" type="0">
+  <fields>
+    <field codigo="1009389" 
+           campo_api='' 
+           name="k179_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial" 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='caixa.disbancotarifa_k179_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009390" 
+           campo_api='' 
+           name="k179_idret" 
+           conteudo="int4" 
+           description="Código Disbanco" 
+           inivalue="0" 
+           label="Código Disbanco" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código Disbanco" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009392" 
+           campo_api='' 
+           name="k179_formaarrecadacao" 
+           conteudo="int4" 
+           description="Forma de Arrecadação" 
+           inivalue="0" 
+           label="Forma de Arrecadação" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Forma de Arrecadação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009391" 
+           campo_api='' 
+           name="k179_valor" 
+           conteudo="float4" 
+           description="Valor da Tarifa" 
+           inivalue="0" 
+           label="Valor da Tarifa" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor da Tarifa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="k179_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="disbanco" inner='t'>
+      <fieldfk name="k179_idret" reference="idret" /> 
+    </foreignkey>
+    <foreignkey reference="formaarrecadacao" inner='t'>
+      <fieldfk name="k179_formaarrecadacao" reference="k178_sequencial" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

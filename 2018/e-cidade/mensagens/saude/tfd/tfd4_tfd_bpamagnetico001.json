@@ -1,0 +1,8 @@
+{
+  "aguarde_carregando_formulario"  : "Aguarde... carregando dados do formulário.",
+  "aguarde_gerandoArquivo"         : "Aguarde... gerando arquivo!",
+  "erro_selecione_uma_competencia" : "Selecione uma competência.",
+  "erro_selecione_uma_ups"         : "Selecione ao menos uma Ups.",
+  "arquivo_gerado" : "Arquivo gerado com sucesso.",
+  "erro_ao_gerar_arquivo" : "Não foi possível gerar o arquivo. "  
+}

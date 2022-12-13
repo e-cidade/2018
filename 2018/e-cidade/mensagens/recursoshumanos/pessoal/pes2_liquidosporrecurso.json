@@ -1,0 +1,7 @@
+{
+  "preenchimento_tipoImpressao_obrigatorio"    : "O campo Tipo de Impressão é de preenchimento obrigatório.",
+  "preenchimento_formatoImpressao_obrigatorio" : "O campo Formato é de preenchimento obrigatório.",
+  "erro_buscar_dados_recursos"                 : "Erro ao buscar os dados dos Recursos.",
+  "nenhum_recurso_encontrado"                  : "Nenhum recurso encontrado.",
+  "preenchimento_quebraBanco_obrigatorio"      : "O campo Quebra Banco é de preenchimento obrigatório."
+}

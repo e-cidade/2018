@@ -1,0 +1,6 @@
+{
+  "informe_ano"  : "Ano é obrigatório.",
+  "informe_mes"  : "Mês é obrigatório.",
+  "erro_bases"   : "Não existem rubricas configuradas para as bases utilizadas no cálculo de margem.",
+  "erro_calculo" : "Não existem dados financeiros para o período [iMes]/[iAno]."
+}

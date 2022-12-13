@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4004' name='recursoshumanos.tiporegistro' description="Tabela com os tipos de registro" prefix="rh187" label="Tipo de registro" type="0">
+  <fields>
+    <field codigo="22227" 
+           campo_api='' 
+           name="rh187_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.tiporegistro_rh187_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22228" 
+           campo_api='' 
+           name="rh187_descricao" 
+           conteudo="varchar(50)" 
+           description="Descrição do tipo de registro" 
+           inivalue="" 
+           label="Descrição" 
+           size="50" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh187_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

@@ -1,0 +1,139 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* Icon class
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class Icone extends GtkButton
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+    function Icone($gdkwindow, $imagem, $texto, $dica, $horizontal = false)
+    {
+        GtkButton::GtkButton();
+        $Pixmap = Gdk::pixmap_create_from_xpm($gdkwindow, null, $imagem);
+        $Imagem = new GtkPixmap($Pixmap[0], $Pixmap[1]);
+        $Rotulo = new GtkLabel($texto);
+        
+        $help = new GtkTooltips;
+        $help->set_tip($this, $dica);
+        if ($horizontal)
+        {
+            $box = new GtkHBox;
+        }
+        else
+        {
+            $box = new GtkVBox;
+        }
+        $box->pack_start($Imagem);
+        $box->pack_start($Rotulo);
+        
+        GtkButton::add($box);
+    }
+}
+
+class IconePixmap extends GtkButton
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+    function IconePixmap($Pixmap, $texto, $dica, $horizontal = false)
+    {
+        GtkButton::GtkButton();
+        //$Pixmap = Gdk::pixmap_create_from_xpm($gdkwindow, null, $imagem);
+        $Imagem = new GtkPixmap($Pixmap[0], $Pixmap[1]);
+        $Rotulo = new GtkLabel($texto);
+        
+        $help = new GtkTooltips;
+        $help->set_tip($this, $dica);
+        if ($horizontal)
+        {
+            $box = new GtkHBox;
+        }
+        else
+        {
+            $box = new GtkVBox;
+        }
+        $box->pack_start($Imagem);
+        $box->pack_start($Rotulo);
+        
+        GtkButton::add($box);
+    }
+}
+
+/***********************************************************/
+/* Toggle Icon class
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class ToggleIcone extends GtkToggleButton
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+    function ToggleIcone($imagem, $texto, $dica)
+    {
+        GtkToggleButton::GtkToggleButton();
+        $Pixmap = Gdk::pixmap_create_from_xpm(null, null, $imagem);
+        $Imagem = new GtkPixmap($Pixmap[0], $Pixmap[1]);
+        $Rotulo = new GtkLabel($texto);
+        
+        $help = new GtkTooltips;
+        $help->set_tip($this, $dica);
+        $vbox = new GtkVBox;
+        $vbox->pack_start($Imagem);
+        $vbox->pack_start($Rotulo);
+        
+        GtkToggleButton::add($vbox);
+    }
+}
+
+/***********************************************************/
+/* Icon Image class, with just image
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class IconeImg extends GtkButton
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+    function IconeImg($gdkwindow, $imagem, $dica)
+    {
+        GtkButton::GtkButton();
+        $Pixmap = Gdk::pixmap_create_from_xpm($gdkwindow, null, $imagem);
+        $Imagem = new GtkPixmap($Pixmap[0], $Pixmap[1]);
+        
+        $help = new GtkTooltips;
+        $help->set_tip($this, $dica);
+        $vbox = new GtkVBox;
+        $vbox->pack_start($Imagem);
+        
+        GtkButton::add($vbox);
+    }
+}
+?>

@@ -1,0 +1,5 @@
+{
+   "selecione_arquivo" : "Selecione um arquivo."
+  ,"arquivo_invalido" : "Arquivo inválido. Só arquivos \"yaml\" podem ser enviados."
+  ,"processando_arquivo" : "Processando arquivo. Aguarde."
+}

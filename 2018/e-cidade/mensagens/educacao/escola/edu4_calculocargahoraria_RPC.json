@@ -1,0 +1,7 @@
+{
+  "codigo_nao_informado"    : "Código do cálculo da carga horária não informado.",
+  "salvo_sucesso"           : "Parâmetro para o cálculo da carga horária salvo com sucesso!",
+  "ano_nao_informado"       : "Ano não informado.",
+  "alteracao_nao_permitida" : "Não é possível alterar a regra, pois existem turmas encerradas na escola para o ano selecionado.",
+  "erro_buscar_regencias"   : "Erro ao buscar as regências da escola."
+}

@@ -1,0 +1,4 @@
+{
+  "erro_buscar_cid"       : "Erro ao buscar o CID:\n [sErro]",
+  "codigo_nao_encontrado" : "Não foi encontrado nenhum CID com o código informado: [iCodigo]"
+}

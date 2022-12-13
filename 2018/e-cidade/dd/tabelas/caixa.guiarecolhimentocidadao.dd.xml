@@ -1,0 +1,95 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010203' name='caixa.guiarecolhimentocidadao' description="guiarecolhimentocidadao" prefix="k177" label="guiarecolhimentocidadao" type="0">
+  <fields>
+    <field codigo="1009315" 
+           campo_api='' 
+           name="k177_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="Código" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='caixa.guiarecolhimentocidadao_k177_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="1009316" 
+           campo_api='' 
+           name="k177_guiarecolhimento" 
+           conteudo="int4" 
+           description="Guia de Recolhimento" 
+           inivalue="0" 
+           label="Guia de Recolhimento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Guia de Recolhimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009317" 
+           campo_api='' 
+           name="k177_cidadao" 
+           conteudo="int4" 
+           description="Código Cidadão" 
+           inivalue="0" 
+           label="Código Cidadão" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código Cidadão" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009318" 
+           campo_api='' 
+           name="k177_cidadaoseq" 
+           conteudo="int4" 
+           description="Seq. Cidadão" 
+           inivalue="0" 
+           label="Seq. Cidadão" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Seq. Cidadão" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="k177_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="cidadao">
+      <fieldfk name="k177_cidadaoseq" reference="ov02_seq" inner='t'></fieldfk> 
+      <fieldfk name="k177_cidadao" reference="ov02_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="guiarecolhimento">
+      <fieldfk name="k177_guiarecolhimento" reference="k174_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

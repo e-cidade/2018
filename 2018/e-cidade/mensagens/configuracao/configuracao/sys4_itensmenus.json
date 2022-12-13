@@ -1,0 +1,11 @@
+{
+  "informar_descricao"         : "É necessário preencher o campo Descrição.",
+  "informar_id_item"           : "É necessário o id do item.",
+  "salvo_com_sucesso"          : "Dados salvos com sucesso.",
+  "excluido_com_sucesso"       : "Item de menu excluído com sucesso.",
+  "informar_id_modulo"         : "Informe o Módulo.",
+  "informar_ajuda"             : "É necessário preencher o campo Ajuda.",
+  "informar_descricao_tecnica" : "É necessário preencher o campo Descrição Técnica.",
+  "selecione_menu"             : "Selecione o menu que deseja buscar os itens vinculados.",
+  "vinculo_salvo"              : "Alterações de vínculo salvas com sucesso."
+}

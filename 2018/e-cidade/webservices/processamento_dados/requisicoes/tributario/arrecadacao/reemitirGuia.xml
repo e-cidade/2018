@@ -1,0 +1,22 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="numero_debito" obrigatorio="true" tipo="integer" />
+    <parametro nome="parcela_debito" obrigatorio="true" tipo="integer" />
+    <parametro nome="data"          obrigatorio="true" tipo="date"    />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="EmissaoBoletoWebService" parametros="" caminho="model/arrecadacao/boletos/EmissaoBoletoWebService.model.php">
+      <metodos>
+        <metodo nome="setModeloImpressao" parametros="2" />
+        <metodo nome="regerarBoleto"      parametros="$numero_debito,$parcela_debito,$data" />
+        <metodo nome="getDadosBoleto"     parametros="" />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

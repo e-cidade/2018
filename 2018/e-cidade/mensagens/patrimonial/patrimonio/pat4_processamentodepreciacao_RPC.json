@@ -1,0 +1,8 @@
+{
+  processamento_executado:"Processamento executado com sucesso!",
+  procedimento_abortado:"Procedimento Abortado! \nExiste Bens sem Depreciação. Confira no Relatório.",
+  informe_parametro:"Não existe parâmetro configurado para a depreciação.",
+  informe_mes:"Mês para cancelamento não informado.",
+  informe_processamento:"Tipo do processamento para o cancelamento não informado.",
+  nenhum_mes_disponivel:"Nenhum mês disponível para cancelamento."
+}

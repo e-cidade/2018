@@ -1,0 +1,79 @@
+<wsdl:definitions name="IntegracaoCivitas"
+                  targetNamespace="http://{URL}/webservices/integracaoCivitas.php"
+                  xmlns:ns1="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://{URL}/webservices/integracaoCivitas.php"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:http="http://schemas.xmlsoap.org/soap/http"
+                  xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:message name="cargaEcidade">
+    <wsdl:part name="arquivoXml" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="cargaEcidadeResponse">
+    <wsdl:part name="retorno" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="exportacaoEcidade">
+    <wsdl:part name="arquivoXml" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="exportacaoEcidadeResponse">
+    <wsdl:part name="retorno" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getToken">
+    <wsdl:part name="arquivoXml" type="xds:string"/>
+  </wsdl:message>
+  <wsdl:message name="getTokenResponse">
+    <wsdl:part name="retorno" type="xds:string"/>
+  </wsdl:message>
+  <wsdl:portType name="IntegracaoTrocaDados">
+    <wsdl:operation name="cargaEcidade">
+      <wsdl:input message="tns:cargaEcidade" name="cargaEcidade"/>
+      <wsdl:output message="tns:cargaEcidadeResponse" name="cargaEcidadeResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="exportacaoEcidade">
+      <wsdl:input message="tns:exportacaoEcidade" name="exportacaoEcidade"/>
+      <wsdl:output message="tns:exportacaoEcidadeResponse" name="exportacaoEcidadeResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getToken">
+      <wsdl:input message="tns:getToken" name="getToken"/>
+      <wsdl:output message="tns:getTokenResponse" name="getTokenResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntegracaoCivitasSoapBinding" type="tns:IntegracaoTrocaDados">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cargaEcidade">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="cargaEcidade">
+        <soap:body namespace="http://{URL}/webservices/integracaoCivitas.php" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cargaEcidadeResponse">
+        <soap:body namespace="http://{URL}/webservices/integracaoCivitas.php" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportacaoEcidade">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="exportacaoEcidade">
+        <soap:body namespace="http://{URL}/webservices/integracaoCivitas.php" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="exportacaoEcidadeResponse">
+        <soap:body namespace="http://{URL}/webservices/integracaoCivitas.php" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getToken">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="getToken">
+        <soap:body namespace="http://{URL}/webservices/integracaoCivitas.php" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTokenResponse">
+        <soap:body namespace="http://{URL}/webservices/integracaoCivitas.php" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntegracaoCivitas">
+    <wsdl:port binding="tns:IntegracaoCivitasSoapBinding" name="IntegracaoTrocaDadosPort">
+      <soap:address location="http://{URL}/webservices/integracaoCivitas.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,14 @@
+{
+  "nenhum_grupo_encontrado"           : "Nenhum Grupo de Características PIT encontrado.",
+  "nenhum_grupo_informado"            : "Nenhum Grupo de Características PIT informado.",
+  "nenhuma_caracteristica_encontrada" : "Nenhuma Característica PIT encontrada.",
+  "caracteristica_pit_invalida"       : "Nenhuma Característica PIT informada.",
+  "nenhum_caracter_encontrado"        : "Nenhuma Característica encontrada.",
+  "erro_busca_grupo_caracteristica"   : "Erro ao buscar os Grupos de Características.",
+  "erro_busca_caracteristica_pit"     : "Erro ao buscar as Características PIT.",
+  "erro_busca_caracter"               : "Erro ao buscar as Características do sistema.",
+  "erro_exclusao_vinculacao"          : "Erro ao salvar as vinculações.",
+  "erro_inclusao_validacao"           : "Erro ao salvar as vinculações.",
+  "vinculacao_com_sucesso"            : "Características vinculadas com sucesso!",
+  "nenhuma_vinculacao_com_sucesso"    : "Nenhuma vinculação efetuada!"
+}

@@ -1,0 +1,11 @@
+{
+  "campo_obrigatorio"             : "Campo [sCampo] é de preenchimento obrigatório.",
+  "cgm_pessoa_fisica"             : "O CGM selecionado deve ser uma pessoa física.",
+  "campo_cgm_obrigatorio"         : "O CGM não possui [sCampo] configurado no cadastro.",
+  "usuario_invalido"              : "Usuário Inválido.",
+  "campo_login_ja_existe"         : "Login já cadastrado.",
+  "campo_cgm_ja_usado"            : "CGM já cadastrado para o login: [sLogin].",
+  "situacao_usuario_invalida"     : "Situação do usuário inválida.",
+  "instituicao_nao_selecionada"   : "Selecione uma ou mais instituições para o usuário",
+  "alteracao_login_nao_permitida" : "Não é possível alterar o login do usuário pois existem alterações auditadas para o usuário.\nPara alterar o login deverá ser criado um novo usuário e inativando o antigo."
+}

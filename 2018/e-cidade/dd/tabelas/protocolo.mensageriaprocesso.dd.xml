@@ -1,0 +1,128 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010238' name='protocolo.mensageriaprocesso'
+       description="Armazena a configuração da mensagem de notificação do vencimento dos processos." prefix="p101"
+       label="Mensageria do Processo" type="0">
+    <fields>
+        <field codigo="1009522"
+               campo_api=''
+               name="p101_sequencial"
+               conteudo="int4"
+               description="Código sequencial."
+               inivalue="0"
+               label="Código"
+               size="10"
+               null="f"
+               uppercase="f"
+               autocompl="f"
+               aceitatipo="1"
+               tipoobj="text"
+               labelrel="Código"
+               reference=""
+               ispk="t"
+               hassequence="t">
+
+            <sequence name='protocolo.mensageriaprocesso_p101_sequencial_seq'/>
+
+        </field>
+        <field codigo="1009523"
+               campo_api=''
+               name="p101_assunto"
+               conteudo="varchar(255)"
+               description="Assunto da mensagem de notificação."
+               inivalue=""
+               label="Assunto"
+               size="255"
+               null="f"
+               uppercase="t"
+               autocompl="f"
+               aceitatipo="0"
+               tipoobj="text"
+               labelrel="Assunto"
+               reference=""
+               ispk="f"
+               hassequence="t">
+
+        </field>
+        <field codigo="1009524"
+               campo_api=''
+               name="p101_mensagem"
+               conteudo="text"
+               description="Mensagem de notificação de processo vencido."
+               inivalue=""
+               label="Mensagem"
+               size="1"
+               null="f"
+               uppercase="t"
+               autocompl="f"
+               aceitatipo="0"
+               tipoobj="text"
+               labelrel="Mensagem"
+               reference=""
+               ispk="f"
+               hassequence="t">
+
+        </field>
+        <field codigo="1009525"
+               campo_api=''
+               name="p101_notificarreceberprocesso"
+               conteudo="bool"
+               description="Notifica um servidor quando um processo é transferido ou tramitado para ele."
+               inivalue="f"
+               label="Notificar ao Receber Processo"
+               size="1"
+               null="f"
+               uppercase="f"
+               autocompl="f"
+               aceitatipo="5"
+               tipoobj="text"
+               labelrel="Notificar ao Receber Processo"
+               reference=""
+               ispk="f"
+               hassequence="t">
+
+        </field>
+        <field codigo="1009526"
+               campo_api=''
+               name="p101_notificardatavencimento"
+               conteudo="bool"
+               description="Notifica o servidor quando o processo atingiu seu prazo limite para movimentação."
+               inivalue="f"
+               label="Notificar na Data de Vencimento"
+               size="1"
+               null="f"
+               uppercase="f"
+               autocompl="f"
+               aceitatipo="5"
+               tipoobj="text"
+               labelrel="Notificar na Data de Vencimento"
+               reference=""
+               ispk="f"
+               hassequence="t">
+
+        </field>
+        <field codigo="1009527"
+               campo_api=''
+               name="p101_diasprazo"
+               conteudo="int4"
+               description="Quantidade de dias que o servidor tem para movimentar um processo a partir de seu recebimento."
+               inivalue="0"
+               label="Dias de Prazo para Movimentação"
+               size="10"
+               null="f"
+               uppercase="f"
+               autocompl="f"
+               aceitatipo="1"
+               tipoobj="text"
+               labelrel="Dias de Prazo para Movimentação"
+               reference=""
+               ispk="f"
+               hassequence="t">
+
+        </field>
+    </fields>
+    <primarykey>
+        <fieldpk name="p101_sequencial"></fieldpk>
+    </primarykey>
+    <foreignkeys>
+    </foreignkeys>
+</table>

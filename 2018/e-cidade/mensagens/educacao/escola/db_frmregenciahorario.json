@@ -1,0 +1,8 @@
+{
+  "buscando_dados_calendario": "Buscando data de inicio e fim do calendário..."
+  ,"data_inicio_invalida": "Data de inicio deve estar dentro do perio do calendário: [dataInicio] a [dataFim]."
+  ,"data_fim_invalida": "Data final deve estar dentro do perio do calendário: [dataInicio] a [dataFim]."
+  ,"data_inicio_vazia": "Data de início não pode ser vazia."
+  ,"data_fim_vazia": "Data final não pode ser vazia."
+  ,"data_fim_menor_que_inicio": "Data final não pode ser menor que a data inicial."
+}

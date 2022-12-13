@@ -1,0 +1,11 @@
+{
+  "erro_buscar_item"             : "Erro ao buscar o item de menu:\n[sErro]",
+  "sem_transacao"                : "Sem Transação com o banco de dados ativa.",
+  "erro_salvar_dados"            : "Erro ao salvar os dados do menu:\n[sErro]",
+  "id_nao_setado"                : "Id do item não setado.",
+  "erro_excluir_dados"           : "Erro ao excluir os dados do item de menu:\n"[sErro],
+  "erro_buscar_itens_filho"      : "Erro ao buscar os itens filho:\n[sErro]",
+  "erro_excluir_vinculos"        : "Erro ao excluir o(s) vínculo(s) do menu:\n[sErro]",
+  "erro_incluir_vinculos"        : "Erro ao incluir o(s) vínculo(s) do menu:\n[sErro]",
+  "erro_buscar_menus_vinculados" : "Erro ao buscar os menus vinculados ao item selecionado:\n[sErro]"
+}

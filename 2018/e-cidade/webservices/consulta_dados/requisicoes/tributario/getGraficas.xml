@@ -1,0 +1,18 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="y20_grafica"                                      label="cgm_grafica"  />
+    <campo campo="COALESCE(z01_nomefanta, z01_nomefanta, z01_nome)" label="nome_grafica" />
+  </campos>
+  <from tabela="graficas" />
+  <juncoes>
+    <join tipo="left" tabela="cgm" condicao="y20_grafica = z01_numcgm" />
+  </juncoes>
+  <filtros>
+    <filtro label="" condicao="COALESCE(z01_nomefanta, z01_nomefanta, z01_nome) is not null" obrigatorio="true" />
+    <filtro label="" condicao="COALESCE(z01_nomefanta, z01_nomefanta, z01_nome) != ''"       obrigatorio="true" />
+    <filtro label="" condicao="(y20_datalimiteimpressao >= now() or y20_datalimiteimpressao is null)"       obrigatorio="true" />
+  </filtros>
+  <agrupamento />
+  <ordenacao campos="nome_grafica ASC" />
+</consulta>

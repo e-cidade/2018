@@ -1,0 +1,29 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="q02_inscr"     label="inscricao"                                    />
+    <campo campo="b.z01_numcgm"  label="cgm"                                          />
+    <campo campo="b.z01_nome"    label="nome"                                         />
+    <campo campo="b.z01_cgccpf"  label="cnpj"                                         />
+    <campo campo="(select db140_sequencial 
+                     from issbasecaracteristica 
+                          left join caracteristica      on db140_sequencial = q138_caracteristica
+                          left join grupocaracteristica on db139_sequencial = db140_grupocaracteristica
+                    where db139_sequencial = 2 
+                      and q138_inscr = q02_inscr)"   label="tipo_emissao" />
+    
+  </campos>
+  <from tabela="escrito"                                                              />
+  <juncoes>
+    <join tipo="inner" tabela="cgm a  " condicao="q10_numcgm = a.z01_numcgm"          />
+    <join tipo="inner" tabela="issbase" condicao="q02_inscr  = q10_inscr"             />
+    <join tipo="inner" tabela="cgm b  " condicao="q02_numcgm = b.z01_numcgm"          />
+  </juncoes>
+  <filtros>
+    <filtro label="contador" condicao="a.z01_cgccpf = '$contador'" obrigatorio="true" />
+    <filtro label=""         condicao="q10_dtfim  is null"         obrigatorio="true" /> 
+    <filtro label=""         condicao="q02_dtbaix is null"         obrigatorio="true" />
+  </filtros>
+  <agrupamento campos=""                                                              />
+  <ordenacao   campos="b.z01_nome"                                                    />
+</consulta>

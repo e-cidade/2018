@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<receitas>
+ <receita codigo="10000000" descricao="RECEITAS CORRENTES"/>
+ <receita codigo="11000000" descricao="RECEITAS TRIBUTÁRIAS"/>
+ <receita codigo="11100000" descricao="Impostos"/>
+ <receita codigo="11120000" descricao="Impostos sobre o Patrimônio e Renda"/>
+ <receita codigo="11120100" descricao="Imposto s/ a Prop. Territorial Rural (CF art. 153,§4°,III)"/>
+ <receita codigo="11120101" descricao="Imposto s/ a Prop. Territorial Rural (CF art. 153,§4°,III) - Municípios Conveniados"/>
+ <receita codigo="11120200" descricao="Imposto s/ a Prop. Predial/Territorial Urbana (IPTU)"/>
+ <receita codigo="11120400" descricao="Imposto sobre a Renda e Proventos de Qualquer Natureza"/>
+ <receita codigo="11120431" descricao="Imposto de Renda Retido na Fonte Sobre Rendimento do Trabalho (IRRF artigo 158, inciso I da CF)"/>
+ <receita codigo="11120434" descricao="Imposto de Renda Retido na Fonte Sobre Outros Rendimentos (IRRF artigo 158, inciso I da CF)"/>
+ <receita codigo="11120800" descricao="Imposto s/ Transmissão de Bens Imóveis (ITBI)"/>
+ <receita codigo="11130000" descricao="Impostos sobre a Produção e Circulação"/>
+ <receita codigo="11130500" descricao="Impostos s/ Serviços de Qualquer Natureza (ISS)"/>
+ <receita codigo="11200000" descricao="Taxas"/>
+ <receita codigo="11210000" descricao="Taxas pelo Exercício do Poder de Polícia"/>
+ <receita codigo="11220000" descricao="Taxas pela Prestação de Serviços"/>
+ <receita codigo="11300000" descricao="Contribuição de Melhoria"/>
+ <receita codigo="12000000" descricao="RECEITA DE CONTRIBUIÇÕES"/>
+ <receita codigo="12100000" descricao="Contribuições Sociais"/>
+ <receita codigo="12102900" descricao="Contribuições para o Regime Próprio de Previdência do Servidor Público"/>
+ <receita codigo="12102901" descricao="Contribuição Patronal de Servidor Ativo Civil para o Regime Próprio"/>
+ <receita codigo="12102903" descricao="Contribuição Patronal - Inativo Civil"/>
+ <receita codigo="12102905" descricao="Contribuição Patronal - Pensionista Civil"/>
+ <receita codigo="12102907" descricao="Contribuição do Servidor Ativo Civil para o Regime Próprio"/>
+ <receita codigo="12102909" descricao="Contribuição do Servidor Inativo Civil para o Regime Próprio"/>
+ <receita codigo="12102911" descricao="Contribuição de Pensionista Civil para o Regime Próprio"/>
+ <receita codigo="12102913" descricao="Contribuição Previdenciária para Amortização do Déficit Atuarial"/>
+ <receita codigo="12102915" descricao="Contribuição Previdenciária em Regime de Parcelamento de Débitos - RPPS"/>
+ <receita codigo="12102916" descricao="Receita de Recolhimento da Contribuição Patronal, oriunda do Pagamento de Sentenças Judiciais"/>
+ <receita codigo="12102917" descricao="Receita de Recolhimento da Contribuição do Servidor Ativo Civil, oriunda do Pagamento de Sentenças Judiciais"/>
+ <receita codigo="12102918" descricao="Receita de Recolhimento da Contribuição do Servidor Inativo Civil, oriunda do Pagamento de Sentenças Judiciais"/>
+ <receita codigo="12102919" descricao="Receita de Recolhimento de Pensionista Civil, oriunda do Pagamento de Sentenças Judiciais"/>
+ <receita codigo="12109900" descricao="Outras Contribuições Sociais"/>
+ <receita codigo="12200000" descricao="Contribuições de Intervenção no Domínio Econômico"/>
+ <receita codigo="12209900" descricao="Outras Contribuições Econômicas"/>
+ <receita codigo="12300000" descricao="Contribuição para Custeio do Serviço de Iluminação Pública (EC nº 39/02)"/>
+ <receita codigo="13000000" descricao="RECEITA PATRIMONIAL"/>
+ <receita codigo="13100000" descricao="Receitas Imobiliárias"/>
+ <receita codigo="13200000" descricao="Receitas de Valores Mobiliários"/>
+ <receita codigo="13210000" descricao="Juros de Títulos de Renda"/>
+ <receita codigo="13220000" descricao="Dividendos"/>
+ <receita codigo="13230000" descricao="Participações"/>
+ <receita codigo="13250000" descricao="Remuneração de Depósitos Bancários"/>
+ <receita codigo="13250100" descricao="Remuneração de Depósitos de Recursos Vinculados"/>
+ <receita codigo="13250101" descricao="Receita de Remuneração de Dep. Bancário de Recursos Vinculados - Royalties"/>
+ <receita codigo="13250102" descricao="Receita de Remuneração de Dep. Bancário de Recursos Vinculados - FUNDEB"/>
+ <receita codigo="13250103" descricao="Receita de Remuneração de Dep. Bancário de Recursos Vinculados - Fundo de Saúde (FMS)"/>
+ <receita codigo="13250105" descricao="Receita de Remuneração de Dep. Bancário de Recursos Vinculados - Manut. e Desenvolvimento do Ensino"/>
+ <receita codigo="13250106" descricao="Receita de Remuneração de Dep. Bancário de Recursos Vinculados - Ações e Serviços Públicos de Saúde"/>
+ <receita codigo="13250109" descricao="Receita de Remuneração de Depósitos Bancários de Recursos Vinculados - CIDE"/>
+ <receita codigo="13250110" descricao="Receita de Remuneração de Depósitos Bancários de Recursos Vinculados - Fundo Nacional de Assistência Social (FNAS)"/>
+ <receita codigo="13250111" descricao="Receita de Remuneração de Dep. Bancário de Recursos Vinculados - FNDE"/>
+ <receita codigo="13250112" descricao="Receita de Remuneração de Dep. Bancário de Recursos Vinculados - convênios da educação"/>
+ <receita codigo="13250199" descricao="Receita de Remuneração de Outros Depósitos Bancários de Recursos Vinculados"/>
+ <receita codigo="13250200" descricao="Receita de Aplicação de Outros Recursos Não-Vinculados"/>
+ <receita codigo="13250201" descricao="Receita de Remuneração de Depósitos de Poupança"/>
+ <receita codigo="13250202" descricao="Remuneração de Aplicações Extramercado"/>
+ <receita codigo="13250299" descricao="Remuneração de Outros Depósitos de Recursos Não-Vinculados"/>
+ <receita codigo="13260000" descricao="Remuneração de Depósitos Especiais"/>
+ <receita codigo="13280000" descricao="Remuneração dos Investimentos do Regime Próprio de Previdência do Servidor"/>
+ <receita codigo="13281000" descricao="Remuneração dos Investimentos do Regime Próprio de Previdência do Servidor em Renda Fixa"/>
+ <receita codigo="13282000" descricao="Remuneração dos Investimentos do Regime Próprio de Previdência do Servidor em Renda Variável"/>
+ <receita codigo="13283000" descricao="Remuneração dos Investimentos do Regime Próprio de Previdência do Servidor em Fundos Imobiliários"/>
+ <receita codigo="13289900" descricao="Remuneração dos Investimentos do Regime Próprio de Previdência do Servidor -outros investimentos"/>
+ <receita codigo="13289910" descricao="Remuneração dos Investimentos do RPPS -Dep. de Poupança do RPPS - Art. 2º da Res. CMN nº. 2.652/99"/>
+ <receita codigo="13289990" descricao="Remuneração dos Investimentos do RPPS - demais investimentos"/>
+ <receita codigo="13290000" descricao="Outras Receitas de Valores Mobiliários"/>
+ <receita codigo="13300000" descricao="Receitas de Concessões e Permissões"/>
+ <receita codigo="13600000" descricao="Receita de Cessão de Direitos"/>
+ <receita codigo="13610000" descricao="Receita de Cessão de Direito de Operacionalização de Pagamentos"/>
+ <receita codigo="13610100" descricao="Receita de Cessão de Direito de Operacionalização da Folha de Pagamento de Pessoal"/>
+ <receita codigo="13610200" descricao="Receita de Cessão de Direito de Operacionalização da Folha de Pagamento de Benefícios"/>
+ <receita codigo="13610300" descricao="Receita de Cessão de Direito de Operacionalização da Folha de Pagamento de Fornecedoores"/>
+ <receita codigo="13690000" descricao="Outras Receitas de Cessão de Direitos"/>
+ <receita codigo="13900000" descricao="Outras Receitas Patrimoniais"/>
+ <receita codigo="14000000" descricao="RECEITA AGROPECUÁRIA"/>
+ <receita codigo="14100000" descricao="Receita da Produção Vegetal"/>
+ <receita codigo="14200000" descricao="Receita da Produção Animal e Derivados"/>
+ <receita codigo="14900000" descricao="Outras Receitas Agropecuárias"/>
+ <receita codigo="15000000" descricao="RECEITA INDUSTRIAL"/>
+ <receita codigo="15200000" descricao="Receita da Indústria de Transformação"/>
+ <receita codigo="15300000" descricao="Receita da Indústria de Construção"/>
+ <receita codigo="15900000" descricao="Outras Receitas Industriais"/>
+ <receita codigo="16000000" descricao="RECEITA DE SERVIÇOS"/>
+ <receita codigo="16000100" descricao="Serviços Comerciais"/>
+ <receita codigo="16000200" descricao="Serviços Financeiros"/>
+ <receita codigo="16000201" descricao="Serviços de Juros de Empréstimos (exceto RPPS)"/>
+ <receita codigo="16000208" descricao="Juros de Empréstimos Concedidos pelo Regime Próprio (RPPS)"/>
+ <receita codigo="16000299" descricao="Outros Serviços Financeiros"/>
+ <receita codigo="16000300" descricao="Serviços de Transportes"/>
+ <receita codigo="16000400" descricao="Seviços de Comunicação"/>
+ <receita codigo="16000500" descricao="Serviço de Saúde (SUS)"/>
+ <receita codigo="16000501" descricao="Serviços Hospitalares"/>
+ <receita codigo="16000502" descricao="Serviços de Reg. de Análise e de Controle de Prod. Sujeitos a Normas de Vig. Sanitária"/>
+ <receita codigo="16000503" descricao="Serviços Radiológicos e Laboratoriais"/>
+ <receita codigo="16000510" descricao="Serviços Ambulatoriais"/>
+ <receita codigo="16000599" descricao="Outros Serviços de Saúde"/>
+ <receita codigo="16000600" descricao="Serviços Portuários"/>
+ <receita codigo="16000700" descricao="Serviços de Armazenagem"/>
+ <receita codigo="16000800" descricao="Serviços de Processamento de Dados"/>
+ <receita codigo="16001100" descricao="Serviços de Metrologia e Certificação"/>
+ <receita codigo="16001300" descricao="Serviços Administrativos"/>
+ <receita codigo="16001400" descricao="Serviços de Inspeção e Fiscalização"/>
+ <receita codigo="16001600" descricao="Serviços Educacionais"/>
+ <receita codigo="16001700" descricao="Serviços Agropecuários"/>
+ <receita codigo="16001800" descricao="Serviços de Reparação Manutenção e Instalação"/>
+ <receita codigo="16001900" descricao="Serviços Recreativos e Culturais"/>
+ <receita codigo="16002600" descricao="Serviços de Fornecimento de Água"/>
+ <receita codigo="16002700" descricao="Serviços de Perfuração e Instalação de Poços"/>
+ <receita codigo="16002900" descricao="Serviços de Cadastramento de Fornecedores"/>
+ <receita codigo="16003800" descricao="Receita de Credenciamento de Empresas Prestadoras de Serviços de Vistoria"/>
+ <receita codigo="16003900" descricao="Serviços Veterinários"/>
+ <receita codigo="16004100" descricao="Serviços de Captação, Adução, Tratamento, Reserva e Distribuição de Água"/>
+ <receita codigo="16004200" descricao="Serviços de Coleta, Transporte, Tratamento e Destino Final de Esgotos"/>
+ <receita codigo="16004300" descricao="Serviços de Coleta, Transporte, Tratamento e Destino Final de Resíduos Sólidos"/>
+ <receita codigo="16004400" descricao="Serviço de Abate de Animais"/>
+ <receita codigo="16004500" descricao="Serviço de Preparação da Terra em Proprieades Particulares"/>
+ <receita codigo="16004600" descricao="Serviços de Cemitério"/>
+ <receita codigo="16004800" descricao="Serviços de Religamento de Água"/>
+ <receita codigo="16005000" descricao="Tarifas de Inscrição em Concursos e Processos Seletivos"/>
+ <receita codigo="16009900" descricao="Outros Serviços"/>
+ <receita codigo="17000000" descricao="TRANSFERÊNCIAS CORRENTES"/>
+ <receita codigo="17200000" descricao="Transferências Intergovernamentais"/>
+ <receita codigo="17210000" descricao="Transferências da União"/>
+ <receita codigo="17210100" descricao="Participação na Receita da União"/>
+ <receita codigo="17210102" descricao="Cota Parte do FPM (100%)"/>
+ <receita codigo="17210105" descricao="Cota-Parte do Imposto Territorial Rural - ITR"/>
+ <receita codigo="17210132" descricao="Cota Parte do Imposto sobre Operações de Crédito, Câmbio e Seguros ou Relativas a Títulos ou Valores Mobiliários- Comercialização do Ouro (IOF)"/>
+ <receita codigo="17212200" descricao="Transferência da Compensação Financeira pela Exploração de Recursos Naturais"/>
+ <receita codigo="17212211" descricao="Cota-Parte da Compensação Financeira de Recursos Hídricos"/>
+ <receita codigo="17212220" descricao="Cota-Parte da Compensação Financeira de Recursos Minerais - CFEM"/>
+ <receita codigo="17212230" descricao="Cota-Parte Royalties - Compensação Financeira pela Produção do Petróleo - Lei 7.990/89"/>
+ <receita codigo="17212240" descricao="Cota-Parte Royalties - pelo Excedente da Produção do Petróleo - Lei 9.478/97, Art. 49, I e II"/>
+ <receita codigo="17212250" descricao="Cota-Parte Royalties pela Participação Especial - Lei 9.478/97, Art. 50"/>
+ <receita codigo="17212270" descricao="Cota-Parte Royalties do Fundo Especial do Petróleo - FEP (Lei 9.478/97, art. 49, II, &quot;e&quot;)"/>
+ <receita codigo="17212290" descricao="Outras Transferências Decorrentes de Compensação Financeira pela Exploração de Recursos Naturais"/>
+ <receita codigo="17213300" descricao="Transferência de Recursos do Sistema Único de Saúde - SUS (Repasse Fundo a Fundo)"/>
+ <receita codigo="17213311" descricao="Atenção Básica - (PAB Fixo, PAB Variável, etc)"/>
+ <receita codigo="17213312" descricao="Atenção de Média e Alta Complexidade Ambulatorial e Hospitalar"/>
+ <receita codigo="17213313" descricao="Vigilância em Saúde"/>
+ <receita codigo="17213314" descricao="Assistência Farmacêutica"/>
+ <receita codigo="17213315" descricao="Gestão do SUS"/>
+ <receita codigo="17213399" descricao="Outros Programas Financiados por Transferência Fundo a Fundo"/>
+ <receita codigo="17213400" descricao="Transferência de Recursos do FNAS"/>
+ <receita codigo="17213500" descricao="Transferência de Recursos do FNDE"/>
+ <receita codigo="17213501" descricao="Transferências do Salário-educação"/>
+ <receita codigo="17213502" descricao="Transferências Diretas do FNDE referentes ao Programa Dinheiro Direto na Escola - PDDE"/>
+ <receita codigo="17213503" descricao="Transferências Diretas do FNDE referentes ao Programa Nacional de Alimentação Escolar - PNAE"/>
+ <receita codigo="17213504" descricao="Transferências Diretas do FNDE referentes ao Programa Nacional de Apoio ao Transporte Escolar- PNATE"/>
+ <receita codigo="17213599" descricao="Outras Transferências Diretas do Fundo Nacional do Desenvolvimento da Educação - FNDE"/>
+ <receita codigo="17213600" descricao="Transferência Financeira - ICMS Desoneração LC nº 87/96 (100%)"/>
+ <receita codigo="17213700" descricao="Transferências a Consórcios Públicos"/>
+ <receita codigo="17219900" descricao="Demais Transferências da União"/>
+ <receita codigo="17220000" descricao="Transferências do Estado"/>
+ <receita codigo="17220100" descricao="Participação na Receita do Estado"/>
+ <receita codigo="17220101" descricao="Cota-Parte do ICMS (100%)"/>
+ <receita codigo="17220102" descricao="Cota-Parte do IPVA (100%)"/>
+ <receita codigo="17220104" descricao="Cota-Parte do IPI - Exportação (100%)"/>
+ <receita codigo="17220113" descricao="Cota-Parte da Contribuição de Intervenção no Domínio Econômico"/>
+ <receita codigo="17220199" descricao="Outras Participações na Receita do Estado"/>
+ <receita codigo="17222200" descricao="Transferência da Compensação Financeira (25%)"/>
+ <receita codigo="17222211" descricao="Cota-Parte da Compensação Financeira de Recursos Hídricos"/>
+ <receita codigo="17222220" descricao="Cota-Parte da Compensação Financeira de Recursos Minerais - CFEM"/>
+ <receita codigo="17222230" descricao="Cota-Parte Royalties - Compensação Financeira pela Produção do Petróleo - Lei 7.990/89 - art. 9º"/>
+ <receita codigo="17222290" descricao="Outras Transferências Decorrentes de Compensação Financeira"/>
+ <receita codigo="17223300" descricao="Transferências de Recursos do Estado p/ Programas de Saúde - Repasse Fundo a Fundo (se houver)"/>
+ <receita codigo="17223700" descricao="Transferências a Consórcios Públicos"/>
+ <receita codigo="17229900" descricao="Outras Transferências do Estado"/>
+ <receita codigo="17230000" descricao="Transferências dos Municípios (De Outros Municípios)"/>
+ <receita codigo="17230100" descricao="Transferência dos Municípios para Programa do SUS"/>
+ <receita codigo="17230200" descricao="Transferências dos Municípios p/ o Programa de Educação"/>
+ <receita codigo="17233700" descricao="Transferências a Consórcios Públicos"/>
+ <receita codigo="17239900" descricao="Outras Transferências dos Municípios"/>
+ <receita codigo="17240000" descricao="Transferências Multigovernamentais"/>
+ <receita codigo="17240100" descricao="Transferências de Recursos do FUNDEB"/>
+ <receita codigo="17240200" descricao="Transferências de Recursos da Complementação de União ao FUNDEB"/>
+ <receita codigo="17249900" descricao="Outras Transferências Multigovernamentais"/>
+ <receita codigo="17300000" descricao="Transferências de Instituições Privadas"/>
+ <receita codigo="17300100" descricao="Transferências de Instituições Privadas para Programa de Educação"/>
+ <receita codigo="17300200" descricao="Transferências de Instituições Privadas para Programa de Saúde(FMS)"/>
+ <receita codigo="17309900" descricao="Outras Transferências de Instituições Privadas"/>
+ <receita codigo="17400000" descricao="Transferências do Exterior"/>
+ <receita codigo="17400100" descricao="Transferências do Exterior para Programa de Educação"/>
+ <receita codigo="17400200" descricao="Transferências do Exterior para Programa de Saúde(FMS)"/>
+ <receita codigo="17409900" descricao="Outras Transferências do Exterior"/>
+ <receita codigo="17500000" descricao="Transferências de Pessoas"/>
+ <receita codigo="17500100" descricao="Transferências de Pessoas Físicas para Programa de Educação"/>
+ <receita codigo="17500200" descricao="Transferências de Pessoas Físicas para Programa de Saúde(FMS)"/>
+ <receita codigo="17509900" descricao="Outras Transferências de Pessoas"/>
+ <receita codigo="17600000" descricao="Transferências de Convênios"/>
+ <receita codigo="17610000" descricao="Transferências de Convênios da União e Suas Entidades"/>
+ <receita codigo="17610100" descricao="Transferência de Convênio da União p/ SUS"/>
+ <receita codigo="17610200" descricao="Transferência de Convênio da União p/ Programa de Educação"/>
+ <receita codigo="17610300" descricao="Transferências de Convênio da União para Programa de Assistência Social"/>
+ <receita codigo="17610400" descricao="Transferências de Convênios da União Destinadas a Programas de Combate à Fome"/>
+ <receita codigo="17610500" descricao="Transferências de Convênios da União Destinadas a Programas de Saneamento Básico"/>
+ <receita codigo="17619900" descricao="Outras Transferências de Convênios da União"/>
+ <receita codigo="17620000" descricao="Transferências de Convênios do Estado e suas Entidades"/>
+ <receita codigo="17620100" descricao="Transferência de Convênio do Estado para Programa do SUS"/>
+ <receita codigo="17620200" descricao="Transferência de Convênio do Estado p/ Programa de Educação"/>
+ <receita codigo="17629900" descricao="Outras Transferências de Convênios do Estado"/>
+ <receita codigo="17630000" descricao="Transferências de Convênios dos Municípios e suas Entidades"/>
+ <receita codigo="17630100" descricao="Transferência de Convênio dos Municípios para Programa do SUS"/>
+ <receita codigo="17630200" descricao="Transferência de Convênio dos Municípios p/ Programa de Educação"/>
+ <receita codigo="17639900" descricao="Outras Transferências de Convênios dos Municípios"/>
+ <receita codigo="17640000" descricao="Transferências de Convênios de Instituições Privadas"/>
+ <receita codigo="17640100" descricao="Transferências de Convênios de Instituições Privadas para Programa de Educação"/>
+ <receita codigo="17640200" descricao="Transferências de Convênios de Instituições Privadas para Programa de Saúde"/>
+ <receita codigo="17649900" descricao="Outras Transferências de Convênios de Instituições Privadas"/>
+ <receita codigo="17650000" descricao="Transferência de Convênios do Exterior"/>
+ <receita codigo="17650100" descricao="Transferência de Convênios do Exterior para Programa de Educação"/>
+ <receita codigo="17650200" descricao="Transferência de Convênios do Exterior para Programa de Saúde"/>
+ <receita codigo="17659900" descricao="Outras Transferência de Convênios do Exterior"/>
+ <receita codigo="17700000" descricao="Transferências para o Combate à Fome"/>
+ <receita codigo="19000000" descricao="OUTRAS RECEITAS CORRENTES"/>
+ <receita codigo="19100000" descricao="Multas e Juros de Mora"/>
+ <receita codigo="19110000" descricao="Multas e Juros de Mora dos Tributos"/>
+ <receita codigo="19110800" descricao="Multas e Juros de Mora sobre o ITR"/>
+ <receita codigo="19110801" descricao="Multas e Juros de Mora sobre o ITR - Municípios Conveniados"/>
+ <receita codigo="19113800" descricao="Multas e Juros de Mora sobre o IPTU"/>
+ <receita codigo="19113900" descricao="Multas e Juros de Mora sobre o ITBI"/>
+ <receita codigo="19114000" descricao="Multas e Juros de Mora sobre o ISS"/>
+ <receita codigo="19119800" descricao="Multas e Juros de Mora das Contribuições de Melhoria"/>
+ <receita codigo="19119900" descricao="Multas e Juros de Mora de Outros Tributos (Taxas)"/>
+ <receita codigo="19120000" descricao="Multas e Juros de Mora das Contribuições"/>
+ <receita codigo="19122900" descricao="Multas e Juros de Mora das Contribuições para o Regime Próprio de Previdência do Servidor"/>
+ <receita codigo="19122901" descricao="Multas e Juros de Mora da Contribuição Patronal para o RPPS"/>
+ <receita codigo="19122902" descricao="Multas e Juros de Mora da Contribuição do Servidor para o RPPS"/>
+ <receita codigo="19125600" descricao="Multas e Juros de Mora das Compensações Financeiras entre o Regime Geral e os Regimes Próprios de Previdência dos Servidores"/>
+ <receita codigo="19129900" descricao="Multas e Juros de Mora de Outras Contribuições"/>
+ <receita codigo="19130000" descricao="Multas e Juros de Mora da Dívida Ativa dos Tributos"/>
+ <receita codigo="19130800" descricao="Multas e Juros de Mora da Dívida Ativa do ITR"/>
+ <receita codigo="19131100" descricao="Multas e Juros de Mora da Dívida Ativa do IPTU"/>
+ <receita codigo="19131200" descricao="Multas e Juros de Mora da Dívida Ativa do ITBI"/>
+ <receita codigo="19131300" descricao="Multas e Juros de Mora da Dívida Ativa do ISS"/>
+ <receita codigo="19139800" descricao="Multas e Juros de Mora da Dívida Ativa das Contribuições de Melhoria"/>
+ <receita codigo="19139900" descricao="Multas e Juros de Mora da Dívida Ativa de Outros Tributos (Taxas)"/>
+ <receita codigo="19140000" descricao="Multas e Juros de Mora da Dívida Ativa das Contribuições"/>
+ <receita codigo="19149900" descricao="Multas e Juros de Mora da Dívida Ativa de Outras Contribuições"/>
+ <receita codigo="19150000" descricao="Multas e Juros de Mora da Dívida Ativa de Outras Receitas"/>
+ <receita codigo="19151900" descricao="Multas e Juros de Mora da Receita da Dívida Ativa das Compensações Financeiras entre o RGPS e o RPPS"/>
+ <receita codigo="19159900" descricao="Multas e Juros de Mora da Receita da Dívida Ativa de Outras Receitas"/>
+ <receita codigo="19180000" descricao="Multas e Juros de Mora de Outras Receitas"/>
+ <receita codigo="19190000" descricao="Multas de Outras Origens"/>
+ <receita codigo="19200000" descricao="Indenizações e Restituições"/>
+ <receita codigo="19210000" descricao="Indenizações"/>
+ <receita codigo="19210600" descricao="Indenizações por Danos Causados ao Patrimônio Público"/>
+ <receita codigo="19219900" descricao="Outras Indenizações"/>
+ <receita codigo="19220000" descricao="Restituições"/>
+ <receita codigo="19220100" descricao="Restituições de Convênios"/>
+ <receita codigo="19220101" descricao="Restituições de Convênios de Programa de Educação"/>
+ <receita codigo="19220102" descricao="Restituições de Convênios de Programa de Saúde"/>
+ <receita codigo="19220199" descricao="Outras Restituições de Convênios"/>
+ <receita codigo="19221000" descricao="Compensações Financeiras entre o Regime Geral e Regimes Próprios de Previdência Social"/>
+ <receita codigo="19221001" descricao="Compensações Financeiras entre o Regime Geral e Regimes Próprios de Previdência Social - Principal"/>
+ <receita codigo="19221002" descricao="Compensações Financeiras entre o Regime Geral e Regimes Próprios de Previdência Social - Parcelamento"/>
+ <receita codigo="19229900" descricao="Outras Restituições"/>
+ <receita codigo="19300000" descricao="Receita da Dívida Ativa"/>
+ <receita codigo="19310000" descricao="Receita da Dívida Ativa Tributária"/>
+ <receita codigo="19310400" descricao="Receita da Dívida Ativa do Imposto sobre a Propriedade Territorial Rural"/>
+ <receita codigo="19311100" descricao="Receita da Dívida Ativa do IPTU"/>
+ <receita codigo="19311200" descricao="Receita da Dívida Ativa do ITBI"/>
+ <receita codigo="19311300" descricao="Receita da Dívida Ativa do ISS"/>
+ <receita codigo="19313500" descricao="Receita da Dívida Ativa da Taxa de Fiscalização e Vigilância Sanitária"/>
+ <receita codigo="19319800" descricao="Receita da Dívida Ativa das Contribuições de Melhoria"/>
+ <receita codigo="19319900" descricao="Receita da Dívida Ativa Tributária de Outros Tributos (Taxas)"/>
+ <receita codigo="19320000" descricao="Receita da Dívida Ativa Não-Tributária"/>
+ <receita codigo="19323500" descricao="Receita da Dívida Ativa da Compensações Financeiras entre o Regime Geral e Regimes Próprios de Previdência Social"/>
+ <receita codigo="19329900" descricao="Receita da Dívida Ativa Não-Tributária de Outras Receitas"/>
+ <receita codigo="19400000" descricao="Receitas Decorrentes da Aportes Periódicos para Amortização de Déficit Atuarial do RPPS"/>
+ <receita codigo="19900000" descricao="Receitas Diversas"/>
+ <receita codigo="19900200" descricao="Receita de Ônus de Sucumbência de Ações Judicias"/>
+ <receita codigo="19902200" descricao="Receita da Terceirização da Folha de Pagamento dos Agentes Públicos"/>
+ <receita codigo="19909900" descricao="Outras Receitas"/>
+ <receita codigo="20000000" descricao="RECEITAS DE CAPITAL"/>
+ <receita codigo="21000000" descricao="OPERAÇÕES DE CRÉDITO"/>
+ <receita codigo="21100000" descricao="Operações de Crédito Internas"/>
+ <receita codigo="21110000" descricao="Títulos de Responsabilidade do Tesouro Municipal"/>
+ <receita codigo="21110100" descricao="Títulos de Responsabilidade do Tesouro - Refinanciamento da Dívida Pública"/>
+ <receita codigo="21110300" descricao="Títulos de Responsabilidade do Tesouro - Outras Aplicações"/>
+ <receita codigo="21140000" descricao="Operações de Crédito Internas Contratuais Relativas a Programas de Governo"/>
+ <receita codigo="21140100" descricao="Operações de Crédito Internas para Programas de Educação"/>
+ <receita codigo="21140200" descricao="Operações de Crédito Internas para Programas de Saúde"/>
+ <receita codigo="21140300" descricao="Operações de Crédito Internas para Programas de Saneamento"/>
+ <receita codigo="21140400" descricao="Operações de Crédito Internas para Programas de Meio Ambiente"/>
+ <receita codigo="21140500" descricao="Operações de Crédito Internas para Programas de Modernização da Administração Pública"/>
+ <receita codigo="21140600" descricao="Operações de Crédito Internas para Refinanciamento da Dívida Contratual"/>
+ <receita codigo="21140700" descricao="Operações de Crédito Internas para Programas de Moradia Popular"/>
+ <receita codigo="21149900" descricao="Outras Operações de Crédito Internas Contratuais"/>
+ <receita codigo="21149901" descricao="Operações de Crédito Internas Contratuais Relativas ao Programa RELUZ"/>
+ <receita codigo="21149902" descricao="Operações de Crédito Internas Contratuais Amparadas pelo art. 9-N da resolução 2787/01 do CMN"/>
+ <receita codigo="21149999" descricao="Diversas Operações de Crédito Internas Contratuais"/>
+ <receita codigo="21190000" descricao="Outras Operações de Crédito Internas"/>
+ <receita codigo="21200000" descricao="Operações de Crédito Externas"/>
+ <receita codigo="21220000" descricao="Títulos de Responsabilidade do Tesouro Municipal"/>
+ <receita codigo="21220100" descricao="Títulos de Responsabilidade do Tesouro Municipal - Dívida Pública"/>
+ <receita codigo="21220200" descricao="Títulos de Responsabilidade do Tesouro Municipal - Outras Aplicações"/>
+ <receita codigo="21230000" descricao="Operações de Crédito Externas Contratuais"/>
+ <receita codigo="21230100" descricao="Operações de Crédito Externas para Programas de Educação"/>
+ <receita codigo="21230200" descricao="Operações de Crédito Externas para Programas de Saúde"/>
+ <receita codigo="21230300" descricao="Operações de Crédito Externas para Programas de Saneamento"/>
+ <receita codigo="21230400" descricao="Operações de Crédito Externas para Programas de Meio Ambiente"/>
+ <receita codigo="21230500" descricao="Operações de Crédito Externas para Programas de Modernização da Administração Pública"/>
+ <receita codigo="21230700" descricao="Operações de Crédito Externas para Refinanciamento da Dívida Contratual"/>
+ <receita codigo="21239900" descricao="Outras Operações de Crédito Externas Contratuais"/>
+ <receita codigo="21290000" descricao="Outras Operações de Crédito Externas"/>
+ <receita codigo="22000000" descricao="ALIENAÇÃO DE BENS"/>
+ <receita codigo="22100000" descricao="Alienação de Bens Móveis"/>
+ <receita codigo="22110000" descricao="Alienação de Títulos Mobiliários"/>
+ <receita codigo="22120000" descricao="Alienação de Estoques"/>
+ <receita codigo="22140000" descricao="Alienação de Animais Reprodutores e Matrizes"/>
+ <receita codigo="22150000" descricao="Alienação de Veículos"/>
+ <receita codigo="22160000" descricao="Alienação de Móveis e Utensílios"/>
+ <receita codigo="22170000" descricao="Alienação de Equipamentos"/>
+ <receita codigo="22190000" descricao="Alienação de Outros Bens Móveis"/>
+ <receita codigo="22190100" descricao="Alienação de Bens Móveis Adquiridos com Recursos Vinculados"/>
+ <receita codigo="22190101" descricao="Recursos do FUNDEB"/>
+ <receita codigo="22190102" descricao="Recursos do Fundo de Saúde (FMS)"/>
+ <receita codigo="22190103" descricao="Recursos do Regime Próprio de Previdência dos Servidores (RPPS)"/>
+ <receita codigo="22190104" descricao="Recursos de Royalties"/>
+ <receita codigo="22190199" descricao="Alienação de Bens Móveis Adquiridos com Outros Recursos Vinculados"/>
+ <receita codigo="22190200" descricao="Alienação de Bens Móveis Adquiridos com Recursos Não-Vinculados"/>
+ <receita codigo="22200000" descricao="Alienação de Bens Imóveis"/>
+ <receita codigo="22210000" descricao="Alienação de Imóveis Rurais para Colonização e Reforma Agrária"/>
+ <receita codigo="22230000" descricao="Alienação de Embarcações"/>
+ <receita codigo="22240000" descricao="Alienação de Imóveis Rurais"/>
+ <receita codigo="22250000" descricao="Alienação de Imóveis Urbanos"/>
+ <receita codigo="22250100" descricao="Alienação de Imóveis Adquiridos com Recursos Vinculados"/>
+ <receita codigo="22250101" descricao="Recurso do FUNDEB"/>
+ <receita codigo="22250102" descricao="Recurso do Fundo de Saúde (FMS)"/>
+ <receita codigo="22250103" descricao="Imóveis de Propriedade do Regime Próprio (RPPS)"/>
+ <receita codigo="22250104" descricao="Recurso de Royalties"/>
+ <receita codigo="22250199" descricao="Alienação de Bens Imóveis Adquiridos com Outros Recursos Vinculados"/>
+ <receita codigo="22250200" descricao="Alienação de Bens Móveis Adquiridos com Recursos Não-Vinculados"/>
+ <receita codigo="22290000" descricao="Alienação de Outros Bens Imóveis"/>
+ <receita codigo="23000000" descricao="AMORTIZAÇÃO DE EMPRÉSTIMOS"/>
+ <receita codigo="23002000" descricao="Amortização Proveniente da Execução de Garantia - Operações de Crédito"/>
+ <receita codigo="23004000" descricao="Amortização de Empréstimos - Refinanc. Dív. de Médio e Longo Prazo"/>
+ <receita codigo="23007000" descricao="Outras Amortizações de Empréstimos"/>
+ <receita codigo="23009900" descricao="Amortização de Empréstimos Diversos"/>
+ <receita codigo="24000000" descricao="TRANSFERÊNCIAS DE CAPITAL"/>
+ <receita codigo="24200000" descricao="Transferências Intergovernamentais"/>
+ <receita codigo="24210000" descricao="Transferências da União"/>
+ <receita codigo="24210100" descricao="Transferências de Recursos do Sistema Único de Saúde - SUS"/>
+ <receita codigo="24210200" descricao="Transferências de Recursos para Programas de Educação"/>
+ <receita codigo="24213700" descricao="Transferências a Consórcios Públicos"/>
+ <receita codigo="24219900" descricao="Outras Transferências da União"/>
+ <receita codigo="24220000" descricao="Transferências dos Estados"/>
+ <receita codigo="24220100" descricao="Transferência de Recursos do Sistema Único de Saúde - SUS"/>
+ <receita codigo="24220200" descricao="Transferência de Recursos Destinados a Programa de Educação"/>
+ <receita codigo="24223700" descricao="Transferências a Consórcios Públicos"/>
+ <receita codigo="24229900" descricao="Outras Transferências do Estado"/>
+ <receita codigo="24230000" descricao="Transferências dos Municípios"/>
+ <receita codigo="24230100" descricao="Transferência de Recursos Destinados a Programa de Saúde"/>
+ <receita codigo="24230200" descricao="Transferência de Recursos Destinados a Programa de Educação"/>
+ <receita codigo="24233700" descricao="Transferências a Consórcios Públicos"/>
+ <receita codigo="24239900" descricao="Outras Transferências do Município"/>
+ <receita codigo="24300000" descricao="Transferências de Instituições Privadas"/>
+ <receita codigo="24300100" descricao="Transferência de Recursos Destinados a Programa de Saúde"/>
+ <receita codigo="24300200" descricao="Transferência de Recursos Destinados a Programa de Educação"/>
+ <receita codigo="24309900" descricao="Outras Transferências de Instituições Privadas"/>
+ <receita codigo="24400000" descricao="Transferências do Exterior"/>
+ <receita codigo="24400100" descricao="Transferência de Recursos Destinados a Programa de Saúde"/>
+ <receita codigo="24400200" descricao="Transferência de Recursos Destinados a Programa de Educação"/>
+ <receita codigo="24409900" descricao="Outras Transferências do Exterior"/>
+ <receita codigo="24500000" descricao="Transferências de Pessoas"/>
+ <receita codigo="24500100" descricao="Transferência de Recursos Destinados a Programa de Saúde"/>
+ <receita codigo="24500200" descricao="Transferência de Recursos Destinados a Programa de Educação"/>
+ <receita codigo="24509900" descricao="Outras Transferências de Pessoas"/>
+ <receita codigo="24600000" descricao="Transferência de Outras Instituições Públicas"/>
+ <receita codigo="24700000" descricao="Transferências de Convênio"/>
+ <receita codigo="24710000" descricao="Transferências de Convênio da União e de Suas Entidades"/>
+ <receita codigo="24710100" descricao="Transferência de Convênio da União do Sistema Único de Saúde - SUS"/>
+ <receita codigo="24710200" descricao="Transferência de Convênio da União Destinados a Programa de Educação"/>
+ <receita codigo="24710300" descricao="Transferência de Convênio da União Destinados a Programa de Saneamento Básico"/>
+ <receita codigo="24710400" descricao="Transferência de Convênio da União Destinados a Programa de Meio Ambiente"/>
+ <receita codigo="24710500" descricao="Transferência de Convênio da União Destinados a Programa de Infraestrutura em Transporte"/>
+ <receita codigo="24719900" descricao="Outras Transferências de Convênio da União"/>
+ <receita codigo="24720000" descricao="Transferências de Convênio dos Estados e de Suas Entidades"/>
+ <receita codigo="24720100" descricao="Transferência de Convênio do Estado do Sistema Único de Saúde - SUS"/>
+ <receita codigo="24720200" descricao="Transferência de Convênio do Estado Destinados a Programa de Educação"/>
+ <receita codigo="24720300" descricao="Transferência de Convênio da União Destinados a Programa de Saneamento Básico"/>
+ <receita codigo="24720400" descricao="Transferência de Convênio da União Destinados a Programa de Meio Ambiente"/>
+ <receita codigo="24720500" descricao="Transferência de Convênio da União Destinados a Programa de Infraestrutura em Transporte"/>
+ <receita codigo="24729900" descricao="Outras Transferências de Convênio do Estado"/>
+ <receita codigo="24730000" descricao="Transferências de Convênio dos Municípios e de Suas Entidades"/>
+ <receita codigo="24730100" descricao="Transferência de Convênio dos Municípios Destinados a Programa de Saúde"/>
+ <receita codigo="24730200" descricao="Transferência de Convênio dos Municípios Destinados a Programa de Educação"/>
+ <receita codigo="24739900" descricao="Outras Transferências de Convênio do Município"/>
+ <receita codigo="24740000" descricao="Transferências de Convênio de Instituições Privadas"/>
+ <receita codigo="24740100" descricao="Transferência de Convênio de Instituições Privadas Destinados a Programa de Saúde"/>
+ <receita codigo="24740200" descricao="Transferência de Convênio de Instituições Privadas Destinados a Programa de Educação"/>
+ <receita codigo="24749900" descricao="Outras Transferências de Convênios de Instituições Privadas"/>
+ <receita codigo="24750000" descricao="Transferência de Convênios do Exterior"/>
+ <receita codigo="24750100" descricao="Transferência de Convênios do Exterior Destinados a Programa de Saúde"/>
+ <receita codigo="24750200" descricao="Transferência de Convênios do Exterior Destinados a Programa de Educação"/>
+ <receita codigo="24759900" descricao="Outras Transferências de Convênios do Exterior"/>
+ <receita codigo="24800000" descricao="Transferências para Combate à Fome"/>
+ <receita codigo="25000000" descricao="OUTRAS RECEITAS DE CAPITAL"/>
+ <receita codigo="25200000" descricao="Integralização do Capital Social"/>
+ <receita codigo="25210000" descricao="Integralização com Recursos do Tesouro Municipal"/>
+ <receita codigo="25220000" descricao="Integralização com Recursos de Outras Fontes"/>
+ <receita codigo="25500000" descricao="Receita da Dívida Ativa Proveniente de Amortização de Empréstimos e Financiamentos"/>
+ <receita codigo="25900000" descricao="Outras Receitas"/>
+ <receita codigo="70000000" descricao="RECEITAS CORRENTES - OPERAÇÕES INTRAORÇAMENTÁRIAS"/>
+ <receita codigo="71100000" descricao="Impostos - Operações Intraorçamentárias"/>
+ <receita codigo="71120200" descricao="Imposto s/ a Prop. Predial/Territorial Urbana (IPTU) - Operações Intraorçamentárias"/>
+ <receita codigo="71130500" descricao="Impostos s/ Serviços de Qualquer Natureza (ISS) - Operações Intraorçamentárias"/>
+ <receita codigo="71200000" descricao="Taxas - Operações Intraorçamentárias"/>
+ <receita codigo="71220000" descricao="Taxas pela Prestação de Serviços - Operações Intraorçamentárias"/>
+ <receita codigo="71300000" descricao="Contribuição de Melhoria - Operações Intraorçamentárias"/>
+ <receita codigo="72000000" descricao="RECEITA DE CONTRIBUIÇÕES - OPERAÇÕES INTRAORÇAMENTÁRIAS"/>
+ <receita codigo="72102900" descricao="Contribuição para o Regime Próprio de Previdência do Servidor Público"/>
+ <receita codigo="72102901" descricao="Contribuição Patronal do Servidor Ativo Civil - Operações Intraorçamentárias"/>
+ <receita codigo="72102903" descricao="Contribuição Patronal do Servidor Inativo Civil - Operações Intraorçamentárias"/>
+ <receita codigo="72102905" descricao="Contribuição Patronal do Pensionista Civil - Operações Intraorçamentárias"/>
+ <receita codigo="72102913" descricao="Contribuição Previdenciária para Amortização do Déficit Atuarial"/>
+ <receita codigo="72102915" descricao="Contribuição Previdenciária em Regime de Parcelamento de Débitos"/>
+ <receita codigo="72102916" descricao="Receita de Recolhimento da Contribuição Patronal, oriunda do Pagamento de Sentenças Judiciais"/>
+ <receita codigo="72109900" descricao="Outras Contribuições Sociais - Operações Intraorçamentárias"/>
+ <receita codigo="73000000" descricao="RECEITA PATRIMONIAL - OPERAÇÕES INTRAORÇAMENTÁRIAS"/>
+ <receita codigo="73100000" descricao="Receitas Imobiliárias - Operações Intraorçamentárias"/>
+ <receita codigo="73200000" descricao="Receitas de Valores Mobiliários - Operações Intraorçamentárias"/>
+ <receita codigo="73900000" descricao="Outras Receitas Patrimoniais - Operações Intraorçamentárias"/>
+ <receita codigo="75000000" descricao="RECEITA INDUSTRIAL - OPERAÇÕES INTRAORÇAMENTÁRIAS"/>
+ <receita codigo="75200000" descricao="Receita da Indústria de Transformação - Operações Intraorçamentárias"/>
+ <receita codigo="76000000" descricao="RECEITA DE SERVIÇOS - TRANSFERÊNCIA INTRAORÇAMENTÁRIA"/>
+ <receita codigo="76009900" descricao="Outros Serviços - Operações Intraorçamentárias"/>
+ <receita codigo="79000000" descricao="OUTRAS RECEITAS CORRENTES - OPERAÇÕES INTRAORÇAMENTÁRIAS"/>
+ <receita codigo="79122900" descricao="Multas e Juros de Mora das Contribuições para o Regime Próprio de Previdência do Servidor"/>
+ <receita codigo="79122901" descricao="Multas e Juros de Mora da Contribuição Patronal para o RPPS"/>
+ <receita codigo="79122902" descricao="Multas e Juros de Mora da Contribuição do Servidor para o RPPS"/>
+ <receita codigo="79129900" descricao="Multas e Juros de Mora de Outras Contribuições"/>
+ <receita codigo="79400000" descricao="Receitas Decorrentes de Aportes Periódicos p/ Amortização de Déficit Atuarial do RPPS"/>
+ <receita codigo="79400100" descricao="Receitas Decorrentes de Aportes para Amortização de Déficit Atuarial do RPPS"/>
+ <receita codigo="79909900" descricao="Outras Receitas"/>
+ <receita codigo="80000000" descricao="RECEITAS DE CAPITAL - OPERAÇÕES INTRAORÇAMENTÁRIAS"/>
+ <receita codigo="82000000" descricao="ALIENAÇÃO DE BENS - OPERAÇÕES INTRA-ORÇAMENTÁRIAS"/>
+ <receita codigo="82100000" descricao="Alienação de Bens Móveis - Operações Intraorçamentárias"/>
+ <receita codigo="82200000" descricao="Alienação de Bens Imóveis - Operações Intraorçamentárias"/>
+ <receita codigo="83000000" descricao="Amortização de Empréstimos - Operações Intraorçamentárias"/>
+ <receita codigo="85900000" descricao="Outras Receitas de Capital - Operações Intraorçamentárias"/>
+ <receita codigo="90000000" descricao="DEDUÇÃO DA RECEITA CORRENTE"/>
+ <receita codigo="91120100" descricao="Dedução da Receita do Imposto s/ a Prop. Territorial Rural (CF art. 153,§4°,III) -"/>
+ <receita codigo="91120101" descricao="Dedução da Receita do Imposto s/ a Prop. Territorial Rural (CF art. 153,§4°,III) -"/>
+ <receita codigo="91120200" descricao="Dedução da Receita do Imposto s/ a Prop. Predial/Territorial Urbana (IPTU)"/>
+ <receita codigo="91120431" descricao="Dedução do Imposto de Renda Retido na Fonte Sobre Rendimento do Trabalho (IRRF artigo 158, inciso I da CF)"/>
+ <receita codigo="91120434" descricao="Dedução do Imposto de Renda Retido na Fonte Sobre Outros Rendimentos (IRRF artigo 158, inciso I da CF)"/>
+ <receita codigo="91120800" descricao="Dedução do Imposto s/ Transmissão de Bens Imóveis (ITBI)"/>
+ <receita codigo="91130500" descricao="Dedução do Impostos s/ Serviços de Qualquer Natureza (ISS)"/>
+ <receita codigo="91210000" descricao="Dedução de Taxas pelo Exercício do Poder de Polícia"/>
+ <receita codigo="91220000" descricao="Dedução de Taxas pela Prestação de Serviços"/>
+ <receita codigo="92102901" descricao="Dedução de Contribuição Patronal do Servidor Ativo Civil - Operações Intraorçamentárias"/>
+ <receita codigo="92102903" descricao="Dedução de Contribuição Patronal do Servidor Inativo Civil - Operações Intraorçamentárias"/>
+ <receita codigo="92102905" descricao="Dedução de Contribuição Patronal do Pensionista Civil - Operações Intraorçamentárias"/>
+ <receita codigo="92102907" descricao="Dedução de Contribuição do Servidor Ativo Civil para o Regime Próprio"/>
+ <receita codigo="92102909" descricao="Dedução de Contribuição do Servidor Inativo Civil para o Regime Próprio"/>
+ <receita codigo="92102911" descricao="Dedução de Contribuição de Pensionista Civil para o Regime Próprio"/>
+ <receita codigo="93100000" descricao="Dedução de Receitas Imobiliárias"/>
+ <receita codigo="93200000" descricao="Dedução de Receitas de Valores Mobiliários"/>
+ <receita codigo="97210102" descricao="Dedução da Receita do FPM - FUNDEB e redutor Financeiro (LC 91/97)"/>
+ <receita codigo="97210105" descricao="Dedução da Receita para Formação do FUNDEB-ITR"/>
+ <receita codigo="97213600" descricao="Dedução da Receita para Formação do FUNDEB - Cota-Parte do ICMS Desoneração (15%)"/>
+ <receita codigo="97220101" descricao="Dedução da Receita para Formação do FUNDEB - ICMS"/>
+ <receita codigo="97220102" descricao="Dedução da Receita para Formação do FUNDEB-IPVA"/>
+ <receita codigo="97220104" descricao="Dedução da Receita para Formação do FUNDEB - IPI-Exportação"/>
+ <receita codigo="99000000" descricao="Diversas Deduções de Receita do RPPS"/>
+</receitas>

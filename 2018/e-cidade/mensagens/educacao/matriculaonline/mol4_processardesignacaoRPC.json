@@ -1,0 +1,6 @@
+{
+   "informe_fase"            : "Informe uma fase de matrícula."
+  ,"erro_validar_fase"       : "Erro ao buscar dados da fase.\n[sErro]"
+  ,"ensinos_sem_criterios"   : "Ensinos sem critérios de designação configurado:\n[sListaEnsinos]\nPara configurar acesse:\n\tMatrícula Online > Procedimentos > Ordernar Critérios de Designação"
+  ,"fase_processada_sucesso" : "Fase processada com sucesso!"
+}

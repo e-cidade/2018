@@ -1,0 +1,7 @@
+{
+  "salvar_assunto_vazio"   : "Campo Assunto é de preenchimento obrigatório",
+  "salvar_mensagem_vazio"  : "Campo Mensagem é de preenchimento obrigatório",
+  "salvar_dias_vazio"      : "Campo Dias deve ser adicionado",
+  "salvar_usuario_vazio"   : "Deve conter pelo menos um Usuario adicionado",
+  "salvando"               : "Salvando..."
+}

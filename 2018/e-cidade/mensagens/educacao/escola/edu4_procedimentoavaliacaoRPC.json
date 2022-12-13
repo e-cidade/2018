@@ -1,0 +1,7 @@
+{
+   "informe_procedimento"    : "Informe o código do procedimento."
+  ,"informe_situacao"        : "Informe a situação."
+  ,"erro_salvar"             : "Não foi possível atualizar o procedimento."
+  ,"procedimento_atualizado" : "Situação do procedimento atualizada com sucesso."
+  ,"procedimento_importado" : "Procedimento importado com sucesso."
+}

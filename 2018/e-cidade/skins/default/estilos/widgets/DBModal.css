@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "KhmerUI";
+  src: url("../fonts/KhmerUI.ttf");
+}
+
+.db-modal-container {
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.5);
+  font-family: KhmerUI;
+  background: #FFF;
+  margin-top: 10px !important;
+}
+
+.db-modal-header {
+  color: white;
+  font-size: 18px;
+}
+
+.db-modal-header .close {
+  color: #FFF;
+  font-size: 24px;
+  line-height: 100%;
+  cursor: pointer;
+}
+
+.db-modal-header .top{
+  background: -moz-linear-gradient(to bottom, #2f5b8c, #234368);
+  background: linear-gradient(to bottom, #2f5b8c, #234368);
+  text-align: center;
+}
+
+.db-modal-header .top .close:active {
+  color: black;
+}
+
+.db-modal-content {
+  color: #3e3e3f;
+}
+
+.db-modal-footer a{
+  padding: 10px 20px;
+  box-sizing: padding-box;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 38px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  margin: 0px 5px;
+  font-weight: normal;
+}
+.db-modal-footer a.button{
+  border: 1px solid #2f5b8c;
+  color: #2f5b8c;
+}
+
+.db-modal-footer a.link{
+  color: #222;
+  text-decoration: underline;
+}
+
+.db-modal-footer a.button[disabled],
+.db-modal-footer a.button[disabled]:active,
+.db-modal-footer a.button[disabled]:hover {
+  color: #CCC;
+  border-color: #CCC;
+  background-color: white;
+}
+
+.db-modal-footer a.button:active{
+  color: white;
+  background-color: #2f5b8c;
+}
+
+.db-modal-footer a.link:active{
+  color: #2f5b8c;
+}
+
+.db-modal-footer a.button:hover{
+  border: 1px solid black;
+}

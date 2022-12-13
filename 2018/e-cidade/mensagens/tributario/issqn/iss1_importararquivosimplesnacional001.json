@@ -1,0 +1,4 @@
+{
+  "arquivo_obrigatorio" : "O campo Arquivo é de preenchimento obrigatório.",
+  "extensao_invalida"   : "Arquivo com extensão inválida! Arquivo deve possuir extensão .txt"
+}

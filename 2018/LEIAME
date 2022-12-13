@@ -1,0 +1,18 @@
+Este diretório contém os scripts e programas para instalação completa da versão 
+do e-cidade.
+
+O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de forma 
+integrada. Esta informatização contempla a integração entre os entes municipais: 
+Prefeitura Municipal, Câmara Municipal, Autarquias, Fundações e outros.
+
+Acesse o Portal do Software Público para maiores informações:
+
+  https://softwarepublico.gov.br/social/e-cidade
+
+Veja o arquivo INSTALAR para instruções sobre como proceder para executar esta
+instalação. 
+
+Observação: Ao desconpactar o projeto do e-cidade, haverão arquivos '.dist', para ajustá-los,
+execute o arquivo 'ajustaArquivosDist.sh' passando como parâmetro o caminho do e-cidade(sem esse procedimento
+o e-cidade não irá logar).
+Exemplo: './ajustaArquivosDist.sh /path/to/e-cidade'.

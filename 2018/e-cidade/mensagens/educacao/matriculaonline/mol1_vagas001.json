@@ -1,0 +1,10 @@
+{
+  "buscando_ensinos" : "Aguarde, buscando ensinos vínculados ao ciclo...",
+  "selecione_escola" : "Selecione a Escola.",
+  "buscando_etapas"  : "Aguarde, buscando etapas...",
+  "selecione_fase"   : "Selecione a Fase.",
+  "selecione_turno"  : "Selecione o Turno.",
+  "selecione_ensino" : "Selecione um Ensino.",
+  "salvando_vagas"   : "Aguarde, salvando as vagas por etapa...",
+  "vagas_salvas"     : "Vagas salvas com sucesso!"
+}

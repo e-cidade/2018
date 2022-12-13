@@ -1,0 +1,7 @@
+{
+  "erro_buscar_periodo_gozo"                : "Erro ao buscar período de gozo.\nErro técnico: \n[sErroBanco]",
+  "busca_periodo_gozo_pela_competencia"     : "Nenhum período de gozo encontrado para a competência atual.",
+  "periodo_gozo_nao_informado"              : "Não foi possível realizar a operação.\nPeríodo de Gozo não informado.",
+  "exclusao_nao_permitida_tem_pagamento"    : "Não foi possível realizar a operação.\nA escala já foi processada no módulo pessoal.",
+  "exclusao_nao_permitida_tem_assentamento" : "Não foi possível realizar a operação.\nA escala possui assentamentos vinculados."
+}

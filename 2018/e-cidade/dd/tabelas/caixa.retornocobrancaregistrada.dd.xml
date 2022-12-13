@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3998' name='caixa.retornocobrancaregistrada' description="Retorno do Arquivo de Cobrança Registrada" prefix="k168" label="Retorno Cobrança Registrada" type="0">
+  <fields>
+    <field codigo="22200"
+           campo_api='codigo_sequencial'
+           name="k168_sequencial"
+           conteudo="int4"
+           description="Sequencial"
+           inivalue=""
+           label="Sequencial"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Sequencial"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='caixa.retornocobrancaregistrada_k168_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="22201"
+           campo_api='codigo_arrecadacao'
+           name="k168_numpre"
+           conteudo="int4"
+           description="Numpre do Recibo"
+           inivalue=""
+           label="Numpre"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Numpre"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="22322"
+           campo_api='codigo_disarq'
+           name="k168_codret"
+           conteudo="int4"
+           description="Campo que liga com a tabela disarq."
+           inivalue=""
+           label="Arquivo bancário"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Arquivo bancário"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="k168_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="disarq">
+      <fieldfk name="k168_codret" reference="codret" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

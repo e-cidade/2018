@@ -1,0 +1,20 @@
+{
+  "periodo_inicial_vazio"             : "Deve ser informado um periodo inicial",
+  "periodo_final_vazio"               : "Deve ser informado um periodo final",
+  "periodo_inicial_maior_final"       : "Período inicial não pode ser maior que período final",
+  "mes_competencia_invalido"          : "O mês da competência tem que assumir um valor entre 01 e 12",
+  "ano_competencia_invalido"          : "O ano informado para competência é inválido.",
+  "sem_financiamentos_cadastrados"    : "Não há financiamentos cadastrados.",
+  "confirma_exclusao"                 : "Você deseja realmente excluir o fechamento da competência [descricaoFechamento]?",
+  "mes_competencia_vazio"             : "Mês da competência deve ser informado.",
+  "ano_competencia_vazio"             : "Ano da competência deve ser informado.",
+  "periodo_fechamento_vazio"          : "Período de fechamento deve ser informado",
+  "descricao_fechamento_vazio"        : "Descrição da competência deve ser informado.",
+  "aguarde_excluindo"                 : "Aguarde... excluindo fechamento da competência.",
+  "aguarde_salvando"                  : "Aguarde... salvando encerramento da competência.",
+  "aguarde_competencias_encerradas"   : "Aguarde... buscando ultima competencia encerrada.",
+  "aguarde_busca_finaciamentos"       : "Aguarde... buscando financiamentos.",
+  "competencia_encerrada_com_sucesso" : "Competência encerrada com sucesso.",
+  "exclusao_competencia_com_sucesso"  : "Competência excluida com sucesso.",
+  "arquivo_ja_gerou_arquivo"          : "Competência [descricaoFechamento] já gerou o arquivo do BPA Magnético.\nAo exclui-lo, excluirá os dados gerado do arquivo.\nDeseja excluir mesmo assim?"
+}

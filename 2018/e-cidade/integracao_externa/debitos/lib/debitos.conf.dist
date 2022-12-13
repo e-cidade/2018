@@ -1,0 +1,29 @@
+# Permite definir a periodicidade com que a manutencao da tabela debitos
+# sera executada. O valores permitidos sao: -1=desativa, 0=todos ou dia da semana (1=segunda, 2=terca ... 7=domingo).
+#
+# Exemplo:
+# DEBITOS_PERIODO="7"
+#
+DEBITOS_PERIODO=""
+
+# Permite definir o numero de dias no passado para manter os registros na debitos.
+#
+# Exemplo:
+# DEBITOS_DIAS_MANTER="14"
+#
+DEBITOS_DIAS_MANTER=""
+
+# Permite definir o codigo da(s) instituicao(oes) que deve(em) ser gerada debitos. Se houver
+# mais de uma instituicao, os seus codigos devem ser separados por espaço.
+#
+# Exemplo:
+# DEBITOS_INSTITUICOES="1"
+# DEBITOS_INSTITUICOES="1 3"
+#
+DEBITOS_INSTITUICOES=""
+
+# Permite definir manualmente a quantidade de cores do processador que podem
+# ser utilizados pelo script de backup durante o backup das bases de dados
+# Se nao for especificado, o script tentara identificar automaticamente.
+#
+LIMITAR_CORES_PROCESSADOR=""

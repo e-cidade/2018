@@ -1,0 +1,17 @@
+{
+  "escola_nao_encontrada_efetue_busca"              : "Escola não encontrada, digite um código correto ou efetue uma busca!",
+  "escola_destinao_nao_encontrada"                  : "Escola de destino não encontrada, verifique a escola!",
+  "selecione_aluno"                                 : "Selecione o Aluno para realizar a transferência antes de incluir.",
+  "digite_pesquise_codigo_escola_destino"           : "Digite ou pesquise o código da escola de destino antes de incluir.",
+  "informe_data_transferencia"                      : "Informe a Data da Transferência para prosseguir!",
+  "data_transferencia_menor_data_matricula"         : "Data da Transferência menor que a data da matrícula do aluno!",
+  "data_transferencia_fora_periodo"                 : "Data da Transferência fora do período do calendário ( [iDataInicio] a [iDataFinal] ).",
+  "erro_alteracao_transfescolafora"                 : "Erro na alteração na tabela Transfescolafora. Erro da classe: [sErro]",
+  "erro_alterecao_diario"                           : "Erro na alteração na tabela Diario. Erro da classe: [sErro]",
+  "erro_alteracao_alunocurso"                       : "Erro na alteração na tabela Alunocurso. Erro da classe: [sErro]",
+  "erro_alteracao_matricula"                        : "Erro na alteração na tabela Matrícula. Erro da classe: [sErro]",
+  "erro_alteracao_matriculamov"                     : "Erro na alteração na tabela Matriculamov. Erro da classe: [sErro]",
+  "erro_alteracao_turma"                            : "Erro na alteração na tabela Turma. Erro da classe: [sErro]",
+  "erro_alteracao_obstransferencia"                 : "Erro na alteração na tabela ObsTransferencia. Erro da classe: [sErro]",
+  "erro_alteracao_obstransferencia_diferente_vazio" : "Erro na alteração na tabela ObsTransferencia. Erro da classe: [sErro]"
+}

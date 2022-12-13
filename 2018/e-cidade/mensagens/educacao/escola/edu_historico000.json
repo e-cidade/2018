@@ -1,0 +1,17 @@
+{
+  "resultado_final_etapa_reprovado"   : "O resultado final da etapa é reprovado. Verifique o campo resultado das disciplinas informando no mínimo uma como reprovado, ou altere o resultado final da etapa",
+  "message_board_titulo"              : "Lançamento de Histórico - Lançar Disciplinas",
+  "message_board_ajuda"               : "Informe as disciplinas do aluno. Após terminar, clique em salvar.",
+  "informe_disciplina"                : "Deve ser informada a disciplina.",
+  "informe_situacao_disciplina"       : "Deve ser informada a situação da disciplina.",
+  "informe_resultado_disciplina"      : "Deve ser informado o resultado da disciplina.",
+  "informe_aproveitamento_disciplina" : "Deve ser informado o aproveitamento para a disciplina.",
+  "informe_justificativa_amparo"      : "Deve ser informada justificativa para amparo na disciplina.",
+  "resultado_final_aprovado"          : "O resultado final da etapa é Aprovado. Portanto, o resultado da disciplina deve estar como Aprovado.",
+  "situacao_aprovado"                 : "Situação está como Aprovado, mas a nota informada é menor que o mínimo para aprovação: [sNotaMinima] \nDeseja continuar?",
+  "situacao_reprovado"                : "Situação está como Reprovado, mas a nota informada é maior ou igual ao mínimo para aprovação: [sNotaMinima]",
+  "valor_invalido_carga_horaria"      : "Valor inválido para carga horária.",
+  "salvando_disciplina"               : "Aguarde, salvando dados da disciplina...",
+  "excluindo_disciplina"              : "Aguarde, excluindo disciplina...",
+  "selecione_aluno"                   : "Selecione um aluno."
+}

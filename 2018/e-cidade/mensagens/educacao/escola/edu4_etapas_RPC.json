@@ -1,0 +1,10 @@
+{
+  "etapa_nao_informada"           : "Etapa não informada.",
+  "etapa_censo_nao_informada"     : "Etapa do censo não informada.",
+  "ano_nao_informado"             : "Ano não informado.",
+  "etapa_censo_salva"             : "Vínculo salvo com sucesso.",
+  "erro_salvar_vinculo"           : "Erro ao salvar o vínculo da etapa com uma etapa do censo:\n[sErro]",
+  "erro_buscar_etapas_vinculadas" : "Erro ao buscar as etapas vinculadas:\n[sErro]",
+  "erro_validar_vinculo"          : "Erro ao validar a existência do vínculo:\n[sErro]",
+  "vinculo_existente"             : "Etapa já encontra-se vinculada a uma etapa do censo para o ano [iAno]."
+}

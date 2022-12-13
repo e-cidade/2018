@@ -1,0 +1,5 @@
+{
+  "tipo_instituicao_nao_encontrado" : "Não foram encontradas instituições do(s) tipo(s):\n[descricao].\n\nVerifique o tipo da instituição em:\nDB:CONFIGURAÇÃO > Configuração > Cadastros > Instituições > Alteração",
+  "parametro_ano_nao_informado" : "O parâmetro ANO é de preenchimento obrigatório.",
+  "parametro_periodo_nao_informado" : "O parâmetro Período é de preenchimento obrigatório."
+}

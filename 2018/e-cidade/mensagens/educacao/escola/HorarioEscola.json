@@ -1,0 +1,8 @@
+{
+   "sem_transacao" : "Sem transação ativa."
+  ,"erro_salvar"   : "Erro ao salvar horario de funcionamento."
+  ,"turno_inexistente" : "O turno informado não é válido."
+  ,"escola_possui_horario_turno" : "Esola [escola], já possui horário para tunrno informado."
+  ,"sem_instancia" : "Sem instância de Horário Escola."
+  ,"erro_excluir"  : "Erro ao tentar excluir horário de funcionamento da escola."
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010199' name='laboratorio.limiteatendimentoexame' description="Limite de exames que podem ser realizados em um dia." prefix="la46" label="Limite de Atendimentos por Exame" type="0">
+  <fields>
+    <field codigo="1009293" 
+           campo_api='' 
+           name="la46_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial." 
+           inivalue="0" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='laboratorio.limiteatendimentoexame_la46_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="1009295" 
+           campo_api='' 
+           name="la46_quantidade" 
+           conteudo="int4" 
+           description="Quantidade de exames que podem ser realizados em um dia." 
+           inivalue="0" 
+           label="Quantidade" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Quantidade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009294" 
+           campo_api='' 
+           name="la46_lab_setorexame" 
+           conteudo="int4" 
+           description="Vínculo com o exame." 
+           inivalue="0" 
+           label="Exame" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Exame" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="la46_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="lab_setorexame">
+      <fieldfk name="la46_lab_setorexame" reference="la09_i_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

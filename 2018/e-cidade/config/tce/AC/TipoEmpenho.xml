@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<tipoempenhos>
+  <tipoempenho tce='1' ecidade='1' />
+  <tipoempenho tce='3' ecidade='2' />
+  <tipoempenho tce='2' ecidade='3' />
+</tipoempenhos>

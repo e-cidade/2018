@@ -1,0 +1,14 @@
+{
+   "arquivo_nao_existe"        : "Arquivo [sArquivo] não existe."
+  ,"arquivo_nao_pode_ser_lido" : "Arquivo [sArquivo] não pode ser lido."
+  ,"erro_buscar_tipo_unidade"  : "Erro ao busrar Tipo de Unidades.\n[sErro]"
+  ,"erro_buscar_esfera_administrativa" : "Erro ao buscar Esfera Administrativa.\n[sErro]"
+  ,"erro_buscar_atividade"             : "Erro ao buscar Atividade de Ensino.\n[sErro]"
+  ,"erro_buscar_retencao_tributos"     : "Erro ao buscar Retenção de Tributos.\n[sErro]"
+  ,"erro_buscar_natureza_organizacao"  : "Erro ao buscar Natureza da Organização.\n[sErro]"
+  ,"erro_buscar_fluxo_cliente"         : "Erro ao buscar Fluxo de Clientela.\n[sErro]"
+  ,"erro_buscar_nivel_hierarquia"      : "Erro ao buscar Nível de Hierarquia.\n[sErro]"
+  ,"erro_buscar_turno_atendimento"     : "Erro ao buscar Turno de atendimento.\n[sErro]"
+  ,"erro_busca_medico"                 : "Erro ao buscar Médico.\n[sErro]"
+  ,"erro_busca_vinculo_medico_unidade" : "Erro ao buscar Vinculo do Médico com a Unidade.\n[sErro]"
+}

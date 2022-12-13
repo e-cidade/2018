@@ -1,0 +1,10 @@
+{
+ "selecione_estrutural"     : "Selecione um estrutural para pesquisa.",
+ "pesquisando_contas"       : "Aguarde...Pesquisando.",
+ "estrutural_vazio"         : "Selecione um estrutural para alteração dos dados.",
+ "contas_vazia"             : "Selecione uma conta para alteração.",
+ "nenhumregistroencontrado" : "Nenhum registro encontrado." ,
+ "alterando_contas"         : "Aguarde...<br>Processando alteração.",
+ "alteracao_realizada"      : "Alteração realizada com sucesso."
+ 
+ }

@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo  campo="lpad(q05_mes, 2,'0')||'/'||q05_ano"  label="competencia"/>
+    <campo  campo="arrepaga.k00_dtvenc"  label="data_vencimento"/>
+    <campo  campo="round(q23_vlrprinc + q23_vlrmul + q23_vlrjur, 2)"  label="valor_corrigido"/>
+    <campo  campo="q23_vlrprinc"  label="valor_historico"/>
+    <campo  campo="arrepaga.k00_valor"  label="valor_pago"/>
+  </campos>
+  <from tabela="arreinscr" />
+  <juncoes>
+    <join tipo="inner" tabela="arrecant"   condicao="arrecant.k00_numpre = arreinscr.k00_numpre"   />
+    <join tipo="inner" tabela="arrepaga"   condicao="arrepaga.k00_numpre = arrecant.k00_numpre
+                                                         and arrepaga.k00_numpar = arrecant.k00_numpar
+                                                         and arrepaga.k00_receit = arrecant.k00_receit"   />
+
+    <join tipo="inner" tabela="issvar"   condicao=" issvar.q05_numpre = arrepaga.k00_numpre
+                                                 and issvar.q05_numpar = arrepaga.k00_numpar"   />
+    <join tipo="inner" tabela="issarqsimplesregissvar" condicao="q68_issvar = issvar.q05_codigo"   />
+    <join tipo="inner" tabela="issarqsimplesreg"       condicao="q68_issarqsimplesreg = q23_sequencial"   />
+  </juncoes>
+  <filtros>
+    <filtro label="inscricao_municipal"  condicao=" k00_inscr= '$inscricao_municipal'" obrigatorio="true" />
+    <filtro label="tipo_debito"  condicao=" arrecant.k00_tipo = '$tipo_debito'" obrigatorio="true" />
+  </filtros>
+  <agrupamento />
+  <ordenacao campos="arrecant.k00_dtoper" />
+</consulta>

@@ -1,0 +1,6 @@
+{
+   "erro_buscar_agenda" : "Erro ao buscar agenda da atividade.\n[sErro]"
+  ,"erro_salvar"        : "Erro ao salvar agenda da atividade.\n[sErro]"
+  ,"sem_transacao"      : "Nenhuma transação no banco."
+  ,"erro_excluir"       : "Erro ao excluir agenda da atividade.\n[sErro]"
+}

@@ -1,0 +1,5 @@
+{
+  "erro_buscar_efetividaderh"    : "Erro ao buscar a efetividade do RH.\n[sErro]",
+  "efetividaderh_nao_encontrada" : "Nenhuma efetividade do RH encontrada.",
+  "erro_buscar_efetividades"     : "Erro ao buscar as efetividades.\n[sErro]"
+}

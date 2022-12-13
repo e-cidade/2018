@@ -1,0 +1,5 @@
+{
+  "sem_transacao"                            : "Nenhuma transação com o banco de dados encontra-se ativa.",
+  "erro_incluir_diario_avaliacaoalternativa" : "Erro ao excluir a avaliação alternativa:\n[sErro]",
+  "erro_excluir_avaliacaoalternativa"        : "Erro ao incluir vínculo do diário com  uma avaliação alternativa:\n[sErro]"
+}

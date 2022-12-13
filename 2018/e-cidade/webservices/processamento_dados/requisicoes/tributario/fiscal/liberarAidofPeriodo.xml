@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="nota"                   obrigatorio="true"  tipo="integer" />
+    <parametro nome="inscricao"              obrigatorio="true"  tipo="integer" />
+    <parametro nome="grafica"                obrigatorio="false" tipo="integer" />
+    <parametro nome="data_limite_solicitada" obrigatorio="true"  tipo="date"    />
+    <parametro nome="data_limite_liberada"   obrigatorio="true"  tipo="date"    />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="AidofWebService" parametros="" caminho="model/fiscal/webservice/AidofWebService.model.php">
+      <metodos>
+        <metodo nome="setNota"                 parametros="$nota"                   />
+        <metodo nome="setInscricao"            parametros="$inscricao"              />
+        <metodo nome="setGrafica"              parametros="$grafica"                />
+        <metodo nome="setDataLimiteSolicitada" parametros="$data_limite_solicitada" />
+        <metodo nome="setDataLimiteLiberada"   parametros="$data_limite_liberada"   />
+        <metodo nome="setNumeroInicial"        parametros="'0'"                     />
+        <metodo nome="setNumeroFinal"          parametros="'0'"                     />
+        <metodo nome="setNumeroFinal"          parametros="'0'"                     />
+        <metodo nome="setQuantidadeSolicitada" parametros="'0'"                     />
+        <metodo nome="setQuantidadeLiberada"   parametros="'0'"                     />
+        <metodo nome="salvar"                  parametros=""                        />
+        <metodo nome="getCodigo"               parametros=""                        />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

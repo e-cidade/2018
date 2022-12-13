@@ -1,0 +1,10 @@
+{
+  "erro_consulta_numero" : "Ocorreu um erro ao buscar o número sequencial do arquivo [codigo_arquivo].",
+  "parametro_codigo_remessa" : "Código da Remessa não informado para a reemissão do arquivo.",
+  "erro_buscar_proximo_numero" : "Ocorreu um erro ao buscar o próximo número para geração do arquivo.",
+  "erro_buscar_salvar_proximo_numero" : "Ocorreu um erro ao salvar a numeração atual do arquivo.",
+  "tipo_conta_invalido" : "O fornecedor [nome_fornecedor] possui conta bancária do tipo Conta Aplicação. O arquivo do Bradesco PagFor permite informar somente contas do tipo Conta Corrente ou Conta Poupança.",
+  "conta_pagadora_invalida" : "Não foi encontrado a Conta Bancária para a Conta Pagadora do movimento [movimento].",
+  "empenho_invalido" : "Não foi possível buscar o empenho para o movimento informado.",
+  "convenio_invalido" : "O parâmetro Convênio com o Banco deve ser configurado para geração do arquivo PagFor.\n\nPara realizar esta configuração acesse o menu Tesouraria > Procedimentos > Parâmetros > Financeiro."
+}

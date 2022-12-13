@@ -1,0 +1,16 @@
+{
+  "outros_dados_familia_nao_selecionada": "Quando o campo Microárea for selecionado, o campo Família deve ser informado.",
+  "contato_email_invalido"              : "O endereço de email informado é inválido",
+  "contato_endereco_deve_ser_informado" : "O endereço é obrigatório.",
+  "contato_telefone_vazio"              : "Deve ser informado o telefone fixo e/ou celular. Caso não exista nenhum, informe o número do órgão responsável pelo cadastro.",
+  "cns_nao_informado"                   : "CNS não informado.",
+  "cns_invalido"                        : "CNS inválido.",
+  "nome_nao_informado"                  : "Nome não informado.",
+  "nome_mae_nao_informado"              : "Nome da mãe não informado.",
+  "data_nascimento_nao_informada"       : "Data de nascimento não informada.",
+  "local_nascimento_nao_informado"      : "Dados do local de nascimento não informados( Município de Nascimento / UF de Nascimento / IBGE ).",
+  "nacionalidade_invalida"              : "Nacionalidade deve ser 'Brasileiro'.",
+  "buscando_dados"                      : "Buscando dados necessários para a manutenção...",
+  "salvando_dados"                      : "Aguarde, salvando os dados do CGS...",
+  "excluindo_cgs"                       : "Aguarde, excluindo o CGS..."
+}

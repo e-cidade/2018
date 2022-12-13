@@ -1,0 +1,7 @@
+{
+  "erro_buscar_cubos"    : "Erro ao buscar os cubos do BI cadastrados. \n[sErro]",
+  "cubo_nao_informado"   : "Código do cubo não informado.",
+  "cubos_nao_informados" : "Nenhum cubo informado para a realização do agendamento.",
+  "cubo_excluido"        : "Agendamento do Cubo excluído com sucesso.",
+  "cubo_salvo"           : "Cubo agendado com sucesso."
+}

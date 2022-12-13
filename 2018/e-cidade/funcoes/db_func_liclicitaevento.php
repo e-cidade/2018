@@ -1,0 +1,3 @@
+<?
+$campos = "liclicitaevento.l46_sequencial,liclicitaevento.l46_liclicita,liclicitaevento.l46_fase,liclicitaevento.l46_liclicitatipoevento,liclicitaevento.l46_dataevento,liclicitaevento.l46_datajulgamento,liclicitaevento.l46_cgm,liclicitaevento.l46_tipopublicacao,liclicitaevento.l46_descricaopublicacao,liclicitaevento.l46_tiporesultado";
+?>

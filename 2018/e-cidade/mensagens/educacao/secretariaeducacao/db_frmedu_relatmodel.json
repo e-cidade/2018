@@ -1,0 +1,8 @@
+{
+   "confirma_troca_orientacao"     : "A orientação paisagem, possui o limite de 500 caracteres para o campo Observação Geral. \nSe confirmar, o sistema irá descartar os caracteres que ultrapassarem esse limite."
+  ,"ata_resultados_finais_modelo2" : "ATENÇÃO: A Ata de Resultados Finais - Modelo 2, possui um limite de 60 caracteres no campo Cabeçalho."
+  ,"orientacao_nao_informado"      : "Campo Orientação não informado!"
+  ,"campos_tamanhos_fontes"        : "Campos referentes ao tamanho das fontes não informados!"
+  ,"informe_tipo_modelo"           : "Informe o tipo de modelo."
+
+}

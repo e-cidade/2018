@@ -1,0 +1,7 @@
+{
+   "fase_nao_informada"    : "Fase não foi informada."
+  ,"erro_buscar_inscritos" : "Erro ao buscar inscritos.\n[sErro]"
+  ,"fase_sem_registros"    : "Não há inscritos para os filtros selecionados."
+  ,"etapa_nao_encontrada"  : "Etapa não encontrada."
+  ,"escola_nao_encontrada" : "Escola não encontrada."
+}

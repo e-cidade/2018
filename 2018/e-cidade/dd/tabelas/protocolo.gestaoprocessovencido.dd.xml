@@ -1,0 +1,55 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010240' name='protocolo.gestaoprocessovencido'
+       description="Armazena o usuário responsável pela gestão de processos e que pode visualizar no relatório de processos vencidos de todos os departamentos."
+       prefix="p102" label="Gestão de Processos Vencidos" type="0">
+    <fields>
+        <field codigo="1009530"
+               campo_api=''
+               name="p102_sequencial"
+               conteudo="int4"
+               description="Código sequencial."
+               inivalue="0"
+               label="Código"
+               size="10"
+               null="f"
+               uppercase="f"
+               autocompl="f"
+               aceitatipo="1"
+               tipoobj="text"
+               labelrel="Código"
+               reference=""
+               ispk="t"
+               hassequence="t">
+
+            <sequence name='protocolo.gestaoprocessovencido_p102_sequencial_seq'/>
+
+        </field>
+        <field codigo="1009531"
+               campo_api=''
+               name="p102_db_usuarios"
+               conteudo="int4"
+               description="Código do usuário responsável pelos processos vencidos."
+               inivalue="0"
+               label="Código do Usuário"
+               size="10"
+               null="f"
+               uppercase="f"
+               autocompl="f"
+               aceitatipo="1"
+               tipoobj="text"
+               labelrel="Código do Usuário"
+               reference=""
+               ispk="f"
+               hassequence="t">
+
+        </field>
+    </fields>
+    <primarykey>
+        <fieldpk name="p102_sequencial"></fieldpk>
+    </primarykey>
+    <foreignkeys>
+        <foreignkey reference="db_usuarios" inner='t'>
+            <fieldfk name="p102_db_usuarios" reference="id_usuario"/>
+        </foreignkey>
+    </foreignkeys>
+</table>

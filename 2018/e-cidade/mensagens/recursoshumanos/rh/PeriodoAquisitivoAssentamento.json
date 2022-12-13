@@ -1,0 +1,12 @@
+{
+  "nenhuma_transacao_banco"          : "Nenhuma transação com o banco ativa.",
+  "registro_nao_encontrado"          : "Nenhum registro encontrado.",
+  "assentamento_nao_informado"       : "Nenhum assentamento informado.",
+  "periodo_aquisitivo_nao_informado" : "Nenhum Período Aquisitivo informado.",
+  "erro_inclusao"                    : "Erro na inclusão da vinculação.\n Erro técnico:\n [sMensagem]",
+  "erro_alteracao"                   : "Erro na alteração da vinculação.\n Erro técnico:\n [sMensagem]",
+  "erro_exclusao"                    : "Erro na exclusão da vinculação.\n Erro técnico:\n [sMensagem]",
+  "erro_soma_validacao_dias"         : "Não é permitido cadastrar assentamento onde Saldo de Dias seja maior que os Dias de Direito.",
+  "erro_diminui_validacao_dias"      : "Não é permitido cadastrar assentamento onde Quantidade de dias seja maior que o Saldo de Dias.",
+  "periodo_cadastrado"               : "Já existe registro para este periodo neste assentamento."
+}

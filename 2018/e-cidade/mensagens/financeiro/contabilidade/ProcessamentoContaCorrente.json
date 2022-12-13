@@ -1,0 +1,13 @@
+{
+  "erro_busca_lancamentos" : "Ocorreu um erro ao buscar os lançamentos contábeis.",
+  "registros_nao_encontrados" : "Não foram encontrados lançamentos para os filtros selecionados.",
+  "erro_exclusao_vinculo" : "Ocorreu um erro ao excluir o vínculo do detalhamento com a partida do lançamento.",
+  "conta_corrente_obrigatorio" : "Conta Corrente é de preenchimento obrigatório.",
+  "instituicao_obrigatorio" : "Instituição é de preenchimento obrigatório.",
+  "data_inicial_obrigatorio" : "Data Inicial é de preenchimento obrigatório.",
+  "data_final_obrigatorio" : "Data Final é de preenchimento obrigatório.",
+  "documento_obrigatorio" : "Documento é de preenchimento obrigatório.",
+  "erro_detalhe_sem_lancamento" : "Ocorreu um erro ao buscar os detalhamentos do conta corrente sem vínculos com lançamentos contábeis.",
+  "erro_excluir_saldo_conta_corrente" : "Ocorreu um erro ao excluir o vínculo de saldo dos detalhamentos do conta corrente.",
+  "erro_excluir_detalhamento" : "Ocorreu um erro ao excluir o detalhamento do conta corrente."
+}

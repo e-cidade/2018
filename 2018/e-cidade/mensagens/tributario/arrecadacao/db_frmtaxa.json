@@ -1,0 +1,13 @@
+{
+  "preencha_valores"          : "Preencha os valores relacionados ao tipo de cobrança escolhido.",
+  "percentual_maior_zero"     : "Percentual deve ser maior que zero.",
+  "valor_maior_zero"          : "Valor deve ser maior que zero.",
+  "valor_maximo_menor_minimo" : "Valor Máximo deve ser maior que o Valor Mínimo.",
+  "valor_obrigatorio"         : "Campo Valor é de preenchimento obrigatório.",
+  "percentual_obrigatorio"    : "Campo Percentual é de preenchimento obrigatório.",
+  "valor_minimo_obrigatorio"  : "Campo Valor Mínimo é de preenchimento obrigatório.",
+  "valor_maximo_obrigatorio"  : "Campo Valor Máximo é de preenchimento obrigatório.",
+  "descricao_obrigatorio"     : "Campo Descrição é de preenchimento obrigatório.",
+  "receita_obrigatorio"       : "Campo Receita é de preenchimento obrigatório.",
+  "grupo_taxa_obrigatorio"    : "Campo Grupo de Tarifa é de preenchimento obrigatório."
+}

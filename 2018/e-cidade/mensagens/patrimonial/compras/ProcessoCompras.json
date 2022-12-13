@@ -1,0 +1,7 @@
+{
+  "lote_cadastrado"              : "Lote [nome_lote] já esta cadastrado neste processo de compras.",
+  "descricao_nao_informado"      : "O nome do lote não foi informado",
+  "sem_transacao_ativa"          : "Sem transação ativo com banco de dados.",
+  "erro_excluir_item"            : "Erro ao excluir os itens do processo de compra",
+  "erro_excluir_processo_compra" : "Erro ao excluir este processo de compra : [codigo]"
+}

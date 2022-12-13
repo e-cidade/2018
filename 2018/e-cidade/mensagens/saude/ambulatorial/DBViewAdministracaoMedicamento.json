@@ -1,0 +1,14 @@
+{
+  "medicamento_nao_informado"           : "Medicamento a ser administrado não informado.",
+  "dosagem_nao_informada"               : "Dosagem a ser administrada não informada.",
+  "hora_nao_informada"                  : "Hora da administração de medicamento não informada.",
+  "valor_da_data_nao_preenchida"        : "Valor da data não está preenchido.",
+  "unidade_nao_preenchida"              : "Unidade do medicamento não informada. Selecione um medicamento que possua uma unidade vinculada.",
+  "quantidade_total_nao_preenchida"     : "Quantidade total do medicamento não informada. Selecione um medicamento que possua a quantidade total informada.",
+  "prontuario_nao_informado"            : "FAA não informada.",
+  "salvando_administracao_medicamentos" : "Aguarde, salvando administração de medicamentos...",
+  "buscando_medicamentos_administrados" : "Aguarde, buscando medicamentos administrados...",
+  "confirmar_exclusao"                  : "Confirma a exclusão da administração do medicamento?",
+  "excluindo_administracao"             : "Aguarde, excluindo a administração do medicamento...",
+  "valor_negativo_dosagem"              : "Não são permitidos valores negativos ou zero para a dosagem."
+}

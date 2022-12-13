@@ -1,0 +1,4 @@
+{
+  "periodo_inicial_menor_periodo_final" : "Período Inicial deve ser menor que o período final.",
+  "anos_diferentes" : "Data Inicial e Data Final devem estar dentro do mesmo exercício."
+}

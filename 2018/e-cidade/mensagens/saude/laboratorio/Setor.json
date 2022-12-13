@@ -1,0 +1,4 @@
+{
+  "erro_sql"             : "Erro ao executar a busca pelo setor:\n[sErro]",
+  "setor_nao_encontrado" : "Nenhum setor encontrado."
+}

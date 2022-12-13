@@ -1,0 +1,4 @@
+{
+  "multiplas_contas_debito_credito" : "Foi localizado mais de uma conta a crédito/débito para o lançamento.\n\nDocumento: [codigo_documento] - [descricao_documento]\nLançamento: [codigo_lancamento] - [descricao_lancamento]\nConta do Grupo do Material: [codigo_conta] - [descricao_conta]",
+  "reduzido_nao_encontrado"         : "O documento [codigo_documento] - [descricao_documento]\nEmpenho: [empenho].\nNão foi possivel encontrar reduzido. "
+}

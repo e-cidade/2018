@@ -1,0 +1,7 @@
+{
+  "erro_buscar_ordem_periodos"          : "Erro ao buscar as ordens dos períodos para cálculo:\n[sErro]",
+  "erro_buscar_avaliacao_alternativa"   : "Erro ao buscar a avaliação alternativa:\n[sErro]",
+  "erro_buscar_regencias"               : "Erro ao buscar as regências da turma:\n[sErro]",
+  "erro_buscar_diarioavaliacao"         : "Erro ao buscar as avaliações:\n[sErro]",
+  "erro_exluir_diariofinal"             : "Resultado final do aluno [sAluno] não pode ser excluído.\n[sErro]"
+}

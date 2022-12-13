@@ -1,0 +1,126 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010225' name='caixa.receitainfracao' description="Tabela de vinculo entre receitas e infrações." prefix="i06" label="receitainfracao" type="0">
+  <fields>
+    <field codigo="1009426" 
+           campo_api='' 
+           name="i06_sequencial" 
+           conteudo="int4" 
+           description="Cadastro sequencial" 
+           inivalue="0" 
+           label="Cadastro sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Cadastro sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='caixa.receitainfracao_i06_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009427" 
+           campo_api='' 
+           name="i06_receitaprincipal" 
+           conteudo="int4" 
+           description="Código da Receita Principal" 
+           inivalue="0" 
+           label="Código da Receita Principal" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código da Receita Principal" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009429" 
+           campo_api='' 
+           name="i06_receitaduplicidade" 
+           conteudo="int4" 
+           description="Código da Receita de Duplicidade" 
+           inivalue="0" 
+           label="Código da Receita de Duplicidade" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código da Receita de Duplicidade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009430" 
+           campo_api='' 
+           name="i06_anousu" 
+           conteudo="int4" 
+           description="Exercicio" 
+           inivalue="0" 
+           label="Exercicio" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Exercicio" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009428" 
+           campo_api='' 
+           name="i06_nivel" 
+           conteudo="int4" 
+           description="Código do Nivel" 
+           inivalue="0" 
+           label="Código do Nível" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código do Nível" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009444" 
+           campo_api='' 
+           name="i06_conta" 
+           conteudo="int4" 
+           description="Código da Conta Bancária" 
+           inivalue="0" 
+           label="Código da Conta" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código da Conta" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="i06_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

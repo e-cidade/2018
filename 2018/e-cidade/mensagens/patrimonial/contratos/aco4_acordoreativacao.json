@@ -1,0 +1,11 @@
+{
+  "acordo_nao_selecionado"                 : "Acordo não selecionado.",
+  "data_termino_paralisacao_nao_informada" : "Data de terminio da paralisação não informada.",
+  "observacao_nao_informada"               : "Obervação não informada.",
+  "data_retorno_menor_inicial"             : "Data de retorno não pode ser menor que a data da paralisação.",
+  "nenhum_periodo_processar"               : "Nenhum Período para processar.",
+  "buscando_dados_paralisacao"             : "Buscando dados da paralisação... aguarde.",
+  "buscando_periodos"                      : "Buscando períodos... aguarde.",
+  "reativando_acordo"                      : "Reativando acordo... aguarde.",
+  "cancelando_reativacao"                  : "Cancelando reativação... aguarde."
+}

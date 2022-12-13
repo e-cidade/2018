@@ -1,0 +1,6 @@
+{
+  "campo_obrigatorio" : "O campo [sCampo] é de preenchimento obrigatório.",
+  "salvo_sucesso" : "Situação da Perspectiva salva com sucesso.",
+  "existe_acompanhamento" : "A Homologação da Perspectiva não pode ser alterada pois já existe um Acompanhamento vinculado.",
+  "metas_nao_configuradas" : "Não foram configuradas as metas da [sTipo] para a Perspectiva selecionada."
+}

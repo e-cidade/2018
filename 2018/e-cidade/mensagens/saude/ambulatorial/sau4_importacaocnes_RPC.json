@@ -1,0 +1,11 @@
+{
+  "cnes_nao_encontrados"                     : "Não foi possível encontrar todos os CNES e suas respectivas unidades. Selecione o Departamento equivalente a cada CNES.",
+  "importacao_sucesso"                       : "Importação realizada com sucesso.",
+  "caminho_nao_informado"                    : "Caminho do arquivo XML não informado.",
+  "arquivo_invalido"                         : "Arquivo selecionado possui uma extensão inválida. A mesma deve ser XML.",
+  "novos_vinculos_realizados"                : "Novos vínculos CNES/Departamento salvos com sucesso.",
+  "novos_vinculos_realizados_inconsistencia" : "Novos vínculos CNES/Departamento salvos com sucesso. Porém, algumas inconsistências foram encontradas.",
+  "importacao_sucesso_inconsistencia"        : "Importação realizada com sucesso. Porém, algumas inconsistências foram encontradas.",
+  "erro_buscar_departamentos"                : "Erro ao buscar os departamentos para novo vínculo:\n[sErro]",
+  "nenhum_departamento_encontrado"           : "Nenhum departamento encontrado para novos vínculos."
+}

@@ -1,0 +1,20 @@
+<?xml version='1.0' ?>
+<processamento>
+
+    <versao>1.2</versao>
+    <transacao>true</transacao>
+
+    <parametros>
+        <parametro nome="matricula" obrigatorio="true" tipo="integer" />
+        <parametro nome="ano" obrigatorio="true" tipo="integer" />
+
+    </parametros>
+
+    <configuracoes>
+        <classe referencia="oComprovanteRendimentos" nome="ComprovanteRendimentosWebService" parametros="$ano" caminho="model/pessoal/webservice/ComprovanteRendimentosWebService.model.php"/>
+        <exec>
+            <metodo referencia="oComprovanteRendimentos" nome="getComprovanteDoServidor"  parametros="$matricula" />
+        </exec>
+    </configuracoes>
+
+</processamento>

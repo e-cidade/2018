@@ -1,0 +1,5 @@
+{
+  "informe_periodo"               : "Informe a data inicial e a data final do período.",
+  "anos_diferentes"               : "Ano inicial e final do período devem ser iguais.",
+  "data_inicial_menor_data_final" : "Data inicial deve ser menor que data final do período."
+}

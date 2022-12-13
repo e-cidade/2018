@@ -1,0 +1,4 @@
+{
+   "erro_buscar_movimentacao" : "Não foi possível buscar a movimentação informada.\n[sErro]"
+  ,"erro_salvar_movimentacao" : "Não foi possível salvar a movimentação.\n[sErro]"
+}

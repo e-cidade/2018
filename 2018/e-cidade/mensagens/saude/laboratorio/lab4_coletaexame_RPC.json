@@ -1,0 +1,5 @@
+{
+  "erro_incluir_coletaitem" : "Erro ao inserir registro em lab_coletaitem:\n [sErro]",
+  "erro_incluir_requiitem"  : "Erro ao inserir registro em lab_requiitem:\n [sErro]",
+  "exames_salvos"           : "Exames salvos com sucesso."
+}

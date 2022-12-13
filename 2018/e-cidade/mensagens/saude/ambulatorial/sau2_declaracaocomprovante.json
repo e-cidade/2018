@@ -1,0 +1,11 @@
+{
+   "informe_ficha_atendimento"     : "Código da Ficha do Atendimento.",
+   "informe_hora"                  : "Não é permitido informar somente a hora inicial ou a hora final.",
+   "ficha_de_atendimento_sem_cgs"  : "Ficha de Atendimento não informada.",
+   "hora_inicial_maior_final"      : "Hora inicial maior que a hora final.",
+   "erro_buscar_estado"            : "Erro ao buscar estado. \n[sErro]",
+   "estado_nao_encontrado"         : "Estado [sErro] não encontrado.",
+   "erro_buscar_dados_medico"      : "Erro ao buscar os dados do médico: \n[sErro]",
+   "dados_medicos_nao_encontrados" : "Nenhum Profissional relacionado com a Ficha de Atendimento Ambulatorial.",
+   "intervalo_comparecimento"      : ", entre [hora_inicial] e [hora_final]."
+}

@@ -1,0 +1,7 @@
+{
+  "erro_arquivo_nao_informado"         : "Arquivo de retenção é de preenchimento obrigatório.",
+  "erro_relatorio_sem_registro"        : "Não há registros para gerar relatório.",
+  "erro_codigo_arquivo_nao_encontrado" : "Código do Arquivo de Retenção não encontrado.",
+  "erro_gerar_relatorio"               : "Erro ao gerar relatório.",
+  "processado_sucesso"                 : "Arquivo processado com sucesso!"
+}

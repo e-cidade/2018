@@ -1,0 +1,44 @@
+#!/usr/bin/php -q
+<?php
+
+require_once( dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php' );
+
+try {
+  
+  if (empty($argv[1])) {
+    throw new Exception("Diretorio para gerar pacote nao informado.");
+  }
+
+  $name = $argv[1];
+  $output = empty($argv[2]) ? mb_strtolower($name) . '-package.tar.gz' : $argv[2];
+
+  $path = ECIDADE_EXTENSION_PACKAGE_PATH . $name;
+  $base = dirname($path);
+
+  if (!is_dir($path)) {
+    throw new Exception("Diretorio de extensao nao existe: $path");
+  }
+
+  echo " - Compactando extensão: $path\n";
+  executar("tar -zcf '$output' --directory='$base' '$name'"); 
+  echo " - Pacote gerado: $output\n";
+
+} catch (Exception $error) {
+
+  echo "\n message: ". $error->getMessage(). "\n";
+  echo "\n trace:\n ". str_replace("\n", "\n ", $error->getTraceAsString()) . "\n";
+  exit(2);
+}
+
+echo "\n memory: " . round((memory_get_peak_usage(true)/1024)/1024, 2) . "mb\n\n";
+
+function executar($sComando) {
+
+  $sArquivoLog = '/tmp/executar.output';
+  exec(escapeshellcmd($sComando) . ' 2> ' . $sArquivoLog, $aRetorno, $iStatus);
+
+  if ($iStatus > 0) {
+    throw new Exception(trim(file_get_contents($sArquivoLog)));
+  }
+
+}

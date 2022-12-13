@@ -1,0 +1,5 @@
+{
+	"erro_buscar_lancamentos"                  : "Ocorreu um erro ao buscar os lancamentorra de RRA.",
+	"erro_informar_codigo_excluir_lancamentos" : "Informe um código de assentamento para efetuar a exclusão dos lançamentos de RRA.",
+	"erro_excluir_lancamentos"                 : "Ocorreu ao excluir os lancamentorra de RRA."
+}

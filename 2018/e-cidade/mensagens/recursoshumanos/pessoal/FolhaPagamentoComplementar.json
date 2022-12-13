@@ -1,0 +1,9 @@
+{
+  "erro_excluir_gerfcom"         : "Ocorreu um erro ao tentar excluir os cálculos do ponto complementar.",
+  "erro_excluir_pontocom"        : "Ocorreu um erro ao tentar excluir os pontos da complementar.",
+  "folha_fechada"                : "Não existe folha complementar em aberto.",
+  "sem_registro_ponto"           : "Não foi encontrado registros de ponto complementar.",
+  "erro_ponto"                   : "Erro ao buscar dados do ponto complementar.",
+  "fechamento_folha_fechada"     : "Não existe folha complementar em aberto.",
+  "erro_excluir_rhfolhapagamento": "Erro ao cancelar a abertura da folha complementar."
+}

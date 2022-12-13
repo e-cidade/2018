@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+    <parametro nome="sCpfCnpjContador"                obrigatorio="false" tipo="integer" />
+    <parametro nome="iInscricaoMunicipalContribuinte" obrigatorio="false" tipo="integer" />
+    <parametro nome="sArquivoEmBase64"                obrigatorio="true"  tipo="string" />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="ProcessamentoArquivoDMSWebservice"     parametros="" caminho="model/issqn/ProcessamentoArquivoDMSWebservice.model.php">
+      <metodos>
+        <metodo nome="setCpfCnpjContador"                parametros="$sCpfCnpjContador" />
+        <metodo nome="setInscricaoMunicipalContribuinte" parametros="$iInscricaoMunicipalContribuinte" />
+        <metodo nome="setArquivo"                        parametros="$sArquivoEmBase64" />
+        <metodo nome="processar" />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

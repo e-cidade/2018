@@ -1,0 +1,8 @@
+{
+"sem_codigo_relatorio"     : "Codigo do relatorio a exportar indefinido",
+"relatorio_nao_encontrado" : "Relatório legal não encontrado",
+"linha_filtro_padrao"      : "Erro ao buscar filtro padrão para linha do relatorio",
+"linha_coluna"             : "Erro ao buscar coluna para linha do relatorio",
+"erro_gerar"               : "Erro ao gerar arquivo."
+
+}

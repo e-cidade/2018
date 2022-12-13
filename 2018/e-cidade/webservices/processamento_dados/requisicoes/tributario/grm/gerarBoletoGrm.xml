@@ -1,0 +1,49 @@
+<?xml version='1.0' ?>
+<processamento>
+    <versao>1.2</versao>
+    <parametros>
+        <parametro nome="unidade_gestora"     obrigatorio="true"  tipo="integer" />
+        <parametro nome="tipo_recolhimento"   obrigatorio="true"  tipo="integer"  />
+        <parametro nome="cgm"                 obrigatorio="false" tipo="integer"   />
+        <parametro nome="cpf_cnpj"            obrigatorio="true"  tipo="string"  />
+        <parametro nome="nome"                obrigatorio="true"  tipo="string"  />
+        <parametro nome="data_vencimento"     obrigatorio="true"  tipo="date"   />
+        <parametro nome="numero_referencia"   obrigatorio="false" tipo="string"   />
+        <parametro nome="competencia"         obrigatorio="true"  tipo="string"   />
+        <parametro nome="valor_principal"     obrigatorio="true"  tipo="float"   />
+        <parametro nome="desconto"            obrigatorio="false" tipo="float"   />
+        <parametro nome="multa"               obrigatorio="false" tipo="float"   />
+        <parametro nome="juros"               obrigatorio="false" tipo="float"   />
+        <parametro nome="outros_acrescimos"   obrigatorio="false" tipo="float"   />
+        <parametro nome="outras_deducoes"     obrigatorio="false" tipo="float"   />
+        <parametro nome="valor_total"         obrigatorio="true"  tipo="float"   />
+        <parametro nome="atributos"           obrigatorio="false"  tipo="array"   />
+
+
+    </parametros>
+    <configuracoes>
+        <classe nome="\Ecidade\Tributario\Grm\WebService\BoletoGrm" referencia="oBoletoGrm" parametros="" caminho="src/Tributario/Grm/WebService/BoletoGrm.php" />
+        <exec>
+            <metodo referencia="oBoletoGrm" nome="setCgm" parametros="$cgm" />
+            <metodo referencia="oBoletoGrm" nome="setCompetencia" parametros="$competencia" />
+            <metodo referencia="oBoletoGrm" nome="setUnidadeGestora" parametros="$unidade_gestora" />
+            <metodo referencia="oBoletoGrm" nome="setTipoRecolhimento" parametros="$tipo_recolhimento" />
+            <metodo referencia="oBoletoGrm" nome="setDataVencimento" parametros="$data_vencimento" />
+            <metodo referencia="oBoletoGrm" nome="setNumeroReferencia" parametros="$numero_referencia" />
+            <metodo referencia="oBoletoGrm" nome="setCpfCnpj" parametros="$cpf_cnpj" />
+            <metodo referencia="oBoletoGrm" nome="setNome" parametros="$nome" />
+            <metodo referencia="oBoletoGrm" nome="setValor" parametros="$valor_principal" />
+            <metodo referencia="oBoletoGrm" nome="setValorDesconto" parametros="$desconto" />
+            <metodo referencia="oBoletoGrm" nome="setValorMulta" parametros="$multa" />
+            <metodo referencia="oBoletoGrm" nome="setValorJuros" parametros="$juros" />
+            <metodo referencia="oBoletoGrm" nome="setValorOutrosAcrescimos" parametros="$outros_acrescimos" />
+            <metodo referencia="oBoletoGrm" nome="setValorOutrasDeducoes" parametros="$outras_deducoes" />
+            <metodo referencia="oBoletoGrm" nome="setValorTotal" parametros="$valor_total" />
+            <metodo referencia="oBoletoGrm" nome="setAtributos" parametros="$atributos" />
+            <metodo referencia="oBoletoGrm" nome="gerar" parametros="" />
+        </exec>
+    </configuracoes>
+</processamento>
+
+
+

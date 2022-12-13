@@ -1,0 +1,11 @@
+{
+  "buscarDivisao"         : "Pesquisando divisões do departamento. \nAguarde ...",
+  "buscarBens"            : "Pesquisando bens. \nAguarde ...",
+  "nenhumBemSelecionado"  : "Selecione um bem para processar a baixa.",
+  "processandoBaixa"      : "Pesquisando divisões do departamento. \nAguarde ...",
+  "dataBranco"            : "Selecione a data da baixa.",
+  "motivoBranco"          : "Selecione o motivo da baixa.",
+  "dadosAdicionaisBranco" : "Dados adicionais da baixa não pode ser nulo.",
+  "processadoComSucesso"  : "Processamento realizado com sucesso.",
+  "confirmaBaixa"         : "Confirma baixa dos bens selecionados?"
+}

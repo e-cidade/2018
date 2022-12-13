@@ -1,0 +1,10 @@
+{
+  "buscando_dados_padrao"          : "Aguarde, buscando os dados padrão...",
+  "buscando_laboratorios"          : "Aguarde, buscando os laboratórios...",
+  "competencia_nao_informada"      : "Nenhuma competência foi selecionada.",
+  "nenhum_laboratorio_selecionado" : "Nenhum laboratório foi selecionado.",
+  "gerando_arquivo"                : "Aguarde, gerando o arquivo...",
+  "nome_arquivo_nao_informado"     : "Nome do arquivo não informado.",
+  "arquivo_gerado"                 : "Arquivo gerado com sucesso.",
+  "erro_gerar_arquivo"             : "Erro ao gerar o arquivo."
+}

@@ -1,0 +1,8 @@
+{
+  "erro_buscar_modulo"  : "Erro ao buscar o módulo:\n[sErro]",
+  "erro_salvar_modulo"  : "Erro ao salvar os dados do módulo:\n[sErro]",
+  "sem_transacao"       : "Sem Transação com o banco de dados ativa.",
+  "id_nao_setado"       : "Id do item não setado.",
+  "erro_excluir_modulo" : "Erro ao excluir os dados do módulo:\n[sErro]",
+  "erro_buscar_db_menu" : "Erro ao buscar os menus vinculados ao módulo:\n[sErro]"
+}

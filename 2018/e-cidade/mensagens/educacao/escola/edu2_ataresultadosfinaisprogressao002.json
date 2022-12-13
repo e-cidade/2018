@@ -1,0 +1,6 @@
+{
+   "informe_escola"     : "Informe a escola."
+  ,"informe_calendario" : "Informe o calendário."
+  ,"informe_turmas"     : "Informe as turmas."
+  ,"erro_buscar_alunos" : "Erro ao buscar alunos vinculados a turma.\n[sErro]"
+}

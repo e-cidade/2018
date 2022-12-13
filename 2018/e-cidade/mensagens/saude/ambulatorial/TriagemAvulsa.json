@@ -1,0 +1,8 @@
+{
+  "erro_buscar_triagem"    : "Erro ao buscar a Triagem.",
+  "triagem_nao_encontrada" : "Nenhuma Triagem encontrado com o código informado.",
+  "nenhuma_transacao"      : "Nenhuma transação no banco.",
+  "erro_salvar"            : "Erro ao salvar os dados da Triagem.\n [sErro]",
+  "erro_buscar_medico"     : "Erro ao buscar o Médico.\n [sErro]",
+  "erro_buscar_agravo"     : "Erro ao buscar Agravo. \n[sErro]"
+}

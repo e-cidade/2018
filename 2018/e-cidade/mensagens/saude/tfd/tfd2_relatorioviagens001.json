@@ -1,0 +1,5 @@
+{
+  "informe_periodo_inicial"             : "Período inicial não informado.",
+  "informe_periodo_final"               : "Período final não informado.",
+  "periodo_inicial_maior_periodo_final" : "Período inicial é maior do que o período final informado."
+}

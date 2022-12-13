@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<processamento>
+  <transacao>true</transacao>
+  <parametros>
+    <parametro nome="cpf"                  obrigatorio="false" tipo="cpf"           />
+    <parametro nome="cnpj"                 obrigatorio="false" tipo="cnpj"          />
+    <parametro nome="nome"                 obrigatorio="true"  tipo="nome"          />
+    <parametro nome="endereco"             obrigatorio="false" tipo="boolean"       />
+    <parametro nome="descricao_logradouro" obrigatorio="true"  tipo="string"        />
+    <parametro nome="numero_logradouro"    obrigatorio="true"  tipo="integer"       />
+    <parametro nome="complemento"          obrigatorio="false" tipo="string"        />
+    <parametro nome="descricao_bairro"     obrigatorio="true"  tipo="string"        />
+    <parametro nome="codigo_cidade_ibge"   obrigatorio="true"  tipo="integer"       />
+    <parametro nome="uf"                   obrigatorio="true"  tipo="somenteletras" />
+    <parametro nome="email"                obrigatorio="false" tipo="email"         />
+    <parametro nome="telefone"             obrigatorio="false" tipo="integer"       />
+    <parametro nome="celular"              obrigatorio="false" tipo="integer"       />
+    <parametro nome="cep"                  obrigatorio="true"  tipo="integer"       />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="CadastroCgmWebServicePortalDoacoes" parametros="" caminho="model/arrecadacao/webservice/CadastroCgmWebServicePortalDoacoes.model.php">
+      <metodos>
+        <metodo nome="setCpf"                 parametros="$cpf"                     />
+        <metodo nome="setCnpj"                parametros="$cnpj"                    />
+        <metodo nome="setNome"                parametros="$nome"                    />
+        <metodo nome="setEnderecoMunicipio"   parametros="$endereco"                />
+        <metodo nome="setDescricaoLogradouro" parametros="$descricao_logradouro"    />
+        <metodo nome="setNumeroLogradouro"    parametros="$numero_logradouro"       />
+        <metodo nome="setComplemento"         parametros="$complemento"             />
+        <metodo nome="setDescricaoBairro"     parametros="$descricao_bairro"        />
+        <metodo nome="setCodigoCidade"        parametros="$codigo_cidade_ibge"      />
+        <metodo nome="setUf"                  parametros="$uf"                      />
+        <metodo nome="setEmail"               parametros="$email"                   />
+        <metodo nome="setTelefone"            parametros="$telefone"                />
+        <metodo nome="setCelular"             parametros="$celular"                 />
+        <metodo nome="setCep"                 parametros="$cep"                     />
+        <metodo nome="salvar"                                                       />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

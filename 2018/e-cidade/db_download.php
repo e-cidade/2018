@@ -1,0 +1,86 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal
+ *  Copyright (C) 2014  DBSeller Servicos de Informatica
+ *                            www.dbseller.com.br
+ *                         e-cidade@dbseller.com.br
+ *
+ *  Este programa e software livre; voce pode redistribui-lo e/ou
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme
+ *  publicada pela Free Software Foundation; tanto a versao 2 da
+ *  Licenca como (a seu criterio) qualquer versao mais nova.
+ *
+ *  Este programa e distribuido na expectativa de ser util, mas SEM
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais
+ *  detalhes.
+ *
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU
+ *  junto com este programa; se nao, escreva para a Free Software
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+ *  02111-1307, USA.
+ *
+ *  Copia da licenca no diretorio licenca/licenca_en.txt
+ *                                licenca/licenca_pt.txt
+ */
+
+if(isset($arquivo) && trim($arquivo)!=""){
+  $filename = $arquivo;
+  $filename = realpath($filename);
+
+  try {
+
+    if (!file_exists($filename)) {
+      throw new Exception("Arquivo não existe para download.");
+    }
+
+    if (!is_readable($filename)) {
+      throw new Exception('Sem permissão para realizar download do arquivo.<br/>Contate suporte.');
+    }
+
+    if ( strpos($filename, '/tmp/') === false && strpos($filename, __DIR__ . '/tmp/') === false ) {
+      throw new Exception('Sem permissão para realizar download do arquivo.<br/>Contate suporte.');
+    }
+
+  } catch (Exception $e) {
+    $url = 'db_erros.php?fechar=true&db_erro=' . urlencode($e->getMessage());
+    header("Location: $url");
+    exit;
+  }
+
+
+
+  $file_extension = strtolower(substr(strrchr($filename,"."),1));
+
+  switch($file_extension) {
+
+    case "txt": $ctype="application/text";              break;
+    case "pdf": $ctype="application/pdf";               break;
+    case "xml": $ctype="application/xml";               break;
+    case "exe": $ctype="application/octet-stream";      break;
+    case "zip": $ctype="application/zip";               break;
+    case "doc": $ctype="application/msword"; 						break;
+    case "xls": $ctype="application/vnd.ms-excel";      break;
+    case "ppt": $ctype="application/vnd.ms-powerpoint"; break;
+    case "log": $ctype="application/txt";               break;
+    case "gif": $ctype="image/gif";                     break;
+    case "png": $ctype="image/png";                     break;
+    case "jpe":
+    case "jpeg":
+    case "jpg": $ctype="image/jpg";                     break;
+    case "csv": $ctype="text/csv";                      break;
+    default: $ctype="application/force-download";
+  }
+
+  header("Pragma: public");
+  header("Expires: 0");
+  header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+  header("Cache-Control: private",false);
+  header("Content-Type: $ctype");
+  header("Content-Disposition: attachment; filename=\"".basename($filename)."\";");
+  header("Content-Transfer-Encoding: binary");
+  header("Content-Length: ".@filesize($filename));
+  set_time_limit(0);
+  @readfile($filename);
+}

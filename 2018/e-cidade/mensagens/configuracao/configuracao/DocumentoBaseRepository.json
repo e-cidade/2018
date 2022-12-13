@@ -1,0 +1,4 @@
+{
+  "erro_buscar_caddocumento" : "Erro ao buscar o documento:\n[sErro]",
+  "erro_buscar_valor_cgs"    : "Erro ao buscar os valores respondidos pelo CGS:\n[sErro]"
+}

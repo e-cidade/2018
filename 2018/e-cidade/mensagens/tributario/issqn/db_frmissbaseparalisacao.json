@@ -1,0 +1,8 @@
+
+{ 
+  "alterar"         : "A Paralisação de Inscrição foi alterada com sucesso.",
+  "erro_inscricao"  : "Inscrição Municipal não informada.",
+  "incluir"         : "A Paralisação de Inscrição foi incluida com sucesso.",
+  "empresa_baixada" : "A Inscrição [sInscricao] está baixada.",
+  "erro_data_inicial_nao_informada": "Data inicial da paralisação não informada."
+}

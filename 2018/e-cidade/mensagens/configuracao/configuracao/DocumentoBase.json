@@ -1,0 +1,6 @@
+{
+  "codigo_nao_informado"     : "Código do documento base não informado.",
+  "documento_nao_encontrado" : "Documento não encontrado para o código informado( [iCodigo] ).",
+  "erro_buscar_atributos"    : "Erro ao buscar os atributos do documento:\n[sErro]",
+  "erro_buscar_documento"    : "Erro ao buscar o documento:\n[sErro]"
+}

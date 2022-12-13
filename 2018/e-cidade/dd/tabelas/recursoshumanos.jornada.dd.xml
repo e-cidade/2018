@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4005' name='recursoshumanos.jornada' description="Tabela com as jornadas de trabalho dos servidores" prefix="rh188" label="Jornadas de trabalho" type="0">
+  <fields>
+    <field codigo="22229" 
+           campo_api='' 
+           name="rh188_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.jornada_rh188_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22230" 
+           campo_api='' 
+           name="rh188_descricao" 
+           conteudo="varchar(50)" 
+           description="Descrição das jornadas de trabalho" 
+           inivalue="" 
+           label="Descrição" 
+           size="50" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Descrição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22231" 
+           campo_api='' 
+           name="rh188_fixo" 
+           conteudo="bool" 
+           description="Se a jornada é fixa" 
+           inivalue="f" 
+           label="Fixo" 
+           size="1" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="5" 
+           tipoobj="text" 
+           labelrel="Fixo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22344" 
+           campo_api='' 
+           name="rh188_tipo" 
+           conteudo="char(1)" 
+           description="Informa se a jornada é F-Folga, D-DSR ou T-Trabalhado" 
+           inivalue="" 
+           label="Tipo" 
+           size="1" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Tipo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh188_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

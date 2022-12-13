@@ -1,0 +1,14 @@
+{
+  "competencia_invalida"        : "Arquivo inconsistente! Competência informada diferente da atual da folha.",
+  "instituicao_invalida"        : "Arquivo inconsistente! Instituição informada inválida.",
+  "matricula_invalida"          : "Matrícula não cadastrada no e-Cidade.",
+  "nome_invalido"               : "Nome não corresponde a matrícula informada.",
+  "extensao_invalida"           : "Arquivo com extensão inválida! Arquivo deve possuir extensão .txt",
+  "arquivo_invalido"            : "Arquivo importado é inválido.",
+  "conteudo_invalido"           : "Arquivo com conteúdo inválido! Ajustar conteúdo para o padrão do arquivo.",
+  "erro_banco_inserir_servidor" : "Erro ao salvar os dados do servidor.",
+  "erro_banco_inserir_rubrica"  : "Erro ao salvar os dados da rubrica.",
+  "rubrica_invalida"            : "Rubrica [sRubrica] não cadastrada no e-Cidade.",
+  "valor_invalido"              : "O valor informado para a rubrica é inválido.",
+  "arquivo_vazio"               : "Arquivo com conteúdo inválido! Não é possível importar arquivo vazio."
+}

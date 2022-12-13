@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<modification>
+
+  <id>dbportal-v3-dbug</id>
+  <label>DBPortal v3 - DBug</label>
+  <version>1.0</version>
+
+  <file path="templates/template_login_e-cidade.php">
+
+    <operation error="log" label="Abre o ecidade em nova aba">
+      <search><![CDATA[window.open(sUrl,wname,'width=1,height=1')]]></search>
+      <add><![CDATA[window.open(sUrl, '_blank')]]></add>
+    </operation>
+
+  </file>
+
+  <file path="abrir.php">
+
+    <operation error="log" label="Abre o ecidade em nova aba">
+      <search><![CDATA[if(age.indexOf("Firefox") != -1) {
+
+    jan = window.open('inicio.php?uso=<?=$DB_login?>&janelaWidth='+sizeWidth+'&janelaHeight='+sizeHeight,wname,'width='+sizeWidth+',height='+sizeHeight+',fullscreen=1,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=0');
+    jan.moveTo(0,0);
+  }]]></search>
+      <add><![CDATA[if(true) {
+    window.location.href = 'inicio.php?uso=<?=$DB_login?>&janelaWidth='+sizeWidth+'&janelaHeight='+sizeHeight
+  }]]></add>
+    </operation>
+
+  </file>
+
+  
+
+</modification>

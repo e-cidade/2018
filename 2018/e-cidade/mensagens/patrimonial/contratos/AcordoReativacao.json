@@ -1,0 +1,9 @@
+{
+  "sem_transacao_ativa"      : "Sem transação com o banco de dados ativa.",
+  "vigencia_nao_encontrada" : "vigencia atual do acordo nao encontrada.",
+  "erro_atualizar_vigencia" : "Erro ao atualzar vigêncial do acordo.\n[erro].",
+  "erro_incluir_novo_periodo" : "Erro ao incluir novo período.\n[erro].",
+  "periodo_complementar_nao_encontrado" : "Periodo Complementar nao encontrado.",
+  "erro_inclusao_item_periodo_complementar":"Erro ao incluir periodo complementar no item. \n[erro]",
+  "erro_excluir_reativacao" : "Erro ao cancelar reativação.\n[erro]."
+}

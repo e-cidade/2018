@@ -1,0 +1,6 @@
+{
+  "nenhum_debito"                : "Nenhum débito selecionado.",
+  "nenhuma_procedencia"          : "Selecione uma procedência.",
+  "debitos_receitas_processadas" : "Débitos e receitas a serem processadas.\n",
+  "sem_procedencia"              : "Não existem Procedências cadastradas para o Tipo de Débito de Destino selecionado. Acesse o módulo Diversos e o menu  Cadastros > Procedência > Inclusão para cadastrar uma procedência."
+}

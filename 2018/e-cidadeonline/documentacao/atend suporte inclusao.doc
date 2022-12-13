@@ -1,0 +1,109 @@
+
+Como funciona a opção atendimento suporte-> inclusão.
+
+Arquivo ate4_atendsup0001.php
+
+Objetivo: incluir solicitações do cliente no atendimento ao suporte.
+
+Descrição:
+- Mostra uma tabela com os atendimentos em abertos, para o usuário logado e que ainda não foi incluido nenhum andamento de suporte.
+- O usuário seleciona o atendimento  desejado.
+- Mostra as informações do atendimento.
+- Informa o usuário envolvido, permitindo incluir mais usuários.
+- solicita as informaçõpes dos seguintes campos:
+	* solicitação;
+	* executado
+	* percentual
+	* modulo
+	* procedimento
+	* prazo para atendimento sugerido pelo cliente
+Botão incluir
+
+validações: somente o campo solicitação é obrigatório.
+
+Ações do botão incluir:
+
+o sistema inclui nas seguintes tabelas:
+	- atenditem
+	- atenditemmod
+	- atendimentomod
+	- atenditemusu
+- se percentual for =100, o sistema inclui uma tarefa automaticamente, mostrando uma tela com as informações do atendimento... incluindo nas seguintes tabelas:
+	- tarefa
+	- tarefaproced
+	- tarefamodulo
+	- tarefamotivo
+	- tarefasituacao
+	- tarefaitem
+	- tarefausu
+	- tarefaenvol
+	- tarefaclientes
+	- tarefa_lanc
+	- tarefalog
+	- tarefalogsituacao
+
+- se percentual for diferente de 100, o sistema mostra uma tela com os dados do atendimento e a opção de incluir a tarefa.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Como vai funcionar a nova rotina
+O sistema deve permitir incluir mais de uma solicitação (atenditem) para o atendimento. após incluir as solicitações fechar o andamento.
+
+Descrição:
+- Mostra uma tabela com os atendimentos em abertos, mostrando todos os atendimentos que não foram fechados ou que ainda não foram incluidos andamento, atendimento somente do tecnico logado.
+	*buscar na tabela atendimento os que possuem o campo at02_datafim null e técnico = aou usuário logado.
+- O usuário seleciona o atendimento  desejado.
+- Mostra as informações do atendimento.
+- Informa o usuário envolvido, permitindo incluir mais usuários.
+- solicita as informações dos seguintes campos:
+	* solicitação;
+	* executado
+	* percentual
+	* modulo
+	* procedimento
+	* prazo para atendimento sugerido pelo cliente
+
+Botão incluir
+validações: somente o campo solicitação é obrigatório.
+
+Ações do botão incluir:
+
+o sistema inclui nas seguintes tabelas:
+	- atenditem
+	- atenditemmod
+	- atendimentomod... não gravar mais
+	- atenditemusu
+O sistema deve mostrar os dados incluidos em uma tabela abaixo com as opções de alterar e excluir a solicitação.
+Pode ser incluido mais solicitações para o mesmo atendimento.
+Após incluir todas as solicitações, deve clicar no botão fechar atendimento.
+
+Botão fechar atendimento:
+- faz uma alteração na tabela atendimento, preenchendo o campo at02_datafim.
+- verificar todas as solicitações incluidas, para ver o percentual.
+- se percentual for =100, o sistema inclui uma tarefa automaticamente, incluindo nas seguintes tabelas:
+	- tarefa
+	- tarefaproced
+	- tarefamodulo
+	- tarefamotivo
+	- tarefasituacao
+	- tarefaitem
+	- tarefausu
+	- tarefaenvol
+	- tarefaclientes
+	- tarefa_lanc
+	- tarefalog
+	- tarefalogsituacao
+
+Esta rotina será usada para inclusão e alteração de atendimento a suporte.
+Fazer os dois menus chamar este arquivo... ate4_atendsup0001.php
+
+Alterar o layout da tela, distribuindo melhor as informações.
+
+*******************
+Criar uma tabela atenditemproced
+atenditemproced
+- at24_sequencial PK
+- at24_proced FK com db_proced
+- at24_atenditem FK com atenditem
+
+

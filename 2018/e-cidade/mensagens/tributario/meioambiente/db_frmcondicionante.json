@@ -1,0 +1,15 @@
+{
+  "tipocondicionante_obrigatorio"   : "Campo Tipo é de preenchimento obrigatório",
+  "tipolicenca_obrigatorio"         : "Campo Tipo de Licença é de preenchimento obrigatório",
+  "descricao_obrigatorio"           : "Campo Descrição é de preenchimento obrigatório",
+  "atividade_obrigatorio"           : "Campo Atividade é de preenchimento obrigatório",
+  "padrao_obrigatorio"              : "Campo Padrão é de preenchimento obrigatório",
+  "incluindo_condicionante"         : "Aguarde, inserindo Condicionante...",
+  "pesquisando_atividades"          : "Aguarde, pesquisando Atividades de Impacto vinculadas a Condicionante...",
+  "inclusao_sucesso"                : "Condicionante incluida com sucesso!",
+  "exclusao_sucesso"                : "Condicionante excluida com sucesso!",
+  "condicionante_obrigatorio"       : "Vínculo com Atividade não realizada. Código da Condicionante não informado!",
+  "confirma_exclusao_condicionante" : "Deseja excluir esta Condicionante ?",
+  "excluindo_condicionante"         : "Aguarde, excluindo Condicionante...",
+  "alteracao_sucesso"               : "Condicionante alterada com sucesso!"
+}

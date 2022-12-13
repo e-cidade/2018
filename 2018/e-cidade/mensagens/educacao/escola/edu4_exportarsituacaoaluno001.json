@@ -1,0 +1,5 @@
+{
+  "preencha_todos_campos"                          : "Preencha todos os campos do formulário!",
+  "data_inicial_final_deve_estar_dentro_ano_censo" : "Data Inicial e Final do Calendário deve estar dentro do Ano do Censo!",
+  "data_final_maior_inicial"                       : "Data Final do Calendário deve ser maior que a Data Inicial!"
+}

@@ -1,0 +1,2852 @@
+<?
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20080317;13392800">
+	<META NAME="CHANGEDBY" CONTENT="dbseller">
+	<META NAME="CHANGED" CONTENT="20081117;23301900">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm; text-align: justify }
+		P.western { so-language: pt-BR }
+		H1 { margin-bottom: 0.21cm; text-align: justify }
+		H1.western { font-family: "Helvetica"; font-size: 16pt; so-language: pt-BR }
+		H1.cjk { font-family: "DejaVu Sans"; font-size: 16pt }
+		H1.ctl { font-family: "DejaVu Sans"; font-size: 16pt }
+		H2 { margin-bottom: 0.21cm; text-align: justify }
+		H2.western { font-family: "DejaVu Sans", serif; so-language: pt-BR }
+		H2.cjk { font-family: "DejaVu Sans" }
+		H2.ctl { font-family: "DejaVu Sans" }
+		H3 { margin-bottom: 0.21cm; text-align: justify }
+		H3.western { font-family: "Helvetica"; so-language: pt-BR }
+		H3.cjk { font-family: "DejaVu Sans" }
+		H3.ctl { font-family: "DejaVu Sans" }
+		TD P { margin-bottom: 0cm; text-align: justify }
+		TD P.western { so-language: pt-BR }
+		A:link { text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<DIV ID="Sum&aacute;rio1" DIR="LTR"><A NAME="Sum&aacute;rio1|region"></A>
+	<DIV ID="Sum&aacute;rio1_Head" DIR="LTR">
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4 STYLE="font-size: 16pt"><B>&Iacute;ndice</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.CADASTRO|outline">CADASTRO	</A><A HREF="#1.CADASTRO|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.1.FISCAIS|outline">FISCAIS	</A><A HREF="#1.1.FISCAIS|outline">2</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.2.GR&Aacute;FICAS|outline">GR&Aacute;FICAS	</A><A HREF="#1.2.GR&Aacute;FICAS|outline">3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.3.PROCED&Ecirc;NCIAS|outline">PROCED&Ecirc;NCIAS	</A><A HREF="#1.3.PROCED&Ecirc;NCIAS|outline">3</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.4.TIPO DE FISCALIZA&Ccedil;&Atilde;O|outline">TIPO
+	DE FISCALIZA&Ccedil;&Atilde;O	</A><A HREF="#1.4.TIPO DE FISCALIZA&Ccedil;&Atilde;O|outline">5</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#1.5.TIPO DE VISTORIA|outline">TIPO
+	DE VISTORIA	</A><A HREF="#1.5.TIPO DE VISTORIA|outline">6</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.CONSULTA|outline">CONSULTA	</A><A HREF="#2.CONSULTA|outline">7</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.1.ALVAR&Aacute; SANIT&Aacute;RIO |outline">ALVAR&Aacute;
+	SANIT&Aacute;RIO 	</A><A HREF="#2.1.ALVAR&Aacute; SANIT&Aacute;RIO |outline">7</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.2.VISTORIA |outline">VISTORIA
+		</A><A HREF="#2.2.VISTORIA |outline">7</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.3.AUTO DE INFRA&Ccedil;&Atilde;O|outline">AUTO
+	DE INFRA&Ccedil;&Atilde;O	</A><A HREF="#2.3.AUTO DE INFRA&Ccedil;&Atilde;O|outline">8</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#2.4.NOTIFICA&Ccedil;&Atilde;O|outline">NOTIFICA&Ccedil;&Atilde;O	</A><A HREF="#2.4.NOTIFICA&Ccedil;&Atilde;O|outline">8</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.RELAT&Oacute;RIOS|outline">RELAT&Oacute;RIOS	</A><A HREF="#3.RELAT&Oacute;RIOS|outline">9</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.1.FISCAIS|outline">FISCAIS	</A><A HREF="#3.1.FISCAIS|outline">9</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.2.GR&Aacute;FICAS|outline">GR&Aacute;FICAS	</A><A HREF="#3.2.GR&Aacute;FICAS|outline">10</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.3.ALVAR&Aacute; SANIT&Aacute;RIO|outline">ALVAR&Aacute;
+	SANIT&Aacute;RIO	</A><A HREF="#3.3.ALVAR&Aacute; SANIT&Aacute;RIO|outline">10</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.4.VISTORIAS|outline">VISTORIAS	</A><A HREF="#3.4.VISTORIAS|outline">13</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.5.TERMO DE VISTORIA |outline">TERMO
+	DE VISTORIA 	</A><A HREF="#3.5.TERMO DE VISTORIA |outline">15</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.6.AUTO DE INFRA&Ccedil;&Atilde;O|outline">AUTO
+	DE INFRA&Ccedil;&Atilde;O	</A><A HREF="#3.6.AUTO DE INFRA&Ccedil;&Atilde;O|outline">17</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.7.AUTO DE INFRA&Ccedil;&Atilde;O POR PRAZO|outline">AUTO
+	DE INFRA&Ccedil;&Atilde;O POR PRAZO	</A><A HREF="#3.7.AUTO DE INFRA&Ccedil;&Atilde;O POR PRAZO|outline">17</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#3.8.NOTIFICA&Ccedil;&Atilde;O|outline">NOTIFICA&Ccedil;&Atilde;O	</A><A HREF="#3.8.NOTIFICA&Ccedil;&Atilde;O|outline">18</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.NOTIFICA&Ccedil;&Atilde;O POR PER&Iacute;ODO|outline">NOTIFICA&Ccedil;&Atilde;O
+	POR PER&Iacute;ODO	</A><A HREF="#4.NOTIFICA&Ccedil;&Atilde;O POR PER&Iacute;ODO|outline">19</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.1.ATIVIDADES BAIXADAS|outline">ATIVIDADES
+	BAIXADAS	</A><A HREF="#4.1.ATIVIDADES BAIXADAS|outline">20</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.2.LEVANTAMENTOS|outline">LEVANTAMENTOS	</A><A HREF="#4.2.LEVANTAMENTOS|outline">21</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.3.GERAL DE LEVANTAMENTO|outline">GERAL
+	DE LEVANTAMENTO	</A><A HREF="#4.3.GERAL DE LEVANTAMENTO|outline">21</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.4.AIDOF|outline">AIDOF	</A><A HREF="#4.4.AIDOF|outline">22</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.5.ALVAR&Aacute;|outline">ALVAR&Aacute;	</A><A HREF="#4.5.ALVAR&Aacute;|outline">22</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#4.6.NOTAS FISCAIS|outline">NOTAS
+	FISCAIS	</A><A HREF="#4.6.NOTAS FISCAIS|outline">23</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#5.PROCEDIMENTOS|outline">PROCEDIMENTOS	</A><A HREF="#5.PROCEDIMENTOS|outline">24</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#5.1.AIDOF|outline">AIDOF	</A><A HREF="#5.1.AIDOF|outline">24</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#5.2.ALVAR&Aacute; SANIT&Aacute;RIO|outline">ALVAR&Aacute;
+	SANIT&Aacute;RIO	</A><A HREF="#5.2.ALVAR&Aacute; SANIT&Aacute;RIO|outline">27</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#5.3.NOTIFICA&Ccedil;&Otilde;ES|outline">NOTIFICA&Ccedil;&Otilde;ES	</A><A HREF="#5.3.NOTIFICA&Ccedil;&Otilde;ES|outline">32</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#5.4.AUTO DE INFRA&Ccedil;&Atilde;O|outline">AUTO
+	DE INFRA&Ccedil;&Atilde;O	</A><A HREF="#5.4.AUTO DE INFRA&Ccedil;&Atilde;O|outline">35</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#5.5.LEVANTAMENTO FISCAL|outline">LEVANTAMENTO
+	FISCAL	</A><A HREF="#5.5.LEVANTAMENTO FISCAL|outline">41</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#5.6.EXPORTA LEVANTAMENTO|outline">EXPORTA
+	LEVANTAMENTO	</A><A HREF="#5.6.EXPORTA LEVANTAMENTO|outline">46</A></FONT></P>
+	<P STYLE="margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#6.AUTO DE LAN&Ccedil;AMENTO|outline">AUTO
+	DE LAN&Ccedil;AMENTO	</A><A HREF="#6.AUTO DE LAN&Ccedil;AMENTO|outline">47</A></FONT></P>
+	<P STYLE="margin-left: 0.5cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#6.1.VISTORIAS|outline">VISTORIAS	</A><A HREF="#6.1.VISTORIAS|outline">47</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#6.1.1.VISTORIA PARCIAL|outline">VISTORIA
+	PARCIAL	</A><A HREF="#6.1.1.VISTORIA PARCIAL|outline">48</A></FONT></P>
+	<P STYLE="margin-left: 1cm; margin-bottom: 0cm"><FONT FACE="Times"><A HREF="#6.1.2.VISTORIA GERAL|outline">VISTORIA
+	GERAL	</A><A HREF="#6.1.2.VISTORIA GERAL|outline">51</A></FONT></P>
+</DIV>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Helvetica"><FONT SIZE=4><B>M&Oacute;DULO
+FISCALIZA&Ccedil;&Atilde;O</B></FONT></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>	O m&oacute;dulo de Fiscaliza&ccedil;&atilde;o
+foi desenvolvido com o objetivo de otimizar os procedimentos
+administrativos dos setores de fiscaliza&ccedil;&atilde;o,
+possibilitando um maior planejamento e controle das a&ccedil;&otilde;es
+fiscais como:</P>
+<UL>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">vistorias</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">notifica&ccedil;&otilde;es</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">auto
+	de infra&ccedil;&atilde;o</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">autoriza&ccedil;&atilde;o
+	para impress&atilde;o de documentos fiscais (AIDOF)</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">cadastro
+	de alvar&aacute; sanit&aacute;rio</P>
+	<LI><P CLASS="western" ALIGN=JUSTIFY>levantamento fiscal (apura&ccedil;&atilde;o
+	de ISSQN)</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY>	O m&oacute;dulo fiscal concentra o
+controle de tarefas que podem ser utilizadas por mais de um setor de
+fiscaliza&ccedil;&atilde;o, portanto o controle dos procedimentos &eacute;
+efetuado por departamento, ou seja, os procedimentos criados por um
+setor, n&atilde;o podem ser consultados e nem alterados por usu&aacute;rios
+de um outro setor.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H1 CLASS="western"><A NAME="1.CADASTRO|outline"></A><A NAME="1.CADASTRO|outline"></A>
+CADASTRO</H1>
+<H2 CLASS="western"><A NAME="1.1.FISCAIS|outline"></A><A NAME="1.1.FISCAIS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2477db">FISCAIS</A></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	O
+cadastro de fiscais, consiste em criar um banco de informa&ccedil;&otilde;es
+de quais os servidores utilizam o m&oacute;dulo, sendo ou n&atilde;o
+do quadro de fiscais, pois nos procedimento de vistorias,
+notifica&ccedil;&otilde;es, auto de infra&ccedil;&atilde;o e
+levantamento fiscal, &eacute; necess&aacute;rio registrar os fiscais
+envolvidos. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2478db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>C&oacute;d.
+Usu&aacute;rio</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Para cadastrar um fiscal, basta informar o c&oacute;digo do usu&aacute;rio
+e clicar no bot&atilde;o incluir conforme figura 1. Caso n&atilde;o
+saiba o c&oacute;digo, basta clicar no link do campo correspondente e
+pesquisar pelo  nome.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_785f46d.png" NAME="figura31" ALIGN=LEFT WIDTH=642 HEIGHT=63 BORDER=0><BR CLEAR=LEFT>figura
+1</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">O
+cadastro de fiscais, n&atilde;o possui rotina de altera&ccedil;&atilde;o,
+pois caso se fa&ccedil;a necess&aacute;rio por exemplo altera&ccedil;&otilde;es
+de nome, departamento, etc, isso deve ser efetuado ou no cadastro de
+usu&aacute;rio ou no CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Para
+excluir um usu&aacute;rio do cadastro de fiscais, basta selecionar em
+uma lista e clicar no bot&atilde;o excluir, por&eacute;m caso o
+fiscal selecionado esteja vinculado a algum procedimento
+(notifica&ccedil;&atilde;o, auto de infra&ccedil;&atilde;o,
+levantamento fiscal, etc), a exclus&atilde;o n&atilde;o ser&aacute;
+permitida.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="1.2.GR&Aacute;FICAS|outline"></A><A NAME="1.2.GR&Aacute;FICAS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2123db">GR&Aacute;FICAS</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Possibilita
+o cadastro das gr&aacute;ficas sediadas ou n&atilde;o no munic&iacute;pio
+e seu objetivo &eacute; controlar a a libera&ccedil;&atilde;o de
+Autoriza&ccedil;&otilde;es para Impress&atilde;o de Documentos
+Fiscais (AIDOF), evitando a emiss&atilde;o de notas fiscais em
+gr&aacute;ficas n&atilde;o cadastradas no Cadastro Geral do Munic&iacute;pio
+&ndash; CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2124db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Esse
+cadastro consiste basicamente em selecionar um CGM do cadastro geral
+de contribuintes  clicando no link &ldquo;C&oacute;digo Gr&aacute;fica&rdquo;,
+informar o usu&aacute;rio e a data que est&aacute; efetivando o
+cadastro conforme figura 2.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m24cc6615.png" NAME="figura1" ALIGN=LEFT WIDTH=642 HEIGHT=84 BORDER=0><BR CLEAR=LEFT>figura
+2</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	O
+cadastro de Gr&aacute;ficas, segue o mesmo princ&iacute;pio do
+cadastro de fiscais, ou seja, n&atilde;o possui rotina de altera&ccedil;&atilde;o,
+pois caso se fa&ccedil;a necess&aacute;rio por exemplo altera&ccedil;&otilde;es
+de nome, endere&ccedil;o, etc, isso deve ser efetuado no cadastro do
+CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="1.3.PROCED&Ecirc;NCIAS|outline"></A><A NAME="1.3.PROCED&Ecirc;NCIAS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2459db">PROCED&Ecirc;NCIAS</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	O
+cadastro de proced&ecirc;ncias consiste em formar uma base de dados
+com os embasamentos legais utilizados para lavrar um auto de infra&ccedil;&atilde;o
+e/ou uma notifica&ccedil;&atilde;o. Nesse cadastro s&atilde;o
+lan&ccedil;adas informa&ccedil;&otilde;es como as descri&ccedil;&otilde;es
+dos textos dos artigos da lei, o procedimento que ser&aacute;
+utilizado (notifica&ccedil;&atilde;o ou auto de infra&ccedil;&atilde;o),
+al&eacute;m das informa&ccedil;&otilde;es de valores das penalidades
+quando for o caso.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db2460db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal"><FONT SIZE=3><B>ABA
+PROCED&Ecirc;NCIA</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Esse
+campo &eacute; gerado autom&aacute;tico.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Descri&ccedil;&atilde;o
+da proced&ecirc;ncia</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Informe
+nesse campo uma descri&ccedil;&atilde;o que possibilite sua
+identifica&ccedil;&atilde;o no momento que for selecion&aacute;-la
+para incluir um auto de infra&ccedil;&atilde;o ou notifica&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ex.: Art
+91 Inciso I Lei Municipal 3282/2007</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Departamento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Essa
+campo ser&aacute; preenchido automaticamente de acordo com o
+departamento que o usu&aacute;rio que est&aacute; efetuando o
+cadastro pertence.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Descri&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nessa campo, deve ser informado o texto do disposto legal informado
+na descri&ccedil;&atilde;o da proced&ecirc;ncia, ou seja, deve ser
+transcrito o trecho do texto da lei.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Ex.: <FONT SIZE=2 STYLE="font-size: 11pt"><B>Art. 91 -</B></FONT><FONT SIZE=2 STYLE="font-size: 11pt">
+Aos infratores ser&atilde;o aplicadas as seguintes multas:</FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 0.16cm; text-indent: 1.11cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>I
+-</B></FONT><FONT SIZE=2 STYLE="font-size: 11pt"> a import&acirc;ncia
+igual a cem por cento (100%) sobre o valor do imposto ao que deixar
+de recolher, total ou parcialmente, o imposto retido na fonte.</FONT></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Tipo de
+Fiscaliza&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nesse
+campo deve ser informado ou selecionado o c&oacute;digo do tipo de
+fiscaliza&ccedil;&atilde;o do qual se trata a proced&ecirc;ncia que
+est&aacute; sendo cadastrada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Ex.:
+Fiscaliza&ccedil;&atilde;o Tribut&aacute;ria, Fiscaliza&ccedil;&atilde;o
+de Posturas, Fiscaliza&ccedil;&atilde;o Sanit&aacute;ria, etc..</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=3><I><B>Tipo
+de Procedimento</B></I></FONT> 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Selecionar
+para qual tipo de procedimento de fiscaliza&ccedil;&atilde;o ser&aacute;
+utilizada a proced&ecirc;ncia que est&aacute; sendo cadastrada &ndash;
+Notifica&ccedil;&atilde;o ou Auto de Infra&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Fiscalizacao_html_m14409974.png" NAME="figura3" ALIGN=LEFT WIDTH=642 HEIGHT=269 BORDER=0><BR CLEAR=LEFT>figura
+3</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>ABA RECEITAS</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+	Nessa guia, s&atilde;o lan&ccedil;adas informa&ccedil;&otilde;es
+como receita, valor, tipo de aplica&ccedil;&atilde;o do valor (fixo
+ou vari&aacute;vel).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Esse campo ser&aacute; preenchido automaticamente com o c&oacute;digo
+da proced&ecirc;ncia que est&aacute; sendo inclu&iacute;da.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo da
+Receita</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Informar nesse campo o c&oacute;digo da receita onde ser&aacute;
+lan&ccedil;ado o d&eacute;bito nos casos de auto de infra&ccedil;&atilde;o
+ que contenham valor em moeda.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Ex.: Multa por infra&ccedil;&otilde;es da Legisla&ccedil;&atilde;o
+Tribut&aacute;ria</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Valor Fixo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Nesse campo, deve ser selecionado a forma de aplica&ccedil;&atilde;o
+da penalidade no caso de ser em moeda, ou seja, se o valor da multa
+ser&aacute; fixo (valor pr&eacute;-determinado pela legisla&ccedil;&atilde;o)
+ou vari&aacute;vel (o valor da multa n&atilde;o est&aacute; expresso
+em moeda na legisla&ccedil;&atilde;o e depende de outros fatores).
+Nesse &uacute;ltimo caso, o valor ser&aacute; informado no momento da
+inclus&atilde;o do auto de infra&ccedil;&atilde;o.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Valor
+padr&atilde;o para a receita</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+No caso de ser selecionado a op&ccedil;&atilde;o para valor fixo =
+SIM, dever&aacute; ser informado o valor da multa em R$.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Descri&ccedil;&atilde;o
+da Receita</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Informar nesse campo o nome da receita onde ser&aacute; lan&ccedil;ado
+o d&eacute;bito.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Ex.: Infra&ccedil;&atilde;o da Legisla&ccedil;&atilde;o Tribut&aacute;ria</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Fiscalizacao_html_6eba90c2.png" NAME="figura2" ALIGN=LEFT WIDTH=642 HEIGHT=228 BORDER=0><BR CLEAR=LEFT>figura
+4</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<H2 CLASS="western"><A NAME="1.4.TIPO DE FISCALIZA&Ccedil;&Atilde;O|outline"></A><A NAME="1.4.TIPO DE FISCALIZA&Ccedil;&Atilde;O|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4192db">TIPO DE
+FISCALIZA&Ccedil;&Atilde;O</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	Esse cadastro consiste
+basicamente em registrar quais as &aacute;reas de atua&ccedil;&atilde;o
+da fiscaliza&ccedil;&atilde;o que utilizar&atilde;o o sistema para
+controlar as notifica&ccedil;&otilde;es e os autos de infra&ccedil;&atilde;o.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B><A HREF="#Sum&aacute;rio1|region" NAME="db4193db">Inclus&atilde;o</A></B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo do
+Tipo</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Esse c&oacute;digo ser&aacute; gerado automaticamente pelo sistema.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Descri&ccedil;&atilde;o
+do Tipo</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+campo deve ser informado o nome do procedimento de fiscaliza&ccedil;&atilde;o</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><FONT SIZE=3>Ex.:Fiscaliza&ccedil;&atilde;o
+Tribut&aacute;ria, Fiscaliza&ccedil;&atilde;o de Posturas,
+Fiscaliza&ccedil;&atilde;o Sanit&aacute;ria, etc..</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="1.5.TIPO DE VISTORIA|outline"></A><A NAME="1.5.TIPO DE VISTORIA|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2335db">TIPO DE VISTORIA</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	O tipo de vistoria &eacute;
+a informa&ccedil;&atilde;o necess&aacute;ria para identificar no
+momento de uma inclus&atilde;o de vistoria se a modalidade &eacute;
+vistoria de localiza&ccedil;&atilde;o, vistoria sanit&aacute;ria ou
+outro tipo de vistoria realizada pela fiscaliza&ccedil;&atilde;o.,
+al&eacute;m de outras informa&ccedil;&otilde;es necess&aacute;rias
+como vencimento, receita, departamento, etc.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><B><A HREF="#Sum&aacute;rio1|region" NAME="db2336db">Inclus&atilde;o</A></B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>ABA TIPO</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Esse campo &eacute;
+gerado autom&aacute;tico.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Descri&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Colocar o nome da Tipo
+de Fiscaliza&ccedil;&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Ex.: Vistoria anual de
+localiza&ccedil;&atilde;o</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><STRONG><FONT SIZE=3><I><B>Quantidade
+de dias para o vencimento</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Esse campo corresponde
+a quantidade de dias que vai transcorrer entre a data de inclus&atilde;o
+de uma vistoria e seu vencimento.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Dia/M&ecirc;s para o
+vencimento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Esses campo
+correspondem ao dia e m&ecirc;s que vencem as vistorias, no caso de
+inclus&atilde;o geral de vistorias.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Na utiliza&ccedil;&atilde;o
+dos campos para vencimento, deve ser considerado apenas uma op&ccedil;&atilde;o,
+ou utiliza-se quantidade de dias para vencimentos ou ent&atilde;o
+utiliza-se dia e m&ecirc;s para vencimento, nunca deve ser preenchido
+as duas op&ccedil;&otilde;es no mesmo cadastro.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Departamento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Colocar o c&oacute;digo
+do departamento que pertence essa proced&ecirc;ncia.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Observa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Colocar alguma
+observa&ccedil;&atilde;o para o tipo de vistoria.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><I><B>C&oacute;digo do
+Tipo de Andamento</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Deve ser informado o
+tipo de andamento correspondente a inclus&atilde;o de vistoria.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Ex.: Inclus&atilde;o de
+Vistoria</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Fiscalizacao_html_m15914176.png" NAME="figura4" ALIGN=LEFT WIDTH=642 HEIGHT=174 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>Figura
+5</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H1 CLASS="western" ALIGN=JUSTIFY><A NAME="2.CONSULTA|outline"></A><A NAME="2.CONSULTA|outline"></A>
+CONSULTA</H1>
+<H2 CLASS="western"><A NAME="2.1.ALVAR&Aacute; SANIT&Aacute;RIO |outline"></A><A NAME="2.1.ALVAR&Aacute; SANIT&Aacute;RIO |outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2343db">ALVAR&Aacute;
+SANIT&Aacute;RIO</A> 
+</H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	A
+consulta de alvar&aacute; sanit&aacute;rio pode ser realizada atrav&eacute;s
+das seguintes formas:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>N&uacute;mero
+do alvar&aacute;</B></I> &ndash; preencha o campo com o n&uacute;mero
+do alvar&aacute; ou selecione em uma lista clicando no link <FONT COLOR="#0000ff"><U>Alvar&aacute;
+Sanit&aacute;rio</U></FONT><FONT COLOR="#0000ff"><U>.</U></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B>Nome/Raz&atilde;o </B></I><I><B>S</B></I><I><B>ocial</B></I>
+&ndash; informe o n&uacute;mero do CGM ou clique no link para
+pesquisar pelo nome do contribuinte.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B>Data da libera&ccedil;&atilde;o</B></I> &ndash;
+nessa forma de pesquisa, ser&atilde;o apresentados todos os alvar&aacute;s
+cuja data de libera&ccedil;&atilde;o estiver entre o intervalo das
+datas informadas nos campos.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000"><I><B>Atividade </B></I>&ndash; informe o
+c&oacute;digo da atividade desejada ou clique no link para pesquisar
+em uma lista. Nessa forma de consulta, ser&atilde;o apresentados
+todos os alvar&aacute;s que possuam a atividade informada.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT COLOR="#000000">	Na rotina de consulta do Alvar&aacute;
+Sanit&aacute;rio, &eacute; poss&iacute;vel fazer a emiss&atilde;o do
+documento (Alvar&aacute;), para isso basta clicar no bot&atilde;o
+&ldquo;Imprimir alvar&aacute;&rdquo; ou ent&atilde;o clicar no bot&atilde;o
+&ldquo;imprimir&rdquo; para imprimir relat&oacute;rio com o ficha
+cadastral.</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; text-decoration: none"><IMG SRC="Manual_Fiscalizacao_html_2c857623.png" NAME="figura32" ALIGN=LEFT WIDTH=642 HEIGHT=98 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">figura
+6</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; text-decoration: none"><IMG SRC="Manual_Fiscalizacao_html_6558b8c3.png" NAME="figura33" ALIGN=LEFT WIDTH=642 HEIGHT=222 BORDER=0><BR CLEAR=LEFT><FONT COLOR="#000000">figura
+7</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<H2 CLASS="western"><A NAME="2.2.VISTORIA |outline"></A><A NAME="2.2.VISTORIA |outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2520db">VISTORIA</A><A HREF="#Sum&aacute;rio1|region" NAME="db2520db">S</A>
+</H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Pra
+consultar uma vistoria, informe uma das chaves de pesquisa conforme
+demonstrado na figura abaixo. Dependendo da chave de pesquisa
+utilizada, podem ser apresentados mais de um registros para
+selecionar, por exemplo, caso a pesquise seja por data da vistoria,
+ser&atilde;o apresentadas todas as vistorias cadastradas nesse
+intervalo. A &uacute;nica forma que ser&aacute; apresentado apenas um
+registro, &eacute; se a pesquisa for efetuada pelo c&oacute;digo da
+vistoria.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; background: transparent">
+<IMG SRC="Manual_Fiscalizacao_html_m7f9a4b69.png" NAME="figura7" ALIGN=LEFT WIDTH=642 HEIGHT=218 BORDER=0><BR CLEAR=LEFT><SPAN STYLE="background: transparent">figura
+8</SPAN></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="2.3.AUTO DE INFRA&Ccedil;&Atilde;O|outline"></A><A NAME="2.3.AUTO DE INFRA&Ccedil;&Atilde;O|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4419db">AUTO DE INFRA&Ccedil;&Atilde;O</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Para
+consultar um auto de infra&ccedil;&atilde;o, informe o c&oacute;digo
+do auto ou clique no link para pesquisar em uma lista. Outra forma de
+consulta &eacute; informando o n&uacute;mero do bloco do talon&aacute;rio
+informado no momento do cadastramento do auto.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm">	A informa&ccedil;&otilde;es
+relativas ao auto de infra&ccedil;&atilde;o ser&atilde;o apresentadas
+conforme figura 9.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_5a02f5b1.png" NAME="figura34" ALIGN=LEFT WIDTH=642 HEIGHT=228 BORDER=0><BR CLEAR=LEFT>figura
+9</P>
+<H2 CLASS="western"><A NAME="2.4.NOTIFICA&Ccedil;&Atilde;O|outline"></A><A NAME="2.4.NOTIFICA&Ccedil;&Atilde;O|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4828db">NOTIFICA&Ccedil;&Atilde;O</A></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm">	Para consultar uma
+notifica&ccedil;&atilde;o, informe o c&oacute;digo desejado ou clique
+no link para pesquisar em uma lista. Outra forma de consulta &eacute;
+informando o n&uacute;mero do bloco do talon&aacute;rio informado no
+momento do cadastramento da Notifica&ccedil;&atilde;o.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm">	As informa&ccedil;&otilde;es
+relativas a Notifica&ccedil;&atilde;o ser&atilde;o apresentadas
+conforme figura 10.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_50ed9618.png" NAME="figura35" ALIGN=LEFT WIDTH=642 HEIGHT=228 BORDER=0><BR CLEAR=LEFT>figura
+10</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H1 CLASS="western"><A NAME="3.RELAT&Oacute;RIOS|outline"></A><A NAME="3.RELAT&Oacute;RIOS|outline"></A>
+RELAT&Oacute;RIOS</H1>
+<H2 CLASS="western"><A NAME="3.1.FISCAIS|outline"></A><A NAME="3.1.FISCAIS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3803db">FISCAIS</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Esse
+relat&oacute;rio imprime todos os usu&aacute;rio que est&atilde;o
+inseridos no cadastro de fiscais, podendo ser gerado em ordem
+alfab&eacute;tica ou num&eacute;rica (c&oacute;digo do usu&aacute;rio).
+No relat&oacute;rio s&atilde;o apresentadas as informa&ccedil;&otilde;es
+conforme demonstrado na figura 11.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m476804c5.png" NAME="figura30" ALIGN=LEFT WIDTH=642 HEIGHT=416 BORDER=0><BR CLEAR=LEFT>figura
+11</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="3.2.GR&Aacute;FICAS|outline"></A><A NAME="3.2.GR&Aacute;FICAS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db3800db">GR&Aacute;FICAS</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Esse
+relat&oacute;rio imprime todos os contribuintes que est&atilde;o
+inseridos no cadastro de gr&aacute;ficas, podendo ser gerado em ordem
+alfab&eacute;tica ou num&eacute;rica (c&oacute;digo do CGM). No
+relat&oacute;rio s&atilde;o apresentadas as informa&ccedil;&otilde;es
+conforme demonstrado na figura 12.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_e601d9b.png" NAME="figura39" ALIGN=LEFT WIDTH=642 HEIGHT=414 BORDER=0><BR CLEAR=LEFT>figura
+12</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="3.3.ALVAR&Aacute; SANIT&Aacute;RIO|outline"></A><A NAME="3.3.ALVAR&Aacute; SANIT&Aacute;RIO|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2434db">ALVAR&Aacute;
+SANIT&Aacute;RIO</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Nesse
+relat&oacute;rio, ser&aacute; impressa a rela&ccedil;&atilde;o dos
+Alvar&aacute;s Sanit&aacute;rios,  de acordo com as op&ccedil;&otilde;es
+de filtros selecionados.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Alvar&aacute;
+Sanit&aacute;rio</B></I>: informe o c&oacute;digo do alvar&aacute; ou
+selecione em uma lista clicando no link. Com essa op&ccedil;&atilde;o
+de filtro, ser&aacute; impresso relat&oacute;rio apenas com o
+registro informado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Nome/Raz&atilde;o
+Social:</B></I> Informe o n&uacute;mero do CGM ou pesquise pelo nome
+do contribuinte clicando no link. Com essa op&ccedil;&atilde;o, ser&aacute;
+impresso relat&oacute;rio apenas com os alvar&aacute;s vinculados ao
+contribuinte selecionado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Atividade:</B></I>
+Informe o c&oacute;digo da atividade desejada ou selecione na lista
+clicando no link. Com essa op&ccedil;&atilde;o, ser&aacute; impresso
+relat&oacute;rio contendo todos os alvar&aacute; que possuem a
+atividade selecionada.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Logradouro:</B></I>
+Informe o c&oacute;digo do logradouro ou seleciona na lista clicando
+no link. Com essa op&ccedil;&atilde;o, ser&aacute; impresso relat&oacute;rio
+contendo todos os alvar&aacute;s dos estabelecimentos localizado no
+logradouro indicado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Bairro:</B></I>
+Informe o c&oacute;digo do bairro ou seleciona na lista clicando no
+link. Com essa op&ccedil;&atilde;o, ser&aacute; impresso relat&oacute;rio
+contendo todos os alvar&aacute;s dos estabelecimentos localizado no
+bairro indicado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><SPAN STYLE="text-decoration: none"><B>Data
+da libera&ccedil;&atilde;o:</B></SPAN></I> Informe o intervalo de
+datas, dessa forma ser&aacute; impresso relat&oacute;rio contendo
+todos os alvar&aacute;s cuja data de libera&ccedil;&atilde;o estiver
+dentro do per&iacute;odo informado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Op&ccedil;&otilde;es:
+</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+nessa op&ccedil;&atilde;o quais os alvar&aacute;s que deseja que
+sejam impressos no relat&oacute;rio, considerando os filtros
+selecionados anteriormente, ou seja, pode imprimir apenas os alvar&aacute;s
+n&atilde;o baixados, apenas os baixados ou ent&atilde;o todos os
+alvar&aacute;s.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Tipo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Nessa op&ccedil;&atilde;o, deve ser selecionado se que imprimir
+relat&oacute;rio sint&eacute;tico conforme figura 14 ou anal&iacute;tico
+conforme figura 15.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Atividade:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Nessa op&ccedil;&atilde;o, dever&aacute; ser selecionado se quer
+imprimir no relat&oacute;rio todas as atividades que o alvar&aacute;
+possui ou somente a atividade principal. Essa op&ccedil;&atilde;o
+tamb&eacute;m ser&aacute; considerada caso informe como filtro para
+emiss&atilde;o do relat&oacute;rio uma atividade espec&iacute;fica.
+Se essa op&ccedil;&atilde;o estiver marcada como TODAS, ser&aacute;
+impresso no relat&oacute;rio todos os alvar&aacute;s que contenham a
+atividade selecionada, caso marque a op&ccedil;&atilde;o PRINCIPAL,
+ser&aacute; impresso no relat&oacute;rio somente os alvar&aacute;s
+cuja atividade informada no filtro seja a atividade principal.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<I><B>Ordem:</B></I> Nessa op&ccedil;&atilde;o, deve ser selecionada
+o ordem que que imprimir o relat&oacute;rio, podendo ser pelo n&uacute;mero
+do alvar&aacute;, pelo n&uacute;mero do CGM do contribuinte, pelo
+c&oacute;digo da atividade do alvar&aacute; ou pela data de libera&ccedil;&atilde;o
+do alvar&aacute;.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Fiscalizacao_html_m1cc2d241.png" NAME="figura40" ALIGN=LEFT WIDTH=642 HEIGHT=179 BORDER=0><BR CLEAR=LEFT>figura
+13</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m13879e15.png" NAME="figura41" ALIGN=LEFT WIDTH=642 HEIGHT=390 BORDER=0><BR CLEAR=LEFT>figura
+14 &ndash; modelo sint&eacute;tico</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m53ecf7a0.png" NAME="figura42" ALIGN=LEFT WIDTH=640 HEIGHT=439 BORDER=0><BR CLEAR=LEFT>figura
+15 &ndash; modelo anal&iacute;tico</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="3.4.VISTORIAS|outline"></A><A NAME="3.4.VISTORIAS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2519db">VISTORIAS</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Nesse
+relat&oacute;rio, ser&aacute; impressa a rela&ccedil;&atilde;o das
+vistorias lan&ccedil;adas no departamento que est&aacute; logado e
+considerando as op&ccedil;&otilde;es dos filtros selecionados.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><B>ABA
+TIPO DE VISTORIAS</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo
+do Tipo: </B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+o tipo de vistoria que deseja emitir no relat&oacute;rio. S&oacute;
+estar&atilde;o dispon&iacute;veis os tipos de vistorias cadastrados
+para o departamento que se est&aacute; logado. Ap&oacute;s selecionar
+o tipo de vistoria, clique no bot&atilde;o lan&ccedil;ar para que o
+filtro seja considerado. Pode ser lan&ccedil;ado mais de um tipo de
+vistoria como filtro simultaneamente.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">A
+op&ccedil;&atilde;o &ldquo;</SPAN></SPAN><B><SPAN STYLE="font-style: normal">com
+as vistorias selecionadas</SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&rdquo;ou
+&ldquo;</SPAN></SPAN><B><SPAN STYLE="font-style: normal">sem as
+vistorias selecionada</SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">s&rdquo;
+faz a invers&atilde;o do filtro, ou seja, se for selecionado um tipo
+de vistorias e marcar  com as vistorias selecionadas, ser&aacute;
+impresso no relat&oacute;rio todas as vistorias do tipo selecionado,
+j&aacute; se a op&ccedil;&atilde;</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">o
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">for
+sem as vistorias selecionadas, ser&aacute; impresso relat&oacute;rio
+com todas as vistorias lan&ccedil;adas exceto </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">as
+que </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">pertencerem</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">a</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">o
+tipo informado no filtro.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+Caso n&atilde;o seja selecionado nenhum tipo de vistoria, ser&atilde;o
+considerados todos os tipo ligados ao departamento atual. Sempre
+ser&atilde;o considerados os tipo de vistorias cujo cadastro tenha
+sido efetuado no departamento que se est&aacute; logado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Ordem:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Selecione a ordem que quer gerar o relat&oacute;rio, podendo ser pelo
+c&oacute;digo da vistoria, Rua (endere&ccedil;o do contribuinte),
+Bairro, Nome, ou pelo tipo de vistorias.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Per&iacute;odo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Informe nesses campos o per&iacute;odo inicial e per&iacute;odo
+final, dessa forma ser&aacute; impresso no relat&oacute;rio todas as
+vistorias cuja data de lan&ccedil;amento est&aacute; compreendida
+entre essas datas.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Tipo:</B></I><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Nessa op&ccedil;&atilde;o, deve-se selecionar que tipo de relat&oacute;rio
+deseja emiti</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">r</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">,
+ou seja, sint&eacute;tico conforme demonstrado na figura 17 ou
+anal&iacute;tico conforme demonstrado na figura 18.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Fiscalizacao_html_7b6b4bed.png" NAME="figura43" ALIGN=LEFT WIDTH=642 HEIGHT=242 BORDER=0><BR CLEAR=LEFT>figura
+16</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<B>ABA RUA DA VISTORIA</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+	Nessa aba, pode ser selecionada uma ou mais ruas que queira usar
+como filtro para o relat&oacute;rio, considerando tamb&eacute;m os
+filtros informados na aba mencionada anteriormente. Nesse filtro,
+pode-se fazer tamb&eacute;m a invers&atilde;o conforme descrito
+anteriormente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal">
+<B>ABA BAIRRO DA VISTORIA</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+	Nessa aba, pode ser selecionado um ou mais bairros que queira usar
+como filtro para o relat&oacute;rio, considerando tamb&eacute;m os
+filtros informados nas aba mencionadas anteriormente. Nesse filtro,
+pode-se fazer tamb&eacute;m a invers&atilde;o conforme descrito
+anteriormente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	Ap&oacute;s
+selecionar todos os filtros desejados, deve-se ir novamente para a
+aba </SPAN></SPAN><B><SPAN STYLE="font-style: normal">&ldquo;tipo de
+vistorias&rdquo; </SPAN></B><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">e
+clicar no bot&atilde;o processar.</SPAN></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Fiscalizacao_html_m6240dfad.png" NAME="figura45" ALIGN=LEFT WIDTH=643 HEIGHT=410 BORDER=0><BR CLEAR=LEFT>figura
+17 &ndash; modelo sint&eacute;tico</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Fiscalizacao_html_m2b8909d6.png" NAME="figura44" ALIGN=LEFT WIDTH=643 HEIGHT=411 BORDER=0><BR CLEAR=LEFT>figura
+18 &ndash; modelo anal&iacute;tico</P>
+<H2 CLASS="western"><A NAME="3.5.TERMO DE VISTORIA |outline"></A><A NAME="3.5.TERMO DE VISTORIA |outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4339db">TERMO DE VISTORIA</A>
+</H2>
+<P CLASS="western" ALIGN=JUSTIFY>	&Eacute; o documento que contem
+informa&ccedil;&otilde;es cadastrais e financeiras do contribuinte
+que ser&aacute; levado pelo fiscal ao estabelecimento vistoriado onde
+ser&aacute; coletada assinatura, fazendo prova da realiza&ccedil;&atilde;o
+da vistoria.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	A emiss&atilde;o dos termos pode
+ser realizada das seguintes maneiras:</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Inscri&ccedil;&atilde;o:</B></I>
+Ser&aacute; gerado o termo somente para a inscri&ccedil;&atilde;o
+selecionada.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>C&oacute;d. logradouro:</B></I>
+Ser&aacute; gerado termo de vistoria para todas as inscri&ccedil;&otilde;es
+que est&atilde;o localizadas no logradouro selecionado.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Classes:</B></I> Ser&aacute;
+gerado o termo de vistorias para todas as inscri&ccedil;&otilde;es
+que possuem atividades vinculadas as classes selecionadas. Nessa
+op&ccedil;&atilde;o pode-se fazer a invers&atilde;o do filtro,
+podendo gerar com as classes selecionadas ou sem as classes
+selecionadas.</P>
+<P CLASS="western" ALIGN=JUSTIFY><I><B>Reemiss&atilde;o:</B></I>
+nessa op&ccedil;&atilde;o, ser&aacute; poss&iacute;vel reemitir os
+termos de vistorias gerados para uma ou mais inscri&ccedil;&atilde;o
+relativo ao ano atual, para isso deve-se selecionar a op&ccedil;&atilde;o
+<I><B>SIM.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	A
+rotina de emiss&atilde;o de termo de vistoria, n&atilde;o gera dois
+termos para a mesma inscri&ccedil;&atilde;o no mesmo exerc&iacute;cio,
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">e
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">dessa
+forma</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">,</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+se j&aacute; foi gerado, e o documento foi extraviado, dever&aacute;
+ser utilizada a op&ccedil;&atilde;o </SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">de
+</SPAN></SPAN><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">reemiss&atilde;o</SPAN></SPAN><I><B>.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Fiscalizacao_html_35138d1.png" NAME="figura46" ALIGN=LEFT WIDTH=642 HEIGHT=225 BORDER=0><BR CLEAR=LEFT>figura
+19</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m6c7ffa25.png" NAME="figura47" ALIGN=LEFT WIDTH=634 HEIGHT=463 BORDER=0><BR CLEAR=LEFT>figura
+20 &ndash; modelo do termo de vistoria 
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="3.6.AUTO DE INFRA&Ccedil;&Atilde;O|outline"></A><A NAME="3.6.AUTO DE INFRA&Ccedil;&Atilde;O|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4405db">AUTO DE INFRA&Ccedil;&Atilde;O</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Essa
+op&ccedil;&atilde;o imprime um determinado auto de infra&ccedil;&atilde;o
+cadastrado, e para isso informe o c&oacute;digo desejado ou clique no
+link para selecionar em uma lista. O texto desse documento pode ser
+configurado na rotina de manuten&ccedil;&atilde;o de documentos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	S&oacute;
+&eacute; poss&iacute;vel fazer a impress&atilde;o de um auto de
+infra&ccedil;&atilde;o se o mesmo j&aacute; estiver calculado, pois
+no documento s&atilde;o impressos os valores correspondentes a
+aplica&ccedil;&atilde;o da multa.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m1498a4f3.png" NAME="figura48" ALIGN=LEFT WIDTH=642 HEIGHT=441 BORDER=0><BR CLEAR=LEFT>figura
+21</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="3.7.AUTO DE INFRA&Ccedil;&Atilde;O POR PRAZO|outline"></A><A NAME="3.7.AUTO DE INFRA&Ccedil;&Atilde;O POR PRAZO|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4340db">AUTO DE INFRA&Ccedil;&Atilde;O
+POR PRAZO</A></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Nesse
+relat&oacute;rio, ser&aacute; impresso a rela&ccedil;&atilde;o de
+todos os autos de infra&ccedil;&atilde;o que foram emitidos dentro do
+per&iacute;odo indicado no campo <I><B>data do auto</B></I> e que o
+prazo para recurso &eacute; menor que a data informada no <I><B>campo
+prazo menor que a data</B></I><I><B>.</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+	Al&eacute;m dos filtros por data, poder&aacute; ser selecionado
+tamb&eacute;m o departamento, assim ser&aacute; considerado tamb&eacute;m
+o departamento que cadastrou o auto de infra&ccedil;&atilde;o.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<IMG SRC="Manual_Fiscalizacao_html_202a332d.png" NAME="figura49" ALIGN=LEFT WIDTH=642 HEIGHT=122 BORDER=0><BR CLEAR=LEFT>figura
+22</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_199ca795.png" NAME="figura50" ALIGN=LEFT WIDTH=642 HEIGHT=312 BORDER=0><BR CLEAR=LEFT>figura
+23</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="3.8.NOTIFICA&Ccedil;&Atilde;O|outline"></A><A NAME="3.8.NOTIFICA&Ccedil;&Atilde;O|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db5272db">NOTIFICA&Ccedil;&Atilde;O</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Essa
+op&ccedil;&atilde;o imprime uma determinada notifica&ccedil;&atilde;o
+cadastrada, para isso informe o c&oacute;digo desejado ou clique no
+link para selecionar em uma lista. O texto desse documento pode ser
+configurado na rotina de manuten&ccedil;&atilde;o de documentos.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_62ea12b0.png" NAME="figura51" ALIGN=LEFT WIDTH=643 HEIGHT=356 BORDER=0><BR CLEAR=LEFT>figura
+24</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H1 CLASS="western"><A NAME="4.NOTIFICA&Ccedil;&Atilde;O POR PER&Iacute;ODO|outline"></A><A NAME="4.NOTIFICA&Ccedil;&Atilde;O POR PER&Iacute;ODO|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4421db">NOTIFICA&Ccedil;&Atilde;O
+POR PER&Iacute;ODO</A></H1>
+<P CLASS="western" STYLE="margin-bottom: 0cm">	Nesse relat&oacute;rio,
+ser&aacute; impresso a rela&ccedil;&atilde;o de todos as notifica&ccedil;&otilde;es
+que foram emitidas dentro do per&iacute;odo indicado no campo <I><B>data
+d</B></I><I><B>a notifica&ccedil;&atilde;o</B></I> e que a o prazo
+para recurso &eacute; menor que a data informada no <I><B>campo prazo
+menor que a data</B></I><I><B>.</B></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+	Al&eacute;m dos filtros por data, poder&aacute; ser selecionado
+tamb&eacute;m o departamento que cadastrou a notifica&ccedil;&atilde;o.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m78363cc8.png" NAME="figura52" ALIGN=LEFT WIDTH=642 HEIGHT=123 BORDER=0><BR CLEAR=LEFT>figura
+25</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_7fbc2c83.png" NAME="figura53" ALIGN=LEFT WIDTH=642 HEIGHT=309 BORDER=0><BR CLEAR=LEFT>figura
+26</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.1.ATIVIDADES BAIXADAS|outline"></A><A NAME="4.1.ATIVIDADES BAIXADAS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2437db">ATIVIDADES BAIXADAS</A></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm">	Nessa op&ccedil;&atilde;o,
+ser&aacute; impresso relat&oacute;rio com todos os alvar&aacute;s
+sanit&aacute;rios que tiveram atividades baixadas, cuja data final da
+atividade esteja compreendida dentro do per&iacute;odo informado.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m49b9ecc7.png" NAME="figura54" ALIGN=LEFT WIDTH=645 HEIGHT=342 BORDER=0><BR CLEAR=LEFT>figura
+27</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.2.LEVANTAMENTOS|outline"></A><A NAME="4.2.LEVANTAMENTOS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4120db">LEVANTAMENTOS</A></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm">	Essa op&ccedil;&atilde;o,
+emite os dados lan&ccedil;ados em um levantamento fiscal, para isso
+informe o c&oacute;digo ou selecione o levantamento desejado em uma
+lista, clicando no link.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m602c7c7f.png" NAME="figura55" ALIGN=LEFT WIDTH=642 HEIGHT=393 BORDER=0><BR CLEAR=LEFT>figura
+28</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.3.GERAL DE LEVANTAMENTO|outline"></A><A NAME="4.3.GERAL DE LEVANTAMENTO|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4406db">GERAL DE
+LEVANTAMENTO</A></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm">	Nesse relat&oacute;rio,
+ser&aacute; impresso a rela&ccedil;&atilde;o de todos os
+levantamentos fiscais cuja data de inclus&atilde;o est&aacute;
+compreendida entre o per&iacute;odo informado.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m22b080a6.png" NAME="figura56" ALIGN=LEFT WIDTH=642 HEIGHT=175 BORDER=0><BR CLEAR=LEFT>figura
+29</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.4.AIDOF|outline"></A><A NAME="4.4.AIDOF|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4143db">AIDOF</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Nessa
+op&ccedil;&atilde;o, poder&aacute; ser reemitida uma AIDOF.</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.5.ALVAR&Aacute;|outline"></A><A NAME="4.5.ALVAR&Aacute;|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4391db">ALVAR&Aacute;</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Nesse
+relat&oacute;rio, ser&aacute; impresso a rela&ccedil;&atilde;o de
+todas as inscri&ccedil;&otilde;es de alvar&aacute; de localiza&ccedil;&atilde;o
+por logradouro. Para isso selecione os filtros desejados.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>C&oacute;d
+Logradouro:</B></I> Informe o c&oacute;digo do logradouro desejado ou
+selecione na lista clicando no link, ap&oacute;s clique no bot&atilde;o
+lan&ccedil;ar. Podem ser informados um ou mais logradouros ou caso
+n&atilde;o selecione nenhum, ser&aacute; considerado como se
+estivesse informado todos os logradouros.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">Nessa
+op&ccedil;&atilde;o pode-se fazer a invers&atilde;o do filtro,
+selecionando a op&ccedil;&atilde;o <SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>com
+as ruas selecionadas</B></SPAN></SPAN> ou <SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>sem
+as ruas selecionadas</B></SPAN></SPAN><I><SPAN STYLE="text-decoration: none">
+</SPAN></I>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Selecionar
+inscri&ccedil;&otilde;es: </B></I>nessa op&ccedil;&atilde;o pode ser
+selecionado se que gerar o relat&oacute;rio com as inscri&ccedil;&otilde;es
+baixadas, com as n&atilde;o baixadas ou todas.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><I><B>Tipo:</B></I>
+nessa op&ccedil;&atilde;o, escolha que tipo de inscri&ccedil;&atilde;o
+deseja imprimir no relat&oacute;rio, ou seja, inscri&ccedil;&otilde;es
+de alvar&aacute;s permanentes ou provis&oacute;rios.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Caso no
+filtro logradouro seja selecionado apenas um registro, ser&aacute;
+impresso na ordem de endere&ccedil;o, ou seja dentro do mesmo
+logradouro ser&aacute; ordenado pelo n&uacute;mero do pr&eacute;dio
+na ordem crescente. Caso seja selecionado mais de um logradouro, ser&aacute;
+impresso em ordem crescente pelo c&oacute;digo do logradouro e dentro
+de cada um ser&aacute; ordenado pelo n&uacute;mero do pr&eacute;dio
+na ordem crescente.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_53731a6b.png" NAME="figura57" ALIGN=LEFT WIDTH=642 HEIGHT=249 BORDER=0><BR CLEAR=LEFT>figura
+30</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m6af768a.png" NAME="figura58" ALIGN=LEFT WIDTH=642 HEIGHT=265 BORDER=0><BR CLEAR=LEFT>figura
+31</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="4.6.NOTAS FISCAIS|outline"></A><A NAME="4.6.NOTAS FISCAIS|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db4407db">NOTAS FISCAIS</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm">	Nesse
+relat&oacute;rio, ser&aacute; impresso a rela&ccedil;&atilde;o com as
+AIDOFs liberadas, podendo informar apenas uma inscri&ccedil;&atilde;o,
+dessa forma ser&atilde;o apresentadas todas as libera&ccedil;&otilde;es
+desse caso espec&iacute;fico conforme figura 32 ou ent&atilde;o
+informar um per&iacute;odo, dessa forma filtrar por per&iacute;odo ou
+de todas as inscri&ccedil;&otilde;es conforme figura 33.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_ec75bcc.png" NAME="figura59" ALIGN=LEFT WIDTH=642 HEIGHT=309 BORDER=0><BR CLEAR=LEFT>figura
+32</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m36f4162c.png" NAME="figura60" ALIGN=LEFT WIDTH=642 HEIGHT=411 BORDER=0><BR CLEAR=LEFT>figura
+33</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H1 CLASS="western"><A NAME="5.PROCEDIMENTOS|outline"></A><A NAME="5.PROCEDIMENTOS|outline"></A>
+PROCEDIMENTOS</H1>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY><A NAME="5.1.AIDOF|outline"></A><A NAME="5.1.AIDOF|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2127db">AIDOF</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	Essa rotina
+possibilita ao setor competente, efetuar o controle das autoriza&ccedil;&otilde;es
+para impress&atilde;o de documentos fiscais liberadas para cada
+inscri&ccedil;&atilde;o do cadastro de alvar&aacute;s, mantendo um
+hist&oacute;rico cadastral com quantidade, seq&uuml;encia, tipo de
+nota fiscal liberada, bem como a gr&aacute;fica que realizou a
+impress&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	As autoriza&ccedil;&otilde;es
+cadastradas nessa rotina, ficam dispon&iacute;veis para consulta no
+cadastro da inscri&ccedil;&atilde;o no m&oacute;dulo ISSQN.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	&Eacute; poss&iacute;vel
+tamb&eacute;m nessa rotina efetuar a impress&atilde;o do documento de
+libera&ccedil;&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db4146db">INCLUS&Atilde;O
+DE AIDOF</A></B></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Esse campo corresponde
+ao c&oacute;digo da AIDOF e ser&aacute; gerado automaticamente em
+cada inclus&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Tipo da Nota</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Nesse campo deve ser
+informado ou selecionado o c&oacute;digo do tipo da nota fiscal que
+est&aacute; sendo liberada. O cadastro de tipos de notas &eacute;
+efetuado no m&oacute;dulo ISSQN.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Ex.: Nota fiscal de
+presta&ccedil;&atilde;o de servi&ccedil;o</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Inscri&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Informar ou selecionar
+o n&uacute;mero da inscri&ccedil;&atilde;o municipal correspondente
+ao alvar&aacute; que est&aacute; sendo liberada AIDOF.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo do
+Processo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Colocar o c&oacute;digo
+do Processo de Protocolo ou clicar no link para pesquisar.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Data Lan&ccedil;amento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Informar nesse campo a
+data que est&aacute; sendo liberada a AIDOF.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Nota Inicial</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Informar nesse campo o
+n&uacute;mero da primeira nota fiscal que est&aacute; sendo liberada.
+No caso de libera&ccedil;&atilde;o de AIDOF para inscri&ccedil;&otilde;es
+que j&aacute; possuam outra com o mesmo tipo de nota fiscal em seu
+cadastro, o sistema traz de forma autom&aacute;tica a nota inicial
+observando a sequ&ecirc;ncia num&eacute;rica da &uacute;ltima nota da
+AIDOF anterior.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>O sistema permite a
+libera&ccedil;&atilde;o de AIDOF com tipos de notas diferentes para
+uma mesma inscri&ccedil;&atilde;o, fazendo o controle da numera&ccedil;&atilde;o
+das notas de forma independente.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Quantidade
+Solicitada</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Informe nesse campo a
+quantidade de notas fiscais que o contribuinte est&aacute;
+solicitando.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Quantidade
+</B></I></FONT></STRONG><FONT SIZE=3><I><B>Liberada</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Informe nesse campo a
+quantidade de notas fiscais que ser&aacute; liberada pela
+fiscaliza&ccedil;&atilde;o. Essa quantidade &eacute; que ser&aacute;
+considerada como v&aacute;lida na libera&ccedil;&atilde;o para
+controle da nota final.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Nota Final</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>A nota final ser&aacute;
+preenchida automaticamente conforme o n&uacute;mero da nota inicial
+mais a quantidade liberada.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 0.4cm"><FONT SIZE=3>Exemplo</FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>nota inicial</FONT></P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>001</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>quantidade
+			solicitada</FONT></P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>100</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>quantidade liberada</FONT></P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>50</FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>nota final</FONT></P>
+		</TD>
+		<TD WIDTH=50%>
+			<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>50</FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo da
+Gr&aacute;fica</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Informe ou selecione o
+c&oacute;digo da gr&aacute;fica que ser&aacute; far&aacute; a
+impress&atilde;o das notas fiscais. Somente aparecer&aacute; na lista
+para selecionar, as gr&aacute;ficas que est&atilde;o no cadastro de
+gr&aacute;ficas. </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Campo destinado a
+digita&ccedil;&atilde;o de qualquer observa&ccedil;&atilde;o a ser
+feita pela fiscaliza&ccedil;&atilde;o. O conte&uacute;do desse campo
+ser&aacute; impresso na AIDOF.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Na inclus&atilde;o de
+uma AIDOF, no momento em que se seleciona a inscri&ccedil;&atilde;o,
+o sistema faz um alerta informando se o contribuinte possui d&eacute;bitos
+em aberto, por&eacute;m isso n&atilde;o &eacute; impeditivo para a
+libera&ccedil;&atilde;o de AIDOF.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Ser&aacute; apresentado
+tamb&eacute;m uma lista com as AIDOFs j&aacute; liberadas para o
+contribuintes, com c&oacute;digo, notas, data, gr&aacute;fica, etc.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Fiscalizacao_html_10e28f71.png" NAME="figura5" ALIGN=LEFT WIDTH=642 HEIGHT=261 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>figura
+34</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><B><A HREF="#Sum&aacute;rio1|region" NAME="db4147db">ALTERA&Ccedil;&Atilde;O
+DE AIDOF</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	Nessa rotina, pode ser
+alterado qualquer dado informado na inclus&atilde;o, basta selecionar
+o c&oacute;digo da AIDOF desejado na lista conforme figura 35.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	S&oacute; &eacute;
+permitida a altera&ccedil;&atilde;o de uma AIDOF liberada para uma
+inscri&ccedil;&atilde;o, desde que n&atilde;o tenha nenhuma libera&ccedil;&atilde;o
+posterior para a mesma inscri&ccedil;&atilde;o com o mesmo tipo de
+nota fiscal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Ex.: suponhamos que foi
+liberada no dia 10/03/2007 a AIDOF n&uacute;mero 25 para a inscri&ccedil;&atilde;o
+2222 com o tipo de nota 1 e que no dia 20/06/2007 foi liberada a
+AIDOF n&uacute;mero 80 para a mesma inscri&ccedil;&atilde;o com o
+mesmo tipo de nota fiscal, nesse caso, o sistema n&atilde;o permitir&aacute;
+a altera&ccedil;&atilde;o da AIDOF n&uacute;mero 25 pelo motivo de
+haver uma outra libera&ccedil;&atilde;o posterior para a mesma
+inscri&ccedil;&atilde;o</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Fiscalizacao_html_3c8705e8.png" NAME="figura6" ALIGN=LEFT WIDTH=642 HEIGHT=266 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>figura
+35</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db5261db">CANCELAMENTO
+DE AIDOF</A></B></P>
+<P CLASS="western"><FONT SIZE=3>	Para cancelar uma AIDOF, deve
+selecionar o registro desejado na lista conforme figura 8 e digitar
+alguma informa&ccedil;&atilde;o no campo observa&ccedil;&atilde;o.</FONT></P>
+<P CLASS="western"><FONT SIZE=3>	A AIDOF cancelada, ser&aacute;
+desconsiderada para fins de seq&uuml;&ecirc;ncia num&eacute;rica das
+notas fiscais para as pr&oacute;ximas libera&ccedil;&otilde;es.</FONT></P>
+<P CLASS="western"><BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="5.2.ALVAR&Aacute; SANIT&Aacute;RIO|outline"></A><A NAME="5.2.ALVAR&Aacute; SANIT&Aacute;RIO|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2339db">ALVAR&Aacute;
+SANIT&Aacute;RIO</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Essa op&ccedil;&atilde;o
+ser&aacute; utilizada para manter um cadastro organizado dos
+estabelecimentos comerciais, industriais, prestadores de servi&ccedil;os
+ou de profissionais aut&ocirc;nomos, que est&atilde;o sujeitos a
+inspe&ccedil;&atilde;o pela vigil&acirc;ncia sanit&aacute;ria.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db2340db">INCLUS&Atilde;O
+DE ALVAR&Aacute;</A></B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>ABA ALVAR&Aacute;</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Essa campo ser&aacute; gerado
+automaticamente na inclus&atilde;o e corresponde ao n&uacute;mero do
+alvar&aacute;.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo
+Pr&oacute;prio</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Caso a prefeitura tenha uma
+numera&ccedil;&atilde;o paralela dos alvar&aacute;s sanit&aacute;rios,
+dever&aacute; ser informado nesse campo. O preenchimento n&atilde;o &eacute;
+obrigat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Nome / Raz&atilde;o
+social</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Informe o n&uacute;mero do CGM ou o nome do contribuinte para incluir
+o alvar&aacute;. O contribuinte deve estar cadastrado previamente no
+cadastro de CGM.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Logradouro /
+N&uacute;mero/ Bairro / Complemento</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Esses campos correspondem a
+localiza&ccedil;&atilde;o do endere&ccedil;o do estabelecimento para
+onde est&aacute; sendo liberado o alvar&aacute;.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Data</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Esse campo corresponde a data que
+est&aacute; sendo liberada o alvar&aacute;.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Nesse campo, pode ser digitada qualquer observa&ccedil;&atilde;o a
+respeito do cadastro que est&aacute; sendo realizado. O conte&uacute;do
+do campo ser&aacute; impresso no alvar&aacute;. O preenchimento do
+campo n&atilde;o &eacute; obrigat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Informe a &aacute;rea que ser&aacute;
+ocupada pelo estabelecimento. Essa informa&ccedil;&atilde;o n&atilde;o
+&eacute; obrigat&oacute;ria.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Inscri&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Para todo alvar&aacute; sanit&aacute;rio,
+obrigatoriamente ter&aacute; que haver a libera&ccedil;&atilde;o do
+respectivo alvar&aacute; de localiza&ccedil;&atilde;o. Esse campo
+serve para fazer a vincula&ccedil;&atilde;o entre os dois cadastros,
+tendo como objetivo  a consulta dos d&eacute;bitos, ou seja, quando
+for realizada a pesquisa financeira pelo alvar&aacute; de
+localiza&ccedil;&atilde;o, aparecer&atilde;o tamb&eacute;m os d&eacute;bitos
+do alvar&aacute; sanit&aacute;rio. Esse campo s&oacute; deve ser
+preenchido caso o respectivo alvar&aacute; de localiza&ccedil;&atilde;o
+j&aacute; esteja cadastrado.</P>
+<P CLASS="western" ALIGN=JUSTIFY>Nesse campo dever ser informado o
+n&uacute;mero do respectivo alvar&aacute;, caso seu cadastro j&aacute;
+tenha sido efetivado. Colocar o c&oacute;digo da inscri&ccedil;&atilde;o
+se j&aacute; estiver cadastrada a inscri&ccedil;&atilde;o. Campo n&atilde;o
+obrigat&oacute;rio.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Fiscalizacao_html_m7619953e.png" NAME="figura8" ALIGN=LEFT WIDTH=642 HEIGHT=198 BORDER=0><BR CLEAR=LEFT>figura
+36</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal"><B>ABA
+ATIVIDADES</B></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>C&oacute;digo
+do Alvar&aacute; </I></FONT></STRONG><STRONG><FONT SIZE=3><I>S</I></FONT></STRONG><STRONG><FONT SIZE=3><I>anit&aacute;rio</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Esse campo ser&aacute;
+carregado automaticamente com o c&oacute;digo do alvar&aacute; gerado
+na inclus&atilde;o da primeira guia.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Seq&uuml;encial</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>&Eacute; o c&oacute;digo
+seq&uuml;encial da atividade que est&aacute; sendo inclu&iacute;da.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo da
+Atividade</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Informe nesse campo o
+c&oacute;digo ou pesquise em uma lista a atividade que ser&aacute;
+desenvolvida pelo contribuinte. O cadastro de atividades dispon&iacute;veis
+para o alvar&aacute; sanit&aacute;rio, &eacute; o mesmo utilizado
+para o cadastro de alvar&aacute; de localiza&ccedil;&atilde;o.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Um alvar&aacute;
+sanit&aacute;rio pode ter em seu cadastro tantas quantas forem as
+atividades desenvolvidas pelo contribuinte, ou seja, n&atilde;o tem
+um limite definido.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Atividade
+Principal</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Cada alvar&aacute;
+sanit&aacute;rio deve ter obrigatoriamente uma &uacute;nica atividade
+do seu cadastro como principal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Tipo de Atividade</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Informe se a atividade
+que est&aacute; sendo cadastrada &eacute; permanente ou provis&oacute;ria.
+Caso a atividade seja provis&oacute;ria, dever&aacute; ser informado
+obrigatoriamente a data inicial e data final. Escolher a op&ccedil;&atilde;o:
+&ldquo;Permanente&rdquo; ou &ldquo;Provis&oacute;rio&rdquo;.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Data
+de In&iacute;cio da Atividade</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>&Eacute; a data que o
+contribuinte come&ccedil;ou a desenvolver a atividade que est&aacute;
+sendo cadastrada. Toda atividade dever&aacute; obrigatoriamente ter
+uma data de in&iacute;cio.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Data
+Final da Atividade:</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essa
+data s&oacute; estar&aacute; dispon&iacute;vel para preenchimento
+quando for selecionado o tipo de atividade provis&oacute;rio e
+corresponde a data estimada pelo contribuinte que encerrar&aacute;
+seu funcionamento.</SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>&Aacute;rea
+Liberada</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Nesse campo pode ser
+informada a &aacute;rea utilizada pelo estabelecimento para e
+desenvolvimento de cada atividade.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><IMG SRC="Manual_Fiscalizacao_html_m5bba0f56.png" NAME="figura9" ALIGN=LEFT WIDTH=642 HEIGHT=266 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>figura
+37</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>ABA RESPONS&Aacute;VEL
+T&Eacute;CNICO</B></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	Nessa guia, deve ser
+informado o CGM do respons&aacute;vel t&eacute;cnico pelo
+estabelecimento que est&aacute; sendo liberado o alvar&aacute;.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Ex.: na libera&ccedil;&atilde;o
+de alvar&aacute; para uma ind&uacute;stria qu&iacute;mica, o
+respons&aacute;vel t&eacute;cnico ser&aacute; o engenheiro qu&iacute;mico.
+Na libera&ccedil;&atilde;o de alvar&aacute; para uma drogaria, o
+respons&aacute;vel t&eacute;cnico ser&aacute; o farmac&ecirc;utico.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm; font-style: normal"><B>ABA
+C&Aacute;LCULO</B></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><FONT SIZE=3>Essa guia serve unicamente para
+processar o c&aacute;lculo da taxa a ser lan&ccedil;ada para o
+contribuinte, levando em considera&ccedil;&atilde;o os elementos do
+cadastro do alvar&aacute;, para isso basta clicar no bot&atilde;o
+&ldquo;calcular&rdquo;.</FONT></P>
+<P CLASS="western"><IMG SRC="Manual_Fiscalizacao_html_m2bf5e013.png" NAME="figura10" ALIGN=LEFT WIDTH=642 HEIGHT=144 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>figura
+38</FONT></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db2341db">ALTERA&Ccedil;AO
+DE ALVAR&Aacute;</A></B></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><FONT SIZE=3>	Nessa rotina, selecione o registro
+desejado na lista conforme figura 39, sendo ainda poss&iacute;vel
+pesquisar pelo c&oacute;digo ou pelo nome do contribuinte. Ser&atilde;o
+carregadas na tela todas as informa&ccedil;&otilde;es do cadastro
+selecionado, sendo permitido alterar qualquer campo.</FONT></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Fiscalizacao_html_273a8c84.png" NAME="figura11" ALIGN=LEFT WIDTH=642 HEIGHT=171 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>figura
+39</FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db2435db">BAIXA
+DE ALVAR&Aacute;</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>	O DBPortal adotou o
+conceito de baixa de alvar&aacute; a partir da baixa por atividade,
+ou seja, caso uma inscri&ccedil;&atilde;o possua mais de uma
+atividade, voc&ecirc; pode efetuar a baixa de duas maneiras: </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>1 &ndash; baixar apenas uma
+atividade da inscri&ccedil;&atilde;o; 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>2 &ndash; baixar todas as atividades
+da inscri&ccedil;&atilde;o. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>	No primeiro caso, o alvar&aacute;
+continuar&aacute; ativo, por&eacute;m em sua lista de atividades
+continuar&aacute; mostrando a atividade baixada para fins de consulta
+e desconsiderando para fins de calculo.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	J&aacute; no segundo caso, o alvar&aacute;
+ser&aacute; considerado baixado, n&atilde;o permitindo assim mais a
+altera&ccedil;&atilde;o cadastral, a impress&atilde;o do alvar&aacute;,
+bem como ser&aacute; desconsiderado completamente para efeito de
+c&aacute;lculos.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>	Para efetuar uma baixa, informe o
+c&oacute;digo do alvar&aacute; ou selecione clicando no link &ldquo;c&oacute;digo
+do alvar&aacute; sanit&aacute;rio&rdquo;.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Data Final</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Esse campo corresponde a data do fim
+da atividade pelo contribuinte.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>C&oacute;digo do
+Processo</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Informe o c&oacute;digo do processo
+que foi protocolada a solicita&ccedil;&atilde;o de baixa.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Tipo de Baixa</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY>Selecione a forma como est&aacute;
+sendo efetuada a baixa do alvar&aacute; : Normal ou Of&iacute;cio.</P>
+<P CLASS="western" ALIGN=JUSTIFY>Baixa normal &eacute; quando a
+iniciativa de encerramento das atividades parte do contribuinte;</P>
+<P CLASS="western" ALIGN=JUSTIFY>Baixa de of&iacute;cio &eacute;
+quando a iniciativa da baixa parte do fisco municipal.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Observa&ccedil;&atilde;o</B></I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Nesse campo, pode ser digitada qualquer observa&ccedil;&atilde;o a
+respeito da baixa que est&aacute; sendo realizado.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+Selecione as atividades que deseja baixar e clique no bot&atilde;o
+&ldquo;baixar&rdquo; conforme figura 39</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db2436db">CANCELAMENTO
+DE BAIXA</A></B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	Nessa rotina, &eacute; poss&iacute;vel reverter um processo de baixa
+tanto de uma &uacute;nica atividade como de todo um alvar&aacute;
+sanit&aacute;rio. Basta informar o c&oacute;digo do alvar&aacute;
+baixado ou selecionar em uma lista clicando no link &ldquo;c&oacute;digo
+do alvar&aacute; sanit&aacute;rio&rdquo;, selecionar uma ou mais
+atividades que deseja reativar e clicar no bot&atilde;o processar.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<H2 CLASS="western"><A NAME="5.3.NOTIFICA&Ccedil;&Otilde;ES|outline"></A><A NAME="5.3.NOTIFICA&Ccedil;&Otilde;ES|outline"></A>
+<A HREF="#Sum&aacute;rio1|region" NAME="db2496db">NOTIFICA&Ccedil;&Otilde;ES</A></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+	A notifica&ccedil;&atilde;o &eacute; o ato administrativo de
+cientificar o contribuinte do descumprimento de obriga&ccedil;&otilde;es
+acess&oacute;rias, cuja finalidade &eacute; dar prazo para
+regulariza&ccedil;&atilde;o da situa&ccedil;&atilde;o do fato
+constatado. A notifica&ccedil;&atilde;o expedida contra um
+contribuinte, caso n&atilde;o atendidas as suas exig&ecirc;ncias,
+pode ser convertida em <I><B>AUTO DE INFRA&Ccedil;&Atilde;O</B></I>.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>	O cadastro de notifica&ccedil;&otilde;es
+registra o contribuinte, a data da constata&ccedil;&atilde;o, o prazo
+para regulariza&ccedil;&atilde;o, as irregularidades constatadas e
+o(s) fiscal(is) envolvido(s).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium">
+<BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db4219db">INCLUS&Atilde;O
+DE NOTIFICA&Ccedil;&Atilde;O</A></B></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><FONT SIZE=3>Uma notifica&ccedil;&atilde;o pode
+ser lan&ccedil;ada para um CGM, uma inscri&ccedil;&atilde;o
+municipal, uma matr&iacute;cula de im&oacute;vel ou para um alvar&aacute;
+sanit&aacute;rio. Selecione a  forma de lan&ccedil;amento e informe o
+c&oacute;digo desejado ou clique no link para pesquisar.</FONT></P>
+<P CLASS="western"><FONT SIZE=3>Ex.: caso queira lan&ccedil;ar uma
+notifica&ccedil;&atilde;o para uma inscri&ccedil;&atilde;o, informe o
+c&oacute;digo ou selecione o nome do contribuinte conforme figura 40.</FONT></P>
+<P CLASS="western"><IMG SRC="Manual_Fiscalizacao_html_mec685b1.png" NAME="figura13" ALIGN=LEFT WIDTH=642 HEIGHT=94 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3>figura
+40</FONT></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>ABA NOTIFICA&Ccedil;&Atilde;O</B></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo
+da Notifica&ccedil;&atilde;o</B></I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essa
+campo ser&aacute; preenchido automaticamente e corresponde ao n&uacute;mero
+da notifica&ccedil;&atilde;o.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>N&uacute;mero
+do Bloco</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+campo pode ser informado o n&uacute;mero da notifica&ccedil;&atilde;o
+do talon&aacute;rio utilizado para notificar um contribuinte.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Prazo
+Para Recurso</B></I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Informe
+nesse campo, a data que foi concedida ao notificado como prazo para
+regulariza&ccedil;&atilde;o da irregularidade constatada.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Data
+da Notifica&ccedil;&atilde;o / Hora da Notifica&ccedil;&atilde;o</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Informe
+nesses campos a data e hora que o contribuinte foi notificado.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Observa&ccedil;&atilde;o
+da Notifica&ccedil;&atilde;o</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+campo, pode ser digitado qualquer coment&aacute;rio que se queira
+fazer a respeito da notifica&ccedil;&atilde;o que est&aacute; sendo
+lan&ccedil;ada. O conte&uacute;do desse campo pode ser configurado
+para ser impresso no documento.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo
+do Departamento</B></I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">O
+c&oacute;digo do departamento &eacute; preenchido automaticamente com
+o departamento do usu&aacute;rio que est&aacute; logado no sistema.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Nome
+da Pessoa Notificada</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+campo deve ser informado a pessoa que recebeu a notifica&ccedil;&atilde;o
+na empresa ou no local onde est&aacute; sendo notificado. O sistema
+sempre traz como sugest&atilde;o o pr&oacute;prio nome do notificado</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">
+de acordo com a origem da notifica&ccedil;&atilde;o selecionada na
+tela anterior</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">,
+mas permite altera&ccedil;&atilde;o.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Endere&ccedil;o
+</I></FONT></STRONG><STRONG><FONT SIZE=3><I>R</I></FONT></STRONG><STRONG><FONT SIZE=3><I>egistrado</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essas
+informa&ccedil;&otilde;es correspondem ao endere&ccedil;o que o
+notificado tem registrado em seu cadastro e n&atilde;o pode ser
+alterado no momento de uma inclus&atilde;o de notifica&ccedil;&atilde;o.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Endere&ccedil;o
+</I></FONT></STRONG><STRONG><FONT SIZE=3><I>L</I></FONT></STRONG><STRONG><FONT SIZE=3><I>ocalizado</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essas
+informa&ccedil;&otilde;es correspondem ao endere&ccedil;o onde o
+notificado foi localizado. Sempre ser&atilde;o sugeridas as
+informa&ccedil;&otilde;es constantes em seu cadastro, por&eacute;m
+podem ser alteradas. </SPAN></FONT></STRONG>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Fiscalizacao_html_d846180.png" NAME="figura17" ALIGN=LEFT WIDTH=642 HEIGHT=246 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">figura
+41</SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3>ABA
+PROCED&Ecirc;NCIA</FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo
+da Notifica&ccedil;&atilde;o</B></I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essa
+campo corresponde ao n&uacute;mero da notifica&ccedil;&atilde;o que
+foi gerada e ser&aacute; preenchido automaticamente.</SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>C&oacute;digo
+da Proced&ecirc;ncia</I></FONT></STRONG><STRONG><FONT SIZE=3> </FONT></STRONG>
+</P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Informe
+ou selecione na lista o c&oacute;digo da proced&ecirc;ncia da
+notifica&ccedil;&atilde;o. Essa informa&ccedil;&atilde;o corresponde
+ao motivo pelo qual est&aacute; sendo emitida a notifica&ccedil;&atilde;o
+contra o notificado, ou seja, foi a infra&ccedil;&atilde;o constatada
+pelo fiscal.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Fiscalizacao_html_m1075ea4c.png" NAME="figura14" ALIGN=LEFT WIDTH=642 HEIGHT=285 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">figura
+42</SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_7cc8d7da.png" NAME="figura15" ALIGN=LEFT WIDTH=642 HEIGHT=213 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">figura
+43</SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3>ABA
+FISCAIS</FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>C&oacute;digo
+do </I></FONT></STRONG><STRONG><FONT SIZE=3><I>U</I></FONT></STRONG><STRONG><FONT SIZE=3><I>su</I></FONT></STRONG><STRONG><FONT SIZE=3><I>&aacute;rio</I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Informe
+o c&oacute;digo do fiscal respons&aacute;vel pela notifica&ccedil;&atilde;o
+ou selecione na lista clicando no</SPAN></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+link </SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&ldquo;</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">C&oacute;d.
+do </SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">U</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">su&aacute;rio</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&rdquo;</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></FONT></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Observa&ccedil;&atilde;o
+do </I></FONT></STRONG><STRONG><FONT SIZE=3><I>F</I></FONT></STRONG><STRONG><FONT SIZE=3><I>iscal</I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+campo, pode ser digitado qualquer coment&aacute;rio feito pelo fiscal
+a cerca da notifica&ccedil;&atilde;o</SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3>ABA
+TESTEMUNHAS</FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nessa
+guia pode ser informado uma ou mais testemunhas identificadas em uma
+notifica&ccedil;&atilde;o. A testemunha deve estar cadastrada no CGM.
+Essa informa&ccedil;&atilde;o &eacute; </SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">opcional.</SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo
+da Notifica&ccedil;&atilde;o</B></I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Esse
+campo ser&aacute; preenchido automaticamente com o c&oacute;digo da
+notifica&ccedil;&atilde;o que est&aacute; sendo cadastrada.</SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Numcgm</B></I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+o n&uacute;mero do CGM da testemunha identificada ou pesquise pelo
+nome.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="5.4.AUTO DE INFRA&Ccedil;&Atilde;O|outline"></A><A NAME="5.4.AUTO DE INFRA&Ccedil;&Atilde;O|outline"></A>
+<STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db2514db"><FONT SIZE=5><SPAN STYLE="font-style: normal"><B>AUTO
+DE INFRA&Ccedil;&Atilde;O</B></SPAN></FONT></A></STRONG></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal">	</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Auto
+de Infra&ccedil;&atilde;o &eacute; o ato administrativo de aplica&ccedil;&atilde;o
+de penalidades pelo descumprimento de obriga&ccedil;&otilde;es
+tribut&aacute;rias acess&oacute;rias, ou certos deveres n&atilde;o
+cumpridos, cuja finalidade &eacute; de punir o infrator.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY>	A rotina de cadastro de auto de
+infra&ccedil;&atilde;o, tem como objetivo registrar esse ato e gerar
+o d&eacute;bito a ser recolhido no prazo determinado, al&eacute;m de
+efetuar o controle dos contribuintes j&aacute; autuados nos casos de
+reincid&ecirc;ncia.</P>
+<P CLASS="western" ALIGN=JUSTIFY>	O cadastro de auto de infra&ccedil;&atilde;o
+registra o contribuinte, a data da autua&ccedil;&atilde;o, o prazo
+para impugna&ccedil;&atilde;o, as infra&ccedil;&otilde;es cometidas e
+o(s) fiscal(is) envolvido(s) e pode ser efetuado, selecionado o
+contribuinte atrav&eacute;s de uma inscri&ccedil;&atilde;o de alvar&aacute;,
+CGM, alvar&aacute; sanit&aacute;rio, matr&iacute;cula de im&oacute;vel
+ou at&eacute; mesmo pelo c&oacute;digo de uma notifica&ccedil;&atilde;o
+j&aacute; cadastrada.</P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B><A HREF="#Sum&aacute;rio1|region" NAME="db2515db">INCLUS&Atilde;O
+DE AUTO DE INFRA&Ccedil;&Atilde;O</A></B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><B>ABA AUTO DE INFRA&Ccedil;&Atilde;O</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo</B></I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essa
+campo ser&aacute; preenchido automaticamente e corresponde ao n&uacute;mero
+do auto de infra&ccedil;&atilde;o.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>N&uacute;mero
+do Bloco</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+campo pode ser informado o n&uacute;mero do auto de infra&ccedil;&atilde;o
+do talon&aacute;rio utilizado para autuar um contribuinte.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Data
+/ Hora</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Informe
+nesses campos a data e hora que o contribuinte foi autuado.</SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Tipo
+de Fiscaliza&ccedil;&atilde;o</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecione
+o tipo de fiscaliza&ccedil;&atilde;o na qual o contribuinte que est&aacute;
+sendo autuado est&aacute; sendo enquadrado.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ex.:
+fiscaliza&ccedil;&atilde;o tribut&aacute;ria, fiscaliza&ccedil;&atilde;o
+sanit&aacute;ria, fiscaliza&ccedil;&atilde;o de posturas, etc.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Observa&ccedil;&atilde;o
+do auto</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+campo, pode ser digitado qualquer coment&aacute;rio que se queira
+fazer a </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">respeito
+do auto de infra&ccedil;&atilde;o que est&aacute; sendo lan&ccedil;ada.
+O conte&uacute;do desse campo pode ser configurado para ser impresso
+no documento.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo
+do Departamento</B></I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">O
+c&oacute;digo do departamento &eacute; preenchido automaticamente com
+o departamento do usu&aacute;rio que est&aacute; logado no sistema.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><STRONG><FONT SIZE=3><I>Nome da Pessoa </I></FONT></STRONG><STRONG><FONT SIZE=3><I>A</I></FONT></STRONG><STRONG><FONT SIZE=3><I>utuada</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+campo deve ser informado a pessoa que recebeu a auto de infra&ccedil;&atilde;o
+na empresa ou no local onde est&aacute; sendo autuado.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Data
+do Vencimento Atualizada</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+nesse  campo a data de vencimento do d&eacute;bito que ser&aacute;
+lan&ccedil;ada para o autuado relativo ao auto de infra&ccedil;&atilde;o.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Prazo
+Para Recurso</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Informe
+nesse campo, a data que foi concedida ao autuado como prazo para
+interpor recurso administrativo contra o auto de infra&ccedil;&atilde;o.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Endere&ccedil;o
+</I></FONT></STRONG><STRONG><FONT SIZE=3><I>R</I></FONT></STRONG><STRONG><FONT SIZE=3><I>egistrado</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essas
+informa&ccedil;&otilde;es correspondem ao endere&ccedil;o que o
+autuado tem registrado em seu cadastro e n&atilde;o pode ser alterado
+no momento de uma inclus&atilde;o do auto de infra&ccedil;&atilde;o.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Endere&ccedil;o
+</I></FONT></STRONG><STRONG><FONT SIZE=3><I>L</I></FONT></STRONG><STRONG><FONT SIZE=3><I>ocalizado</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Essas
+informa&ccedil;&otilde;es correspondem ao endere&ccedil;o onde o
+autuado foi localizado. Sempre ser&atilde;o sugeridas as informa&ccedil;&otilde;es
+constantes em seu cadastro, por&eacute;m podem ser alteradas. </SPAN></SPAN></FONT></STRONG>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><IMG SRC="Manual_Fiscalizacao_html_d08d666.png" NAME="figura16" ALIGN=LEFT WIDTH=642 HEIGHT=252 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">figura
+44</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>ABA
+PROCED&Ecirc;NCIA</B></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo
+do </B></I></FONT></STRONG><STRONG><FONT SIZE=3><I><B>A</B></I></FONT></STRONG><STRONG><FONT SIZE=3><I><B>uto
+de </B></I></FONT></STRONG><STRONG><FONT SIZE=3><I><B>I</B></I></FONT></STRONG><STRONG><FONT SIZE=3><I><B>nfra&ccedil;&atilde;o</B></I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essa
+campo corresponde ao n&uacute;mero d</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">o
+auto de infra&ccedil;&atilde;o</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">
+que foi gerad</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">o</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">
+e ser&aacute; preenchido automaticamente.</SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>C&oacute;digo
+da Proced&ecirc;ncia</I></FONT></STRONG><STRONG><FONT SIZE=3> </FONT></STRONG>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+ou selecione na lista o c&oacute;digo da proced&ecirc;ncia do auto de
+infra&ccedil;&atilde;o. Essa informa&ccedil;&atilde;o corresponde ao
+motivo pelo qual o contribuinte est&aacute; sendo autuado.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Um
+auto de infra&ccedil;&atilde;o pode possuir </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">v&aacute;rias
+</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">proced&ecirc;ncias</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ao
+selecionar a proced&ecirc;ncia, caso o contribuinte j&aacute; tenha
+sido autuado pelo mesmo motivo, ser&aacute; emitido um alerta com a
+informa&ccedil;&atilde;o de que &eacute; reincidente conforme figura
+45</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m6c2ab48e.png" NAME="figura19" ALIGN=LEFT WIDTH=642 HEIGHT=246 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">figura
+45</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Valor</I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+campo deve ser informado o valor em R$ previsto para a infra&ccedil;&atilde;o
+cometida </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">pelo
+contribuinte. Caso tenha sido informado o valor no cadastro da
+proced&ecirc;ncia, esse ser&aacute; preenchido automaticamente.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Tipo
+de Corre&ccedil;&atilde;o</B></I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Esse
+campo corresponde ao tipo de tratamento que ser&aacute; dado em
+rela&ccedil;&atilde;o ao valor informado da infra&ccedil;&atilde;o,
+ou seja, o valor informado pode n&atilde;o sofrer nenhuma a&ccedil;&atilde;o,
+sofrer um acr&eacute;scimo ou sofrer uma redu&ccedil;&atilde;o.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Fator</I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Caso
+tenha sido selecionado no tipo de corre&ccedil;&atilde;o para o valor
+sofrer um acr&eacute;scimo ou uma corre&ccedil;&atilde;o, o</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">fator
+corresponde ao n&uacute;mero de vezes que ser&aacute; aplicada a a&ccedil;&atilde;o
+sobre o valor.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ex.:	valor
+da infra&ccedil;&atilde;o:	R$ 500,00</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	tipo
+de corre&ccedil;&atilde;o:	acr&eacute;scimo</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">	fator:			2</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Com
+essas informa&ccedil;&otilde;es, significa que o valor previsto para
+a infra&ccedil;&atilde;o cometida pelo contribuinte &eacute; de R$
+500,00, por&eacute;m por ser reincidente est&aacute; sendo aplicada a
+multa em dobro, passando assim seu d&eacute;bito para R$ 1.000,00.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Caso
+o contribuinte que est&aacute; sendo autuado j&aacute; tenha sido
+autuado em outro momento pelo mesmo motivo (proced&ecirc;ncia), ser&aacute;
+emitido um alerta informando da sua reincid&ecirc;ncia conforme
+figura 46.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m2debf19c.png" NAME="figura18" ALIGN=LEFT WIDTH=642 HEIGHT=285 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">figura
+46</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_mfa33a0f.png" NAME="figura36" ALIGN=LEFT WIDTH=642 HEIGHT=247 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">figura
+47</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>ABA
+FISCAIS</B></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>C&oacute;digo
+do </I></FONT></STRONG><STRONG><FONT SIZE=3><I>U</I></FONT></STRONG><STRONG><FONT SIZE=3><I>su</I></FONT></STRONG><STRONG><FONT SIZE=3><I>&aacute;rio</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Informe
+o c&oacute;digo do fiscal respons&aacute;vel pelo auto de infra&ccedil;&atilde;o
+ou selecione na lista clicando no l</SPAN></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">ink
+</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&ldquo;</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">C&oacute;d.
+do </SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">U</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">su&aacute;rio</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&rdquo;</SPAN></SPAN></FONT></FONT></STRONG><STRONG><FONT COLOR="#000000"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></FONT></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Observa&ccedil;&atilde;o
+do </I></FONT></STRONG><STRONG><FONT SIZE=3><I>F</I></FONT></STRONG><STRONG><FONT SIZE=3><I>iscal</I></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+campo, pode ser digitado qualquer coment&aacute;rio feito pelo fiscal
+a cerca do auto de infra&ccedil;&atilde;o.</SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>ABA
+TESTEMUNHAS</B></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nessa
+guia pode ser informado uma ou mais testemunhas identificadas em um
+auto de infra&ccedil;&atilde;o. A testemunha deve estar cadastrada no
+CGM. Essa informa&ccedil;&atilde;o &eacute; opcional.</SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo
+do </B></I></FONT></STRONG><STRONG><FONT SIZE=3><I><B>A</B></I></FONT></STRONG><STRONG><FONT SIZE=3><I><B>uto
+de </B></I></FONT></STRONG><STRONG><FONT SIZE=3><I><B>I</B></I></FONT></STRONG><STRONG><FONT SIZE=3><I><B>nfra&ccedil;&atilde;o</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Esse
+campo ser&aacute; preenchido automaticamente com o c&oacute;digo do
+auto de infra&ccedil;&atilde;o que est&aacute; sendo cadastrada.</SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Numcgm</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+o n&uacute;mero do CGM da testemunha identificada ou pesquise pelo
+nome.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>ABA
+C&Aacute;LCULO</B></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nessa
+aba, ser&aacute; gerado o d&eacute;bito correspondente a soma dos
+valores da cada proced&ecirc;ncia lan&ccedil;ada no auto de infra&ccedil;&atilde;o,
+com o vencimento informado na aba auto de infra&ccedil;&atilde;o.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+valor lan&ccedil;ado pode ser visualizado acessando a Consulta Geral
+Financeira pelo mesmo c&oacute;digo que foi utilizado para incluir o
+auto de infra&ccedil;&atilde;o, ou seja, CGM, Inscri&ccedil;&atilde;o,
+Matr&iacute;cula, etc.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db2516db"><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>ALTERANDO
+UM AUTO DE INFRA&Ccedil;&Atilde;O</B></SPAN></FONT></A></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Para
+alterar um auto de infra&ccedil;&atilde;o, basta informar o c&oacute;digo
+do auto ou selecionar o item desejado na lista conforme figura 48.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nessa
+rotina, &eacute; permitida a altera&ccedil;&atilde;o de qualquer
+campo, exceto o contribuinte para quem foi emitido o auto. Caso j&aacute;
+tenha sido efetuado o c&aacute;lculo, e o d&eacute;bito j&aacute; te
+tenha sido quitado pelo contribuinte, n&atilde;o &eacute; &eacute;
+mais permitida altera&ccedil;&atilde;o. Caso o d&eacute;bito ainda
+n&atilde;o tenha sido quitado, dever&aacute; ser calculado novamente
+sejam assumidas as novas informa&ccedil;&otilde;es lan&ccedil;adas.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db4208db"><FONT SIZE=3><SPAN STYLE="font-style: normal">BAIXA
+DE AUTO DE INFRA&Ccedil;&Atilde;O</SPAN></FONT></A></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Sempre
+que um contribuinte recorrer de uma autua&ccedil;&atilde;o e for
+julgado procedente, dever&aacute; ser processada a baixa do auto para
+que os d&eacute;bitos gerados sejam baixados </SPAN></SPAN></FONT></STRONG>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">A
+baixa pode ser efetuada na totalidade do auto ou parcialmente, ou
+seja, caso o contribuinte tenha sido enquadrado em mais de uma
+proced&ecirc;ncia e entre com recurso, e for considerado procedente
+apenas um dos enquadramentos, a baixa ser&aacute; parcial, caso seja
+considerado procedente o recurso em todos os enquadramentos, a baixa
+ser&aacute; total.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Para
+baixar um auto de infra&ccedil;&atilde;o, informa o c&oacute;digo do
+auto ou selecione o registro desejado na lista conforme figura 48.
+Informe os seguintes campos:</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m54f7d9c3.png" NAME="figura20" ALIGN=LEFT WIDTH=642 HEIGHT=266 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">figura
+48</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>C</I></FONT></STRONG><STRONG><FONT SIZE=3><I>&oacute;digo
+do processo</I></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+</SPAN></SPAN></FONT></STRONG>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+o c&oacute;digo do processo de protocolo do recurso.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Baixa</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+campo deve ser informada a data que queira registrar como data de
+baixa.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>P</I></FONT></STRONG><STRONG><FONT SIZE=3><I>roced&ecirc;ncias</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Selecione
+a proced&ecirc;ncia que queira baixar do auto e clique no bot&atilde;o
+baixar.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">O
+auto de infra&ccedil;&atilde;o baixado, continuar&aacute; sendo
+mostrado na consulta fiscal do contribuinte, por&eacute;m ser&aacute;
+apresentado com a situa&ccedil;&atilde;o </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&ldquo;</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">baixado</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">&rdquo;</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Uma
+baixa de auto de infra&ccedil;&atilde;o poder&aacute; ser revertida,
+tornando-o ativo novamente, para isso basta acessar no menu a op&ccedil;&atilde;o
+cancelar</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="5.5.LEVANTAMENTO FISCAL|outline"></A><A NAME="5.5.LEVANTAMENTO FISCAL|outline"></A>
+<STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db2494db"><FONT SIZE=5><SPAN STYLE="font-style: normal"><B>LEVANTAMENTO
+FISCAL</B></SPAN></FONT></A></STRONG></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Essa
+rotina foi elaborada com a finalidade de controlar as a&ccedil;&otilde;es
+fiscais desenvolvidas pelos agentes e auditores fazend&aacute;rios
+objetivando a homologa&ccedil;&atilde;o nos lan&ccedil;amentos de
+ISSQN.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">A
+partir do in&iacute;cio de uma a&ccedil;&atilde;o fiscal, &eacute;
+poss&iacute;vel informar o faturamento mensal, o imposto recolhido e
+o sistema apura as diferen&ccedil;as do tributo quando houver,
+permitindo ao usu&aacute;rio gerar o auto de lan&ccedil;amento, bem
+como a inscri&ccedil;&atilde;o do d&eacute;bito na d&iacute;vida.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db2497db"><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>INCLUS&Atilde;O</B></SPAN></FONT></A></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Um
+levantamento fiscal pode ser inclu&iacute;do a partir de uma
+inscri&ccedil;&atilde;o municipal ou de um CGM</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>ABA
+LEVANTAMENTO</B></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Levantamento</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Esse
+campo ser&aacute; preenchido automaticamente e corresponde ao c&oacute;digo
+do levantamento que est&aacute; sendo inclu&iacute;do.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Data
+do Levantamento</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Data
+da inclus&atilde;o do levantamento fiscal.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Contato</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+o nome da pessoa de contato na empresa que &eacute; respons&aacute;vel
+pelas informa&ccedil;&otilde;es.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal">Per&iacute;odo
+de In&iacute;cio e </SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal">P</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal">er&iacute;odo
+de </SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal">F</SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal">im
+do Levantamento</SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Essas
+datas correspondem ao per&iacute;odo que est&aacute; sendo verificado
+no levantamento fiscal. Caso o contribuinte tenha pend&ecirc;ncias em
+aberto relativo a ISSQN, ser&aacute; substitu&iacute;do pelas
+informa&ccedil;&otilde;es lan&ccedil;adas que estiverem compreendidas
+entre o per&iacute;odo informado nesses campos.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Processo</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Informe
+o c&oacute;digo do processo registrado para  o levantamento fiscal.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Observa&ccedil;&atilde;o</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nesse
+campo, pode ser feita qualquer observa&ccedil;&atilde;o a respeito do
+levantamento que </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">est&aacute;
+sendo lan&ccedil;ado.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><B><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none">Espont&acirc;neo</SPAN></I></FONT></STRONG></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Ness</SPAN></SPAN></SPAN></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">e</SPAN></SPAN></SPAN></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+campo deve ser selecionad</SPAN></SPAN></SPAN></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">o</SPAN></SPAN></SPAN></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+a forma como foi iniciado o levantamento fiscal, ou seja, se a
+iniciativa de revis&atilde;o do ISSQN partiu da Prefeitura a op&ccedil;&atilde;o
+deve ser </SPAN></SPAN></SPAN></STRONG><B><STRONG><SPAN STYLE="font-style: normal">N&atilde;o</SPAN></STRONG></B><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+e </SPAN></SPAN></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">se
+a iniciativa partiu do pr&oacute;prio contribuinte, a op&ccedil;&atilde;o
+deve ser </SPAN></SPAN></STRONG><B><STRONG><SPAN STYLE="font-style: normal">Sim.</SPAN></STRONG></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Essa
+op&ccedil;&atilde;o, pode ser configurada nos par&acirc;metros para
+ter tratamento diferenciado em rela&ccedil;&atilde;o a multa e juros
+aplicado sobre os d&eacute;bitos apurados, ou seja, pode-se
+configurar para lan&ccedil;ar um levantamento espont&acirc;neo em uma
+receita e proced&ecirc;ncia quando for importado para d&iacute;vida
+ativa e quando for n&atilde;o espont&acirc;neo para outra receita e
+proced&ecirc;ncia.</SPAN></SPAN></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+Isso &eacute; &uacute;til quando h&aacute; uma multa diferente </SPAN></SPAN></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">para
+quando o levantamento n&atilde;o for do tipo espon</SPAN></SPAN></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">t&acirc;neo
+por exemplo.</SPAN></SPAN></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_318e44.png" NAME="figura21" ALIGN=LEFT WIDTH=642 HEIGHT=184 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">figura
+49</SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><B><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal">ABA
+VALORES</SPAN></FONT></STRONG></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nessa
+aba s&atilde;o lan&ccedil;adas informa&ccedil;&otilde;es a respeito
+dos valores que est&atilde;o sendo averiguado</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">s</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">,
+como base de c&aacute;lculo, al&iacute;quota, compet&ecirc;ncia,
+pagamentos, etc.</SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Seq&uuml;encial</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esse campo ser&aacute; gerado automaticamente pelo
+sistema e corresponde a sequ&ecirc;ncia do registro (compet&ecirc;ncia)
+que est&aacute; sendo lan&ccedil;ado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Exerc&iacute;cio/Compet&ecirc;ncia</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>Essas informa&ccedil;&otilde;es correspondem ao ano e
+m&ecirc;s de compet&ecirc;ncia do ISSQN que est&aacute; sendo
+lan&ccedil;ado. N&atilde;o podem estar fora do per&iacute;odo lan&ccedil;ado
+como per&iacute;odo inicial e final na aba levantamento. A cada
+registro que for inclu&iacute;do, o sistema passar&aacute;
+automaticamente para a pr&oacute;xima compet&ecirc;ncia e para o
+pr&oacute;ximo vencimento.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Vencimentos</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>Nesse campo deve ser informado a data de vencimento da
+compet&ecirc;ncia informada nos campos anteriores
+(exerc&iacute;cio/compet&ecirc;ncia).</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Descri&ccedil;&atilde;o</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>Nesse campo pode ser lan&ccedil;ada qualquer observa&ccedil;&atilde;o
+a respeito do registro que est&aacute; sendo lan&ccedil;ado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Valor Bruto</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>Valor total do registro que est&aacute; sendo lan&ccedil;ado
+(faturamento mensal) nota ou do faturamento mensal.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>Caso o contribuinte tenha um m&ecirc;s sem movimento,
+dever&aacute; ser lan&ccedil;ado o registro normalmente, por&eacute;m
+com o valor bruto zerado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Al&iacute;quota</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>Deve ser informado nesse campo a al&iacute;quota
+correspondente que a empresa est&aacute; enquadrada.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Valor Pagar</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3>O valor a pagar ser&aacute; calculado automaticamente
+aplicando o percentual informado no campo al&iacute;quota sobre o
+valor informado no campo valor bruto.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><B><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none">Valor
+Pago</SPAN></I></FONT></STRONG></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Corresponde
+a soma dos valores pagos pelo contribuinte referente a compet&ecirc;ncia
+que est&aacute; sendo lan&ccedil;ada. Para informar os valores pagos,
+</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">o
+usu&aacute;rio </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">deve
+clicar no bot&atilde;o &ldquo;pagamentos&rdquo; e lan&ccedil;ar o
+valor pago e a data do pagamento efetuado pelo contribuinte, </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">e
+ap&oacute;s </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">clicar
+no bot&atilde;o &ldquo;lan&ccedil;ar&rdquo; e </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">em
+seguida </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">no
+bot&atilde;o &ldquo;atualizar&rdquo;conforme figura 50. Deve</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">m</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ser informado</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">s</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+todos os pagamentos efetuados pelo contribuinte relativos a
+compet&ecirc;ncia que est&aacute; sendo lan&ccedil;ada.</SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_53700fa6.png" NAME="figura22" ALIGN=LEFT WIDTH=642 HEIGHT=144 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">figura
+50</SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><B><STRONG><FONT SIZE=3><I>Saldo
+a </I></FONT></STRONG><STRONG><FONT SIZE=3><I>P</I></FONT></STRONG><STRONG><FONT SIZE=3><I>agar</I></FONT></STRONG></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Esse
+campo ser&aacute; preenchido automaticamente e corresponde ao campo
+valor a pagar menos o valor pago. Na pr&aacute;tica esse &eacute; o
+valor que ser&aacute; lan&ccedil;ado como d&eacute;bito para o
+contribuinte.</SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Ap&oacute;s
+lan&ccedil;ar todas as informa&ccedil;&otilde;es deve clicar no bot&atilde;o
+incluir. Um registro ser&aacute; inserido e os campos descritos acima
+ficar&atilde;o dispon&iacute;veis para lan&ccedil;ar a pr&oacute;xima
+compet&ecirc;ncia conforme figura 51.</SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m6f2c61a2.png" NAME="figura23" ALIGN=LEFT WIDTH=642 HEIGHT=252 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">figura
+51</SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Caso
+necessite fazer qualquer altera&ccedil;&atilde;o ou excluir um
+registro j&aacute; inclu&iacute;do, basta clicar no </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><U><SPAN STYLE="font-weight: medium">A</SPAN></U></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">
+ para alterar ou </SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><U><SPAN STYLE="font-weight: medium">E</SPAN></U></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+para excluir , no registro desejado.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Na
+descri&ccedil;&atilde;o acima, foi demonstrado a forma de lan&ccedil;amento
+de uma compet&ecirc;ncia pelo valor total do faturamento. Outra forma
+de efetuar o registro de uma compet&ecirc;ncia</SPAN></SPAN></SPAN></FONT></STRONG><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+&eacute;</SPAN></SPAN></SPAN></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+fazer nota a nota, ou seja informar as notas fiscais emitidas na
+compet&ecirc;ncia, o dia da emiss&atilde;o</SPAN></SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">,</SPAN></SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+o n&uacute;mero e o valor de cada nota e  dessa forma o valor bruto
+ser&aacute; preenchido automaticamente com a soma do valor das notas
+fiscais informadas conforme figura 52</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Para
+cada nota fiscal informada, deve clicar no bot&atilde;o &ldquo;lan&ccedil;ar&rdquo;
+e ap&oacute;s informar todas as notas, clique no bot&atilde;o
+&ldquo;atualizar&rdquo; para que o campo valor bruto seja preenchido
+automaticamente com a soma dos valores das notas.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Quando
+for optado por lan&ccedil;ar o registro por notas, o sistema n&atilde;o
+permite mais informar o valor bruto daquele m&ecirc;s que est&aacute;
+sendo digitado.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m2e251c9f.png" NAME="figura24" ALIGN=LEFT WIDTH=642 HEIGHT=231 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">figura
+52</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Ap&oacute;s
+lan&ccedil;ar todas as compet&ecirc;ncias indicada no per&iacute;odo
+do levantamento, a tela de lan&ccedil;amento dos valores ser&aacute;
+apresentada conforme demonstrado na figura 53.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_45cca217.png" NAME="figura37" ALIGN=LEFT WIDTH=642 HEIGHT=246 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">figura
+53</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><B><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">ABA
+FISCAIS</SPAN></SPAN></FONT></STRONG></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nessa
+aba s&atilde;o lan&ccedil;ados os fiscais envolvidos no levantamento
+fiscal.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>C&oacute;digo</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esse campo ser&aacute; preenchido automaticamente e
+corresponde ao c&oacute;digo do levantamento que est&aacute; sendo
+digitado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Fiscal</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Informe
+o c&oacute;digo do fiscal ou selecione em uma lista clicando no link
+&ldquo;c&oacute;d.</SPAN></SPAN><U><SPAN STYLE="font-weight: medium">
+fiscal</SPAN></U><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">&rdquo;.
+Um levantamento dever&aacute; ter no m&iacute;nimo um fiscal
+envolvido.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><B><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none">Observa&ccedil;&atilde;o</SPAN></I></FONT></STRONG></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nesse
+campo pode ser digitada qualquer observa&ccedil;&atilde;o feita pelo
+fiscal a respeito do levantamento </SPAN></SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">executado.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_2de15244.png" NAME="figura25" ALIGN=LEFT WIDTH=642 HEIGHT=209 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">figura
+54</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="5.6.EXPORTA LEVANTAMENTO|outline"></A><A NAME="5.6.EXPORTA LEVANTAMENTO|outline"></A>
+<STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db4116db"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">EXPORTA
+LEVANTAMENTO</SPAN></SPAN></SPAN></A></STRONG></H2>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nessa
+rotina o sistema substituir&aacute; todos os registros de ISSQN
+Vari&aacute;vel do contribuinte pelas informa&ccedil;&otilde;es
+lan&ccedil;adas no levantamento fiscal, inclusive os registros cujo
+valor bruto tenha sido zero. </SPAN></SPAN></SPAN></FONT></STRONG>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Para
+exportar um levantamento, basta informar o c&oacute;digo ou
+selecionar em uma lista conforme figura 55.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_4f965659.png" NAME="figura38" ALIGN=LEFT WIDTH=642 HEIGHT=211 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3><STRONG><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">figura
+55</SPAN></SPAN></SPAN></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Na
+lista demonstrada na figura 33, somente ser&atilde;o apresentados os
+levantamentos que ainda n&atilde;o foram exportados.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Ap&oacute;s
+exportar um levantamento fiscal, n&atilde;o ser&aacute; mais
+permitida sua exclus&atilde;o ou sua altera&ccedil;&atilde;o, caso se
+fa&ccedil;a necess&aacute;rio, dever&aacute; ser cancelada a
+exporta&ccedil;&atilde;o, alterar os registros desejados e ap&oacute;s
+exportar novamente.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Quando
+&eacute; cancelada a exporta&ccedil;&atilde;o de um levantamento, os
+d&eacute;bitos relativos ao ISSQN Vari&aacute;vel voltam para a sua
+situa&ccedil;&atilde;o original, ou seja, s&atilde;o apresentados
+novamente na Consulta Geral Financeira os respectivos registros
+existentes antes do levantamento.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H1 CLASS="western"><A NAME="6.AUTO DE LAN&Ccedil;AMENTO|outline"></A><A NAME="6.AUTO DE LAN&Ccedil;AMENTO|outline"></A>
+<STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db4704db"><FONT SIZE=5><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>AUTO
+DE LAN&Ccedil;AMENTO</B></SPAN></SPAN></FONT></A></STRONG></H1>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nessa
+rotina &eacute; realizada a emiss&atilde;o do auto de lan&ccedil;amento
+de um determinado levantamento fiscal. Para isso, informe o n&uacute;mero
+do levantamento ou selecione em uma lista o registro desejado.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">O
+Auto de Lan&ccedil;amento &eacute; composto pela demonstra&ccedil;&atilde;o
+de todas as informa&ccedil;&otilde;es lan&ccedil;adas no
+levantamento, conjugado com um texto configur&aacute;vel onde &eacute;
+realizada a notifica&ccedil;&atilde;o do contribuinte do d&eacute;bito
+apurado conforme figura 56.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_aaf87ec.png" NAME="figura26" ALIGN=LEFT WIDTH=651 HEIGHT=320 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">figura
+56</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H2 CLASS="western"><A NAME="6.1.VISTORIAS|outline"></A><A NAME="6.1.VISTORIAS|outline"></A>
+<STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db4216db"><FONT SIZE=5><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>VISTORIAS</B></SPAN></SPAN></FONT></A></STRONG></H2>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">A
+Taxa de Fiscaliza&ccedil;&atilde;o e Vistoria de Estabelecimento &eacute;
+cobrada face ao exerc&iacute;cio do poder de pol&iacute;cia, e tem
+como fato gerador a dilig&ecirc;ncia do fiscal para vistoriar o
+estabelecimento e verificar se o mesmo atende aos requisitos exigidos
+na concess&atilde;o do Alvar&aacute;. </SPAN></SPAN></SPAN></FONT></STRONG>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>A taxa pode ser cobrada tamb&eacute;m
+em virtude da fiscaliza&ccedil;&atilde;o em estabelecimentos que
+exijam um controle da por parte da vigil&acirc;ncia sanit&aacute;ria.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>A rotina de inclus&atilde;o de
+vistorias tem a fun&ccedil;&atilde;o de registrar as vistorias
+executadas pelos setores competentes com o objetivo de efetuar o
+lan&ccedil;amento da taxa anual de vistoria, tanto de localiza&ccedil;&atilde;o
+como sanit&aacute;ria. A vistoria pode ser lan&ccedil;ada de duas
+formas: 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>1 &ndash; Vistoria parcial &ndash;
+nesse caso s&atilde;o lan&ccedil;adas as vistorias caso a caso,
+conforme s&atilde;o executadas, devendo informar data da execu&ccedil;&atilde;o,
+<A HREF="http://192.168.0.1/wiki/index.php?title=TIPO_DE_VISTORIA&amp;action=edit">TIPO
+DE VISTORIA</A> e fiscal envolvido. Quando for processado o c&aacute;lculo,
+o sistema lan&ccedil;a o d&eacute;bito para o contribuinte conforme
+os valores determinados para a atividade exercida. 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY>2 &ndash; Vistoria geral &ndash;
+nesse rotina &eacute; efetuado o lan&ccedil;amento geral, tanto da
+vistoria de localiza&ccedil;&atilde;o como sanit&aacute;ria, para os
+contribuintes de acordo com a <A HREF="http://192.168.0.1/wiki/index.php?title=CLASSE&amp;action=edit">CLASSE</A>
+selecionada e processa automaticamente o c&aacute;lculo, gerando o
+valor a ser pago de acordo com cada contribuinte e a atividade que
+exer&ccedil;a.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western"><A NAME="6.1.1.VISTORIA PARCIAL|outline"></A><A NAME="6.1.1.VISTORIA PARCIAL|outline"></A>
+<STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db2447db"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>VISTORIA
+PARCIAL</B></SPAN></SPAN></FONT></A></STRONG></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Para
+incluir uma vistoria parcial, selecione primeiro deve-se saber por
+qual tipo de chave que quer fazer o lan&ccedil;amento, ou seja,
+inscri&ccedil;&atilde;o, CGM, sanit&aacute;rio, etc. Ap&oacute;s essa
+escolha, informe o c&oacute;digo da chave no campo ou clique no link
+para pesquisar.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Para
+facilitar a demonstra&ccedil;&atilde;o, usaremos como exemplo uma
+vistoria lan&ccedil;ada para uma inscri&ccedil;&atilde;o.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>ABA
+VISTORIAS</B></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>C&oacute;digo</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esse campo &eacute; gerado automaticamente e corresponde
+ao n&uacute;mero da vistorias que est&aacute; sendo inserida.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>N&uacute;mero do Bloco</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+campo pode ser informado o n&uacute;mero do termo de vistoria gerado
+para executar a vistoria em loco.</SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Data</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Informe
+nesses campos a data e hora que o contribuinte foi vistoriado.</SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Observa&ccedil;&atilde;o</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nesse
+campo, pode ser digitado qualquer coment&aacute;rio feito pelo fiscal
+a cerca da.</SPAN></FONT></STRONG> vistoria.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Contato</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Nesse campo pode ser registrado o nome da pessoa que
+assinou o termo de vistoria no local vistoriado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Tipo
+de Vistoria</B></SPAN></I></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT COLOR="#000000"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Colocar
+o c&oacute;digo do Tipo de Vistoria ou clicar no link para pesquisar
+o tipo desejado.</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">
+Somente ser&atilde;o disponibilizados os tipos de vistorias que foram
+cadastrados para o departamento que usu&aacute;rio que est&aacute;
+incluindo a vistoria est&aacute; logado.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I>Endere&ccedil;o
+</I></FONT></STRONG><STRONG><FONT SIZE=3><I>R</I></FONT></STRONG><STRONG><FONT SIZE=3><I>egistrado</I></FONT></STRONG></P>
+<P CLASS="western"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Essas
+informa&ccedil;&otilde;es correspondem ao endere&ccedil;o que o
+vistoriado tem registrado em seu cadastro e n&atilde;o pode ser
+alterado no momento de uma inclus&atilde;o de uma vistoria.</SPAN></FONT></STRONG></P>
+<P CLASS="western"><BR><BR>
+</P>
+<P CLASS="western"><STRONG><FONT SIZE=3><I>Endere&ccedil;o </I></FONT></STRONG><STRONG><FONT SIZE=3><I>L</I></FONT></STRONG><STRONG><FONT SIZE=3><I>ocalizado</I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Essas
+informa&ccedil;&otilde;es correspondem ao endere&ccedil;o onde o
+vistoriado foi localizado. Sempre ser&atilde;o sugeridas as
+informa&ccedil;&otilde;es constantes em seu cadastro, por&eacute;m
+podem ser alteradas.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_m35f03540.png" NAME="figura28" ALIGN=LEFT WIDTH=642 HEIGHT=246 BORDER=0><BR CLEAR=LEFT><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">figura
+57</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>ABA
+FISCAIS</B></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nessa
+aba s&atilde;o lan&ccedil;ados os fiscais envolvidos na vistoria.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>C&oacute;digo</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3>Esse campo ser&aacute; preenchido automaticamente e
+corresponde ao c&oacute;digo da vistoria que est&aacute; sendo
+digitado.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><I><B>Fiscal</B></I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Informe
+o c&oacute;digo do fiscal ou selecione em uma lista clicando no </SPAN></SPAN><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">link
+&ldquo;c&oacute;d. fiscal&rdquo;</SPAN></SPAN><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">.</SPAN></SPAN></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><FONT SIZE=3><B><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none">Observa&ccedil;&atilde;o</SPAN></I></FONT></STRONG></B></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nesse
+campo pode ser digitada qualquer observa&ccedil;&atilde;o feita pelo
+fiscal a respeito da vistorias executada.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>ABA
+TESTEMUNHAS</B></SPAN></FONT></STRONG></P>
+<P CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Nessa
+aba pode ser informado uma ou mais testemunhas identificadas em uma
+vistoria executada. A testemunha deve estar cadastrada no CGM. Essa
+informa&ccedil;&atilde;o &eacute; opcional.</SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>C&oacute;digo
+da vistoria</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-weight: medium">Esse
+campo ser&aacute; preenchido automaticamente com o c&oacute;digo da
+vistoria que est&aacute; sendo cadastrada.</SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><B>Numcgm</B></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Informe
+o n&uacute;mero do CGM da testemunha identificada ou pesquise pelo
+nome.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><B>ABA
+C&Aacute;LCULO</B></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">Nessa
+aba, ser&aacute; gerado o d&eacute;bito correspondente ao valor da
+</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">t</SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: medium">axa
+de vistoria configurada para a atividade que o contribuinte exerce.</SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">O
+valor lan&ccedil;ado pode ser visualizado acessando a Consulta Geral
+Financeira pelo mesmo c&oacute;digo que foi utilizado para incluir o
+auto de infra&ccedil;&atilde;o, ou seja, CGM, Inscri&ccedil;&atilde;o,
+Matr&iacute;cula, etc.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db2448db"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>Altera&ccedil;&atilde;o
+de Vistoria</B></SPAN></SPAN></FONT></A></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Para
+alterar uma vistoria, basta selecionar na lista o registro desejado
+conforme figura 30. Uma vistoria pode sofrer qualquer altera&ccedil;&atilde;o
+de conte&uacute;do, exceto na vincula&ccedil;&atilde;o com o
+contribuinte vistoriado, ou seja, n&atilde;o pode-se trocar o
+contribuinte de uma vistoria.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Caso
+haja mudan&ccedil;a na vistoria que implique em altera&ccedil;&atilde;o
+no que diz respeito a taxa gerada, deve-se acessar novamente a aba
+c&aacute;lculo e gerar novamente o c&aacute;lculo para que sejam
+assumidos os novos par&acirc;metros </SPAN></SPAN></SPAN></FONT></STRONG></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Ressaltamos
+que caso a taxa que foi gerada correspondente a vistoria que se est&aacute;
+querendo alterar tenha sido quitada as altera&ccedil;&atilde;o
+efetuadas n&atilde;o surtir&atilde;o efeito sobra o valor do d&eacute;bito
+quitado nem t&atilde;o pouco ser&aacute; permitido gerar novamente o
+c&aacute;lculo.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Caso
+voc&ecirc; selecione para incluir uma vistoria um contribuinte que j&aacute;
+tenha sido lan&ccedil;ada uma vistoria para o mesmo exerc&iacute;cio
+que deseja incluir, ser&aacute; e emitido um alerta informando que o
+contribuinte j&aacute; possui vistoria lan&ccedil;ada para o
+exerc&iacute;cio atual e far&aacute; a pergunta se deseja incluir uma
+nova vistoria.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db5533db"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>Anula&ccedil;&atilde;o
+de Vistoria</B></SPAN></SPAN></FONT></A></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>
+</B></SPAN></SPAN></FONT></STRONG></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Para
+anular uma vistoria, informe o c&oacute;digo da vistoria desejada ou
+selecione na lista conforme figura 58. Digite no campo motivo a
+justificativa para a anula&ccedil;&atilde;o da vistoria e clique no
+bot&atilde;o incluir.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<FONT SIZE=3><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Somente
+&eacute; permitida a anula&ccedil;&atilde;o de vistoria cuja taxa
+gerada ainda n&atilde;o tenha sido quitada. Caso seja necess&aacute;rio
+anular uma vistoria j&aacute; paga, dever&aacute; ser efetuado o
+estorno da arrecada&ccedil;&atilde;o e somente ap&oacute;s, processar
+a anula&ccedil;&atilde;o.</SPAN></SPAN></SPAN></FONT></STRONG></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_15743c9e.png" NAME="figura29" ALIGN=LEFT WIDTH=642 HEIGHT=284 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">figura
+58</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0cm; margin-bottom: 0cm"><A NAME="6.1.2.VISTORIA GERAL|outline"></A><A NAME="6.1.2.VISTORIA GERAL|outline"></A>
+<STRONG><A HREF="#Sum&aacute;rio1|region" NAME="db4922db"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><B>VISTORIA
+GERAL</B></SPAN></SPAN></FONT></A></STRONG></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Na
+rotina de inclus&atilde;o geral de vistorias, ser&atilde;o lan&ccedil;adas
+vistorias para todas as inscri&ccedil;&otilde;es conforme as classes
+de atividades selecionadas pelo usu&aacute;rio.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Gerar
+Vistoria j&aacute; calculada no exerc&iacute;cio</B></SPAN></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Nessa
+op&ccedil;&atilde;o deve-se selecionar se quer ou n&atilde;o gerar
+vistoria para inscri&ccedil;&atilde;o que j&aacute; tenha sido gerada
+uma vistoria para o mesmo ano que est&aacute; sendo efetuado o
+lan&ccedil;amento geral.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Origem</B></SPAN></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Selecione
+a origem da vistoria que deseja efetuar o lan&ccedil;amento, ou seja,
+Localiza&ccedil;&atilde;o para </SPAN></SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">v</SPAN></SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">istoria
+anual de localiza&ccedil;&atilde;o ou Sanit&aacute;ria para vistoria
+</SPAN></SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">anual
+</SPAN></SPAN></SPAN></FONT></STRONG><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">sanit&aacute;ria.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Tipo
+de </B></SPAN></I></FONT></STRONG><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>V</B></SPAN></I></FONT></STRONG><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>istoria</B></SPAN></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Selecione
+o tipo de vistoria que deseja efetuar o lan&ccedil;amento. Nessa
+op&ccedil;&atilde;o ser&atilde;o apresentados os tipos cadastrados no
+cadastro de Tipo de Vistoria.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><I><SPAN STYLE="text-decoration: none"><B>Classes</B></SPAN></I></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Selecione
+as classes que deseja fazer a inclus&atilde;o das vistorias. As
+atividades exercidas pelas empresas ou pelos profissionais aut&ocirc;nomos
+s&atilde;o organizadas em classes, dessa forma ao selecionar uma
+determinada classe para lan&ccedil;ar vistoria, todas as inscri&ccedil;&otilde;es
+que tiverem em seu cadastro alguma atividade ligada a essa classe,
+ter&atilde;o a referida vistoria lan&ccedil;ada.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Os
+d&eacute;bitos relativos as vistorias lan&ccedil;adas pela rotina de
+inclus&atilde;o geral, ter&atilde;o como data de vencimento a
+combina&ccedil;&atilde;o do dia e do m&ecirc;s para vencimento
+configurados no cadastro de tipos de vistorias com o ano da inclus&atilde;o
+da vistoria.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Exemplo:</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">No
+tipo de vistoria &ldquo;Vistoria Anula de Localiza&ccedil;&atilde;o&rdquo;:</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">Dia
+para vencimento: 30</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">M&ecirc;s
+para vencimento: mar&ccedil;o</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">No
+caso, as vistorias lan&ccedil;adas ter&atilde;o como data de
+vencimento 30/03/2008, considerando que estamos falando de lan&ccedil;amento
+efetuado em 2008.</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><IMG SRC="Manual_Fiscalizacao_html_7c725162.png" NAME="figura27" ALIGN=LEFT WIDTH=642 HEIGHT=224 BORDER=0><BR CLEAR=LEFT><STRONG><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: medium">figura
+59</SPAN></SPAN></SPAN></FONT></STRONG></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; text-decoration: none; page-break-before: always">
+<FONT FACE="arial, sans-serif"><FONT SIZE=3><B><STRONG>ANOTA&Ccedil;&Otilde;ES:</STRONG></B></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; text-decoration: none; page-break-before: always">
+<FONT FACE="arial, sans-serif"><FONT SIZE=3><B><STRONG>ANOTA&Ccedil;&Otilde;ES:</STRONG></B></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; text-decoration: none">
+<BR><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; text-decoration: none">
+<BR><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#cccccc" CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=224*>
+		<COL WIDTH=32*>
+		<TR VALIGN=TOP>
+			<TD WIDTH=88%>
+				<P ALIGN=CENTER STYLE="background: transparent"><FONT SIZE=2 STYLE="font-size: 9pt">DBSeller
+				Servi&ccedil;os de Inform&aacute;tica Ltda. &ndash;
+				</FONT><A HREF="http://www.dbseller.com.br/"><FONT SIZE=2 STYLE="font-size: 9pt">www.dbseller.com.br</FONT></A><FONT SIZE=2 STYLE="font-size: 9pt">
+				                                                                 
+				                                               Rua General
+				C&acirc;mara, 406/301 - Porto Alegre/RS - Fone: (51) 3076-5101</FONT></P>
+			</TD>
+			<TD WIDTH=12%>
+				<P CLASS="western" ALIGN=CENTER><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>48</SDFIELD>
+				/ <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>58</SDFIELD></P>
+			</TD>
+		</TR>
+	</TABLE>
+	<P STYLE="margin-bottom: 0cm"><BR>
+	</P>
+</DIV>
+</BODY>
+</HTML>

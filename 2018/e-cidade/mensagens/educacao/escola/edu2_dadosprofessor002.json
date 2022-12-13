@@ -1,0 +1,6 @@
+{
+   "cgm_nao_informado"     : "CGM do professor não foi informado"
+  ,"erro_buscar_rechumano" : "Erro ao buscar vínculo do professor com a escola.\n[sErro]"
+  ,"erro_buscar_escolas"   : "Erro ao buscar escolas.\n[sErro]"
+  ,"erro_buscar_regimetrabalho" : "Erro ao buscar o regime de trabalho.\n[sErro]"
+}

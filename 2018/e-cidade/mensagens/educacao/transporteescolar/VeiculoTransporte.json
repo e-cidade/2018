@@ -1,0 +1,18 @@
+{
+  "veiculo_nao_encontrado"           : "Veículo com o código informado ([codigo_veiculo]) não encontrado no sistema.",
+  "numero_passageiros_nao_informado" : "Número de passageiros deve ser informado e maior que 0(Zero).",
+  "identificacao_nao_informada"      : "Identificação do veículo nao informada.",
+  "tipo_de_vinculo_invalido"         : "Veiculo nao pode ser informado vinculo com veiculo da prefeitura e de terceiros ao mesmo tempo.",
+  "vinculo_do_veiculo_nao_informado" : "Não foi informado nenhum vínculo para o veículo. Deverá ser informado uma empresa ou um veículo do município.",
+  "tipo_transporte_nao_informado"    : "O tipo do veículo não foi informado.",
+  "erro_persitencia_veiculo"         : "Erro ao salvar os dados do veículo.\n Erro Técnico [erro_dao]",
+  "erro_exclusao_vinculo_empresa"    : "Erro ao remover o vínculo com a Empresa.\n Erro Técnico [erro_dao]",
+  "erro_exclusao_vinculo_veiculo"    : "Erro ao remover o vínculo com o cadastro de veiculos.\nErro Técnico [erro_dao]",
+  "erro_inclusao_vinculo_empresa"    : "Não foi possível incluir vinculo do veículo com uma empresa.\nErro Técnico [erro_dao]",
+  "erro_inclusao_vinculo_veiculo"    : "Não foi possível incluir vinculo do veículo com um veículo municipal.\nErro Técnico [erro_dao]",
+  "erro_exclusao_veiculo"            : "Não foi possível remover  veículo.\nErro Técnico [erro_dao]",
+  "passageiros_nao_inteiro"          : "Numero de Passageiros deve ser um número inteiro",
+  "vinculo_do_veiculo_existente"     : "Inclusão não concluída. Veículo já cadastrado como transporte municipal.",
+  "vinculo_do_cgm_existente"         : "Inclusão não concluída. Veículo com identificação [sIdentificao] já cadastrado como transporte municipal para a empresa.",
+  "erro_exclusao_veiculo_vinculos"   : "Veículo não pode ser excluído por estar vinculado a uma linha de transporte."
+}

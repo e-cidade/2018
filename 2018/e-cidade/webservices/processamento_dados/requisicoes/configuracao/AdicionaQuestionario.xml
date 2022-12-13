@@ -1,0 +1,26 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="avaliacao"     obrigatorio="true"  tipo="integer" />
+    <parametro nome="descricao"     obrigatorio="true"  tipo="string" />
+    <parametro nome="obs"           obrigatorio="false" tipo="string" />
+    <parametro nome="identificador" obrigatorio="true"  tipo="string" />
+    <parametro nome="codigo"        obrigatorio="true"  tipo="integer" />
+    <parametro nome="perguntas"     obrigatorio="true"  tipo="object" />
+    <parametro nome="menus"         obrigatorio="true"  tipo="object" />
+  </parametros>
+  <configuracoes>
+    <classe referencia="oAvaliacao" nome="AdicionaAvaliacaoQuestionario" parametros="" caminho="model/configuracao/webservice/Avaliacao/AdicionaAvaliacaoQuestionario.model.php"/>
+    <exec>
+      <metodo referencia="oAvaliacao" nome="setAvaliacao"          parametros="$avaliacao" />
+      <metodo referencia="oAvaliacao" nome="setDescricao"          parametros="$descricao" />
+      <metodo referencia="oAvaliacao" nome="setObs"                parametros="$obs" />
+      <metodo referencia="oAvaliacao" nome="setIdentificador"      parametros="$identificador" />
+      <metodo referencia="oAvaliacao" nome="setCodigoQuestionario" parametros="$codigo" />
+      <metodo referencia="oAvaliacao" nome="setGrupoPergunta"      parametros="$perguntas" />
+      <metodo referencia="oAvaliacao" nome="setMenu"               parametros="$menus" />
+      <metodo referencia="oAvaliacao" nome="salvar"                parametros="" />
+    </exec>
+  </configuracoes>
+</processamento>

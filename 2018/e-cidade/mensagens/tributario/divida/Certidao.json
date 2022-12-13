@@ -1,0 +1,10 @@
+{
+  "erro_regra_emissao"                    : "Erro ao buscar Regra de Emissão.",
+  "erro_emite_recibo"                      : "Erro ao emitir o Recibo para Certidão [codigo_certidao].",
+  "erro_valores_receita"                   : "Erro ao buscar Valor do Recibo por Receita.",
+  "limite_receitas"                            : "O número de receitas ultrapassou o espaço limite do carne para Certidão [codigo_certidao].",
+  "erro_dados_pagamento"              : "Erro ao buscar dados de Pagamento.",
+  "erro_dados_banco"                      : "Erro ao buscar dados do Banco.",
+  "erro_atualiza_vencimento"           : "Erro ao atualizar vencimento do Recibo.",
+  "erro_ultimo_dia_util"                    : "Erro ao buscar dia útil para o vencimento do recibo de cobrança registrada."
+}

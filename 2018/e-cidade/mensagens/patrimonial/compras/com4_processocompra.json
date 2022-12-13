@@ -1,0 +1,14 @@
+{
+  "processo_com_licitacao"       : "Já existe licitação para itens deste processo de compras.",
+  "processo_com_orcamento"       : "Já existe orçamento para itens deste processo de compras.",
+  "alterado"                     : "Alteração efetuada com sucesso!",
+  "removido" : "Processo de compras excluído com sucesso.",
+  "preenchimento_obrigatorio"    : "Campo [sCampo] é de preenchimento obrigatório.",
+  "confirma_exclusao_lote"       : "Deseja excluir o lote selecionado?",
+  "lote_salvo"                   : "Lote incluído com sucesso!",
+  "lote_removido"                : "Lote excluído com sucesso.",
+  "confirma_exclusao_processo"   : "Deseja excluir o Processo de Compras [iCodigo]?",
+  "nao_informado_processo_compra": "Não foi informado o processo de compras.",
+  "lote_nao_encontrado"          : "Lote não encontrado no processo de compras.",
+  "item_nao_encontrado"          : "Item não encontrado no processo de compras."
+}

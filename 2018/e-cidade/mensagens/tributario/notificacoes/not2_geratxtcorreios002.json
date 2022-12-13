@@ -1,0 +1,17 @@
+{
+  "erro_gerar_header"                   : "Erro ao gerar Header do arquivo.",
+  "erro_executar_sql"                   : "Erro ao Executar SQL: []",
+  "erro_gerar_detalhe_1"                : "Erro ao gerar Detalhe 1 do Arquivo.",
+  "erro_gerar_detalhe_2"                : "Erro ao gerar Detalhe 2 do Arquivo.",
+  "erro_gerar_detalhe_3"                : "Erro ao gerar Detalhe 3 do Arquivo.",
+  "erro_gerar_detalhe_4"                : "Erro ao gerar Detalhe 4 do Arquivo.",
+  "erro_gerar_detalhe_5"                : "Erro ao gerar Detalhe 5 do Arquivo.",
+  "erro_gerar_detalhe_6"                : "Erro ao gerar Detalhe 6 do Arquivo.",
+  "erro_gerar_detalhe_7"                : "Erro ao gerar Detalhe 7 do Arquivo.",
+  "erro_gerar_detalhe_8"                : "Erro ao gerar Detalhe 8 do Arquivo.",
+  "erro_gerar_detalhe_9"                : "Erro ao gerar Detalhe 9 do Arquivo.",
+  "nenhuma_notificacao_encontrada"      : "Nenhuma notificação encontrada na lista [iCodigoLista].",
+  "nenhum_debito_vinculado"             : "Nenhum Débito vinculado a notificação.",
+  "erro_retornar_valor_terceiro_digito" : "Erro ao retornar valor do terceiro digito do recibo: [sErro].",
+  "erro_gerar_recibo"                   : "Erro ao Gerar Recibo: [sErro]."
+}

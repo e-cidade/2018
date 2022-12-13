@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<despesas>
+ <despesa codigo="30000000" descricao="DESPESAS CORRENTES"/>
+ <despesa codigo="31000000" descricao="DESPESAS DE PESSOAL E ENCARGOS"/>
+ <despesa codigo="31300000" descricao="Transferência a Estados e ao DF"/>
+ <despesa codigo="31301100" descricao="Vencimento e vantagens fixas Pessoal Civil"/>
+ <despesa codigo="31301300" descricao="Obrigações Patronais"/>
+ <despesa codigo="31301309" descricao="Outros Encargos Patronais"/>
+ <despesa codigo="31301600" descricao="Outras Despesas Variáveis - Pessoal civil"/>
+ <despesa codigo="31400000" descricao="Transferências a Municípios"/>
+ <despesa codigo="31401100" descricao="Vencimentos e Vantagens Fixas Pessoal Civil"/>
+ <despesa codigo="31401300" descricao="Obrigações Patronais"/>
+ <despesa codigo="31401301" descricao="Contribuição para o FGTS"/>
+ <despesa codigo="31401303" descricao="Contribuição para o Regime Geral de Previdência"/>
+ <despesa codigo="31401304" descricao="Contribuição para Assistência Social do Servidor"/>
+ <despesa codigo="31401309" descricao="Outros Encargos Patronais"/>
+ <despesa codigo="31401600" descricao="Outras Despesas Variáveis - Pessoal civil"/>
+ <despesa codigo="31404100" descricao="Contribuições"/>
+ <despesa codigo="31710000" descricao="Transferências a Consórcios Públicos"/>
+ <despesa codigo="31714100" descricao="Contribuições"/>
+ <despesa codigo="31717000" descricao="Rateio pela Participação em Consórcios Públicos"/>
+ <despesa codigo="31900000" descricao="Aplicações Diretas"/>
+ <despesa codigo="31900100" descricao="Aposentadorias e Reformas (Inclusive Salário Família)"/>
+ <despesa codigo="31900101" descricao="Pagos com Recursos Vinculados(RPPS)"/>
+ <despesa codigo="31900102" descricao="Pagos com Recursos do Tesouro"/>
+ <despesa codigo="31900103" descricao="Pagas com Recursos do Aporte p/Cobertura Deficit Atuarial antes de 5 anos (RPPS)"/>
+ <despesa codigo="31900300" descricao="Pensões (Inclusive Salário Família)"/>
+ <despesa codigo="31900301" descricao="Pagas c/ Recursos Vinculados (RPPS)"/>
+ <despesa codigo="31900302" descricao="Pagas c/ Recursos do Tesouro Municipal"/>
+ <despesa codigo="31900400" descricao="Contratação p/ Tempo determinado"/>
+ <despesa codigo="31900500" descricao="Outros Benefícios Previdenciários"/>
+ <despesa codigo="31900501" descricao="Pagos com Recursos Vinculados(RPPS)"/>
+ <despesa codigo="31900502" descricao="Pagos com Recursos do Tesouro"/>
+ <despesa codigo="31900700" descricao="Contribuição a Entidades Fechadas de Previdência"/>
+ <despesa codigo="31900800" descricao="Outros Benefícios Assistenciais"/>
+ <despesa codigo="31900801" descricao="Pagos com Recursos Vinculados(RPPS)"/>
+ <despesa codigo="31900802" descricao="Pagos com Recursos do Tesouro"/>
+ <despesa codigo="31900900" descricao="Salário Família (Servidor Ativo)"/>
+ <despesa codigo="31901100" descricao="Vencimentos e Vantagens Fixas Pessoal Civil"/>
+ <despesa codigo="31901101" descricao="Vencimentos e Vantagens Fixas Pessoal Civil"/>
+ <despesa codigo="31901300" descricao="Obrigações Patronais"/>
+ <despesa codigo="31901301" descricao="Contribuição para o FGTS"/>
+ <despesa codigo="31901302" descricao="Contribuição para o Regime Próprio de Previdência (RPPS)"/>
+ <despesa codigo="31901303" descricao="Contribuição para o Regime Geral de Previdência (INSS)"/>
+ <despesa codigo="31901304" descricao="Contribuição para Assistência Social do Servidor"/>
+ <despesa codigo="31901309" descricao="Outros Encargos Patronais"/>
+ <despesa codigo="31901600" descricao="Outras Despesas Variáveis - Pessoal Civil"/>
+ <despesa codigo="31903400" descricao="Outras despesas de Pessoal/ Terceirização"/>
+ <despesa codigo="31903402" descricao="Serviços de Consultoria"/>
+ <despesa codigo="31903403" descricao="Outros Serviços de Terceirização - Pessoa Física"/>
+ <despesa codigo="31903404" descricao="Locação de Mão-de-Obra"/>
+ <despesa codigo="31903406" descricao="Outros Serviços de Terceirização - Pessoa Jurídica"/>
+ <despesa codigo="31906700" descricao="Depósitos Compulsórios"/>
+ <despesa codigo="31909100" descricao="Sentenças Judiciais (pessoal e encargos sociais)"/>
+ <despesa codigo="31909101" descricao="Sentenças Judiciais relativas a pessoal e encargos de inativos"/>
+ <despesa codigo="31909103" descricao="Sentenças Judiciais relativas a pessoal e encargos de pensionistas"/>
+ <despesa codigo="31909111" descricao="Sentenças Judiciais relativas a pessoal e encargos de servidores ativos"/>
+ <despesa codigo="31909200" descricao="Desp. Exercícios Anteriores (pessoal e encargos)"/>
+ <despesa codigo="31909201" descricao="Desp de Exercícios Anteriores relativas a pessoal e encargos de inativos"/>
+ <despesa codigo="31909203" descricao="Desp de Exercícios Anteriores relativas a pessoal e encargos de pensionistas"/>
+ <despesa codigo="31909211" descricao="Desp de Exercícios Anteriores relativas a pessoal e encargos de servidores ativos"/>
+ <despesa codigo="31909400" descricao="Indenizações e Restituições Trabalhistas"/>
+ <despesa codigo="31909600" descricao="Ressarcimento de Despesas Pessoal Requisitado"/>
+ <despesa codigo="31910000" descricao="Aplicação Direta Decorrente de Operação entre Órgãos, Fundos e Entidades Integrantes dos Orçamentos Fiscal e da Seguridade Social"/>
+ <despesa codigo="31910400" descricao="Contratação p/ Tempo determinado"/>
+ <despesa codigo="31911300" descricao="Obrigações Patronais (operações intra-orçamentárias)"/>
+ <despesa codigo="31911302" descricao="Contribuição para o Regime Próprio de Previdência -RPPS (operações intra-orçamentárias)"/>
+ <despesa codigo="31919200" descricao="Desp. Intraorçamentárias Exercícios Anteriores (pessoal e encargos)"/>
+ <despesa codigo="31919201" descricao="Desp Intraor. de Exercícios Anteriores relativas a pessoal e encargos de inativos (operações intra-orçamentárias)"/>
+ <despesa codigo="31919203" descricao="Desp Intraor.de Exercícios Anteriores relativas a pessoal e encargos de pensionistas (operações intra-orçamentárias)"/>
+ <despesa codigo="31919211" descricao="Desp Intraor.de Exercícios Anteriores relativas a pessoal e encargos de servidores ativos(operações intra-orçamentárias)"/>
+ <despesa codigo="31919400" descricao="Indenizações e Restituições Trabalhistas"/>
+ <despesa codigo="31919600" descricao="Ressarcimento de Despesas de Pessoal Requisitado"/>
+ <despesa codigo="32000000" descricao="JUROS E ENCARGOS DA DÍVIDA"/>
+ <despesa codigo="32300000" descricao="Transferência a Estados e ao DF"/>
+ <despesa codigo="32302100" descricao="Juros sobre a dívida por contrato"/>
+ <despesa codigo="32302200" descricao="Outros encargos sobre a dívida por contrato"/>
+ <despesa codigo="32710000" descricao="Transfêrencias a Consórcios Públicos"/>
+ <despesa codigo="32717000" descricao="Rateio pela Participação em Consórcios Públicos"/>
+ <despesa codigo="32900000" descricao="Aplicações Diretas"/>
+ <despesa codigo="32902100" descricao="Juros sobre a Dívida por Contrato"/>
+ <despesa codigo="32902200" descricao="Outros Encargos sobre a Dívida por Contrato"/>
+ <despesa codigo="32902300" descricao="Juros, Deságios e Descontos da Dívida Mobiliária"/>
+ <despesa codigo="32902400" descricao="Outros Encargos sobre a Dívida Mobiliária"/>
+ <despesa codigo="32902500" descricao="Encargos s/ Op. de Crédito por Antec. da Receita"/>
+ <despesa codigo="32909100" descricao="Sentenças Judiciais"/>
+ <despesa codigo="32909200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="32909300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="32912100" descricao="Juros, Deságios e Descontos da Dívida Mobiliária (operação intra-orçamentária)"/>
+ <despesa codigo="32912200" descricao="Outros Encargos sobre a Dívida por Contrato (operação intra-orçamentária)"/>
+ <despesa codigo="33000000" descricao="OUTRAS DESPESAS CORRENTES"/>
+ <despesa codigo="33200000" descricao="Transferências à União"/>
+ <despesa codigo="33200100" descricao="Aposentadorias e Reformas"/>
+ <despesa codigo="33200101" descricao="Compensação Previdenciária entre RPPS e RGPS"/>
+ <despesa codigo="33200300" descricao="Pensões"/>
+ <despesa codigo="33200301" descricao="Compensação Previdenciária entre RPPS e RGPS"/>
+ <despesa codigo="33204100" descricao="Contribuições"/>
+ <despesa codigo="33204200" descricao="Auxílios"/>
+ <despesa codigo="33209300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="33220000" descricao="Execução Orçamentária Delegada à União"/>
+ <despesa codigo="33221400" descricao="Diárias - Civil"/>
+ <despesa codigo="33223000" descricao="Material de Consumo"/>
+ <despesa codigo="33223500" descricao="Serviços de Consultorias"/>
+ <despesa codigo="33223600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="33223900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33229900" descricao="A Classificar"/>
+ <despesa codigo="33300000" descricao="Transferências Correntes a Estados"/>
+ <despesa codigo="33301400" descricao="Diárias - Civil"/>
+ <despesa codigo="33303000" descricao="Material de Consumo"/>
+ <despesa codigo="33303500" descricao="Serviços de Consultoria"/>
+ <despesa codigo="33303600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="33303900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33304100" descricao="Contribuições"/>
+ <despesa codigo="33304300" descricao="Subvenções Sociais"/>
+ <despesa codigo="33309200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33309300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="33310000" descricao="Transferências a Estados e ao Distrito Federal - Fundo a Fundo"/>
+ <despesa codigo="33314100" descricao="Contribuições"/>
+ <despesa codigo="33319200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33320000" descricao="Execução Orçamentária Delegada a Estados e ao Distrito Federal"/>
+ <despesa codigo="33321400" descricao="Diárias - Civil"/>
+ <despesa codigo="33321800" descricao="Auxílio Financeiro a Estudantes"/>
+ <despesa codigo="33322000" descricao="Auxílio Financeiro a Pesquisadores"/>
+ <despesa codigo="33323000" descricao="Material de Consumo"/>
+ <despesa codigo="33323300" descricao="Passagens e Despesas com Locomoção"/>
+ <despesa codigo="33323500" descricao="Serviços de Consultoria"/>
+ <despesa codigo="33323600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="33323900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33324700" descricao="Obrigações Tributárias e Contributivas"/>
+ <despesa codigo="33329200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33329300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="33329900" descricao="A classificar"/>
+ <despesa codigo="33400000" descricao="Transferências Correntes a Municípios"/>
+ <despesa codigo="33403000" descricao="Material de Consumo"/>
+ <despesa codigo="33403500" descricao="Serviços de Consultoria"/>
+ <despesa codigo="33403600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="33403900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33404100" descricao="Contribuições"/>
+ <despesa codigo="33404300" descricao="Subvenções Sociais"/>
+ <despesa codigo="33409200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33409300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="33410000" descricao="Transferências a Municípios - Fundo a Fundo"/>
+ <despesa codigo="33414100" descricao="Contribuições"/>
+ <despesa codigo="33419200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33420000" descricao="Execução Orçamentária Delegada a Municípios"/>
+ <despesa codigo="33421400" descricao="Diárias - Civil"/>
+ <despesa codigo="33421800" descricao="Auxílio Financeiro a Estudantes"/>
+ <despesa codigo="33423000" descricao="Material de Consumo"/>
+ <despesa codigo="33423300" descricao="Passagens e Despesas com Locomoção"/>
+ <despesa codigo="33423500" descricao="Serviços de Consultoria"/>
+ <despesa codigo="33423600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="33423900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33424700" descricao="Obrigações Tributárias e Contributivas"/>
+ <despesa codigo="33429200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33429300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="33429900" descricao="A Classificar"/>
+ <despesa codigo="33500000" descricao="Transf. a Instituições Privadas s/ Fins Lucrativos"/>
+ <despesa codigo="33501400" descricao="Diárias - Civil"/>
+ <despesa codigo="33501800" descricao="Auxílio Financeiro a Estudantes"/>
+ <despesa codigo="33502000" descricao="Auxílio Financeiro a Pesquisadores"/>
+ <despesa codigo="33503000" descricao="Material de Consumo"/>
+ <despesa codigo="33503300" descricao="Passagens e Despesas com Locomoção"/>
+ <despesa codigo="33503500" descricao="Serviços de Consultoria"/>
+ <despesa codigo="33503600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="33503900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33504100" descricao="Contribuições"/>
+ <despesa codigo="33504300" descricao="Subvenções Sociais"/>
+ <despesa codigo="33504700" descricao="Obrigações Tributárias e Contributivas"/>
+ <despesa codigo="33509200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33600000" descricao="Transf. a Instituições Privadas c/ Fins Lucrativos"/>
+ <despesa codigo="33604100" descricao="Contribuições"/>
+ <despesa codigo="33604500" descricao="Subvenções Econômicas"/>
+ <despesa codigo="33609200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33700000" descricao="Transferências Correntes a Inst. Multigovernamentais"/>
+ <despesa codigo="33704100" descricao="Contribuições"/>
+ <despesa codigo="33710000" descricao="Transferências a Consórcios Públicos"/>
+ <despesa codigo="33713900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33714100" descricao="Contribuições"/>
+ <despesa codigo="33714300" descricao="Subvenções Sociais"/>
+ <despesa codigo="33717000" descricao="Rateio pela Participação em Consórcios Públicos"/>
+ <despesa codigo="33720000" descricao="Execução Orçamentária Delegada a Consórcios Públicos"/>
+ <despesa codigo="33800000" descricao="Transferências ao Exterior"/>
+ <despesa codigo="33801400" descricao="Diárias - Civil"/>
+ <despesa codigo="33803000" descricao="Material de Consumo"/>
+ <despesa codigo="33803300" descricao="Passagens e Despesas com Locomoção"/>
+ <despesa codigo="33803400" descricao="Outras Despesas de Pessoal decorrentes de Contratos de Terceirização"/>
+ <despesa codigo="33803500" descricao="Serviços de Consultoria"/>
+ <despesa codigo="33803600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="33803700" descricao="Locação de Mão-de-Obra"/>
+ <despesa codigo="33803900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33804100" descricao="Contribuições"/>
+ <despesa codigo="33809200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="33900000" descricao="Aplicações Diretas"/>
+ <despesa codigo="33900800" descricao="Outros Benefícios Assistenciais (não classificáveis na natureza Pessoal e Encargos)"/>
+ <despesa codigo="33901400" descricao="Diárias -Civil"/>
+ <despesa codigo="33901800" descricao="Auxílio Financeiro a Estudantes"/>
+ <despesa codigo="33901900" descricao="Auxílio-Fardamento"/>
+ <despesa codigo="33902000" descricao="Auxílio Financeiro a Pesquisadores"/>
+ <despesa codigo="33902700" descricao="Encargos p/ Honra de Avais, Garant., Seg. e Similares"/>
+ <despesa codigo="33902800" descricao="Remuneração de Cotas de Fundos Autárquicos"/>
+ <despesa codigo="33902900" descricao="Distribuição de Resultado de Empresas Estatais Dependentes"/>
+ <despesa codigo="33903000" descricao="Material de Consumo"/>
+ <despesa codigo="33903100" descricao="Premiações Culturais, Artíst., Científicas, Desp. e Outras"/>
+ <despesa codigo="33903200" descricao="Material de Distribuição Gratuita"/>
+ <despesa codigo="33903300" descricao="Passagens e Despesas com Locomoção"/>
+ <despesa codigo="33903400" descricao="Outras Despesas de Pessoal decorrentes de Contratos de Terceirização"/>
+ <despesa codigo="33903500" descricao="Serviços de Consultoria"/>
+ <despesa codigo="33903600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="33903700" descricao="Locação de Mão-de-Obra"/>
+ <despesa codigo="33903800" descricao="Arrendamento Mercantil"/>
+ <despesa codigo="33903900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33904100" descricao="Contribuições"/>
+ <despesa codigo="33904600" descricao="Auxílio-Alimentação"/>
+ <despesa codigo="33904700" descricao="Obrigações Tributárias e Contributivas"/>
+ <despesa codigo="33904800" descricao="Outros Auxílios Financeiros a Pessoas Físicas"/>
+ <despesa codigo="33904900" descricao="Auxílio-Transporte"/>
+ <despesa codigo="33906700" descricao="Depósitos Compulsórios"/>
+ <despesa codigo="33909100" descricao="Sentenças Judiciais (que não pessoal e encargos)"/>
+ <despesa codigo="33909101" descricao="Sentenças Judiciais Transitadas em Julgado (que não pessoal e encargos)"/>
+ <despesa codigo="33909102" descricao="Precatórios Incluídos na Lei de Orçamento (que não pessoal e encargos)"/>
+ <despesa codigo="33909199" descricao="Diversas Sentenças (que não pessoal e encargos)"/>
+ <despesa codigo="33909200" descricao="Despesas de Exercícios Anteriores (outras que não pessoal)"/>
+ <despesa codigo="33909300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="33909500" descricao="Indenização p/ Execução de Trabalhos de Campo"/>
+ <despesa codigo="33909900" descricao="A Classificar"/> 
+ <despesa codigo="33910000" descricao="Aplicação Direta Decorrente de Operação entre Órgãos, Fundos e Entidades Integrantes dos Orçamentos Fiscal e da Seguridade Social"/>
+ <despesa codigo="33912800" descricao="Remuneração de Cotas de Fundos Autárquicos"/>
+ <despesa codigo="33912900" descricao="Distribuição de Resultado de Empresas Estatais Dependentes"/>
+ <despesa codigo="33913000" descricao="Material de Consumo (operações intra-orçamentárias)"/>
+ <despesa codigo="33913200" descricao="Material, Bem ou Serviço para Distribuição Gratuita (operações intra-orçamentárias)"/>
+ <despesa codigo="33913500" descricao="Serviços de Consultoria (operações intra-orçamentárias)"/>
+ <despesa codigo="33913900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica (operações intra-orçamentárias)"/>
+ <despesa codigo="33914700" descricao="Obrigações Tributárias e Contributivas (operações intra-orçamentárias)"/>
+ <despesa codigo="33916200" descricao="Aquisição de Produtos para Revenda"/>
+ <despesa codigo="33919100" descricao="Sentenças Judiciais(operações intra-orçamentárias)"/>
+ <despesa codigo="33919200" descricao="Despesas de Exercícios Anteriores (operações intra-orçamentárias)"/>
+ <despesa codigo="33919300" descricao="Indenizações e Restituições (operações intra-orçamentárias)"/>
+ <despesa codigo="33919600" descricao="Ressarcimento de Despesas de Pessoal Requisitado (operações intra-orçamentárias)"/>
+ <despesa codigo="33919700" descricao="Aporte para Cobertura do Déficit Atuarial do RPPS (operações intra-orçamentárias)"/>
+ <despesa codigo="33919900" descricao="Outras Despesas Correntes realizadas entre Órgãos, Fundos e Entidades Integrantes dos Orçamentos Fiscal e da Seguridade Social"/>
+ <despesa codigo="33930000" descricao="Aplic.Direta Decorr de Oper.de Órgãos, Fundos e Entidades Integrantes dos orçam. Fiscal e da Seg.Social c/ Consór. Públ. do qual o ente participe"/>
+ <despesa codigo="33933000" descricao="Material de Consumo"/>
+ <despesa codigo="33933200" descricao="Material, Bem ou Serviço de Distribuição Gratuita"/>
+ <despesa codigo="33933900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="33940000" descricao="Aplic.Direta Decorr de Oper.de Órgãos, Fundos e Entidades Integrantes dos orçam. Fiscal e da Seg.Social c/ Consór. Públ. do qual o ente participe"/>
+ <despesa codigo="33943000" descricao="Material de Consumo"/>
+ <despesa codigo="33943200" descricao="Material, Bem ou Serviço de Distribuição Gratuita"/>
+ <despesa codigo="33943900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="40000000" descricao="DESPESAS DE CAPITAL"/>
+ <despesa codigo="44000000" descricao="INVESTIMENTOS"/>
+ <despesa codigo="44200000" descricao="Transferências à União"/>
+ <despesa codigo="44204100" descricao="Contribuições"/>
+ <despesa codigo="44204200" descricao="Auxílios"/>
+ <despesa codigo="44205100" descricao="Obras e Instalações"/>
+ <despesa codigo="44205200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44209200" descricao="Despesas de Exercícios Anteriores (outras que não pessoal)"/>
+ <despesa codigo="44209300" descricao="Indenização e Restituições"/>
+ <despesa codigo="44220000" descricao="Execução Orçamentária Delegada à União"/>
+ <despesa codigo="44225100" descricao="Obras e Instalações"/>
+ <despesa codigo="44225200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44229200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="44229300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="44229900" descricao="A Classificar"/>
+ <despesa codigo="44300000" descricao="Transferências a Estados e ao Distrito Federal"/>
+ <despesa codigo="44304100" descricao="Contribuições"/>
+ <despesa codigo="44304200" descricao="Auxílios"/>
+ <despesa codigo="44305100" descricao="Obras e Instalações"/>
+ <despesa codigo="44305200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44309200" descricao="Despesas de Exercícios Anteriores (outras que não pessoal)"/>
+ <despesa codigo="44309300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="44310000" descricao="Transferências a Estados e ao Distrito Federal - Fundo a Fundo"/>
+ <despesa codigo="44314200" descricao="Auxílios"/>
+ <despesa codigo="44320000" descricao="Execução Orçamentária Delegada a Estados e ao Distrito Federal"/>
+ <despesa codigo="44322000" descricao="Auxílio Financeiro a Pesquisadores"/>
+ <despesa codigo="44325100" descricao="Obras e Instalações"/>
+ <despesa codigo="44325200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44329200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="44329300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="44329900" descricao="A Classificar"/> 
+ <despesa codigo="44400000" descricao="Transferências a Municípios"/>
+ <despesa codigo="44404100" descricao="Contribuições"/>
+ <despesa codigo="44404200" descricao="Auxílios"/>
+ <despesa codigo="44405100" descricao="Obras e Instalações"/>
+ <despesa codigo="44405200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44409200" descricao="Despesas de Exercícios Anteriores (outras que não pessoal)"/>
+ <despesa codigo="44410000" descricao="Transferência a Municípios - Fundo a Fundo"/>
+ <despesa codigo="44414200" descricao="Auxílios"/>
+ <despesa codigo="44420000" descricao="Execução Orçamentária Delegada a Municípios"/>
+ <despesa codigo="44421400" descricao="Diárias - Civil"/>
+ <despesa codigo="44425100" descricao="Obras e Instalações"/>
+ <despesa codigo="44425200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44429200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="44429900" descricao="A Classificar"/>
+ <despesa codigo="44500000" descricao="Transf. a Instituições Privadas s/ Fins Lucrativos"/>
+ <despesa codigo="44503000" descricao="Material de Consumo"/>
+ <despesa codigo="44503600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="44503900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="44504100" descricao="Contribuições"/>
+ <despesa codigo="44504200" descricao="Auxílios"/>
+ <despesa codigo="44504700" descricao="Obrigações Tributárias e Contributivas"/>
+ <despesa codigo="44505100" descricao="Obras e Instalações"/>
+ <despesa codigo="44505200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44509900" descricao="A Classificar"/>
+ <despesa codigo="44600000" descricao="Transf. a Instituições Privadas c/ Fins Lucrativos"/>
+ <despesa codigo="44604100" descricao="Contribuições"/>
+ <despesa codigo="44604200" descricao="Auxílios"/>
+ <despesa codigo="44700000" descricao="Transferências a Instituições Multigovernamentais"/>
+ <despesa codigo="44704100" descricao="Contribuições"/>
+ <despesa codigo="44704200" descricao="Auxílios"/>
+ <despesa codigo="44710000" descricao="Transferências a Consórcios Públicos"/>
+ <despesa codigo="44714100" descricao="Contribuições"/>
+ <despesa codigo="44714200" descricao="Auxílios"/>
+ <despesa codigo="44717000" descricao="Rateio pela Participação em Consórcio Público"/>
+ <despesa codigo="44720000" descricao="Execução Orçamentária Delegada a Consórcios Públicos"/>
+ <despesa codigo="44800000" descricao="Transferência ao Exterior"/>
+ <despesa codigo="44804100" descricao="Contribuições"/>
+ <despesa codigo="44804200" descricao="Auxílios"/>
+ <despesa codigo="44805100" descricao="Obras e Instalações"/>
+ <despesa codigo="44805200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44900000" descricao="Aplicações Diretas"/>
+ <despesa codigo="44901400" descricao="Diárias - Civil"/>
+ <despesa codigo="44902000" descricao="Auxílio Financeiro a Pesquisadores"/>
+ <despesa codigo="44903000" descricao=" Material de Consumo"/>
+ <despesa codigo="44903300" descricao="Passagens e Despesas com Locomoção"/>
+ <despesa codigo="44903500" descricao="Serviços de Consultoria"/>
+ <despesa codigo="44903600" descricao="Outros Serviços de Terceiros - Pessoa Física"/>
+ <despesa codigo="44903700" descricao="Locação de Mão-de-Obra"/>
+ <despesa codigo="44903900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="44905100" descricao="Obras e Instalações"/>
+ <despesa codigo="44905200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44906100" descricao="Aquisição de Imóveis"/>
+ <despesa codigo="44906500" descricao="Constituição/Aumento Capital de Empresas"/>
+ <despesa codigo="44909100" descricao="Sentenças Judiciais"/>
+ <despesa codigo="44909200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="44909300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="44909900" descricao="A Classificar"/>
+ <despesa codigo="44910000" descricao="Despesas com Investimentos realizadas entre Órgãos, Fundos e Entidades Integrantes dos Orçamentos Fiscal e da Seguridade Social"/>
+ <despesa codigo="44913900" descricao="Outros Serviços de Terceiros - Pessoa Jurídica"/>
+ <despesa codigo="44915100" descricao="Obras e Instalações"/>
+ <despesa codigo="44915200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44919100" descricao="Sentenças Judiciais"/>
+ <despesa codigo="44919900" descricao="A Classificar"/>
+ <despesa codigo="44930000" descricao="Aplic.Direta Decorr de Oper.de Órgãos, Fundos e Entidades Integrantes dos orçam. Fiscal e da Seg.Social c/ Consór. Públ. do qual o ente não participe"/>
+ <despesa codigo="44935100" descricao="Obras e Instalações"/>
+ <despesa codigo="44935200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="44940000" descricao="Aplic.Direta Decorr de Oper.de Órgãos, Fundos e Entidades Integrantes dos orçam. Fiscal e da Seg.Social c/ Consór. Públ. do qual o ente não participe"/>
+ <despesa codigo="44945100" descricao="Obras e Instalações"/>
+ <despesa codigo="44945200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="45000000" descricao="INVERSÕES FINANCEIRAS"/>
+ <despesa codigo="45300000" descricao="Transferências a Estados e ao Distrito Federal"/>
+ <despesa codigo="45304100" descricao="Contribuições"/>
+ <despesa codigo="45304200" descricao="Auxílios"/>
+ <despesa codigo="45320000" descricao="Execução Orçamentária Delegadas a Estados e ao Distrito Federal"/>
+ <despesa codigo="45326100" descricao="Aquisição de Imóveis"/>
+ <despesa codigo="45326400" descricao="Aquisição de Títulos Representativos de Capital Já Integralizado"/>
+ <despesa codigo="45326500" descricao="Constituição/Aumento Capital de Empresas"/>
+ <despesa codigo="45326600" descricao="Concessão de Empréstimos e Financiamento"/> 
+ <despesa codigo="45329900" descricao="A Classificar"/>
+ <despesa codigo="45400000" descricao="Transferências a Municípios"/>
+ <despesa codigo="45404100" descricao="Contribuições"/>
+ <despesa codigo="45404200" descricao="Auxílios"/>
+ <despesa codigo="45406400" descricao="Aquisição de Títulos Rep. de Cap. já Integralizados"/>
+ <despesa codigo="45406600" descricao="Concessão de Empréstimos e Financiamentos"/>
+ <despesa codigo="45420000" descricao="Execução Orçamentária Delegada a Municípios"/>
+ <despesa codigo="45426400" descricao="Aquisição de Títulos Representativos de Capital Já Integralizado"/>
+ <despesa codigo="45426600" descricao="Concessão de Empréstimos e Financiamentos"/>
+ <despesa codigo="45429900" descricao="A Classificar"/>
+ <despesa codigo="45500000" descricao="Transf. a Instituições Privadas s/ Fins Lucrativos"/>
+ <despesa codigo="45506400" descricao="Aquisição de Títulos Rep. de Cap. já Integralizados"/>
+ <despesa codigo="45506600" descricao="Concessão de Empréstimos e Financiamentos"/>
+ <despesa codigo="45710000" descricao="Transferências a Consórcios Públicos"/>
+ <despesa codigo="45717000" descricao="Rateio pela Participação em Consórcio Público"/>
+ <despesa codigo="45714100" descricao="Contribuições"/>
+ <despesa codigo="45714200" descricao="Auxílios"/>
+ <despesa codigo="45720000" descricao="Execução Orçamentária Delegadas a Consórcios Públicos"/>
+ <despesa codigo="45900000" descricao="Aplicações Diretas"/>
+ <despesa codigo="45902700" descricao="Encargos p/ Honra de Avais, Garant., Seg. e Similares"/> 
+ <despesa codigo="45905200" descricao="Equipamentos e Material Permanente"/>
+ <despesa codigo="45906100" descricao="Aquisição de Imóveis"/>
+ <despesa codigo="45906200" descricao="Aquisição de Produtos para Revenda"/>
+ <despesa codigo="45906300" descricao="Aquisição de Títulos de Crédito"/>
+ <despesa codigo="45906400" descricao="Aquis. de Títulos Rep. de Capital já Integralizado"/>
+ <despesa codigo="45906500" descricao="Constituição ou Aumento de Capital de Empresas"/>
+ <despesa codigo="45906600" descricao="Concessão de Empréstimos e Financiamentos"/>
+ <despesa codigo="45906601" descricao="Incentivos diretos a contribuintes"/>
+ <despesa codigo="45906602" descricao="Incentivos via instituição financeira"/>
+ <despesa codigo="45906699" descricao="Outras Concessões de Empréstimos e Financiamentos"/>
+ <despesa codigo="45906700" descricao="Depósitos Compulsórios"/>
+ <despesa codigo="45909100" descricao="Sentenças Judiciais"/>
+ <despesa codigo="45909200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="45910000" descricao="Despesas com Inversões Financeiras realizadas entre Órgãos, Fundos e Entidades Integrantes dos Orçamentos Fiscal e da Seguridade Social"/>
+ <despesa codigo="45910099" descricao="Demais Inversões Financeiras"/>
+ <despesa codigo="45916100" descricao="Aquisição de Imóveis"/>
+ <despesa codigo="45916200" descricao="Aquisição de Produtos para Revenda"/>
+ <despesa codigo="45916600" descricao="Concessão de Empréstimos e Financiamentos"/>
+ <despesa codigo="45919100" descricao="Sentenças Judiciais"/>
+ <despesa codigo="45919200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="45919900" descricao="A Classificar"/>
+ <despesa codigo="45916400" descricao="Aquis. de Títulos Rep. de Capital já Integralizado"/>
+ <despesa codigo="45916600" descricao="Concessão de Empréstimos e Financiamentos"/>
+ <despesa codigo="46000000" descricao="AMORTIZAÇÃO DA DÍVIDA"/>
+ <despesa codigo="46300000" descricao="Transferência a Estado e ao DF"/>
+ <despesa codigo="46307100" descricao="Principal de dívida contratual resgatada"/>
+ <despesa codigo="46307300" descricao="Correção Monetária/Cambial da dívida contratual resgatada"/>
+ <despesa codigo="46307700" descricao="Principal corrigido da dívida contratual refinanciada"/>
+ <despesa codigo="46710000" descricao="Transferência a Consórsios Públicos"/>
+ <despesa codigo="46717000" descricao="Rateio pela Participação em Consórcio Público"/>
+ <despesa codigo="46900000" descricao="Aplicações Diretas"/>
+ <despesa codigo="46907100" descricao="Principal da Dívida Contratual Resgatada"/>
+ <despesa codigo="46907200" descricao="Principal da Dívida Mobiliária Resgatada"/>
+ <despesa codigo="46907300" descricao="Corr. Monet./Cambial da Dívida Contrat. Resgatada"/>
+ <despesa codigo="46907400" descricao="Cor. Monet./ Cambial da Dívida Mobiliária Resgatada"/>
+ <despesa codigo="46907500" descricao="Cor. Monet. Dívida Op.Crédito p/ Antecip. da Receita"/>
+ <despesa codigo="46907600" descricao="Principal Corrigido da Dívida Mobiliária Refinanciada"/>
+ <despesa codigo="46907601" descricao="Dívida Mobiliária Interna"/>
+ <despesa codigo="46907602" descricao="Dívida Mobiliária Externa"/>
+ <despesa codigo="46907700" descricao="Principal Corrigido da Dívida Contratual Refinanciada"/>
+ <despesa codigo="46907701" descricao="Dívida Contratual Interna"/>
+ <despesa codigo="46907702" descricao="Dívida Contratual Externa"/>
+ <despesa codigo="46909100" descricao="Sentenças Judiciais"/>
+ <despesa codigo="46909200" descricao="Despesas de Exercícios Anteriores"/>
+ <despesa codigo="46909300" descricao="Indenizações e Restituições"/>
+ <despesa codigo="46910000" descricao="Despesas com Amortização da Dívida realizados entre Órgãos, Fundo e Entidades integrantes do Orçamento Fiscal e Seguridade Social"/>
+ <despesa codigo="77999999" descricao="RESERVA ORÇAMENTÁRIA DO RPPS"/>
+ <despesa codigo="99999999" descricao="RESERVA DE CONTINGÊNCIA"/>
+</despesas>

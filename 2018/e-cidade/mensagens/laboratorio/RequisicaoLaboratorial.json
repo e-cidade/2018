@@ -1,0 +1,4 @@
+{
+  "codigo_nao_encontrado" : "Código da requisição laboratorial informado não foi encontrado.",
+  "erro_buscar_medico"    : "Erro ao buscar o nome do médico:\n[sErro]"
+}

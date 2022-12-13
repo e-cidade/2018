@@ -1,0 +1,166 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='3986' name='tributario.emissaogeral' description="Tabela que registra as informações das Emissões Gerais do Sistema" prefix="tr01" label="Emissao Geral" type="0">
+  <fields>
+    <field codigo="22126" 
+           campo_api='codigo_sequencial'
+           name="tr01_sequencial" 
+           conteudo="int4" 
+           description="Código Sequencial da Emissão Geral" 
+           inivalue="0" 
+           label="Código da Emissão Geral" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código da Emissão Geral" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='tributario.emissaogeral_tr01_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22128" 
+           campo_api='usuario'
+           name="tr01_usuario" 
+           conteudo="int4" 
+           description="Usuário que processou a Emissão Geral" 
+           inivalue="0" 
+           label="Usuário" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Usuário" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+    </field> 
+    <field codigo="22129" 
+           campo_api='tipo'
+           name="tr01_tipoemissao" 
+           conteudo="int4" 
+           description="Tipo de Emissão Geral" 
+           inivalue="0" 
+           label="Tipo de Emissão" 
+           size="2" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Emissão" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+    </field>
+    <field codigo="22127" 
+           campo_api='data'
+           name="tr01_data" 
+           conteudo="date" 
+           description="Data da Emissão da Emissão Geral" 
+           inivalue="null" 
+           label="Data Emissão" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data Emissão" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+    </field>  
+    <field codigo="22131" 
+           campo_api='convenio'
+           name="tr01_convenio" 
+           conteudo="int4" 
+           description="Convênio da Emissão Geral" 
+           inivalue="0" 
+           label="Convênio" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Convênio" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+    </field> 
+    <field codigo="22132" 
+           campo_api='hora'
+           name="tr01_hora" 
+           conteudo="char(5)" 
+           description="Hora da Emissão Geral" 
+           inivalue="" 
+           label="Hora da Emissão" 
+           size="5" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Hora da Emissão" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+    </field>
+    <field codigo="22130" 
+           campo_api='instituicao'
+           name="tr01_instit" 
+           conteudo="int4" 
+           description="Instituição" 
+           inivalue="0" 
+           label="Instituição" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Instituição" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+    </field> 
+    <field codigo="22160" 
+           campo_api='parametros' 
+           name="tr01_parametros" 
+           conteudo="text" 
+           description="Parâmetros" 
+           inivalue="" 
+           label="Parâmetros" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Parâmetros" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="tr01_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_config">
+      <fieldfk name="tr01_instit" reference="codigo" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="db_usuarios">
+      <fieldfk name="tr01_usuario" reference="id_usuario" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="cadconvenio">
+      <fieldfk name="tr01_convenio" reference="ar11_sequencial" inner='f'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

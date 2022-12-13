@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="contaContabil" type="contaContabil"/>
+
+  <xs:element name="lancamento" type="lancamento"/>
+
+  <xs:element name="lista" type="lista"/>
+
+  <xs:element name="partida" type="partida"/>
+  
+  <xs:complexType name="partida">
+    <xs:sequence>
+      <xs:element ref="contaContabil" minOccurs="0"/>
+	  <xs:element name="conteudoContaCorrente">
+		  <xs:simpleType>
+			  <xs:restriction base="xs:string">
+				  <xs:maxLength value="255"/>
+			  </xs:restriction>
+		  </xs:simpleType>		  
+	  </xs:element>
+      <xs:element name="tipoDeContaCorrente" type="tipoDeContaCorrente" minOccurs="0"/>
+      <xs:element name="natureza" type="natureza" minOccurs="0"/>
+      <xs:element name="indicadorSuperavitFinanceiro" type="indicadorSuperavitFinanceiro" minOccurs="0" nillable="true"/>
+      <xs:element ref="lancamento" minOccurs="0"/>
+      <xs:element name="valor">
+      	<xs:simpleType>
+          <xs:restriction base="xs:decimal">
+        	<xs:fractionDigits value="2" />
+    	  </xs:restriction>
+    	</xs:simpleType>		  
+	  </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contaContabil">
+    <xs:sequence>
+      <xs:element name="codigo" >
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+			  <xs:pattern value="[0-9].[0-9].[0-9].[0-9].[0-9].[0-9][0-9].[0-9][0-9]"/>
+			</xs:restriction>		
+	  </xs:simpleType>
+	  </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lancamento">
+    <xs:all>
+      <xs:element name="numero" type="xs:long" minOccurs="0"/>
+	  <xs:element name="tipoDeLancamento" type="tipoDeLancamento" minOccurs="0"/>	
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="lista">
+    <xs:sequence>
+      <xs:any processContents="lax"  minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="natureza">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="D"/>
+      <xs:enumeration value="C"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+	<xs:simpleType name="tipoDeLancamento">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ORDINARIO"/>
+			<xs:enumeration value="ESTORNO"/>
+		</xs:restriction>
+	</xs:simpleType>
+ 
+  <xs:complexType name="tipoDeContaCorrente">
+    <xs:all>
+		<xs:element name="numero">
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+    </xs:all>
+  </xs:complexType>
+  
+  <xs:simpleType name="indicadorSuperavitFinanceiro">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="F"/>
+      <xs:enumeration value="P"/>
+    </xs:restriction>
+  </xs:simpleType>
+ 
+</xs:schema>
+

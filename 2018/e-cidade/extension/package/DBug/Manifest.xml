@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<manifest>
+
+  <id>DBug</id>
+  <version>1.0</version>
+
+  <modifications>
+    <modification path="modifications/dbug.xml" />
+  </modifications>
+
+  <events>
+    <event trigger="extension.desktop.bootstrap" class="ECidade\Package\DBug\Event\Bootstrap" />
+  </events>
+
+</manifest>

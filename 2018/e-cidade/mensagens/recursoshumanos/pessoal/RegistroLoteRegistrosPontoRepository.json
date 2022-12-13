@@ -1,0 +1,8 @@
+{
+  "erro_persistir_registrovinculolote"        : "Não foi possível vincular o registros ao lote.",
+  "erro_persistir_registro"                   : "Não foi possível salvar a rubrica [rubrica] para o servidor [servidorNome] no lote.",
+  "erro_excluir_registrovinculolote"          : "Não foi excluir vinculo entre registro e lote.",
+  "erro_excluir_registro"                     : "Não foi excluir o registro do lote.",
+  "erro_codigo_registro_nao_informado"        : "Não foi informado o código do registro a excluir.",
+  "erro_codigo_lote_nao_informado"            : "Não foi informado o código do lote para excluir um registro."
+}

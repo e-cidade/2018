@@ -1,0 +1,11 @@
+{
+  "nome_autuado_obrigatorio"          : "Campo Nome da Pessoa Autuada é de preenchimento obrigatório.",
+  "numero_bloco_obrigatorio"          : "Campo Número do Bloco é de preenchimento obrigatório.",
+  "registrado_logradouro_obrigatorio" : "Campo Cód. Rua/Avenida do Endereço registrado é de preenchimento obrigatório.",
+  "registrado_numero_obrigatorio"     : "Campo Número do Endereço registrado é de preenchimento obrigatório.",
+  "registrado_bairro_obrigatorio"     : "Campo Bairro do Endereço registrado é de preenchimento obrigatório.",
+  "localizado_logradouro_obrigatorio" : "Campo Cód. Rua/Avenida do Endereço localizado é de preenchimento obrigatório.",
+  "localizado_numero_obrigatorio"     : "Campo Número do Endereço localizado é de preenchimento obrigatório.",
+  "localizado_bairro_obrigatorio"     : "Campo Bairro do Endereço localizado é de preenchimento obrigatório.",
+  "data_vencimento_obrigatorio"       : "Campo Data do Vencimento Atualizada é de preenchimento obrigatório."
+}

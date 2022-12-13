@@ -1,0 +1,3 @@
+<?
+$campos = "avaliacaoquestionariointernomenu.db171_sequencial,avaliacaoquestionariointernomenu.db171_questionario,avaliacaoquestionariointernomenu.db171_menu,avaliacaoquestionariointernomenu.db171_modulo";
+?>

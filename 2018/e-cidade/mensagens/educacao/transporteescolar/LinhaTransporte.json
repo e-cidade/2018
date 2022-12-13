@@ -1,0 +1,11 @@
+{
+  "erro_salvar_linhatransporte"        : "[sMensagem]",
+  "erro_transacao_linha_transporte"    : "Sem transação com o banco de dados ativa.",
+  "nome_linhatransporte_nao_informado" : "Nome da Linha de Transporte não informado.",
+  "logradouro_vinculado"               : "Exclusão não permitida. Existem logradouros vinculados aos itinerários da linha.",
+  "horario_vinculado"                  : "Exclusão não permitida. Existem horários vinculados aos itinerários da linha.",
+  "erro_remover_itinerario"            : "[sErro]",
+  "erro_remover_linha_transporte"      : "[sErro]",
+  "nome_existente"                     : "Cadastro não realizado. Já há uma linha de transporte cadastrada com o nome informado.",
+  "sem_itinerario_ida"                 : "Não existe um itinerário de Ida configurado para esta linha."
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4006' name='recursoshumanos.jornadahoras' description="Horas da jornada de trabalho" prefix="rh189" label="Jornada de trabalho" type="0">
+  <fields>
+    <field codigo="22232" 
+           campo_api='' 
+           name="rh189_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.jornadahoras_rh189_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22233" 
+           campo_api='' 
+           name="rh189_jornada" 
+           conteudo="int4" 
+           description="Vínculo com a tabela de jornadas" 
+           inivalue="0" 
+           label="Jornada" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Jornada" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22235" 
+           campo_api='' 
+           name="rh189_tiporegistro" 
+           conteudo="int4" 
+           description="Tipo de registro computado" 
+           inivalue="0" 
+           label="Tipo de Registro" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Registro" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22236" 
+           campo_api='' 
+           name="rh189_hora" 
+           conteudo="varchar(19)" 
+           description="Hora registrada" 
+           inivalue="" 
+           label="Hora" 
+           size="19" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Hora" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh189_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="tiporegistro">
+      <fieldfk name="rh189_tiporegistro" reference="rh187_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="jornada">
+      <fieldfk name="rh189_jornada" reference="rh188_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

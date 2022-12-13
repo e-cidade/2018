@@ -1,0 +1,11 @@
+{
+   "situacao_matricula_invalida"    : "Situação informada não é válida."
+  ,"situacao_matriculamov_invalida" : "Situação informada não é válida para movimentação da matrícula."
+  ,"erro_matricula_existente"       : "Aluno(a) [aluno] já possui matrícula na turma [turma] no calendário [calendario],\ncom situação de [situacao]!\nPara reativar esta matrícula acesse:\n  [menu]"
+  ,"turma_sem_vagas"                : "Turma sem vagas."
+  ,"erro_incluir_matricula"         : "Erro ao incluir matrícula."
+  ,"erro_incluir_matriculaserie"    : "Erro ao incluir vínculo da matrícula com a série."
+  ,"erro_turma_sem_vagas"           : "Turma selecionada esta sem vagas."
+  ,"erro_vincular_turno_referente"  : "Erro ao vincular a matrícula ao turno referente da turma."
+  ,"turno_nao_informado"            : "Turno não informado."
+}

@@ -1,0 +1,7 @@
+{
+  "orcamento_compra_nao_encontrado": "Não foi encontrado nenhum orçamento de compra.",
+  "erro_exclusao_itens_julgamento": "Erro ao remover os itens do processo de compras.\n[erro]",
+  "erro_exclusao_valor_fornecedores":"Erro ao remover os valores cotados do Orçamento do processo de compras.",
+  "erro_exclusao_item"              :"Erro ao remover os itens do processo de compras",
+  "erro_exclusao_orcamento"         :"Erro ao remover os dados do orcamento"
+}

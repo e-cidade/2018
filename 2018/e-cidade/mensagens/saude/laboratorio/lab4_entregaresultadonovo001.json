@@ -1,0 +1,10 @@
+{
+  "buscando_tipos_documento"       : "Aguarde, buscando os tipos de documento cadastrados.",
+  "buscando_exames"                : "Aguarde, buscando os exames da requisição.",
+  "requisicao_nao_informada"       : "Requisição não informada.",
+  "retirado_nao_informado"         : "É necessário informar quem retirou o resultado.",
+  "tipo_documento_nao_informado"   : "Tipo de documento não informado.",
+  "documento_nao_informado"        : "Documento não informado.",
+  "salvando_entrega_resultado"     : "Aguarde, salvando as informações da entrega do resultado.",
+  "nenhum_exame_selecionado"       : "Nenhum exame foi selecionado."
+}

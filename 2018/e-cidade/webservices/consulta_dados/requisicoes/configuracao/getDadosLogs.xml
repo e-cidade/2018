@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="codsequen" label="codsequen" />
+    <campo campo="ip" label="ip" />
+    <campo campo="data" label="data" />
+    <campo campo="hora" label="hora" />
+    <campo campo="arquivo" label="arquivo" />
+    <campo campo="obs" label="obs" />
+    <campo campo="id_usuario" label="id_usuario" />
+    <campo campo="id_modulo" label="id_modulo" />
+    <campo campo="id_item" label="id_item" />
+    <campo campo="coddepto" label="coddepto" />
+    <campo campo="instit" label="instit" />
+    <campo campo="auditoria" label="auditoria" />
+  </campos>
+  <from tabela="db_logsacessa" />
+  <juncoes></juncoes>
+  <filtros>
+    <filtro label="data" condicao="data = '$data'" obrigatorio="true"/></filtros>
+  <agrupamento campos="" />
+  <ordenacao />
+</consulta>

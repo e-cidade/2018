@@ -1,0 +1,95 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2014  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* Dialog class, shows messages to the users
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class MemoArea
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+    function MemoArea($mensagem)
+    {
+        if (isGui)
+        {
+            $this->window = new GtkWindow;
+            $this->window->set_title(_a('Message'));
+            $this->window->set_default_size(400, 280);
+            $this->window->connect_object('key_press_event', array($this, 'KeyTest'));
+            $this->window->set_position(GTK_WIN_POS_CENTER);
+            $this->window->realize();
+            
+            $vbox = new GtkVBox;
+            
+            $this->window->add($vbox);
+            $col1 = new GdkColor(56000, 0, 0);
+            
+            $HelpText = new GtkText();
+            $HelpText->set_word_wrap(true);
+            $vbox->pack_start($HelpText, true, true);
+            $font = gdk::font_load ("-bitstream-helvetica-medium-r-normal-*-*-140-*-*-m-*-iso8859-9");
+            $HelpText->insert($font, $col1, null, "$mensagem\n");
+            $HelpText->set_usize(364, -1);
+            
+            $close = Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'ico_close.xpm');
+            $this->button = new VoidButton(_a('Close'), $close, IMAGEBUTTON);
+            $this->button->connect_object('clicked', array($this, 'Close'));
+            $vbox->pack_start(right($this->button), false, false);
+            
+            $this->window->show_all();
+        }
+        else
+        {
+            if (is_array($labels))
+            {
+                echo '<b>' . _a('Message') . ': </b>' . implode(' ', $labels) . '<br>';
+            }
+            else
+            {
+                echo '<b>' . _a('Message') . ': </b>' . $labels . '<br>';
+            }
+        }
+    }
+    /***********************************************************/
+    /* Key Test Method
+    /***********************************************************/
+    function KeyTest($p1)
+    {
+        if (($p1->keyval == K_ENTER) or ($p1->keyval == K_ESC) or ($p1->keyval == K_SPACE))
+        {
+            $this->window->hide();
+        }
+    }
+    
+    function Close()
+    {
+        $this->window->hide();
+    }
+}
+?>

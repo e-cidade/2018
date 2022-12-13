@@ -1,0 +1,13 @@
+{
+  "medicamento_nao_informado"             : "Medicamento não informado, não sendo possível salvar a Administração do mesmo.",
+  "unidade_nao_informada"                 : "Unidade do medicamento não informada, não sendo possível salvar a Administração do mesmo.",
+  "data_nao_informada"                    : "Data da Administração do Medicamento não informada.",
+  "hora_nao_informada"                    : "Hora de Administração do Medicamento não informada.",
+  "administracao_salva"                   : "Administração do Medicamento salva com sucesso.",
+  "quantidade_administrada_nao_informada" : "Quantidade a ser administrada no medicamento não informada.",
+  "quantidade_embalagem_nao_informada"    : "Quantidade da embalagem do medicamento não informada.",
+  "codigo_nao_informado"                  : "Código da Administração a ser removida não informada.",
+  "administracao_removida"                : "Administração de medicamento removida com sucesso.",
+  "prontuario_nao_informado"              : "Prontuário não informado.",
+  "quantidade_administrada_negativa"      : "Não são permitidos valores negativos ou zero para a dosagem."
+}

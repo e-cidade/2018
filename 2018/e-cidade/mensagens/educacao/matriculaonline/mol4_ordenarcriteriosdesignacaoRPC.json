@@ -1,0 +1,7 @@
+{
+   "erro_buscar_criterios"        : "Erro buscar critérios.\n[sErro]"
+  ,"sem_criterios_cadastrados"    : "Sem critérios cadastrados. Contate administrador do sistema."
+  ,"informe_ensino"               : "Informe o ensino."
+  ,"informe_ao_menos_um_criterio" : "Informe ao menos um critério de designação."
+  ,"salvo_sucesso"                : "Critérios de designação vinculados ao Ensino com sucesso."
+}

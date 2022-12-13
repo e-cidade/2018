@@ -1,0 +1,13 @@
+@CHARSET "ISO-8859-1";
+
+#DBViewDadosAluno table {
+  width: 100%;
+}
+
+#DBViewDadosAluno .tdStyleImputReadOnly {
+  
+  font-size: 12px; 
+  height: 17px; 
+  border: 1px solid rgb(153, 153, 153) !important; 
+  background-color: rgb(222, 184, 135) !important;
+}

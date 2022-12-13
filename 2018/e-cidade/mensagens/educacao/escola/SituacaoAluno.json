@@ -1,0 +1,6 @@
+{
+   "codigo_nao_encontrado"    : "Parâmetro informado não encontrado."
+  ,"sem_transacao_ativa"      : "Sem transação ativa."
+  ,"erro_incluir_alunocurso"  : "Erro ao salvar dados em alunocurso. \n[erro_banco]"
+  ,"erro_incluir_alunopossib" : "Erro ao salvar dados em alunopossib. \n[erro_banco]"
+}

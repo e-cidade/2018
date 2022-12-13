@@ -1,0 +1,8 @@
+{
+  "selecione_arquivo"         : "Selecione ao menos um arquivo para a exportação.",
+  "exportando_arquivos"       : "Exportando arquivo(s) para o Hórus...",
+  "validando_unidade"         : "Validando unidade...",
+  "validando_competencia"     : "Aguarde, validando a competência...",
+  "consultando_dados"         : "Aguarde, consultando os dados...",
+  "deseja_imprimir_relatorio" : "Deseja imprimir o relatório com as inconsistências dos dados?"
+}

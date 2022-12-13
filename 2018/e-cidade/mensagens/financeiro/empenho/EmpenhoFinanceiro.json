@@ -1,0 +1,8 @@
+{
+  "vinculo_empenho_finalidadepagamentofundeb" : "Não foi possível vincular a finalidade de pagamento do FUNDEB ao empenho.",
+  "empenho_pelo_codigo_nao_encontrado"        : "Empenho não encontrado pelo código.",
+  "erro_retorno_cotas_mensais"                : "Erro ao consultar cotas mensais",
+  "parametro_cotas_nao_array"                 : "Parametro $aCotasMensais deve ser um array",
+  "valor_total_cotas"                         : "Valor total das cotas mensais é diferente do valor total do empenho.",
+  "erro_manuntecao_cotas"                     : "Erro ao realizar manutenção das cotas mensais."
+}

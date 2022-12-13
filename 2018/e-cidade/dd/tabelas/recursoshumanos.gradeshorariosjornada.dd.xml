@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4008' name='recursoshumanos.gradeshorariosjornada' description="Tabela que vincula a grade de horário com as jornadas" prefix="rh191" label="Vinculo da grade de horário com as jornadas" type="0">
+  <fields>
+    <field codigo="22240" 
+           campo_api='' 
+           name="rh191_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela" 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.gradeshorariosjornada_rh191_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22241" 
+           campo_api='' 
+           name="rh191_gradehorarios" 
+           conteudo="int4" 
+           description="Vínculo com a grade de horários" 
+           inivalue="0" 
+           label="Grades de Horários" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Grades de Horários" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22242" 
+           campo_api='' 
+           name="rh191_ordemhorario" 
+           conteudo="int4" 
+           description="Ordenação dos horários" 
+           inivalue="0" 
+           label="Ordem" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Ordem" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22243" 
+           campo_api='' 
+           name="rh191_jornada" 
+           conteudo="int4" 
+           description="Vínculo com a tabela de jornada" 
+           inivalue="0" 
+           label="Jornada" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Jornada" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh191_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="jornada">
+      <fieldfk name="rh191_jornada" reference="rh188_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="gradeshorarios">
+      <fieldfk name="rh191_gradehorarios" reference="rh190_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

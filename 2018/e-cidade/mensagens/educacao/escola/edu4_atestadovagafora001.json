@@ -1,0 +1,11 @@
+{
+  "informe_aluno"           : "Informe o(a) Aluno(a).",
+  "informe_escola"          : "Informe a Escola.",
+  "informe_etapa"           : "Informe a Etapa.",
+  "informe_curso"           : "Informe o Curso.",
+  "informe_turno"           : "Informe o Turno.",
+  "informe_calendario"      : "Informe o Calendário.",
+  "informe_data_atestado"   : "Informe a Data do Atestado.",
+  "informe_base_curricular" : "Informe a Base Curricular.",
+  "atestado_fora_periodo"   : "Data do Atestado fora do período do calendário ([dtInicial] até [dtFinal])."
+}

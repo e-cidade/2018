@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4010' name='recursoshumanos.assentamentofuncional' description="Tabela que vincula um assentamento afim de torná-lo um assentamento de vida funcional" prefix="rh193" label="Assentamento de vida funcional" type="0">
+  <fields>
+    <field codigo="22249" 
+           campo_api='' 
+           name="rh193_assentamento_funcional" 
+           conteudo="int4" 
+           description="Vínculo com a tabela de assentamentos" 
+           inivalue="0" 
+           label="Assentamento de Vida Funcional" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Assentamento de Vida Funcional" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22250" 
+           campo_api='' 
+           name="rh193_assentamento_efetividade" 
+           conteudo="int4" 
+           description="Vínculo com a tabela assenta" 
+           inivalue="0" 
+           label="Assentamento de Efetividade" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Assentamento de Efetividade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh193_assentamento_funcional"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="assenta">
+      <fieldfk name="rh193_assentamento_funcional" reference="h16_codigo" inner='t'></fieldfk> 
+      <fieldfk name="rh193_assentamento_efetividade" reference="h16_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

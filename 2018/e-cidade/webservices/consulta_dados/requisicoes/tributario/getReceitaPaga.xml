@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>                                                                    
+<consulta distinct="false">
+  <campos>
+    <campo campo="k00_receit"  label="codigo_receita" />
+    <campo campo="k00_valor"  label="valor"/>
+  </campos>
+  <from tabela="arrepaga" />
+  <juncoes></juncoes>
+  <filtros>
+    <filtro label="codigo_receita" condicao="k00_receit = '$codigo_receita' and k00_dtpaga is not null" obrigatorio="true"/></filtros>
+  <agrupamento campos="" />
+  <ordenacao />
+</consulta>

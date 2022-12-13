@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit  backupGlobals="true"
+          backupStaticAttributes="false"
+          bootstrap="tests/bootstrap.php"
+          colors="true"
+          convertErrorsToExceptions="false"
+          convertNoticesToExceptions="false"
+          convertWarningsToExceptions="false"
+          processIsolation="false"
+          stopOnFailure="false">
+  <testsuites>
+    <testsuite name="DBSeller Legacy Test Suite">
+      <directory>tests/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

@@ -1,0 +1,12 @@
+{
+  "erro_salvar_faixa"     : "Erro ao salvar as faixas de valores do IRRF.",
+  "erro_salvar_faixa_rh"  : "Erro ao salvar as faixas de valores do IRRF do RH.",
+  "erro_excluir_faixa"    : "Erro ao excluir as faixas de valores do IRRF.",
+  "erro_excluir_faixa_rh" : "Erro ao excluir as faixas de valores do IRRF do RH.",
+  "incluido_com_sucesso"  : "Faixa incluída com sucesso.",
+  "excluido_com_sucesso"  : "Faixa excluída com sucesso.",
+  "erro_incluir_tabela"   : "Erro ao incluir tabela de valores.",
+  "tabela_incluida"       : "Tabela incluida com sucesso.",
+  "tabela_alterada"       : "Tabela alterada com sucesso.",
+  "erro_alterar_tabela"   : "Erro ao alterar tabela de valores."
+}

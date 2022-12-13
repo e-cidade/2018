@@ -1,0 +1,10 @@
+{
+  "nao_existe_folha_aberta"             : "Não existe folha nenhuma aberta.",
+  "nao_existe_folha_complementar_aberta": "Não existe folha complementar aberta.",
+  "nao_existe_folha_salario_aberta"     : "Não existe folha salário / suplementar aberta.",
+  "nao_existe_folha_suplementar_aberta" : "Não existe folha suplementar aberta.",
+  "erro_buscar_movimentacoes"           : "Erro ao Buscar dados das Movimentacoes.",
+  "erro_excluir_historico_calculo"      : "Erro ao Excluir o historico do Cálculo.",
+  "erro_calculo"                        : "Erro ao buscar dados do cálculo.",
+  "erro_excluir_gerfsal"                : "Erro ao Excluir gerfsal"
+}

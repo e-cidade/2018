@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<processamento>
+    <versao>1.2</versao>
+    <parametros>
+      <parametro nome="unidade_gestora"  obrigatorio="true" tipo="integer" />
+    </parametros>
+    <configuracoes>
+        <classe nome="\Ecidade\Tributario\Grm\WebService\UnidadeGestora" referencia="UnidadeGestora" parametros="" caminho="src/Tributario/Grm/WebService/UnidadeGestora.php" />
+        <exec>
+            <metodo referencia="UnidadeGestora" nome="getTiposRecolhimentosUnidadeGestora" parametros="$unidade_gestora" />
+        </exec>
+    </configuracoes>
+</processamento>

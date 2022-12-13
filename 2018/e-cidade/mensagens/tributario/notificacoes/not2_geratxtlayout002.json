@@ -1,0 +1,6 @@
+{
+  "nenhum_registro_encontrado" : "Nenhum registro encontrado.",
+  "nunpre_parcela_exeption"    : "Numpre: [iNumpre] - parcela: [iParcela] - [sErro]",
+  "lista_nao_encontrada"       : "Lista não encontrada.",
+  "erro_buscar_debitos"        : "Erro ao buscar débito(s) do(s) Numpre(s)."
+}

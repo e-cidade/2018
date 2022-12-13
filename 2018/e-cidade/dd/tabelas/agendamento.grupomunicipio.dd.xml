@@ -1,0 +1,79 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010204' name='agendamento.grupomunicipio' description="Cota de exame mensal por município" prefix="age04" label="Cota do Município" type="0">
+  <fields>
+    <field codigo="1009319"
+           campo_api=''
+           name="age04_sequencial"
+           conteudo="int4"
+           description="Código sequencial da tabela grupomunicipio"
+           inivalue="0"
+           label="Código sequencial"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código sequencial"
+           reference=""
+           ispk="t"
+           hassequence="t">
+
+      <sequence name='agendamento.grupomunicipio_age04_sequencial_seq' ></sequence>
+
+    </field>
+    <field codigo="1009320"
+           campo_api=''
+           name="age04_grupoexame"
+           conteudo="int4"
+           description="Código sequencial da tabela grupoexame"
+           inivalue="0"
+           label="Código do grupoexame"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código do grupoexame"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+    <field codigo="1009321"
+           campo_api=''
+           name="age04_procedimento"
+           conteudo="int4"
+           description="Código procedimento da tabela sau_procedimento"
+           inivalue="0"
+           label="Código procedimento"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Código procedimento"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="age04_sequencial"></fieldpk>
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="sau_procedimento">
+      <fieldfk name="age04_procedimento" reference="sd63_i_codigo" inner='t'></fieldfk>
+    </foreignkey>
+    <foreignkey reference="grupoexame">
+      <fieldfk name="age04_grupoexame" reference="age02_sequencial" inner='t'></fieldfk>
+    </foreignkey>
+    <foreignkey reference="grupomunicipio">
+      <fieldfk name="age04_grupoexame" reference="age04_sequencial" inner='t'></fieldfk>
+      <fieldfk name="age04_procedimento" reference="" inner='t'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

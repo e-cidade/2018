@@ -1,0 +1,692 @@
+<?
+//include("cabec_rodape.php");
+include("assinatura.php");
+
+//========================================================================================//
+//       ALTERAÇÕES NA CLASSE impcarne                                                    //
+//                                                                                        //
+//  1 - OS NOVOS MODELO INCLUIDOS NÃO DEVERÃO SER DESENVOLVIDOS DIRETAMENTE NA CLASSE     //
+//  2 - APENAS SERA INCLUIDO UM ARQUIVO EXTERNO POR MEIO DE include_once                  //  
+//  3 - OS MODELOS NOVOS E ANTIGOS VÃO FICAR NA PASTA fpdf151/impmodelos/                 //
+//  4 - COLABORE, ORGANIZE O CODIGO, SIGA O PADRÃO                                        //
+//                                                                                        //
+//========================================================================================//
+// DIRETORIO DOS MODELOS        ===>>> 	fpdf151/impmodelos/                               // 
+// PADRÃO PARA NOME DOS MODELOS ===>>>  mod<xx>_<nomemodelo>.php ex: mod4_boleto.php      //
+//========================================================================================//
+
+// MODELO 1  - CARNES DE PARCELAMENTO
+// MODELO 2  - RECIBO DE PAGAMENTO ( 2 VIAS )
+// MODELO 3  - ALVARA NÃO DEFINIDO 
+// MODELO 4  - BOLETO
+// MODELO 5  - AUTORIZAÇÃO DE EMPENHO
+// MODELO 6  - NOTA DE EMPENHO
+// MODELO 7  - ORDEM DE PAGAMENTO
+// MODELO 8  - FICHA DE TRANSFERENCIA DE BENS
+// MODELO 9  - ALVARÁ DE LOCALIZAÇÃO METADE A4
+// MODELO 10 - ORDEM DE COMPRA
+// MODELO 11 - SOLICITAÇÃO DE COMPRA  Itens/Dotações
+// MODELO 12 - ANULAÇÃO DE EMPENHO
+// MODELO 13 - SOLICITAÇÃO DE ORÇAMENTO
+// MODELO 14 - AIDOF
+// MODELO 15 - ESTORNO DE PAGAMENTO
+// MODELO 16 - CONTRA-CHEQUE 1          
+// MODELO 17 - SOLICITAÇÃO DE COMPRA  Dotações/Itens          
+// MODELO 18 - REQUISIÇÃO DE SAÍDA DE MATERIAIS
+// MODELO 19 - EXTRATO DO RPPS
+// MODELO 20 - ALVARA SANITARIO A4
+// MODELO 21 - ALVARA SANITARIO METADE A4
+// MODELO 22 - RECIBO DE PAGAMENTO ( 1 VIAS )
+// MODELO 23 - ALVARA DE LICENSA PEQUENO
+// MODELO 24 - ALVARA DE LICENSA GRANDE
+// MODELO 25 - GUIA RECOLHIMENTO PREVIDENCIA
+// MODELO 26 - ALVARA PRA IMPRESSO (BAGE)
+
+class db_impcarne extends cl_assinatura {
+//class db_impcarne {
+
+/////   VARIÁVEIS PARA EMISSAO DE CARNES DE PARCELAMENTO - MODELO 1
+
+  var $mod_rodape= 1;
+  var $modelo    = 1;
+
+  var $qtdcarne  = null;
+  var $tipodebito= 'TIPO DE DÉBITO';
+  //var $tipoinscr = null;
+  var $tipoinscr1= null;
+  var $prefeitura= 'PREFEITURA DBSELLER';
+  var $secretaria= 'SECRETARIA DE FAZENDA';
+  var $debito    = null;
+  var $logo      = null;
+  var $parcela   = null;
+  var $titulo1   = '';
+  var $descr1    = null;
+  var $titulo2   = 'Cód de Arrecadação';
+  var $descr2    = null;
+  var $titulo3   = 'Contribuinte/Endereço';
+  var $descr3_1  = null;
+  var $descr3_2  = null;
+  var $titulo4   = 'Instruções';
+  var $descr4_1  = null;
+  var $descr4_2  = null;
+  var $titulo5   = 'Parcela';
+  var $descr5    = null;
+  var $titulo6   = 'Vencimento';
+  var $descr6    = null;
+  var $titulo7   = 'Valor';
+  var $descr7    = null;
+  var $titulo8   = '';
+  var $descr8    = null;
+  var $titulo9   = 'Cód. de Arrecadação';
+  var $descr9    = null;
+  var $titulo10  = 'Parcela';
+  var $descr10   = null;
+  var $titulo11  = 'Contribuinte/Endereço';
+  var $descr11_1 = null;
+  var $descr11_2 = null;
+  var $titulo12  = 'Instruções';
+  var $descr12_1 = null;
+  var $descr12_2 = null;
+  var $titulo13  = '';
+  var $descr13   = null;
+  var $titulo14  = 'Vencimento';
+  var $descr14   = null;
+  var $texto     = null;
+  var $titulo15  = 'Valor';
+  var $descr15   = null;
+  var $descr16_1 = null;
+  var $descr16_2 = null;
+  var $descr16_3 = null;
+  var $linha_digitavel = null;
+  var $codigo_barras = null;
+  var $objpdf = null;
+ 
+//////  VARIÁVEIS PARA EMISSAO DE CONTRA-CHEQUES
+
+  var $lotacao     	= null;
+  var $descr_lota  	= null;
+  var $funcao      	= null;
+  var $descr_funcao	= null;
+  var $mensagem    	= null;
+  var $recordenvelope  	= 0;
+  var $linhasenvelope 	= 0;
+  var $quantidade	= null;
+  var $valor		= null;
+  var $tipo		= null;
+  var $rubrica		= null;
+  var $descr_rub	= null;
+
+//////  VARIÁVEIS PARA EMISSAO DE RECIBO DE PAGAMENTO - MODELO 2
+
+  var $enderpref = null;
+  var $cgcpref   = null;
+  var $tipocompl = null;
+  var $tipolograd= null;
+  var $tipobairro= null;
+  var $municpref = null;
+  var $telefpref = null;
+  var $faxpref   = null;
+  var $emailpref = null;
+  var $nome      = null;
+  var $ender     = null;
+  var $compl     = null;
+  var $munic     = null;
+  var $uf        = null;
+  var $fax       = null;
+  var $contato   = null;
+  var $cep       = null;
+  var $tipoinscr = 'Matr/Inscr';
+  var $nrinscr   = null;
+  var $nrinscr1  = null;
+  var $ip        = null;
+  var $nomepri   = '';
+  var $nrpri     = '';
+  var $complpri  = '';
+  var $bairropri = null;
+  var $datacalc  = null;
+  var $taxabanc  = 0;
+  var $rowspagto = 0;
+  var $receita   = null;
+  var $receitared= null;
+  var $dreceita  = null;
+  var $ddreceita = null;
+  var $historico = null;
+  var $histparcel= null;
+  var $recorddadospagto = 0;
+  var $linhasdadospagto = 0;
+  var $dtvenc    = null;
+  var $numpre    = null;
+  var $valtotal  = null;
+ 
+//////  VARIÁVEIS PARA EMISSAO DE ALVARÁ
+
+  var $tipoalvara  = null;
+  var $obs         = null;
+  var $ativ        = null;
+  var $numbloco    = null;
+  var $descrativ   = null;
+  var $outrasativs = null;
+  var $q02_memo    = null;
+  var $numero      = null;
+  var $q02_obs     = null;
+  var $q03_atmemo  = null; //obs das atividades
+  var $obsativ     = null; // obs da atividade principal
+  var $processo    = null;
+  var $datainc     = null;
+  var $datafim     = null;
+  var $dtiniativ   = null; //data de inicio das atividades
+  var $dtfimativ   = null; //data de fim das atividades
+  var $impdatas    = null; // se imprime as datas de inicio e fim das atividades
+  var $impobsativ  = null; // se imprime a observasão das atividades
+  var $impcodativ  = null; // se imprime o codigo das atividades
+  var $permanente  = null; // se permanente ou provisorio 
+  var $cnpjcpf     = null;
+  var $assalvara   = null;
+
+//////  FICHA DE COMPENSACAO
+  
+  var $numbanco		= '';
+  var $localpagamento   = '';
+  var $cedente		= ''; 
+  var $agencia_cedente	= '';
+  var $data_documento	= '';
+  var $numero_documento = '';
+  var $especie_doc	= '';
+  var $aceite		= '';
+  var $data_processamento = '';
+  var $nosso_numero	= '';
+  var $codigo_cedente	= '';
+  var $carteira		= '';
+  var $especie		= '';
+  var $valor_documento	= '';
+  var $instrucoes1	= '';
+  var $instrucoes2	= '';
+  var $instrucoes3	= '';
+  var $instrucoes4	= '';
+  var $instrucoes5	= '';
+  var $desconto_abatimento = '';	
+  var $outras_deducoes	= '';
+  var $mora_multa	= '';
+  var $outros_acrecimos	= '';
+  var $valor_cobrado	= '';
+  var $sacado1		= '';
+  var $sacado2		= '';
+  var $sacado3		= '';
+
+//// vairaveis para o orcamento
+  var $orccodigo        = '';
+  var $orcdtlim         = '';
+  var $orchrlim         = '';
+  var $faxforne         = '';
+
+
+
+//// variaveis para a solicitação de compras
+  var $secfaz           = null;  //Nome do secretário da fazenda
+  var $nompre           = null;  //Nome do prefeiro
+  
+  var $fonedepto        = null;
+  var $faxdepto         = null;
+  var $ramaldepto       = null;
+  var $emaildepto       = null;
+
+  // solicita
+  var $Snumero          = null;  //número da solicitação
+  var $Snumero_ant      = null;  //número da solicitação
+  var $Sdata            = null;  //data da solicitação
+  var $Svalor           = null;  //valor aproximado da solicitação
+  var $Sorgao           = null;  //orgão
+  var $Sunidade         = null;  //unidade
+  var $sabrevunidade    = null;  //unidade abreviada
+  var $Sresumo          = '';    //resumo da solicitação
+  var $Stipcom          = '';    //tipo de compra da solicitação
+  var $Sdepart          = '';    //departamento da solicitação
+  var $Srespdepart      = '';    //responsável pelo departamento
+  var $Susuarioger      = '';    //Usuário que gerou a solicitação
+  
+  var $Scoddepto        = '';    //responsável pelo departamento
+  var $Sdescrdepto      = '';    //responsável pelo departamento
+  var $Snumdepart       = '';    //responsável pelo departamento
+  var $linhasdosdepart  = '';    //responsável pelo departamento
+  var $resultdosdepart  = '';    //responsável pelo departamento
+  
+  // solicitem
+  var $scodpcmater      = null;  //codigo do pcmater (quando for informado)
+  var $scodunid         = null;  //codigo da unidade do item
+  var $squantunid       = null;  //quantidade de cada unidade (caixa com 10 unidades)
+  var $sprazo           = '';    //prazo de entrega do item
+  var $spgto            = '';    //condições de pagamento do item
+  var $sresum           = '';    //resumo do item
+  var $sjust            = '';    //justificativa para a compra do item
+  var $sunidade         = '';    //unidade (caixa,unitário, etc...)
+  var $sservico         = '';    //se é serviço ou material
+  var $svalortot        = '';    //valor total (quantidade * valor)
+  var $susaquant        = '';    //se usa a quantidade ex. caixa (usa quant),unitário(não usa)
+  var $selemento        = '';    //elemento do item da solicitação
+  var $sdelemento       = '';    //descriçaõ do elemento do item da solicitação
+
+  // pcdotac
+  var $dcodigo          = null;  //código da dotação
+  var $dcoddot          = null;  //código da dotação
+  var $danousu          = null;  //ano da dotação
+  var $dquant           = null;  //quantidade do item na dotação
+  var $dvalor           = null;  //valor da dotação  
+  var $delemento        = '';    //elemento da dotação
+  var $dvalortot        = '';    //valor total (quantidade * valor)
+  var $dreserva         = '';    //se o valor da dotação foi reservado
+  var $resultdasdotac   = null;  // recordset com dados dos fornecedores
+  var $linhasdasdotac   = null;  // numero de linhas retornadas no recordsert
+  var $dcprojativ       = '';
+  var $dctiporec        = '';
+  var $dprojativ        = '';
+  var $dtiporec         = '';
+  var $ddescrest        = '';
+
+  //pcsugforn
+  var $cgmforn          = null;       // cgm do fornecedor  
+  var $nomeforn         = '';         // nome do fornecedor
+  var $enderforn        = '';         // endereco do fornecedor
+  var $municforn        = '';         // municipio do fornecedor
+  var $foneforn         = '';         // telefone do fornecedor
+  var $numforn          = '';         // numforn
+  var $resultdosfornec  = null;       // recordset com dados dos fornecedores
+  var $linhasdosfornec  = null;       // numero de linhas retornadas no recordsert
+
+  //labels dos itens do processo do orçamento do processo de compras e orçamento de solicitação
+  var $labtitulo        = '';         // se é orçamento de solicitação ou PC
+  var $labdados         = '';         // se é orçamento de solicitação ou PC
+  var $labsolproc       = '';         // código do orçamento ou solicitação
+  var $labtipo          = '';         // se for solicitação, label do tipo
+
+//// variaveis para a autorização de empenho E ORDEM DE COMPRA
+  var $assinatura1       = 'VISTO';
+  
+  var $assinatura2       = 'TÉCNICO CONTÁBIL'; 
+  var $assinatura3       = 'SECRETÁRIO(A) DA FAZENDA';
+  var $assinatura4       = 'SECRETÁRIO DA FAZENDA';
+  var $assinaturaprefeito= 'PREFEITO MUNICIPAL';
+    
+  var $usa_sub		= false;	// a prefeitura utiliza o orcamento no subelemento
+  var $telefone		= null;		// telefone
+  var $nvias		= 1;		// ano
+  var $ano		= null;		// ano
+  var $numaut 		= null;  	// numero do empenho
+  var $numsol 		= null;  	// numero do empenho
+  var $numemp 		= null;  	// numero do empenho
+  var $codemp 		= null;  	// numero do empenho do ano
+  var $emissao 		= null;  	// data da emissao
+  var $orgao 		= null;  	// data da emissao
+  var $descr_orgao	= null;  	// data da emissao
+  var $unidade 		= null;  	// data da emissao
+  var $descr_unidade	= null;  	// data da emissao
+  var $projativ		= null;  	// data da emissao
+  var $descr_projativ	= null;  	// data da emissao
+  var $sintetico	= null;  	// data da emissao
+  var $descr_sintetico	= null;  	// data da emissao
+  var $recurso   	= null;  	// data da emissao
+  var $descr_recurso    = null;  	// data da emissao
+  var $orcado		= null;  	// data da emissao
+  var $saldo_ant	= null;  	// data da emissao
+  var $empenhado	= null;  	// data da emissao
+  var $numcgm 		= null;		// cgm do fornecedor
+  var $banco  		= null;		// banco
+  var $agencia		= null;		// agencia
+  var $agenciadv	= null;		// agencia
+  var $conta  		= null;		// conta
+  var $contadv 		= null;		// conta
+  var $dotacao 		= null;		// dotacao orcamentaria (orgao,unidade,funcao,subfuncao,programa,projativ,elemento,recurso)
+  var $descrdotacao 	= null;		// descricao da dotacao
+  var $coddot		= null;		// codigo reduzido da despesa
+  var $destino		= null;		// destino do material ou serviço
+  var $resumo		= null;		// destino do material ou serviço
+  var $licitacao  	= null;		// tipo de licitação
+  var $num_licitacao  	= null;		// numero da licitação
+  var $descr_licitacao 	= null;		// descrição do tipo de licitação
+  var $descr_tipocompra	= null;		// descrição do tipo de compra
+  var $prazo_ent  	= null;		// prazo de entrega
+//  var $obs		= null;		// observações
+  var $cond_pag		= null;		// condições de pagamento
+  var $out_cond		= null;		// outras condições de pagamento
+  var $telef_cont 	= null;		// telefone do contato
+  var $recorddositens 	= null;		// record set dos itens
+  var $linhasdositens 	= null;		// numero de itens da autorizacao
+  var $item	    	= null;		// codigo do item
+  var $quantitem    	= null;		// quantidade do item
+  var $valoritem    	= null;		// valor unitário do item
+  var $empempenho       = null;         // cod empenho para emissão de ordem de compra
+  var $dataordem        = null;         // data da geração da ordem de compra
+  var $observacaoitem   = null;
+  var $descricaoitem    = null;
+  var $ordpag		= null;		// numero da ordem de pagamento
+  var $elemento		= null;		// elemento da despesa
+  var $descr_elemento	= null;		// descrição do elemento da despesa
+  var $elementoitem	= null;		// elemento do item da ordem de pagamento
+  var $descr_elementoitem= null;	// descrição do elemento do item da ordem de pagamento
+  var $outrasordens     = null;		// saldo das outras ordens de pagamento do empenho
+  var $vlrrec           = null;		// valor das receitas de retençoes
+  var $cnpj             = null;         // cpf ou cnpj do credor
+  var $anulado		= null;         // valor anulado
+  var $vlr_anul         = null;         // valor anulado
+  var $data_est         = null;         // data estorno
+  var $descr_anu        = null;         // descrição da anulação
+  var $Scodemp        = null;         // descrição da anulação
+
+// Variáveis necessárias para requisição de saída de materiais
+  var $Rnumero          = null;
+  var $Rdata		= null;
+  var $Rdepart          = null;
+  var $Rhora            = null;
+  var $Rresumo          = null;
+  var $Rnomeus          = null;
+  
+  var $rcodmaterial     = null;
+  var $rdescmaterial    = null;
+  var $runidadesaida    = null;
+  var $rquantdeitens    = null;
+  var $robsdositens     = null;
+	
+/// variaveis para a nota de empenho
+  function db_impcarne($objpdf){
+    $this->objpdf = $objpdf; 
+  }
+  
+  function muda_pag($pagina,$xlin,$xcol,$fornec="false",&$contapagina){
+    $x = false;
+    if(($this->objpdf->gety() > $this->objpdf->h - 58 && $contapagina == 1 ) || ( $this->objpdf->gety() > $this->objpdf->h-30 && $contapagina != 1)){
+      if($contapagina == 1){
+	  if(strtoupper(trim($this->municpref)) != 'SAPIRANGA'){
+	    $this->objpdf->setfillcolor(0,0,0);
+	    $this->objpdf->Setfont('Arial','B',7);
+	    $this->objpdf->rect($xcol    ,$xlin+237,66,35,2,'DF','1234');
+	    $this->objpdf->rect($xcol+68 ,$xlin+237,66,35,2,'DF','1234');
+	    $this->objpdf->rect($xcol+136,$xlin+237,66,35,2,'DF','1234');
+
+        $this->objpdf->text($xcol+5,$xlin+244,strtoupper($this->municpref).', '.substr($this->emissao,8,2).' DE '.strtoupper(db_mes(substr($this->emissao,5,2))).' DE '.substr($this->emissao,0,4).'.');
+
+        if(strtoupper(trim($this->municpref)) == 'GUAIBA'){
+          $this->objpdf->text($xcol+25,$xlin+260,'REQUERENTE',0,40);
+        }else{
+          $this->objpdf->text($xcol+20,$xlin+256,"AUTORIZO",0,4);
+	      $this->objpdf->text($xcol+5,$xlin+268,substr($this->Sorgao,0,35));
+        }
+
+	    $this->objpdf->text($xcol+93,$xlin+256,"AUTORIZO",0,4);
+	    if(strtoupper(trim($this->municpref)) != 'GUAIBA'){
+	      $this->objpdf->text($xcol+83,$xlin+268,'DIV. DE ABASTECIMENTO',0,40);
+	    }
+	    $this->objpdf->text($xcol+150,$xlin+256,"ORDENADOR DA DESPESA",0,4);
+	    $xlin += 10;
+	  }else{
+	    $this->objpdf->setfillcolor(0,0,0);
+	    $this->objpdf->Setfont('Arial','B',7);
+	    $this->objpdf->rect($xcol    ,$xlin+227,66,45,2,'DF','1234');
+	    $this->objpdf->rect($xcol+ 68,$xlin+227,66,45,2,'DF','1234');
+	    $this->objpdf->rect($xcol+136,$xlin+227,66,45,2,'DF','1234');
+
+	    $this->objpdf->SetXY($xcol+08,$xlin+228);
+	    $this->objpdf->multicell(66,4,"SOLICITANTE",0,"C");
+	    $this->objpdf->SetXY($xcol+08,$xlin+235.5);
+	    $this->objpdf->multicell(66,0.5,"_________________________________",0,"C");
+
+	    $this->objpdf->SetXY($xcol+08,$xlin+247.5);
+            //   SECRETÁRIO(A) DA SECRETARIA QUE SOLICITOU   //
+	    $this->objpdf->multicell(66,4,"SECRETÁRIO",0,"C");
+	    $this->objpdf->SetXY($xcol+08,$xlin+251.5);
+	    $this->objpdf->multicell(66,4,substr($this->Sorgao,0,30),0,"C");
+	    ///////////////////////////////////////////////////
+	    $this->objpdf->text($xcol+10,$xlin+261,"_________________________________",0,4);
+
+	    $this->objpdf->text($xcol+10,$xlin+270,strtoupper($this->municpref).', '.substr($this->emissao,8,2).' DE '.strtoupper(db_mes(substr($this->emissao,5,2))).' DE '.substr($this->emissao,0,4).'.');
+	    $this->objpdf->SetXY($xcol+68,$xlin+228);
+	    $this->objpdf->multicell(66,4,"CONTABILIDADE",0,"C");
+            $this->objpdf->SetXY($xcol+68,$xlin+235.5);
+            $this->objpdf->multicell(66,0.5,"_________________________________",0,"C");
+	    $this->objpdf->SetXY($xcol+68,$xlin+242);
+	    $this->objpdf->multicell(66,4,"HÁ RECURSOS FINANCEIROS",0,"C");
+
+
+
+            $tamanho = strlen($this->secfaz);
+	    $posicao = strpos($this->secfaz,"\n");
+            $secretaria = $this->secfaz;
+	    $deque   = "";
+	    if($posicao!="" && $posicao!=0){
+	      $secretaria = substr($this->secfaz,0,$posicao);
+	      $deque = substr($this->secfaz,$posicao,$tamanho);
+	    }
+	    
+	    $this->objpdf->text($xcol+85,$xlin+252,trim($secretaria),0,4);
+	    $this->objpdf->text($xcol+85,$xlin+254.5,trim($deque),0,4);
+
+	    $this->objpdf->text($xcol+92,$xlin+264,"CONFERIDO",0,4);
+	    $this->objpdf->text($xcol+83.5,$xlin+270,"________/________/________",0,4);
+
+	    $this->objpdf->SetXY($xcol+136,$xlin+242);
+	    $this->objpdf->multicell(66,4,$this->nompre,0,"C");
+	    $this->objpdf->text($xcol+163,$xlin+264,"AUTORIZA",0,4);
+	    $this->objpdf->text($xcol+152.5,$xlin+270,"________/________/________",0,4);
+	  }
+	$this->objpdf->Setfont('Arial','',9);
+	$this->objpdf->text(111.2,$xlin+224,'Continua na Página '.($contapagina+1));
+	$this->objpdf->setfillcolor(0,0,0);
+
+	$this->objpdf->SetFont('Arial','',4);
+	$this->objpdf->TextWithDirection(1.5,$xlin+60,$this->texto,'U'); // texto no canhoto do carne
+	$this->objpdf->setfont('Arial','',11);
+      }else{
+	$this->objpdf->Setfont('Arial','',9);
+	$this->objpdf->text(112.5,$xlin+271,'Continua na Página '.($contapagina+1));
+      }
+      $contapagina+=1;
+      $this->objpdf->addpage();
+      $pagina += 1;	   
+      $muda_pag = true;
+      
+      $this->objpdf->settopmargin(1);
+      $xlin = 20;
+      $xcol = 4;
+  
+      // Imprime cabeçalho com dados sobre a prefeitura se mudar de página
+      $this->objpdf->setfillcolor(245);
+      $this->objpdf->rect($xcol-2,$xlin-18,206,292,2,'DF','1234');
+      $this->objpdf->setfillcolor(255,255,255);
+      $this->objpdf->Setfont('Arial','B',9);
+      $this->objpdf->text(130,$xlin-13,'SOLICITAÇÃO DE COMPRA N'.CHR(176));
+      $this->objpdf->text(185,$xlin-13,db_formatar($this->Snumero,'s','0',6,'e'));
+      $this->objpdf->Setfont('Arial','B',7);
+      $this->objpdf->text(130,$xlin-9,'ORGAO');
+      $this->objpdf->text(142,$xlin-9,': '.substr($this->Sorgao,0,35));
+      $this->objpdf->text(130,$xlin-5,'UNIDADE');
+      $this->objpdf->text(142,$xlin-5,': '.substr($this->Sunidade,0,35));
+      $this->objpdf->Setfont('Arial','B',9);
+      $this->objpdf->Image('imagens/files/logo_boleto.png',15,$xlin-17,12);
+      $this->objpdf->Setfont('Arial','B',9);
+      $this->objpdf->text(40,$xlin-15,$this->prefeitura);
+      $this->objpdf->Setfont('Arial','',9);
+      $this->objpdf->text(40,$xlin-11,$this->enderpref);
+      $this->objpdf->text(40,$xlin-8,$this->municpref);
+      $this->objpdf->text(40,$xlin-5,$this->telefpref);
+      $this->objpdf->text(40,$xlin-2,$this->emailpref);
+      $this->objpdf->text(40,$xlin+ 1,db_formatar($this->cgcpref,'cnpj'));
+//      $this->objpdf->text(40,$xlin+2,'Continuação da Página '.($contapagina-1));
+      $this->objpdf->text(130,$xlin+2,'Página '.$contapagina);
+      
+      $xlin = 0;      
+      if((isset($fornec) && $fornec=="false") || !isset($fornec)){
+	$this->objpdf->Setfont('Arial','B',8);
+
+        // Caixas dos label's
+	$this->objpdf->rect($xcol    ,$xlin+24,10,6,2,'DF','12');
+	$this->objpdf->rect($xcol+ 10,$xlin+24,12,6,2,'DF','12');
+	$this->objpdf->rect($xcol+ 22,$xlin+24,22,6,2,'DF','12');
+	$this->objpdf->rect($xcol+ 44,$xlin+24,98,6,2,'DF','12');
+	$this->objpdf->rect($xcol+142,$xlin+24,30,6,2,'DF','12');
+	$this->objpdf->rect($xcol+172,$xlin+24,30,6,2,'DF','12');
+
+        
+        if(strtoupper(trim($this->municpref)) == 'SAPIRANGA'){
+	  $xlin -= 10;
+	}
+
+        // Caixa dos itens
+	$this->objpdf->rect($xcol,    $xlin+30,10,262,2,'DF','34');
+        // Caixa da quantidade
+	$this->objpdf->rect($xcol+ 10,$xlin+30,12,262,2,'DF','34');
+	
+	$this->objpdf->rect($xcol+ 22,$xlin+30,22,262,2,'DF','34');
+        // Caixa dos materiais ou serviços
+	$this->objpdf->rect($xcol+ 44,$xlin+30,98,262,2,'DF','34');
+        // Caixa dos valores unitário3
+	$this->objpdf->rect($xcol+142,$xlin+30,30,262,2,'DF','');
+        // Caixa dos valores totais dos iten
+	$this->objpdf->rect($xcol+172,$xlin+30,30,262,2,'DF','34');
+
+	$this->objpdf->sety($xlin+66);
+	$alt = 4;
+
+        // Label das colunas
+	$this->objpdf->Setfont('Arial','B',8);
+	$this->objpdf->text($xcol+   2,$xlin+28,'ITEM');
+	$this->objpdf->text($xcol+  11,$xlin+28,'QUANT');
+	$this->objpdf->text($xcol+  30,$xlin+28,'REF');
+	$this->objpdf->text($xcol+  70,$xlin+28,'MATERIAL OU SERVIÇO');
+	$this->objpdf->text($xcol+ 145,$xlin+28,'VALOR UNITÁRIO');
+	$this->objpdf->text($xcol+ 176,$xlin+28,'VALOR TOTAL');
+
+      }else if(isset($fornec) && $fornec=="true"){
+      }
+      $maiscol = 0;
+      $xlin = 20;
+      // Seta altura nova para impressão dos dados
+      $this->objpdf->sety($xlin+11);
+      $this->objpdf->setleftmargin(3);
+      $x = true;
+      $this->objpdf->Setfont('Arial','',7);
+    }
+    return $x;
+  }
+ 
+  function imprime() {
+  	
+    if($this->modelo == 1){
+/////// CARNES DE PARCELAMENTO  //////////////////////
+     	include_once('impmodelos/mod1_carneparc.php');
+    }
+    else if ( $this->modelo == 22 ) {       
+///////   RECIBO DE PAGAMENTO ///////////////////////
+		include_once('impmodelos/mod22_recpag.php');
+    }
+    else if ( $this->modelo == 3 ) {
+///////  ALVARA NÃO DEFINIDO /////////////////////////
+		include_once('impmodelos/mod3_alvara.php');
+    }
+    else if ( $this->modelo == 4 ) {
+///////  BOLETO BANCARIO  /////////////////////////////
+        include_once('impmodelos/mod4_bolbanc.php');   
+    } 
+    else if ( $this->modelo == 2 ) {     
+///////  RECIBO DE PAGAMENTO  ////////////////////////
+        include_once('impmodelos/mod2_recpag.php');
+    }
+    else if ( $this->modelo == 5 ) {     
+/////// AUTORIZACAO DE EMPENHO  //////////////////////
+        include_once('impmodelos/mod5_autemp.php');
+    }
+    else if ( $this->modelo == 6 ) {     
+ //////// NOTA DE EMPENHO  ///////////////////////////
+ 		include_once('impmodelos/mod6_notaemp.php');
+    }
+    else if ( $this->modelo == 7 ) {     
+///////// ORDEM DE PAGAMENTO //////////////////////////
+         include_once('impmodelos/mod7_ordpag.php');
+    }
+    else if ( $this->modelo == 8 ) {     
+///////// FICHA DE TRANSFERENCIA DE BENS //////////////
+         include_once('impmodelos/mod8_transbens.php');
+    }
+    else if ( $this->modelo == 9 ) {
+////////////// ALVARA ISSQN METADE A4 //////////////////
+		include_once('impmodelos/mod9_alvarapeqissqn.php');
+    }
+    else if ( $this->modelo == 10 ) {
+////////// ORDEM DE COMPRA /////////////////////////////
+		include_once('impmodelos/mod10_ordcomp.php');
+    }
+    else if ( $this->modelo == 11 ) {
+///////// SOICITAÇÃO DE COMPRAS  ////////////////////////
+    	include_once('impmodelos/mod11_solicitcomp.php');
+    }
+    else if ( $this->modelo == 111 ) {
+///////// SOLICITAÇÃO DE COMPRAS  ////////////////////////
+    	include_once('impmodelos/mod111_solicitcomp.php');
+    }
+    else if ( $this->modelo == 12 ) {     
+////////// ANULAÇÃO DE EMPENHO  //////////////////////////
+       	include_once('impmodelos/mod12_anulemp.php');
+	}
+    else if ( $this->modelo == 13 ) {
+////////// SOLICITAÇÃO DE ORÇAMENTO //////////////////////
+         include_once('impmodelos/mod13_solictorc.php');
+    }
+    else if ( $this->modelo == 133 ) {
+////////// SOLICITAÇÃO DE ORÇAMENTO //////////////////////
+         include_once('impmodelos/mod133_solicitorc.php');
+	    }
+    else if ( $this->modelo == 14 ) {     
+////////// AIDOF ////////////////////////////////////////
+         include_once('impmodelos/mod14_aidof.php');
+    }
+    else if ( $this->modelo == 16 ) {     
+////////// CONTRA-CHEQUE 1 ///////////////////////////////
+         include_once('impmodelos/mod16_contracheque.php');
+    }
+    else if ( $this->modelo == 15 ) {     
+ ////////// ESTORNO DE EMPENHO ///////////////////////////
+ 		 include_once('impmodelos/mod15_estemp.php');
+    }
+    else if ( $this->modelo == 17 ) {
+///////////  SOLICITAÇÃO DE COMPRAS SEGUNDO MODELO   ////////
+    	 include_once('impmodelos/mod17_solicitcompseg.php');
+   
+    }
+    else if ( $this->modelo == 18 ) {
+//////////  REQUISIÇÃO DE SAIDA DE MATERIAIS  /////////////
+    	include_once('impmodelos/mod18_reqsaidamat.php');
+    }
+    else if ( $this->modelo == 19 ) {       
+///////// EXTRATO PARA O RPPS /////////////////////////////
+		include_once('impmodelos/mod19_extrpps.php');
+    }	
+    elseif ( $this->modelo == 20 ){
+///////// ALVARA DE SANITARIO A4 //////////////////////////		
+		include_once('impmodelos/mod20_alvarasania4.php');
+    }
+    
+    else if ( $this->modelo == 21 ) {
+///////// ALVARA DE SANITARIO metade A4 ///////////////////
+	    include_once('impmodelos/mod21_alvarasanipeq.php');
+    }
+
+    else if ( $this->modelo == 23 ) {
+///////// ALVARA DE LICENSA  PEQUENO  /////////////////////    	
+		include_once('impmodelos/mod23_alvaraissqnpeq.php');
+    }
+  else if ( $this->modelo == 24 ) {
+///////// ALVARA DE ISSQN GRANDE //////////////////////////
+		include_once('impmodelos/mod24_alvaraissqna4.php');
+  }
+  else if ( $this->modelo == 25 ) {     
+///////// GUIA DE RECOLHIMENTO DA PREVIDENCIA /////////////
+		include_once('impmodelos/mod25_guiarecprev.php');
+  }
+  else if($this->modelo == 26){
+///////// ALVARA PRE-IMPRESSO ////////////////////////////		
+		include_once('impmodelos/mod26_alvarapreimp.php');
+   }
+    else{
+		echo "<script>alert('Modelo No. $this->modelo não definido no sistema. Contate suporte.')</script>";
+	      exit;
+    }
+  }   
+}
+?>

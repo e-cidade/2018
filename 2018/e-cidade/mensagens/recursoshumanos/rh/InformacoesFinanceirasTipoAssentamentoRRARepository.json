@@ -1,0 +1,6 @@
+{
+  "erro_persistir_informacoes_financeiras_rra"      : "Ocorreu um erro ao persistir os dados de informações externas do tipo de assentamento.",
+  "erro_ao_buscar_informacoes_financeiras_rra"      : "Ocorreu um erro ao buscar as informações externas do tipo de assentamento de RRA.",
+  "configuracao_tipo_assentamento_vazio"            : "Não há configurações financeiras para o tipo de assentamento informado.",
+  "tipo_assentamento_sem_codigo_definido"           : "Não foi possível verificar o código do tipo de assentamento informado."
+}

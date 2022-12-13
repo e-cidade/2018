@@ -1,0 +1,202 @@
+<?php
+/*
+ *     E-cidade Software Publico para Gestao Municipal                
+ *  Copyright (C) 2009  DBselller Servicos de Informatica             
+ *                            www.dbseller.com.br                     
+ *                         e-cidade@dbseller.com.br                   
+ *                                                                    
+ *  Este programa e software livre; voce pode redistribui-lo e/ou     
+ *  modifica-lo sob os termos da Licenca Publica Geral GNU, conforme  
+ *  publicada pela Free Software Foundation; tanto a versao 2 da      
+ *  Licenca como (a seu criterio) qualquer versao mais nova.          
+ *                                                                    
+ *  Este programa e distribuido na expectativa de ser util, mas SEM   
+ *  QUALQUER GARANTIA; sem mesmo a garantia implicita de              
+ *  COMERCIALIZACAO ou de ADEQUACAO A QUALQUER PROPOSITO EM           
+ *  PARTICULAR. Consulte a Licenca Publica Geral GNU para obter mais  
+ *  detalhes.                                                         
+ *                                                                    
+ *  Voce deve ter recebido uma copia da Licenca Publica Geral GNU     
+ *  junto com este programa; se nao, escreva para a Free Software     
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA          
+ *  02111-1307, USA.                                                  
+ *  
+ *  Copia da licenca no diretorio licenca/licenca_en.txt 
+ *                                licenca/licenca_pt.txt 
+ */
+
+/***********************************************************/
+/* MenuItem class, a wrapper for GtkMenuItem
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class MyNormalMenuItem extends GtkMenuItem
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+	function MyNormalMenuItem($img, $label, $function = null, $param = null)
+	{
+		GtkMenuItem::GtkMenuItem($label);
+        $child = $this->child;
+
+        GtkMenuItem::remove($child);
+        $pixmap = new GtkPixmap($img[0], $img[1]);
+
+        $hbox = new GtkHBox;
+        $hbox->pack_start($pixmap, false, false, 5);
+        $hbox->pack_start($child, true, true);
+        GtkMenuItem::add($hbox);
+        
+        if ($function)
+        {
+            GtkMenuItem::connect_object('activate', $function, $param);
+        }
+		GtkMenuItem::lock_accelerators();
+	}
+}
+
+/***********************************************************/
+/* MenuItem class for Control Key actions
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class MyControlMenuItem extends GtkMenuItem
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+	function MyControlMenuItem($img, $label, $underscore, $accelgroup, $function, $param = null)
+	{
+		GtkMenuItem::GtkMenuItem($label);
+        $child = $this->child;
+
+        GtkMenuItem::remove($child);
+        $pixmap = new GtkPixmap($img[0], $img[1]);
+
+        $hbox = new GtkHBox;
+        $hbox->pack_start($pixmap, false, false, 5);
+        $hbox->pack_start($child, true, true);
+        GtkMenuItem::add($hbox);
+        
+		if (strlen($label)!=(strlen($underscore)-1))
+			$parse = new GtkLabel;
+		else
+			$parse = $child;
+
+		$Subitem_key = $parse->parse_uline($underscore);
+
+		GtkMenuItem::add_accelerator("activate", $accelgroup, $Subitem_key, GDK_CONTROL_MASK, ($underscore)? 1:0);
+        if ($function)
+        {
+            if ($param)
+            {
+                GtkMenuItem::connect_object('activate', $function, $param);
+            }
+            else
+            {
+                GtkMenuItem::connect_object('activate', $function);
+            }
+        }
+		GtkMenuItem::lock_accelerators();
+	}
+}
+
+/***********************************************************/
+/* MenuItem class for CheckItems
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class MyCheckMenuItem extends GtkCheckMenuItem
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+	function MyCheckMenuItem($img, $label, $underscore, $accelgroup, $function)
+	{
+		GtkCheckMenuItem::GtkCheckMenuItem($label);
+        $child = $this->child;
+        GtkMenuItem::remove($child);
+        $pixmap = new GtkPixmap($img[0], $img[1]);
+
+        $hbox = new GtkHBox;
+        $hbox->pack_start($pixmap, false, false, 5);
+        $hbox->pack_start($child, true, true);
+        GtkMenuItem::add($hbox);
+
+		if (strlen($label)!=(strlen($underscore)-1))
+			$parse = new GtkLabel;
+		else
+			$parse = $child;
+
+		$Subitem_key = $parse->parse_uline($underscore);
+
+
+		GtkMenuItem::add_accelerator("activate", $accelgroup, $Subitem_key, GDK_MOD1_MASK, ($underscore)? 1:0);
+		GtkMenuItem::connect_object('activate', $function);
+		GtkMenuItem::lock_accelerators();
+	}
+}
+
+/***********************************************************/
+/* MenuItem class for ALT Key actions
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class MyAltMenuItem extends GtkMenuItem
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+	function MyAltMenuItem($label, $underscore, $accelgroup)
+	{
+		GtkMenuItem::GtkMenuItem($label);
+
+		if (strlen($label)!=(strlen($underscore)-1))
+			$label = new GtkLabel;
+		else
+			$label = $this->child;
+
+		$Subitem_key = $label->parse_uline($underscore);
+		GtkMenuItem::add_accelerator("activate_item", $accelgroup, $Subitem_key, GDK_MOD1_MASK, 0);
+	}
+}
+
+/***********************************************************/
+/* MenuItem class for Simple function actions
+/* by Pablo Dall'Oglio 2001-2006
+/***********************************************************/
+class MyFunctionMenuItem extends GtkMenuItem
+{
+    /***********************************************************/
+    /* Constructor Method
+    /***********************************************************/
+	function MyFunctionMenuItem($img, $label, $key, $accelgroup, $function, $param = null)
+	{
+		GtkMenuItem::GtkMenuItem($label);
+        $child = $this->child;
+        GtkMenuItem::remove($child);
+        $pixmap = new GtkPixmap($img[0], $img[1]);
+
+        $hbox = new GtkHBox;
+        $hbox->pack_start($pixmap, false, false, 5);
+        $hbox->pack_start($child, true, true);
+        if (is_integer($key))
+        {
+            GtkMenuItem::add_accelerator("activate", $accelgroup, $key, 0, 1);
+        }
+        else
+        {
+            $hbox->pack_start(new GtkLabel($key), false, false);
+        }
+        GtkMenuItem::add($hbox);
+        if ($function)
+        {
+            if ($param)
+            {
+                GtkMenuItem::connect_object('activate', $function, $param);
+            }
+            else
+            {
+                GtkMenuItem::connect_object('activate', $function);
+            }
+        }
+	}
+}
+?>

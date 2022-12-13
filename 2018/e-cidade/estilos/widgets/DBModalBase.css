@@ -1,0 +1,72 @@
+@import url('skins/estilos.php?file=widgets/DBModal.css');
+
+.db-modal-container {
+  max-width: 50%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.db-modal-header .close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.db-modal-header .top{
+  height: 100px;
+}
+
+.db-modal-header .top * {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.db-modal-header .top h1.title{
+  line-height: 100px;
+  position: absolute;
+  left: 15px;
+  font-size: 26px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.db-modal-content {
+  padding: 15px;
+  box-sizing: padding-box;
+}
+
+.db-modal-content img{
+  margin: 0 auto;
+  display: block;
+}
+
+.db-modal-footer {
+  margin: 10px 5px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/** RESPONSIVE **/
+@media only screen and (max-width: 1440px) {
+  .db-modal-container {
+    max-width: 55%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .db-modal-container {
+    max-width: 65%;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .db-modal-container {
+    max-width: 75%;
+  }
+}

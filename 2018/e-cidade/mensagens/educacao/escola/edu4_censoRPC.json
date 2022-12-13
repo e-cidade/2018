@@ -1,0 +1,9 @@
+{
+   "erro_buscar_calendario" : "Não foi possível buscar os dados do calendário."
+  ,"sem_calendario"    : "Não foi encontrado nenhum calendário para escola no ano de [iAno]."
+  ,"ano_nao_informado" : "Não foi informado o ano."
+  ,"arquivo_nao_encontrado": "Não foi possível encontrar o arquivo."
+  ,"situacao_importada" : "Arquivo \"Situação do Aluno\" importado com sucesso."
+  ,"situacao_importada_parcialmente" : "Foi encontrado inconsistências ao tentar importar o arquivo \"Situação do Aluno\"."
+
+}

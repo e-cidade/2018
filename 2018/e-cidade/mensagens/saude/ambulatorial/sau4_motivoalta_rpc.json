@@ -1,0 +1,8 @@
+{
+  "erro_buscar_motivos_alta"   : "Erro ao buscar os motivos da alta:\n[sErro]",
+  "motivo_alta_nao_informado"  : "Motivo da alta não informado.",
+  "prontuario_nao_informado"   : "Prontuário não informado.",
+  "erro_finalizar_atendimento" : "Erro ao finalizar o atendimento:\n[sErro]",
+  "atendimento_finalizado"     : "Atendimento finalizado com sucesso.",
+  "prontuario_finalizado"      : "Prontuário do paciente [sNome] já finalizado."
+}

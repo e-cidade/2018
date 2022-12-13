@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4001' name='recursoshumanos.tipoassedb_depart' description="Tabela de vínculo entre departamento e tipo de assentamento." prefix="rh184" label="Vínculo entre departamento e tipo de assentamento" type="0">
+  <fields>
+    <field codigo="22213" 
+           campo_api='' 
+           name="rh184_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial da tabela." 
+           inivalue="0" 
+           label="Código" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='recursoshumanos.tipoassedb_depart_rh184_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22214" 
+           campo_api='' 
+           name="rh184_db_depart" 
+           conteudo="int4" 
+           description="Código do departamento" 
+           inivalue="0" 
+           label="Departamento" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Departamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22215" 
+           campo_api='' 
+           name="rh184_tipoasse" 
+           conteudo="int4" 
+           description="Código do Tipo de assentamento." 
+           inivalue="0" 
+           label="Tipo de Assentamento" 
+           size="19" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Assentamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="rh184_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_depart">
+      <fieldfk name="rh184_db_depart" reference="coddepto" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="tipoasse">
+      <fieldfk name="rh184_tipoasse" reference="h12_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

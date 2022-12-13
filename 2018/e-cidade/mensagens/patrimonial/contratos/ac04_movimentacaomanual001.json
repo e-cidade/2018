@@ -1,0 +1,10 @@
+{
+  "quantidade_obrigatoria"            : "Campo Quantidade é de preenchimento obrigatório.",
+  "quantidade_obrigatoria_menor_zero" : "Campo Quantidade deve ser maior que zero.",
+  "valor_obrigatorio"                 : "Campo Valor é de preenchimento obrigatório.",
+  "valor_obrigatorio_menor_zero"      : "Campo Valor deve ser maior que zero.",
+  "data_inicial_obrigatorio"          : "Campo Data Inicial é de preenchimento obrigatório.",
+  "data_final_obrigatorio"            : "Campo Data Final é de preenchimento obrigatório.",
+  "data_final_menor_data_inicial"     : "A Data Final deve ser maior ou igual a Data Inicial.",
+  "confirma_exclusao"                 : "Deseja excluir a execução?"
+}

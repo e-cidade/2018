@@ -1,0 +1,23 @@
+{
+  "erro_excluir_registro_lote_fechado"    :   "Não é possível excluir registros de lotes que não estão abertos.",
+  "erro_alterar_registro_lote_fechado"    :   "Não é possível alterar registros de lotes que não estão abertos.",
+  "erro_alterar_rubrica"                  :   "Não foi possível alterar a(s) rubrica(s):",
+  "erro_incluir_registro_lote_fechado"    :   "Não é possível incluir registros em lotes que não estão abertos.",
+  "sucesso_salvar_registro_lote"          :   "Registro do ponto incluído no lote com sucesso.",
+  "sucesso_excluir_registro_lote"         :   "Registro do ponto excluído com sucesso.",
+  "sucesso_alterar_registro_lote"         :   "Registro(s) do ponto alterado(s) com sucesso.",
+  "erro_fechar_lote"                      :   "Não foi possível fechar o lote.",
+  "erro_excluir_lote"                     :   "Não foi possível excluir o lote.",
+  "erro_reabrir_lote"                     :   "Não foi possível reabrir o lote.",
+  "erro_confirmar_lote"                   :   "Não foi possível confirmar o lote.",
+  "erro_cancelar_confirmacao_lote"        :   "Não foi possível cancelar a confirmação do lote.",
+  "sucesso_fechar_lote"                   :   "Lote fechado com sucesso.",
+  "sucesso_excluir_lote"                  :   "Lote excluído com sucesso.",
+  "sucesso_reabrir_lote"                  :   "O lote [sDescricao] foi reaberto.",
+  "sucesso_confirmar_lote"                :   "Lote confirmado com sucesso.",
+  "sucesso_cancelar_confirmacao_lote"     :   "Cancelamento da confirmação do lote efetuada com sucesso.",
+  "registro_ponto_duplicado"              :   "Servidor já possuí esta rubrica cadastrada.",
+  "erro_fechar_lote_vazio"                :   "Não é possível fechar um lote vazio.",
+  "rubrica_informar_valor"                :   "Valor da rubrica ([codRubrica]) para o servidor ([codServidor]) não informado.",
+  "rubrica_informar_quantidade"           :   "Quantidade da rubrica ([codRubrica]) para o servidor ([codServidor]) não informada."
+}

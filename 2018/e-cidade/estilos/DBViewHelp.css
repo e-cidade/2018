@@ -1,0 +1,116 @@
+.db-help {
+  margin-top: 10px;
+  min-height: 100px;
+  font-size: 14px;
+}
+
+.db-help-resume {
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding-right: 10px;
+}
+
+.db-help-group {
+  background-color: #ededed;
+  padding: 5px 0px;
+  /*border-bottom: 1px solid #ccc;*/
+  border-top: none;
+  width: -moz-calc( 100% + 30px );
+  width: calc( 100% + 30px );
+  margin-left: -15px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.db-help-group .db-help-group {
+  border: none !important;
+  width: auto;
+  background-color: transparent;
+  margin-left: 0px;
+}
+
+.db-help-group::first-child {
+  border-top: 1px solid #ccc !important;
+}
+
+.db-help-group.active {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+.db-help-group-empty {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.db-help-group-icon {
+  float: left;
+  height: 25px;
+  width: 25px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAADBElEQVRIDe2Uy2sUQRDGv+7pntlNsokgImoiQcHk4ElUQsDX+gDB6EGJB4OoJwPixZv/gBfvogRy0CBoQHxghGhUfC1iDiJIkCAaJbnoISS6mVe3VM/sMDubh948ZGCYftZvquqrApaf/y0CbMkf2niwCOkcBxdFgK0HOF2ZADAChLfwcfDJUjYWhrQeaIdTd4ULezeYALgAmAUwHr1kWSuoMHgG1+vFp5tjC8Hmh7R27UJO3ufCKcCyAS7jNwZF3gBQgA6hQm8GvteFD/3P5wPVQsiDXGOJy1wTLAcGQl9OsJQ3sScEgQqgAncautyB0Ws1HokMmSHX0J8ARB0gckhgXIJVQAYSQqsAUD64ZTcp3+4H0EmBTNu10hNsOrKPy/xFiDxgAPFX1qHYtg7jg+ewtt7Bg/c/Iw+5Y6CMR7lijDXr1VteYrL0OW232hNLdkfhsSMPRB6sArPy0T0mAVmIxiZUPqAkGImDcqV0N4DHC0NIppRkkwsnARnPKhDal/XVkDAG0KoOimkAjasTv7nH5U7BNn9qN6DY3oLhq6eyd5J5391xnL0+BgQuEJaB4DeUN+vpkQtOcghAdbiYdMGFTSpipCYKzWIPhcjKxSeUUZlRYeZOBsImwaw2U3TcwtMvvyC6Bkx49mxYieHLO9B3bwK9t6ciMyoE4xKacsODqJaY+J5hJFUVrTPrrUmeqWpSDIurnEQYCzHZs4BYVVEnoPMWNOevFocEwUD2wD/PfdzI3qlOPAlh+/nX3F7RwewCIBsjJZGaSM4Uf9NiYq8UVbsPHc4BQRnKnS3phz2dAKsqRtNSU2SNcO60CrxpxAaoZZAhYyz+IvRgXgLEayr0p7Wnz2QBZLu64mllavQH1mx7o7l9lFvCAa90XcoPHdCm+0Y9i+AelO/OaF0+jEcn36V+OBnWQmhrsvQVq7bc0cLeyhlvNtZrAOQhAcol7QaHMNQzmljNDLI5yWyDYeel/bDrjzEu94I7LeDCA7e+ac1eQKlBDJ0Yni9EWUPL87+OwB/TGP459Ar3FgAAAABJRU5ErkJggg==');
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.db-help-group.active > .db-help-group-icon {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAACzklEQVRIDe2UO2sVQRTH/2dmdu9NRFJYWMRrJUnsLaKFytV0XgsjsVAELYR8Aj+CjdaCKZJCRURQSCqvig/USzCICKKdj6iNTQgSc3dnjpzZR3b3JkasLLIwzNmZnfOb/3kssPX8bxGgTS803GqCglOkVBNQu0FKjnwm4JFj3Ma7Ww8387ExZKg1AmWuKh0cBhlAGYA0PCQBAezA1j5mYBJvZ95vBFsfsqd1iIJwlnS4HToEVJCOFASvBoAD2IJttMxsW3g99WQ9UC9kqDVCutYhUx+ArsFDZFYCK6gRb5xA4GKwXV1itzKKhWs9ikyFTKTD6Rxg+gFTRw5TASgDeYgFuxhwEciGA4jDaQYOCL7ot6xk7/hRpcM2vHMB9KWjDsrVBAClx5g9AK4rSoD4F1z8cwydyw+KkJISpfREEp4wUWD6QB4osCxkAtGJD7YpJABJcUBBgSccsDGEoZskSfa5qOWgRFEaNtmvQmwC8BFk2yyqELukBMo0kkoKfcJ9iESBqePrzAns3NGfn79y8wMu3vsIuDWAVBu5uFFKSA+EzCqUCaWKyFeTVJQAawDK6RM1pOvgTJWUsxSBivKLZEZZCdE3kB724VC60B8BBiefeqeJ0jQnUm1SSpIbJQDpJ7OYOc/mrKv8O0HPS/KSrpbuprTLxU67XeDelkuka9l78s3zzHk2lyAOuJFt/OvsHF+vni1B8GbqPsN2fC9JCKQP/Cy2DIl7Zkv5pmtr33TQvtD+M8SH155jGy15By5KkunnCJzOsF344dbW5Ixldx6ganEhzWCB/X3+Bxr7X4LMOClTg0pzJCn2BSbqsn+WXKILjlaXHa8cx9zZVwVPudkLka3FF58wOHoXSu8jqF3eew9A/lld+ZV0HMfHMHtmIfdaMSrFX9kV7wcvjalw20mY8Aio1oAyXZD+AtAzB3sHc6fb64Wox9PWwt9G4De3dAeDsilYKwAAAABJRU5ErkJggg==');
+}
+
+.db-help-group-title {
+  min-height: 25px;
+  line-height: 25px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-left: 60px;
+  margin-right: 20px;
+}
+
+.db-help-group.active > .db-help-group-title {
+  border-bottom: none;
+  font-weight: bold;
+}
+
+.db-help-group-resume {
+  margin: 5px 0px;
+  padding: 10px 0px 15px 30px;
+  padding-right: 10px;
+}
+
+.db-help-group-content{
+  padding: 0px 0px 0px 30px;
+  text-align: justify;
+  display: none;
+  line-height: 16px;
+}
+
+.db-help-group > .db-help-fields {
+  display: none;
+}
+
+/*.db-help-group-content .db-help-group-content{
+  padding-right: 0px;
+}*/
+
+.db-help-group.active > .db-help-group-content,
+.db-help-group.active > .db-help-fields {
+  display: block;
+}
+
+.db-help-fields {
+  font-size: 14px;
+  margin-left: 30px;
+}
+
+.db-help-fields > li {
+  margin: 10px 0px;
+  padding-right: 10px;
+}
+
+.db-help-fields-title {
+  font-weight: bold;
+  margin-right: 5px;
+}
+

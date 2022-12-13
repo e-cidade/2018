@@ -1,0 +1,5 @@
+{
+  "campo_obrigatorio"   : "O campo [sCampo] é de preenchimento obrigatório.",
+  "processando"         : "Processando, aguarde...",
+  "somente_arquivo_cef" : "Esta rotina só pode ser utilizada para arquivos bancários da Caixa Econômica Federal."
+}

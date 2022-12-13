@@ -1,0 +1,14 @@
+{
+   "busca_dependencia"         : "Aguarde, buscando as dependências..."
+  ,"busca_turmas"              : "Aguarde, buscando as turmas..."
+  ,"busca_censo_etapa"         : "Aguarde, buscando etapas do censo..."
+  ,"censo_etapa_inconsistente" : "Aviso, esta base de dados está inconsistente.\nNão foi encontrado etapas do censo configurada."
+  ,"selecione_calendario"      : "Selecione um calendário."
+  ,"selecione_turno"           : "Selecione o Turno de referência."
+  ,"selecione_dependencia"     : "Selecione uma dependência."
+  ,"selecione_etapa_censo"     : "Selecione a etada do censo."
+  ,"selecione_turma"           : "Selecione ao menos duas turmas."
+  ,"busca_turma_censo"         : "Aguarde, buscando dados da Turma Censo selecionada...."
+  ,"informe_nome"              : "Informe um nome para turma censo."
+  ,"aguarde_processando"       : "Aguarde, processando."
+}

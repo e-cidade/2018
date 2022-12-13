@@ -1,0 +1,7 @@
+{
+  "final_levantamento_invalido"              : "Período Final do levantamento não pode ser inferior ao de início",
+  "contato_obrigatorio"                      : "Campo Contato é de preenchimento obrigatório",
+  "data_levantamento_obrigatorio"            : "Campo Data do Levantamento é de preenchimento obrigatório",
+  "periodo_inicial_levantamento_obrigatorio" : "Campo Período de Início do Levantamento é de preenchimento obrigatório",
+  "periodo_final_levantamento_obrigatorio"   : "Campo Período Final do Levantamento é de preenchimento obrigatório"
+}

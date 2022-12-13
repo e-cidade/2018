@@ -1,0 +1,27 @@
+<?xml version='1.0' ?>
+<processamento>
+
+  <transacao>true</transacao>
+
+  <parametros>
+     <parametro nome="cpf"               obrigatorio="false" tipo="cpf"     />
+     <parametro nome="cnpj"              obrigatorio="false" tipo="cnpj"    />
+     <parametro nome="inscricao_tomador" obrigatorio="false" tipo="integer" />
+     <parametro nome="competencia_mes"   obrigatorio="true"  tipo="integer" />
+     <parametro nome="competencia_ano"   obrigatorio="true"  tipo="integer" />
+  </parametros>
+
+  <configuracoes>
+    <classe nome="PlanilhaRetencaoWebService"  parametros="" caminho="model/issqn/PlanilhaRetencaoWebService.model.php">
+      <metodos>
+        <metodo nome="setCpf"               parametros="$cpf"               />
+        <metodo nome="setCnpj"              parametros="$cnpj"              />
+        <metodo nome="setInscricaoTomador"  parametros="$inscricao_tomador" />
+        <metodo nome="setCompetencia"       parametros="$competencia_mes,$competencia_ano" />
+        <metodo nome="validaDados" />
+        <metodo nome="salvar" />
+      </metodos>
+    </classe>
+  </configuracoes>
+
+</processamento>

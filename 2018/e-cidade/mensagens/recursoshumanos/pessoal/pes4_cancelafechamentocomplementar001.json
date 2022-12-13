@@ -1,0 +1,8 @@
+{ 
+  "fechamento_cancelado_com_sucesso": "Fechamento da folha complementar cancelado com sucesso.",
+  "folha_complementar_aberta"       : "Não existe folha complementar fechada.",
+  "folha_salario_fechada"           : "Não é possível cancelar o fechamento da complementar, pois a folha salário encontra-se fechada.",
+  "folha_complementar_empenhada"    : "Não é possível cancelar o fechamento da complementar, pois consta um empenho na mesma.",
+  "rotina_desativada"               : "Esta rotina não está ativa. Para ativar, contate um administrador."
+
+}

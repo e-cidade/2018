@@ -1,0 +1,9 @@
+{
+   "departamento_usuario_invalido" : "Usuário ou departamento não consta como laboratório!"
+  ,"aguarde_busca_exames"          : "Aguarde, buscando exames da requisição selecionada..."
+  ,"aguarde_salvando_conferencia"  : "Aguarde, salvando conferência..."
+  ,"requisicao_sem_exames"         : "Não existem exames há conferir para esta requisição."
+  ,"selecione_exame"               : "Selecione ao menos um exame"
+  ,"escreva_uma_observacao"        : "Quando informado \"Resultado\" como \"NÃO\", é obrigado a preencher o campo considerações."
+  ,"erro_buscar_exames"            : "Erro ao buscar o(s) exame(s) da requisição"
+}

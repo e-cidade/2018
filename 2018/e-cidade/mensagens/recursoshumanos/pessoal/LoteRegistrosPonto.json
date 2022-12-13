@@ -1,0 +1,5 @@
+{
+  "lote_nao_confirmado"            : "Não é possível executar o cancelamento, pois o lote não está confirmado.",
+  "erro_confirmar_lote_confirmado" : "Não é possível confirmar um lote que já está confirmado.",
+  "erro_confirmar_lote_vazio"      : "Não é possível confirmar um lote vazio."
+}

@@ -1,0 +1,6 @@
+{
+  "base_desconfigurada_sem_tipo" : "Esta base de dados não esta atualizada.\nNão existem tipos de aprovação pelo conselho cadastrados.",
+  "erro_buscar_aprovacao"        : "Erro ao buscar a aprovação pelo conselho:\n[sErro]",
+  "erro_salvar_aprovacao"        : "Erro ao salvar a aprovação pelo conselho:\n[sErro]",
+  "erro_buscar_tipo_aprovacao"   : "Erro ao buscar o tipo de aprovaçao:\n[sErro]"
+}

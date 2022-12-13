@@ -1,0 +1,302 @@
+/**
+ * DBFormularios
+ * Elemento principal do Formulário deve ter esta class
+ */
+.container:not([rel="ignore-css"]) {
+  display: table;
+  margin: 25px auto 0 auto;
+  text-align: center;
+}
+
+.subcontainer:not([rel="ignore-css"]) {
+  display: table;
+  margin: 0px auto 0 auto;
+  text-align: center;
+}
+
+.container fieldset:not([rel="ignore-css"]), .subcontainer fieldset:not([rel="ignore-css"]) {
+  margin-bottom: 5px;
+}
+
+/*
+ * Deve ser aplicado em todas as tabelas do formulário
+ * Os elementos de uma tabela com a class "table-container" <tr> e <td>
+ * são tratados e alinhados sem haver necessidade de aplicação de class adicionais.
+ * raras algumas excessões.
+ */
+table.form-container:not([rel="ignore-css"]){
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.form-container:not([rel="ignore-css"]) tr td{
+  padding-top: 4px;
+  white-space: nowrap;
+}
+
+/**
+ * Celulas pares
+ */
+table.form-container:not([rel="ignore-css"]) > tbody  > tr > td:nth-child(even) {
+/** Tabela principal */
+/*table.form-container > tr > td > fieldset  table > tr > td:nth-child(even):not([rel="ignore-css"]) { /* Tabela 1 nivel abaixo tabela principal */
+  text-align: left;
+}
+
+/**
+ * Celulas impares
+ */
+table.form-container:not([rel="ignore-css"]) > tbody > tr > td:nth-child(odd) {
+
+  font-weight: bold;
+  text-align: right;
+}
+/**
+ * Primeira Célula
+ */
+table.form-container:not([rel="ignore-css"]) > tbody > tr > td:first-child{
+  font-weight: bold;
+  text-align: left;
+}
+
+table.subtable:not([rel="ignore-css"]) {
+  margin-right: 0;
+  width: 100%;
+}
+
+table.subtable:not([rel="ignore-css"]) > tbody  > tr > td {
+  width: 104;
+}
+
+table.form-container:not([rel="ignore-css"]) > tbody   tr  td[colspan] {
+  padding: 0px;
+  margin: 0px;
+}
+
+table.form-container:not([rel="ignore-css"]) > tbody  tr  td[colspan] table {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 0px;
+}
+
+/*
+ * Aplicada em uma div
+ * Utilizada para alinhar os botões ao centro
+ */
+div.center {
+  padding: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/*
+ * FieldSet Separador de Informações
+ */
+fieldset.separator {
+  margin: 0px auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 0px;
+  border-top: 2px groove #FFF;
+  padding-bottom: 0px;
+}
+
+
+
+/**
+ * Aplica Negrito por padrão em todos legend.
+ */
+legend:not([rel="ignore-css"]) {
+  font-weight: bold;
+  text-align: left;
+}
+
+/*
+ * Aplica altura em todos botões do formulário.
+ */
+input[type='text']:not([rel="ignore-css"]).readonly,
+textarea:not([rel="ignore-css"]).readonly {
+  background-color: #DEB887 !important;
+  color:-moz-fieldtext;
+}
+
+input[type='text']:not([rel="ignore-css"]):disabled:not([class="input-abas"]),
+input[type='text']:not([rel="ignore-css"]):disabled:([class="nomes"]),
+textarea:not([rel="ignore-css"]):disabled {
+    background-color: #DEB887 !important;
+    color:-moz-fieldtext;
+}
+
+/**
+ * Elementos Formulário
+ */
+
+/**
+ * Cor padrao de Borda
+ */
+.form-container input:not([rel='ignore-css']),
+.form-container select:not([rel='ignore-css']) {
+  border: 1px solid #999;
+}
+
+table.form-container select:not([rel='ignore-css']) {
+  width: 100%;
+}
+
+select:not([rel='ignore-css']):not([multiple]) {
+  min-height: 18px;
+  font-size: 12px;
+}
+
+select:not([rel='ignore-css']) option {
+  min-height: 18px;
+  font-size: 12px;
+}
+
+/**
+ * Tamanhos Padrao para os Campos do Formulario
+ * O tamanho foi adaptado para que eles combinados em mesma linha
+ * Acabem somando o mesmo tamanho.
+ */
+
+ /**
+  * 40px * 1 + 3px * 0
+  */
+.field-size1 {
+  width: 40px;
+}
+
+/**
+ * 40px * 2 + 3px * 1
+ */
+.field-size2 {
+  width: 83px;
+}
+
+/**
+ * 40px * 3 + 3px * 2
+ */
+.field-size3 {
+  width: 126px;
+}
+
+/**
+ * 40px * 4 + 3px * 3
+ */
+.field-size4 {
+  width: 169px;
+}
+
+/**
+ * 40px * 5 + 3px * 4
+ */
+.field-size5 {
+  width: 212px;
+}
+
+/**
+ * 40px * 6 + 3px * 5
+ */
+.field-size6 {
+  width: 255px;
+}
+/**
+ * 40px * 7 + 3px * 6
+ */
+.field-size7 {
+  width: 298px;
+}
+/**
+ * 40px * 8 + 3px * 7
+ */
+.field-size8 {
+  width: 341px;
+}
+
+/**
+ * 40px * 9 + 3px * 8
+ */
+.field-size9 {
+  width: 384px;
+}
+
+/**
+ * 40px * 10 + 3px * 9
+ */
+.field-size10 {
+  width: 427px;
+}
+
+/**
+ * 40px * 11 + 3px * 10
+ */
+.field-size11 {
+  width: 470px;
+}
+
+.field-size-max{
+  width: 100%;
+}
+
+
+/**
+ * Tratamento de Erros, Avisos e Informações
+ */
+input.form-error {
+  background-color: #99A9AE;
+}
+
+.readonly {
+  background-color:rgb(222, 184, 135);
+  color:black;
+}
+
+.form-error {
+  background-color: #f78481;
+}
+
+.form-sucess {
+  background-color: #a7d09d;
+}
+
+.form-warning { }
+.form-info { }
+
+.bold {
+  font-weight: bold;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+table.form-container label{
+  font-weight: bold;
+}
+
+table.form-container textarea:not([rel='ignore-css']),
+fieldset.separator textarea:not([rel='ignore-css']){
+  width: 100%;
+  min-height: 100px;
+}
+
+.background-yellow {
+  background-color: #E8EE6F;
+}
+
+.caixaalta {
+  text-transform: capitalize;
+}
+
+input.opcional,
+textarea.opcional {
+  background-color: #e6e4f1;
+}

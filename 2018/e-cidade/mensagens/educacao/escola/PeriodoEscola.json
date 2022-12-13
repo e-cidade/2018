@@ -1,0 +1,11 @@
+{
+   "erro_buscar_periodo"                   : "Erro ao buscar o período da escola:\n[sErro]"
+  ,"sem_transacao"                         : "Sem transação com o banco de dados ativa."
+  ,"erro_salvar"                           : "Erro ao salvar os dados de periodoescola:\n[sErro]"
+  ,"erro_remover"                          : "Erro ao remover o período da escola: \n[sErro]"
+  ,"periodoescola_possui_vinculos"         : "Não foi possível excluir o período da escola pois o mesmo já possui vínculos. \n[sErro]"
+  ,"periodoescola_possui_com_professor"    : "Período [sPeriodo] não pode ser excluído pois possui vínculo(s) com professore(s)"
+  ,"periodoescola_vinculado_turmas"        : "Período [sPeriodo] não pode ser excluído pois tem vínculo(s) com turma(s)."
+  ,"periodoescola_possui_historico_turmas" : "Período [sPeriodo] não pode ser excluído pois consta no histórico de turma(s)."
+  ,"periodoescola_vinculado_turmasac"      : "Período [sPeriodo] não pode ser excluído pois esta vinculado a turmas de Atividade complementar ou AEE."
+}

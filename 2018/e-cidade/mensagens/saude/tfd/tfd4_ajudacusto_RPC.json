@@ -1,0 +1,5 @@
+{
+  "procedimento_nao_encontrado" : "Não foi possível encontrar procedimento informado.",
+  "pedido_nao_informado"        : "Pedido não informado.",
+  "erro_buscar_ajudas_custo"    : "Erro ao buscar as ajudas de custo:\n[sErro]"
+}

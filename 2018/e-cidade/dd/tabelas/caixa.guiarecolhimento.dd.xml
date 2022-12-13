@@ -1,0 +1,350 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4033' name='caixa.guiarecolhimento' description="Guia de Recolhimento Municipal" prefix="K174" label="Guia de Recolhimento Municipal" type="0">
+  <fields>
+    <field codigo="22371" 
+           campo_api='' 
+           name="k174_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='caixa.guiarecolhimento_k174_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22372" 
+           campo_api='' 
+           name="k174_unidadegestora" 
+           conteudo="int4" 
+           description="Unidade Gestora" 
+           inivalue="" 
+           label="Unidade Gestora" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Unidade Gestora" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22373" 
+           campo_api='' 
+           name="k174_tiporecolhimento" 
+           conteudo="int4" 
+           description="Tipo de Recolhimento" 
+           inivalue="" 
+           label="Tipo de Recolhimento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Recolhimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22374" 
+           campo_api='' 
+           name="k174_cgm" 
+           conteudo="int4" 
+           description="Cgm" 
+           inivalue="" 
+           label="Cgm" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Cgm" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22375" 
+           campo_api='' 
+           name="k174_numpre" 
+           conteudo="int4" 
+           description="Código de Arrecadação" 
+           inivalue="" 
+           label="Código de Arrecadação" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código de Arrecadação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22376" 
+           campo_api='' 
+           name="k174_numeroreferencia" 
+           conteudo="varchar(200)" 
+           description="Número de Referencia" 
+           inivalue="" 
+           label="Número de Referência" 
+           size="200" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Número de Referência" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22377" 
+           campo_api='' 
+           name="k174_competencia" 
+           conteudo="varchar(9)" 
+           description="Competência" 
+           inivalue="" 
+           label="Competência" 
+           size="9" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Competência" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22378" 
+           campo_api='' 
+           name="k174_datavencimento" 
+           conteudo="date" 
+           description="Data de Vencimento" 
+           inivalue="" 
+           label="Data de Vencimento" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data de Vencimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22379" 
+           campo_api='' 
+           name="k174_valor" 
+           conteudo="float4" 
+           description="Valor Principal" 
+           inivalue="" 
+           label="Valor Principal" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor Principal" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22380" 
+           campo_api='' 
+           name="k174_desconto" 
+           conteudo="float4" 
+           description="Desconto/Abatimento" 
+           inivalue="" 
+           label="Desconto/Abatimento" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Desconto/Abatimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22381" 
+           campo_api='' 
+           name="k174_multa" 
+           conteudo="float4" 
+           description="Mora/Multa" 
+           inivalue="" 
+           label="Mora/Multa" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Mora/Multa" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22382" 
+           campo_api='' 
+           name="k174_juros" 
+           conteudo="float4" 
+           description="Juros/Encargos" 
+           inivalue="" 
+           label="Juros/Encargos" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Juros/Encargos" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22383" 
+           campo_api='' 
+           name="k174_outrosacrescimos" 
+           conteudo="float4" 
+           description="Outros Acréscimos" 
+           inivalue="" 
+           label="Outros Acréscimos" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Outros Acréscimos" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22384" 
+           campo_api='' 
+           name="k174_valortotal" 
+           conteudo="float4" 
+           description="Valor Total" 
+           inivalue="" 
+           label="Valor Total" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor Total" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22407" 
+           campo_api='' 
+           name="k174_processo" 
+           conteudo="int4" 
+           description="Processo gerado para a Guia de Recolhimento" 
+           inivalue="null" 
+           label="Processo" 
+           size="1" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Processo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22408" 
+           campo_api='' 
+           name="k174_outrasdeducoes" 
+           conteudo="float8" 
+           description="Outras Deduções" 
+           inivalue="0" 
+           label="Outras Deduções" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Outras Deduções" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field>
+    <field codigo="1009288"
+           campo_api=''
+           name="k174_atributodinamicovalor"
+           conteudo="int4"
+           description="Atributo Dinamico"
+           inivalue="null"
+           label="Atributo Dinamico"
+           size="10"
+           null="t"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="4"
+           tipoobj="text"
+           labelrel="Atributo Dinamico"
+           reference=""
+           ispk="f"
+           hassequence="t">
+
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk name="k174_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="cgm">
+      <fieldfk name="k174_cgm" reference="z01_numcgm" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="protprocesso">
+      <fieldfk name="k174_processo" reference="p58_codproc" inner='f'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="unidadegestora">
+      <fieldfk name="k174_unidadegestora" reference="k171_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="tiporecolhimento">
+      <fieldfk name="k174_tiporecolhimento" reference="k172_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="db_cadattdinamicovalorgrupo">
+      <fieldfk name="k174_atributodinamicovalor" reference="db120_sequencial" inner='f'></fieldfk>
+    </foreignkey>
+  </foreignkeys>
+</table>

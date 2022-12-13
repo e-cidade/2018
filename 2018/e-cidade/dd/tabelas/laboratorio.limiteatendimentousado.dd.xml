@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010200' name='laboratorio.limiteatendimentousado' description="Armazena a quantidade de atendimentos realizados em um dia." prefix="la62" label="Limite de Atendimento Usado" type="0">
+  <fields>
+    <field codigo="1009296" 
+           campo_api='' 
+           name="la62_sequencial" 
+           conteudo="int4" 
+           description="Código sequencial." 
+           inivalue="0" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='laboratorio.limiteatendimentousado_la62_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="1009298" 
+           campo_api='' 
+           name="la62_data" 
+           conteudo="date" 
+           description="Data na qual os atendimentos foram marcados." 
+           inivalue="null" 
+           label="Data de Atendimento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data de Atendimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009297" 
+           campo_api='' 
+           name="la62_quantidade" 
+           conteudo="int4" 
+           description="Quantidade de atendimentos realizados." 
+           inivalue="0" 
+           label="Quantidade" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Quantidade" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="1009303" 
+           campo_api='' 
+           name="la62_limiteatendimento" 
+           conteudo="int4" 
+           description="Vínculo com a configuração do limite de atendimento." 
+           inivalue="0" 
+           label="Código do Limite de Atendimento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código do Limite de Atendimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="la62_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="limiteatendimento">
+      <fieldfk name="la62_limiteatendimento" reference="la45_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

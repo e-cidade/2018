@@ -1,0 +1,6 @@
+{
+  "incluindo_paralisacao" : "Processando paralisação.",
+  "contrato_invalido"     : "Selecione um acordo.",
+  "observacao_branco"     : "Preencha um motivo para [acao] a paralisação do contrato.",
+  "data_invalida"         : "Preencha uma data de paralisação do contrato."
+}

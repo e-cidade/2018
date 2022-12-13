@@ -1,0 +1,14 @@
+{
+   "erro_incluir"                : "Ocorreu um erro ao incluir o parâmetro da DIRF.",
+   "erro_alterar"                : "Ocorreu um erro ao alterar o parâmetro da DIRF.",
+   "incluir_sucesso"             : "Parâmetro incluído com sucesso.",
+   "sequencial_invalido"         : "Código do parâmetro não informado.",
+   "valor_minimo_invalido"       : "Campo Valor Mínimo inválido.",
+   "campo_obrigatorio"           : "Campo [sCampo] é de preenchimento obrigatório.",
+   "ano_base_duplicado"          : "Não é possivel salvar, já existe um registro com o Ano Base informado.",
+   "confirma_exclusao"           : "Confirmar exclusão do parâmetro?",
+   "parametro_nao_informado"     : "Nenhum parametro informado para exclusão.",
+   "erro_excluir"                : "Ocorreu um erro ao excluir o parâmetro da DIRF",
+   "exclusao_sucesso"            : "Parâmetro excluído com sucesso.",
+   "parametros_nao_configurados" : "Parâmetros da DIRF não configurados."
+}

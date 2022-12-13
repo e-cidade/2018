@@ -1,0 +1,8 @@
+{
+  "marque_certidao"                              : "É necessário que uma certidão esteja marcada.",
+  "configure_parametro"                          : "Configure o parametro para o tipo de debito de certidão do foro.",
+  "alteracao_nao_permitida"                      : "Aviso: \n Inicial Parcelada, Cancelada ou Quitada. \n Alteração não permitida.",
+  "processamento_concluido"                      : "Processamento concluido com sucesso!",
+  "ocorreu_erro_processamento"                   : "Ocorreu um erro durante o processamento : [sErro] ",
+  "configure_parametro_tipo_debito_para_inicial" : "Configure o parametro para configuração do tipo de débito para inicial, em no modulo divida ativa procedimentos->parametros da dívida."
+}

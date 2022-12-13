@@ -1,0 +1,19 @@
+{
+  "certidao_inexistente"                  : "Certidão inexistente.",
+  "cartorio_inexistente"                  : "Cartório inexistente.",
+  "emissao_sucesso"                       : "Emissão realizada com sucesso",
+  "cartorio_judicial"                     : "Para esse procedimento é necessário um Cartório Extrajudicial.",
+  "certidao_fechada"                      : "Certidão não está em aberto.",
+  "erro_incluir_certidcartorio"           : "Erro ao vincular a Certidão com o Cartório Extrajudicial.",
+  "erro_incluir_certidcartoriorecibopaga" : "Erro ao vincular a Certidão com o Recibo.",
+  "erro_incluir_certidmovimentacao"       : "Erro ao gerar movimentação para a Certidão.",
+  "erro_cartorio_diferente"               : "Há recibo(s) emitido(s) para está CDA usando um Cartório diferente.",
+  "recibo_valido"                         : "Há um recibo válido para esta Certidão.",
+  "sem_certidoes_validas"                 : "Não há certidões válidas para emissão.",
+  "emissao_sucesso"                       : "Recibo(s) emitido(s) com sucesso.",
+  "certidao_com_inicial"                  : "Há uma Inicial vinculada a esta Certidão.",
+  "pagamento_parcial"                     : "Esta Certidão possui Pagamento Parcial.",
+  "erro_zip"                              : "Não foi possivel gerar o arquivo de lote de cobrança.",
+  "erro_pdf_cda"                          : "Erro ao gerar PDF da CDA.",
+  "erro_data_vencimento_diferente"        : "Certidão possui recibo emitido com a data de vencimento: [data_vencimento]. A reemissão só pode ser feita para esta mesma data."
+}

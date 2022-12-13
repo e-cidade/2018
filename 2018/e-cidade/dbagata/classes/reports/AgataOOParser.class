@@ -1,0 +1,1093 @@
+<?php
+/* class AgataOOParser
+ * AGATA REPORT
+ */
+class AgataOOParser extends AgataMerge
+{
+    var $buffer;
+    var $prefix;
+    var $page_break;
+    var $break_style;
+    var $lineBreak;
+    var $dataBreakStyles;
+    var $detailData;
+    var $detailColumns;
+    
+    /**
+     * Método Construtor
+     */
+    function Generate($source, $target)
+    {
+        $this->fixedDetails     = $this->XmlArray['Report']['OpenOffice']['Config']['FixedDetails'];
+        $this->expandDetails    = $this->XmlArray['Report']['OpenOffice']['Config']['ExpandDetails'];
+        $this->printEmptyDetail = $this->XmlArray['Report']['OpenOffice']['Config']['printEmptyDetail'];
+        $this->sumByTotal       = $this->XmlArray['Report']['OpenOffice']['Config']['SumByTotal'];
+        $this->repeatHeader     = $this->XmlArray['Report']['OpenOffice']['Config']['RepeatHeader'];
+        $this->repeatFooter     = $this->XmlArray['Report']['OpenOffice']['Config']['RepeatFooter'];
+        $this->lineBreak        = '</text:p><text:p>'; // \n no details troca por isso
+
+        $this->dataBreakStyles = array();
+        define( 'PCLZIP_TEMPORARY_DIR', temp . '/');
+        require_once 'classes/pclzip/pclzip.lib.php';
+        include_once 'include/util.inc';
+        $this->buffer = array();
+
+        if (substr($source,-3) == 'sxw')
+        {
+            $this->break_style = '<style:style style:name="AgataPageBreak" style:family="paragraph" style:parent-style-name="Standard">' .
+                                 '<style:properties fo:break-before="page"/>' .
+                                 '</style:style>';
+            $this->page_break = '<text:p text:style-name="AgataPageBreak"/>';
+        }
+        else
+        {
+            $this->break_style = '<style:style style:name="AdiantiPageBreak" style:family="paragraph" style:parent-style-name="Standard">' .
+                                 '    <style:paragraph-properties fo:break-before="page"/>' .
+                                 '</style:style>';
+            $this->page_break = '<text:p text:style-name="AdiantiPageBreak"/>';
+        }
+        
+        $this->complement = array();
+        if (!file_exists($source))
+        {
+            new Dialog('Não encontrou o resource');
+            return;
+        }
+        
+        if (OS == 'WIN')
+        {
+            $this->prefix = temp . bar . substr(RemoveExtension($source), 3);
+        }
+        else
+        {
+            $this->prefix = temp . bar . substr(RemoveExtension($source), 1);
+        }
+        
+        $zip      = new PclZip($source);
+        
+        if (($list = $zip->listContent()) == 0)
+        {
+            adie("Error : ".$zip->errorInfo(true));
+        }
+        
+        recursive_remove_directory($this->prefix);
+        if ($zip->extract(PCLZIP_OPT_PATH, $this->prefix) == 0)
+        {
+            adie("Error : ".$zip->errorInfo(true));
+        }
+        
+        $content= file_get_contents($this->prefix . bar . 'content.xml');
+        if ($content==FALSE)
+        {
+            new Dialog('Problemas de permissão em '.$this->prefix);
+            return;
+        }
+        
+        # break xml tags
+        $array_content = preg_split ('/(<(?:[^<>]+(?:"[^"]*"|\'[^\']*\')?)+>)/', trim ($content), -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+        
+        $section = 'start';
+        if (!$array_content)
+        {
+            new Dialog('Problemas na leitura do arquivo');
+            return;
+        }
+            
+        foreach ($array_content as $line)
+        {
+            // captura os nomes de estilos usados para quebra nos detalhes
+            if (preg_match('/style\:style style\:name\="[A-z0-9]*" style\:family\="paragraph" style\:parent-style-name\="agatabreak">/', $line))
+            {
+                $pieces = preg_split('/(<style\:style style\:name\=")([A-z0-9]*)(" style\:family\="paragraph" style\:parent-style-name\="agatabreak">)/', $line, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+                $this->dataBreakStyles[] = "<text:p text:style-name=\"{$pieces[1]}\">";
+            }
+            
+            if (preg_match('/style\:style style\:name\="[A-z0-9]*" style\:family\="paragraph" style\:parent-style-name\="agatabreaksum">/', $line))
+            {
+                $pieces = preg_split('/(<style\:style style\:name\=")([A-z0-9]*)(" style\:family\="paragraph" style\:parent-style-name\="agatabreaksum">)/', $line, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+                $this->dataCountStyles[] = "<text:p text:style-name=\"{$pieces[1]}\">";
+            }
+            
+            // <text:section text:style-name="Sect1" text:name="header">
+            if (substr(trim($line), 0, 13) == '<text:section')
+            {
+                $pieces = explode('text:name="', $line);
+                $section = strtolower(substr($pieces[1], 0, -2));
+            }
+            else
+            {
+                if (substr($source,-3) == 'sxw')
+                {
+                    if (substr(trim($line), 0, 14) == '</office:body>')
+                    {
+                        $section = 'end';
+                    }
+                }
+                else
+                {
+                    if (substr(trim($line), 0, 14) == '</office:text>')
+                    {
+                        $section = 'end';
+                    }
+                }
+            }
+            
+            if ($line == '</office:automatic-styles>')
+            {
+                $line = $this->break_style . $line;
+            }
+            
+            $this->buffer[$section][] = $line;
+        }
+        
+        if ($this->buffer['details'])
+        {
+            $this->buffer['detail1'] = $this->buffer['details'];
+            unset($this->buffer['details']);
+        }
+        
+        $this->dataBreakStyles[] = "<text:p text:style-name=\"agatabreak\">";
+        $this->dataCountStyles[] = "<text:p text:style-name=\"agatabreaksum\">";
+        
+        foreach ($this->buffer as $SectionKey => $lines)
+        {
+            $count_stage = 0;
+            $break_stage = 0;
+            $breakFound = FALSE;
+            $countFound = FALSE;
+            foreach ($lines as $line)
+            {
+                if (substr($SectionKey,0,6) == 'detail')
+                {
+                    /**
+                     * a linha de soma da quebra é descoberta antes, pois
+                     * ela ocorre depois dos dados
+                     */
+                    if ((substr($line, 0, 16) == '<table:table-row'))
+                    {
+                        if ($count_stage == 0)
+                        {
+                            $count_stage  = 1;
+                            $countContent = '';
+                        }
+                    }
+                    
+                    if ($count_stage == 1)
+                    {
+                        if (in_array($line, $this->dataCountStyles))
+                        {
+                            $countFound = true;
+                        }
+                        $countContent .= $line;
+                    }
+                    
+                    if ((substr($line, 0, 18) == '</table:table-row>'))
+                    {
+                        if ($count_stage == 1)
+                        {
+                            if ($countFound)
+                            {
+                                $count_stage = 2;
+                                $this->countContent[$SectionKey] = $countContent;
+                            }
+                            else
+                            {
+                                $count_stage = 0;
+                            }
+                        }
+                    }
+                    /**
+                     * FIM da descoberta da linha de sumarização da quebra
+                     */
+                     
+                     
+                     
+                    /**
+                     * controle para encontrar quebra
+                     */
+                    if ((substr($line, 0, 16) == '<table:table-row'))
+                    {
+                        if ($break_stage == 0)
+                        {
+                            $break_stage  = 1;
+                            $breakContent = '';
+                        }
+                    }
+                    
+                    if ($break_stage == 1)
+                    {
+                        if (in_array($line, $this->dataBreakStyles))
+                        {
+                            $breakFound = TRUE;
+                        }
+                        
+                        $breakContent .= $line;
+                    }
+                    
+                    if ($breakFound)
+                    {
+                        // E.R. para detectar campos dentro de colchetes "xxx [Campo] xxx"
+                        if ((preg_match('/(.*\[)([0-9 A-z]*)(\].*)/', $line)) and (empty($this->field_break)))
+                        {
+                            $pieces = preg_split('/(.*\[)([0-9 A-z]*)(\].*)/', $line, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+                            $this->field_break = $pieces[1];
+                        }
+                    }
+                    if ((substr($line, 0, 18) == '</table:table-row>'))
+                    {
+                        if ($break_stage == 1)
+                        {
+                            if ($breakFound)
+                            {
+                                $break_stage = 2;
+                                $this->breakContent[$SectionKey] = $breakContent;
+                            }
+                            else
+                            {
+                                $break_stage = 0;
+                            }
+                        }
+                    }
+                    /**
+                     * FIM do controle para encontrar quebra
+                     */
+                 }
+             }
+        }
+        
+        $output = implode('', $this->buffer['start']);
+        
+        # Se não tem details no Open Office, vai de Merge
+        if ($this->XmlArray['Report']['OpenOffice']['Details'])
+        {
+            $Details = $this->XmlArray['Report']['OpenOffice']['Details'];
+        }
+        else
+        {
+            $Details = $this->XmlArray['Report']['Merge']['Details'];
+        }
+        
+        $break  = false;
+        Wait::On();
+        
+        $counter = 0;
+        
+        $staticData = is_array($this->CurrentQuery->Query);
+        
+        while ( $staticData ? $line = $this->CurrentQuery->Query[$counter] : $line = $this->CurrentQuery->FetchNext() )
+        {
+            for ($y=1; $y<=count($line); $y++)
+            {
+                $cell = trim($line[$y]);
+                $cell = str_replace('&', '&amp;',$cell);
+                $cell = str_replace('<', '&lt;', $cell);
+                $cell = str_replace('>', '&gt;', $cell);
+                
+                # problemas detectados com caracteres acentuados na dbseller
+                # o mesmo caracter pode ser representado de duas maneiras
+                # entretanto a primeira dá problemas, Ex: Ó (211) ou (195+147)
+                for ($ascchar=161; $ascchar<=255; $ascchar ++)
+                {
+//                    $cell = str_replace(chr($ascchar), "&#{$ascchar};", $cell);
+                }
+                
+                $cell = str_replace(chr(147), ' ', $cell); // char maluco carv.
+                
+                $QueryCell = $cell;
+                $vars['$var' . $y] = FormatMask($this->Adjustments[$y]['Mask'], $QueryCell);
+            }
+            
+            # Substituição de Parâmetros
+            krsort($vars);
+            
+            $this->GrandTotal = array();
+            $this->BreakTotal = array();
+            
+            $this->firstPage  = true;
+            $output .= $this->printSection('header',  $line, $break);
+            
+            foreach ($Details as $DetailKey => $Detail)
+            {
+                $DataSet = $Detail['DataSet'];
+                $DetailKey = strtolower($DetailKey); // detail1
+                
+                $subdata = $this->runSubQuery($DataSet, $vars, $DetailKey);
+                
+                if ($this->printEmptyDetail or $subdata)
+                {
+                    $output .= $this->printSection($DetailKey, $line, $subdata);
+                }
+            }
+            
+            
+            $output .= $this->printSection('footer',  $line);
+            
+            $break = true;
+            while (count($this->rest) > 0)
+            {
+                $this->firstPage  = false;
+                if ($this->repeatHeader)
+                {
+                    $output .= $this->printSection('header',  $line, $break);
+                }
+                else
+                {
+                    $output .= $this->page_break;
+                }
+                
+                foreach ($Details as $DetailKey => $Detail)
+                {
+                    $DataSet = $Detail['DataSet'];
+                    $DetailKey = strtolower($DetailKey); // detail1
+                    
+                    // rodo novamente para gerar $this->subQuery e outros
+                    $this->runSubQuery($DataSet, $vars, $DetailKey);
+                    if ($this->printEmptyDetail or $this->rest[$DetailKey])
+                    {
+                        $output .= $this->printSection($DetailKey, $line, $this->rest[$DetailKey]);
+                    }
+                    else // caso nao entre no IF, para evitar loop
+                    {
+                        unset($this->rest[$DetailKey]);
+                        $this->SubTotals[$DetailKey] = array();
+                        $this->GrandTotal[$DetailKey] = array();
+                    }
+                }
+                
+                if ($this->repeatFooter)
+                {
+                    $output .= $this->printSection('footer',  $line);
+                }
+            }
+            $counter ++;
+        }
+        
+        $output .= implode('', $this->buffer['end']);
+
+        $fd = fopen($this->prefix . bar . 'content.xml', 'w');
+        fwrite($fd, $output);
+        fclose($fd);
+        
+        @unlink ($target);
+        $zip2 = new PclZip($target);
+        foreach ($list as $file)
+        {
+            $zip2->add($this->prefix . '/' . $file['filename'], PCLZIP_OPT_REMOVE_PATH, $this->prefix);
+        }
+        
+        foreach ($this->complement as $file)
+        {
+            $zip2->add($this->prefix . '/' . $file['filename'], PCLZIP_OPT_REMOVE_PATH, $this->prefix);
+        }
+        $this->complement = null;
+        Wait::Off();
+        if ($this->posAction)
+        {
+            Project::OpenReport($target, $this->agataConfig);
+        }
+    }
+    
+    /*
+     * method printSection
+     * 
+     */
+    function printSection($section, $data, $plus = false)
+    {
+        
+        $output = '';
+        if (substr($section,0,6)=='detail')
+        {
+            unset($this->rest[$section]);
+            $sub_data = $plus;
+            $row = 1;
+            $this->SubTotals[$section] = array();
+        }
+        
+        $line    = 0;
+        $sub_row = -1;
+        $process = false;
+        $totalFound = false;
+        $details_stage = 0;
+        $total_stage = 0;
+        $break_stage = 0;
+        $count_stage = 0;
+        $breakFound = FALSE;
+        
+        for ($i = count($data); $i >= 0; $i --)
+        {
+            $cell = $data[$i];
+            $cell = str_replace('&', '&amp;',$cell);
+            $cell = str_replace('<', '&lt;', $cell);
+            $cell = str_replace('>', '&gt;', $cell);
+            
+            # problemas detectados com caracteres acentuados na dbseller
+            # o mesmo caracter pode ser representado de duas maneiras
+            # entretanto a primeira dá problemas, Ex: Ó (211) ou (195+147)
+            for ($ascchar=161; $ascchar<=255; $ascchar ++)
+            {
+//                $cell = str_replace(chr($ascchar), "&#{$ascchar};", $cell);
+            }
+            $cell = str_replace(chr(147), ' ', $cell); // char maluco carv.
+            
+            $cell = FormatMask($this->Adjustments[$i]['Mask'], $cell);
+            $data[$i] = $cell;
+        }
+        if ($this->buffer[$section])
+        {
+            foreach ($this->buffer[$section] as $text_line)
+            {
+                // substituição de parâmetros.
+                $text_line = $this->fillParameters($text_line); // aquip era no final
+                
+                //$i = 1;
+                //faz de tras pra frente pra substituir
+                //$subfield15 antes de $subfield1
+                for ($i = count($data); $i >= 0; $i --)
+                {
+                    $cell = isset($data[$i]) ? $data[$i] : NULL;
+                    $text_line = str_replace('$var' . $i, $this->assureUTF8($cell), $text_line);
+                    $text_line = str_replace('[' . (isset($this->CurrentQuery->ColumnNames[$i -1])?$this->CurrentQuery->ColumnNames[$i -1]:NULL) . ']', $this->assureUTF8($cell), $text_line);
+                }
+                
+                # Search by barCode
+                # Formato = {barcode_EAN128(var1)5x4}
+                if (preg_match('/{barcode_[A-z0-9]*\([a-zA-Z0-9_\- \.]*\)[0-9]x[0-9]}/', $text_line, $matches))
+                {
+                    $text_line = str_replace($matches[0], $this->barCode($matches[0]), $text_line);
+                }
+                # Search by embedImage
+                # Formato = {embedImage(var1)}
+                if (preg_match('/{embedImage\((.*)\)}/', $text_line, $matches))
+                {
+                    $text_line = str_replace($matches[0], $this->embedImage($matches[1]), $text_line);
+                }
+                
+                $text_line = $this->replaceLineFeed($text_line); // new replace chr(10)
+                
+                $text_line = $this->replaceLineFeed($text_line); // new replace chr(10)
+                
+                # Quebra a página, colocando o estilo de PageBreak
+                # Na primeira linha de cada 'header'
+                if (($line == 1) and ($section == 'header') and ($plus == true))
+                {
+                    //<text:p text:style-name="Standard">
+                    $begin = '<text:p text:style-name=';
+                    if (substr($text_line, 0, strlen($begin)) == $begin)
+                    {
+                        # Faz o split para separar a expressao.
+                        $pattern   = '/(<text:p text:style-name=".*")/';
+                        $pieces    = preg_split($pattern, trim ($string), -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+                        if (substr($text_line,-2) == '/>')
+                        {
+                            $text_line = $this->page_break . $pieces[1];
+                        }
+                        else
+                        {
+                            $text_line = str_replace('/>', '>', $this->page_break) . $pieces[1];
+                        }
+                    }
+                    else
+                    {
+                        $text_line .= $this->page_break;
+                    }
+                }
+                
+                if (substr($section,0,6) == 'detail')
+                {
+                    # Fim do cabeçalho, começa a contar as linhas dos detalhes
+                    if (substr($text_line, 0, 26) == '</table:table-header-rows>')
+                    {
+                        $process = true;
+                    }
+                    
+                    if ((substr($text_line, 0, 16) == '<table:table-row'))
+                    {
+                        if ($total_stage == 0)
+                        {
+                            $totalContent = '';
+                            $total_stage  = 1;
+                        }
+                            
+                        if ($break_stage == 0)
+                        {
+                            $break_stage  = 1;
+                            //$breakContent = ''; => vem de $this->breakContent
+                        }
+                        
+                        if ($count_stage == 0)
+                        {
+                            $count_stage  = 1;
+                            //$countContent = ''; => pego de $this->countContent
+                        }
+                    }
+                    
+                    if ($total_stage == 1)
+                    {
+                        if ((strpos($text_line, '_sum') !== false) or (strpos($text_line, '_count') !== false) or
+                            (strpos($text_line, '_min') !== false) or (strpos($text_line, '_max') !== false) or
+                            (strpos($text_line, '_avg') !== false))
+                        {
+                            $totalFound = true;
+                        }
+                        $totalContent .= $text_line;
+                    }
+                    
+                    if ($count_stage == 1)
+                    {
+                        if (in_array($text_line, $this->dataCountStyles))
+                        {
+                            $countFound = true;
+                        }
+                        //$countContent .= $text_line; => pego de $this->countContent
+                    }
+                    
+                    if ($break_stage == 1)
+                    {
+                        if (in_array($text_line, $this->dataBreakStyles))
+                        {
+                            $breakFound = TRUE;
+                        }
+                        
+                        //$breakContent .= $text_line; => vem de $this->breakContent
+                    }
+                    
+                    if ($breakFound)
+                    {
+                        // E.R. para detectar campos dentro de colchetes "xxx [Campo] xxx"
+                        if ((preg_match('/(.*\[)([0-9 A-z]*)(\].*)/', $text_line)) and (empty($field_break)))
+                        {
+                            $pieces = preg_split('/(.*\[)([0-9 A-z]*)(\].*)/', $text_line, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+                            $field_break = $pieces[1];
+                        }
+                    }
+                    # substitui a linha template por todos registros
+                    //if ((substr($text_line, 0, 18) == '</table:table-row>') and ($total_stage == 1))
+                    if ((substr($text_line, 0, 18) == '</table:table-row>'))
+                    {
+                        if ($total_stage==1)
+                        {
+                            if ($totalFound)
+                            {
+                                $total_stage = 2;
+                            }
+                            else
+                            {
+                                $total_stage = 0;
+                            }
+                        }
+                        
+                        if ($break_stage == 1)
+                        {
+                            if ($breakFound)
+                            {
+                                $break_stage = 2;
+                            }
+                            else
+                            {
+                                $break_stage = 0;
+                            }
+                        }
+                        
+                        if ($count_stage == 1)
+                        {
+                            if ($countFound)
+                            {
+                                $count_stage = 2;
+                            }
+                            else
+                            {
+                                $count_stage = 0;
+                            }
+                        }
+                        
+                        if ((!$breakFound) and (!$totalFound) and (!$countFound))
+                        {
+                            $sub_row ++;
+                        }
+                        $breakFound = FALSE;
+                        $countFound = FALSE;
+                    }
+                    
+                    if ($process)
+                    {
+                        if ($this->fixedDetails)
+                        {
+                            if (substr($text_line, 0, 14) == '</table:table>')
+                            {
+                                $process = false;
+                                for ($j = $sub_row; $j <= count($sub_data) -1; $j ++)
+                                {
+                                    $this->rest[$section][] = $sub_data[$j];
+                                }
+                                
+                                if (!$this->rest[$section] and $sub_data and !$this->firstPage and $this->sumByTotal)
+                                {
+                                    $text_line = $totalContent . $text_line;
+                                    $text_line = $this->replaceTotal($text_line, 'grandtotal', $section);
+                                }
+                            }
+                            $text_line = $this->replaceTotal($text_line, 'subtotal', $section);
+                            
+                            # Substituir as variáveis
+                            if (isset($sub_data[$sub_row]) AND $sub_data[$sub_row])
+                            {
+                                $text_line = $this->replaceDetails($text_line, $sub_data[$sub_row], $breakFound, $section);
+                                $text_line = $this->replaceLineFeed($text_line);
+                            }
+                            else
+                            {
+                                # Limpar ultimas linhas, quando já passou do eof
+                                for ($i = 20; $i >= 1; $i --)
+                                {
+                                    $alias     = '[' . (isset($this->subQuery->ColumnNames[$i -1])? $this->subQuery->ColumnNames[$i -1]:NULL). ']';
+                                    $text_line = str_replace('$subfield' . $i, '', $text_line);
+                                    $text_line = str_replace($alias, '', $text_line);
+                                }
+                            }
+                        }
+                        else // expansível
+                        {
+                            // só coleta se já achou a linha de quebra
+                            if ((substr($text_line, 0, 16) == '<table:table-row') and ($details_stage == 0))
+                            {
+                                if (($break_stage == 2) or (!$this->breakContent[$section]))
+                                {
+                                    $details_stage = 1;
+                                    $this->BreakTotal[$section] = array();
+                                }
+                            }
+                            
+                            if ($details_stage == 1)
+                            {
+                                $detailsContent .= $text_line;
+                            }
+                            
+                            if (($details_stage == 1) or (($break_stage == 1) and ($this->breakContent[$section])) )
+                            {
+                                if ($sub_data)
+                                {
+                                    $text_line = $this->replaceDetails($text_line, $sub_data[0], $breakFound, $section);
+                                    $text_line = $this->replaceLineFeed($text_line);
+                                }
+                                else
+                                {
+                                    # Limpar ultimas linhas, quando já passou do eof
+                                    for ($i = 20; $i >= 1; $i --)
+                                    {
+                                        $alias     = '[' . $this->subQuery->ColumnNames[$i -1] . ']';
+                                        $text_line = str_replace('$subfield' . $i, '', $text_line);
+                                        $text_line = str_replace($alias, '', $text_line);
+                                    }
+                                }
+                            }
+                            
+                            # substitui a linha template por todos registros
+                            if ((substr($text_line, 0, 18) == '</table:table-row>') and ($details_stage == 1))
+                            {
+                                $details_stage = 2;
+                                if ($sub_data)
+                                {
+                                    $sub_column_break  = $this->subFields[$field_break];
+                                    $group_break_field = $sub_data[0][$sub_column_break];
+                                    
+                                    # Substituir os detalhes
+                                    $flexibleBuffer = '';
+                                    foreach ($sub_data as $key => $sub_line)
+                                    {
+                                        if ($group_break_field !== $sub_line[$sub_column_break])
+                                        {
+                                            $line_buffer = $this->countContent[$section];
+                                            $line_buffer = $this->replaceTotal($line_buffer, 'breaktotal', $section);
+                                            $flexibleBuffer .= $line_buffer;
+                                            $this->BreakTotal[$section] = array();
+                                            
+                                            $line_buffer = $this->breakContent[$section];
+                                            $line_buffer = $this->replaceDetails($line_buffer, $sub_line, TRUE, $section);
+                                            $line_buffer = $this->replaceLineFeed($line_buffer);
+                                            $flexibleBuffer .= $line_buffer;
+                                            $group_break_field = $sub_line[$sub_column_break];
+                                        }
+                                        if ($key>0)
+                                        {
+                                            $line_buffer = $detailsContent;
+                                            $line_buffer = $this->replaceDetails($line_buffer, $sub_line, FALSE, $section);
+                                            $line_buffer = $this->replaceLineFeed($line_buffer);
+                                            $flexibleBuffer .= $line_buffer;
+                                        }
+                                    }
+                                    $text_line .= $flexibleBuffer;
+                                }
+                            }
+                            
+                            if ($details_stage == 2)
+                            {
+                                if ($countFound) // se encontrou a linha de contagem da quebra
+                                    $text_line = $this->replaceTotal($text_line, 'breaktotal', $section);
+                                else
+                                    $text_line = $this->replaceTotal($text_line, 'subtotal', $section);
+                                    
+                                for ($i = 20; $i >= 1; $i --)
+                                {
+                                    $text_line = str_replace('$subfield' . $i, '', $text_line);
+                                    $alias     = '[' . $this->subQuery->ColumnNames[$i -1] . ']';
+                                    $text_line = str_replace($alias, '', $text_line);
+                                }
+                            }
+                        }
+                    }
+                }
+                $output .= $text_line;
+                $line ++;
+            }
+        }
+        return $output;
+    }
+    
+    /**
+     * 
+     */
+    function replaceLineFeed($text)
+    {
+        $pieces = preg_split ('/(<(?:[^<>]+(?:"[^"]*"|\'[^\']*\')?)+>)/', $text, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+        if ($pieces)
+        {
+            foreach ($pieces as $piece)
+            {
+                $row = $piece;
+                if (substr($piece, 0, 24) == "<text:p text:style-name=")
+                {
+                    $tmp= substr($piece, 25);
+                    $style_pieces= explode('"', $tmp);
+                    $style_name = $style_pieces[0];
+                    $this->lineBreak = "</text:p><text:p text:style-name=\"$style_name\">";
+                }
+                else if (substr($piece, 0, 27) == "<text:span text:style-name=")
+                {
+                    $tmp= substr($piece, 28);
+                    $style_pieces= explode('"', $tmp);
+                    $style_name = $style_pieces[0];
+                    $this->lineBreak = "</text:span><text:span text:style-name=\"$style_name\">";
+                }
+                else
+                {
+                    $row = str_replace("\n",    $this->lineBreak, $row);
+                    $row = str_replace(chr(10), $this->lineBreak, $row);
+                    
+                    //$row = str_replace('<',     '&lt;',  $row);
+                    //$row = str_replace('>',     '&gt;',  $row);
+                }
+                $return[] = $row;
+            }
+            return implode('', $return);
+        }
+        else
+        {
+            return $text;
+        }
+    }
+    
+    /**
+     * Método 
+     */
+    function replaceDetails($text_line, $data_line, $breakFound = FALSE, $DetailKey)
+    {
+        $row = 0;
+        if ($data_line)
+        {
+            // faz de traz pra frente para substituir
+            // $subfield15 antes de $subfield1
+            for ($col = count($data_line); $col>=0; $col --)
+            {
+                $cell = isset($data_line[$col]) ? $data_line[$col] : NULL;
+                $cell = str_replace('&', '&amp;',$cell);
+                $cell = str_replace('<', '&lt;', $cell);
+                $cell = str_replace('>', '&gt;', $cell);
+                
+                # problemas detectados com caracteres acentuados na dbseller
+                # o mesmo caracter pode ser representado de duas maneiras
+                # entretanto a primeira dá problemas, Ex: Ó (211) ou (195+147)
+                for ($ascchar=161; $ascchar<=255; $ascchar ++)
+                {
+//                    $cell = str_replace(chr($ascchar), "&#{$ascchar};", $cell);
+                }
+                $cell = str_replace(chr(147), ' ', $cell); // char maluco carv.
+                
+                $this_text = '$subfield' . $col;
+                $SubMyVar  = $this_text;
+                $alias     = '[' . (isset($this->subQuery->ColumnNames[$col-1]) ? $this->subQuery->ColumnNames[$col-1] : NULL) . ']';
+                
+                if ((strpos($text_line, $SubMyVar) !== false) or (strpos($text_line, $alias) !== false))
+                {
+                    $that_text = FormatMask($this->SubAdjustments[$col]['Mask'], $cell);
+                    $text_line = str_replace($this_text, $this->assureUTF8($that_text), $text_line);
+                    //novo 20080403
+                    $text_line = str_replace($alias, $this->assureUTF8($that_text), $text_line);
+                    
+                    // se está dentro de uma linha de quebra, não sumariza, não totaliza nada
+                    if (!$breakFound)
+                    {
+                        $this->SubTotals[$DetailKey][$SubMyVar]['count'] ++;
+                        $this->GrandTotal[$DetailKey][$SubMyVar]['count'] ++;
+                        $this->BreakTotal[$DetailKey][$SubMyVar]['count'] ++;
+                        if (is_numeric($cell))
+                        {
+                            $this->SubTotals[$DetailKey][$SubMyVar]['sum'] += $cell;
+                            $this->SubTotals[$DetailKey][$SubMyVar]['min'] = ((!$this->SubTotals[$DetailKey][$SubMyVar]['min']) or ($cell < $this->SubTotals[$DetailKey][$SubMyVar]['min'])) ? $cell : $this->SubTotals[$DetailKey][$SubMyVar]['min'];
+                            $this->SubTotals[$DetailKey][$SubMyVar]['max'] = ($cell > $this->SubTotals[$DetailKey][$SubMyVar]['max']) ? $cell : $this->SubTotals[$DetailKey][$SubMyVar]['max'];
+                            $this->SubTotals[$DetailKey][$SubMyVar]['avg'] = $this->SubTotals[$DetailKey][$SubMyVar]['sum'] / $this->SubTotals[$DetailKey][$SubMyVar]['count'];
+                            
+                            $this->GrandTotal[$DetailKey][$SubMyVar]['sum'] += $cell;
+                            $this->GrandTotal[$DetailKey][$SubMyVar]['min'] = ((!$this->GrandTotal[$DetailKey][$SubMyVar]['min']) or ($cell < $this->GrandTotal[$DetailKey][$SubMyVar]['min'])) ? $cell : $this->GrandTotal[$DetailKey][$SubMyVar]['min'];
+                            $this->GrandTotal[$DetailKey][$SubMyVar]['max'] = ($cell > $this->GrandTotal[$DetailKey][$SubMyVar]['max']) ? $cell : $this->GrandTotal[$DetailKey][$SubMyVar]['max'];
+                            $this->GrandTotal[$DetailKey][$SubMyVar]['avg'] = $this->GrandTotal[$DetailKey][$SubMyVar]['sum'] / $this->GrandTotal[$DetailKey][$SubMyVar]['count'];
+                            
+                            $this->BreakTotal[$DetailKey][$SubMyVar]['sum'] += $cell;
+                            $this->BreakTotal[$DetailKey][$SubMyVar]['min'] = ((!$this->BreakTotal[$DetailKey][$SubMyVar]['min']) or ($cell < $this->BreakTotal[$DetailKey][$SubMyVar]['min'])) ? $cell : $this->BreakTotal[$DetailKey][$SubMyVar]['min'];
+                            $this->BreakTotal[$DetailKey][$SubMyVar]['max'] = ($cell > $this->BreakTotal[$DetailKey][$SubMyVar]['max']) ? $cell : $this->BreakTotal[$DetailKey][$SubMyVar]['max'];
+                            $this->BreakTotal[$DetailKey][$SubMyVar]['avg'] = $this->BreakTotal[$DetailKey][$SubMyVar]['sum'] / $this->BreakTotal[$DetailKey][$SubMyVar]['count'];
+                        }
+                    }
+                }
+            }
+            $row ++;
+        }
+        
+        # Search by barCode
+        # Formato = {barcode_EAN128(var1)5x4}
+        if (preg_match('/{barcode_[A-z0-9]*\([a-zA-Z0-9_\- \.]*\)[0-9]x[0-9]}/', $text_line, $matches))
+        {
+            $text_line = str_replace($matches[0], $this->barCode($matches[0]), $text_line);
+        }
+        return $text_line;
+    }
+    
+    /**
+     * Método 
+     */
+    function replaceTotal($text_line, $kind, $DetailKey)
+    {
+        # Substituir os SubTotais
+        if ($kind == 'subtotal')
+        {
+            $matrix = $this->SubTotals[$DetailKey];
+        }
+        else if ($kind == 'grandtotal')
+        {
+            $matrix = $this->GrandTotal[$DetailKey];
+        }
+        else if ($kind == 'breaktotal')
+        {
+            $matrix = $this->BreakTotal[$DetailKey];
+        }
+        
+        if ($matrix)
+        {
+            foreach ($matrix as $var => $formulas)
+            {
+                foreach ($formulas as $formula => $content)
+                {
+                    $col = substr($var, 9); //pega o numero do campo
+                    $content = FormatMask($this->SubAdjustments[$col]['Mask'], $content);
+                    $text_line = str_replace("{$var}_{$formula}", $content, $text_line);
+                    
+                    $alias     = '[' . $this->subQuery->ColumnNames[$col-1] . ']';
+                    $text_line = str_replace("{$alias}_{$formula}", $content, $text_line);
+                }
+            }
+        }
+        else
+        {
+            # Limpar os SubTotais
+            for ($i = 20; $i >= 1; $i --)
+            {
+                $alias     = '[' . $this->subQuery->ColumnNames[$i-1] . ']';
+                
+                $text_line = str_replace("\$subfield{$i}_sum",   '', $text_line);
+                $text_line = str_replace("\$subfield{$i}_min",   '', $text_line);
+                $text_line = str_replace("\$subfield{$i}_max",   '', $text_line);
+                $text_line = str_replace("\$subfield{$i}_avg",   '', $text_line);
+                $text_line = str_replace("\$subfield{$i}_count", '', $text_line);
+            }
+        }
+        
+        return $text_line;
+    }
+    
+    
+    /*
+     * method barCode
+     * 
+     */
+    function barCode($string)
+    {
+        include_once 'AgataBarCode.class';
+        
+        preg_match('/\([A-z0-9]*\)/', $string, $match1);  // "(var1)"
+        preg_match('/[0-9]x[0-9]/',   $string, $match2);   // "5x4"
+        preg_match('/_[A-z0-9]*\(/',  $string, $match3);// "_EAN128("
+        
+        list($width, $height) = explode('x', $match2[0]);
+        $code   = substr($match1[0], 1, -1);
+        $format = substr($match3[0], 1, -1);
+        $x      = '0.14';
+        $y      = '0.14';
+        
+        # begin BarCode #
+        $p_xDim = 2;
+        $p_w2n = 2;
+        $p_charGap = $p_xDim;
+        $p_invert = "N";
+        $p_charHeight = 50;
+        $rand = rand();
+        $fileName = $this->prefix . '/Pictures/barcode' . $rand;
+        
+        $file['filename']         = "Pictures/barcode{$rand}.png";
+        //$file['stored_filename']  = "/Pictures/barcode{$rand}.png";
+        $this->complement[]       = $file;
+        //$this->complement[]['size']             = "Pictures/{$fileName}";
+        
+        $standards['CODE39']    = BC_TYPE_CODE39;
+        $standards['INTER25']   = BC_TYPE_INTER25;
+        $standards['STD25']     = BC_TYPE_STD25;
+        $standards['CODE93']    = BC_TYPE_CODE93;
+        $standards['ROYMAIL4']  = BC_TYPE_ROYMAIL4;
+        $standards['POSTNET']   = BC_TYPE_POSTNET;
+        if (!$standards[$format])
+        {
+            return;
+        }
+        AgataBarCode::barCode(
+            $standards[$format], // barcode type
+            $code,               // text
+            $p_xDim,
+            $p_w2n,
+            $p_charGap,
+            false,               // inverted
+            $p_charHeight,
+            $p_type,
+            true,                // show text label
+            0,                   // rotate angle (disabled)
+            true,                // check digit ?
+            true,                // too file
+            $fileName);
+        
+        # end BarCode #
+        
+        return "<draw:image draw:style-name=\"fr2\" draw:name=\"Graphic1\" text:anchor-type=\"paragraph\" svg:x=\"{$x}cm\" svg:y=\"{$y}cm\" svg:width=\"{$width}cm\" svg:height=\"{$height}cm\" draw:z-index=\"0\" xlink:href=\"#Pictures/barcode{$rand}.png\" xlink:type=\"simple\" xlink:show=\"embed\" xlink:actuate=\"onLoad\"/>";
+    }
+    
+    function embedImage($string)
+    {
+        $image = $string;
+        $filename = basename($image);
+        $target = $this->prefix . '/Pictures/' . $filename;
+        if (file_exists($image))
+        {
+            list($width, $height, $type, $attr) = getimagesize($image);
+            $x = '0.14';
+            $y = '0.14';
+            if (!file_exists($target))
+            {
+                copy($image, $target);
+                $file['filename']         = 'Pictures/' . $filename;
+                $this->complement[]       = $file;
+            }
+            return "<draw:image draw:style-name=\"fr2\" draw:name=\"Graphic2\" text:anchor-type=\"paragraph\" svg:x=\"{$x}cm\" svg:y=\"{$y}cm\" svg:width=\"{$width}pt\" svg:height=\"{$height}pt\" draw:z-index=\"0\" xlink:href=\"#Pictures/{$filename}\" xlink:type=\"simple\" xlink:show=\"embed\" xlink:actuate=\"onLoad\"/>";
+        }
+    }
+    
+    
+    function runSubQuery($DataSet, $vars, $DetailKey = NULL)
+    {
+        if ($this->detailData)
+        {
+            $subdata = $this->detailData[$DetailKey];
+            if (empty($this->subQuery))
+            {
+                $this->subQuery = new stdClass;
+            }
+            $this->subQuery->ColumnNames = $this->detailColumns[$DetailKey];
+            $this->SubAdjustments = Report::ExtractAdjustments($DataSet);
+            $this->subFields = array();
+            $subfield_count=1;
+            foreach ($this->subQuery->ColumnNames as $columnName)
+            {
+                $this->subFields[$columnName] = $subfield_count;
+                $subfield_count ++;
+            }
+            return $subdata;
+        }
+        else
+        {
+            $where = $DataSet['Query']['Where'];
+            $from  = $DataSet['Query']['From'];
+            
+            foreach ($vars as $var => $content)
+            {
+                $where = str_replace($var, $content, $where);
+                $from  = str_replace($var, $content, $from);
+            }
+            
+            $subdata = array();
+            if ($DataSet['Query']['Select'])
+            {
+                $DataSet['Query']['Where'] = $where;
+                $DataSet['Query']['From']  = $from;
+                
+                # Cria Query
+                $this->subQuery = AgataCore::CreateQuery($this->agataDB, $DataSet, $this->Parameters);
+                $this->SubAdjustments = Report::ExtractAdjustments($DataSet);
+                $this->subFields = array();
+                $subfield_count=1;
+                
+                foreach ($this->subQuery->ColumnNames as $columnName)
+                {
+                    $this->subFields[$columnName] = $subfield_count;
+                    $subfield_count ++;
+                }
+                
+                if (is_agata_error($this->subQuery))
+                {
+                    new Dialog($this->subQuery->GetError());
+                    
+                    Wait::Off();
+                    return false;
+                }
+                else
+                {
+                    $subdata = array();
+                    while ($sub_row = $this->subQuery->FetchNext())
+                    {
+                        $subdata[] = $sub_row;
+                    }
+                }
+            }
+            return $subdata;
+        }
+    }
+    
+    
+    public function setDetailData($detailData)
+    {
+        $this->detailData = $detailData;
+    }
+    
+    public function setDetailColumns($detailColumns)
+    {
+        $this->detailColumns = $detailColumns;
+    }
+
+    /**
+     * Garante que a string estará em UTF8
+     * @param $content string a ser convertida
+     */
+    public function assureUTF8($content)
+    {
+        if (utf8_encode(utf8_decode($content)) !== $content ) // se não UTF8
+        {
+            $content = utf8_encode($content);
+        }
+        return $content;
+    }
+}
+

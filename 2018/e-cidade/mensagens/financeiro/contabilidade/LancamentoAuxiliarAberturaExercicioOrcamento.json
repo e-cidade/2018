@@ -1,0 +1,5 @@
+{
+  "erro_lancamento_dotacao" : "Não foi possível salvar o vínculo entre o lançamento e a dotação.",
+  "codigo_lancamento_obrigatorio" : "O código do Lançamento é de preenchimento obrigatório.",
+  "data_lancamento_obrigatorio" : "A data do Lançamento é de preenchimento obrigatório."
+}

@@ -1,0 +1,7 @@
+{
+   "informe_acervo"      : "Informe o código do acervo."
+  ,"informe_assunto"     : "Informe o assunto."
+  ,"erro_buscar_assunto" : "Erro ao buscar os assuntos."
+  ,"assunto_removido_com_sucesso"  : "Assunto removido com sucesso do acervo."
+  ,"assunto_adicionao_com_sucesso" : "Assunto adicionado com sucesso ao acervo."
+}

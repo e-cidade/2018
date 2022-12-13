@@ -1,0 +1,11 @@
+{
+  "selecione_escola"         : "Selecione uma escola.",
+  "selecione_calendario"     : "Selecione um calendário.",
+  "buscando_turmas"          : "Aguarde, buscando as turmas do calendário...",
+  "selecione_turma"          : "Selecione ao menos uma turma.",
+  "buscando_atividades"      : "Aguarde, buscando as atividades do profissional...",
+  "buscando_diretor"         : "Aguarde, buscando o(a) diretor(a) da escola...",
+  "buscando_secretario"      : "Aguarde, buscando o(a) secretario(a) da escola...",
+  "nenhum_calendario_turmas" : "Nenhum calendário encontrado para a escola [sEscola], com turmas que possuam aluno com progressão parcial encerrada.",
+  "selecione_atividade"      : "Selecione uma Atividade."
+}

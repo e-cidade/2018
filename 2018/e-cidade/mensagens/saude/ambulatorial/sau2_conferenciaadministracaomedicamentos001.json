@@ -1,0 +1,6 @@
+{
+  "informe_periodo_inicial"     : "Informe o período inicial.",
+  "informe_periodo_final"       : "Informe o período final",
+  "periodo_inicial_maior_final" : "Período inicial informado é maior que o período final.",
+  "validando_unidade"           : "Aguarde, validando se o departamento trata-se de uma UPS..."
+}

@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="q02_numcgm"   label="cgm"            />
+    <campo campo="a.z01_nome"   label="razao_social"   />
+    <campo campo="q02_inscr"    label="codigo_empresa" />
+    <campo campo="a.z01_cgccpf" label="cnpj"           />
+    <campo campo="a.z01_ender"  label="endereco"       />
+    <campo campo="b.z01_nome"   label="contador"       />
+  </campos>
+  <from tabela="issbase" />
+  <juncoes>
+    <join tipo="inner" tabela="cgm a   " condicao="a.z01_numcgm = q02_numcgm"  />
+    <join tipo="left " tabela="escrito " condicao="q02_inscr    = q10_inscr"   />
+    <join tipo="left " tabela="cgm b   " condicao="q10_numcgm   = b.z01_numcgm"/>
+  </juncoes>
+  <filtros>
+    <filtro label="cnpj" condicao="a.z01_cgccpf = '$cnpj'" obrigatorio="true"/>
+    <filtro label=""     condicao="q02_dtbaix is null"  obrigatorio="true" />
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="a.z01_nome" />
+</consulta>

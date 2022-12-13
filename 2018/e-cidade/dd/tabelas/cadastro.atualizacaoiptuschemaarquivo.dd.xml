@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010218' name='cadastro.atualizacaoiptuschemaarquivo' description="Arquivos importados para atualização de cadastros imobiliários." prefix="j143" label="Arquivo Importado" type="0">
+  <fields>
+    <field codigo="1009400" 
+           campo_api='' 
+           name="j143_sequencial" 
+           conteudo="int4" 
+           description="Código da tabela." 
+           inivalue="0" 
+           label="Sequencial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Sequencial" 
+           reference="" 
+           ispk="t" 
+           hassequence="t" > 
+           
+      <sequence name='cadastro.atualizacaoiptuschemaarquivo_j143_sequencial_seq' />
+     
+    </field> 
+    <field codigo="1009399" 
+           campo_api='' 
+           name="j143_atualizacaoiptuschema" 
+           conteudo="int4" 
+           description="Vínculo com o nome do schema com os dados de IPTU atualizados." 
+           inivalue="0" 
+           label="Atualização IPTU" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Atualização IPTU" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009395" 
+           campo_api='' 
+           name="j143_arquivo" 
+           conteudo="varchar(255)" 
+           description="Nome do arquivo importado." 
+           inivalue="" 
+           label="Nome do Arquivo" 
+           size="255" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Nome do Arquivo" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009397" 
+           campo_api='' 
+           name="j143_dataimportacao" 
+           conteudo="date" 
+           description="Data da importação." 
+           inivalue="null" 
+           label="Data da Importação" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Data da Importação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="j143_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="atualizacaoiptuschema" inner='t'>
+      <fieldfk name="j143_atualizacaoiptuschema" reference="j142_sequencial" /> 
+    </foreignkey>
+  </foreignkeys>
+</table>

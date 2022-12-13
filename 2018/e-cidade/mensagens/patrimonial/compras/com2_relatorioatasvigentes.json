@@ -1,0 +1,8 @@
+{
+  "data_inicial_vazio" : "O campo Data de Vigência Inicial é de preenchimento obrigatório.",
+  "data_final_vazio" : "O campo Data de Vigência Final é de preenchimento obrigatório.",
+  "data_inicial_final_conflito" : "Data de Vigência Final não pode ser menor que a Data de Vigência Inicial.",
+  "vigencia_nao_informada":"É necessário informar data inicial e data final para a emissão do relatório.",
+  "sem_atas_no_periodo": "Não existem Atas de Registro de Preço vigentes no período [inicio] até [fim]"
+
+}

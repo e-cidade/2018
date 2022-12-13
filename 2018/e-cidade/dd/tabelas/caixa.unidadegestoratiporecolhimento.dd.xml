@@ -1,0 +1,97 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4032' name='caixa.unidadegestoratiporecolhimento' description="unidadegestoratiporecolhimento" prefix="k173" label="unidadegestoratiporecolhimento" type="0">
+  <fields>
+    <field codigo="22367" 
+           campo_api='' 
+           name="k173_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='caixa.unidadegestoratiporecolhimento_k173_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22368" 
+           campo_api='' 
+           name="k173_unidadegestora" 
+           conteudo="int4" 
+           description="Unida Gestora" 
+           inivalue="" 
+           label="Unida Gestora" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Unida Gestora" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22369" 
+           campo_api='' 
+           name="k173_tiporecolhimento" 
+           conteudo="int4" 
+           description="Tipo de Recolhimento" 
+           inivalue="" 
+           label="Tipo de Recolhimento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo de Recolhimento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22370" 
+           campo_api='' 
+           name="k173_receita" 
+           conteudo="int4" 
+           description="Receita" 
+           inivalue="" 
+           label="Receita" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Receita" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="k173_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="tabrec">
+      <fieldfk name="k173_receita" reference="k02_codigo" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="unidadegestora">
+      <fieldfk name="k173_unidadegestora" reference="k171_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+    <foreignkey reference="tiporecolhimento">
+      <fieldfk name="k173_tiporecolhimento" reference="k172_sequencial" inner='t'></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

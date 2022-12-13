@@ -1,0 +1,5 @@
+{
+  "erro_buscar_diario_final"       : "Erro ao buscar o diário final:\n[sErro]",
+  "erro_buscar_progressao_parcial" : "Erro ao buscar a progressão parcial:\n[sErro]",
+  "erro_buscar_aprovacao_conselho" : "Erro ao buscar a aprovação do conselho:\n[sErro]"
+}

@@ -1,0 +1,7 @@
+{
+  "data_invalida" : "A data final deve ser maior que a data inicial.",
+  "mes_ano_invalido" : "O período informado deve estar compreendido dentro do mesmo mês e ano.",
+  "documento_nao_informado" : "Documento é de preenchimento obrigatório.",
+  "data_inicial_invalida" : "Data Inicial é de preenchimento obrigatório.",
+  "data_final_invalida" : "Data Final é de preenchimento obrigatório."
+}

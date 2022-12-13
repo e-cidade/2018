@@ -1,0 +1,316 @@
+<?php
+/***********************************************************/
+/* Classe que cria Merge Form                              */
+/* Linguagem PHP-GTK                                       */
+/* Autor: Pablo Dall'Oglio                                 */
+/* Última ateração em 15 Agosto 2003 por Pablo             */
+/***********************************************************/
+
+
+class AgataMergePdf extends AgataMerge
+{
+    /***********************************************************/
+    /* Generate the Merged PDF Document
+    /***********************************************************/
+    function Generate()
+    {
+        $this->SetReportLocale();
+        
+        $this->Pages['A3']        = array(841, 1190);
+        $this->Pages['A4']        = array(595, 841);
+        $this->Pages['A5']        = array(419, 595);
+        $this->Pages['Letter']    = array(612, 790);
+        $this->Pages['Legal']     = array(612, 1009);
+        
+        $this->PageFormat   = ( isset($this->XmlArray['Report']['Merge']['PageSetup']['Format'])        && ! empty($this->XmlArray['Report']['Merge']['PageSetup']['Format']) )       ? $this->XmlArray['Report']['Merge']['PageSetup']['Format']         : 'A4';
+        $this->Orientation  = ( isset($this->XmlArray['Report']['Merge']['PageSetup']['Orientation'])   && ! empty($this->XmlArray['Report']['Merge']['PageSetup']['Orientation']) )  ? $this->XmlArray['Report']['Merge']['PageSetup']['Orientation']    : 'portrait';
+        $this->LeftMargin   = ( isset($this->XmlArray['Report']['Merge']['PageSetup']['LeftMargin'])    && ! empty($this->XmlArray['Report']['Merge']['PageSetup']['LeftMargin']) )   ? $this->XmlArray['Report']['Merge']['PageSetup']['LeftMargin']     : 0;
+        $this->TopMargin    = ( isset($this->XmlArray['Report']['Merge']['PageSetup']['TopMargin'])     && ! empty($this->XmlArray['Report']['Merge']['PageSetup']['TopMargin']) )    ? $this->XmlArray['Report']['Merge']['PageSetup']['TopMargin']      : 0;
+        $this->RightMargin  = ( isset($this->XmlArray['Report']['Merge']['PageSetup']['RightMargin'])   && ! empty($this->XmlArray['Report']['Merge']['PageSetup']['RightMargin']) )  ? $this->XmlArray['Report']['Merge']['PageSetup']['RightMargin']    : 0;
+        $this->FooterMargin = ( isset($this->XmlArray['Report']['Merge']['PageSetup']['BottomMargin'])  && ! empty($this->XmlArray['Report']['Merge']['PageSetup']['BottomMargin']) ) ? $this->XmlArray['Report']['Merge']['PageSetup']['BottomMargin']   : 10;
+        $this->FooterHeight = ( isset($this->XmlArray['Report']['Merge']['PageSetup']['FooterHeight'])  && ! empty($this->XmlArray['Report']['Merge']['PageSetup']['FooterHeight']) ) ? $this->XmlArray['Report']['Merge']['PageSetup']['FooterHeight']   : 0;
+        $this->ShowFooter   = ( isset($this->XmlArray['Report']['Merge']['Config']['ShowFooter'])       && ! empty($this->XmlArray['Report']['Merge']['Config']['ShowFooter']) )      ? $this->XmlArray['Report']['Merge']['Config']['ShowFooter']        : FALSE;
+        
+        if (!$this->ShowFooter)
+        {
+            $this->FooterHeight = 0;
+        }
+        //$this->subBorder   = $this->XmlArray['report']['merge'][$key];
+        $this->subBorder   = ' ';
+        
+        $this->LineHeight   = 14;
+        
+        define('FPDF_FONTPATH','classes' . bar . 'fpdf151' . bar . 'font' . bar);
+        include_once('classes/fpdf151/fpdf.php');
+        include_once('classes/barcode128/barcode128.inc');
+        include_once('classes/barcode128/pdfbarcode128.inc');
+
+        Wait::On();
+        $FileName = $this->FileName;
+
+        $this->PDF = new FPDF($this->Orientation, 'pt', $this->PageFormat);
+        $this->PDF->SetAutoPageBreak(true);
+        $this->PDF->SetMargins($this->LeftMargin,$this->TopMargin,$this->RightMargin);
+        $this->PDF->SetCreator('Agata Report');
+        $this->PDF->SetTitle('Letter');
+        $this->PDF->SetFillColor(255,255,255);
+        $this->PDF->SetKeywords('agata.dalloglio.net');
+        $this->PDF->Open();
+        $this->PDF->AliasNbPages();
+        $this->SetFont('an10');
+        $this->PDF->SetX($this->LeftMargin);
+
+        $this->pagina = 1;
+
+        $this->page = 0;
+
+        while ($this->QueryLine = $this->CurrentQuery->FetchNext())
+        {
+            // Início de Página
+            $this->page ++;
+            $this->PDF->AddPage($this->Orientation);
+
+            $this->PrintSection('reportheader', $this->XmlArray['Report']['Merge']['ReportHeader']);
+            $this->PrintSection('groupheader',  $this->XmlArray['Report']['Merge']['Details']['Detail1']['GroupHeader']);
+            $ok = $this->PrintDetails();
+            if (!$ok)  // details not processed
+            {
+                break;
+            }
+            $this->PrintSection('groupfooter',  $this->XmlArray['Report']['Merge']['Details']['Detail1']['GroupFooter']);
+            $this->PrintSection('reportfooter', $this->XmlArray['Report']['Merge']['ReportFooter']);
+
+	        // Patch to enable multiple sub queries...
+  	        // Have to reset at the end of a page, otherwise there are
+  	        // issues, as it will continue to increment
+  	        $current_subquery = 0;
+        }
+        Wait::Off();
+        if ($this->page>0)
+        {
+            $this->PDF->Output($this->FileName);
+            if ($this->posAction)
+            {
+                Project::OpenReport($this->FileName, $this->agataConfig);
+            }
+            
+            if ($this->posAction)
+            {
+                $obj = $this->posAction[0];
+                $att = $this->posAction[1];
+                
+                $obj->{$att}();
+            }
+        }
+        else
+        {
+            new Dialog(_a('Não foram encontrados registros'));
+        }
+        $this->UnsetReportLocale();
+        return true;
+    }
+
+    /***********************************************************/
+    /* Print a Document Section
+    /***********************************************************/
+    function PrintSection($key, $textMerge)
+    {
+        include 'include/report_vars.inc';
+
+        # Footer Sumarization
+        if ($key == 'groupfooter')
+        {
+            if ($this->SubTotals)
+            {
+                foreach ($this->SubTotals as $subfield => $contents)
+                {
+                    if ($contents['count'] > 0)
+                    {
+                        $contents['avg'] = $contents['sum'] / $contents['count'];
+                    }
+                    foreach ($contents as $formula => $value)
+                    {
+                        $Subcol = substr($subfield, 9); //pega o numero do campo
+                        $total_var = substr("{$subfield}_{$formula}",1); // para tirar o $
+                        $$total_var = FormatMask($this->SubAdjustments[$Subcol]['Mask'], $value);
+                    }
+                }
+            }
+        }
+
+        //$textMerge = $this->XmlArray['report']['merge'][$key];
+        $textMerge = $this->fillParameters($textMerge);
+
+        for ($y=1; $y<=count($this->QueryLine); $y++)
+        {
+            $QueryCell = trim($this->QueryLine[$y]);
+            $QueryCell = FormatMask($this->Adjustments[$y]['Mask'], $QueryCell);
+            
+            $MyVar = 'var' . $y;
+            $$MyVar = $QueryCell;
+        }
+
+        $Lines = explode("\n", $textMerge);
+        foreach ($Lines as $Line)
+        {
+            if (strlen($Line)>0)
+            {
+                $lineN ++;
+                $page = $this->page;
+                $Line = preg_replace("/\"/", "\\\"", $Line);
+                eval ("\$Line = \"$Line\";");
+            }
+
+            if (!trim($Line))
+            {
+                $this->PDF->Ln($this->LineHeight);
+                $this->PDF->SetX($this->LeftMargin);
+            }
+            else
+            {
+                $had_content = $this->ParseStringPdf($Line);
+                if ($had_content)
+                {
+                    $this->PDF->Ln($this->LineHeight);
+                    $this->PDF->SetX($this->LeftMargin);
+                }
+            }
+        }
+        if ($key == 'reportheader')
+        {
+            $this->SubTotals = null;
+        }
+    }
+
+    /***********************************************************/
+    /* Print the Sub Report
+    /***********************************************************/
+    function PrintDetails()
+    {
+        $this->LastHeight = 0;
+        include 'include/report_vars.inc';
+        $textMerge = $this->XmlArray['Report']['Merge']['Details']['Detail1']['Body'];
+        $textMerge = $this->fillParameters($textMerge);
+        
+        if (!$textMerge) // there's no details
+        {
+            return true;
+        }
+        
+        for ($y=1; $y<=count($this->QueryLine); $y++)
+        {
+            $QueryCell = trim($this->QueryLine[$y]);
+            $vars['$var' . $y] = $QueryCell;
+        }
+        
+        # Substituição de Parâmetros
+        krsort($vars);
+        $where = $this->XmlArray['Report']['Merge']['Details']['Detail1']['DataSet']['Query']['Where'];
+        $from  = $this->XmlArray['Report']['Merge']['Details']['Detail1']['DataSet']['Query']['From'];
+        foreach ($vars as $var => $content)
+        {
+            $where = str_replace($var, $content, $where);
+            $from  = str_replace($var, $content, $from);
+        }
+        $DataSet = $this->XmlArray['Report']['Merge']['Details']['Detail1']['DataSet'];
+        $DataSet['Query']['Where'] = $where;
+        $DataSet['Query']['From']  = $from;
+        
+        # Cria Query
+        $subQuery = AgataCore::CreateQuery($this->agataDB, $DataSet, $this->Parameters);
+        
+        if (is_agata_error($subQuery))
+        {
+            new Dialog($subQuery->GetError());
+            
+            Wait::Off();
+            return false;
+        }
+        else
+        {
+            $Lines = explode("\n", $textMerge);
+            $i = 0;
+            while ($Subrow = $subQuery->FetchNext())
+            {
+                for ($Subcol=1; $Subcol<=count($Subrow); $Subcol++)
+                {
+                    $SubConteudo = trim($Subrow[$Subcol]);
+                    $SubMyVar = '$subfield' . $Subcol;
+                    
+                    #Sumarization
+                    $this->SubTotals[$SubMyVar]['count'] ++;
+                    if (is_numeric($SubConteudo))
+                    {
+                        $this->SubTotals[$SubMyVar]['sum']   += $SubConteudo;
+                        $this->SubTotals[$SubMyVar]['min']   = ((!$this->SubTotals[$SubMyVar]['min']) or ($SubConteudo < $this->SubTotals[$SubMyVar]['min'])) ? $SubConteudo : $this->SubTotals[$SubMyVar]['min'];
+                        $this->SubTotals[$SubMyVar]['max']   = ($SubConteudo > $this->SubTotals[$SubMyVar]['max']) ? $SubConteudo : $this->SubTotals[$SubMyVar]['max'];
+                    }
+                    
+                    //após sumarizações, pq botar R$ na frente estraga a soma.
+                    $SubConteudo = FormatMask($this->SubAdjustments[$Subcol]['Mask'], $SubConteudo);
+                    
+                    // novo nome de variável para dar os replace
+                    // problema : replace do subfield10, subfield1...
+                    $myNewVar = 'subcolum' . $Subcol;  // primeiro sem o $ na frente, para declarar
+                    $$myNewVar = $SubConteudo;
+                    $myNewVar = '$subcolum' . $Subcol; // agora com o $ para dar o parser
+                    $replace[$SubMyVar] = '#frame' . $this->subBorder .strtoupper(substr($this->SubAdjustments[$Subcol]['Align'],0,1)) .
+                                                    str_pad($this->SubAdjustments[$Subcol]['Points'], 3, '0', STR_PAD_LEFT) . 
+                                                    $myNewVar;
+                }
+                //$replace['$counter'] = '#frameNC024$counter';
+                krsort($replace);
+                $i ++;
+                $counter = $i;
+                foreach ($Lines as $Line)
+                {
+                    $Line = preg_replace("/\"/", "\\\"", $Line);
+                    foreach ($replace as $this_text =>$that_text)
+                    {
+                        $Line = str_replace($this_text, $that_text, $Line);
+                    }
+                    eval ("\$Line_ = \"$Line\";");
+                    
+                    $had_content = $this->ParseStringPdf($Line_);
+                    //if ($had_content)
+                    {
+                        # $this->LastHeight vem da ParseStringPdf()
+                        $this->PDF->Ln($this->LastHeight);
+                        $this->LastHeight = 0;
+                    }
+                    $this->PDF->SetX($this->LeftMargin);
+
+                    if ($this->Orientation == 'landscape')
+                    {
+                        $limit = $this->Pages[$this->PageFormat][0];
+                    }
+                    else
+                    {
+                        $limit = $this->Pages[$this->PageFormat][1];
+                    }
+                    
+                    if ($this->PDF->GetY() >= $limit - $this->FooterMargin - 40 - $this->FooterHeight)
+                    {
+                        //aquip
+                        $this->PrintSection('groupfooter',  $this->XmlArray['Report']['Merge']['Details']['Detail1']['GroupFooter']);
+                        
+                        if ($this->ShowFooter)
+                        {
+                            $this->PrintSection('reportfooter', $this->XmlArray['Report']['Merge']['ReportFooter']);
+                        }
+                        
+                        $this->page ++;
+                        $this->PDF->AddPage($this->Orientation);
+                        if ($this->XmlArray['Report']['Merge']['Config']['RepeatHeader'])
+                        {
+                            $this->PrintSection('reportheader', $this->XmlArray['Report']['Merge']['ReportHeader']);
+                        }
+                        $this->PrintSection('groupheader',  $this->XmlArray['Report']['Merge']['Details']['Detail1']['GroupHeader']);
+                    }
+                }
+            }
+        }
+        return true;
+    }
+}
+?>

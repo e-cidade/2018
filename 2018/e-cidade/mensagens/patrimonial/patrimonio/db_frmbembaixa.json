@@ -1,0 +1,15 @@
+{
+  "buscando"              : "Buscando...",
+  "bem_baixado"           : "Bem baixado com sucesso!",
+  "confirma_baixa"        : "Confirma a baixa do bem?",
+  "informe_bem"           : "Informe o bem que deve ser baixado.",
+  "informe_motivo"        : "Informe o motivo da baixa do bem.",
+  "informe_data"          : "Informe a data da baixa.",
+  "baixando_bem"          : "Aguarde, baixando bem...",
+  "confirma_reativacao"   : "Confirma a reativação do bem?",
+  "informe_bem_reativado" : "Informe o bem que deve ser reativado.",
+  "reativando_bem"        : "Aguarde, reativando bem...",
+  "bem_reativado"         : "Bem Reativado com sucesso!",
+  "verificando_vinculos"  : "Aguarde, verificando vinculos da nota com outros bens...",
+  "nota_nao_liquidada"    : "Os bens abaixo listados estão vinculados a Nota Fiscal [codigoNota], que consta como não liquidada. Para realizar a baixa do bem selecionado, deverá ser baixado todos os bens vinculados a nota."
+}

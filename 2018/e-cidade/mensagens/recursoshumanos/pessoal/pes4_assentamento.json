@@ -1,0 +1,22 @@
+{
+  "erro_buscar_assentamento_substituicao"                         : "Ocorreu um erro ao buscar o assentamento de substituição.",
+  "erro_salvar_assentamento_substituicao"                         : "Ocorreu um erro ao salvar o assentamento de substituição.",
+  "erro_excluir_assentamento_substituicao"                        : "Ocorreu um erro ao excluir o assentamento de substituição.",
+  "erro_buscar_servidores_assentamento"                           : "Ocorreu um erro ao buscar os servidores com substituição.",
+  "erro_buscar_assentamentos_servidor"                            : "Ocorreu um erro ao buscar os assentamentos do servidor [sNome].",
+  "erro_lancar_assentamento_substituicao_ponto"                   : "Ocorreu um erro ao lançar o assentamento no ponto.",
+  "erro_cancelar_lancamento_assentamento_substituicao_ponto"      : "Ocorreu um erro ao cancelar o lançamento do assentamento no ponto.",
+  "erro_buscar_natureza_tipo_assentamento"                        : "Ocorreu um erro ao buscar a natureza do tipo de assentamento.",
+  "erro_buscar_servidor_assentamentos"                            : "Ocorreu um erro ao buscar os assentamentos do servidor.",
+  "erro_buscar_folha_pagamento_lote"                              : "Ocorreu um erro ao buscar a folha de pagamento do lote",
+  "erro_excluir_lote_assentamento"                                : "Ocorreu um erro ao excluir lote de assentamentos.",
+  "erro_buscar_registros_lote"                                    : "Ocorreu um erro ao buscar registros do lote existente.",
+  "erro_cancelar_lote_assentamento"                               : "Ocorreu um erro ao cancelar o lote de assentamentos.",
+  "erro_buscar_lote_assentamento"                                 : "Ocorreu um erro ao buscar o lote vinculado ao assentamento.",
+  "erro_tipo_assentamento_nao_informado"                          : "O tipo de assentamento não foi informado.",
+  "servidores_assentamento_vazio"                                 : "Não há servidores com assentamento de substituição.",
+  "servidor_assentamentos_vazio"                                  : "Não há assentamentos de substituição a pagar para o servidor.",
+  "sucesso_cancelar_lancamento_assentamento"                      : "Cancelamento efetuado com sucesso.",
+  "sucesso_processar_lancamento_assentamento"                     : "Processado com sucesso.",
+  "sucesso_cancelamento_assentamento"                             : "Processado com sucesso. \n Por favor, realize a inicialização do ponto, cálculo do fixo e salário das matrículas: [sMatriculas]."
+}

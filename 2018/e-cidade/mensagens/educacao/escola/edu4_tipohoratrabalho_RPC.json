@@ -1,0 +1,13 @@
+{
+  "descricao_nao_informada"       : "Descrição não informada.",
+  "abreviatura_nao_informada"     : "Abreviatura não informada",
+  "efetividade_nao_informada"     : "Efetividade não selecionada.",
+  "tipo_hora_salvo"               : "Dados salvos com sucesso.",
+  "erro_buscar_tipo_hora"         : "Erro ao buscar os tipos de hora cadastrados:\n[sErro]",
+  "erro_buscar_vinculo_tipo_hora" : "Erro ao buscar os vínculos ao tipo de hora selecionado:\n[sErro]",
+  "tipo_hora_possui_vinculo"      : "Exclusão não permitida. O tipo de hora de trabalho selecionado está sendo utilizado.",
+  "erro_excluir_tipo_hora"        : "Erro ao excluir o tipo de hora de trabalho:\n[sErro]",
+  "tipo_hora_excluido"            : "Exclusão realizada com sucesso.",
+  "erro_validar_tipo_hora"        : "Erro ao validar a alteração do tipo de hora:\n[sErro]",
+  "registro_existente"            : "[sTipo] não permitida. Há um tipo de hora de trabalho cadastrado com o mesmo nome ou abreviatura informado."
+}

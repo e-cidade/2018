@@ -1,0 +1,9 @@
+{
+ "erro_pesquisa_etapas"             : "Erro ao pesquisar Dados da Idade para a etapa [etapa]",
+  "sem_transacao"                   : "Não foi encontrada uma transação no banco de dados.",
+  "informe_etapa"                   : "A etapa não foi informada.",
+  "informe_idade_inicial"           : "A idade inicial não foi informada.",
+  "informe_idade_final"             : "A idade final não foi informada.",
+  "erro_salvar_vinculo"             : "Erro ao salvar dados do vínculo da idade por Etapa.",
+  "idade_inicial_maior_idade_final" : "O período inicial informado para a etapa [sEtapa] é maior que o periodo final."
+}

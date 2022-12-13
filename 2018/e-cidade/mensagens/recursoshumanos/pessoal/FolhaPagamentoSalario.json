@@ -1,0 +1,8 @@
+{
+  "sem_registro_ponto"       : "Não foi encontrado registro do ponto salário.",
+  "erro_ponto"               : "Erro ao buscar dados do ponto salário.",
+  "fechamento_folha_fechada" : "A folha salário encontra-se fechada.",
+  "sem_registro_ponto"       : "Não foi encontrado registro do ponto salário.",
+  "erro_excluir_pontofs"     : "Ocorreu um erro ao tentar excluir os pontos do salário.",
+  "erro_existe_suplementar"  : "Não é possível cancelar o fechamento da folha salário, pois existe folhas suplementares."
+}

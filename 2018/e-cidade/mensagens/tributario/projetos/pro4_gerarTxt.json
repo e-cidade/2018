@@ -1,0 +1,7 @@
+{
+  "mes_obrigatorio"     : "Campo Mês de Competência é de preenchimento obrigatório.",
+  "ano_obrigatorio"     : "Campo Ano de Competência é de preenchimento obrigatório",
+  "mes_invalido"        : "Campo Mês de Competência Inválido.",
+  "ano_invalido"        : "Campo Ano de Competência Inválido.",
+  "processando_arquivo" : "Processando Arquivo. Por favor aguarde..."
+}

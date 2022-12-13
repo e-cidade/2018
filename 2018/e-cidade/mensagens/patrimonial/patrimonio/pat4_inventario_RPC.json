@@ -1,0 +1,10 @@
+{
+  inclusao_efetuada:"Inclusão efetuada com sucesso!",
+  processamento_realizado:"Processamento realizado com sucesso!",
+  anulacao_efetuada:"Anulação efetuada com sucesso!",
+  nenhum_bem_vinculado:"Nenhum bem vínculado ao inventário [iInventario].",
+  itens_desvinculados:"Ítens Desvinculados com sucesso!",
+  refine_pesquisa:"Seu filtro de pesquisa retornou mais de 2000 bens. Por favor, refine sua pesquisa.",
+  inventario_desprocessado:"Inventário desprocessado com sucesso!",
+  nenhuma_opcao_definida:"Nenhuma Opção Definida - Contate Suporte"
+}

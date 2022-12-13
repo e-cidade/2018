@@ -1,0 +1,5 @@
+{
+  "campo_obrigatorio"       : "O campo [sCampo] é de preenchimento obrigatório.",
+  "datainicial_menor"       : "A Data Inicial não deve ser inferior a Data Final.",
+  "datainicial_menor_atual" : "A Data Inicial não deve ser inferior a data atual"
+}

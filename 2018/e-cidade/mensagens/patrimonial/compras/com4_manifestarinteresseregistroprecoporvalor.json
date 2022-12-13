@@ -1,0 +1,9 @@
+{
+  "nenhum_item"                : "Nenhum item selecionado.",
+  "salvo_sucesso"              : "Manifestação de Interesse salva com sucesso.",
+  "campo_obrigatorio"          : "Campo [sCampo] é de preenchimento obrigatório.",
+  "estimativa_nao_informada"   : "Estimativa do Registro de Preço não informada.",
+  "abertura_nao_informada"     : "Abertura do Registro de Preço não informada.",
+  "abertura_possui_estimativa" : "A abertura [iAbertura] possui uma manifestação de interesse ([iEstimativa]) cadastrada para este departamento. Não é possível cadastrar mais de uma manifestação por departamento.",
+  "abertura_sem_itens"         : "Abertura selecionada não possui item(ns) cadastrado(s)."
+}

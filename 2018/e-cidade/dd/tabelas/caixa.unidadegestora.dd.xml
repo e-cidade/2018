@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='4030' name='caixa.unidadegestora' description="Unidade Gestora" prefix="k171" label="Unidade Gestora" type="0">
+  <fields>
+    <field codigo="22363" 
+           campo_api='' 
+           name="k171_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t" 
+           hassequence="t"> 
+           
+      <sequence name='caixa.unidadegestora_k171_sequencial_seq' ></sequence>
+     
+    </field> 
+    <field codigo="22364" 
+           campo_api='' 
+           name="k171_nome" 
+           conteudo="varchar(100)" 
+           description="Nome" 
+           inivalue="" 
+           label="Nome" 
+           size="100" 
+           null="f" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Nome" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+    <field codigo="22394" 
+           campo_api='' 
+           name="k171_departamento"
+           conteudo="int4" 
+           description="Departamento" 
+           inivalue="" 
+           label="Departamento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Departamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t"> 
+            
+    </field> 
+  </fields>
+  <primarykey>
+    <fieldpk name="k171_sequencial"></fieldpk> 
+  </primarykey>
+  <foreignkeys>
+    <foreignkey reference="db_depart" inner='t'>
+      <fieldfk name="k171_departamento" reference="coddepto" ></fieldfk> 
+    </foreignkey>
+  </foreignkeys>
+</table>

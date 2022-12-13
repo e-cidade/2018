@@ -1,0 +1,10 @@
+parameters:
+    autoload_files:
+        - libs/db_stdlib.php
+        - dbforms/db_funcoes.php
+        - bootstrap.php
+
+    fileExtensions:
+        - php
+        - module
+        - inc

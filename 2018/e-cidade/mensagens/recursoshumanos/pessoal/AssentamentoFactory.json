@@ -1,0 +1,5 @@
+{
+  "codigo_nao_informado"             : "Código do Assentamento não informado",
+  "erro_buscar_assentamentos"        : "Ocorreu um erro ao buscar os Assentamentos",
+  "erro_buscar_tipo_assentamento"    : "Ocorreu um erro ao buscar o tipo de assentamento."
+}

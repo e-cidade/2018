@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+  </parametros>
+  <configuracoes>
+    <classe referencia="transparencia" nome="CargaTransparenciaWebservice" parametros=""
+            caminho="model/integracao/transparencia/CargaTransparenciaWebservice.model.php" />
+    <exec>
+      <metodo referencia="transparencia" nome="situacaoDump" parametros="" />
+    </exec>
+  </configuracoes>
+</processamento>

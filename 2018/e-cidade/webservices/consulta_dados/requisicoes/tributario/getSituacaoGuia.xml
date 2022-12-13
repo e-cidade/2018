@@ -1,0 +1,15 @@
+<?xml version='1.0' ?>
+<consulta distinct="false">
+  <campos>
+    <campo campo="rtstatus" label="status"  />
+  </campos>
+  <from tabela="fc_statusdebitos($numpre, $numpar)" />
+  <juncoes>
+  </juncoes>
+  <filtros>
+    <filtro label="numpre" condicao="'$numpre' = '$numpre'" obrigatorio="true"/>
+    <filtro label="numpar" condicao="'$numpar' = '$numpar'" obrigatorio="true"/>
+  </filtros>
+  <agrupamento campos="" />
+  <ordenacao   campos="" />
+</consulta>

@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+<processamento>
+  <versao>1.2</versao>
+  <parametros>
+    <parametro nome="avaliacao"  obrigatorio="true"  tipo="integer" />
+  </parametros>
+  <configuracoes>
+    <classe referencia="oAvaliacao" nome="AdicionaAvaliacaoQuestionario" parametros="" caminho="model/configuracao/webservice/Avaliacao/AdicionaAvaliacaoQuestionario.model.php"/>
+    <exec>
+      <metodo referencia="oAvaliacao" nome="setAvaliacao" parametros="$avaliacao" />
+      <metodo referencia="oAvaliacao" nome="desativaQuestionario" parametros="" />
+    </exec>
+  </configuracoes>
+</processamento>

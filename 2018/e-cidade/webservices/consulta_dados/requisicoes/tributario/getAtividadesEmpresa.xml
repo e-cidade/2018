@@ -1,0 +1,50 @@
+<?xml version='1.0' ?>
+<consulta distinct="true">
+  <campos>
+    <campo campo="q02_inscr"                                label="inscricao"        />
+    <campo campo="q03_ativ"                                 label="cod_atividade"    />
+    <campo campo="q03_descr"                                label="atividade"        />
+    <campo campo="q03_deducao"                              label="deducao"          />
+    <campo campo="q07_datain"                               label="dt_inicio"        />
+    <campo campo="q07_datafi"                               label="dt_fim"           />
+    <campo campo="q71_estrutural"                           label="estrut_cnae"      />
+    <campo campo="q71_descr"                                label="desc_cnae"        />
+    <campo campo="rh70_estrutural"                          label="estrut_cbo"       />
+    <campo campo="rh70_descr"                               label="desc_cbo"         />
+    <campo campo="db121_estrutural"                         label="cod_item_servico" />
+    <campo campo="db121_descricao"                          label="desc_item_servico"/>
+    <campo campo="q136_valor"                               label="aliq"             />
+    <campo campo="case when q07_databx is null then 'ATIVA'
+                       else 'INATIVA' end"                  label="situacao"         />
+    <campo campo="case when q136_localpagamento = 1 then 'Sede Prestador'
+                       when q136_localpagamento = 2 then 'Sede tomador'
+                       when q136_localpagamento = 3 then 'Local de prestação do serviço' end"
+                                                            label="local_pgto"       />
+    <campo campo="q03_tributacao_municipio"             label="tributacao_municipio" />
+    <campo campo="case when q136_tipotributacao = 1 then 't' else 'f' end"                     label="tributacao_fixada" />
+    <campo campo="q136_exercicio"                                  label="exercicio" />
+    <campo campo="case when q136_tipotributacao = 3 then 't' else 'f' end"                     label="tributacao_nao_incide" />
+  </campos>
+  <from tabela="issbase"/>
+  <juncoes>
+    <join tipo="inner" tabela="tabativ"                     condicao="issbase.q02_inscr = tabativ.q07_inscr "    />
+    <join tipo="inner" tabela="ativid"                      condicao="q03_ativ          = q07_ativ"              />
+    <join tipo="inner" tabela="clasativ"                    condicao="q82_ativ          = q03_ativ"              />
+    <join tipo="inner" tabela="classe"                      condicao="q12_classe        = q82_classe"            />
+    <join tipo="inner" tabela="issgruposervicoativid"       condicao="q03_ativ          = q127_ativid"           />
+    <join tipo="inner" tabela="issgruposervico"             condicao="q126_sequencial   = q127_issgruposerviso"  />
+    <join tipo="inner" tabela="db_estruturavalor"           condicao="db121_sequencial  = q126_db_estruturavalor"/>
+    <join tipo="left"  tabela="issconfiguracaogruposervico" condicao="q126_sequencial   = q136_issgruposervico"  />
+    <join tipo="inner"  tabela="atividcnae"                  condicao="q07_ativ          = q74_ativid"            />
+    <join tipo="inner"  tabela="cnaeanalitica"               condicao="q72_sequencial    = q74_cnaeanalitica"     />
+    <join tipo="inner"  tabela="cnae"                        condicao="q71_sequencial    = q72_cnae"              />
+    <join tipo="left"  tabela="atividcbo"                   condicao="q07_ativ          = q75_ativid"            />
+    <join tipo="left"  tabela="rhcbo"                       condicao="rh70_sequencial   = q75_rhcbo"             />
+  </juncoes>
+  <filtros>
+    <filtro                   condicao = "q12_calciss"              obrigatorio="true"/>
+    <filtro label="inscricao" condicao = "q02_inscr = '$inscricao'" obrigatorio="true"/>
+  </filtros>
+  <agrupamento campos=""         />
+  <ordenacao   campos="q02_inscr"/>
+</consulta>

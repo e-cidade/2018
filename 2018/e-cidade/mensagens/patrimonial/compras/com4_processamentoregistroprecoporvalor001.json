@@ -1,0 +1,8 @@
+{
+  "carregando_estimativas"         : "Aguarde, validando estimativas...",
+  "abertura_sem_estimativa"        : "Abertura de registro de preço [abertura] não possui estimativa(s) cadastrada(s).",
+  "vigencia_inicial_nao_informada" : "Campo Data de Vigência Inicial é de preenchimento obrigatório.",
+  "vigencia_final_nao_informada"   : "Campo Data de Vigência Final é de preenchimento obrigatório.",
+  "vigencia_invalida"              : "Data de Vigência Inicial não pode ser maior que a Data de Vigência Final.",
+  "compilacao_salva"               : "Compilação efetuada com sucesso."
+}

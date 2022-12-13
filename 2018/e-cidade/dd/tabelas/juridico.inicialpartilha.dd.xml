@@ -1,0 +1,144 @@
+<?xml version="1.0" standalone="yes" ?>
+<table codigo='1010234' name='juridico.inicialpartilha' description="Partilha de Custas da Inicial do Foro" prefix="v35" label="Inicial Partilha" type="0">
+  <fields>
+    <field codigo="1009495" 
+           campo_api='' 
+           name="v35_sequencial" 
+           conteudo="int4" 
+           description="Código" 
+           inivalue="0" 
+           label="Código" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="t" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Código" 
+           reference="" 
+           ispk="t"
+           hassequence="t" >
+
+      <sequence name="juridico.inicialpartilha_v35_sequencial_seq" />
+            
+    </field> 
+    <field codigo="1009496" 
+           campo_api='' 
+           name="v35_inicial" 
+           conteudo="int4" 
+           description="Inicial" 
+           inivalue="0" 
+           label="Inicial" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Inicial" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009497" 
+           campo_api='' 
+           name="v35_tipolancamento" 
+           conteudo="int4" 
+           description="Tipo de Lançamento da Partilha" 
+           inivalue="0" 
+           label="Tipo Lançamento" 
+           size="10" 
+           null="f" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="1" 
+           tipoobj="text" 
+           labelrel="Tipo Lançamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009498" 
+           campo_api='' 
+           name="v35_dtpagamento" 
+           conteudo="date" 
+           description="Data de Pagamento" 
+           inivalue="null" 
+           label="Data Pagamento" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Data Pagamento" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009499" 
+           campo_api='' 
+           name="v35_obs" 
+           conteudo="text" 
+           description="Observação da Partilha" 
+           inivalue="" 
+           label="Observação" 
+           size="1" 
+           null="t" 
+           uppercase="t" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Observação" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009500" 
+           campo_api='' 
+           name="v35_valorpartilha" 
+           conteudo="float8" 
+           description="Valor da Partilha" 
+           inivalue="0" 
+           label="Valor da Partilha" 
+           size="15" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="4" 
+           tipoobj="text" 
+           labelrel="Valor da Partilha" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+    <field codigo="1009501" 
+           campo_api='' 
+           name="v35_datapartilha" 
+           conteudo="date" 
+           description="Data Partilha" 
+           inivalue="null" 
+           label="Data Partilha" 
+           size="10" 
+           null="t" 
+           uppercase="f" 
+           autocompl="f" 
+           aceitatipo="0" 
+           tipoobj="text" 
+           labelrel="Data Partilha" 
+           reference="" 
+           ispk="f" 
+           hassequence="t" > 
+            
+    </field> 
+  </fields>
+  <primarykey>
+  </primarykey>
+  <foreignkeys>
+  </foreignkeys>
+</table>

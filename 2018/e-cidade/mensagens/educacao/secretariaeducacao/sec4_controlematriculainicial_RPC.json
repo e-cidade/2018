@@ -1,0 +1,11 @@
+{
+  "erro_busca_controle_matriculas_iniciais" : "Erro ao buscar os controles de matrículas iniciais cadastrados.",
+  "informe_ano_inicial"                     : "Ano Inicial não informado.",
+  "informe_quantidade_dias"                 : "Quantidade de Dias não informada.",
+  "existe_controle_em_vigencia"             : "Não é possível salvar, pois existe Controle de Matrícula Inicial em vigência.",
+  "erro_salvar_controle_matricula_inicial"  : "Erro ao salvar o Controle de Matrícula Inicial.",
+  "salvo_controle_matricula_inicial"        : "Controle de Matrícula Inicial salvo com sucesso!",
+  "codigo_controle_matricula_nao_informado" : "O código do Controle da Matrícula Inicial não foi informado.",
+  "erro_excluir_controle_matricula"         : "Erro ao excluir o Controle de Matrícula Inicial.",
+  "excluido_controle_matricula"             : "Registro excluído com sucesso!"
+}

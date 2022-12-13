@@ -1,0 +1,19 @@
+{
+  "loading"               : "Processando...",
+  "alterar_lote_sucesso"  : "Lote alterado com sucesso.",
+  "alterar_lote_erro"     : "Ocorreu um erro ao alterar o lote.",
+  "alterar_loading"       : "Alterando Lote...",
+  "excluir_lote_sucesso"  : "Lote excluído com sucesso.",
+  "excluir_lote_erro"     : "Ocorreu um erro ao excluir o lote.",
+  "excluir_loading"       : "Excluindo Lote...",  
+  "incluir_lote_sucesso"  : "Lote incluído com sucesso.",
+  "incluir_lote_erro"     : "Ocorreu um erro ao incluir o lote.",
+  "incluir_loading"       : "Incluindo Lote...",
+  "descricao_obrigatorio" : "Campo descrição deve ser preenchido.",
+  "confirmar_fechar_lote" : "Deseja fechar o lote \"[sDescricao]\"?",
+  "fechar_lote_sucesso"   : "O lote \"[sDescricao]\" foi fechado com sucesso.",
+  "fechar_lote_erro"      : "Ocorreu um erro ao fechar o lote \"[sDescricao]\".",
+  "fechar_loading"        : "Enviando Lote \"[sDescricao]\"..."
+}
+
+

@@ -1,0 +1,21 @@
+.DBContext-item-selected {
+
+    background-color: #0061f7;
+    font-weight: bold;
+    color: #ffffff;
+}
+.DBContext-div {
+
+    width            :300px;
+    background-color :white;
+    border           :1px solid black;
+}
+
+.DBContext-div ul {
+
+ list-style :none;
+ text-align : left;
+ padding    : 0px;
+ margin-top : 0px;
+ position   : relative;
+}

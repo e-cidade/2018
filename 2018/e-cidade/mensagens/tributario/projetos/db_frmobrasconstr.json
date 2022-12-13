@@ -1,0 +1,8 @@
+{
+  "sem_parametros"                : "Sem parâmetros Configurados para o Exercício.",
+  "obra_sem_matricula"            : "Obra regular sem matrícula vinculada.",
+  "data_inicial_maior_data_final" : "Data Inicial não pode ser maior que data final",
+  "carregando_caracteristicas"    : "Carregando características...",
+  "salvando_construcao"           : "Salvando dados da Construção. Aguarde...",
+  "excluindo_construcao"          : "Excluindo Construção. Aguarde..."
+}

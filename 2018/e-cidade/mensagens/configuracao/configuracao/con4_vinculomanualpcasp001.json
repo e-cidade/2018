@@ -1,0 +1,8 @@
+{
+  "buscando_contas_orcamentarias"      : "Aguarde, buscando as contas orçamentárias.",
+  "conta_orcamentaria_nao_selecionada" : "É necessário selecionar ao menos uma conta do Plano Orçamentário.",
+  "conta_pcasp_nao_selecionada"        : "É necessário selecionar ao uma conta do PCASP.",
+  "vinculando_contas"                  : "Aguarde, vinculando as contas.",
+  "confirma_vinculo"                   : "Confirma o vínculo das contas Orçamentárias ao PCASP ?",
+  "buscando_contas_pcasp"              : "Aguarde, buscando as contas do PCASP."
+}
